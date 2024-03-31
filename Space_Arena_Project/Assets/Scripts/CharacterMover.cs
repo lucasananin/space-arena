@@ -9,14 +9,20 @@ public class CharacterMover : MonoBehaviour
     [SerializeField] float _moveSpeed = 5f;
     [SerializeField, ReadOnly] Vector2 _moveDirection = default;
 
-    private void OnEnable()
-    {
-        InputHandler.onMoveAxis += SetMoveDirection;
-    }
+    //private void OnEnable()
+    //{
+    //    InputHandler.onMoveAxis += SetMoveDirection;
+    //}
 
-    private void OnDisable()
+    //private void OnDisable()
+    //{
+    //    InputHandler.onMoveAxis -= SetMoveDirection;
+    //}
+
+    private void Update()
     {
-        InputHandler.onMoveAxis -= SetMoveDirection;
+        //SetMoveDirection(InputHandler.GetMovementInput());
+        _moveDirection = InputHandler.GetMovementInput();
     }
 
     private void FixedUpdate()
@@ -25,8 +31,8 @@ public class CharacterMover : MonoBehaviour
         _rb.velocity = _velocity;
     }
 
-    private void SetMoveDirection(Vector2 _moveAxis)
-    {
-        _moveDirection = _moveAxis;
-    }
+    //private void SetMoveDirection(Vector2 _moveAxis)
+    //{
+    //    _moveDirection = _moveAxis;
+    //}
 }
