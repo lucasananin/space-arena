@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class PlayerFlipper : SideFlipper
 {
-    private void LateUpdate()
+    private void Update()
+    {
+        FlipToMouse();
+    }
+
+    private void FlipToMouse()
     {
         Vector3 _worldMousePosition = Camera.main.ScreenToWorldPoint(InputHandler.GetMousePosition());
-        bool _toTheRight = _worldMousePosition.x >= _transform.position.x;
+        bool _toTheRight = _worldMousePosition.x >= _target.position.x;
         Flip(_toTheRight);
     }
 }
