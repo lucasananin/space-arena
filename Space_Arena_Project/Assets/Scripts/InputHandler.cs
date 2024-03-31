@@ -12,7 +12,7 @@ public class InputHandler : MonoBehaviour
         return _moveAxis;
     }
 
-    private Vector3 GetMousePosition()
+    public static Vector3 GetMousePosition()
     {
         return Input.mousePosition;
     }
