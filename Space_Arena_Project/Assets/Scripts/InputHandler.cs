@@ -5,13 +5,23 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public static event Action<Vector2> onMoveAxisChanged = null;
+    public static event Action<Vector2> onMoveAxis = null;
 
     private void Update()
+    {
+        SendMoveAxis();
+    }
+
+    private void SendMoveAxis()
     {
         float _x = Input.GetAxisRaw("Horizontal");
         float _y = Input.GetAxisRaw("Vertical");
         Vector2 _moveAxis = new Vector2(_x, _y);
-        onMoveAxisChanged?.Invoke(_moveAxis);
+        onMoveAxis?.Invoke(_moveAxis);
+    }
+
+    private Vector3 GetMousePosition()
+    {
+        return Input.mousePosition;
     }
 }

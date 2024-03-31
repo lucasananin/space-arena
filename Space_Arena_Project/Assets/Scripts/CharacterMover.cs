@@ -11,12 +11,12 @@ public class CharacterMover : MonoBehaviour
 
     private void OnEnable()
     {
-        InputHandler.onMoveAxisChanged += SetMoveDirection;
+        InputHandler.onMoveAxis += SetMoveDirection;
     }
 
     private void OnDisable()
     {
-        InputHandler.onMoveAxisChanged -= SetMoveDirection;
+        InputHandler.onMoveAxis -= SetMoveDirection;
     }
 
     private void FixedUpdate()
