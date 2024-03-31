@@ -316,12 +316,12 @@ namespace HierarchyDecorator
             ToggleMixed = new GUIStyle (Toggle);
 #endif
 
-            ToolbarTextField = new GUIStyle("ToolbarSeachTextField")
-            {
-                fixedWidth = 0,
-                margin = new RectOffset(2, 1, 1, 0),
+            //ToolbarTextField = new GUIStyle("ToolbarSeachTextField")
+            //{
+            //    fixedWidth = 0,
+            //    margin = new RectOffset(2, 1, 1, 0),
 
-            };
+            //};
         }
     }
 }
