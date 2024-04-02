@@ -10,6 +10,7 @@ public abstract class AbstractWeapon : MonoBehaviour
     public void InvokeOnShootEvent()
     {
         onShoot?.Invoke();
+        Debug.Log($"// Shoot!");
     }
 
     public abstract void PullTrigger();
