@@ -21,42 +21,34 @@ public class BurstWeapon : AbstractWeapon
 
     private void FixedUpdate()
     {
-        if (_nextBurst < _burstRate)
+        if (!_isBursting)
         {
-            _nextBurst += Time.fixedDeltaTime;
+            _nextBurst += _nextBurst < _burstRate ? Time.fixedDeltaTime : 0;
         }
-
-        if (_nextFire < _fireRate)
+        else
         {
-            _nextFire += Time.fixedDeltaTime;
-        }
+            _nextFire += _nextFire < _fireRate ? Time.fixedDeltaTime : 0;
 
-        if (!_isBursting) return;
-
-        if (_nextBurst >= _burstRate)
-        {
-            _nextBurst -= _burstRate;
-        }
-
-        if (_nextFire >= _fireRate)
-        {
-            _nextFire -= _nextFire;
-            _currentShootCount++;
-            InvokeOnShootEvent();
-
-            if (_currentShootCount >= _maxShootCount)
+            if (_nextFire >= _fireRate)
             {
-                _nextFire = _fireRate;
-                _isBursting = false;
+                _nextFire -= _nextFire;
+                _currentShootCount++;
+                InvokeOnShootEvent();
+
+                if (_currentShootCount >= _maxShootCount)
+                {
+                    _nextFire = _fireRate;
+                    _isBursting = false;
+                }
             }
         }
     }
 
     public override void PullTrigger()
     {
-        if (_isBursting) return;
         if (_nextBurst < _burstRate) return;
 
+        _nextBurst -= _burstRate;
         _currentShootCount = 0;
         _isBursting = true;
     }

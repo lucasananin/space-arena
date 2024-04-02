@@ -5168,11 +5168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce895ca5e13f3b64a8933d2ba0466c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _burstRate: 3
+  _burstRate: 0.5
   _nextBurst: 0
   _maxShootCount: 3
   _currentShootCount: 0
-  _fireRate: 1
+  _fireRate: 0.1
   _nextFire: 0
   _isBursting: 0
 --- !u!1 &1422076201

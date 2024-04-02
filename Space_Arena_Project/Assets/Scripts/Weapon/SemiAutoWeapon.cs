@@ -8,12 +8,14 @@ public class SemiAutoWeapon : AbstractWeapon
     [SerializeField] float _fireRate = 0.1f;
     [SerializeField, ReadOnly] float _nextFire = 0;
 
+    private void Awake()
+    {
+        _nextFire = _fireRate;
+    }
+
     private void FixedUpdate()
     {
-        if (_nextFire < _fireRate)
-        {
-            _nextFire += Time.fixedDeltaTime;
-        }
+        _nextFire += _nextFire < _fireRate ? Time.fixedDeltaTime : 0;
     }
 
     public override void PullTrigger()

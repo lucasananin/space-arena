@@ -9,16 +9,16 @@ public class AutoWeapon : AbstractWeapon
     [SerializeField, ReadOnly] float _nextFire = 0;
     [SerializeField, ReadOnly] bool _isHoldingTrigger = false;
 
+    private void Awake()
+    {
+        _nextFire = _fireRate;
+    }
+
     private void FixedUpdate()
     {
-        if (_nextFire < _fireRate)
-        {
-            _nextFire += Time.fixedDeltaTime;
-        }
+        _nextFire += _nextFire < _fireRate ? Time.fixedDeltaTime : 0;
 
-        if (!_isHoldingTrigger) return;
-
-        if (_nextFire >= _fireRate)
+        if (_nextFire >= _fireRate && _isHoldingTrigger)
         {
             _nextFire -= _fireRate;
             InvokeOnShootEvent();
