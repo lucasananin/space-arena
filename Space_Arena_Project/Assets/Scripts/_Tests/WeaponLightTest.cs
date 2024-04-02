@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,11 +12,19 @@ public class WeaponLightTest : MonoBehaviour
     [SerializeField] float _maxIntensity = 5f;
     [SerializeField] float _minRadiusMultiplier = 1f;
     [SerializeField] float _maxRadiusMultiplier = 2f;
+    [Space]
+    [SerializeField] float _timeEnabled = 0.05f;
+    [SerializeField, ReadOnly] float _timeUntilDisable = 0;
 
-    private float _timeEnabled = 0.05f;
-    private float _timeUntilDisable = 0;
     private float _defaultInnerRadius = 0;
     private float _defaultOuterRadius = 0;
+
+    private void Awake()
+    {
+        _light2D.enabled = false;
+        _defaultInnerRadius = _light2D.pointLightInnerRadius;
+        _defaultOuterRadius = _light2D.pointLightOuterRadius;
+    }
 
     private void OnEnable()
     {
@@ -27,18 +36,11 @@ public class WeaponLightTest : MonoBehaviour
         _weapon.onShoot -= Show;
     }
 
-    private void Awake()
+    private void Update()
     {
-        _light2D.enabled = false;
-        _defaultInnerRadius = _light2D.pointLightInnerRadius;
-        _defaultOuterRadius = _light2D.pointLightOuterRadius;
-    }
+        _timeUntilDisable -= _timeUntilDisable > 0 ? Time.deltaTime : 0;
 
-    private void FixedUpdate()
-    {
-        _timeUntilDisable -= Time.fixedDeltaTime;
-
-        if (_timeUntilDisable < 0)
+        if (_timeUntilDisable <= 0)
         {
             _light2D.enabled = false;
         }
@@ -46,12 +48,12 @@ public class WeaponLightTest : MonoBehaviour
 
     public void Show()
     {
-        _timeUntilDisable = _timeEnabled;
-
+        _light2D.enabled = true;
         _light2D.intensity = Random.Range(_minIntensity, _maxIntensity);
         float _randomRadiusMultiplier = Random.Range(_minRadiusMultiplier, _maxRadiusMultiplier);
         _light2D.pointLightInnerRadius = _defaultInnerRadius * _randomRadiusMultiplier;
         _light2D.pointLightOuterRadius = _defaultOuterRadius * _randomRadiusMultiplier;
-        _light2D.enabled = true;
+
+        _timeUntilDisable = _timeEnabled;
     }
 }

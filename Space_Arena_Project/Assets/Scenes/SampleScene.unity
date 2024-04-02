@@ -1355,6 +1355,8 @@ MonoBehaviour:
   _maxIntensity: 7
   _minRadiusMultiplier: 0.9
   _maxRadiusMultiplier: 1.1
+  _timeEnabled: 0.05
+  _timeUntilDisable: 0
 --- !u!114 &315867241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2944,6 +2946,8 @@ MonoBehaviour:
   _maxIntensity: 7
   _minRadiusMultiplier: 0.9
   _maxRadiusMultiplier: 1.1
+  _timeEnabled: 0.05
+  _timeUntilDisable: 0
 --- !u!1 &805339119
 GameObject:
   m_ObjectHideFlags: 0
@@ -5168,7 +5172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce895ca5e13f3b64a8933d2ba0466c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _burstRate: 0.5
+  _burstRate: 0.3
   _nextBurst: 0
   _maxShootCount: 3
   _currentShootCount: 0
@@ -5363,6 +5367,8 @@ MonoBehaviour:
   _maxIntensity: 7
   _minRadiusMultiplier: 0.9
   _maxRadiusMultiplier: 1.1
+  _timeEnabled: 0.05
+  _timeUntilDisable: 0
 --- !u!114 &1496947359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5401,8 +5407,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.25
-  m_PointLightOuterRadius: 0.5
+  m_PointLightInnerRadius: 0.3
+  m_PointLightOuterRadius: 0.6
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1

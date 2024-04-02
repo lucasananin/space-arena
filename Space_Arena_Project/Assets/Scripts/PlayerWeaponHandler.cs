@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,5 +27,11 @@ public class PlayerWeaponHandler : MonoBehaviour
     private void ReleaseTrigger()
     {
         _currentWeapon.ReleaseTrigger();
+    }
+
+    [Button]
+    private void SetWeaponReference()
+    {
+        _currentWeapon = GetComponentInChildren<AbstractWeapon>();
     }
 }
