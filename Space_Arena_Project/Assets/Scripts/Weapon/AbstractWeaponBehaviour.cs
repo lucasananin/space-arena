@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AbstractWeapon : MonoBehaviour
+public abstract class AbstractWeaponBehaviour : MonoBehaviour
 {
     public event Action onShoot = null;
 

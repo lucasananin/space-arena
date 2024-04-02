@@ -361,6 +361,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &57030176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 57030177}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &57030177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57030176}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: 0.025, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1654674102}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &76310490
 GameObject:
   m_ObjectHideFlags: 0
@@ -5100,7 +5131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1410725364
 Transform:
   m_ObjectHideFlags: 0
@@ -5347,7 +5378,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1654674102}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1496947358
 MonoBehaviour:
@@ -6054,7 +6085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1654674102
 Transform:
   m_ObjectHideFlags: 0
@@ -6068,6 +6099,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1330767462}
+  - {fileID: 57030177}
   - {fileID: 1496947357}
   m_Father: {fileID: 1823301781}
   m_RootOrder: 2
@@ -6127,6 +6159,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fireRate: 0.1
   _nextFire: 0
+  _projectile: {fileID: 7353528016857128665, guid: 2187d2bd70d6c0c458c031848714ca90, type: 3}
+  _muzzle: {fileID: 57030177}
 --- !u!1 &1658090166
 GameObject:
   m_ObjectHideFlags: 0
@@ -7047,7 +7081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc79a4ce3cf18a478d80be9557cbccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentWeapon: {fileID: 1410725369}
+  _currentWeapon: {fileID: 1654674106}
 --- !u!1 &1903408135
 GameObject:
   m_ObjectHideFlags: 0

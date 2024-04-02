@@ -7,7 +7,7 @@ using UnityEngine.Rendering.Universal;
 public class WeaponLightTest : MonoBehaviour
 {
     [SerializeField] Light2D _light2D = null;
-    [SerializeField] AbstractWeapon _weapon = null;
+    [SerializeField] AbstractWeaponBehaviour _weapon = null;
     [SerializeField] float _minIntensity = 3f;
     [SerializeField] float _maxIntensity = 5f;
     [SerializeField] float _minRadiusMultiplier = 1f;

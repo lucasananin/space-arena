@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerWeaponHandler : MonoBehaviour
 {
-    [SerializeField] AbstractWeapon _currentWeapon = null;
+    [SerializeField] AbstractWeaponBehaviour _currentWeapon = null;
 
     private void OnEnable()
     {
@@ -32,6 +32,6 @@ public class PlayerWeaponHandler : MonoBehaviour
     [Button]
     private void SetWeaponReference()
     {
-        _currentWeapon = GetComponentInChildren<AbstractWeapon>();
+        _currentWeapon = GetComponentInChildren<AbstractWeaponBehaviour>();
     }
 }
