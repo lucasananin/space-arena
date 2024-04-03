@@ -29,7 +29,8 @@ public class CastProjectile : ProjectileBehaviour
                 Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
             }
 
-            Destroy(gameObject);
         }
+
+        Destroy(gameObject);
     }
 }

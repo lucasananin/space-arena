@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: _Weapon_Auto
+  m_Name: _Weapon_Burst
   m_EditorClassIdentifier: 
-  _projectileSO: {fileID: 11400000, guid: 92516c8a30f0309498c5c43c85b5f987, type: 2}
+  _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}

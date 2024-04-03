@@ -385,7 +385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57030176}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -0.025, z: 0}
+  m_LocalPosition: {x: 0.6, y: -0.025, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1366,7 +1366,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1410725364}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &315867240
 MonoBehaviour:
@@ -2146,7 +2146,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 81f90ac300000000
+  m_ApplyToSortingLayers: 81f90ac3000000007746afe5
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -2747,6 +2747,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &762295976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762295977}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &762295977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762295976}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.62, y: -0.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1410725364}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &768410036
 GameObject:
   m_ObjectHideFlags: 0
@@ -5150,6 +5181,7 @@ Transform:
   m_Children:
   - {fileID: 909259585}
   - {fileID: 76310491}
+  - {fileID: 762295977}
   - {fileID: 315867239}
   m_Father: {fileID: 1823301781}
   m_RootOrder: 4
@@ -5207,9 +5239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce895ca5e13f3b64a8933d2ba0466c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponSO: {fileID: 0}
-  _characterSource: {fileID: 0}
-  _muzzle: {fileID: 0}
+  _weaponSO: {fileID: 11400000, guid: f56cf73d605c30c4c8ead4dff0644b58, type: 2}
+  _characterSource: {fileID: 1823301780}
+  _muzzle: {fileID: 762295977}
   _burstRate: 0.3
   _nextBurst: 0
   _maxShootCount: 3

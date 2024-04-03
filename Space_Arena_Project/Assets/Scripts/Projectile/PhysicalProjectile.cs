@@ -34,7 +34,6 @@ public class PhysicalProjectile : ProjectileBehaviour
                 Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
             }
 
-            //Debug.Log($"// _hits: {_hits}");
             Destroy(gameObject);
         }
     }
