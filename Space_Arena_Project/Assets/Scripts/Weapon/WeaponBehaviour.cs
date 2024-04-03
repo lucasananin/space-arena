@@ -5,13 +5,18 @@ using UnityEngine;
 
 public abstract class WeaponBehaviour : MonoBehaviour
 {
-    [SerializeField] protected GameObject _characterSource = null;
     [SerializeField] protected WeaponSO _weaponSO = null;
+    [SerializeField] protected GameObject _characterSource = null;
+    [SerializeField] protected Transform _muzzle = null;
 
     public event Action onShoot = null;
 
-    public void InvokeOnShootEvent()
+    public virtual void Shoot()
     {
+        ProjectileBehaviour _projectile = Instantiate(_weaponSO.GetProjectilePrefab(), _muzzle.position, transform.rotation);
+        ShootModel _shootModel = new ShootModel(_characterSource, this);
+        _projectile.Init(_shootModel);
+
         onShoot?.Invoke();
         Debug.Log($"// Shoot!");
     }

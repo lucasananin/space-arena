@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.8666667, b: 0.19999999, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7353528016857128665}
   - component: {fileID: 4705853102255858287}
   m_Layer: 0
-  m_Name: PhysicalProjectile_1
+  m_Name: Projectile_Physical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,13 +130,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0550060135c65749a12e755d50e7073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 100
-  _castRadius: 0.15
   _layerMask:
     serializedVersion: 2
     m_Bits: 1
-  _lastPosition: {x: 0, y: 0, z: 0}
+  _shootModel:
+    _characterSource: {fileID: 0}
+    _weaponSource: {fileID: 0}
+  _moveSpeed: 50
+  _castRadius: 0.15
   _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
+  _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!58 &4705853102255858287
 CircleCollider2D:
   m_ObjectHideFlags: 0

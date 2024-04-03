@@ -32,8 +32,9 @@ public class BurstWeapon : WeaponBehaviour
             if (_nextFire >= _fireRate)
             {
                 _nextFire -= _nextFire;
+                Shoot();
+
                 _currentShootCount++;
-                InvokeOnShootEvent();
 
                 if (_currentShootCount >= _maxShootCount)
                 {

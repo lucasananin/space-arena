@@ -8,9 +8,6 @@ public class SemiAutoWeapon : WeaponBehaviour
     [SerializeField] float _fireRate = 0.1f;
     [SerializeField, ReadOnly] float _nextFire = 0;
 
-    public ProjectileBehaviour _projectile = null;
-    public Transform _muzzle = null;
-
     private void Awake()
     {
         _nextFire = _fireRate;
@@ -26,11 +23,7 @@ public class SemiAutoWeapon : WeaponBehaviour
         if (_nextFire < _fireRate) return;
 
         _nextFire -= _fireRate;
-
-        ProjectileBehaviour _projectile = Instantiate(_weaponSO.GetProjectilePrefab(), _muzzle.position, transform.rotation);
-        ShootModel _shootModel = new ShootModel(_characterSource, this);
-        _projectile.Init(_shootModel);
-        InvokeOnShootEvent();
+        Shoot();
     }
 
     public override void ReleaseTrigger()

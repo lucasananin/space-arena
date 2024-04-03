@@ -5,13 +5,11 @@ using UnityEngine;
 
 public class PhysicalProjectile : ProjectileBehaviour
 {
+    [Title("// Physical Properties")]
     [SerializeField] float _moveSpeed = 20f;
-    [SerializeField] float _castRadius = 1f;
-    [SerializeField] LayerMask _layerMask = default;
-    [SerializeField, ReadOnly] Vector3 _lastPosition = default;
-    [SerializeField, ReadOnly] ShootModel _shootModel = null;
-    [Space]
+    [SerializeField] float _castRadius = 0.2f;
     [SerializeField] ParticleSystem _hitVfx = null;
+    [SerializeField, ReadOnly] Vector3 _lastPosition = default;
 
     private RaycastHit2D[] _results = new RaycastHit2D[5];
 
@@ -51,6 +49,7 @@ public class PhysicalProjectile : ProjectileBehaviour
         {
             for (int i = 0; i < _hits; i++)
             {
+                if (i > 0) break;
                 if (_results[i].collider.gameObject == _shootModel.CharacterSource) return;
 
                 Instantiate(_hitVfx, _results[i].point, Quaternion.identity);

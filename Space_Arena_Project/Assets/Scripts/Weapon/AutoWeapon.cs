@@ -21,7 +21,7 @@ public class AutoWeapon : WeaponBehaviour
         if (_nextFire >= _fireRate && _isHoldingTrigger)
         {
             _nextFire -= _fireRate;
-            InvokeOnShootEvent();
+            Shoot();
         }
     }
 

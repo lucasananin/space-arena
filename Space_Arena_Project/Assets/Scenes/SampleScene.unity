@@ -2454,7 +2454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &658081177
 Transform:
   m_ObjectHideFlags: 0
@@ -2468,6 +2468,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1619898621}
+  - {fileID: 1572900112}
   - {fileID: 1306091131}
   - {fileID: 795426559}
   m_Father: {fileID: 1823301781}
@@ -2526,8 +2527,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15682ba2bb08d74ab1393fb60419baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterSource: {fileID: 0}
-  _weaponSO: {fileID: 0}
+  _weaponSO: {fileID: 11400000, guid: 30ecdf5b450b1474c80b39c9680f3750, type: 2}
+  _characterSource: {fileID: 1823301780}
+  _muzzle: {fileID: 1572900112}
   _fireRate: 0.1
   _nextFire: 0
   _isHoldingTrigger: 0
@@ -2909,7 +2911,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 658081177}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &795426560
 MonoBehaviour:
@@ -4360,7 +4362,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 658081177}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &1306091132
 LineRenderer:
@@ -5205,8 +5207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce895ca5e13f3b64a8933d2ba0466c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterSource: {fileID: 0}
   _weaponSO: {fileID: 0}
+  _characterSource: {fileID: 0}
+  _muzzle: {fileID: 0}
   _burstRate: 0.3
   _nextBurst: 0
   _maxShootCount: 3
@@ -5720,6 +5723,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1572900111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1572900112}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1572900112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572900111}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: -0.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 658081177}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1585925010
 GameObject:
   m_ObjectHideFlags: 0
@@ -6089,7 +6123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1654674102
 Transform:
   m_ObjectHideFlags: 0
@@ -6161,12 +6195,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb808b67afd45264aa38f541f3bc38d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterSource: {fileID: 1823301780}
   _weaponSO: {fileID: 11400000, guid: 1e90c408e692ad5429ca305582984276, type: 2}
+  _characterSource: {fileID: 1823301780}
+  _muzzle: {fileID: 57030177}
   _fireRate: 0.1
   _nextFire: 0
-  _projectile: {fileID: 7353528016857128665, guid: 2187d2bd70d6c0c458c031848714ca90, type: 3}
-  _muzzle: {fileID: 57030177}
 --- !u!1 &1658090166
 GameObject:
   m_ObjectHideFlags: 0
@@ -7087,7 +7120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc79a4ce3cf18a478d80be9557cbccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentWeapon: {fileID: 1654674106}
+  _currentWeapon: {fileID: 658081181}
 --- !u!1 &1903408135
 GameObject:
   m_ObjectHideFlags: 0
