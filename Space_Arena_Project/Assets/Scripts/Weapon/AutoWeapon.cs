@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutoWeapon : AbstractWeaponBehaviour
+public class AutoWeapon : WeaponBehaviour
 {
     [SerializeField] float _fireRate = 0.1f;
     [SerializeField, ReadOnly] float _nextFire = 0;

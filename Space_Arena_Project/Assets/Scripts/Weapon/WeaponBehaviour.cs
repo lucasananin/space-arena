@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AbstractWeaponBehaviour : MonoBehaviour
+public abstract class WeaponBehaviour : MonoBehaviour
 {
+    [SerializeField] protected GameObject _characterSource = null;
+    [SerializeField] protected WeaponSO _weaponSO = null;
+
     public event Action onShoot = null;
 
     public void InvokeOnShootEvent()

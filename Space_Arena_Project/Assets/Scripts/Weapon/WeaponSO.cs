@@ -5,5 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Weapon_", menuName = "SO/Weapons/Weapon Data")]
 public class WeaponSO : ScriptableObject
 {
-    // guarda os dados da arma.
+    [SerializeField] ProjectileSO _projectileSO = null;
+
+    public ProjectileBehaviour GetProjectilePrefab()
+    {
+        return _projectileSO.Prefab;
+    }
 }

@@ -385,7 +385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57030176}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.025, z: 0}
+  m_LocalPosition: {x: 1, y: -0.025, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2526,6 +2526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15682ba2bb08d74ab1393fb60419baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterSource: {fileID: 0}
+  _weaponSO: {fileID: 0}
   _fireRate: 0.1
   _nextFire: 0
   _isHoldingTrigger: 0
@@ -4617,7 +4619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330767461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.35, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0.35, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5203,6 +5205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce895ca5e13f3b64a8933d2ba0466c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterSource: {fileID: 0}
+  _weaponSO: {fileID: 0}
   _burstRate: 0.3
   _nextBurst: 0
   _maxShootCount: 3
@@ -5373,7 +5377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496947356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0.025, z: 0}
+  m_LocalPosition: {x: 0.6, y: -0.025, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6157,6 +6161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb808b67afd45264aa38f541f3bc38d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterSource: {fileID: 1823301780}
+  _weaponSO: {fileID: 11400000, guid: 1e90c408e692ad5429ca305582984276, type: 2}
   _fireRate: 0.1
   _nextFire: 0
   _projectile: {fileID: 7353528016857128665, guid: 2187d2bd70d6c0c458c031848714ca90, type: 3}

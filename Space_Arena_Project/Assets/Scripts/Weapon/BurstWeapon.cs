@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BurstWeapon : AbstractWeaponBehaviour
+public class BurstWeapon : WeaponBehaviour
 {
     [SerializeField] float _burstRate = 0.5f;
     [SerializeField, ReadOnly] float _nextBurst = 0;

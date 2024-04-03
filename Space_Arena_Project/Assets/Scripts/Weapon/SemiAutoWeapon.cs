@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SemiAutoWeapon : AbstractWeaponBehaviour
+public class SemiAutoWeapon : WeaponBehaviour
 {
     [SerializeField] float _fireRate = 0.1f;
     [SerializeField, ReadOnly] float _nextFire = 0;
 
-    public AbstractProjectileBehaviour _projectile = null;
+    public ProjectileBehaviour _projectile = null;
     public Transform _muzzle = null;
 
     private void Awake()
@@ -26,8 +26,11 @@ public class SemiAutoWeapon : AbstractWeaponBehaviour
         if (_nextFire < _fireRate) return;
 
         _nextFire -= _fireRate;
+
+        ProjectileBehaviour _projectile = Instantiate(_weaponSO.GetProjectilePrefab(), _muzzle.position, transform.rotation);
+        ShootModel _shootModel = new ShootModel(_characterSource, this);
+        _projectile.Init(_shootModel);
         InvokeOnShootEvent();
-        Instantiate(_projectile, _muzzle.position, transform.rotation);
     }
 
     public override void ReleaseTrigger()
