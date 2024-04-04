@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: _Weapon_Burst
   m_EditorClassIdentifier: 
-  _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}
+  _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
