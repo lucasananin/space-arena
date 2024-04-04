@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OverlapProjectile : ProjectileBehaviour
 {
-    [SerializeField] CapsuleCollider2D _dummyCapsule = null;
+    [SerializeField] CapsuleCollider2D _dummyCapsuleCollider = null;
     [SerializeField] ParticleSystem _hitVfx = null;
 
     private Collider2D[] _results = new Collider2D[5];
@@ -13,8 +13,10 @@ public class OverlapProjectile : ProjectileBehaviour
     {
         this._shootModel = _shootModel;
 
-        Vector3 _position = transform.position + transform.right * _dummyCapsule.offset.x + transform.up * _dummyCapsule.offset.y;
-        int _hits = Physics2D.OverlapCapsuleNonAlloc(_position, _dummyCapsule.size, _dummyCapsule.direction, 0, _results, _layerMask);
+        Vector3 _xOffset = transform.right * _dummyCapsuleCollider.offset.x;
+        Vector3 _yOffset = transform.up * _dummyCapsuleCollider.offset.y;
+        Vector3 _point = transform.position + _xOffset + _yOffset;
+        int _hits = Physics2D.OverlapCapsuleNonAlloc(_point, _dummyCapsuleCollider.size, _dummyCapsuleCollider.direction, 0, _results, _layerMask);
 
         if (_hits > 0)
         {

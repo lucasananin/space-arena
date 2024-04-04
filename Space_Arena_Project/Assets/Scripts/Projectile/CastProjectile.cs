@@ -6,7 +6,7 @@ using UnityEngine;
 public class CastProjectile : ProjectileBehaviour
 {
     [Title("// Cast Properties")]
-    [SerializeField] float _castRadius = 0.2f;
+    [SerializeField] CircleCollider2D _dummyCircleCollider = null;
     [SerializeField] ParticleSystem _hitVfx = null;
 
     private RaycastHit2D[] _results = new RaycastHit2D[5];
@@ -17,7 +17,7 @@ public class CastProjectile : ProjectileBehaviour
     {
         this._shootModel = _shootModel;
 
-        int _hits = Physics2D.CircleCastNonAlloc(transform.position, _castRadius, transform.right, _results, CAST_MAX_DISTANCE, _layerMask);
+        int _hits = Physics2D.CircleCastNonAlloc(transform.position, _dummyCircleCollider.radius, transform.right, _results, CAST_MAX_DISTANCE, _layerMask);
 
         if (_hits > 0)
         {
@@ -28,7 +28,6 @@ public class CastProjectile : ProjectileBehaviour
 
                 Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
             }
-
         }
 
         Destroy(gameObject);

@@ -51,7 +51,7 @@ MonoBehaviour:
   _shootModel:
     _characterSource: {fileID: 0}
     _weaponSource: {fileID: 0}
-  _castRadius: 0.1
+  _dummyCircleCollider: {fileID: 2945808015590850479}
   _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
 --- !u!58 &2945808015590850479
 CircleCollider2D:
@@ -63,7 +63,7 @@ CircleCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
