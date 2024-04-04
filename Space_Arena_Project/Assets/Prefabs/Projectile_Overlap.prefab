@@ -51,7 +51,7 @@ MonoBehaviour:
   _shootModel:
     _characterSource: {fileID: 0}
     _weaponSource: {fileID: 0}
-  _dummyCapsule: {fileID: 1845144823647906366}
+  _dummyCapsuleCollider: {fileID: 1845144823647906366}
   _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
 --- !u!70 &1845144823647906366
 CapsuleCollider2D:

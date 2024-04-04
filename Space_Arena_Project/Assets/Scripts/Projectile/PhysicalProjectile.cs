@@ -6,23 +6,23 @@ using UnityEngine;
 public class PhysicalProjectile : ProjectileBehaviour
 {
     [Title("// Physical Properties")]
+    [SerializeField] Rigidbody2D _rb = null;
+    [SerializeField] CircleCollider2D _dummyCircleCollider = null;
     [SerializeField] float _moveSpeed = 20f;
-    [SerializeField] float _castRadius = 0.2f;
     [SerializeField] ParticleSystem _hitVfx = null;
     [SerializeField, ReadOnly] Vector3 _lastPosition = default;
 
     private RaycastHit2D[] _results = new RaycastHit2D[5];
 
-    private void Update()
+    private void FixedUpdate()
     {
         _lastPosition = transform.position;
-        transform.position += transform.right * _moveSpeed  * Time.deltaTime;
     }
 
     private void LateUpdate()
     {
         float _distance = Vector2.Distance(transform.position, _lastPosition);
-        int _hits = Physics2D.CircleCastNonAlloc(_lastPosition, _castRadius, transform.right, _results, _distance, _layerMask);
+        int _hits = Physics2D.CircleCastNonAlloc(_lastPosition, _dummyCircleCollider.radius, transform.right, _results, _distance, _layerMask);
 
         if (_hits > 0)
         {
@@ -41,20 +41,7 @@ public class PhysicalProjectile : ProjectileBehaviour
     public override void Init(ShootModel _shootModel)
     {
         this._shootModel = _shootModel;
-
-        int _hits = Physics2D.CircleCastNonAlloc(-transform.right, _castRadius, transform.right, _results, 1f, _layerMask);
-
-        if (_hits > 0)
-        {
-            for (int i = 0; i < _hits; i++)
-            {
-                if (i > 0) break;
-                if (_results[i].collider.gameObject == _shootModel.CharacterSource) return;
-
-                Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
-            }
-
-            Destroy(gameObject);
-        }
+        _lastPosition = transform.position;
+        _rb.velocity = transform.right * _moveSpeed;
     }
 }
