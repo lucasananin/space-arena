@@ -1283,7 +1283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &247042775
 Transform:
   m_ObjectHideFlags: 0
@@ -2930,11 +2930,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 757533903}
-  - component: {fileID: 757533902}
   - component: {fileID: 757533901}
+  - component: {fileID: 757533902}
   - component: {fileID: 757533900}
   - component: {fileID: 757533899}
   - component: {fileID: 757533898}
+  - component: {fileID: 757533904}
   m_Layer: 6
   m_Name: Enemy_1b
   m_TagString: Untagged
@@ -2972,7 +2973,7 @@ MonoBehaviour:
   radius: 0.4
   height: 2
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 2
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -3079,6 +3080,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &757533904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757533897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf73c278fe9f5cc478829fdd7f8fac11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 757533903}
+  _flipX: 1
+  _flipY: 0
+  _aiPath: {fileID: 757533899}
+  _isMovingRight: 1
 --- !u!1 &760096414
 GameObject:
   m_ObjectHideFlags: 0
@@ -4242,9 +4260,6 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
-  _seeker: {fileID: 0}
-  _aiPath: {fileID: 0}
-  _aIDestinationSetter: {fileID: 0}
 --- !u!50 &1034566549
 Rigidbody2D:
   serializedVersion: 4
@@ -5946,7 +5961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1410725364
 Transform:
   m_ObjectHideFlags: 0
@@ -7019,7 +7034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1654674102
 Transform:
   m_ObjectHideFlags: 0
@@ -8016,7 +8031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc79a4ce3cf18a478d80be9557cbccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentWeapon: {fileID: 1654674106}
+  _currentWeapon: {fileID: 1410725369}
 --- !u!1 &1903408135
 GameObject:
   m_ObjectHideFlags: 0
