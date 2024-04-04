@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 192
   _shootModel:
     _characterSource: {fileID: 0}
     _weaponSource: {fileID: 0}
