@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class WeaponRotator : MonoBehaviour
 {
-    private void Update()
-    {
-        LookAtMouse();
-    }
+    //private void Update()
+    //{
+    //    LookAtMouse();
+    //}
 
-    private void LookAtMouse()
+    public void LookAtMouse()
     {
         Vector3 _mousePosition = InputHandler.GetMousePosition();
         Vector3 _direction = _mousePosition - Camera.main.WorldToScreenPoint(transform.position);

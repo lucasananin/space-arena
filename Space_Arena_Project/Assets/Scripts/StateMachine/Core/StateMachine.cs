@@ -89,7 +89,15 @@ namespace UOP1.StateMachine
 			_currentState.OnUpdate();
 		}
 
-		private void Transition(State transitionState)
+        private void FixedUpdate()
+        {
+			if (_currentState.TryGetTransition(out var transitionState))
+				Transition(transitionState);
+
+			_currentState.OnFixedUpdate();
+		}
+
+        private void Transition(State transitionState)
 		{
 			_currentState.OnStateExit();
 			_currentState = transitionState;
