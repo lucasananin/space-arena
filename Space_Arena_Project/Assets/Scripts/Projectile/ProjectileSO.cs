@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Projectile_", menuName = "SO/Projectile Data")]
+[CreateAssetMenu(fileName = "Projectile_", menuName = "SO/Combat/Projectile Data")]
 public class ProjectileSO : ScriptableObject
 {
     [SerializeField] ProjectileBehaviour _prefab = null;
