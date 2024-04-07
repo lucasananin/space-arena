@@ -19,7 +19,8 @@ public class PlayerAimAction : StateAction
 
     public override void Awake(StateMachine stateMachine)
     {
-        _weaponRotator = stateMachine.GetComponentInChildren<WeaponRotator>();
+        var _playerWeaponHandler = stateMachine.GetComponent<PlayerWeaponHandler>();
+        _weaponRotator = _playerWeaponHandler.CurrentWeapon.GetComponent<WeaponRotator>();
     }
 
     public override void OnFixedUpdate()

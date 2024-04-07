@@ -7,6 +7,8 @@ public class PlayerWeaponHandler : MonoBehaviour
 {
     [SerializeField] WeaponBehaviour _currentWeapon = null;
 
+    public WeaponBehaviour CurrentWeapon { get => _currentWeapon; private set => _currentWeapon = value; }
+
     private void OnEnable()
     {
         InputHandler.onFireInputDown += PullTrigger;

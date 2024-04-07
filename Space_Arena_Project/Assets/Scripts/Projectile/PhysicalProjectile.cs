@@ -29,7 +29,7 @@ public class PhysicalProjectile : ProjectileBehaviour
             for (int i = 0; i < _hits; i++)
             {
                 if (i > 0) break;
-                if (_results[i].collider.gameObject == _shootModel.CharacterSource) return;
+                if (HasHitSource(_results[i].collider.gameObject)) continue;
 
                 Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
             }
