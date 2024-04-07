@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c83bc7b64efbc1f4e9b1e00bbec38444, type: 3}
-  m_Name: _Projectile_Overlap
+  m_Name: _Projectile_OverlapMelee
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 1845144823647906352, guid: 299428f855a149d4195f4401d17496fe, type: 3}
+  _prefab: {fileID: 1845144823647906352, guid: 2e247cf394bbd0646ab4ea9dbeb31b18, type: 3}

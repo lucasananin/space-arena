@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1845144823647906353}
   - component: {fileID: 1845144823647906352}
-  - component: {fileID: 1845144823647906366}
   - component: {fileID: 4391345075234278985}
+  - component: {fileID: 1845144823647906366}
   m_Layer: 0
   m_Name: Projectile_OverlapMelee
   m_TagString: Untagged
@@ -53,9 +53,7 @@ MonoBehaviour:
   _shootModel:
     _characterSource: {fileID: 0}
     _weaponSource: {fileID: 0}
-  _dummyCapsuleCollider: {fileID: 1845144823647906366}
   _collider2D: {fileID: 1845144823647906366}
-  _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
   _contactFilter2D:
     useTriggers: 0
     useLayerMask: 1
@@ -70,22 +68,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
---- !u!70 &1845144823647906366
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845144823647906367}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0}
-  m_Size: {x: 1, y: 0.3}
-  m_Direction: 1
+  _timeUntilDestroy: 1
+  _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
 --- !u!50 &4391345075234278985
 Rigidbody2D:
   serializedVersion: 4
@@ -107,6 +91,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &1845144823647906366
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845144823647906367}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: 0}
+  m_Size: {x: 1, y: 0.3}
+  m_Direction: 1
 --- !u!1 &2006250886926594378
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ public class CastProjectile : ProjectileBehaviour
 {
     [Title("// Cast")]
     [SerializeField] CircleCollider2D _dummyCircleCollider = null;
+
+    [Title("// Vfx")]
     [SerializeField] ParticleSystem _hitVfx = null;
 
     private RaycastHit2D[] _results = new RaycastHit2D[5];

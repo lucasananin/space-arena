@@ -10,6 +10,8 @@ public abstract class WeaponBehaviour : MonoBehaviour
     [SerializeField] protected Transform _muzzle = null;
 
     public event Action onShoot = null;
+    public event Action onPullTrigger = null;
+    public event Action onReleaseTrigger = null;
 
     public virtual void Shoot()
     {
@@ -21,6 +23,16 @@ public abstract class WeaponBehaviour : MonoBehaviour
         Debug.Log($"// Shoot!");
     }
 
-    public abstract void PullTrigger();
-    public abstract void ReleaseTrigger();
+    //public abstract void PullTrigger();
+    //public abstract void ReleaseTrigger();
+
+    public virtual void PullTrigger()
+    {
+        onPullTrigger?.Invoke();
+    }
+
+    public virtual void ReleaseTrigger()
+    {
+        onReleaseTrigger?.Invoke();
+    }
 }

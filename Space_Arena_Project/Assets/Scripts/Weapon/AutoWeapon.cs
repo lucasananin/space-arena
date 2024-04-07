@@ -28,10 +28,12 @@ public class AutoWeapon : WeaponBehaviour
     public override void PullTrigger()
     {
         _isHoldingTrigger = true;
+        base.PullTrigger();
     }
 
     public override void ReleaseTrigger()
     {
         _isHoldingTrigger = false;
+        base.ReleaseTrigger();
     }
 }
