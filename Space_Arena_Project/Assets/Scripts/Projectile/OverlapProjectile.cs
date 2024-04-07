@@ -1,15 +1,13 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class OverlapProjectile : ProjectileBehaviour
 {
+    [Title("// Overlap")]
     [SerializeField] CapsuleCollider2D _dummyCapsuleCollider = null;
     [SerializeField] ParticleSystem _hitVfx = null;
-    [Space]
-    [SerializeField] SpriteRenderer _slashVfx = null;
-    [SerializeField] float _slashVfxTime = 0.2f;
-    [SerializeField] float _timeToDestroy = 1f;
 
     private Collider2D[] _results = new Collider2D[5];
 
@@ -29,18 +27,6 @@ public class OverlapProjectile : ProjectileBehaviour
 
             Instantiate(_hitVfx, _results[i].ClosestPoint(transform.position), Quaternion.identity);
         }
-
-        //Destroy(gameObject);
-        StartCoroutine(DestroyRoutine());
-    }
-
-    private IEnumerator DestroyRoutine()
-    {
-        yield return new WaitForSeconds(_slashVfxTime);
-
-        _slashVfx.enabled = false;
-
-        yield return new WaitForSeconds(_timeToDestroy - _slashVfxTime);
 
         Destroy(gameObject);
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PhysicalProjectile : ProjectileBehaviour
 {
-    [Title("// Physical Properties")]
+    [Title("// Physical")]
     [SerializeField] Rigidbody2D _rb = null;
     [SerializeField] CircleCollider2D _dummyCircleCollider = null;
     [SerializeField] float _moveSpeed = 20f;

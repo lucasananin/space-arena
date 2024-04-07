@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CastProjectile : ProjectileBehaviour
 {
-    [Title("// Cast Properties")]
+    [Title("// Cast")]
     [SerializeField] CircleCollider2D _dummyCircleCollider = null;
     [SerializeField] ParticleSystem _hitVfx = null;
 
