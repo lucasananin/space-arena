@@ -18,18 +18,20 @@ public class CastProjectile : ProjectileBehaviour
         this._shootModel = _shootModel;
 
         int _hits = Physics2D.CircleCastNonAlloc(transform.position, _dummyCircleCollider.radius, transform.right, _results, CAST_MAX_DISTANCE, _layerMask);
+        bool _canDestroy = false;
 
-        if (_hits > 0)
+        for (int i = 0; i < _hits; i++)
         {
-            for (int i = 0; i < _hits; i++)
-            {
-                if (i > 0) break;
-                if (HasHitSource(_results[i].collider.gameObject)) continue;
+            if (i > 0) break;
+            if (HasHitSource(_results[i].collider.gameObject)) continue;
 
-                Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
-            }
+            _canDestroy = true;
+            Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
         }
 
-        Destroy(gameObject);
+        if (_canDestroy)
+        {
+            Destroy(gameObject);
+        }
     }
 }

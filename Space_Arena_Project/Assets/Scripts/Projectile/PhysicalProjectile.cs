@@ -23,17 +23,19 @@ public class PhysicalProjectile : ProjectileBehaviour
     {
         float _distance = Vector2.Distance(transform.position, _lastPosition);
         int _hits = Physics2D.CircleCastNonAlloc(_lastPosition, _dummyCircleCollider.radius, transform.right, _results, _distance, _layerMask);
+        bool _canDestroy = false;
 
-        if (_hits > 0)
+        for (int i = 0; i < _hits; i++)
         {
-            for (int i = 0; i < _hits; i++)
-            {
-                if (i > 0) break;
-                if (HasHitSource(_results[i].collider.gameObject)) continue;
+            if (i > 0) break;
+            if (HasHitSource(_results[i].collider.gameObject)) continue;
 
-                Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
-            }
+            _canDestroy = true;
+            Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
+        }
 
+        if (_canDestroy)
+        {
             Destroy(gameObject);
         }
     }

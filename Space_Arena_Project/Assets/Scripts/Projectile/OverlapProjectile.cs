@@ -22,15 +22,12 @@ public class OverlapProjectile : ProjectileBehaviour
         Vector3 _point = transform.position + _xOffset + _yOffset;
         int _hits = Physics2D.OverlapCapsuleNonAlloc(_point, _dummyCapsuleCollider.size, _dummyCapsuleCollider.direction, 0, _results, _layerMask);
 
-        if (_hits > 0)
+        for (int i = 0; i < _hits; i++)
         {
-            for (int i = 0; i < _hits; i++)
-            {
-                if (HasHitSource(_results[i].gameObject)) continue;
-                // verificar se nao tem uma parede entre o source e o alvo.
+            if (HasHitSource(_results[i].gameObject)) continue;
+            // verificar se nao tem uma parede entre o source e o alvo.
 
-                Instantiate(_hitVfx, _results[i].ClosestPoint(transform.position), Quaternion.identity);
-            }
+            Instantiate(_hitVfx, _results[i].ClosestPoint(transform.position), Quaternion.identity);
         }
 
         //Destroy(gameObject);
