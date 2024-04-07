@@ -10,13 +10,30 @@ public class PhysicalProjectile : ProjectileBehaviour
     [SerializeField] CircleCollider2D _dummyCircleCollider = null;
     [SerializeField] float _moveSpeed = 20f;
     [SerializeField] ParticleSystem _hitVfx = null;
+    [Space]
+    [SerializeField] bool _destroyOnCollision = true;
+    [Space]
+    [SerializeField] int _maxPierceCount = 1;
+    [SerializeField, ReadOnly] int _currentPierceCount = 0;
+    [Space]
+    [SerializeField] float _timeUntilDestroy = 1f;
+    [SerializeField, ReadOnly] float _destroyTimer = 0f;
+    [Space]
     [SerializeField, ReadOnly] Vector3 _lastPosition = default;
+    [SerializeField, ReadOnly] List<Collider2D> _collidersHit = default;
 
     private RaycastHit2D[] _results = new RaycastHit2D[5];
 
     private void FixedUpdate()
     {
         _lastPosition = transform.position;
+
+        _destroyTimer += Time.fixedDeltaTime;
+
+        if (_destroyTimer >= _timeUntilDestroy/* && !_destroyOnCollision*/)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void LateUpdate()
@@ -27,16 +44,26 @@ public class PhysicalProjectile : ProjectileBehaviour
 
         for (int i = 0; i < _hits; i++)
         {
-            if (i > 0) break;
+            //if (i > 0) break;
             if (HasHitSource(_results[i].collider.gameObject)) continue;
+            if (_collidersHit.Contains(_results[i].collider)) continue;
 
-            _canDestroy = true;
+            _collidersHit.Add(_results[i].collider);
             Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
+
+            _currentPierceCount++;
+
+            if (_currentPierceCount >= _maxPierceCount && _destroyOnCollision)
+            {
+                _canDestroy = true;
+                Destroy(gameObject);
+                break;
+            }
         }
 
-        if (_canDestroy)
+        if (_canDestroy && _timeUntilDestroy < 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 

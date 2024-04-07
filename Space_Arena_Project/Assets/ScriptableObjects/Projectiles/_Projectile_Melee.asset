@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83bc7b64efbc1f4e9b1e00bbec38444, type: 3}
   m_Name: _Projectile_Melee
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 6568830702246451982, guid: e2fa21e62d742264da0d0f176b7d2cb5, type: 3}
+  _prefab: {fileID: 7353528016857128665, guid: b84b81a06f4e7ce4b835a7b24dd4d642, type: 3}
