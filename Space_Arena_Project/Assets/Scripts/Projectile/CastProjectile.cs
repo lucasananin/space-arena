@@ -7,13 +7,14 @@ public class CastProjectile : ProjectileBehaviour
 {
     [Title("// Cast")]
     [SerializeField] CircleCollider2D _dummyCircleCollider = null;
+    [SerializeField] float _maxCastDistance = 99f;
 
     [Title("// Vfx")]
     [SerializeField] ParticleSystem _hitVfx = null;
 
     private RaycastHit2D[] _results = new RaycastHit2D[5];
 
-    public const float CAST_MAX_DISTANCE = 99F;
+    //public const float CAST_MAX_DISTANCE = 99F;
 
     //private void FixedUpdate()
     //{
@@ -26,7 +27,7 @@ public class CastProjectile : ProjectileBehaviour
         //SetDestroyTimer();
         base.Init(_shootModel);
 
-        int _hits = Physics2D.CircleCastNonAlloc(transform.position, _dummyCircleCollider.radius, transform.right, _results, CAST_MAX_DISTANCE, _layerMask);
+        int _hits = Physics2D.CircleCastNonAlloc(transform.position, _dummyCircleCollider.radius, transform.right, _results, _maxCastDistance, _layerMask);
         //bool _canDestroy = false;
 
         for (int i = 0; i < _hits; i++)
