@@ -53,6 +53,9 @@ MonoBehaviour:
   _shootModel:
     _characterSource: {fileID: 0}
     _weaponSource: {fileID: 0}
+  _minMaxTimeUntilDestroy: {x: 1, y: 2}
+  _timeUntilDestroy: 1
+  _destroyTimer: 0
   _collider2D: {fileID: 1845144823647906366}
   _contactFilter2D:
     useTriggers: 0
@@ -68,7 +71,6 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  _timeUntilDestroy: 1
   _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
 --- !u!50 &4391345075234278985
 Rigidbody2D:

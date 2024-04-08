@@ -12,7 +12,7 @@ public class PhysicalProjectile : ProjectileBehaviour
     [SerializeField] float _moveSpeed = 20f;
     [SerializeField] bool _destroyOnCollision = true;
     [SerializeField] int _maxPierceCount = 1;
-    [SerializeField] float _timeUntilDestroy = 1f;
+    //[SerializeField] float _timeUntilDestroy = 1f;
 
     [Title("// Vfx")]
     [SerializeField] ParticleSystem _hitVfx = null;
@@ -20,20 +20,20 @@ public class PhysicalProjectile : ProjectileBehaviour
     [SerializeField, ReadOnly] List<Collider2D> _collidersHit = default;
     [SerializeField, ReadOnly] Vector3 _lastPosition = default;
     [SerializeField, ReadOnly] int _currentPierceCount = 0;
-    [SerializeField, ReadOnly] float _destroyTimer = 0f;
+    //[SerializeField, ReadOnly] float _destroyTimer = 0f;
 
     private RaycastHit2D[] _results = new RaycastHit2D[5];
 
     private void FixedUpdate()
     {
         _lastPosition = transform.position;
+        CheckDestroyTime();
+        //_destroyTimer += Time.fixedDeltaTime;
 
-        _destroyTimer += Time.fixedDeltaTime;
-
-        if (_destroyTimer >= _timeUntilDestroy)
-        {
-            Destroy(gameObject);
-        }
+        //if (_destroyTimer >= _timeUntilDestroy)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 
     private void LateUpdate()
@@ -61,7 +61,9 @@ public class PhysicalProjectile : ProjectileBehaviour
 
     public override void Init(ShootModel _shootModel)
     {
-        this._shootModel = _shootModel;
+        base.Init(_shootModel);
+        //this._shootModel = _shootModel;
+        //SetDestroyTimer();
         _lastPosition = transform.position;
         _rb.velocity = transform.right * _moveSpeed;
     }
