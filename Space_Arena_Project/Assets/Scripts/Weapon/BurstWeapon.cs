@@ -9,15 +9,7 @@ public class BurstWeapon : WeaponBehaviour
     [SerializeField, ReadOnly] float _nextBurst = 0;
     [SerializeField] int _maxShootCount = 3;
     [SerializeField, ReadOnly] int _currentShootCount = 0;
-    //[SerializeField] float _fireRate = 0.1f;
-    //[SerializeField, ReadOnly] float _nextFire = 0f;
     [SerializeField, ReadOnly] bool _isBursting = false;
-
-    //private void Awake()
-    //{
-    //    _nextBurst = _burstRate;
-    //    _nextFire = _fireRate;
-    //}
 
     protected override void Awake()
     {
@@ -58,10 +50,11 @@ public class BurstWeapon : WeaponBehaviour
         _nextBurst -= _burstRate;
         _currentShootCount = 0;
         _isBursting = true;
+        base.PullTrigger();
     }
 
     public override void ReleaseTrigger()
     {
-        //
+        base.ReleaseTrigger();
     }
 }
