@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: _Weapon_SemiAuto
+  m_Script: {fileID: 11500000, guid: c83bc7b64efbc1f4e9b1e00bbec38444, type: 3}
+  m_Name: _Projectile_PhysicalCharged
   m_EditorClassIdentifier: 
-  _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
-  _chargedProjectileSO: {fileID: 11400000, guid: 1d8646e43cca1914ba232a22c09afd75, type: 2}
+  _prefab: {fileID: 7353528016857128665, guid: 2c3f6c1af9d69144d9a0a3c735a88efb, type: 3}
