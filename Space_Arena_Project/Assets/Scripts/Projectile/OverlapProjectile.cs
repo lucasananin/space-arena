@@ -14,9 +14,9 @@ public class OverlapProjectile : ProjectileBehaviour
 
     private RaycastHit2D[] _results = new RaycastHit2D[5];
 
-    public override void Init(ShootModel _shootModel)
+    public override void Init(ShootModel _newShootModel)
     {
-        base.Init(_shootModel);
+        base.Init(_newShootModel);
 
         int _hits = _collider2D.Cast(transform.right, _contactFilter2D, _results, 0, true);
 

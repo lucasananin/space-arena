@@ -8,17 +8,15 @@ public class PhysicalProjectile : ProjectileBehaviour
     [Title("// Physical")]
     [SerializeField] Rigidbody2D _rb = null;
     [SerializeField] CircleCollider2D _dummyCircleCollider = null;
-    [Space]
     [SerializeField] float _moveSpeed = 20f;
     [SerializeField] bool _destroyOnCollision = true;
-    [SerializeField] int _maxPierceCount = 1;
 
     [Title("// Vfx")]
     [SerializeField] ParticleSystem _hitVfx = null;
-    [Space]
+
+    [Title("// Debug - Physical")]
     [SerializeField, ReadOnly] List<Collider2D> _collidersHit = default;
     [SerializeField, ReadOnly] Vector3 _lastPosition = default;
-    [SerializeField, ReadOnly] int _currentPierceCount = 0;
 
     private RaycastHit2D[] _results = new RaycastHit2D[5];
 
@@ -41,9 +39,9 @@ public class PhysicalProjectile : ProjectileBehaviour
             _collidersHit.Add(_results[i].collider);
             Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
 
-            _currentPierceCount++;
+            IncreasePierceCount();
 
-            if (_currentPierceCount >= _maxPierceCount && _destroyOnCollision)
+            if (HasReachedMaxPierceCount() && _destroyOnCollision)
             {
                 Destroy(gameObject);
                 break;
@@ -51,9 +49,9 @@ public class PhysicalProjectile : ProjectileBehaviour
         }
     }
 
-    public override void Init(ShootModel _shootModel)
+    public override void Init(ShootModel _newShootModel)
     {
-        base.Init(_shootModel);
+        base.Init(_newShootModel);
         _lastPosition = transform.position;
         _rb.velocity = transform.right * _moveSpeed;
     }
