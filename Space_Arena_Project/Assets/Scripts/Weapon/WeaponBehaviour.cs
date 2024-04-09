@@ -20,7 +20,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
         _projectile.Init(_shootModel);
 
         onShoot?.Invoke();
-        Debug.Log($"// Shoot!");
+        //Debug.Log($"// Shoot!");
     }
 
     //public abstract void PullTrigger();
