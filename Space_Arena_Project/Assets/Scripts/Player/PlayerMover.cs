@@ -34,4 +34,9 @@ public class PlayerMover : MonoBehaviour
     {
         return _inputDirection != Vector2.zero;
     }
+
+    public float GetVelocityMagnitude()
+    {
+        return (Vector2.one * _moveSpeed).magnitude;
+    }
 }

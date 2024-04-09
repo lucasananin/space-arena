@@ -39,5 +39,9 @@ public abstract class ProjectileBehaviour : MonoBehaviour
         return _gameobjectHit == _shootModel.CharacterSource;
     }
 
-    //public abstract void Init(ShootModel _shootModel);
+    protected IEnumerator DestroyRoutine()
+    {
+        yield return new WaitForSeconds(_timeUntilDestroy);
+        Destroy(gameObject);
+    }
 }
