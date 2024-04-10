@@ -5,53 +5,41 @@ using UnityEngine;
 
 public class SemiAutoWeapon : WeaponBehaviour
 {
-    [Space]
-    [SerializeField] float _maxChargeTime = 1f;
-    [SerializeField] bool _isAutoChargeType = false;
-    [SerializeField] bool _hasChargeWeakShot = false;
-    [SerializeField, ReadOnly] bool _isCharging = false;
-    [SerializeField, ReadOnly] bool _hasShot = false;
-    [SerializeField, ReadOnly] float _chargeTimer = 0f;
+    [Title("// Semi Auto")]
+    [SerializeField] protected bool _isAutoChargeType = false;
+    [SerializeField] protected bool _hasChargeWeakShot = false;
+
+    [Title("// Debug - Semi Auto")]
+    [SerializeField, ReadOnly] protected bool _hasShotCharge = false;
 
     private void FixedUpdate()
     {
         _nextFire += _nextFire < _fireRate ? Time.fixedDeltaTime : 0;
 
-        if (_maxChargeTime <= 0) return;
+        SetChargeTimer();
 
-        if (_isCharging)
+        if (_isAutoChargeType && HasEnoughChargeTimer())
         {
-            _chargeTimer += _chargeTimer < _maxChargeTime ? Time.fixedDeltaTime : 0;
-        }
-        else
-        {
-            _chargeTimer -= _chargeTimer > 0 ? Time.fixedDeltaTime : 0;
-        }
-
-        if (_isAutoChargeType)
-        {
-            if (_chargeTimer >= _maxChargeTime)
-            {
-                _chargeTimer -= _maxChargeTime;
-                _isCharging = false;
-                _hasShot = true;
-                ShootChargedShot();
-            }
+            _isCharging = false;
+            _hasShotCharge = true;
+            ShootChargedShot();
         }
     }
 
     public override void PullTrigger()
     {
-        _hasShot = false;
+        _hasShotCharge = false;
 
         if (_nextFire < _fireRate) return;
 
-        _isCharging = true;
-
-        if (_maxChargeTime <= 0)
+        if (HasChargeTime())
+        {
+            _isCharging = true;
+        }
+        else
         {
             _isCharging = false;
-            _hasShot = true;
+            _hasShotCharge = true;
             Shoot();
         }
 
@@ -60,35 +48,42 @@ public class SemiAutoWeapon : WeaponBehaviour
 
     public override void ReleaseTrigger()
     {
-        if (_maxChargeTime <= 0)
+        if (HasChargeTime())
         {
-            base.ReleaseTrigger();
-            return;
+            TryManualChargeShot();
         }
 
-        if (_hasShot) return;
+        base.ReleaseTrigger();
+    }
+
+    private void TryManualChargeShot()
+    {
+        if (_hasShotCharge) return;
 
         if (!_isAutoChargeType)
         {
-            if (_chargeTimer >= _maxChargeTime)
+            if (HasEnoughChargeTimer())
             {
-                _chargeTimer -= _maxChargeTime;
-                _hasShot = true;
+                _hasShotCharge = true;
                 ShootChargedShot();
             }
-            else if (_hasChargeWeakShot && _chargeTimer < _maxChargeTime)
+            else if (CanWeakShot())
             {
-                _hasShot = true;
+                _hasShotCharge = true;
                 Shoot();
             }
         }
-        else if (_hasChargeWeakShot && _chargeTimer < _maxChargeTime)
+        else if (CanWeakShot())
         {
-            _hasShot = true;
+            _hasShotCharge = true;
             Shoot();
         }
 
         _isCharging = false;
-        base.ReleaseTrigger();
+    }
+
+    private bool CanWeakShot()
+    {
+        return _hasChargeWeakShot && _chargeTimer < _maxChargeTime;
     }
 }

@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class BurstWeapon : WeaponBehaviour
 {
+    [Title("// Burst")]
     [SerializeField] float _burstRate = 0.5f;
-    [SerializeField, ReadOnly] float _nextBurst = 0;
     [SerializeField] int _maxShootCount = 3;
+
+    [Title("// Debug - Burst")]
+    [SerializeField, ReadOnly] float _nextBurst = 0;
     [SerializeField, ReadOnly] int _currentShootCount = 0;
     [SerializeField, ReadOnly] bool _isBursting = false;
 
