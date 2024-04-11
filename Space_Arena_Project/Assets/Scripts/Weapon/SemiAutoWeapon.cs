@@ -18,7 +18,8 @@ public class SemiAutoWeapon : WeaponBehaviour
 
         SetChargeTimer();
 
-        if (_isAutoChargeType && HasEnoughChargeTimer())
+        if (CanAutoChargeShot())
+        //if (_isAutoChargeType && HasEnoughChargeTimer() && !_isOverheated)
         {
             _isCharging = false;
             _hasShotCharge = true;
@@ -31,6 +32,7 @@ public class SemiAutoWeapon : WeaponBehaviour
         _hasShotCharge = false;
 
         if (_nextFire < _fireRate) return;
+        if (_isOverheated) return;
 
         if (HasChargeTime())
         {
@@ -59,6 +61,7 @@ public class SemiAutoWeapon : WeaponBehaviour
     private void TryManualChargeShot()
     {
         if (_hasShotCharge) return;
+        if (_isOverheated) return;
 
         if (!_isAutoChargeType)
         {
@@ -85,5 +88,10 @@ public class SemiAutoWeapon : WeaponBehaviour
     private bool CanWeakShot()
     {
         return _hasChargeWeakShot && _chargeTimer < _maxChargeTime;
+    }
+
+    private bool CanAutoChargeShot()
+    {
+        return _isAutoChargeType && HasEnoughChargeTimer() && !_isOverheated;
     }
 }

@@ -16,7 +16,7 @@ public class AutoWeapon : WeaponBehaviour
 
         if (_chargeTimer >= _maxChargeTime)
         {
-            if (_isHoldingTrigger && _nextFire >= _fireRate)
+            if (_nextFire >= _fireRate && _isHoldingTrigger && !_isOverheated)
             {
                 Shoot();
             }

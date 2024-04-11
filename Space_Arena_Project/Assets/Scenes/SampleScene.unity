@@ -1220,9 +1220,16 @@ MonoBehaviour:
   _muzzle: {fileID: 1032113212}
   _fireRate: 0.1
   _maxChargeTime: 1
+  _maxHeat: 0
+  _heatPerShot: 1
+  _heatDecreasePerSecond: 1
+  _maxOverheatTime: 2
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
+  _currentHeat: 0
+  _overheatTimer: 0
+  _isOverheated: 0
   _isAutoChargeType: 1
   _hasChargeWeakShot: 1
   _hasShotCharge: 0
@@ -8124,9 +8131,16 @@ MonoBehaviour:
   _muzzle: {fileID: 1572900112}
   _fireRate: 0.1
   _maxChargeTime: 0
+  _maxHeat: 0
+  _heatPerShot: 1
+  _heatDecreasePerSecond: 1
+  _maxOverheatTime: 2
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
+  _currentHeat: 0
+  _overheatTimer: 0
+  _isOverheated: 0
   _isHoldingTrigger: 0
 --- !u!1 &667849135
 GameObject:
@@ -9324,9 +9338,16 @@ MonoBehaviour:
   _muzzle: {fileID: 591549172}
   _fireRate: 0.1
   _maxChargeTime: 1
+  _maxHeat: 0
+  _heatPerShot: 1
+  _heatDecreasePerSecond: 1
+  _maxOverheatTime: 2
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
+  _currentHeat: 0
+  _overheatTimer: 0
+  _isOverheated: 0
   _isHoldingTrigger: 0
 --- !u!114 &908726883
 MonoBehaviour:
@@ -9753,9 +9774,16 @@ MonoBehaviour:
   _muzzle: {fileID: 1654011518}
   _fireRate: 0.1
   _maxChargeTime: 1
+  _maxHeat: 0
+  _heatPerShot: 1
+  _heatDecreasePerSecond: 1
+  _maxOverheatTime: 2
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
+  _currentHeat: 0
+  _overheatTimer: 0
+  _isOverheated: 0
   _isHoldingTrigger: 0
 --- !u!114 &998923958
 MonoBehaviour:
@@ -10293,9 +10321,16 @@ MonoBehaviour:
   _muzzle: {fileID: 1815790236}
   _fireRate: 0.1
   _maxChargeTime: 0
+  _maxHeat: 0
+  _heatPerShot: 1
+  _heatDecreasePerSecond: 1
+  _maxOverheatTime: 2
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
+  _currentHeat: 0
+  _overheatTimer: 0
+  _isOverheated: 0
   _isHoldingTrigger: 0
 --- !u!114 &1139148450
 MonoBehaviour:
@@ -11775,7 +11810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1410725364
 Transform:
   m_ObjectHideFlags: 0
@@ -11853,12 +11888,19 @@ MonoBehaviour:
   _muzzle: {fileID: 762295977}
   _fireRate: 0.1
   _maxChargeTime: 0
+  _maxHeat: 0
+  _heatPerShot: 1
+  _heatDecreasePerSecond: 1
+  _maxOverheatTime: 2
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
+  _currentHeat: 0
+  _overheatTimer: 0
+  _isOverheated: 0
   _burstRate: 0.3
-  _nextBurst: 0
   _maxShootCount: 3
+  _nextBurst: 0
   _currentShootCount: 0
   _isBursting: 0
 --- !u!1 &1422076201
@@ -12990,9 +13032,16 @@ MonoBehaviour:
   _muzzle: {fileID: 57030177}
   _fireRate: 0.1
   _maxChargeTime: 0
+  _maxHeat: 0
+  _heatPerShot: 1
+  _heatDecreasePerSecond: 1
+  _maxOverheatTime: 2
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
+  _currentHeat: 0
+  _overheatTimer: 0
+  _isOverheated: 0
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0
   _hasShotCharge: 0
@@ -13281,7 +13330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1689301773
 Transform:
   m_ObjectHideFlags: 0
@@ -13317,9 +13366,16 @@ MonoBehaviour:
   _muzzle: {fileID: 1584752070}
   _fireRate: 0.1
   _maxChargeTime: 1
+  _maxHeat: 0
+  _heatPerShot: 1
+  _heatDecreasePerSecond: 1
+  _maxOverheatTime: 2
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
+  _currentHeat: 0
+  _overheatTimer: 0
+  _isOverheated: 0
   _isAutoChargeType: 0
   _hasChargeWeakShot: 1
   _hasShotCharge: 0
@@ -13770,9 +13826,16 @@ MonoBehaviour:
   _muzzle: {fileID: 859633885}
   _fireRate: 0.1
   _maxChargeTime: 0
+  _maxHeat: 0
+  _heatPerShot: 1
+  _heatDecreasePerSecond: 1
+  _maxOverheatTime: 2
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
+  _currentHeat: 0
+  _overheatTimer: 0
+  _isOverheated: 0
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0
   _hasShotCharge: 0
@@ -14325,7 +14388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc79a4ce3cf18a478d80be9557cbccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentWeapon: {fileID: 1689301774}
+  _currentWeapon: {fileID: 1410725369}
 --- !u!114 &1823301787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14718,9 +14781,16 @@ MonoBehaviour:
   _muzzle: {fileID: 786210460}
   _fireRate: 0.1
   _maxChargeTime: 0
+  _maxHeat: 0
+  _heatPerShot: 1
+  _heatDecreasePerSecond: 1
+  _maxOverheatTime: 2
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
+  _currentHeat: 0
+  _overheatTimer: 0
+  _isOverheated: 0
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0
   _hasShotCharge: 0

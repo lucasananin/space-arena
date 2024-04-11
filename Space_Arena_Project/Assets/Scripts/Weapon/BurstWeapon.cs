@@ -22,17 +22,12 @@ public class BurstWeapon : WeaponBehaviour
 
     private void FixedUpdate()
     {
-        if (!_isBursting)
-        {
-            _nextBurst += _nextBurst < _burstRate ? Time.fixedDeltaTime : 0;
-        }
-        else
+        if (_isBursting)
         {
             _nextFire += _nextFire < _fireRate ? Time.fixedDeltaTime : 0;
 
             if (_nextFire >= _fireRate)
             {
-                _nextFire -= _nextFire;
                 Shoot();
 
                 _currentShootCount++;
@@ -44,11 +39,16 @@ public class BurstWeapon : WeaponBehaviour
                 }
             }
         }
+        else
+        {
+            _nextBurst += _nextBurst < _burstRate ? Time.fixedDeltaTime : 0;
+        }
     }
 
     public override void PullTrigger()
     {
         if (_nextBurst < _burstRate) return;
+        if (_isOverheated) return;
 
         _nextBurst -= _burstRate;
         _currentShootCount = 0;

@@ -12,11 +12,18 @@ public abstract class WeaponBehaviour : MonoBehaviour
     [SerializeField] protected Transform _muzzle = null;
     [SerializeField] protected float _fireRate = 0.1f;
     [SerializeField] protected float _maxChargeTime = 0f;
-    
+    [SerializeField] protected float _maxHeat = 0f;
+    [SerializeField] protected float _heatPerShot = 1f;
+    [SerializeField] protected float _heatDecreasePerSecond = 1f;
+    [SerializeField] protected float _maxOverheatTime = 2f;
+
     [Title("// Debug - Weapon")]
     [SerializeField, ReadOnly] protected float _nextFire = 0;
     [SerializeField, ReadOnly] protected float _chargeTimer = 0f;
     [SerializeField, ReadOnly] protected bool _isCharging = false;
+    [SerializeField, ReadOnly] protected float _currentHeat = 0f;
+    [SerializeField, ReadOnly] protected float _overheatTimer = 0f;
+    [SerializeField, ReadOnly] protected bool _isOverheated = false;
 
     public event Action onShoot = null;
     public event Action onPullTrigger = null;
@@ -27,28 +34,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
         _nextFire = _fireRate;
     }
 
-    public virtual void Shoot()
+    protected virtual void Update()
     {
-        _nextFire -= _fireRate;
-        PrepareProjectile(_weaponSO.GetProjectilePrefab());
-        onShoot?.Invoke();
-    }
-
-    public virtual void ShootChargedShot()
-    {
-        _nextFire -= _fireRate;
-        _chargeTimer -= _maxChargeTime;
-        PrepareProjectile(_weaponSO.GetChargedProjectilePrefab());
-        onShoot?.Invoke();
-    }
-
-    private void PrepareProjectile(ProjectileBehaviour _prefab)
-    {
-        // Precisão.
-        // Quantidade de projéteis.
-        ProjectileBehaviour _projectile = Instantiate(_prefab, _muzzle.position, transform.rotation);
-        ShootModel _shootModel = new ShootModel(_characterSource, this);
-        _projectile.Init(_shootModel);
+        DecreaseHeat();
     }
 
     public virtual void PullTrigger()
@@ -59,6 +47,33 @@ public abstract class WeaponBehaviour : MonoBehaviour
     public virtual void ReleaseTrigger()
     {
         onReleaseTrigger?.Invoke();
+    }
+
+    public virtual void Shoot()
+    {
+        _nextFire -= _fireRate;
+        PrepareProjectile(_weaponSO.GetProjectilePrefab());
+        IncreaseHeat(_heatPerShot);
+        onShoot?.Invoke();
+    }
+
+    public virtual void ShootChargedShot()
+    {
+        _nextFire -= _fireRate;
+        _chargeTimer -= _maxChargeTime;
+        PrepareProjectile(_weaponSO.GetChargedProjectilePrefab());
+        float _heatOffset = 0.9f;
+        IncreaseHeat(_maxHeat + _heatOffset);
+        onShoot?.Invoke();
+    }
+
+    private void PrepareProjectile(ProjectileBehaviour _prefab)
+    {
+        // Precisão.
+        // Quantidade de projéteis.
+        ProjectileBehaviour _projectile = Instantiate(_prefab, _muzzle.position, transform.rotation);
+        ShootModel _shootModel = new ShootModel(_characterSource, this);
+        _projectile.Init(_shootModel);
     }
 
     protected void SetChargeTimer()
@@ -83,5 +98,41 @@ public abstract class WeaponBehaviour : MonoBehaviour
     protected bool HasEnoughChargeTimer()
     {
         return _chargeTimer >= _maxChargeTime;
+    }
+
+    protected void IncreaseHeat(float _value)
+    {
+        if (!CanOverheat()) return;
+
+        _currentHeat += _value;
+
+        if (_currentHeat >= _maxHeat)
+        {
+            _currentHeat = _maxHeat;
+            _overheatTimer = 0;
+            _isOverheated = true;
+        }
+    }
+
+    protected void DecreaseHeat()
+    {
+        if (!CanOverheat()) return;
+
+        _currentHeat -= _currentHeat > 0 ? _heatDecreasePerSecond * Time.deltaTime : 0;
+
+        if (_isOverheated)
+        {
+            _overheatTimer += _overheatTimer < _maxOverheatTime ? Time.deltaTime : 0;
+
+            if (_overheatTimer >= _maxOverheatTime)
+            {
+                _isOverheated = false;
+            }
+        }
+    }
+
+    protected bool CanOverheat()
+    {
+        return _maxHeat > 0;
     }
 }
