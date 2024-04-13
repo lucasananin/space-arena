@@ -1,5 +1,4 @@
 using Sirenix.OdinInspector;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,8 +15,8 @@ public abstract class WeaponBehaviour : MonoBehaviour
     [SerializeField] protected float _heatPerShot = 1f;
     [SerializeField] protected float _heatDecreasePerSecond = 1f;
     [SerializeField] protected float _maxOverheatTime = 2f;
-    [SerializeField] protected float _maxShootAngle = 10f;
-    [SerializeField] protected float _projectilesPerShot = 1f;
+    [SerializeField, Range(0, 180)] protected float _maxShootAngle = 10f;
+    [SerializeField, Range(1, 36)] protected int _projectilesPerShot = 1;
 
     [Title("// Debug - Weapon")]
     [SerializeField, ReadOnly] protected float _nextFire = 0;
@@ -27,9 +26,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
     [SerializeField, ReadOnly] protected float _overheatTimer = 0f;
     [SerializeField, ReadOnly] protected bool _isOverheated = false;
 
-    public event Action onShoot = null;
-    public event Action onPullTrigger = null;
-    public event Action onReleaseTrigger = null;
+    public event System.Action onShoot = null;
+    public event System.Action onPullTrigger = null;
+    public event System.Action onReleaseTrigger = null;
 
     protected virtual void Awake()
     {
@@ -75,9 +74,26 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
         for (int i = 0; i < _projectilesPerShot; i++)
         {
-            float _randomAngle = UnityEngine.Random.Range(-_maxShootAngle, _maxShootAngle);
-            Quaternion _randomRot = Quaternion.AngleAxis(_randomAngle, Vector3.forward);
-            Quaternion _rotation = transform.rotation * _randomRot;
+            Quaternion _rotation = transform.rotation;
+
+            if (_maxShootAngle > 0)
+            {
+                if (_projectilesPerShot > 1)
+                {
+                    var _a = _maxShootAngle * 2f;
+                    var _b = _a / (_projectilesPerShot - 1);
+                    var _c = -_maxShootAngle + _b * i;
+
+                    Quaternion _randomRot = Quaternion.AngleAxis(_c, Vector3.forward);
+                    _rotation *= _randomRot;
+                }
+                else
+                {
+                    float _randomAngle = Random.Range(-_maxShootAngle, _maxShootAngle);
+                    Quaternion _randomRot = Quaternion.AngleAxis(_randomAngle, Vector3.forward);
+                    _rotation *= _randomRot;
+                }
+            }
 
             ProjectileBehaviour _projectile = Instantiate(_prefab, _muzzle.position, _rotation);
             ShootModel _shootModel = new ShootModel(_characterSource, this);
