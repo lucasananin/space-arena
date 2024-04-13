@@ -19,7 +19,6 @@ public class SemiAutoWeapon : WeaponBehaviour
         SetChargeTimer();
 
         if (CanAutoChargeShot())
-        //if (_isAutoChargeType && HasEnoughChargeTimer() && !_isOverheated)
         {
             _isCharging = false;
             _hasShotCharge = true;

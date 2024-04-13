@@ -16,6 +16,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
     [SerializeField] protected float _heatPerShot = 1f;
     [SerializeField] protected float _heatDecreasePerSecond = 1f;
     [SerializeField] protected float _maxOverheatTime = 2f;
+    [SerializeField] protected float _maxShootAngle = 10f;
 
     [Title("// Debug - Weapon")]
     [SerializeField, ReadOnly] protected float _nextFire = 0;
@@ -69,9 +70,14 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     private void PrepareProjectile(ProjectileBehaviour _prefab)
     {
-        // Precisão.
+        // _projectileOffset.
         // Quantidade de projéteis.
-        ProjectileBehaviour _projectile = Instantiate(_prefab, _muzzle.position, transform.rotation);
+
+        float _randomAngle = UnityEngine.Random.Range(-_maxShootAngle, _maxShootAngle);
+        Quaternion _randomRot = Quaternion.AngleAxis(_randomAngle, Vector3.forward);
+        Quaternion _rotation = transform.rotation * _randomRot;
+
+        ProjectileBehaviour _projectile = Instantiate(_prefab, _muzzle.position, _rotation);
         ShootModel _shootModel = new ShootModel(_characterSource, this);
         _projectile.Init(_shootModel);
     }

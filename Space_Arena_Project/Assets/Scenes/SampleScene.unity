@@ -1224,6 +1224,7 @@ MonoBehaviour:
   _heatPerShot: 1
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
+  _maxShootAngle: 10
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -8135,6 +8136,7 @@ MonoBehaviour:
   _heatPerShot: 1
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
+  _maxShootAngle: 10
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -9342,6 +9344,7 @@ MonoBehaviour:
   _heatPerShot: 1
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
+  _maxShootAngle: 10
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -9778,6 +9781,7 @@ MonoBehaviour:
   _heatPerShot: 1
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
+  _maxShootAngle: 10
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -10279,7 +10283,7 @@ GameObject:
   - component: {fileID: 1139148451}
   - component: {fileID: 1139148450}
   m_Layer: 0
-  m_Name: Weapon_Auto_2
+  m_Name: Weapon_Auto_Flamethrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10325,6 +10329,7 @@ MonoBehaviour:
   _heatPerShot: 1
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
+  _maxShootAngle: 10
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -11810,7 +11815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1410725364
 Transform:
   m_ObjectHideFlags: 0
@@ -11892,6 +11897,7 @@ MonoBehaviour:
   _heatPerShot: 1
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
+  _maxShootAngle: 10
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -12955,7 +12961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1654674102
 Transform:
   m_ObjectHideFlags: 0
@@ -13036,6 +13042,7 @@ MonoBehaviour:
   _heatPerShot: 1
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
+  _maxShootAngle: 10
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -13370,6 +13377,7 @@ MonoBehaviour:
   _heatPerShot: 1
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
+  _maxShootAngle: 10
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -13830,6 +13838,7 @@ MonoBehaviour:
   _heatPerShot: 1
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
+  _maxShootAngle: 10
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -14388,7 +14397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc79a4ce3cf18a478d80be9557cbccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentWeapon: {fileID: 1410725369}
+  _currentWeapon: {fileID: 1654674106}
 --- !u!114 &1823301787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14785,6 +14794,7 @@ MonoBehaviour:
   _heatPerShot: 1
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
+  _maxShootAngle: 10
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
