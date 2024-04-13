@@ -1225,6 +1225,7 @@ MonoBehaviour:
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
   _maxShootAngle: 10
+  _projectilesPerShot: 1
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -8137,6 +8138,7 @@ MonoBehaviour:
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
   _maxShootAngle: 10
+  _projectilesPerShot: 1
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -9345,6 +9347,7 @@ MonoBehaviour:
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
   _maxShootAngle: 10
+  _projectilesPerShot: 1
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -9782,6 +9785,7 @@ MonoBehaviour:
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
   _maxShootAngle: 10
+  _projectilesPerShot: 1
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -10330,6 +10334,7 @@ MonoBehaviour:
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
   _maxShootAngle: 10
+  _projectilesPerShot: 1
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -11898,6 +11903,7 @@ MonoBehaviour:
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
   _maxShootAngle: 10
+  _projectilesPerShot: 1
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -13043,6 +13049,7 @@ MonoBehaviour:
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
   _maxShootAngle: 10
+  _projectilesPerShot: 1
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -13378,6 +13385,7 @@ MonoBehaviour:
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
   _maxShootAngle: 10
+  _projectilesPerShot: 1
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -13839,6 +13847,7 @@ MonoBehaviour:
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
   _maxShootAngle: 10
+  _projectilesPerShot: 1
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -14795,6 +14804,7 @@ MonoBehaviour:
   _heatDecreasePerSecond: 1
   _maxOverheatTime: 2
   _maxShootAngle: 10
+  _projectilesPerShot: 1
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0

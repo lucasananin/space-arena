@@ -17,6 +17,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
     [SerializeField] protected float _heatDecreasePerSecond = 1f;
     [SerializeField] protected float _maxOverheatTime = 2f;
     [SerializeField] protected float _maxShootAngle = 10f;
+    [SerializeField] protected float _projectilesPerShot = 1f;
 
     [Title("// Debug - Weapon")]
     [SerializeField, ReadOnly] protected float _nextFire = 0;
@@ -71,15 +72,17 @@ public abstract class WeaponBehaviour : MonoBehaviour
     private void PrepareProjectile(ProjectileBehaviour _prefab)
     {
         // _projectileOffset.
-        // Quantidade de projéteis.
 
-        float _randomAngle = UnityEngine.Random.Range(-_maxShootAngle, _maxShootAngle);
-        Quaternion _randomRot = Quaternion.AngleAxis(_randomAngle, Vector3.forward);
-        Quaternion _rotation = transform.rotation * _randomRot;
+        for (int i = 0; i < _projectilesPerShot; i++)
+        {
+            float _randomAngle = UnityEngine.Random.Range(-_maxShootAngle, _maxShootAngle);
+            Quaternion _randomRot = Quaternion.AngleAxis(_randomAngle, Vector3.forward);
+            Quaternion _rotation = transform.rotation * _randomRot;
 
-        ProjectileBehaviour _projectile = Instantiate(_prefab, _muzzle.position, _rotation);
-        ShootModel _shootModel = new ShootModel(_characterSource, this);
-        _projectile.Init(_shootModel);
+            ProjectileBehaviour _projectile = Instantiate(_prefab, _muzzle.position, _rotation);
+            ShootModel _shootModel = new ShootModel(_characterSource, this);
+            _projectile.Init(_shootModel);
+        }
     }
 
     protected void SetChargeTimer()
