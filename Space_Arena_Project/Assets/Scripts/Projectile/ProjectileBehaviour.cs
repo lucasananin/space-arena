@@ -7,9 +7,6 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 {
     [Title("// General")]
     [SerializeField] protected ProjectileSO _projectileSO = null;
-    //[SerializeField] protected LayerMask _layerMask = default;
-    //[SerializeField] protected Vector2 _minMaxTimeUntilDestroy = default;
-    //[SerializeField] protected int _maxPierceCount = 1;
 
     [Title("// Debug - Projectile")]
     [SerializeField, ReadOnly] protected ShootModel _shootModel = null;

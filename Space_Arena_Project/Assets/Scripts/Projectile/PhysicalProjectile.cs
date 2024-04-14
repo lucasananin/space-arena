@@ -8,8 +8,6 @@ public class PhysicalProjectile : ProjectileBehaviour
     [Title("// Physical")]
     [SerializeField] Rigidbody2D _rb = null;
     [SerializeField] CircleCollider2D _dummyCircleCollider = null;
-    //[SerializeField] float _moveSpeed = 20f;
-    //[SerializeField] bool _destroyOnCollision = true;
 
     [Title("// Vfx")]
     [SerializeField] ParticleSystem _hitVfx = null;

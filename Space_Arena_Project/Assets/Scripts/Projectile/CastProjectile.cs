@@ -7,7 +7,6 @@ public class CastProjectile : ProjectileBehaviour
 {
     [Title("// Cast")]
     [SerializeField] CircleCollider2D _dummyCircleCollider = null;
-    //[SerializeField] float _maxCastDistance = 99f;
 
     [Title("// Vfx")]
     [SerializeField] ParticleSystem _hitVfx = null;
