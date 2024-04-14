@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class SemiAutoWeapon : WeaponBehaviour
 {
-    [Title("// Semi Auto")]
-    [SerializeField] protected bool _isAutoChargeType = false;
-    [SerializeField] protected bool _hasChargeWeakShot = false;
+    //[Title("// Semi Auto")]
+    //[SerializeField] protected bool _isAutoChargeType = false;
+    //[SerializeField] protected bool _hasChargeWeakShot = false;
 
     [Title("// Debug - Semi Auto")]
     [SerializeField, ReadOnly] protected bool _hasShotCharge = false;
@@ -62,7 +62,7 @@ public class SemiAutoWeapon : WeaponBehaviour
         if (_hasShotCharge) return;
         if (_isOverheated) return;
 
-        if (!_isAutoChargeType)
+        if (!_weaponSO.IsAutoChargeType)
         {
             if (HasEnoughChargeTimer())
             {
@@ -86,11 +86,11 @@ public class SemiAutoWeapon : WeaponBehaviour
 
     private bool CanWeakShot()
     {
-        return _hasChargeWeakShot && _chargeTimer < _weaponSO.MaxChargeTime;
+        return _weaponSO.HasChargeWeakShot && _chargeTimer < _weaponSO.MaxChargeTime;
     }
 
     private bool CanAutoChargeShot()
     {
-        return _isAutoChargeType && HasEnoughChargeTimer() && !_isOverheated;
+        return _weaponSO.IsAutoChargeType && HasEnoughChargeTimer() && !_isOverheated;
     }
 }

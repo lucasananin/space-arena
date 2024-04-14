@@ -28,8 +28,17 @@ public class WeaponSO : ScriptableObject
     [Title("// Projectiles per shot")]
     [SerializeField, Range(1, 36)] int _projectilesPerShot = 1;
 
+    [Title("// Semi Auto Properties")]
+    [SerializeField] bool _isAutoChargeType = false;
+    [SerializeField] bool _hasChargeWeakShot = false;
+
+    [Title("// Burst Properties")]
+    [SerializeField] float _burstRate = 0.5f;
+    [SerializeField] int _maxShootCount = 3;
+
     public ProjectileSO ProjectileSO { get => _projectileSO; private set => _projectileSO = value; }
     public ProjectileSO ChargedProjectileSO { get => _chargedProjectileSO; private set => _chargedProjectileSO = value; }
+
     public float FireRate { get => _fireRate; private set => _fireRate = value; }
     public float MaxChargeTime { get => _maxChargeTime; private set => _maxChargeTime = value; }
     public float MaxHeat { get => _maxHeat; private set => _maxHeat = value; }
@@ -38,6 +47,12 @@ public class WeaponSO : ScriptableObject
     public float MaxOverheatTime { get => _maxOverheatTime; private set => _maxOverheatTime = value; }
     public int MaxShootAngle { get => _maxShootAngle; private set => _maxShootAngle = value; }
     public int ProjectilesPerShot { get => _projectilesPerShot; private set => _projectilesPerShot = value; }
+
+    public bool IsAutoChargeType { get => _isAutoChargeType; private set => _isAutoChargeType = value; }
+    public bool HasChargeWeakShot { get => _hasChargeWeakShot; private set => _hasChargeWeakShot = value; }
+
+    public float BurstRate { get => _burstRate; private set => _burstRate = value; }
+    public int MaxShootCount { get => _maxShootCount; private set => _maxShootCount = value; }
 
     public bool HasChargeTime()
     {

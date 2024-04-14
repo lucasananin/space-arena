@@ -9,14 +9,6 @@ public abstract class WeaponBehaviour : MonoBehaviour
     [SerializeField] protected WeaponSO _weaponSO = null;
     [SerializeField] protected GameObject _characterSource = null;
     [SerializeField] protected Transform _muzzle = null;
-    //[SerializeField] protected float _fireRate = 0.1f;
-    //[SerializeField] protected float _maxChargeTime = 0f;
-    //[SerializeField] protected float _maxHeat = 0f;
-    //[SerializeField] protected float _heatPerShot = 1f;
-    //[SerializeField] protected float _heatDecreasePerSecond = 1f;
-    //[SerializeField] protected float _maxOverheatTime = 2f;
-    //[SerializeField, Range(0, 180)] protected int _maxShootAngle = 0;
-    //[SerializeField, Range(1, 36)] protected int _projectilesPerShot = 1;
 
     [Title("// Debug - Weapon")]
     [SerializeField, ReadOnly] protected float _nextFire = 0;

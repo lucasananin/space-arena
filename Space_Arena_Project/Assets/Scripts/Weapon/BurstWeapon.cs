@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class BurstWeapon : WeaponBehaviour
 {
-    [Title("// Burst")]
-    [SerializeField] float _burstRate = 0.5f;
-    [SerializeField] int _maxShootCount = 3;
+    //[Title("// Burst")]
+    //[SerializeField] float _burstRate = 0.5f;
+    //[SerializeField] int _maxShootCount = 3;
 
     [Title("// Debug - Burst")]
     [SerializeField, ReadOnly] float _nextBurst = 0;
@@ -17,7 +17,7 @@ public class BurstWeapon : WeaponBehaviour
     protected override void Awake()
     {
         base.Awake();
-        _nextBurst = _burstRate;
+        _nextBurst = _weaponSO.BurstRate;
     }
 
     private void FixedUpdate()
@@ -32,7 +32,7 @@ public class BurstWeapon : WeaponBehaviour
 
                 _currentShootCount++;
 
-                if (_currentShootCount >= _maxShootCount)
+                if (_currentShootCount >= _weaponSO.MaxShootCount)
                 {
                     _nextFire = _weaponSO.FireRate;
                     _isBursting = false;
@@ -41,16 +41,16 @@ public class BurstWeapon : WeaponBehaviour
         }
         else
         {
-            _nextBurst += _nextBurst < _burstRate ? Time.fixedDeltaTime : 0;
+            _nextBurst += _nextBurst < _weaponSO.BurstRate? Time.fixedDeltaTime : 0;
         }
     }
 
     public override void PullTrigger()
     {
-        if (_nextBurst < _burstRate) return;
+        if (_nextBurst < _weaponSO.BurstRate) return;
         if (_isOverheated) return;
 
-        _nextBurst -= _burstRate;
+        _nextBurst -= _weaponSO.BurstRate;
         _currentShootCount = 0;
         _isBursting = true;
         base.PullTrigger();
