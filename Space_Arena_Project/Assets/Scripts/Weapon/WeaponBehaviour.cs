@@ -15,7 +15,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
     [SerializeField] protected float _heatPerShot = 1f;
     [SerializeField] protected float _heatDecreasePerSecond = 1f;
     [SerializeField] protected float _maxOverheatTime = 2f;
-    [SerializeField, Range(0, 180)] protected float _maxShootAngle = 10f;
+    [SerializeField, Range(0, 180)] protected int _maxShootAngle = 0;
     [SerializeField, Range(1, 36)] protected int _projectilesPerShot = 1;
 
     [Title("// Debug - Weapon")]
@@ -70,34 +70,40 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     private void PrepareProjectile(ProjectileBehaviour _prefab)
     {
-        // _projectileOffset.
-
         for (int i = 0; i < _projectilesPerShot; i++)
         {
-            Quaternion _rotation = transform.rotation;
-
-            if (_maxShootAngle > 0)
-            {
-                if (_projectilesPerShot > 1)
-                {
-                    var _a = _maxShootAngle * 2f;
-                    var _b = _a / (_projectilesPerShot - 1);
-                    var _c = -_maxShootAngle + _b * i;
-
-                    Quaternion _randomRot = Quaternion.AngleAxis(_c, Vector3.forward);
-                    _rotation *= _randomRot;
-                }
-                else
-                {
-                    float _randomAngle = Random.Range(-_maxShootAngle, _maxShootAngle);
-                    Quaternion _randomRot = Quaternion.AngleAxis(_randomAngle, Vector3.forward);
-                    _rotation *= _randomRot;
-                }
-            }
-
+            Quaternion _rotation = CalculateProjectileRotation(i);
             ProjectileBehaviour _projectile = Instantiate(_prefab, _muzzle.position, _rotation);
             ShootModel _shootModel = new ShootModel(_characterSource, this);
             _projectile.Init(_shootModel);
+        }
+    }
+
+    protected Quaternion CalculateProjectileRotation(int _projectileIndex)
+    {
+        if (_maxShootAngle <= 0)
+        {
+            return transform.rotation;
+        }
+        else
+        {
+            Quaternion _rotation = transform.rotation;
+            Quaternion _rotationOffset = Quaternion.identity;
+
+            if (_projectilesPerShot > 1)
+            {
+                float _sector = _maxShootAngle * 2f;
+                float _divisionCount = _sector / (_projectilesPerShot - 1);
+                float _angle = -_maxShootAngle + _divisionCount * _projectileIndex;
+                _rotationOffset = Quaternion.AngleAxis(_angle, Vector3.forward);
+            }
+            else
+            {
+                float _randomAngle = Random.Range(-_maxShootAngle, _maxShootAngle);
+                _rotationOffset = Quaternion.AngleAxis(_randomAngle, Vector3.forward);
+            }
+
+            return _rotation * _rotationOffset;
         }
     }
 

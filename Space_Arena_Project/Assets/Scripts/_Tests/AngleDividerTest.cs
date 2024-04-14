@@ -6,21 +6,19 @@ public class AngleDividerTest : MonoBehaviour
 {
     public Transform target;
     public float divisionFactor = 0.5f; // Value between 0 and 1 indicating the division point
-    [Space]
-    [SerializeField] protected float _maxShootAngle = 10f;
-    [SerializeField] protected int _projectilesPerShot = 3;
+    //[Space]
+    //[SerializeField] protected float _maxShootAngle = 10f;
+    //[SerializeField] protected int _projectilesPerShot = 3;
 
     private void Update()
     {
-        var _a = _maxShootAngle * 2f;
-        var _b = _a / (_projectilesPerShot - 1);
+        //var _a = _maxShootAngle * 2f;
+        //var _b = _a / (_projectilesPerShot - 1);
 
-        for (int j = 0; j < _projectilesPerShot; j++)
-        {
-            Debug.Log($"// _ = {-_maxShootAngle + _b * j}");
-        }
-
-        return;
+        //for (int j = 0; j < _projectilesPerShot; j++)
+        //{
+        //    Debug.Log($"// _ = {-_maxShootAngle + _b * j}");
+        //}
 
         if (target != null)
         {
