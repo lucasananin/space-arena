@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: _Projectile_Physical
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7353528016857128665, guid: 2187d2bd70d6c0c458c031848714ca90, type: 3}
+  _spawnPositionOffset: {x: 0.3, y: 0}

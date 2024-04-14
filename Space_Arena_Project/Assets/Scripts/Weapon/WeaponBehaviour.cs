@@ -53,7 +53,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
     public virtual void Shoot()
     {
         _nextFire -= _fireRate;
-        PrepareProjectile(_weaponSO.GetProjectilePrefab());
+        PrepareProjectile(_weaponSO.ProjectileSO);
         IncreaseHeat(_heatPerShot);
         onShoot?.Invoke();
     }
@@ -62,18 +62,19 @@ public abstract class WeaponBehaviour : MonoBehaviour
     {
         _nextFire -= _fireRate;
         _chargeTimer -= _maxChargeTime;
-        PrepareProjectile(_weaponSO.GetChargedProjectilePrefab());
+        PrepareProjectile(_weaponSO.ChargedProjectileSO);
         float _heatOffset = 0.9f;
         IncreaseHeat(_maxHeat + _heatOffset);
         onShoot?.Invoke();
     }
 
-    private void PrepareProjectile(ProjectileBehaviour _prefab)
+    private void PrepareProjectile(ProjectileSO _projectileSO)
     {
         for (int i = 0; i < _projectilesPerShot; i++)
         {
+            Vector3 _position = CalculateProjectilePosition(_projectileSO);
             Quaternion _rotation = CalculateProjectileRotation(i);
-            ProjectileBehaviour _projectile = Instantiate(_prefab, _muzzle.position, _rotation);
+            ProjectileBehaviour _projectile = Instantiate(_projectileSO.Prefab, _position, _rotation);
             ShootModel _shootModel = new ShootModel(_characterSource, this);
             _projectile.Init(_shootModel);
         }
@@ -87,8 +88,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
         }
         else
         {
-            Quaternion _rotation = transform.rotation;
-            Quaternion _rotationOffset = Quaternion.identity;
+            Quaternion _rotationOffset;
 
             if (_projectilesPerShot > 1)
             {
@@ -103,7 +103,21 @@ public abstract class WeaponBehaviour : MonoBehaviour
                 _rotationOffset = Quaternion.AngleAxis(_randomAngle, Vector3.forward);
             }
 
-            return _rotation * _rotationOffset;
+            return transform.rotation * _rotationOffset;
+        }
+    }
+
+    protected Vector3 CalculateProjectilePosition(ProjectileSO _projectileSO)
+    {
+        if (_projectileSO.SpawnPositionOffset == Vector2.zero)
+        {
+            return _muzzle.position;
+        }
+        else
+        {
+            Vector3 _xOffset = transform.right * _projectileSO.SpawnPositionOffset.x;
+            Vector3 _yOffset = transform.up * _projectileSO.SpawnPositionOffset.y;
+            return _muzzle.position + _xOffset + _yOffset;
         }
     }
 

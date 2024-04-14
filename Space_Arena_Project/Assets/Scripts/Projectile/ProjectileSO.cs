@@ -6,6 +6,8 @@ using UnityEngine;
 public class ProjectileSO : ScriptableObject
 {
     [SerializeField] ProjectileBehaviour _prefab = null;
+    [SerializeField] protected Vector2 _spawnPositionOffset = default;
 
     public ProjectileBehaviour Prefab { get => _prefab; private set => _prefab = value; }
+    public Vector2 SpawnPositionOffset { get => _spawnPositionOffset; private set => _spawnPositionOffset = value; }
 }

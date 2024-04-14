@@ -8,13 +8,6 @@ public class WeaponSO : ScriptableObject
     [SerializeField] ProjectileSO _projectileSO = null;
     [SerializeField] ProjectileSO _chargedProjectileSO = null;
 
-    public ProjectileBehaviour GetProjectilePrefab()
-    {
-        return _projectileSO.Prefab;
-    }
-
-    public ProjectileBehaviour GetChargedProjectilePrefab()
-    {
-        return _chargedProjectileSO.Prefab;
-    }
+    public ProjectileSO ProjectileSO { get => _projectileSO; private set => _projectileSO = value; }
+    public ProjectileSO ChargedProjectileSO { get => _chargedProjectileSO; private set => _chargedProjectileSO = value; }
 }
