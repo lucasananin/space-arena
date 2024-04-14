@@ -7,7 +7,7 @@ public class CastProjectile : ProjectileBehaviour
 {
     [Title("// Cast")]
     [SerializeField] CircleCollider2D _dummyCircleCollider = null;
-    [SerializeField] float _maxCastDistance = 99f;
+    //[SerializeField] float _maxCastDistance = 99f;
 
     [Title("// Vfx")]
     [SerializeField] ParticleSystem _hitVfx = null;
@@ -18,7 +18,7 @@ public class CastProjectile : ProjectileBehaviour
     {
         base.Init(_newShootModel);
 
-        int _hits = Physics2D.CircleCastNonAlloc(transform.position, _dummyCircleCollider.radius, transform.right, _results, _maxCastDistance, _layerMask);
+        int _hits = Physics2D.CircleCastNonAlloc(transform.position, _dummyCircleCollider.radius, transform.right, _results, _projectileSO.MaxCastDistance, _projectileSO.LayerMask);
 
         for (int i = 0; i < _hits; i++)
         {

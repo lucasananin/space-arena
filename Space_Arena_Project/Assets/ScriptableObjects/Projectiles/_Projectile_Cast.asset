@@ -13,3 +13,12 @@ MonoBehaviour:
   m_Name: _Projectile_Cast
   m_EditorClassIdentifier: 
   _prefab: {fileID: 3761620198474376623, guid: 45d10daf33c382f41a876028f024ad04, type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  _spawnPositionOffset: {x: 0, y: 0}
+  _minMaxTimeUntilDestroy: {x: 1, y: 2}
+  _maxPierceCount: 1
+  _moveSpeed: 20
+  _destroyOnCollision: 1
+  _maxCastDistance: 99

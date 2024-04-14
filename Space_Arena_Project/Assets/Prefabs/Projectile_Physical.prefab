@@ -131,24 +131,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0550060135c65749a12e755d50e7073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 192
+  _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
   _shootModel:
     _characterSource: {fileID: 0}
     _weaponSource: {fileID: 0}
-  _minMaxTimeUntilDestroy: {x: 4, y: 6}
   _timeUntilDestroy: 100
   _destroyTimer: 0
+  _currentPierceCount: 0
   _rb: {fileID: 7523388042507287481}
   _dummyCircleCollider: {fileID: 4705853102255858287}
-  _moveSpeed: 20
-  _destroyOnCollision: 1
-  _maxPierceCount: 1
   _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
   _collidersHit: []
   _lastPosition: {x: 0, y: 0, z: 0}
-  _currentPierceCount: 0
 --- !u!50 &7523388042507287481
 Rigidbody2D:
   serializedVersion: 4

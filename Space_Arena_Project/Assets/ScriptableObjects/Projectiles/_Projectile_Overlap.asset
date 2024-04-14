@@ -13,3 +13,12 @@ MonoBehaviour:
   m_Name: _Projectile_Overlap
   m_EditorClassIdentifier: 
   _prefab: {fileID: 1845144823647906352, guid: 299428f855a149d4195f4401d17496fe, type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  _spawnPositionOffset: {x: 0, y: 0}
+  _minMaxTimeUntilDestroy: {x: 0, y: 0}
+  _maxPierceCount: 1
+  _moveSpeed: 20
+  _destroyOnCollision: 1
+  _maxCastDistance: 99

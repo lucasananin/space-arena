@@ -5,10 +5,6 @@ using UnityEngine;
 
 public class SemiAutoWeapon : WeaponBehaviour
 {
-    //[Title("// Semi Auto")]
-    //[SerializeField] protected bool _isAutoChargeType = false;
-    //[SerializeField] protected bool _hasChargeWeakShot = false;
-
     [Title("// Debug - Semi Auto")]
     [SerializeField, ReadOnly] protected bool _hasShotCharge = false;
 

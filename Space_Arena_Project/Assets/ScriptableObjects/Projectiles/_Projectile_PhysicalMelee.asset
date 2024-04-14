@@ -13,3 +13,12 @@ MonoBehaviour:
   m_Name: _Projectile_PhysicalMelee
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7353528016857128665, guid: b84b81a06f4e7ce4b835a7b24dd4d642, type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  _spawnPositionOffset: {x: 0, y: 0}
+  _minMaxTimeUntilDestroy: {x: 0.1, y: 0.1}
+  _maxPierceCount: 99
+  _moveSpeed: 20
+  _destroyOnCollision: 0
+  _maxCastDistance: 99

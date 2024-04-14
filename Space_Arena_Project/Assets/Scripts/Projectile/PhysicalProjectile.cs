@@ -8,8 +8,8 @@ public class PhysicalProjectile : ProjectileBehaviour
     [Title("// Physical")]
     [SerializeField] Rigidbody2D _rb = null;
     [SerializeField] CircleCollider2D _dummyCircleCollider = null;
-    [SerializeField] float _moveSpeed = 20f;
-    [SerializeField] bool _destroyOnCollision = true;
+    //[SerializeField] float _moveSpeed = 20f;
+    //[SerializeField] bool _destroyOnCollision = true;
 
     [Title("// Vfx")]
     [SerializeField] ParticleSystem _hitVfx = null;
@@ -29,7 +29,7 @@ public class PhysicalProjectile : ProjectileBehaviour
     private void LateUpdate()
     {
         float _distance = Vector2.Distance(transform.position, _lastPosition);
-        int _hits = Physics2D.CircleCastNonAlloc(_lastPosition, _dummyCircleCollider.radius, transform.right, _results, _distance, _layerMask);
+        int _hits = Physics2D.CircleCastNonAlloc(_lastPosition, _dummyCircleCollider.radius, transform.right, _results, _distance, _projectileSO.LayerMask);
 
         for (int i = 0; i < _hits; i++)
         {
@@ -41,7 +41,7 @@ public class PhysicalProjectile : ProjectileBehaviour
 
             IncreasePierceCount();
 
-            if (HasReachedMaxPierceCount() && _destroyOnCollision)
+            if (HasReachedMaxPierceCount() && _projectileSO.DestroyOnCollision)
             {
                 Destroy(gameObject);
                 break;
@@ -53,6 +53,6 @@ public class PhysicalProjectile : ProjectileBehaviour
     {
         base.Init(_newShootModel);
         _lastPosition = transform.position;
-        _rb.velocity = transform.right * _moveSpeed;
+        _rb.velocity = transform.right * _projectileSO.MoveSpeed;
     }
 }

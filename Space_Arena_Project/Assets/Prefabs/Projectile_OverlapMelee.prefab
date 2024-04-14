@@ -47,15 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17980f8af57b0fd4ea577607c1601353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 192
+  _projectileSO: {fileID: 11400000, guid: 449cc4ef671e7fb41b2a0e3c121af069, type: 2}
   _shootModel:
     _characterSource: {fileID: 0}
     _weaponSource: {fileID: 0}
-  _minMaxTimeUntilDestroy: {x: 1, y: 2}
   _timeUntilDestroy: 1
   _destroyTimer: 0
+  _currentPierceCount: 0
   _collider2D: {fileID: 1845144823647906366}
   _contactFilter2D:
     useTriggers: 0

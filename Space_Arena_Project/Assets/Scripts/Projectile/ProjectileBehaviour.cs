@@ -6,9 +6,10 @@ using UnityEngine;
 public abstract class ProjectileBehaviour : MonoBehaviour
 {
     [Title("// General")]
-    [SerializeField] protected LayerMask _layerMask = default;
-    [SerializeField] protected Vector2 _minMaxTimeUntilDestroy = default;
-    [SerializeField] protected int _maxPierceCount = 1;
+    [SerializeField] protected ProjectileSO _projectileSO = null;
+    //[SerializeField] protected LayerMask _layerMask = default;
+    //[SerializeField] protected Vector2 _minMaxTimeUntilDestroy = default;
+    //[SerializeField] protected int _maxPierceCount = 1;
 
     [Title("// Debug - Projectile")]
     [SerializeField, ReadOnly] protected ShootModel _shootModel = null;
@@ -34,7 +35,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     protected void SetDestroyTimer()
     {
-        _timeUntilDestroy = Random.Range(_minMaxTimeUntilDestroy.x, _minMaxTimeUntilDestroy.y);
+        _timeUntilDestroy = Random.Range(_projectileSO.MinMaxTimeUntilDestroy.x, _projectileSO.MinMaxTimeUntilDestroy.y);
         _destroyTimer = 0f;
     }
 
@@ -50,7 +51,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     public bool HasReachedMaxPierceCount()
     {
-        return _currentPierceCount >= _maxPierceCount;
+        return _currentPierceCount >= _projectileSO.MaxPierceCount;
     }
 
     protected IEnumerator DestroyRoutine()
