@@ -14,7 +14,7 @@ public class SemiAutoWeapon : WeaponBehaviour
 
     private void FixedUpdate()
     {
-        _nextFire += _nextFire < _fireRate ? Time.fixedDeltaTime : 0;
+        _nextFire += _nextFire < _weaponSO.FireRate ? Time.fixedDeltaTime : 0;
 
         SetChargeTimer();
 
@@ -30,10 +30,10 @@ public class SemiAutoWeapon : WeaponBehaviour
     {
         _hasShotCharge = false;
 
-        if (_nextFire < _fireRate) return;
+        if (_nextFire < _weaponSO.FireRate) return;
         if (_isOverheated) return;
 
-        if (HasChargeTime())
+        if (_weaponSO.HasChargeTime())
         {
             _isCharging = true;
         }
@@ -49,7 +49,7 @@ public class SemiAutoWeapon : WeaponBehaviour
 
     public override void ReleaseTrigger()
     {
-        if (HasChargeTime())
+        if (_weaponSO.HasChargeTime())
         {
             TryManualChargeShot();
         }
@@ -86,7 +86,7 @@ public class SemiAutoWeapon : WeaponBehaviour
 
     private bool CanWeakShot()
     {
-        return _hasChargeWeakShot && _chargeTimer < _maxChargeTime;
+        return _hasChargeWeakShot && _chargeTimer < _weaponSO.MaxChargeTime;
     }
 
     private bool CanAutoChargeShot()

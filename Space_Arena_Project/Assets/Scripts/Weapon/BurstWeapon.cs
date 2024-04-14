@@ -24,9 +24,9 @@ public class BurstWeapon : WeaponBehaviour
     {
         if (_isBursting)
         {
-            _nextFire += _nextFire < _fireRate ? Time.fixedDeltaTime : 0;
+            _nextFire += _nextFire < _weaponSO.FireRate ? Time.fixedDeltaTime : 0;
 
-            if (_nextFire >= _fireRate)
+            if (_nextFire >= _weaponSO.FireRate)
             {
                 Shoot();
 
@@ -34,7 +34,7 @@ public class BurstWeapon : WeaponBehaviour
 
                 if (_currentShootCount >= _maxShootCount)
                 {
-                    _nextFire = _fireRate;
+                    _nextFire = _weaponSO.FireRate;
                     _isBursting = false;
                 }
             }

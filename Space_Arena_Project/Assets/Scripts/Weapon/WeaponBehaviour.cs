@@ -9,14 +9,14 @@ public abstract class WeaponBehaviour : MonoBehaviour
     [SerializeField] protected WeaponSO _weaponSO = null;
     [SerializeField] protected GameObject _characterSource = null;
     [SerializeField] protected Transform _muzzle = null;
-    [SerializeField] protected float _fireRate = 0.1f;
-    [SerializeField] protected float _maxChargeTime = 0f;
-    [SerializeField] protected float _maxHeat = 0f;
-    [SerializeField] protected float _heatPerShot = 1f;
-    [SerializeField] protected float _heatDecreasePerSecond = 1f;
-    [SerializeField] protected float _maxOverheatTime = 2f;
-    [SerializeField, Range(0, 180)] protected int _maxShootAngle = 0;
-    [SerializeField, Range(1, 36)] protected int _projectilesPerShot = 1;
+    //[SerializeField] protected float _fireRate = 0.1f;
+    //[SerializeField] protected float _maxChargeTime = 0f;
+    //[SerializeField] protected float _maxHeat = 0f;
+    //[SerializeField] protected float _heatPerShot = 1f;
+    //[SerializeField] protected float _heatDecreasePerSecond = 1f;
+    //[SerializeField] protected float _maxOverheatTime = 2f;
+    //[SerializeField, Range(0, 180)] protected int _maxShootAngle = 0;
+    //[SerializeField, Range(1, 36)] protected int _projectilesPerShot = 1;
 
     [Title("// Debug - Weapon")]
     [SerializeField, ReadOnly] protected float _nextFire = 0;
@@ -32,7 +32,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     protected virtual void Awake()
     {
-        _nextFire = _fireRate;
+        _nextFire = _weaponSO.FireRate;
     }
 
     protected virtual void Update()
@@ -52,25 +52,25 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     public virtual void Shoot()
     {
-        _nextFire -= _fireRate;
+        _nextFire -= _weaponSO.FireRate;
         PrepareProjectile(_weaponSO.ProjectileSO);
-        IncreaseHeat(_heatPerShot);
+        IncreaseHeat(_weaponSO.HeatPerShot);
         onShoot?.Invoke();
     }
 
     public virtual void ShootChargedShot()
     {
-        _nextFire -= _fireRate;
-        _chargeTimer -= _maxChargeTime;
+        _nextFire -= _weaponSO.FireRate;
+        _chargeTimer -= _weaponSO.MaxChargeTime;
         PrepareProjectile(_weaponSO.ChargedProjectileSO);
         float _heatOffset = 0.9f;
-        IncreaseHeat(_maxHeat + _heatOffset);
+        IncreaseHeat(_weaponSO.MaxHeat + _heatOffset);
         onShoot?.Invoke();
     }
 
     private void PrepareProjectile(ProjectileSO _projectileSO)
     {
-        for (int i = 0; i < _projectilesPerShot; i++)
+        for (int i = 0; i < _weaponSO.ProjectilesPerShot; i++)
         {
             Vector3 _position = CalculateProjectilePosition(_projectileSO);
             Quaternion _rotation = CalculateProjectileRotation(i);
@@ -82,7 +82,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     protected Quaternion CalculateProjectileRotation(int _projectileIndex)
     {
-        if (_maxShootAngle <= 0)
+        if (_weaponSO.MaxShootAngle <= 0)
         {
             return transform.rotation;
         }
@@ -90,16 +90,16 @@ public abstract class WeaponBehaviour : MonoBehaviour
         {
             Quaternion _rotationOffset;
 
-            if (_projectilesPerShot > 1)
+            if (_weaponSO.ProjectilesPerShot > 1)
             {
-                float _sector = _maxShootAngle * 2f;
-                float _divisionCount = _sector / (_projectilesPerShot - 1);
-                float _angle = -_maxShootAngle + _divisionCount * _projectileIndex;
+                float _sector = _weaponSO.MaxShootAngle * 2f;
+                float _divisionCount = _sector / (_weaponSO.ProjectilesPerShot - 1);
+                float _angle = -_weaponSO.MaxShootAngle + _divisionCount * _projectileIndex;
                 _rotationOffset = Quaternion.AngleAxis(_angle, Vector3.forward);
             }
             else
             {
-                float _randomAngle = Random.Range(-_maxShootAngle, _maxShootAngle);
+                float _randomAngle = Random.Range(-_weaponSO.MaxShootAngle, _weaponSO.MaxShootAngle);
                 _rotationOffset = Quaternion.AngleAxis(_randomAngle, Vector3.forward);
             }
 
@@ -123,11 +123,11 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     protected void SetChargeTimer()
     {
-        if (!HasChargeTime()) return;
+        if (!_weaponSO. HasChargeTime()) return;
 
         if (_isCharging)
         {
-            _chargeTimer += _chargeTimer < _maxChargeTime ? Time.fixedDeltaTime : 0;
+            _chargeTimer += _chargeTimer < _weaponSO.MaxChargeTime ? Time.fixedDeltaTime : 0;
         }
         else
         {
@@ -135,25 +135,20 @@ public abstract class WeaponBehaviour : MonoBehaviour
         }
     }
 
-    protected bool HasChargeTime()
-    {
-        return _maxChargeTime > 0;
-    }
-
     protected bool HasEnoughChargeTimer()
     {
-        return _chargeTimer >= _maxChargeTime;
+        return _chargeTimer >= _weaponSO.MaxChargeTime;
     }
 
     protected void IncreaseHeat(float _value)
     {
-        if (!CanOverheat()) return;
+        if (!_weaponSO.CanOverheat()) return;
 
         _currentHeat += _value;
 
-        if (_currentHeat >= _maxHeat)
+        if (_currentHeat >= _weaponSO.MaxHeat)
         {
-            _currentHeat = _maxHeat;
+            _currentHeat = _weaponSO.MaxHeat;
             _overheatTimer = 0;
             _isOverheated = true;
         }
@@ -161,23 +156,18 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     protected void DecreaseHeat()
     {
-        if (!CanOverheat()) return;
+        if (!_weaponSO.CanOverheat()) return;
 
-        _currentHeat -= _currentHeat > 0 ? _heatDecreasePerSecond * Time.deltaTime : 0;
+        _currentHeat -= _currentHeat > 0 ? _weaponSO.HeatDecreasePerSecond * Time.deltaTime : 0;
 
         if (_isOverheated)
         {
-            _overheatTimer += _overheatTimer < _maxOverheatTime ? Time.deltaTime : 0;
+            _overheatTimer += _overheatTimer < _weaponSO.MaxOverheatTime ? Time.deltaTime : 0;
 
-            if (_overheatTimer >= _maxOverheatTime)
+            if (_overheatTimer >= _weaponSO.MaxOverheatTime)
             {
                 _isOverheated = false;
             }
         }
-    }
-
-    protected bool CanOverheat()
-    {
-        return _maxHeat > 0;
     }
 }

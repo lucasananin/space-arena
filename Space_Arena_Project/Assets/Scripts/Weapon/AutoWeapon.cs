@@ -10,13 +10,13 @@ public class AutoWeapon : WeaponBehaviour
 
     private void FixedUpdate()
     {
-        _nextFire += _nextFire < _fireRate ? Time.fixedDeltaTime : 0;
+        _nextFire += _nextFire < _weaponSO.FireRate ? Time.fixedDeltaTime : 0;
 
         SetChargeTimer();
 
-        if (_chargeTimer >= _maxChargeTime)
+        if (_chargeTimer >= _weaponSO.MaxChargeTime)
         {
-            if (_nextFire >= _fireRate && _isHoldingTrigger && !_isOverheated)
+            if (_nextFire >= _weaponSO.FireRate && _isHoldingTrigger && !_isOverheated)
             {
                 Shoot();
             }
