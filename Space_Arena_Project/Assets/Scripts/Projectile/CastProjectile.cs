@@ -11,7 +11,7 @@ public class CastProjectile : ProjectileBehaviour
     [Title("// Vfx")]
     [SerializeField] ParticleSystem _hitVfx = null;
 
-    private RaycastHit2D[] _results = new RaycastHit2D[5];
+    private RaycastHit2D[] _results = new RaycastHit2D[9];
 
     public override void Init(ShootModel _newShootModel)
     {
@@ -23,8 +23,12 @@ public class CastProjectile : ProjectileBehaviour
         {
             if (HasHitSource(_results[i].collider.gameObject)) continue;
 
-            Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
+            if (_results[i].collider.TryGetComponent(out HealthBehaviour _healthBehaviour))
+            {
+                _healthBehaviour.TakeDamage(1);
+            }
 
+            Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
             IncreasePierceCount();
 
             if (HasReachedMaxPierceCount())

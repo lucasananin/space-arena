@@ -16,7 +16,7 @@ public class PhysicalProjectile : ProjectileBehaviour
     [SerializeField, ReadOnly] List<Collider2D> _collidersHit = default;
     [SerializeField, ReadOnly] Vector3 _lastPosition = default;
 
-    private RaycastHit2D[] _results = new RaycastHit2D[5];
+    private RaycastHit2D[] _results = new RaycastHit2D[9];
 
     private void FixedUpdate()
     {
@@ -34,9 +34,13 @@ public class PhysicalProjectile : ProjectileBehaviour
             if (HasHitSource(_results[i].collider.gameObject)) continue;
             if (_collidersHit.Contains(_results[i].collider)) continue;
 
+            if (_results[i].collider.TryGetComponent(out HealthBehaviour _healthBehaviour))
+            {
+                _healthBehaviour.TakeDamage(1);
+            }
+
             _collidersHit.Add(_results[i].collider);
             Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
-
             IncreasePierceCount();
 
             if (HasReachedMaxPierceCount() && _projectileSO.DestroyOnCollision)
