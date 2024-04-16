@@ -15,12 +15,15 @@ public class PhysicalProjectile : ProjectileBehaviour
     [Title("// Debug - Physical")]
     [SerializeField, ReadOnly] List<Collider2D> _collidersHit = default;
     [SerializeField, ReadOnly] Vector3 _lastPosition = default;
+    [SerializeField, ReadOnly] Vector2 _defaultVelocity = default;
+    [SerializeField, ReadOnly] float _accelerationTime = 0f;
 
     private RaycastHit2D[] _results = new RaycastHit2D[9];
 
     private void FixedUpdate()
     {
         _lastPosition = transform.position;
+        CheckAcceleration();
         CheckDestroyTime();
     }
 
@@ -56,5 +59,28 @@ public class PhysicalProjectile : ProjectileBehaviour
         base.Init(_newShootModel);
         _lastPosition = transform.position;
         _rb.velocity = transform.right * _projectileSO.MoveSpeed;
+
+        InitAccelerationParameters();
+    }
+
+    private void InitAccelerationParameters()
+    {
+        _defaultVelocity = _rb.velocity;
+        _accelerationTime = 0f;
+    }
+
+    private void CheckAcceleration()
+    {
+        if (_projectileSO.UseAccelerationCurve)
+        {
+            _accelerationTime += Time.fixedDeltaTime * _projectileSO.AcelerationMultiplier;
+            float _curveValue = _projectileSO.AccelerationCurve.Evaluate(_accelerationTime);
+
+            Vector2 _newVelocity = _projectileSO.InvertAcceleration ?
+                Vector2.Lerp(Vector2.zero, _defaultVelocity, _curveValue) :
+                Vector2.Lerp(_defaultVelocity, Vector2.zero, _curveValue);
+
+            _rb.velocity = _newVelocity;
+        }
     }
 }
