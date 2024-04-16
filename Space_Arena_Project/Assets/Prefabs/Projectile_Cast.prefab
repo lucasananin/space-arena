@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7353528016857128664}
   - component: {fileID: 3761620198474376623}
   - component: {fileID: 2945808015590850479}
+  - component: {fileID: 236606427743943002}
   m_Layer: 0
   m_Name: Projectile_Cast
   m_TagString: Untagged
@@ -70,3 +71,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &236606427743943002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5e44e92bb15d947afd7a0ec6c98d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectileBehaviour: {fileID: 3761620198474376623}
+  _vfxPrefab: {fileID: 6219246531898581204, guid: 35c5b57ba918f0546ac6035dbf2c3e79, type: 3}

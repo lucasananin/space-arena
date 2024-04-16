@@ -19,6 +19,7 @@ MonoBehaviour:
   _spawnPositionOffset: {x: 0.3, y: 0}
   _minMaxTimeUntilDestroy: {x: 3, y: 4}
   _maxPierceCount: 1
+  _explosionRadius: 3
   _moveSpeed: 20
   _destroyOnCollision: 1
   _useAccelerationCurve: 0

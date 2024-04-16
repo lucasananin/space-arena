@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosiveProjectileMod : MonoBehaviour
+public class ExplodeOnHitMod : MonoBehaviour
 {
     [SerializeField] ProjectileBehaviour _projectileBehaviour = null;
+    [SerializeField] SimpleExplosionVfx _vfxPrefab = null;
 
     private void OnEnable()
     {
@@ -19,6 +20,8 @@ public class ExplosiveProjectileMod : MonoBehaviour
     private void Explode(RaycastHit2D _raycastHit)
     {
         _projectileBehaviour.Explode(_raycastHit.point);
-        // spawna o vfx.
+
+        SimpleExplosionVfx _vfxInstance = Instantiate(_vfxPrefab, _raycastHit.point, Quaternion.identity);
+        _vfxInstance.Init(_projectileBehaviour.GetExplosionRadius());
     }
 }

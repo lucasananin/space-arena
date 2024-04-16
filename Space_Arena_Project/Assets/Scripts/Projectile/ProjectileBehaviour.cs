@@ -58,6 +58,11 @@ public abstract class ProjectileBehaviour : MonoBehaviour
         }
     }
 
+    public float GetExplosionRadius()
+    {
+        return _projectileSO.ExplosionRadius;
+    }
+
     public void IncreasePierceCount()
     {
         _currentPierceCount++;
