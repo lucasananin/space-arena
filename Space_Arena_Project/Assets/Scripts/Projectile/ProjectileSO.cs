@@ -12,6 +12,7 @@ public class ProjectileSO : ScriptableObject
     [SerializeField] Vector2 _spawnPositionOffset = default;
     [SerializeField] Vector2 _minMaxTimeUntilDestroy = default;
     [SerializeField] int _maxPierceCount = 1;
+    [SerializeField] float _explosionRadius = 5f;
 
     [Title("// Physical")]
     [SerializeField] float _moveSpeed = 20f;
@@ -30,6 +31,7 @@ public class ProjectileSO : ScriptableObject
     public Vector2 SpawnPositionOffset { get => _spawnPositionOffset; private set => _spawnPositionOffset = value; }
     public Vector2 MinMaxTimeUntilDestroy { get => _minMaxTimeUntilDestroy; private set => _minMaxTimeUntilDestroy = value; }
     public int MaxPierceCount { get => _maxPierceCount; private set => _maxPierceCount = value; }
+    public float ExplosionRadius { get => _explosionRadius; private set => _explosionRadius = value; }
 
     public float MoveSpeed { get => _moveSpeed; private set => _moveSpeed = value; }
     public bool DestroyOnCollision { get => _destroyOnCollision; private set => _destroyOnCollision = value; }

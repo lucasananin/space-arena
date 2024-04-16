@@ -34,17 +34,21 @@ public class PhysicalProjectile : ProjectileBehaviour
 
         for (int i = 0; i < _hits; i++)
         {
-            if (HasHitSource(_results[i].collider.gameObject)) continue;
-            if (_collidersHit.Contains(_results[i].collider)) continue;
+            RaycastHit2D _raycastHit = _results[i];
+            Collider2D _colliderHit = _raycastHit.collider;
 
-            if (_results[i].collider.TryGetComponent(out HealthBehaviour _healthBehaviour))
+            if (HasHitSource(_colliderHit.gameObject)) continue;
+            if (_collidersHit.Contains(_colliderHit)) continue;
+
+            if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour))
             {
                 _healthBehaviour.TakeDamage(1);
             }
 
-            _collidersHit.Add(_results[i].collider);
-            Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
+            _collidersHit.Add(_colliderHit);
+            Instantiate(_hitVfx, _raycastHit.point, Quaternion.identity);
             IncreasePierceCount();
+            SendRaycastHitEvent(_raycastHit);
 
             if (HasReachedMaxPierceCount() && _projectileSO.DestroyOnCollision)
             {

@@ -14,10 +14,19 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     [SerializeField, ReadOnly] protected float _destroyTimer = 0f;
     [SerializeField, ReadOnly] protected int _currentPierceCount = 0;
 
+    private Collider2D[] _explosionResults = new Collider2D[9];
+
+    public event System.Action<RaycastHit2D> onRaycastHit = null;
+
     public virtual void Init(ShootModel _newShootModel)
     {
         _shootModel = _newShootModel;
         SetDestroyTimer();
+    }
+
+    protected void SendRaycastHitEvent(RaycastHit2D _value)
+    {
+        onRaycastHit?.Invoke(_value);
     }
 
     protected void CheckDestroyTime()
@@ -36,9 +45,17 @@ public abstract class ProjectileBehaviour : MonoBehaviour
         _destroyTimer = 0f;
     }
 
-    public bool HasHitSource(GameObject _gameobjectHit)
+    public void Explode(Vector3 _point)
     {
-        return _gameobjectHit == _shootModel.CharacterSource;
+        int _hits = Physics2D.OverlapCircleNonAlloc(_point, _projectileSO.ExplosionRadius, _explosionResults, _projectileSO.LayerMask);
+
+        for (int i = 0; i < _hits; i++)
+        {
+            if (_explosionResults[i].TryGetComponent(out HealthBehaviour _healthBehaviour))
+            {
+                _healthBehaviour.TakeDamage(1);
+            }
+        }
     }
 
     public void IncreasePierceCount()
@@ -49,6 +66,11 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     public bool HasReachedMaxPierceCount()
     {
         return _currentPierceCount >= _projectileSO.MaxPierceCount;
+    }
+
+    public bool HasHitSource(GameObject _gameobjectHit)
+    {
+        return _gameobjectHit == _shootModel.CharacterSource;
     }
 
     protected IEnumerator DestroyRoutine()

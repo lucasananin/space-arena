@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 7353528016857128665}
   - component: {fileID: 7523388042507287481}
   - component: {fileID: 4705853102255858287}
+  - component: {fileID: -5096036328104372424}
   m_Layer: 0
   m_Name: Projectile_Physical
   m_TagString: Untagged
@@ -140,38 +141,11 @@ MonoBehaviour:
   _currentPierceCount: 0
   _rb: {fileID: 7523388042507287481}
   _dummyCircleCollider: {fileID: 4705853102255858287}
-  _useAccelerationCurve: 1
-  _invertAcceleration: 0
-  _accelerationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _acelerationMultiplier: 2
-  _defaultVelocity: {x: 0, y: 0}
-  _time: 0
   _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
   _collidersHit: []
   _lastPosition: {x: 0, y: 0, z: 0}
+  _defaultVelocity: {x: 0, y: 0}
+  _accelerationTime: 0
 --- !u!50 &7523388042507287481
 Rigidbody2D:
   serializedVersion: 4
@@ -209,3 +183,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!114 &-5096036328104372424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5e44e92bb15d947afd7a0ec6c98d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectileBehaviour: {fileID: 7353528016857128665}

@@ -21,15 +21,19 @@ public class CastProjectile : ProjectileBehaviour
 
         for (int i = 0; i < _hits; i++)
         {
-            if (HasHitSource(_results[i].collider.gameObject)) continue;
+            RaycastHit2D _raycastHit = _results[i];
+            Collider2D _colliderHit = _raycastHit.collider;
 
-            if (_results[i].collider.TryGetComponent(out HealthBehaviour _healthBehaviour))
+            if (HasHitSource(_colliderHit.gameObject)) continue;
+
+            if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour))
             {
                 _healthBehaviour.TakeDamage(1);
             }
 
-            Instantiate(_hitVfx, _results[i].point, Quaternion.identity);
+            Instantiate(_hitVfx, _raycastHit.point, Quaternion.identity);
             IncreasePierceCount();
+            SendRaycastHitEvent(_raycastHit);
 
             if (HasReachedMaxPierceCount())
             {
