@@ -14749,8 +14749,10 @@ MonoBehaviour:
   - {fileID: 1139148449}
   - {fileID: 1410725369}
   - {fileID: 1969171299}
-  _currentWeapon: {fileID: 1654674106}
+  _changeWeaponInputDelay: 0.3
+  _currentWeapon: {fileID: 0}
   _currentWeaponIndex: 0
+  _canInputChangeWeapon: 1
 --- !u!114 &1823301787
 MonoBehaviour:
   m_ObjectHideFlags: 0

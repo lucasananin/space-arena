@@ -36,12 +36,10 @@ public class InputHandler : MonoBehaviour
         if (_mouseScrollDelta.y > 0)
         {
             onMouseScrollUp?.Invoke();
-            Debug.Log($"// scroll swipe up!");
         }
         else if (_mouseScrollDelta.y < 0)
         {
             onMouseScrollDown?.Invoke();
-            Debug.Log($"// scroll swipe down!");
         }
     }
 

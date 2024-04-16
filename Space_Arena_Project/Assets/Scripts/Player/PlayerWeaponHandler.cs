@@ -6,10 +6,17 @@ using UnityEngine;
 public class PlayerWeaponHandler : MonoBehaviour
 {
     [SerializeField] List<WeaponBehaviour> _weapons = null;
+    [SerializeField, Range(0f, 1f)] float _changeWeaponInputDelay = 0.3f;
+    
+    [Title("// Debug")]
     [SerializeField, ReadOnly] WeaponBehaviour _currentWeapon = null;
     [SerializeField, ReadOnly] int _currentWeaponIndex = 0;
+    [SerializeField, ReadOnly] bool _canInputChangeWeapon = true;
 
-    public WeaponBehaviour CurrentWeapon { get => _currentWeapon; private set => _currentWeapon = value; }
+    private void Awake()
+    {
+        ChangeCurrentWeapon();
+    }
 
     private void OnEnable()
     {
@@ -39,6 +46,8 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void ChangeToNextWeapon()
     {
+        if (!_canInputChangeWeapon) return;
+
         _currentWeaponIndex = _weapons.IndexOf(_currentWeapon);
         _currentWeaponIndex++;
 
@@ -46,10 +55,13 @@ public class PlayerWeaponHandler : MonoBehaviour
             _currentWeaponIndex = 0;
 
         ChangeCurrentWeapon();
+        StartCoroutine(ChangeWeaponDelay());
     }
 
     private void ChangeToPreviousWeapon()
     {
+        if (!_canInputChangeWeapon) return;
+
         _currentWeaponIndex = _weapons.IndexOf(_currentWeapon);
         _currentWeaponIndex--;
 
@@ -57,6 +69,7 @@ public class PlayerWeaponHandler : MonoBehaviour
             _currentWeaponIndex = _weapons.Count - 1;
 
         ChangeCurrentWeapon();
+        StartCoroutine(ChangeWeaponDelay());
     }
 
     private void ChangeCurrentWeapon()
@@ -72,6 +85,13 @@ public class PlayerWeaponHandler : MonoBehaviour
         }
 
         _currentWeapon.GetComponent<WeaponFlipper>().FlipToParent();
+    }
+
+    private IEnumerator ChangeWeaponDelay()
+    {
+        _canInputChangeWeapon = false;
+        yield return new WaitForSeconds(_changeWeaponInputDelay);
+        _canInputChangeWeapon = true;
     }
 
     public void RotateCurrentWeapon()
