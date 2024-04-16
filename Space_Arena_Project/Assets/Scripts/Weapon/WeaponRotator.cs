@@ -6,11 +6,6 @@ public class WeaponRotator : MonoBehaviour
 {
     [SerializeField] bool _canRotate = true;
 
-    //private void Update()
-    //{
-    //    LookAtMouse();
-    //}
-
     public void LookAtMouse()
     {
         if (_canRotate)

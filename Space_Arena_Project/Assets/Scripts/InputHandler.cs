@@ -5,24 +5,43 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public static event Action onFireInputDown = null;
-    public static event Action onFireInputUp = null;
+    public static event Action onLeftMouseButtonDown = null;
+    public static event Action onLeftMouseButtonUp = null;
+    public static event Action onMouseScrollUp = null;
+    public static event Action onMouseScrollDown = null;
 
     private void Update()
     {
-        CheckFireInput();
+        CheckLeftMouseButtonInput();
+        CheckMouseScrollInput();
     }
 
-    public void CheckFireInput()
+    private void CheckLeftMouseButtonInput()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            onFireInputDown?.Invoke();
+            onLeftMouseButtonDown?.Invoke();
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            onFireInputUp?.Invoke();
+            onLeftMouseButtonUp?.Invoke();
+        }
+    }
+
+    private void CheckMouseScrollInput()
+    {
+        Vector2 _mouseScrollDelta = Input.mouseScrollDelta;
+
+        if (_mouseScrollDelta.y > 0)
+        {
+            onMouseScrollUp?.Invoke();
+            Debug.Log($"// scroll swipe up!");
+        }
+        else if (_mouseScrollDelta.y < 0)
+        {
+            onMouseScrollDown?.Invoke();
+            Debug.Log($"// scroll swipe down!");
         }
     }
 

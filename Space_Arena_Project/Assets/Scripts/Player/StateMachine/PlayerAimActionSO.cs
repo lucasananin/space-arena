@@ -15,12 +15,11 @@ public class PlayerAimActionSO : StateActionSO
 
 public class PlayerAimAction : StateAction
 {
-    private WeaponRotator _weaponRotator = null;
+    private PlayerWeaponHandler _playerWeaponHandler = null;
 
     public override void Awake(StateMachine stateMachine)
     {
-        var _playerWeaponHandler = stateMachine.GetComponent<PlayerWeaponHandler>();
-        _weaponRotator = _playerWeaponHandler.CurrentWeapon.GetComponent<WeaponRotator>();
+        _playerWeaponHandler = stateMachine.GetComponent<PlayerWeaponHandler>();
     }
 
     public override void OnFixedUpdate()
@@ -30,6 +29,6 @@ public class PlayerAimAction : StateAction
 
     public override void OnUpdate()
     {
-        _weaponRotator.LookAtMouse();
+        _playerWeaponHandler.RotateCurrentWeapon();
     }
 }

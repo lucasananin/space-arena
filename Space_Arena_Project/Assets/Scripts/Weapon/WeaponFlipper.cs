@@ -16,7 +16,7 @@ public class WeaponFlipper : SideFlipper
         _parentFlipper.onFlip -= FlipToParent;
     }
 
-    private void FlipToParent()
+    public void FlipToParent()
     {
         Flip(_parentFlipper.IsLookingRight());
     }
