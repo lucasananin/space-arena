@@ -1662,12 +1662,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cf9cea8ff7b368d4d80e05a2ef192cd2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ea72367ec1a711459a04ab1e2b48966, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -8121,7 +8121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 655962181}
   m_Layer: 0
-  m_Name: Snowmans
+  m_Name: Scarecrows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8343,7 +8343,7 @@ GameObject:
   - component: {fileID: 740099030}
   - component: {fileID: 740099029}
   m_Layer: 6
-  m_Name: Snowman_1
+  m_Name: Scarecrow_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8395,7 +8395,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
 --- !u!50 &740099032
 Rigidbody2D:
   serializedVersion: 4
@@ -8426,7 +8426,7 @@ Transform:
   m_GameObject: {fileID: 740099028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7, y: 1.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 253645502}
@@ -11377,7 +11377,7 @@ GameObject:
   - component: {fileID: 1325800516}
   - component: {fileID: 1325800515}
   m_Layer: 6
-  m_Name: Snowman_3
+  m_Name: Scarecrow_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11392,7 +11392,7 @@ Transform:
   m_GameObject: {fileID: 1325800513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7, y: -1.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2020808069}
@@ -11445,7 +11445,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
 --- !u!50 &1325800518
 Rigidbody2D:
   serializedVersion: 4
@@ -13772,12 +13772,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cf9cea8ff7b368d4d80e05a2ef192cd2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ea72367ec1a711459a04ab1e2b48966, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -15500,12 +15500,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cf9cea8ff7b368d4d80e05a2ef192cd2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ea72367ec1a711459a04ab1e2b48966, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -15838,7 +15838,7 @@ GameObject:
   - component: {fileID: 2094770495}
   - component: {fileID: 2094770494}
   m_Layer: 6
-  m_Name: Snowman_2
+  m_Name: Scarecrow_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15853,7 +15853,7 @@ Transform:
   m_GameObject: {fileID: 2094770492}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1695589063}
@@ -15906,7 +15906,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
 --- !u!50 &2094770497
 Rigidbody2D:
   serializedVersion: 4

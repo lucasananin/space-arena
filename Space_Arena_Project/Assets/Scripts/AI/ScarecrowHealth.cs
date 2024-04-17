@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 
 [RequireComponent(typeof(HealthBehaviour))]
-public class SnowmanHealth : MonoBehaviour
+public class ScarecrowHealth : MonoBehaviour
 {
     [SerializeField] HealthBehaviour _healthBehaviour = null;
     [SerializeField] Transform _renderTransform = null;
