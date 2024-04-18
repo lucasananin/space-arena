@@ -10,15 +10,16 @@ public class CastProjectile : ProjectileBehaviour
 
     [Title("// Vfx")]
     [SerializeField] ParticleSystem _hitVfx = null;
-    [SerializeField] CastLineVfx _lineVfx = null;
 
     private RaycastHit2D[] _results = new RaycastHit2D[9];
-    private List<Vector3> _pointsHit = new List<Vector3>();
+    private List<RaycastHit2D> _raycastHits = new List<RaycastHit2D>();
+
+    public event System.Action<List<RaycastHit2D>> onCastEnd = null;
 
     public override void Init(ShootModel _newShootModel)
     {
         base.Init(_newShootModel);
-        _pointsHit.Clear();
+        _raycastHits.Clear();
 
         int _hits = Physics2D.CircleCastNonAlloc(transform.position, _dummyCircleCollider.radius, transform.right, _results, _projectileSO.MaxCastDistance, _projectileSO.LayerMask);
 
@@ -34,7 +35,7 @@ public class CastProjectile : ProjectileBehaviour
                 _healthBehaviour.TakeDamage(1);
             }
 
-            _pointsHit.Add(_raycastHit.point);
+            _raycastHits.Add(_raycastHit);
             Instantiate(_hitVfx, _raycastHit.point, Quaternion.identity);
             IncreasePierceCount();
             SendRaycastHitEvent(_raycastHit);
@@ -45,24 +46,12 @@ public class CastProjectile : ProjectileBehaviour
             }
         }
 
-        TrySpawnLineVfx();
+        onCastEnd?.Invoke(_raycastHits);
         StartCoroutine(DestroyRoutine());
     }
 
-    private void TrySpawnLineVfx()
+    public float GetCastMaxDistance()
     {
-        // Enviar o _pointsHit em um event.
-        if (_lineVfx == null) return;
-
-        var _instance = Instantiate(_lineVfx, transform.position, Quaternion.identity);
-
-        if (_pointsHit.Count > 0)
-        {
-            _instance.Init(_pointsHit[_pointsHit.Count - 1]);
-        }
-        else
-        {
-            _instance.Init(transform.right.normalized * _projectileSO.MaxCastDistance);
-        }
+        return _projectileSO.MaxCastDistance;
     }
 }

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7353528016857128664}
   - component: {fileID: 3761620198474376623}
+  - component: {fileID: 7643541444447828504}
   - component: {fileID: 2945808015590850479}
-  - component: {fileID: 236606427743943002}
   m_Layer: 0
   m_Name: Projectile_Cast
   m_TagString: Untagged
@@ -56,6 +56,20 @@ MonoBehaviour:
   _dummyCircleCollider: {fileID: 2945808015590850479}
   _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
   _lineVfx: {fileID: 3300318201072077148, guid: aeef418fa81f492439000cf07b3ba191, type: 3}
+--- !u!114 &7643541444447828504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aad92afbb7622947ac0d5885dfbd938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _castProjectile: {fileID: 3761620198474376623}
+  _lineVfx: {fileID: 3300318201072077148, guid: aeef418fa81f492439000cf07b3ba191, type: 3}
 --- !u!58 &2945808015590850479
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -72,17 +86,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &236606427743943002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7353528016857128666}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd5e44e92bb15d947afd7a0ec6c98d22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _projectileBehaviour: {fileID: 3761620198474376623}
-  _vfxPrefab: {fileID: 6219246531898581204, guid: 35c5b57ba918f0546ac6035dbf2c3e79, type: 3}
