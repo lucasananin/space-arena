@@ -28,11 +28,11 @@ public class WeaponSO : ScriptableObject
     [Title("// Projectiles per shot")]
     [SerializeField, Range(1, 36)] int _projectilesPerShot = 1;
 
-    [Title("// Semi Auto Properties")]
+    [Title("// Semi Auto - Properties")]
     [SerializeField] bool _isAutoChargeType = false;
     [SerializeField] bool _hasChargeWeakShot = false;
 
-    [Title("// Burst Properties")]
+    [Title("// Burst - Properties")]
     [SerializeField] float _burstRate = 0.5f;
     [SerializeField] int _maxShootCount = 3;
 
