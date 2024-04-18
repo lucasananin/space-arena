@@ -55,6 +55,7 @@ MonoBehaviour:
   _currentPierceCount: 0
   _dummyCircleCollider: {fileID: 2945808015590850479}
   _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
+  _lineVfx: {fileID: 3300318201072077148, guid: aeef418fa81f492439000cf07b3ba191, type: 3}
 --- !u!58 &2945808015590850479
 CircleCollider2D:
   m_ObjectHideFlags: 0
