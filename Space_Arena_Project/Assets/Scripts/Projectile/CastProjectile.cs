@@ -51,6 +51,7 @@ public class CastProjectile : ProjectileBehaviour
 
     private void TrySpawnLineVfx()
     {
+        // Enviar o _pointsHit em um event.
         if (_lineVfx == null) return;
 
         var _instance = Instantiate(_lineVfx, transform.position, Quaternion.identity);
