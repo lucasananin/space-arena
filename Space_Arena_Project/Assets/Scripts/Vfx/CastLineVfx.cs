@@ -5,7 +5,6 @@ using Sirenix.OdinInspector;
 
 public class CastLineVfx : MonoBehaviour
 {
-    //[SerializeField] LineRenderer _line = null;
     [SerializeField] LineRenderer[] _lineRenderers= null;
     [SerializeField] float _timeMultiplier = 1f;
     [SerializeField, ReadOnly] List<float> _defaultWidths = null;
@@ -24,7 +23,6 @@ public class CastLineVfx : MonoBehaviour
     private void Update()
     {
         _currentTime += Time.deltaTime * _timeMultiplier;
-        //_line.widthMultiplier = Mathf.Lerp(_line.widthMultiplier, 0, _currentTime);
 
         int _count = _lineRenderers.Length;
 
@@ -43,9 +41,6 @@ public class CastLineVfx : MonoBehaviour
             _lineRenderers[i].SetPosition(0, transform.position);
             _lineRenderers[i].SetPosition(1, _newPosition);
         }
-
-        //_line.SetPosition(0, transform.position);
-        //_line.SetPosition(1, _newPosition);
 
         _currentTime = 0f;
         StartCoroutine(DestroyRoutine());
