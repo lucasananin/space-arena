@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(HealthBehaviour))]
-public class ScarecrowHealth : MonoBehaviour
+public class HitShakeVfx : MonoBehaviour
 {
     [SerializeField] HealthBehaviour _healthBehaviour = null;
     [SerializeField] Transform _renderTransform = null;
@@ -12,6 +13,13 @@ public class ScarecrowHealth : MonoBehaviour
     [SerializeField] Vector3 _strength = new Vector3(1f, 1f, 0f);
     [SerializeField, Range(0.1f, 9f)] float _strenghtMultiplier = 1f;
     [SerializeField, Range(0.1f, 1f)] float _duration = 1f;
+    [Space]
+    [SerializeField, ReadOnly] Vector3 _defaultPosition = default;
+
+    private void Awake()
+    {
+        _defaultPosition = _renderTransform.localPosition;
+    }
 
     private void OnEnable()
     {
@@ -31,7 +39,7 @@ public class ScarecrowHealth : MonoBehaviour
         _renderTransform.DOShakePosition(_duration, _strength * _strenghtMultiplier).
             OnComplete(() =>
             {
-                _renderTransform.localPosition = Vector3.zero;
+                _renderTransform.localPosition = _defaultPosition;
             });
     }
 }
