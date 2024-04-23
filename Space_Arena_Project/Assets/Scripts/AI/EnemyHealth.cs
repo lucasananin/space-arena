@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyHealth : HealthBehaviour
 {
+    [SerializeField] ParticleSystem _deadVfx = null;
+
     protected override void OnDamageTaken()
     {
         //
@@ -11,6 +13,7 @@ public class EnemyHealth : HealthBehaviour
 
     protected override void OnDead()
     {
+        Instantiate(_deadVfx, transform.position, transform.rotation);
         gameObject.SetActive(false);
     }
 }

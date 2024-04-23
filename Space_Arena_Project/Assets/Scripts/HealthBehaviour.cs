@@ -38,6 +38,12 @@ public abstract class HealthBehaviour : MonoBehaviour
         _currentHealth = _maxHealth;
     }
 
+    [Button]
+    private void TakeDamage()
+    {
+        TakeDamage(1);
+    }
+
     protected abstract void OnDead();
     protected abstract void OnDamageTaken();
 }
