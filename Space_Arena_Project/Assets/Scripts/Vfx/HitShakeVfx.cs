@@ -33,8 +33,6 @@ public class HitShakeVfx : MonoBehaviour
 
     private void Shake()
     {
-        _healthBehaviour.RestoreHealth();
-
         _renderTransform.DOComplete();
         _renderTransform.DOShakePosition(_duration, _strength * _strenghtMultiplier).
             OnComplete(() =>

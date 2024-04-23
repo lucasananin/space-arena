@@ -2080,7 +2080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &348940563
 Transform:
   m_ObjectHideFlags: 0
@@ -2609,7 +2609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &464876059
 Transform:
   m_ObjectHideFlags: 0
@@ -9107,7 +9107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &655962181
 Transform:
   m_ObjectHideFlags: 0
@@ -9349,7 +9349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &683795084
 Transform:
   m_ObjectHideFlags: 0
@@ -14794,7 +14794,7 @@ GameObject:
   - component: {fileID: 740099033}
   - component: {fileID: 740099032}
   - component: {fileID: 740099031}
-  - component: {fileID: 740099030}
+  - component: {fileID: 740099034}
   - component: {fileID: 740099029}
   m_Layer: 6
   m_Name: Scarecrow_1
@@ -14815,26 +14815,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBehaviour: {fileID: 740099030}
+  _healthBehaviour: {fileID: 740099034}
   _renderTransform: {fileID: 253645502}
   _strength: {x: 1, y: 0.5, z: 0}
   _strenghtMultiplier: 0.1
   _duration: 0.1
   _defaultPosition: {x: 0, y: 0, z: 0}
---- !u!114 &740099030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740099028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05580b0e868200844a0a78c3f09cb240, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _currentHealth: 0
 --- !u!58 &740099031
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14888,6 +14874,20 @@ Transform:
   m_Father: {fileID: 655962181}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &740099034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740099028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25cb2d89e36a9748adbeda994c2ffc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _currentHealth: 0
 --- !u!1 &747393367
 GameObject:
   m_ObjectHideFlags: 0
@@ -15116,11 +15116,12 @@ GameObject:
   - component: {fileID: 757533903}
   - component: {fileID: 757533901}
   - component: {fileID: 757533902}
+  - component: {fileID: 757533908}
   - component: {fileID: 757533900}
   - component: {fileID: 757533899}
   - component: {fileID: 757533898}
   - component: {fileID: 757533904}
-  - component: {fileID: 757533905}
+  - component: {fileID: 757533907}
   - component: {fileID: 757533906}
   m_Layer: 6
   m_Name: Enemy_1a
@@ -15241,7 +15242,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757533897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -15284,20 +15285,6 @@ MonoBehaviour:
   _flipY: 0
   _aiPath: {fileID: 757533899}
   _isMovingRight: 1
---- !u!114 &757533905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 757533897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05580b0e868200844a0a78c3f09cb240, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 5
-  _currentHealth: 0
 --- !u!114 &757533906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15310,12 +15297,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBehaviour: {fileID: 757533905}
+  _healthBehaviour: {fileID: 757533907}
   _renderTransform: {fileID: 1067365285}
   _strength: {x: 1, y: 1, z: 0}
   _strenghtMultiplier: 0.1
   _duration: 0.1
   _defaultPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &757533907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757533897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cb668af1eafd7458bb2bfb7c2d3e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 10
+  _currentHealth: 0
+--- !u!70 &757533908
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757533897}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.05}
+  m_Size: {x: 1.25, y: 0.5}
+  m_Direction: 1
 --- !u!1 &762295976
 GameObject:
   m_ObjectHideFlags: 0
@@ -18225,7 +18242,7 @@ GameObject:
   - component: {fileID: 1325800514}
   - component: {fileID: 1325800518}
   - component: {fileID: 1325800517}
-  - component: {fileID: 1325800516}
+  - component: {fileID: 1325800519}
   - component: {fileID: 1325800515}
   m_Layer: 6
   m_Name: Scarecrow_3
@@ -18262,26 +18279,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBehaviour: {fileID: 1325800516}
+  _healthBehaviour: {fileID: 1325800519}
   _renderTransform: {fileID: 2020808069}
   _strength: {x: 1, y: 0.5, z: 0}
   _strenghtMultiplier: 0.1
   _duration: 0.1
   _defaultPosition: {x: 0, y: 0, z: 0}
---- !u!114 &1325800516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325800513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05580b0e868200844a0a78c3f09cb240, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _currentHealth: 0
 --- !u!58 &1325800517
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18319,6 +18322,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1325800519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325800513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25cb2d89e36a9748adbeda994c2ffc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _currentHealth: 0
 --- !u!1 &1330767461
 GameObject:
   m_ObjectHideFlags: 0
@@ -18635,7 +18652,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1388199463
 Transform:
   m_ObjectHideFlags: 0
@@ -27553,7 +27570,7 @@ GameObject:
   - component: {fileID: 2094770493}
   - component: {fileID: 2094770497}
   - component: {fileID: 2094770496}
-  - component: {fileID: 2094770495}
+  - component: {fileID: 2094770498}
   - component: {fileID: 2094770494}
   m_Layer: 6
   m_Name: Scarecrow_2
@@ -27590,26 +27607,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBehaviour: {fileID: 2094770495}
+  _healthBehaviour: {fileID: 2094770498}
   _renderTransform: {fileID: 1695589063}
   _strength: {x: 1, y: 0.5, z: 0}
   _strenghtMultiplier: 0.1
   _duration: 0.1
   _defaultPosition: {x: 0, y: 0, z: 0}
---- !u!114 &2094770495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094770492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05580b0e868200844a0a78c3f09cb240, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _currentHealth: 0
 --- !u!58 &2094770496
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -27647,6 +27650,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2094770498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094770492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25cb2d89e36a9748adbeda994c2ffc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _currentHealth: 0
 --- !u!1 &2108592200
 GameObject:
   m_ObjectHideFlags: 0

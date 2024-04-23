@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthBehaviour : MonoBehaviour
+public abstract class HealthBehaviour : MonoBehaviour
 {
     [SerializeField] int _maxHealth = 100;
     [SerializeField, ReadOnly] int _currentHealth = 0;
@@ -23,10 +23,12 @@ public class HealthBehaviour : MonoBehaviour
         if (_currentHealth <= 0)
         {
             _currentHealth = 0;
+            OnDead();
             onDead?.Invoke();
         }
         else
         {
+            OnDamageTaken();
             onDamageTaken?.Invoke();
         }
     }
@@ -35,4 +37,7 @@ public class HealthBehaviour : MonoBehaviour
     {
         _currentHealth = _maxHealth;
     }
+
+    protected abstract void OnDead();
+    protected abstract void OnDamageTaken();
 }
