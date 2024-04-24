@@ -15461,6 +15461,7 @@ GameObject:
   - component: {fileID: 757533901}
   - component: {fileID: 757533902}
   - component: {fileID: 757533908}
+  - component: {fileID: 757533909}
   - component: {fileID: 757533900}
   - component: {fileID: 757533899}
   - component: {fileID: 757533898}
@@ -15473,7 +15474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &757533898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15487,7 +15488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 1823301781}
+  target: {fileID: 0}
 --- !u!114 &757533899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15678,6 +15679,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.05}
   m_Size: {x: 1.25, y: 0.5}
   m_Direction: 1
+--- !u!114 &757533909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757533897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eeda163c70b3cb4ebb88ba92f608fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitionTableSO: {fileID: 11400000, guid: 454d32340ade5244db2dcbffae998ceb, type: 2}
+  _debugger:
+    debugTransitions: 0
+    appendConditionsInfo: 1
+    appendActionsInfo: 1
+    currentState: 
 --- !u!1 &762295976
 GameObject:
   m_ObjectHideFlags: 0
