@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c12f633962027041a8080cb11a23b09, type: 3}
-  m_Name: Action_AIWander
+  m_Script: {fileID: 11500000, guid: 56a9cb61ac96eef4fa8eb91aad1b7e55, type: 3}
+  m_Name: Condition_HasTargetEntity
   m_EditorClassIdentifier: 
-  description: Pick a random position inside a sphere centered on the entity.
-  _radius: 5

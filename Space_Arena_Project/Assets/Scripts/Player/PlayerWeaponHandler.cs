@@ -10,6 +10,7 @@ public class PlayerWeaponHandler : MonoBehaviour
     
     [Title("// Debug")]
     [SerializeField, ReadOnly] WeaponBehaviour _currentWeapon = null;
+    [SerializeField, ReadOnly] WeaponRotator _weaponRotator = null;
     [SerializeField, ReadOnly] int _currentWeaponIndex = 0;
     [SerializeField, ReadOnly] bool _canInputChangeWeapon = true;
 
@@ -85,6 +86,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         }
 
         _currentWeapon.GetComponent<WeaponFlipper>().FlipToParent();
+        _weaponRotator = _currentWeapon.GetComponent<WeaponRotator>();
     }
 
     private IEnumerator ChangeWeaponDelay()
@@ -96,7 +98,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     public void RotateCurrentWeapon()
     {
-        _currentWeapon.GetComponent<WeaponRotator>().LookAtMouse();
+        _weaponRotator.LookAtMouse();
     }
 
     [Button]

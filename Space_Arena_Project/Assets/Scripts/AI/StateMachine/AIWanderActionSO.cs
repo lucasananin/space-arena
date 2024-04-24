@@ -49,8 +49,7 @@ public class AIWanderAction : StateAction
 
     private Vector3 PickRandomPoint()
     {
-        Vector3 _point = Random.insideUnitSphere * OriginSO.Radius;
-        _point.z = 0;
+        Vector3 _point = Random.insideUnitCircle * OriginSO.Radius;
         _point += _aiPath.position;
         return _point;
     }

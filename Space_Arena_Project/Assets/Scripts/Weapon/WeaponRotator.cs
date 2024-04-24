@@ -20,4 +20,11 @@ public class WeaponRotator : MonoBehaviour
             transform.rotation = Quaternion.identity;
         }
     }
+
+    public void LookAt(Vector3 _targetPosition)
+    {
+        Vector3 _direction = _targetPosition - transform.position;
+        float _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
+    }
 }

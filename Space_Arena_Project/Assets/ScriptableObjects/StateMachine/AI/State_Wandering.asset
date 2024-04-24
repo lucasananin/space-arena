@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: State_Wandering
   m_EditorClassIdentifier: 
   _actions:
+  - {fileID: 11400000, guid: 0f0fda3ba9c052642a2dc9b1b0dc6aed, type: 2}
   - {fileID: 11400000, guid: f069c047312f04e4584f2ca0ee5d9844, type: 2}

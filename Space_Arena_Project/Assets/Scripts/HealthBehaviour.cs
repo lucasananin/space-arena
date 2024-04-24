@@ -38,6 +38,11 @@ public abstract class HealthBehaviour : MonoBehaviour
         _currentHealth = _maxHealth;
     }
 
+    public bool IsAlive()
+    {
+        return _currentHealth > 0;
+    }
+
     [Button]
     private void TakeDamage()
     {
