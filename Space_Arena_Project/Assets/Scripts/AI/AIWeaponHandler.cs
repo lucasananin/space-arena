@@ -7,7 +7,8 @@ public class AIWeaponHandler : MonoBehaviour
 {
     [SerializeField] WeaponBehaviour _currentWeapon = null;
     [SerializeField, ReadOnly] WeaponRotator _weaponRotator = null;
-    [SerializeField, ReadOnly] HealthBehaviour _targetHealth = null;
+    //[SerializeField, ReadOnly] AIEntity _aIEntity = null;
+    //[SerializeField, ReadOnly] HealthBehaviour _targetHealth = null;
 
     //private void Awake()
     //{
@@ -29,13 +30,15 @@ public class AIWeaponHandler : MonoBehaviour
         _weaponRotator.LookAt(default);
     }
 
-    public void SetTargetEntity(GameObject _gameobject)
-    {
-        _targetHealth = _gameobject.GetComponent<HealthBehaviour>();
-    }
+    //public void SetTargetEntity(GameObject _gameobject)
+    //{
+    //    _aIEntity = _gameobject.GetComponent<AIEntity>();
+    //    //_targetHealth = _gameobject.GetComponent<HealthBehaviour>();
+    //}
 
-    public bool HasTargetEntity()
-    {
-        return _targetHealth != null && _targetHealth.IsAlive();
-    }
+    //public bool HasTargetEntity()
+    //{
+
+    //    return _targetHealth != null && _targetHealth.IsAlive();
+    //}
 }

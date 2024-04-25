@@ -16,4 +16,6 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
+  _tags:
+  - Player
   _radius: 5

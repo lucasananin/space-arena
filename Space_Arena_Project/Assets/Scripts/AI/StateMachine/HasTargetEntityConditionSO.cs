@@ -15,15 +15,18 @@ public class HasTargetEntityConditionSO : StateConditionSO
 
 public class HasTargetEntityCondition : Condition
 {
-    private AIWeaponHandler _aiWeaponHandler = null;
+    //private AIWeaponHandler _aiWeaponHandler = null;
+    private AIEntity _aIEntity = null;
 
-    public override void Awake(StateMachine stateMachine)
+    public override void Awake(StateMachine _stateMachine)
     {
-        _aiWeaponHandler = stateMachine.GetComponent<AIWeaponHandler>();
+        //_aiWeaponHandler = stateMachine.GetComponent<AIWeaponHandler>();
+        _aIEntity = _stateMachine.GetComponent<AIEntity>();
     }
 
     protected override bool Statement()
     {
-        return _aiWeaponHandler.HasTargetEntity();
+        //return _aiWeaponHandler.HasTargetEntity();
+        return _aIEntity.HasTargetEntity();
     }
 }
