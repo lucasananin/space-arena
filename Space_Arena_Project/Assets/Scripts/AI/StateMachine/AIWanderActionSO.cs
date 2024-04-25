@@ -22,11 +22,14 @@ public class AIWanderAction : StateAction
 {
     private new AIWanderActionSO OriginSO => (AIWanderActionSO)base.OriginSO;
 
+    private AIEntity _aIEntity = null;
     private IAstarAI _aiPath = default;
 
     public override void Awake(StateMachine _stateMachine)
     {
-        _aiPath = _stateMachine.GetComponent<AIPath>();
+        //_aiPath = _stateMachine.GetComponent<AIPath>();
+        _aIEntity = _stateMachine.GetComponent<AIEntity>();
+        _aiPath = _aIEntity.GetAIPath();
     }
 
     public override void OnFixedUpdate()
@@ -53,5 +56,4 @@ public class AIWanderAction : StateAction
         _point += _aiPath.position;
         return _point;
     }
-
 }
