@@ -22,14 +22,12 @@ public class SearchTargetAction : StateAction
 
     private StateMachine _stateMachine = null;
     private AIEntity _aIEntity = null;
-    //private AIWeaponHandler _aIWeaponHandler = null;
     private Collider2D[] _results = new Collider2D[9];
 
     public override void Awake(StateMachine stateMachine)
     {
         _stateMachine = stateMachine;
         _aIEntity = _stateMachine.GetComponent<AIEntity>();
-        //_aIWeaponHandler = _stateMachine.GetComponent<AIWeaponHandler>();
     }
 
     public override void OnFixedUpdate()
@@ -39,7 +37,6 @@ public class SearchTargetAction : StateAction
 
     public override void OnUpdate()
     {
-        //if (_aIWeaponHandler.HasTargetEntity()) return;
         if (_aIEntity.HasTargetEntity()) return;
 
         int _hits = Physics2D.OverlapCircleNonAlloc(_stateMachine.transform.position, OriginSO.Radius, _results, OriginSO.LayerMask);
@@ -50,13 +47,9 @@ public class SearchTargetAction : StateAction
 
             if (HitSource(_colliderHit.gameObject)) continue;
 
-            // Colocar as tags em um SO e criar uma lista de SO para saber quem atacar.
             if (HasAvailableTag(_colliderHit))
-            //if (_colliderHit.CompareTag("Player"))
             {
                 _aIEntity.SetTargetEntity(_colliderHit.gameObject);
-                //_aIWeaponHandler.SetTargetEntity(_colliderHit.gameObject);
-                //Debug.Log($"// Found a Player target!", _stateMachine);
             }
         }
     }
