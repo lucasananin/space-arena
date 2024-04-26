@@ -2243,7 +2243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canRotate: 0
+  _canRotate: 1
 --- !u!114 &285833603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26907,7 +26907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canRotate: 0
+  _canRotate: 1
 --- !u!114 &1695794702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27280,7 +27280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canRotate: 0
+  _canRotate: 1
 --- !u!114 &1744564374
 MonoBehaviour:
   m_ObjectHideFlags: 0

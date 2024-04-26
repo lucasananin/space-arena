@@ -28,7 +28,7 @@ public class AIWanderAction : StateAction
     public override void Awake(StateMachine _stateMachine)
     {
         _aIEntity = _stateMachine.GetComponent<AIEntity>();
-        _aiPath = _aIEntity.GetAIPath();
+        _aiPath = _aIEntity.AiPath;
     }
 
     public override void OnFixedUpdate()

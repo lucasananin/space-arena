@@ -29,17 +29,18 @@ public class MoveCloseToTargetAction : StateAction
     private AIEntity _aIEntity = null;
     private IAstarAI _aiPath = default;
 
-    private float _timer = 0f;
+    private Vector3 _point = default;
+    //private float _timer = 0f;
 
     public override void Awake(StateMachine stateMachine)
     {
         _aIEntity = stateMachine.GetComponent<AIEntity>();
-        _aiPath = _aIEntity.GetAIPath();
+        _aiPath = _aIEntity.AiPath;
     }
 
     public override void OnStateEnter()
     {
-        _timer = OriginSO.MoveRate;
+        //_timer = OriginSO.MoveRate;
         SearchPath();
     }
 
@@ -50,7 +51,7 @@ public class MoveCloseToTargetAction : StateAction
 
     public override void OnUpdate()
     {
-        _timer += Time.deltaTime;
+        //_timer += Time.deltaTime;
 
         if (OriginSO.StopOnCloseEnough && _aIEntity.IsCloseToTargetEntity(OriginSO.Radius)) return;
 
@@ -72,10 +73,11 @@ public class MoveCloseToTargetAction : StateAction
         //    }
         //}
 
-        if (CanSearchAnotherPath())
+        if (_aIEntity.HasReachedPathEnding() || !_aIEntity.IsPointCloseToTargetEntity(_point, OriginSO.Radius))
+        //if (CanSearchAnotherPath() || !_aIEntity.IsPointCloseToTargetEntity(_point, OriginSO.Radius))
         //if (_timer > OriginSO.MoveRate)
         {
-            _timer = 0f;
+            //_timer = 0f;
             SearchPath();
         }
     }
@@ -91,19 +93,14 @@ public class MoveCloseToTargetAction : StateAction
 
     private Vector3 PickRandomPointNearTarget()
     {
-        Vector3 _point = Random.insideUnitCircle * OriginSO.Radius;
+        _point = Random.insideUnitCircle * OriginSO.Radius;
         _point += _aIEntity.GetTargetEntityPosition();
         return _point;
     }
 
-    //private bool IsCloseEnough()
+    // botar no _aiEntity
+    //private bool CanSearchAnotherPath()
     //{
-    //    float _distance = (_aIEntity.GetTargetEntityPosition() - _aIEntity.transform.position).sqrMagnitude;
-    //    return _distance < OriginSO.Radius * OriginSO.Radius;
+    //    return !_aiPath.pathPending && (_aiPath.reachedEndOfPath || !_aiPath.hasPath);
     //}
-
-    private bool CanSearchAnotherPath()
-    {
-        return !_aiPath.pathPending && (_aiPath.reachedEndOfPath || !_aiPath.hasPath);
-    }
 }

@@ -28,7 +28,7 @@ public class AIFleeFromTargetAction : StateAction
     public override void Awake(StateMachine stateMachine)
     {
         _aIEntity = stateMachine.GetComponent<AIEntity>();
-        _aiPath = _aIEntity.GetAIPath();
+        _aiPath = _aIEntity.AiPath;
     }
 
     public override void OnStateEnter()
