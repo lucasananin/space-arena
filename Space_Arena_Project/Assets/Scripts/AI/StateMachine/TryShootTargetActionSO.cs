@@ -39,6 +39,6 @@ public class TryShootTargetAction : StateAction
             _aIEntity.PullTrigger();
         }
 
-        // rotacionar a arma na direcao do target.
+        _aIEntity.RotateWeaponToTarget();
     }
 }

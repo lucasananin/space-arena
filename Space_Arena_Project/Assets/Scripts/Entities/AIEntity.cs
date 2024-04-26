@@ -48,6 +48,13 @@ public class AIEntity : EntityBehaviour
 
     public void RotateWeaponToTarget()
     {
-
+        if (HasTargetEntity())
+        {
+            _aIWeaponHandler.RotateWeapon(GetTargetEntityPosition());
+        }
+        else
+        {
+            _aIWeaponHandler.ResetWeaponRotation();
+        }
     }
 }

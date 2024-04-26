@@ -17,14 +17,26 @@ public class WeaponRotator : MonoBehaviour
         }
         else
         {
-            transform.rotation = Quaternion.identity;
+            ResetRotation();
         }
     }
 
     public void LookAt(Vector3 _targetPosition)
     {
-        Vector3 _direction = _targetPosition - transform.position;
-        float _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
+        if (_canRotate)
+        {
+            Vector3 _direction = _targetPosition - transform.position;
+            float _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
+        }
+        else
+        {
+            ResetRotation();
+        }
+    }
+
+    public void ResetRotation()
+    {
+        transform.rotation = Quaternion.identity;
     }
 }

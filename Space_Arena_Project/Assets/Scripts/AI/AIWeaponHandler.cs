@@ -6,7 +6,7 @@ using UnityEngine;
 public class AIWeaponHandler : MonoBehaviour
 {
     [SerializeField] WeaponBehaviour _currentWeapon = null;
-    [SerializeField, ReadOnly] WeaponRotator _weaponRotator = null;
+    [SerializeField] WeaponRotator _weaponRotator = null;
     [SerializeField, ReadOnly] bool _isShooting = false;
 
     public void PullTrigger()
@@ -21,9 +21,14 @@ public class AIWeaponHandler : MonoBehaviour
         _currentWeapon.ReleaseTrigger();
     }
 
-    public void RotateCurrentWeapon()
+    public void RotateWeapon(Vector3 _position)
     {
-        _weaponRotator.LookAt(default);
+        _weaponRotator.LookAt(_position);
+    }
+
+    public void ResetWeaponRotation()
+    {
+        _weaponRotator.ResetRotation();
     }
 
     private IEnumerator PullTrigger_routine()
