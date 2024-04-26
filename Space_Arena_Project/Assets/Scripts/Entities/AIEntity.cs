@@ -9,6 +9,9 @@ public class AIEntity : EntityBehaviour
     [SerializeField] AIPath _aiPath = null;
     [SerializeField] AIWeaponHandler _aIWeaponHandler = null;
     [SerializeField, ReadOnly] EntityBehaviour _targetEntity = null;
+    [SerializeField, ReadOnly] bool _isFleeing = false;
+
+    public bool IsFleeing { get => _isFleeing; set => _isFleeing = value; }
 
     //public void SetTargetEntity(GameObject _gameobject)
     //{
