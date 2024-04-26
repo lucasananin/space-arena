@@ -10,9 +10,11 @@ public class MoveCloseToTargetActionSO : StateActionSO
 {
     [SerializeField] float _radius = 1f;
     [SerializeField] float _moveRate = 1f;
+    [SerializeField] bool _stopOnCloseEnough = true;
 
     public float Radius { get => _radius; private set => _radius = value; }
     public float MoveRate { get => _moveRate; private set => _moveRate = value; }
+    public bool StopOnCloseEnough { get => _stopOnCloseEnough; private set => _stopOnCloseEnough = value; }
 
     protected override StateAction CreateAction()
     {
@@ -50,7 +52,7 @@ public class MoveCloseToTargetAction : StateAction
     {
         _timer += Time.deltaTime;
 
-        if (_aIEntity.IsCloseToTargetEntity(OriginSO.Radius)) return;
+        if (OriginSO.StopOnCloseEnough && _aIEntity.IsCloseToTargetEntity(OriginSO.Radius)) return;
 
         //if (IsCloseEnough())
         //{
@@ -80,6 +82,9 @@ public class MoveCloseToTargetAction : StateAction
 
     private void SearchPath()
     {
+        // Pega uma posicao onde o target possa ser visto. Castar um raycast pra ver se nao tem nada na frente.
+        // colocar um numero maximo de tentativas para evitar lacos infinitos.
+
         _aiPath.destination = PickRandomPointNearTarget();
         _aiPath.SearchPath();
     }

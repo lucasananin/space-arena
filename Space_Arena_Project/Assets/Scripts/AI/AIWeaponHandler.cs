@@ -7,10 +7,13 @@ public class AIWeaponHandler : MonoBehaviour
 {
     [SerializeField] WeaponBehaviour _currentWeapon = null;
     [SerializeField, ReadOnly] WeaponRotator _weaponRotator = null;
+    [SerializeField, ReadOnly] bool _isShooting = false;
 
     public void PullTrigger()
     {
-        _currentWeapon.PullTrigger();
+        if (_isShooting) return;
+
+        StartCoroutine(PullTrigger_routine());
     }
 
     public void ReleaseTrigger()
@@ -21,5 +24,16 @@ public class AIWeaponHandler : MonoBehaviour
     public void RotateCurrentWeapon()
     {
         _weaponRotator.LookAt(default);
+    }
+
+    private IEnumerator PullTrigger_routine()
+    {
+        _isShooting = true;
+        _currentWeapon.PullTrigger();
+
+        yield return new WaitForSeconds(0.2f);
+
+        _isShooting = false;
+        _currentWeapon.ReleaseTrigger();
     }
 }

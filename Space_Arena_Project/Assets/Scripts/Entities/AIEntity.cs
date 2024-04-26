@@ -7,6 +7,7 @@ using UnityEngine;
 public class AIEntity : EntityBehaviour
 {
     [SerializeField] AIPath _aiPath = null;
+    [SerializeField] AIWeaponHandler _aIWeaponHandler = null;
     [SerializeField, ReadOnly] EntityBehaviour _targetEntity = null;
 
     //public void SetTargetEntity(GameObject _gameobject)
@@ -38,5 +39,15 @@ public class AIEntity : EntityBehaviour
     {
         float _distance = (GetTargetEntityPosition() - transform.position).sqrMagnitude;
         return _distance < _minDistance * _minDistance;
+    }
+
+    public void PullTrigger()
+    {
+        _aIWeaponHandler.PullTrigger();
+    }
+
+    public void RotateWeaponToTarget()
+    {
+
     }
 }
