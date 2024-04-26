@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Action_AIFleeFromTarget
   m_EditorClassIdentifier: 
   description: Pick a random position inside a circle away from the target entity.
-  _radius: 5
+  _radius: 3

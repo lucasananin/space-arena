@@ -72,8 +72,8 @@ public class MoveCloseToTargetAction : StateAction
         //    }
         //}
 
-        //if (CanSearchAnotherPath())
-        if (_timer > OriginSO.MoveRate)
+        if (CanSearchAnotherPath())
+        //if (_timer > OriginSO.MoveRate)
         {
             _timer = 0f;
             SearchPath();
