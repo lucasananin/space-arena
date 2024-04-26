@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f217ca5e98ff84ebae757af4cdd21e, type: 3}
-  m_Name: Action_AISearchTarget
+  m_Script: {fileID: 11500000, guid: e63fe9986b5ca7b4e825acb47ae91f91, type: 3}
+  m_Name: Action_AIMoveToTarget
   m_EditorClassIdentifier: 
-  description: Casts a overlap circle searching for a target entity.
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  _radius: 5
-  _tags:
-  - Player
+  description: Moves directly to the position of the target entity.
+  _radius: 3

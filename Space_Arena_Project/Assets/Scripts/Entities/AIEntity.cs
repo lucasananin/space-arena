@@ -9,9 +9,14 @@ public class AIEntity : EntityBehaviour
     [SerializeField] AIPath _aiPath = null;
     [SerializeField, ReadOnly] EntityBehaviour _targetEntity = null;
 
-    public void SetTargetEntity(GameObject _gameobject)
+    //public void SetTargetEntity(GameObject _gameobject)
+    //{
+    //    _targetEntity = _gameobject.GetComponent<EntityBehaviour>();
+    //}
+
+    public void SetTargetEntity(EntityBehaviour _entityValue)
     {
-        _targetEntity = _gameobject.GetComponent<EntityBehaviour>();
+        _targetEntity = _entityValue;
     }
 
     public bool HasTargetEntity()
@@ -27,5 +32,11 @@ public class AIEntity : EntityBehaviour
     public Vector3 GetTargetEntityPosition()
     {
         return _targetEntity.transform.position;
+    }
+
+    public bool IsCloseToTargetEntity(float _minDistance)
+    {
+        float _distance = (GetTargetEntityPosition() - transform.position).sqrMagnitude;
+        return _distance < _minDistance * _minDistance;
     }
 }

@@ -43,7 +43,8 @@ public class AIWanderAction : StateAction
         // the AI is not already calculating a path and
         // the ai has reached the end of the path or it has no path at all;
 
-        if (!_aiPath.pathPending && (_aiPath.reachedEndOfPath || !_aiPath.hasPath))
+        //if (!_aiPath.pathPending && (_aiPath.reachedEndOfPath || !_aiPath.hasPath))
+        if (CanSearchAnotherPath())
         {
             _aiPath.destination = PickRandomPoint();
             _aiPath.SearchPath();
@@ -55,5 +56,10 @@ public class AIWanderAction : StateAction
         Vector3 _point = Random.insideUnitCircle * OriginSO.Radius;
         _point += _aiPath.position;
         return _point;
+    }
+
+    private bool CanSearchAnotherPath()
+    {
+        return !_aiPath.pathPending && (_aiPath.reachedEndOfPath || !_aiPath.hasPath);
     }
 }
