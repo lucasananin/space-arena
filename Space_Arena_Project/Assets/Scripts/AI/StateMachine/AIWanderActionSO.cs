@@ -27,7 +27,6 @@ public class AIWanderAction : StateAction
 
     public override void Awake(StateMachine _stateMachine)
     {
-        //_aiPath = _stateMachine.GetComponent<AIPath>();
         _aIEntity = _stateMachine.GetComponent<AIEntity>();
         _aiPath = _aIEntity.GetAIPath();
     }
@@ -43,7 +42,6 @@ public class AIWanderAction : StateAction
         // the AI is not already calculating a path and
         // the ai has reached the end of the path or it has no path at all;
 
-        //if (!_aiPath.pathPending && (_aiPath.reachedEndOfPath || !_aiPath.hasPath))
         if (CanSearchAnotherPath())
         {
             _aiPath.destination = PickRandomPoint();

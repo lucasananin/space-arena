@@ -9,6 +9,8 @@ public class AIWeaponHandler : MonoBehaviour
     [SerializeField] WeaponRotator _weaponRotator = null;
     [SerializeField, ReadOnly] bool _isShooting = false;
 
+    public event System.Action onStoppedShooting = null;
+
     public void PullTrigger()
     {
         if (_isShooting) return;
@@ -31,14 +33,20 @@ public class AIWeaponHandler : MonoBehaviour
         _weaponRotator.ResetRotation();
     }
 
+    public bool IsShooting()
+    {
+        return _isShooting;
+    }
+
     private IEnumerator PullTrigger_routine()
     {
         _isShooting = true;
         _currentWeapon.PullTrigger();
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
 
         _isShooting = false;
         _currentWeapon.ReleaseTrigger();
+        onStoppedShooting?.Invoke();
     }
 }

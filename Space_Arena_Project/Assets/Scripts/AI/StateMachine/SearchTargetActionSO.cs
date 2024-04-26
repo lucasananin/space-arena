@@ -49,7 +49,6 @@ public class SearchTargetAction : StateAction
 
             if (HasAvailableTag(_colliderHit) && _colliderHit.TryGetComponent(out EntityBehaviour _entity))
             {
-                //_aIEntity.SetTargetEntity(_colliderHit.gameObject);
                 _aIEntity.SetTargetEntity(_entity);
                 //Debug.Log($"// {_aIEntity.name} has found the target {_colliderHit.name}!");
             }
