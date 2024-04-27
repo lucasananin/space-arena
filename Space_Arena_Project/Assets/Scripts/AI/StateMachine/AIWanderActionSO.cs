@@ -1,4 +1,3 @@
-using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,12 +22,10 @@ public class AiWanderAction : StateAction
     private new AiWanderActionSO OriginSO => (AiWanderActionSO)base.OriginSO;
 
     private AiEntity _aIEntity = null;
-    private IAstarAI _aiPath = default;
 
     public override void Awake(StateMachine _stateMachine)
     {
         _aIEntity = _stateMachine.GetComponent<AiEntity>();
-        _aiPath = _aIEntity.AiPath;
     }
 
     public override void OnFixedUpdate()
@@ -42,22 +39,9 @@ public class AiWanderAction : StateAction
         // the AI is not already calculating a path and
         // the ai has reached the end of the path or it has no path at all;
 
-        if (CanSearchAnotherPath())
+        if (_aIEntity.HasReachedPathEnding())
         {
-            _aiPath.destination = PickRandomPoint();
-            _aiPath.SearchPath();
+            _aIEntity.SetAIPathDestination(_aIEntity.PickRandomPointAround(OriginSO.Radius));
         }
-    }
-
-    private Vector3 PickRandomPoint()
-    {
-        Vector3 _point = Random.insideUnitCircle * OriginSO.Radius;
-        _point += _aiPath.position;
-        return _point;
-    }
-
-    private bool CanSearchAnotherPath()
-    {
-        return !_aiPath.pathPending && (_aiPath.reachedEndOfPath || !_aiPath.hasPath);
     }
 }

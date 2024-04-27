@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIWeaponHandler : MonoBehaviour
+public class AiWeaponHandler : MonoBehaviour
 {
     [SerializeField] WeaponBehaviour _currentWeapon = null;
     [SerializeField] WeaponRotator _weaponRotator = null;

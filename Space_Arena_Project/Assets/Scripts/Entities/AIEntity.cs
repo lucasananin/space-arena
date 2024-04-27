@@ -7,12 +7,22 @@ using UnityEngine;
 public class AiEntity : EntityBehaviour
 {
     [SerializeField] AIPath _aiPath = null;
-    [SerializeField] AIWeaponHandler _aIWeaponHandler = null;
+    //[SerializeField] AiWeaponHandler _aIWeaponHandler = null;
+    [SerializeField] LayerMask _obstacleLayerMask = default;
     [SerializeField, ReadOnly] EntityBehaviour _targetEntity = null;
     [SerializeField, ReadOnly] bool _isFleeing = false;
+    [SerializeField, ReadOnly] bool _isTargetOnLineOfSight = false;
+
+    private RaycastHit2D[] _results = new RaycastHit2D[9];
 
     public bool IsFleeing { get => _isFleeing; set => _isFleeing = value; }
     public AIPath AiPath { get => _aiPath; private set => _aiPath = value; }
+    public bool IsTargetOnLineOfSight { get => _isTargetOnLineOfSight; private set => _isTargetOnLineOfSight = value; }
+
+    private void Update()
+    {
+        _isTargetOnLineOfSight = HasTargetEntity() && CanSeeTargetFromPoint(transform.position);
+    }
 
     public void SetTargetEntity(EntityBehaviour _entityValue)
     {
@@ -27,6 +37,13 @@ public class AiEntity : EntityBehaviour
     public Vector3 GetTargetEntityPosition()
     {
         return _targetEntity.transform.position;
+    }
+
+    public Vector3 PickRandomPointAround(float _radius)
+    {
+        Vector3 _point = Random.insideUnitCircle * _radius;
+        _point += _aiPath.position;
+        return _point;
     }
 
     public Vector3 PickRandomPointNearTarget(float _radius)
@@ -66,20 +83,30 @@ public class AiEntity : EntityBehaviour
         return !_aiPath.pathPending && (_aiPath.reachedEndOfPath || !_aiPath.hasPath);
     }
 
-    public void PullTrigger()
-    {
-        _aIWeaponHandler.PullTrigger();
-    }
+    //public void PullTrigger()
+    //{
+    //    _aIWeaponHandler.PullTrigger();
+    //}
 
-    public void RotateWeaponToTarget()
+    //public void RotateWeaponToTarget()
+    //{
+    //    if (HasTargetEntity())
+    //    {
+    //        _aIWeaponHandler.RotateWeapon(GetTargetEntityPosition());
+    //    }
+    //    else
+    //    {
+    //        _aIWeaponHandler.ResetWeaponRotation();
+    //    }
+    //}
+
+    //public bool IsTargetOnLineOfSight()
+    public bool CanSeeTargetFromPoint(Vector3 _point)
     {
-        if (HasTargetEntity())
-        {
-            _aIWeaponHandler.RotateWeapon(GetTargetEntityPosition());
-        }
-        else
-        {
-            _aIWeaponHandler.ResetWeaponRotation();
-        }
+        Vector3 _vector = GetTargetEntityPosition() - _point;
+        Vector3 _direction = _vector.normalized;
+        float _distance = _vector.magnitude;
+        int _hits = Physics2D.CircleCastNonAlloc(_point, 0.3f, _direction, _results, _distance, _obstacleLayerMask);
+        return _hits <= 0;
     }
 }

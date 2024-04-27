@@ -979,9 +979,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBehaviour: {fileID: 143644884}
   _aiPath: {fileID: 143644886}
-  _aIWeaponHandler: {fileID: 143644882}
+  _obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   _targetEntity: {fileID: 0}
   _isFleeing: 0
+  _isTargetOnLineOfSight: 0
 --- !u!70 &143644890
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1516,6 +1519,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &212240878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2244,6 +2249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 1
+  _rotationSpeed: 10
 --- !u!114 &285833603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3773,6 +3780,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &478550401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4024,6 +4033,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &486806347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9885,6 +9896,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &658081179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17119,6 +17132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &908726884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17612,6 +17627,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!1 &1003417546
 GameObject:
   m_ObjectHideFlags: 0
@@ -17963,9 +17980,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBehaviour: {fileID: 1003681249}
   _aiPath: {fileID: 1003681252}
-  _aIWeaponHandler: {fileID: 1003681259}
+  _obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
   _targetEntity: {fileID: 0}
   _isFleeing: 0
+  _isTargetOnLineOfSight: 0
 --- !u!1 &1032113211
 GameObject:
   m_ObjectHideFlags: 0
@@ -18535,6 +18555,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &1139148451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20508,6 +20530,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &1410725367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26437,6 +26461,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &1654674104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26846,6 +26872,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &1689301776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26992,6 +27020,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &1695794702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27303,6 +27333,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &1724033604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27365,6 +27397,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &1744564374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27690,6 +27724,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &1788031212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29230,6 +29266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  _smoothRotation: 0
+  _rotationSpeed: 0
 --- !u!114 &1969171301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30219,9 +30257,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBehaviour: {fileID: 2106619243}
   _aiPath: {fileID: 2106619245}
-  _aIWeaponHandler: {fileID: 2106619241}
+  _obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   _targetEntity: {fileID: 0}
   _isFleeing: 0
+  _isTargetOnLineOfSight: 0
 --- !u!70 &2106619249
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

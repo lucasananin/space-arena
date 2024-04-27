@@ -17,12 +17,12 @@ public class AiTryShootTargetAction : StateAction
     private new AiTryShootTargetActionSO OriginSO => (AiTryShootTargetActionSO)base.OriginSO;
 
     private AiEntity _aIEntity = null;
-    //private IAstarAI _aiPath = default;
+    private AiWeaponHandler _aiWeaponHandler = null;
 
     public override void Awake(StateMachine stateMachine)
     {
         _aIEntity = stateMachine.GetComponent<AiEntity>();
-        //_aiPath = _aIEntity.GetAIPath();
+        _aiWeaponHandler = stateMachine.GetComponent<AiWeaponHandler>();
     }
 
     public override void OnFixedUpdate()
@@ -32,13 +32,10 @@ public class AiTryShootTargetAction : StateAction
 
     public override void OnUpdate()
     {
-        // casta um raycast pra ver se nao tem um obstaculo na frente.
         // ve se o fireRate permite atirar.
-        if (_aIEntity.IsCloseToTargetEntity(OriginSO.ShootDistance))
+        if (_aIEntity.IsTargetOnLineOfSight && _aIEntity.IsCloseToTargetEntity(OriginSO.ShootDistance))
         {
-            _aIEntity.PullTrigger();
+            _aiWeaponHandler.PullTrigger();
         }
-
-        _aIEntity.RotateWeaponToTarget();
     }
 }

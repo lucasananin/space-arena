@@ -16,12 +16,12 @@ public class AiHasShotConditionSO : StateConditionSO
 public class AiHasShotCondition : Condition
 {
     //private AIEntity _aIEntity = null;
-    private AIWeaponHandler _aIWeaponHandler = null;
+    private AiWeaponHandler _aIWeaponHandler = null;
     private bool _hasShot = false;
 
     public override void Awake(StateMachine _stateMachine)
     {
-        _aIWeaponHandler = _stateMachine.GetComponent<AIWeaponHandler>();
+        _aIWeaponHandler = _stateMachine.GetComponent<AiWeaponHandler>();
     }
 
     public override void OnStateEnter()
