@@ -28,6 +28,18 @@ public class SideFlipper : MonoBehaviour
         }
     }
 
+    public void FlipToX(float _x1, float _x2)
+    {
+        if (_x1 > _x2)
+        {
+            Flip(true);
+        }
+        else if (_x1 < _x2)
+        {
+            Flip(false);
+        }
+    }
+
     public bool IsLookingRight()
     {
         return _target.localScale.x >= 0;

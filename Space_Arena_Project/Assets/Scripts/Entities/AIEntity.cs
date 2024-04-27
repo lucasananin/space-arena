@@ -7,7 +7,6 @@ using UnityEngine;
 public class AiEntity : EntityBehaviour
 {
     [SerializeField] AIPath _aiPath = null;
-    //[SerializeField] AiWeaponHandler _aIWeaponHandler = null;
     [SerializeField] LayerMask _obstacleLayerMask = default;
     [SerializeField, ReadOnly] EntityBehaviour _targetEntity = null;
     [SerializeField, ReadOnly] bool _isFleeing = false;
@@ -83,24 +82,6 @@ public class AiEntity : EntityBehaviour
         return !_aiPath.pathPending && (_aiPath.reachedEndOfPath || !_aiPath.hasPath);
     }
 
-    //public void PullTrigger()
-    //{
-    //    _aIWeaponHandler.PullTrigger();
-    //}
-
-    //public void RotateWeaponToTarget()
-    //{
-    //    if (HasTargetEntity())
-    //    {
-    //        _aIWeaponHandler.RotateWeapon(GetTargetEntityPosition());
-    //    }
-    //    else
-    //    {
-    //        _aIWeaponHandler.ResetWeaponRotation();
-    //    }
-    //}
-
-    //public bool IsTargetOnLineOfSight()
     public bool CanSeeTargetFromPoint(Vector3 _point)
     {
         Vector3 _vector = GetTargetEntityPosition() - _point;
