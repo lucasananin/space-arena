@@ -1,4 +1,3 @@
-using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,20 +26,15 @@ public class MoveCloseToTargetAction : StateAction
     private new MoveCloseToTargetActionSO OriginSO => (MoveCloseToTargetActionSO)base.OriginSO;
 
     private AIEntity _aIEntity = null;
-    private IAstarAI _aiPath = default;
-
     private Vector3 _point = default;
-    //private float _timer = 0f;
 
     public override void Awake(StateMachine stateMachine)
     {
         _aIEntity = stateMachine.GetComponent<AIEntity>();
-        _aiPath = _aIEntity.AiPath;
     }
 
     public override void OnStateEnter()
     {
-        //_timer = OriginSO.MoveRate;
         SearchPath();
     }
 
@@ -51,33 +45,10 @@ public class MoveCloseToTargetAction : StateAction
 
     public override void OnUpdate()
     {
-        //_timer += Time.deltaTime;
-
         if (OriginSO.StopOnCloseEnough && _aIEntity.IsCloseToTargetEntity(OriginSO.Radius)) return;
 
-        //if (IsCloseEnough())
-        //{
-        //    if (CanSearchAnotherPath())
-        //    {
-        //        _aiPath.destination = _aIEntity.GetTargetEntityPosition();
-        //        _aiPath.SearchPath();
-        //    }
-        //}
-        //else
-        //{
-        //    if (CanSearchAnotherPath())
-        //    //if (_timer > OriginSO.MoveRate)
-        //    {
-        //        //_timer = 0f;
-        //        SearchPath();
-        //    }
-        //}
-
         if (_aIEntity.HasReachedPathEnding() || !_aIEntity.IsPointCloseToTargetEntity(_point, OriginSO.Radius))
-        //if (CanSearchAnotherPath() || !_aIEntity.IsPointCloseToTargetEntity(_point, OriginSO.Radius))
-        //if (_timer > OriginSO.MoveRate)
         {
-            //_timer = 0f;
             SearchPath();
         }
     }
@@ -86,21 +57,7 @@ public class MoveCloseToTargetAction : StateAction
     {
         // Pega uma posicao onde o target possa ser visto. Castar um raycast pra ver se nao tem nada na frente.
         // colocar um numero maximo de tentativas para evitar lacos infinitos.
-
-        _aiPath.destination = PickRandomPointNearTarget();
-        _aiPath.SearchPath();
+        _point = _aIEntity.PickRandomPointNearTarget(OriginSO.Radius);
+        _aIEntity.SetAIPathDestination(_point);
     }
-
-    private Vector3 PickRandomPointNearTarget()
-    {
-        _point = Random.insideUnitCircle * OriginSO.Radius;
-        _point += _aIEntity.GetTargetEntityPosition();
-        return _point;
-    }
-
-    // botar no _aiEntity
-    //private bool CanSearchAnotherPath()
-    //{
-    //    return !_aiPath.pathPending && (_aiPath.reachedEndOfPath || !_aiPath.hasPath);
-    //}
 }

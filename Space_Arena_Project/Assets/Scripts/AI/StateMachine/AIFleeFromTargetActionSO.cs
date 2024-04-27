@@ -59,7 +59,9 @@ public class AIFleeFromTargetAction : StateAction
     private Vector3 PickRandomPointAwayFromTarget()
     {
         Vector3 _point = Random.insideUnitCircle * OriginSO.Radius;
-        _point += (_aIEntity.transform.position - _aIEntity.GetTargetEntityPosition()).normalized * OriginSO.Radius;
+        Vector3 _center = (_aIEntity.transform.position - _aIEntity.GetTargetEntityPosition()).normalized * OriginSO.Radius;
+        _point += _center;
+        Debug.Log($"// _fleePointCenter = {_center}");
         return _point;
     }
 

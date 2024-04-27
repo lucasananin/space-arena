@@ -14,10 +14,49 @@ public class AIEntity : EntityBehaviour
     public bool IsFleeing { get => _isFleeing; set => _isFleeing = value; }
     public AIPath AiPath { get => _aiPath; private set => _aiPath = value; }
 
-    //public void SetTargetEntity(GameObject _gameobject)
-    //{
-    //    _targetEntity = _gameobject.GetComponent<EntityBehaviour>();
-    //}
+    public void SetTargetEntity(EntityBehaviour _entityValue)
+    {
+        _targetEntity = _entityValue;
+    }
+
+    public bool HasTargetEntity()
+    {
+        return _targetEntity != null && _targetEntity.IsAlive();
+    }
+
+    public Vector3 GetTargetEntityPosition()
+    {
+        return _targetEntity.transform.position;
+    }
+
+    public Vector3 PickRandomPointNearTarget(float _radius)
+    {
+        Vector3 _point = Random.insideUnitCircle * _radius;
+        _point += GetTargetEntityPosition();
+        return _point;
+    }
+
+    public bool IsCloseToTargetEntity(float _minDistance)
+    {
+        return IsPointCloseToTargetEntity(transform.position, _minDistance);
+    }
+
+    public bool IsPointCloseToTargetEntity(Vector3 _point, float _minDistance)
+    {
+        float _distance = (GetTargetEntityPosition() - _point).sqrMagnitude;
+        return _distance < _minDistance * _minDistance;
+    }
+
+    public void SetAIPathDestination(Vector3 _position)
+    {
+        _aiPath.destination = _position;
+        _aiPath.SearchPath();
+    }
+
+    public bool HasReachedPathEnding()
+    {
+        return !_aiPath.pathPending && (_aiPath.reachedEndOfPath || !_aiPath.hasPath);
+    }
 
     public void PullTrigger()
     {
@@ -34,36 +73,5 @@ public class AIEntity : EntityBehaviour
         {
             _aIWeaponHandler.ResetWeaponRotation();
         }
-    }
-
-    public void SetTargetEntity(EntityBehaviour _entityValue)
-    {
-        _targetEntity = _entityValue;
-    }
-
-    public bool HasTargetEntity()
-    {
-        return _targetEntity != null && _targetEntity.IsAlive();
-    }
-
-    public Vector3 GetTargetEntityPosition()
-    {
-        return _targetEntity.transform.position;
-    }
-
-    public bool IsCloseToTargetEntity(float _minDistance)
-    {
-        return IsPointCloseToTargetEntity(transform.position, _minDistance);
-    }
-
-    public bool IsPointCloseToTargetEntity(Vector3 _point, float _minDistance)
-    {
-        float _distance = (GetTargetEntityPosition() - _point).sqrMagnitude;
-        return _distance < _minDistance * _minDistance;
-    }
-
-    public bool HasReachedPathEnding()
-    {
-        return !_aiPath.pathPending && (_aiPath.reachedEndOfPath || !_aiPath.hasPath);
     }
 }
