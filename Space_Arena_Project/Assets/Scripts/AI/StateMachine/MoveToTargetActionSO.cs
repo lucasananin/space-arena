@@ -22,12 +22,12 @@ public class MoveToTargetAction : StateAction
 {
     private new MoveToTargetActionSO OriginSO => (MoveToTargetActionSO)base.OriginSO;
 
-    private AIEntity _aIEntity = null;
+    private AiEntity _aIEntity = null;
     private IAstarAI _aiPath = default;
 
     public override void Awake(StateMachine stateMachine)
     {
-        _aIEntity = stateMachine.GetComponent<AIEntity>();
+        _aIEntity = stateMachine.GetComponent<AiEntity>();
         _aiPath = _aIEntity.AiPath;
     }
 

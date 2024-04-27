@@ -4,24 +4,24 @@ using UnityEngine;
 using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
-[CreateAssetMenu(fileName = "Action_AITryShootTarget", menuName = "SO/State Machines/Actions/AI Try Shoot Target")]
-public class TryShootTargetActionSO : StateActionSO<TryShootTargetAction>
+[CreateAssetMenu(fileName = "Action_Ai_TryShootTarget", menuName = "SO/State Machines/Actions/AI Try Shoot Target")]
+public class AiTryShootTargetActionSO : StateActionSO<AiTryShootTargetAction>
 {
     [SerializeField] float _shootDistance = 1f;
 
     public float ShootDistance { get => _shootDistance; private set => _shootDistance = value; }
 }
 
-public class TryShootTargetAction : StateAction
+public class AiTryShootTargetAction : StateAction
 {
-    private new TryShootTargetActionSO OriginSO => (TryShootTargetActionSO)base.OriginSO;
+    private new AiTryShootTargetActionSO OriginSO => (AiTryShootTargetActionSO)base.OriginSO;
 
-    private AIEntity _aIEntity = null;
+    private AiEntity _aIEntity = null;
     //private IAstarAI _aiPath = default;
 
     public override void Awake(StateMachine stateMachine)
     {
-        _aIEntity = stateMachine.GetComponent<AIEntity>();
+        _aIEntity = stateMachine.GetComponent<AiEntity>();
         //_aiPath = _aIEntity.GetAIPath();
     }
 

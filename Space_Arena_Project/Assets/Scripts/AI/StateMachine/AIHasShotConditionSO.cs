@@ -4,16 +4,16 @@ using UnityEngine;
 using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
-[CreateAssetMenu(fileName = "Condition_AIHasShot", menuName = "SO/State Machines/Conditions/AI Has Shot")]
-public class AIHasShotConditionSO : StateConditionSO
+[CreateAssetMenu(fileName = "Condition_Ai_HasShot", menuName = "SO/State Machines/Conditions/AI Has Shot")]
+public class AiHasShotConditionSO : StateConditionSO
 {
     protected override Condition CreateCondition()
     {
-        return new AIHasShotCondition();
+        return new AiHasShotCondition();
     }
 }
 
-public class AIHasShotCondition : Condition
+public class AiHasShotCondition : Condition
 {
     //private AIEntity _aIEntity = null;
     private AIWeaponHandler _aIWeaponHandler = null;

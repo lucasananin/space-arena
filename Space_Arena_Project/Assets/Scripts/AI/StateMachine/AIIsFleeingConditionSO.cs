@@ -4,22 +4,22 @@ using UnityEngine;
 using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
-[CreateAssetMenu(fileName = "Condition_AIIsFleeing", menuName = "SO/State Machines/Conditions/AI Is Fleeing")]
-public class AIIsFleeingConditionSO : StateConditionSO
+[CreateAssetMenu(fileName = "Condition_Ai_IsFleeing", menuName = "SO/State Machines/Conditions/AI Is Fleeing")]
+public class AiIsFleeingConditionSO : StateConditionSO
 {
     protected override Condition CreateCondition()
     {
-        return new IsFleeingCondition();
+        return new AiIsFleeingCondition();
     }
 }
 
-public class IsFleeingCondition : Condition
+public class AiIsFleeingCondition : Condition
 {
-    private AIEntity _aIEntity = null;
+    private AiEntity _aIEntity = null;
 
     public override void Awake(StateMachine stateMachine)
     {
-        _aIEntity = stateMachine.GetComponent<AIEntity>();
+        _aIEntity = stateMachine.GetComponent<AiEntity>();
     }
 
     protected override bool Statement()

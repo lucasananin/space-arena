@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIEntity : EntityBehaviour
+public class AiEntity : EntityBehaviour
 {
     [SerializeField] AIPath _aiPath = null;
     [SerializeField] AIWeaponHandler _aIWeaponHandler = null;

@@ -25,12 +25,12 @@ public class AiMoveCloseToTargetAction : StateAction
 {
     private new AiMoveCloseToTargetActionSO OriginSO => (AiMoveCloseToTargetActionSO)base.OriginSO;
 
-    private AIEntity _aIEntity = null;
+    private AiEntity _aIEntity = null;
     private Vector3 _point = default;
 
     public override void Awake(StateMachine stateMachine)
     {
-        _aIEntity = stateMachine.GetComponent<AIEntity>();
+        _aIEntity = stateMachine.GetComponent<AiEntity>();
     }
 
     public override void OnStateEnter()

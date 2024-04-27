@@ -5,8 +5,8 @@ using UnityEngine;
 using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
-[CreateAssetMenu(fileName = "Action_AIWander", menuName = "SO/State Machines/Actions/AI Wander")]
-public class AIWanderActionSO : StateActionSO
+[CreateAssetMenu(fileName = "Action_Ai_Wander", menuName = "SO/State Machines/Actions/AI Wander")]
+public class AiWanderActionSO : StateActionSO
 {
     [SerializeField] float _radius = 5f;
 
@@ -14,20 +14,20 @@ public class AIWanderActionSO : StateActionSO
 
     protected override StateAction CreateAction()
     {
-        return new AIWanderAction();
+        return new AiWanderAction();
     }
 }
 
-public class AIWanderAction : StateAction
+public class AiWanderAction : StateAction
 {
-    private new AIWanderActionSO OriginSO => (AIWanderActionSO)base.OriginSO;
+    private new AiWanderActionSO OriginSO => (AiWanderActionSO)base.OriginSO;
 
-    private AIEntity _aIEntity = null;
+    private AiEntity _aIEntity = null;
     private IAstarAI _aiPath = default;
 
     public override void Awake(StateMachine _stateMachine)
     {
-        _aIEntity = _stateMachine.GetComponent<AIEntity>();
+        _aIEntity = _stateMachine.GetComponent<AiEntity>();
         _aiPath = _aIEntity.AiPath;
     }
 

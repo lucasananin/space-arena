@@ -4,8 +4,8 @@ using UnityEngine;
 using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
-[CreateAssetMenu(fileName = "Action_AIFleeFromTarget", menuName = "SO/State Machines/Actions/AI Flee From Target")]
-public class AIFleeFromTargetActionSO : StateActionSO
+[CreateAssetMenu(fileName = "Action_Ai_FleeFromTarget", menuName = "SO/State Machines/Actions/AI Flee From Target")]
+public class AiFleeFromTargetActionSO : StateActionSO
 {
     [SerializeField] float _radius = 1f;
 
@@ -13,20 +13,20 @@ public class AIFleeFromTargetActionSO : StateActionSO
 
     protected override StateAction CreateAction()
     {
-        return new AIFleeFromTargetAction();
+        return new AiFleeFromTargetAction();
     }
 }
 
-public class AIFleeFromTargetAction : StateAction
+public class AiFleeFromTargetAction : StateAction
 {
-    private new AIFleeFromTargetActionSO OriginSO => (AIFleeFromTargetActionSO)base.OriginSO;
+    private new AiFleeFromTargetActionSO OriginSO => (AiFleeFromTargetActionSO)base.OriginSO;
 
-    private AIEntity _aIEntity = null;
+    private AiEntity _aIEntity = null;
     private Vector3 _point = default;
 
     public override void Awake(StateMachine stateMachine)
     {
-        _aIEntity = stateMachine.GetComponent<AIEntity>();
+        _aIEntity = stateMachine.GetComponent<AiEntity>();
     }
 
     public override void OnStateEnter()
