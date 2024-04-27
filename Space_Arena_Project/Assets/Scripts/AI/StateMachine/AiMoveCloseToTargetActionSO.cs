@@ -4,8 +4,8 @@ using UnityEngine;
 using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
-[CreateAssetMenu(fileName = "Action_AIMoveCloserToTarget", menuName = "SO/State Machines/Actions/AI Move Closer To Target")]
-public class MoveCloseToTargetActionSO : StateActionSO
+[CreateAssetMenu(fileName = "Action_Ai_MoveCloserToTarget", menuName = "SO/State Machines/Actions/AI Move Closer To Target")]
+public class AiMoveCloseToTargetActionSO : StateActionSO
 {
     [SerializeField] float _radius = 1f;
     [SerializeField] float _moveRate = 1f;
@@ -17,13 +17,13 @@ public class MoveCloseToTargetActionSO : StateActionSO
 
     protected override StateAction CreateAction()
     {
-        return new MoveCloseToTargetAction();
+        return new AiMoveCloseToTargetAction();
     }
 }
 
-public class MoveCloseToTargetAction : StateAction
+public class AiMoveCloseToTargetAction : StateAction
 {
-    private new MoveCloseToTargetActionSO OriginSO => (MoveCloseToTargetActionSO)base.OriginSO;
+    private new AiMoveCloseToTargetActionSO OriginSO => (AiMoveCloseToTargetActionSO)base.OriginSO;
 
     private AIEntity _aIEntity = null;
     private Vector3 _point = default;

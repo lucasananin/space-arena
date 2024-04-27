@@ -36,6 +36,14 @@ public class AIEntity : EntityBehaviour
         return _point;
     }
 
+    public Vector3 PickRandomPointAwayFromTarget(float _radius)
+    {
+        Vector3 _point = Random.insideUnitCircle * _radius;
+        _point += GetTargetEntityPosition();
+        _point += (transform.position - GetTargetEntityPosition()).normalized * _radius;
+        return _point;
+    }
+
     public bool IsCloseToTargetEntity(float _minDistance)
     {
         return IsPointCloseToTargetEntity(transform.position, _minDistance);

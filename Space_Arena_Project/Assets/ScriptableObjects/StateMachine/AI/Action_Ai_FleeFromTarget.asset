@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd77271807d195745bc697bc33685d01, type: 3}
-  m_Name: Action_AIMoveCloserToTarget
+  m_Script: {fileID: 11500000, guid: 5a94e568868938d4280cd5e8cc2b6c2b, type: 3}
+  m_Name: Action_Ai_FleeFromTarget
   m_EditorClassIdentifier: 
-  description: Pick a random position near the target entity.
+  description: Pick a random position inside a circle away from the target entity.
   _radius: 3
-  _moveRate: 1
-  _stopOnCloseEnough: 1

@@ -1,4 +1,3 @@
-using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,12 +22,11 @@ public class AIFleeFromTargetAction : StateAction
     private new AIFleeFromTargetActionSO OriginSO => (AIFleeFromTargetActionSO)base.OriginSO;
 
     private AIEntity _aIEntity = null;
-    private IAstarAI _aiPath = default;
+    private Vector3 _point = default;
 
     public override void Awake(StateMachine stateMachine)
     {
         _aIEntity = stateMachine.GetComponent<AIEntity>();
-        _aiPath = _aIEntity.AiPath;
     }
 
     public override void OnStateEnter()
@@ -44,7 +42,7 @@ public class AIFleeFromTargetAction : StateAction
 
     public override void OnUpdate()
     {
-        if (HasReachedEndPath())
+        if (_aIEntity.HasReachedPathEnding() || !_aIEntity.IsPointCloseToTargetEntity(_point, OriginSO.Radius))
         {
             _aIEntity.IsFleeing = false;
         }
@@ -52,21 +50,7 @@ public class AIFleeFromTargetAction : StateAction
 
     private void SearchPath()
     {
-        _aiPath.destination = PickRandomPointAwayFromTarget();
-        _aiPath.SearchPath();
-    }
-
-    private Vector3 PickRandomPointAwayFromTarget()
-    {
-        Vector3 _point = Random.insideUnitCircle * OriginSO.Radius;
-        Vector3 _center = (_aIEntity.transform.position - _aIEntity.GetTargetEntityPosition()).normalized * OriginSO.Radius;
-        _point += _center;
-        Debug.Log($"// _fleePointCenter = {_center}");
-        return _point;
-    }
-
-    private bool HasReachedEndPath()
-    {
-        return !_aiPath.pathPending && (_aiPath.reachedEndOfPath || !_aiPath.hasPath);
+        _point = _aIEntity.PickRandomPointAwayFromTarget(OriginSO.Radius);
+        _aIEntity.SetAIPathDestination(_point);
     }
 }
