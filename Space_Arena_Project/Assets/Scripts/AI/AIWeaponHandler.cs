@@ -7,9 +7,12 @@ public class AiWeaponHandler : MonoBehaviour
 {
     [SerializeField] WeaponBehaviour _currentWeapon = null;
     [SerializeField] WeaponRotator _weaponRotator = null;
+    [SerializeField] WeaponFlipper _weaponFlipper = null;
     [SerializeField, ReadOnly] bool _isShooting = false;
 
     public event System.Action onStoppedShooting = null;
+
+    public WeaponFlipper WeaponFlipper { get => _weaponFlipper; private set => _weaponFlipper = value; }
 
     public void PullTrigger()
     {
@@ -26,6 +29,11 @@ public class AiWeaponHandler : MonoBehaviour
     public void RotateWeapon(Vector3 _position)
     {
         _weaponRotator.LookAt(_position);
+    }
+
+    public void RotateWeaponToDirection(Vector3 _direction)
+    {
+        _weaponRotator.LookAtDirection(_direction);
     }
 
     public void ResetWeaponRotation()

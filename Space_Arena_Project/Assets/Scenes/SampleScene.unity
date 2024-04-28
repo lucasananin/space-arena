@@ -826,6 +826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentWeapon: {fileID: 1744564377}
   _weaponRotator: {fileID: 1744564373}
+  _weaponFlipper: {fileID: 0}
   _isShooting: 0
 --- !u!114 &143644883
 MonoBehaviour:
@@ -873,10 +874,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 143644892}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 1
   _flipY: 0
   _aiPath: {fileID: 143644886}
-  _isMovingRight: 1
 --- !u!114 &143644886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,6 +1519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -1534,9 +1536,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 212240875}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 1823301785}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &212240879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2232,9 +2239,10 @@ Transform:
   m_Children:
   - {fileID: 1596775901}
   - {fileID: 1946663795}
+  - {fileID: 907836572}
   - {fileID: 1198136174}
   m_Father: {fileID: 1003681258}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &285833602
 MonoBehaviour:
@@ -2248,9 +2256,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 1003681250}
   _canRotate: 1
-  _smoothRotation: 1
-  _rotationSpeed: 10
+  _smoothRotation: 0
+  _rotationSpeed: 20
 --- !u!114 &285833603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2264,9 +2273,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 285833601}
+  _flipDataSo: {fileID: 11400000, guid: 355e35a2c85451a4b8b70f2b8e839934, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 1003681250}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &285833604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3002,7 +3016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &416873596
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3054,7 +3068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &423882021
 Transform:
   m_ObjectHideFlags: 0
@@ -3112,7 +3126,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Time: 1
+  m_Time: 3
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.2
@@ -3779,6 +3793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -3795,9 +3810,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 478550398}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 1823301785}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &478550402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4032,6 +4052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -4048,9 +4069,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 486806344}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 1823301785}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &486806348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9166,7 +9192,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -9895,6 +9921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -9911,9 +9938,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 658081177}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 1823301785}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &658081180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16144,10 +16176,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 757533903}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 1
   _flipY: 0
   _aiPath: {fileID: 757533899}
-  _isMovingRight: 1
 --- !u!114 &757533906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16229,6 +16261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentWeapon: {fileID: 0}
   _weaponRotator: {fileID: 0}
+  _weaponFlipper: {fileID: 0}
   _isShooting: 0
 --- !u!1 &762295976
 GameObject:
@@ -17027,7 +17060,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1823301781}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 5
+    OrthographicSize: 6
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -17059,6 +17092,90 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &907836571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 907836572}
+  - component: {fileID: 907836573}
+  m_Layer: 0
+  m_Name: Sprite_Weapon_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &907836572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907836571}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: -0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 285833601}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &907836573
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907836571}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 1774813887, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &908726880
 GameObject:
   m_ObjectHideFlags: 0
@@ -17131,6 +17248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -17147,9 +17265,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 908726881}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 1823301785}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &908726885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17626,6 +17749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -17804,10 +17928,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1003681258}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 1
   _flipY: 0
   _aiPath: {fileID: 1003681252}
-  _isMovingRight: 1
 --- !u!114 &1003681252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17946,8 +18070,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2030479491}
-  - {fileID: 285833601}
+  - {fileID: 1029459356}
   - {fileID: 423882021}
+  - {fileID: 285833601}
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17965,6 +18090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentWeapon: {fileID: 285833605}
   _weaponRotator: {fileID: 285833602}
+  _weaponFlipper: {fileID: 285833603}
   _isShooting: 0
 --- !u!114 &1003681260
 MonoBehaviour:
@@ -17986,6 +18112,90 @@ MonoBehaviour:
   _targetEntity: {fileID: 0}
   _isFleeing: 0
   _isTargetOnLineOfSight: 0
+--- !u!1 &1029459355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1029459356}
+  - component: {fileID: 1029459357}
+  m_Layer: 0
+  m_Name: Sprite_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1029459356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029459355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1003681258}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1029459357
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029459355}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: f9e28af7e4c01ac47bbadee4659c9692, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d93391db476af65409bcc125f270def8, type: 3}
+  m_Color: {r: 1, g: 0.2028302, b: 0.2028302, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 10.24, y: 10.24}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1032113211
 GameObject:
   m_ObjectHideFlags: 0
@@ -18554,6 +18764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -18570,9 +18781,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1139148448}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 1823301785}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &1139148452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18894,7 +19110,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 285833601}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1223176093
 GameObject:
@@ -20529,6 +20745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -20545,9 +20762,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1410725364}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 1823301785}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &1410725368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26460,6 +26682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -26476,9 +26699,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1654674102}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 1823301785}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &1654674105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26871,6 +27099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -26887,9 +27116,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1689301773}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 1823301785}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &1689301777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27019,6 +27253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -27035,9 +27270,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1695794704}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 2106619244}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &1695794703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27332,6 +27572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -27348,9 +27589,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1724033601}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 1823301785}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &1724033605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27396,6 +27642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -27412,9 +27659,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1744564376}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 143644885}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &1744564375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27723,6 +27975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -27739,9 +27992,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1788031209}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 1823301785}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &1788031213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28254,6 +28512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1823301781}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 1
   _flipY: 0
 --- !u!114 &1823301786
@@ -29042,7 +29301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1946663795
 Transform:
   m_ObjectHideFlags: 0
@@ -29265,6 +29524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entityFlipper: {fileID: 0}
   _canRotate: 1
   _smoothRotation: 0
   _rotationSpeed: 0
@@ -29281,9 +29541,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1969171298}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 0
   _flipY: 1
   _parentFlipper: {fileID: 1823301785}
+  _useAimFlipData: 1
+  _aimFlipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _movementFlipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _right: {x: 0, y: 0, z: 0}
 --- !u!114 &1969171302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30104,6 +30369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentWeapon: {fileID: 1695794705}
   _weaponRotator: {fileID: 1695794701}
+  _weaponFlipper: {fileID: 0}
   _isShooting: 0
 --- !u!114 &2106619242
 MonoBehaviour:
@@ -30151,10 +30417,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 2106619251}
+  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
   _flipX: 1
   _flipY: 0
   _aiPath: {fileID: 2106619245}
-  _isMovingRight: 1
 --- !u!114 &2106619245
 MonoBehaviour:
   m_ObjectHideFlags: 0

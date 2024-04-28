@@ -90,4 +90,10 @@ public class AiEntity : EntityBehaviour
         int _hits = Physics2D.CircleCastNonAlloc(_point, 0.3f, _direction, _results, _distance, _obstacleLayerMask);
         return _hits <= 0;
     }
+
+    public Vector3 GetMoveDirection()
+    {
+        return _aiPath.velocity.normalized;
+        //return _aiPath.targetDirection;
+    }
 }

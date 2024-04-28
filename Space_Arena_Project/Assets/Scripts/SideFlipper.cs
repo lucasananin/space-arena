@@ -1,17 +1,38 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SideFlipper : MonoBehaviour
 {
+    // mudar o nome dessa variavel para _transformToFlip
     [SerializeField] protected Transform _target = null;
+    [SerializeField] protected FlipDataSO _flipDataSo = null;
     [SerializeField] protected bool _flipX = true;
     [SerializeField] protected bool _flipY = false;
 
-    public event Action onFlip = null;
+    // bool _canOverrideFlip = true;
+
+    public event System.Action onFlip = null;
+
+    public void FlipToX(float _x1, float _x2)
+    {
+        if (_x1 > _x2)
+        {
+            Flip(true);
+        }
+        else if (_x1 < _x2)
+        {
+            Flip(false);
+        }
+    }
 
     public void Flip(bool _toTheRight)
+    {
+        Flip(_toTheRight, _flipDataSo.FlipX, _flipDataSo.FlipY);
+        //Flip(_toTheRight, _flipX, _flipY);
+    }
+
+    public void Flip(bool _toTheRight, bool _flipX, bool _flipY)
     {
         Vector3 _newScale = Vector3.one;
 
@@ -28,17 +49,34 @@ public class SideFlipper : MonoBehaviour
         }
     }
 
-    public void FlipToX(float _x1, float _x2)
+    public void Flip(float _x, float _y)
     {
-        if (_x1 > _x2)
+        Vector3 _newScale = Vector3.one;
+        _newScale.x *= _x;
+        _newScale.y *= _y;
+
+        if (_newScale != _target.localScale)
         {
-            Flip(true);
-        }
-        else if (_x1 < _x2)
-        {
-            Flip(false);
+            _target.localScale = _newScale;
+            onFlip?.Invoke();
         }
     }
+
+    public void FlipY(bool _toTheRight)
+    {
+        Vector3 _newScale = Vector3.one;
+        _newScale.y *= _toTheRight ? 1 : -1;
+        _target.localScale = new Vector3(_target.localScale.x, _newScale.y);
+
+        //if (_newScale != _target.localScale)
+        //{
+        //    _target.localScale = _newScale;
+        //    onFlip?.Invoke();
+        //}
+    }
+
+    // void InvertFlipParameters();
+    // { if (!_canOverride) return }
 
     public bool IsLookingRight()
     {

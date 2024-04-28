@@ -15,11 +15,23 @@ public class AiResetWeaponRotationActionSO : StateActionSO
 
 public class AiResetWeaponRotationAction : StateAction
 {
+    private AiEntity _aiEntity = null;
     private AiWeaponHandler _aiWeaponHandler = null;
 
     public override void Awake(StateMachine _stateMachine)
     {
+        _aiEntity = _stateMachine.GetComponent<AiEntity>();
         _aiWeaponHandler = _stateMachine.GetComponent<AiWeaponHandler>();
+    }
+
+    public override void OnStateEnter()
+    {
+        _aiEntity.GetComponent<SideFlipper>().onFlip += AiTryRotateWeaponAction_onFlip;
+    }
+
+    public override void OnStateExit()
+    {
+        _aiEntity.GetComponent<SideFlipper>().onFlip -= AiTryRotateWeaponAction_onFlip;
     }
 
     public override void OnFixedUpdate()
@@ -28,6 +40,12 @@ public class AiResetWeaponRotationAction : StateAction
     }
 
     public override void OnUpdate()
+    {
+        //_aiWeaponHandler.RotateWeaponToDirection(_aiEntity.GetMoveDirection());
+        //_aiWeaponHandler.ResetWeaponRotation();
+    }
+
+    private void AiTryRotateWeaponAction_onFlip()
     {
         _aiWeaponHandler.ResetWeaponRotation();
     }

@@ -24,6 +24,16 @@ public class AiTryRotateWeaponAction : StateAction
         _aiWeaponHandler = _stateMachine.GetComponent<AiWeaponHandler>();
     }
 
+    public override void OnStateEnter()
+    {
+        _aiEntity.GetComponent<SideFlipper>().onFlip += AiTryRotateWeaponAction_onFlip;
+    }
+
+    public override void OnStateExit()
+    {
+        _aiEntity.GetComponent<SideFlipper>().onFlip -= AiTryRotateWeaponAction_onFlip;
+    }
+
     public override void OnFixedUpdate()
     {
         //
@@ -31,12 +41,31 @@ public class AiTryRotateWeaponAction : StateAction
 
     public override void OnUpdate()
     {
+        Fodase();
+    }
+
+    private void Fodase()
+    {
         if (_aiEntity.IsTargetOnLineOfSight)
         {
             _aiWeaponHandler.RotateWeapon(_aiEntity.GetTargetEntityPosition());
         }
         else
         {
+            //_aiWeaponHandler.RotateWeaponToDirection(_aiEntity.GetMoveDirection());
+            //_aiWeaponHandler.ResetWeaponRotation();
+        }
+    }
+
+    private void AiTryRotateWeaponAction_onFlip()
+    {
+        if (_aiEntity.IsTargetOnLineOfSight)
+        {
+            //_aiWeaponHandler.RotateWeapon(_aiEntity.GetTargetEntityPosition());
+        }
+        else
+        {
+            //_aiWeaponHandler.RotateWeaponToDirection(_aiEntity.GetMoveDirection());
             _aiWeaponHandler.ResetWeaponRotation();
         }
     }

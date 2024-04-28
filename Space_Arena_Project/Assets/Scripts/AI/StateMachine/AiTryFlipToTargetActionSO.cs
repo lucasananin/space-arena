@@ -33,7 +33,7 @@ public class AiTryFlipToTargetAction : StateAction
     {
         if (_aiEntity.IsTargetOnLineOfSight)
         {
-            _aiFlipper.FlipToX(_aiEntity.GetTargetEntityPosition().x, _aiEntity.transform.position.x);
+            _aiFlipper.FlipToTarget(_aiEntity.GetTargetEntityPosition());
         }
         else
         {
