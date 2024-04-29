@@ -16405,8 +16405,8 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_XDamping: 0.3
-  m_YDamping: 0.3
+  m_XDamping: 0
+  m_YDamping: 0
   m_ZDamping: 0
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
@@ -26396,6 +26396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a758dfdac493884e9b192e0fb34a681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entitySO: {fileID: 0}
   _healthBehaviour: {fileID: 1823301788}
 --- !u!1 &1872211008
 GameObject:

@@ -9,15 +9,18 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] float _moveSpeed = 5f;
     [SerializeField, ReadOnly] Vector2 _inputDirection = default;
 
-    private void Update()
-    {
-        _inputDirection = InputHandler.GetMovementInput();
-    }
-
-    //private void FixedUpdate()
+    //private void Update()
     //{
-    //    Move();
+    //    _inputDirection = InputHandler.GetMovementInput();
     //}
+
+    private void FixedUpdate()
+    {
+        if (HasMovementInput())
+        {
+            Move();
+        }
+    }
 
     public void Move()
     {
@@ -25,12 +28,17 @@ public class PlayerMover : MonoBehaviour
         _rb.velocity = _velocity;
     }
 
+    public void ReadMovementInput()
+    {
+        _inputDirection = InputHandler.GetMovementInput();
+    }
+
     public void ResetVelocity()
     {
         _rb.velocity = Vector3.zero;
     }
 
-    public bool HasInputDirection()
+    public bool HasMovementInput()
     {
         return _inputDirection != Vector2.zero;
     }

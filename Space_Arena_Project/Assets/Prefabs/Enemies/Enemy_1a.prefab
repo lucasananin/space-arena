@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1589833ecf1d14dae2efb704397456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entitySO: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
   _healthBehaviour: {fileID: 6972132582502089756}
   _aiPath: {fileID: 6972132582502089753}
   _obstacleLayerMask:

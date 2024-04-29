@@ -24,12 +24,13 @@ public class PlayerWalkAction : StateAction
 
     public override void OnFixedUpdate()
     {
-        _playerMover.Move();
+        //_playerMover.Move();
     }
 
     public override void OnUpdate()
     {
         //
+        _playerMover.ReadMovementInput();
     }
 
     public override void OnStateExit()

@@ -4,16 +4,16 @@ using UnityEngine;
 using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
-[CreateAssetMenu(fileName = "Condition_HasWalkInput", menuName = "SO/State Machines/Conditions/Has Walk Input")]
-public class HasWalkInputConditionSO : StateConditionSO
+[CreateAssetMenu(fileName = "Condition_HasMovementInput", menuName = "SO/State Machines/Conditions/Has Movement Input")]
+public class HasMovementInputConditionSO : StateConditionSO
 {
     protected override Condition CreateCondition()
     {
-        return new HasWalkInputCondition();
+        return new HasMovementInputCondition();
     }
 }
 
-public class HasWalkInputCondition : Condition
+public class HasMovementInputCondition : Condition
 {
     private PlayerMover _playerMover = null;
 
@@ -24,6 +24,6 @@ public class HasWalkInputCondition : Condition
 
     protected override bool Statement()
     {
-        return _playerMover.HasInputDirection();
+        return _playerMover.HasMovementInput();
     }
 }
