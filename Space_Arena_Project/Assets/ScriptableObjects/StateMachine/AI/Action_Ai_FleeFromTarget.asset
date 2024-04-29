@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Action_Ai_FleeFromTarget
   m_EditorClassIdentifier: 
   description: Pick a random position inside a circle away from the target entity.
-  _radius: 3
+  _radius: 1
+  _distance: 3

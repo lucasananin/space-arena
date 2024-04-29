@@ -7,14 +7,12 @@ public class SideFlipper : MonoBehaviour
     // mudar o nome dessa variavel para _transformToFlip
     [SerializeField] protected Transform _target = null;
     [SerializeField] protected FlipDataSO _flipDataSo = null;
-    [SerializeField] protected bool _flipX = true;
-    [SerializeField] protected bool _flipY = false;
-
-    // bool _canOverrideFlip = true;
+    //[SerializeField] protected bool _flipX = true;
+    //[SerializeField] protected bool _flipY = false;
 
     public event System.Action onFlip = null;
 
-    public void FlipToX(float _x1, float _x2)
+    public void FlipByCompareX(float _x1, float _x2)
     {
         if (_x1 > _x2)
         {
@@ -26,21 +24,26 @@ public class SideFlipper : MonoBehaviour
         }
     }
 
-    public void Flip(bool _toTheRight)
-    {
-        Flip(_toTheRight, _flipDataSo.FlipX, _flipDataSo.FlipY);
-        //Flip(_toTheRight, _flipX, _flipY);
-    }
+    //public void Flip(bool _toTheRight)
+    //{
+    //    Flip(_toTheRight, _flipDataSo.FlipX, _flipDataSo.FlipY);
+    //}
 
-    public void Flip(bool _toTheRight, bool _flipX, bool _flipY)
+    public void Flip(bool _toTheRight/*, bool _flipX, bool _flipY*/)
     {
         Vector3 _newScale = Vector3.one;
 
-        if (_flipX)
+        if (_flipDataSo.FlipX)
             _newScale.x *= _toTheRight ? 1 : -1;
 
-        if (_flipY)
+        if (_flipDataSo.FlipY)
             _newScale.y *= _toTheRight ? 1 : -1;
+
+        //if (_flipX)
+        //    _newScale.x *= _toTheRight ? 1 : -1;
+
+        //if (_flipY)
+        //    _newScale.y *= _toTheRight ? 1 : -1;
 
         if (_newScale != _target.localScale)
         {
@@ -49,7 +52,7 @@ public class SideFlipper : MonoBehaviour
         }
     }
 
-    public void Flip(float _x, float _y)
+    public void ForceFlip(float _x, float _y)
     {
         Vector3 _newScale = Vector3.one;
         _newScale.x *= _x;
@@ -61,22 +64,6 @@ public class SideFlipper : MonoBehaviour
             onFlip?.Invoke();
         }
     }
-
-    public void FlipY(bool _toTheRight)
-    {
-        Vector3 _newScale = Vector3.one;
-        _newScale.y *= _toTheRight ? 1 : -1;
-        _target.localScale = new Vector3(_target.localScale.x, _newScale.y);
-
-        //if (_newScale != _target.localScale)
-        //{
-        //    _target.localScale = _newScale;
-        //    onFlip?.Invoke();
-        //}
-    }
-
-    // void InvertFlipParameters();
-    // { if (!_canOverride) return }
 
     public bool IsLookingRight()
     {

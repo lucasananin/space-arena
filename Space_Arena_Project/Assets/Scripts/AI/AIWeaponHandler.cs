@@ -21,29 +21,14 @@ public class AiWeaponHandler : MonoBehaviour
         StartCoroutine(PullTrigger_routine());
     }
 
-    public void ReleaseTrigger()
-    {
-        _currentWeapon.ReleaseTrigger();
-    }
-
     public void RotateWeapon(Vector3 _position)
     {
-        _weaponRotator.LookAt(_position);
-    }
-
-    public void RotateWeaponToDirection(Vector3 _direction)
-    {
-        _weaponRotator.LookAtDirection(_direction);
+        _weaponRotator.LookAtPosition(_position);
     }
 
     public void ResetWeaponRotation()
     {
         _weaponRotator.ResetRotation();
-    }
-
-    public bool IsShooting()
-    {
-        return _isShooting;
     }
 
     private IEnumerator PullTrigger_routine()

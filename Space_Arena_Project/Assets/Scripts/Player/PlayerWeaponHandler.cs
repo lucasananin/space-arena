@@ -85,7 +85,7 @@ public class PlayerWeaponHandler : MonoBehaviour
             _weapons[i].gameObject.SetActive(_isCurrentWeapon);
         }
 
-        _currentWeapon.GetComponent<WeaponFlipper>().FlipToParent();
+        //_currentWeapon.GetComponent<WeaponFlipper>().FlipToParent();
         _weaponRotator = _currentWeapon.GetComponent<WeaponRotator>();
     }
 

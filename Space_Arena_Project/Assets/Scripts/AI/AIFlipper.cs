@@ -10,13 +10,11 @@ public class AIFlipper : SideFlipper
 
     public void FlipToTarget(Vector3 _targetPosition)
     {
-        //GetComponent<AiWeaponHandler>().WeaponFlipper.ChangeToAimFlipData();
-        FlipToX(_targetPosition.x, transform.position.x);
+        FlipByCompareX(_targetPosition.x, transform.position.x);
     }
 
     public void FlipToMoveDirection()
     {
-        //GetComponent<AiWeaponHandler>().WeaponFlipper.ChangeToMovementFlipData();
-        FlipToX(_aiPath.velocity.x, 0);
+        FlipByCompareX(_aiPath.velocity.x, 0);
     }
 }

@@ -52,11 +52,11 @@ public class AiEntity : EntityBehaviour
         return _point;
     }
 
-    public Vector3 PickRandomPointAwayFromTarget(float _radius)
+    public Vector3 PickRandomPointAwayFromTarget(float _radius, float _distance)
     {
         Vector3 _point = Random.insideUnitCircle * _radius;
         _point += GetTargetEntityPosition();
-        _point += (transform.position - GetTargetEntityPosition()).normalized * _radius;
+        _point += (transform.position - GetTargetEntityPosition()).normalized * _distance;
         return _point;
     }
 
@@ -89,11 +89,5 @@ public class AiEntity : EntityBehaviour
         float _distance = _vector.magnitude;
         int _hits = Physics2D.CircleCastNonAlloc(_point, 0.3f, _direction, _results, _distance, _obstacleLayerMask);
         return _hits <= 0;
-    }
-
-    public Vector3 GetMoveDirection()
-    {
-        return _aiPath.velocity.normalized;
-        //return _aiPath.targetDirection;
     }
 }
