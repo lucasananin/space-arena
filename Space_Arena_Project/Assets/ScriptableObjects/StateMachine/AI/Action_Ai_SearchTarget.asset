@@ -17,5 +17,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _radius: 5
-  _tags:
-  - Player
+  _tagCollectionSO: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}

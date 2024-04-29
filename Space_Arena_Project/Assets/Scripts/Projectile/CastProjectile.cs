@@ -8,9 +8,6 @@ public class CastProjectile : ProjectileBehaviour
     [Title("// Cast")]
     [SerializeField] CircleCollider2D _dummyCircleCollider = null;
 
-    [Title("// Vfx")]
-    [SerializeField] ParticleSystem _hitVfx = null;
-
     private RaycastHit2D[] _results = new RaycastHit2D[9];
     private List<RaycastHit2D> _raycastHits = new List<RaycastHit2D>();
 
@@ -29,14 +26,10 @@ public class CastProjectile : ProjectileBehaviour
             Collider2D _colliderHit = _raycastHit.collider;
 
             if (HasHitSource(_colliderHit.gameObject)) continue;
+            if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour) && !HasAvailableTag(_colliderHit.gameObject)) continue;
 
-            if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour))
-            {
-                _healthBehaviour.TakeDamage(1);
-            }
-
+            _healthBehaviour?.TakeDamage(1);
             _raycastHits.Add(_raycastHit);
-            Instantiate(_hitVfx, _raycastHit.point, Quaternion.identity);
             IncreasePierceCount();
             SendRaycastHitEvent(_raycastHit);
 

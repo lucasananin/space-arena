@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c83bc7b64efbc1f4e9b1e00bbec38444, type: 3}
-  m_Name: Projectile_PhysicalMeleeEnemy_1
+  m_Name: Projectile_CastEnemy_1
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7353528016857128665, guid: 3977c92cf3bf2f149bda6561d1e2ec6b, type: 3}
+  _prefab: {fileID: 3761620198474376623, guid: cabf496d0e37534488326596137f1050, type: 3}
+  _tagCollectionSO: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 192
   _spawnPositionOffset: {x: 0, y: 0}
   _minMaxTimeUntilDestroy: {x: 0.1, y: 0.1}
-  _maxPierceCount: 99
-  _explosionRadius: 5
-  _moveSpeed: 10
+  _maxPierceCount: 1
+  _explosionRadius: 0
+  _moveSpeed: 1
   _destroyOnCollision: 0
   _useAccelerationCurve: 0
   _invertAcceleration: 0
@@ -31,4 +32,4 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _acelerationMultiplier: 1
-  _maxCastDistance: 99
+  _maxCastDistance: 0.1

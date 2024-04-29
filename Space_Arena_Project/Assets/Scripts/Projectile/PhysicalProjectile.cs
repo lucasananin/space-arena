@@ -9,9 +9,6 @@ public class PhysicalProjectile : ProjectileBehaviour
     [SerializeField] Rigidbody2D _rb = null;
     [SerializeField] CircleCollider2D _dummyCircleCollider = null;
 
-    [Title("// Vfx")]
-    [SerializeField] ParticleSystem _hitVfx = null;
-
     [Title("// Debug - Physical")]
     [SerializeField, ReadOnly] List<Collider2D> _collidersHit = default;
     [SerializeField, ReadOnly] Vector3 _lastPosition = default;
@@ -39,14 +36,10 @@ public class PhysicalProjectile : ProjectileBehaviour
 
             if (HasHitSource(_colliderHit.gameObject)) continue;
             if (_collidersHit.Contains(_colliderHit)) continue;
+            if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour) && !HasAvailableTag(_colliderHit.gameObject)) continue;
 
-            if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour))
-            {
-                _healthBehaviour.TakeDamage(1);
-            }
-
+            _healthBehaviour?.TakeDamage(1);
             _collidersHit.Add(_colliderHit);
-            Instantiate(_hitVfx, _raycastHit.point, Quaternion.identity);
             IncreasePierceCount();
             SendRaycastHitEvent(_raycastHit);
 

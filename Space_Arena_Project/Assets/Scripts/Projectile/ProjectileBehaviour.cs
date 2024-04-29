@@ -78,6 +78,21 @@ public abstract class ProjectileBehaviour : MonoBehaviour
         return _gameobjectHit == _shootModel.CharacterSource;
     }
 
+    public bool HasAvailableTag(GameObject _gameObjectHit)
+    {
+        int _count = _projectileSO.Tags.Length;
+
+        for (int i = 0; i < _count; i++)
+        {
+            if (_gameObjectHit.CompareTag(_projectileSO.Tags[i]))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     protected IEnumerator DestroyRoutine()
     {
         yield return new WaitForSeconds(_timeUntilDestroy);

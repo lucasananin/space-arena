@@ -261,9 +261,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7353528016857128664}
-  - component: {fileID: 7353528016857128665}
   - component: {fileID: 7523388042507287481}
   - component: {fileID: 4705853102255858287}
+  - component: {fileID: 7353528016857128665}
+  - component: {fileID: 689311955822870261}
   m_Layer: 0
   m_Name: Projectile_PhysicalCharged
   m_TagString: Untagged
@@ -289,32 +290,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7353528016857128665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7353528016857128666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0550060135c65749a12e755d50e7073, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _projectileSO: {fileID: 11400000, guid: 1d8646e43cca1914ba232a22c09afd75, type: 2}
-  _shootModel:
-    _characterSource: {fileID: 0}
-    _weaponSource: {fileID: 0}
-  _timeUntilDestroy: 100
-  _destroyTimer: 0
-  _currentPierceCount: 0
-  _rb: {fileID: 7523388042507287481}
-  _dummyCircleCollider: {fileID: 4705853102255858287}
-  _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
-  _collidersHit: []
-  _lastPosition: {x: 0, y: 0, z: 0}
-  _defaultVelocity: {x: 0, y: 0}
-  _accelerationTime: 0
 --- !u!50 &7523388042507287481
 Rigidbody2D:
   serializedVersion: 4
@@ -352,3 +327,43 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!114 &7353528016857128665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0550060135c65749a12e755d50e7073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectileSO: {fileID: 11400000, guid: 1d8646e43cca1914ba232a22c09afd75, type: 2}
+  _shootModel:
+    _characterSource: {fileID: 0}
+    _weaponSource: {fileID: 0}
+  _timeUntilDestroy: 100
+  _destroyTimer: 0
+  _currentPierceCount: 0
+  _rb: {fileID: 7523388042507287481}
+  _dummyCircleCollider: {fileID: 4705853102255858287}
+  _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
+  _collidersHit: []
+  _lastPosition: {x: 0, y: 0, z: 0}
+  _defaultVelocity: {x: 0, y: 0}
+  _accelerationTime: 0
+--- !u!114 &689311955822870261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf01a22c72c2d74ab6b943d57dea308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectileBehaviour: {fileID: 7353528016857128665}
+  _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}

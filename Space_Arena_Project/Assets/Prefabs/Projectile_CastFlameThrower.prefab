@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7353528016857128664}
-  - component: {fileID: 3761620198474376623}
   - component: {fileID: 2945808015590850479}
+  - component: {fileID: 3761620198474376623}
+  - component: {fileID: 5848107137194161381}
   m_Layer: 0
   m_Name: Projectile_CastFlameThrower
   m_TagString: Untagged
@@ -33,6 +34,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2945808015590850479
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!114 &3761620198474376623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,20 +71,17 @@ MonoBehaviour:
   _currentPierceCount: 0
   _dummyCircleCollider: {fileID: 2945808015590850479}
   _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
-  _lineVfx: {fileID: 0}
---- !u!58 &2945808015590850479
-CircleCollider2D:
+--- !u!114 &5848107137194161381
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7353528016857128666}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf01a22c72c2d74ab6b943d57dea308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectileBehaviour: {fileID: 3761620198474376623}
+  _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}

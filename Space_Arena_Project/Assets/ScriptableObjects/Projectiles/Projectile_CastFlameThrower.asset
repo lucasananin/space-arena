@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Projectile_CastFlameThrower
   m_EditorClassIdentifier: 
   _prefab: {fileID: 3761620198474376623, guid: 8ec980d4a25158b42b2778ccc4f2aa5e, type: 3}
+  _tagCollectionSO: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 192

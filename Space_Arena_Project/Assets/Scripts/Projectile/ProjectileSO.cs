@@ -8,6 +8,7 @@ public class ProjectileSO : ScriptableObject
 {
     [Title("// General")]
     [SerializeField] ProjectileBehaviour _prefab = null;
+    [SerializeField] TagCollectionSO _tagCollectionSO = null;
     [SerializeField] LayerMask _layerMask = default;
     [SerializeField] Vector2 _spawnPositionOffset = default;
     [SerializeField] Vector2 _minMaxTimeUntilDestroy = default;
@@ -27,6 +28,7 @@ public class ProjectileSO : ScriptableObject
     [SerializeField] float _maxCastDistance = 99f;
 
     public ProjectileBehaviour Prefab { get => _prefab; private set => _prefab = value; }
+    public string[] Tags { get => _tagCollectionSO.Tags; }
     public LayerMask LayerMask { get => _layerMask; private set => _layerMask = value; }
     public Vector2 SpawnPositionOffset { get => _spawnPositionOffset; private set => _spawnPositionOffset = value; }
     public Vector2 MinMaxTimeUntilDestroy { get => _minMaxTimeUntilDestroy; private set => _minMaxTimeUntilDestroy = value; }

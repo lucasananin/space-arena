@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Projectile_PhysicalCharged
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7353528016857128665, guid: 2c3f6c1af9d69144d9a0a3c735a88efb, type: 3}
+  _tagCollectionSO: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 192

@@ -9,11 +9,11 @@ public class SearchTargetActionSO : StateActionSO<SearchTargetAction>
 {
     [SerializeField] LayerMask _layerMask = default;
     [SerializeField] float _radius = 5f;
-    [SerializeField] string[] _tags = null;
+    [SerializeField] TagCollectionSO _tagCollectionSO = null;
 
     public LayerMask LayerMask { get => _layerMask; private set => _layerMask = value; }
     public float Radius { get => _radius; private set => _radius = value; }
-    public string[] Tags { get => _tags; private set => _tags = value; }
+    public string[] Tags { get => _tagCollectionSO.Tags; }
 }
 
 public class SearchTargetAction : StateAction
