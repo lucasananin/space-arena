@@ -17,9 +17,9 @@ public class PlayerWalkAction : StateAction
 {
     private PlayerMover _playerMover = null;
 
-    public override void Awake(StateMachine stateMachine)
+    public override void Awake(StateMachine _stateMachine)
     {
-        _playerMover = stateMachine.GetComponent<PlayerMover>();
+        _playerMover = _stateMachine.GetComponent<PlayerMover>();
     }
 
     public override void OnFixedUpdate()
@@ -30,7 +30,6 @@ public class PlayerWalkAction : StateAction
     public override void OnUpdate()
     {
         //
-        _playerMover.ReadMovementInput();
     }
 
     public override void OnStateExit()

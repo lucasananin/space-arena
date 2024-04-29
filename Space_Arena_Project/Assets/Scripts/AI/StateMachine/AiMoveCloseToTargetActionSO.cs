@@ -56,7 +56,7 @@ public class AiMoveCloseToTargetAction : StateAction
     private void SearchPath()
     {
         // Pega uma posicao onde o target possa ser visto. Castar um raycast pra ver se nao tem nada na frente.
-        // colocar um numero maximo de tentativas para evitar lacos infinitos.
+        // Colocar um numero maximo de tentativas para evitar lacos infinitos.
         _point = _aIEntity.PickRandomPointNearTarget(OriginSO.Radius);
         _aIEntity.SetAIPathDestination(_point);
     }

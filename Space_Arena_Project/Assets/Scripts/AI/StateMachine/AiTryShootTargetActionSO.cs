@@ -11,7 +11,6 @@ public class AiTryShootTargetActionSO : StateActionSO<AiTryShootTargetAction>
 
 public class AiTryShootTargetAction : StateAction
 {
-
     private AiEntity _aIEntity = null;
     private AiEntitySO _entitySO = null;
     private AiWeaponHandler _aiWeaponHandler = null;

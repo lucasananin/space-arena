@@ -11,7 +11,7 @@ public class PlayerMover : MonoBehaviour
 
     //private void Update()
     //{
-    //    _inputDirection = InputHandler.GetMovementInput();
+    //    ReadMovementInput();
     //}
 
     private void FixedUpdate()

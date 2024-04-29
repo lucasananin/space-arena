@@ -36,6 +36,9 @@ public class AiWeaponHandler : MonoBehaviour
         _isShooting = true;
         _currentWeapon.PullTrigger();
 
+        // Se for charge, pega o tempo do charge.
+        // Se for burst, espera dar todos os tiros.
+        // Talvez seja preciso somar os tempos.
         yield return new WaitForSeconds(0.1f);
 
         _isShooting = false;
