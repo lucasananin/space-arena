@@ -83,4 +83,9 @@ public abstract class ProjectileBehaviour : MonoBehaviour
         yield return new WaitForSeconds(_timeUntilDestroy);
         Destroy(gameObject);
     }
+
+    //public void SetProjectileSO(ProjectileSO _value)
+    //{
+    //    _projectileSO = _value;
+    //}
 }

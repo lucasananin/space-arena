@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83bc7b64efbc1f4e9b1e00bbec38444, type: 3}
+  m_Name: Projectile_PhysicalMeleeEnemy_1
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 7353528016857128665, guid: 3977c92cf3bf2f149bda6561d1e2ec6b, type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  _spawnPositionOffset: {x: 0, y: 0}
+  _minMaxTimeUntilDestroy: {x: 0.1, y: 0.1}
+  _maxPierceCount: 99
+  _explosionRadius: 5
+  _moveSpeed: 10
+  _destroyOnCollision: 0
+  _useAccelerationCurve: 0
+  _invertAcceleration: 0
+  _accelerationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _acelerationMultiplier: 1
+  _maxCastDistance: 99

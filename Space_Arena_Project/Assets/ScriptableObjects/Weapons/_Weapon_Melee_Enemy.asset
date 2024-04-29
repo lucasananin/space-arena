@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: _Weapon_Melee_Enemy
   m_EditorClassIdentifier: 
-  _projectileSO: {fileID: 11400000, guid: 0550e4f298432344dbbe5bd3bce6b4e3, type: 2}
+  _projectileSO: {fileID: 11400000, guid: f378e2e143334de4eb0422d2d2c1854a, type: 2}
   _chargedProjectileSO: {fileID: 0}
   _fireRate: 1
   _maxChargeTime: 0

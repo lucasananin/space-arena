@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Action_Ai_TryShootTarget
   m_EditorClassIdentifier: 
   description: Try shoot the target entity when inside the shoot distance.
-  _shootDistance: 1
+  _shootDistance: 0.7

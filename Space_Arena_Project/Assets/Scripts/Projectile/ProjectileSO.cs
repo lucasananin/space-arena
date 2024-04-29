@@ -42,4 +42,10 @@ public class ProjectileSO : ScriptableObject
     public float AcelerationMultiplier { get => _acelerationMultiplier; set => _acelerationMultiplier = value; }
 
     public float MaxCastDistance { get => _maxCastDistance; private set => _maxCastDistance = value; }
+
+    //[Button]
+    //private void UpdatePrefab()
+    //{
+    //    _prefab.SetProjectileSO(this);
+    //}
 }
