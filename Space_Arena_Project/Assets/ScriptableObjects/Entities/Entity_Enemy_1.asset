@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Entity_Enemy_1
   m_EditorClassIdentifier: 
   _shootDistance: 0.7
+  _moveClose_radius: 3
+  _stopOnCloseEnough: 1
