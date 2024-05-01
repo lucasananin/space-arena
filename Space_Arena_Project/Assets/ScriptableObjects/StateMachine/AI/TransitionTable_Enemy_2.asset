@@ -14,14 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - FromState: {fileID: 11400000, guid: 7508e13987e56b2449ce94dcd3ae859a, type: 2}
-    ToState: {fileID: 11400000, guid: 233f9d8f406f9924bbe86afb0dfc6d04, type: 2}
+    ToState: {fileID: 11400000, guid: 15d5e5bc5cbb88d4994a89978810871f, type: 2}
     Conditions:
     - ExpectedResult: 0
       Condition: {fileID: 11400000, guid: ef8c543744fdd6949bd1703c5993e3b5, type: 2}
-      Operator: 0
-  - FromState: {fileID: 11400000, guid: 233f9d8f406f9924bbe86afb0dfc6d04, type: 2}
-    ToState: {fileID: 11400000, guid: 8261ff55027226943afa55703b5ca00e, type: 2}
-    Conditions:
-    - ExpectedResult: 0
-      Condition: {fileID: 11400000, guid: c36422ef03a63064d902765fe14af903, type: 2}
       Operator: 0

@@ -33,8 +33,8 @@ public class WeaponSO : ScriptableObject
     [SerializeField] bool _hasChargeWeakShot = false;
 
     [Title("// Burst - Properties")]
-    [SerializeField] float _burstRate = 0.5f;
-    [SerializeField] int _maxShootCount = 3;
+    [SerializeField, Range(0f, 9f)] float _burstRate = 0.5f;
+    [SerializeField, Range(0, 99)] int _maxShootCount = 3;
 
     public ProjectileSO ProjectileSO { get => _projectileSO; private set => _projectileSO = value; }
     public ProjectileSO ChargedProjectileSO { get => _chargedProjectileSO; private set => _chargedProjectileSO = value; }

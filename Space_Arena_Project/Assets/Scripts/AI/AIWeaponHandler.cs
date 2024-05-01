@@ -33,6 +33,8 @@ public class AiWeaponHandler : MonoBehaviour
 
     private IEnumerator PullTrigger_routine()
     {
+        yield return null;
+
         _isShooting = true;
         _currentWeapon.PullTrigger();
 

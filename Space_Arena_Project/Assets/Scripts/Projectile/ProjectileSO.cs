@@ -12,11 +12,11 @@ public class ProjectileSO : ScriptableObject
     [SerializeField] LayerMask _layerMask = default;
     [SerializeField] Vector2 _spawnPositionOffset = default;
     [SerializeField] Vector2 _minMaxTimeUntilDestroy = default;
-    [SerializeField] int _maxPierceCount = 1;
-    [SerializeField] float _explosionRadius = 5f;
+    [SerializeField, Range(1, 99)] int _maxPierceCount = 1;
+    [SerializeField, Range(0f, 99)] float _explosionRadius = 0f;
 
     [Title("// Physical")]
-    [SerializeField] float _moveSpeed = 20f;
+    [SerializeField, Range(0f, 99f)] float _moveSpeed = 0f;
     [SerializeField] bool _destroyOnCollision = true;
     [Space]
     [SerializeField] bool _useAccelerationCurve = false;
@@ -25,7 +25,7 @@ public class ProjectileSO : ScriptableObject
     [SerializeField, Range(0f, 10f)] float _acelerationMultiplier = 1f;
 
     [Title("// Cast")]
-    [SerializeField] float _maxCastDistance = 99f;
+    [SerializeField, Range(0f, 99f)] float _maxCastDistance = 0f;
 
     public ProjectileBehaviour Prefab { get => _prefab; private set => _prefab = value; }
     public string[] Tags { get => _tagCollectionSO.Tags; }

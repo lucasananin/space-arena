@@ -9,12 +9,14 @@ public class WeaponFlipper : SideFlipper
 
     //private void OnEnable()
     //{
-    //    _parentFlipper.onFlip += FlipToParent;
+    //    //_parentFlipper.onFlip += FlipToParent;
+    //    _parentFlipper.onFlip += UpdateFlip;
     //}
 
     //private void OnDisable()
     //{
-    //    _parentFlipper.onFlip -= FlipToParent;
+    //    //_parentFlipper.onFlip -= FlipToParent;
+    //    _parentFlipper.onFlip -= UpdateFlip;
     //}
 
     private void LateUpdate()

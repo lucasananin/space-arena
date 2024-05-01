@@ -47,6 +47,9 @@ public class AiMoveCloseToTargetAction : StateAction
     {
         if (_entitySO.StopOnCloseEnough && _aiEntity.IsCloseToTargetEntity(_entitySO.MoveClose_radius)) return;
 
+        // se tiver chegado no fim do do path espera um tempo.
+        // botar isso no wandering tbm.
+
         if (_aiEntity.HasReachedPathEnding() || !_aiEntity.IsPointCloseToTargetEntity(_point, _entitySO.MoveClose_radius))
         {
             SearchPath();
