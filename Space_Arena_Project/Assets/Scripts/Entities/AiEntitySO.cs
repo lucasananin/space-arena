@@ -10,9 +10,9 @@ public class AiEntitySO : EntitySO
     [SerializeField, Range(0f, 99f)] float _shootDistance = 0f;
 
     [Title("// Move Close To Target")]
-    [SerializeField] float _moveClose_radius = 0f;
+    [SerializeField, Range(0.5f, 9f)] float _moveClose_radius = 0f;
     [SerializeField] bool _stopOnCloseEnough = true;
-    [SerializeField] int _maxNumberOfTries = 10;
+    [SerializeField, Range(0, 99)] int _maxNumberOfTries = 10;
 
     public float ShootDistance { get => _shootDistance; private set => _shootDistance = value; }
 

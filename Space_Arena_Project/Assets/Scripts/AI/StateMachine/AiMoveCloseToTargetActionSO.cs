@@ -55,20 +55,28 @@ public class AiMoveCloseToTargetAction : StateAction
 
     private void SearchPath()
     {
-        //for (int i = 0; i < _entitySO.MaxNumberOfTries; i++)
-        //{
-        //    _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MoveClose_radius);
-
-        //    if (_aiEntity.CanSeeTargetFromPoint(_point))
-        //    {
-        //        _aiEntity.SetAIPathDestination(_point);
-        //        Debug.Log($"// A: point = {_point}, index = {i}");
-        //        return;
-        //    }
-        //}
-
-        _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MoveClose_radius);
+        _point = TryGetPositionWhereTargetIsVisible();
         _aiEntity.SetAIPathDestination(_point);
-        //Debug.Log($"// B");
+    }
+
+    private Vector3 TryGetPositionWhereTargetIsVisible()
+    {
+        Vector3 _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MoveClose_radius);
+
+        for (int i = 0; i < _entitySO.MaxNumberOfTries; i++)
+        {
+            if (_aiEntity.CanSeeTargetFromPoint(_point))
+            {
+                //Debug.Log($"// A: point = {_point}, index = {i}");
+                return _point;
+            }
+            else
+            {
+                //Debug.Log($"// B: point = {_point}, index = {i}");
+                _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MoveClose_radius);
+            }
+        }
+
+        return _point;
     }
 }
