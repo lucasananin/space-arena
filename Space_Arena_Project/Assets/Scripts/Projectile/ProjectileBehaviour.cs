@@ -80,17 +80,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     public bool HasAvailableTag(GameObject _gameObjectHit)
     {
-        int _count = _projectileSO.Tags.Length;
-
-        for (int i = 0; i < _count; i++)
-        {
-            if (_gameObjectHit.CompareTag(_projectileSO.Tags[i]))
-            {
-                return true;
-            }
-        }
-
-        return false;
+        return GeneralMethods.HasAvailableTag(_gameObjectHit, _projectileSO.Tags);
     }
 
     protected IEnumerator DestroyRoutine()

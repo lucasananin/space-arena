@@ -7,7 +7,8 @@ using UnityEngine;
 public class AiEntity : EntityBehaviour
 {
     [SerializeField] AIPath _aiPath = null;
-    [SerializeField] LayerMask _obstacleLayerMask = default;
+    [SerializeField] TagCollectionSO _obstacleTags = null;
+    [SerializeField] LayerMask _layerMask = default;
     [SerializeField, ReadOnly] EntityBehaviour _targetEntity = null;
     [SerializeField, ReadOnly] bool _isFleeing = false;
     [SerializeField, ReadOnly] bool _isTargetOnLineOfSight = false;
@@ -26,6 +27,11 @@ public class AiEntity : EntityBehaviour
     public void SetTargetEntity(EntityBehaviour _entityValue)
     {
         _targetEntity = _entityValue;
+    }
+
+    public bool IsTargetEntity(GameObject _obj)
+    {
+        return _obj == _targetEntity.gameObject;
     }
 
     public bool HasTargetEntity()
@@ -87,7 +93,20 @@ public class AiEntity : EntityBehaviour
         Vector3 _vector = GetTargetEntityPosition() - _point;
         Vector3 _direction = _vector.normalized;
         float _distance = _vector.magnitude;
-        int _hits = Physics2D.CircleCastNonAlloc(_point, 0.3f, _direction, _results, _distance, _obstacleLayerMask);
-        return _hits <= 0;
+        int _hits = Physics2D.CircleCastNonAlloc(_point, 0.3f, _direction, _results, _distance, _layerMask);
+
+        for (int i = 0; i < _hits; i++)
+        {
+            Collider2D _colliderHit = _results[i].collider;
+
+            if (GeneralMethods.HasAvailableTag(_colliderHit.gameObject, _obstacleTags.Tags)) return false;
+
+            if (IsTargetEntity(_colliderHit.gameObject))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

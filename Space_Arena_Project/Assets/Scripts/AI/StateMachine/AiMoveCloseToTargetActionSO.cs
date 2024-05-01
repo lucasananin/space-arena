@@ -23,14 +23,14 @@ public class AiMoveCloseToTargetAction : StateAction
 {
     //private new AiMoveCloseToTargetActionSO OriginSO => (AiMoveCloseToTargetActionSO)base.OriginSO;
 
-    private AiEntity _aIEntity = null;
+    private AiEntity _aiEntity = null;
     private AiEntitySO _entitySO = null;
     private Vector3 _point = default;
 
     public override void Awake(StateMachine stateMachine)
     {
-        _aIEntity = stateMachine.GetComponent<AiEntity>();
-        _entitySO = _aIEntity.GetEntitySO<AiEntitySO>();
+        _aiEntity = stateMachine.GetComponent<AiEntity>();
+        _entitySO = _aiEntity.GetEntitySO<AiEntitySO>();
     }
 
     public override void OnStateEnter()
@@ -45,9 +45,9 @@ public class AiMoveCloseToTargetAction : StateAction
 
     public override void OnUpdate()
     {
-        if (_entitySO.StopOnCloseEnough && _aIEntity.IsCloseToTargetEntity(_entitySO.MoveClose_radius)) return;
+        if (_entitySO.StopOnCloseEnough && _aiEntity.IsCloseToTargetEntity(_entitySO.MoveClose_radius)) return;
 
-        if (_aIEntity.HasReachedPathEnding() || !_aIEntity.IsPointCloseToTargetEntity(_point, _entitySO.MoveClose_radius))
+        if (_aiEntity.HasReachedPathEnding() || !_aiEntity.IsPointCloseToTargetEntity(_point, _entitySO.MoveClose_radius))
         {
             SearchPath();
         }
@@ -55,9 +55,20 @@ public class AiMoveCloseToTargetAction : StateAction
 
     private void SearchPath()
     {
-        // Pega uma posicao onde o target possa ser visto. Castar um raycast pra ver se nao tem nada na frente.
-        // Colocar um numero maximo de tentativas para evitar lacos infinitos.
-        _point = _aIEntity.PickRandomPointNearTarget(_entitySO.MoveClose_radius);
-        _aIEntity.SetAIPathDestination(_point);
+        //for (int i = 0; i < _entitySO.MaxNumberOfTries; i++)
+        //{
+        //    _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MoveClose_radius);
+
+        //    if (_aiEntity.CanSeeTargetFromPoint(_point))
+        //    {
+        //        _aiEntity.SetAIPathDestination(_point);
+        //        Debug.Log($"// A: point = {_point}, index = {i}");
+        //        return;
+        //    }
+        //}
+
+        _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MoveClose_radius);
+        _aiEntity.SetAIPathDestination(_point);
+        //Debug.Log($"// B");
     }
 }

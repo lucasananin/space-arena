@@ -295,9 +295,10 @@ MonoBehaviour:
   _entitySO: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
   _healthBehaviour: {fileID: 6972132582502089756}
   _aiPath: {fileID: 6972132582502089753}
-  _obstacleLayerMask:
+  _obstacleTags: {fileID: 11400000, guid: e91634ae7f5698244a3a04c41348ac30, type: 2}
+  _layerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 192
   _targetEntity: {fileID: 0}
   _isFleeing: 0
   _isTargetOnLineOfSight: 0
