@@ -7,18 +7,22 @@ public class AiWeaponHandler : MonoBehaviour
 {
     [SerializeField] WeaponBehaviour _currentWeapon = null;
     [SerializeField] WeaponRotator _weaponRotator = null;
-    [SerializeField] WeaponFlipper _weaponFlipper = null;
-    [SerializeField, ReadOnly] bool _isShooting = false;
+    [SerializeField, ReadOnly] bool _canShoot = true;
 
     public event System.Action onStoppedShooting = null;
 
-    public WeaponFlipper WeaponFlipper { get => _weaponFlipper; private set => _weaponFlipper = value; }
+    public bool CanShoot { get => _canShoot; private set => _canShoot = value; }
 
-    public void PullTrigger()
+    private void Awake()
     {
-        if (_isShooting) return;
+        _canShoot = true;
+    }
 
-        StartCoroutine(PullTrigger_routine());
+    public void StartShooting()
+    {
+        if (!_canShoot) return;
+
+        StartCoroutine(StartShooting_routine());
     }
 
     public void RotateWeapon(Vector3 _position)
@@ -31,20 +35,25 @@ public class AiWeaponHandler : MonoBehaviour
         _weaponRotator.ResetRotation();
     }
 
-    private IEnumerator PullTrigger_routine()
+    // Se o inimigo possuir um "action" que permita a troca de armas, 
+    // vai ser preciso fazer ela esperar o _canShoot
+    // ou dar um stopCoroutine e resetar o _canShoot ao fazer a troca.
+    private IEnumerator StartShooting_routine()
     {
+        _canShoot = false;
         yield return null;
 
-        _isShooting = true;
         _currentWeapon.PullTrigger();
+        float _waitTime = _currentWeapon.GetPullTriggerTotalTime();
+        //Debug.Log($"// GetPullTriggerTotalTime = {_waitTime}");
+        yield return new WaitForSeconds(_waitTime);
 
-        // Se for charge, pega o tempo do charge.
-        // Se for burst, espera dar todos os tiros.
-        // Talvez seja preciso somar os tempos.
-        yield return new WaitForSeconds(0.1f);
-
-        _isShooting = false;
         _currentWeapon.ReleaseTrigger();
+        _waitTime = _currentWeapon.GetTimeUntilAnotherShot();
+        //Debug.Log($"// GetTimeUntilAnotherShot() = {_waitTime}");
+        yield return new WaitForSeconds(_waitTime);
+
+        _canShoot = true;
         onStoppedShooting?.Invoke();
     }
 }

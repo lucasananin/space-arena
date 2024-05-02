@@ -33,8 +33,8 @@ public class WeaponSO : ScriptableObject
     [SerializeField] bool _hasChargeWeakShot = false;
 
     [Title("// Burst - Properties")]
-    [SerializeField, Range(0f, 9f)] float _burstRate = 0.5f;
-    [SerializeField, Range(0, 99)] int _maxShootCount = 3;
+    [SerializeField, Range(0f, 9f)] float _burstRate = 0f;
+    [SerializeField, Range(0, 99)] int _maxBurstShootCount = 0;
 
     public ProjectileSO ProjectileSO { get => _projectileSO; private set => _projectileSO = value; }
     public ProjectileSO ChargedProjectileSO { get => _chargedProjectileSO; private set => _chargedProjectileSO = value; }
@@ -52,7 +52,7 @@ public class WeaponSO : ScriptableObject
     public bool HasChargeWeakShot { get => _hasChargeWeakShot; private set => _hasChargeWeakShot = value; }
 
     public float BurstRate { get => _burstRate; private set => _burstRate = value; }
-    public int MaxShootCount { get => _maxShootCount; private set => _maxShootCount = value; }
+    public int MaxBurstShootCount { get => _maxBurstShootCount; private set => _maxBurstShootCount = value; }
 
     public bool HasChargeTime()
     {
@@ -62,5 +62,18 @@ public class WeaponSO : ScriptableObject
     public bool CanOverheat()
     {
         return _maxHeat > 0;
+    }
+
+    public float GetPullTriggerTotalTime()
+    {
+        float _offset = 0.1f;
+        return _maxChargeTime + _offset;
+    }
+
+    public float GetTimeUntilAnotherShot()
+    {
+        float _totalFireRate = _maxBurstShootCount > 0 ? _fireRate * _maxBurstShootCount : _fireRate;
+        float _offset = 0.1f;
+        return _totalFireRate + _burstRate + _offset;
     }
 }

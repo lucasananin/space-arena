@@ -11,15 +11,15 @@ public class AiTryShootTargetActionSO : StateActionSO<AiTryShootTargetAction>
 
 public class AiTryShootTargetAction : StateAction
 {
-    private AiEntity _aIEntity = null;
+    private AiEntity _aiEntity = null;
     private AiEntitySO _entitySO = null;
     private AiWeaponHandler _aiWeaponHandler = null;
 
     public override void Awake(StateMachine stateMachine)
     {
-        _aIEntity = stateMachine.GetComponent<AiEntity>();
+        _aiEntity = stateMachine.GetComponent<AiEntity>();
         _aiWeaponHandler = stateMachine.GetComponent<AiWeaponHandler>();
-        _entitySO = _aIEntity.GetEntitySO<AiEntitySO>();
+        _entitySO = _aiEntity.GetEntitySO<AiEntitySO>();
     }
 
     public override void OnFixedUpdate()
@@ -29,11 +29,11 @@ public class AiTryShootTargetAction : StateAction
 
     public override void OnUpdate()
     {
-        // Ver se o fireRate permite atirar.
-        if (_aIEntity.IsTargetOnLineOfSight && _aIEntity.IsCloseToTargetEntity(_entitySO.ShootDistance))
+        if (!_aiWeaponHandler.CanShoot) return;
+
+        if (_aiEntity.IsTargetOnLineOfSight && _aiEntity.IsCloseToTargetEntity(_entitySO.ShootDistance))
         {
-            _aiWeaponHandler.PullTrigger();
-            Debug.Log($"// PullTrigger()");
+            _aiWeaponHandler.StartShooting();
         }
     }
 }

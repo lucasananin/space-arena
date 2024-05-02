@@ -162,4 +162,14 @@ public abstract class WeaponBehaviour : MonoBehaviour
             }
         }
     }
+
+    public float GetPullTriggerTotalTime()
+    {
+        return _weaponSO.GetPullTriggerTotalTime();
+    }
+
+    public float GetTimeUntilAnotherShot()
+    {
+        return _overheatTimer + _weaponSO.GetTimeUntilAnotherShot();
+    }
 }

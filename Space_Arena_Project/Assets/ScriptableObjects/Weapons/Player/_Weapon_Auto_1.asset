@@ -24,5 +24,5 @@ MonoBehaviour:
   _projectilesPerShot: 1
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0
-  _burstRate: 0.5
-  _maxShootCount: 3
+  _burstRate: 0
+  _maxBurstShootCount: 0

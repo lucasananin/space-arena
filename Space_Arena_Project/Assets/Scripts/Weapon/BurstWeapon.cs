@@ -28,7 +28,7 @@ public class BurstWeapon : WeaponBehaviour
 
                 _currentShootCount++;
 
-                if (_currentShootCount >= _weaponSO.MaxShootCount)
+                if (_currentShootCount >= _weaponSO.MaxBurstShootCount)
                 {
                     _nextFire = _weaponSO.FireRate;
                     _isBursting = false;

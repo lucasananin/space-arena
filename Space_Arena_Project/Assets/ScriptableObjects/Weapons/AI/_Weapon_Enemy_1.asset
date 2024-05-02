@@ -25,4 +25,4 @@ MonoBehaviour:
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0
   _burstRate: 0
-  _maxShootCount: 0
+  _maxBurstShootCount: 0
