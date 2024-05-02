@@ -6,6 +6,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Weapon_", menuName = "SO/Combat/Weapon Data")]
 public class WeaponSO : ScriptableObject
 {
+    [Title("// General")]
+    [SerializeField, PreviewField] Sprite _iconSprite = null;
+    //[SerializeField] string _displayName = null;
+
     [Title("// Projectiles")]
     [SerializeField] ProjectileSO _projectileSO = null;
     [SerializeField] ProjectileSO _chargedProjectileSO = null;
@@ -53,6 +57,8 @@ public class WeaponSO : ScriptableObject
 
     public float BurstRate { get => _burstRate; private set => _burstRate = value; }
     public int MaxBurstShootCount { get => _maxBurstShootCount; private set => _maxBurstShootCount = value; }
+
+    public Sprite SpriteIcon { get => _iconSprite; private set => _iconSprite = value; }
 
     public bool HasChargeTime()
     {
