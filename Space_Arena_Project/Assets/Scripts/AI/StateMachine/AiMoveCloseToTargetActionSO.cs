@@ -50,9 +50,9 @@ public class AiMoveCloseToTargetAction : StateAction
 
     private void SearchPath()
     {
-        _aiEntity.ResetNextSearchPathRate();
         _point = TryGetPositionWhereTargetIsVisible();
         _aiEntity.SetAIPathDestination(_point);
+        _aiEntity.ResetTimeUntilSearchPath();
     }
 
     private Vector3 TryGetPositionWhereTargetIsVisible()

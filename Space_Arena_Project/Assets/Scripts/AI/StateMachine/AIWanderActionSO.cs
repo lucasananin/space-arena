@@ -21,11 +21,11 @@ public class AiWanderAction : StateAction
 {
     private new AiWanderActionSO OriginSO => (AiWanderActionSO)base.OriginSO;
 
-    private AiEntity _aIEntity = null;
+    private AiEntity _aiEntity = null;
 
     public override void Awake(StateMachine _stateMachine)
     {
-        _aIEntity = _stateMachine.GetComponent<AiEntity>();
+        _aiEntity = _stateMachine.GetComponent<AiEntity>();
     }
 
     public override void OnFixedUpdate()
@@ -35,13 +35,22 @@ public class AiWanderAction : StateAction
 
     public override void OnUpdate()
     {
+        if (_aiEntity.IsWaitingToSearchPath()) return;
+
         // Update the destination of the AI if
         // the AI is not already calculating a path and
         // the ai has reached the end of the path or it has no path at all;
 
-        if (_aIEntity.HasReachedPathEnding())
+        if (_aiEntity.HasReachedPathEnding())
         {
-            _aIEntity.SetAIPathDestination(_aIEntity.PickRandomPointAround(OriginSO.Radius));
+            SearchPath();
         }
+    }
+
+    private void SearchPath()
+    {
+        Vector3 _point = _aiEntity.PickRandomPointAround(OriginSO.Radius);
+        _aiEntity.SetAIPathDestination(_point);
+        _aiEntity.ResetTimeUntilSearchPath();
     }
 }
