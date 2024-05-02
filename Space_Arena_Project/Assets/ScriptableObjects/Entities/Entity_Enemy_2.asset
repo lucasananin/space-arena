@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootDistance: 5
   _moveClose_radius: 5
-  _stopOnCloseEnough: 0
+  _stopSearchingPathOnClose: 0
   _maxNumberOfTries: 10
+  _minMaxTimeUntilSearchPath: {x: 1.5, y: 2}

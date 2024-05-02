@@ -12,6 +12,8 @@ public class AiEntity : EntityBehaviour
     [SerializeField, ReadOnly] EntityBehaviour _targetEntity = null;
     [SerializeField, ReadOnly] bool _isFleeing = false;
     [SerializeField, ReadOnly] bool _isTargetOnLineOfSight = false;
+    [SerializeField, ReadOnly] float _timeUntilSearchPath = 0f;
+    [SerializeField, ReadOnly] float _searchPathTimer = 0f;
 
     private RaycastHit2D[] _results = new RaycastHit2D[9];
 
@@ -108,5 +110,20 @@ public class AiEntity : EntityBehaviour
         }
 
         return false;
+    }
+
+    public bool IsWaitingToSearchPath()
+    {
+        if (!HasReachedPathEnding()) return false;
+
+        _searchPathTimer += Time.deltaTime;
+        return _searchPathTimer < _timeUntilSearchPath;
+    }
+
+    public void ResetNextSearchPathRate()
+    {
+        Vector2 _minMaxValue = GetEntitySO<AiEntitySO>().MinMaxTimeUntilSearchPath;
+        _timeUntilSearchPath = Random.Range(_minMaxValue.x, _minMaxValue.y);
+        _searchPathTimer = 0;
     }
 }

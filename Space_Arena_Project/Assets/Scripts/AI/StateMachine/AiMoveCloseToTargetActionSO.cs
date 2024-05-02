@@ -7,12 +7,6 @@ using UOP1.StateMachine.ScriptableObjects;
 [CreateAssetMenu(fileName = "Action_Ai_MoveCloserToTarget", menuName = "SO/State Machines/Actions/AI Move Closer To Target")]
 public class AiMoveCloseToTargetActionSO : StateActionSO
 {
-    //[SerializeField] float _radius = 1f;
-    //[SerializeField] bool _stopOnCloseEnough = true;
-
-    //public float Radius { get => _radius; private set => _radius = value; }
-    //public bool StopOnCloseEnough { get => _stopOnCloseEnough; private set => _stopOnCloseEnough = value; }
-
     protected override StateAction CreateAction()
     {
         return new AiMoveCloseToTargetAction();
@@ -21,8 +15,6 @@ public class AiMoveCloseToTargetActionSO : StateActionSO
 
 public class AiMoveCloseToTargetAction : StateAction
 {
-    //private new AiMoveCloseToTargetActionSO OriginSO => (AiMoveCloseToTargetActionSO)base.OriginSO;
-
     private AiEntity _aiEntity = null;
     private AiEntitySO _entitySO = null;
     private Vector3 _point = default;
@@ -45,12 +37,12 @@ public class AiMoveCloseToTargetAction : StateAction
 
     public override void OnUpdate()
     {
-        if (_entitySO.StopOnCloseEnough && _aiEntity.IsCloseToTargetEntity(_entitySO.MoveClose_radius)) return;
+        if (_aiEntity.IsWaitingToSearchPath()) return;
+        if (_entitySO.StopSearchingPathOnClose && _aiEntity.IsCloseToTargetEntity(_entitySO.MoveClose_radius)) return;
 
-        // se tiver chegado no fim do do path espera um tempo.
-        // botar isso no wandering tbm.
+        bool _isTargetFarFromPoint = !_aiEntity.IsPointCloseToTargetEntity(_point, _entitySO.MoveClose_radius);
 
-        if (_aiEntity.HasReachedPathEnding() || !_aiEntity.IsPointCloseToTargetEntity(_point, _entitySO.MoveClose_radius))
+        if (_aiEntity.HasReachedPathEnding() || _isTargetFarFromPoint)
         {
             SearchPath();
         }
@@ -58,6 +50,7 @@ public class AiMoveCloseToTargetAction : StateAction
 
     private void SearchPath()
     {
+        _aiEntity.ResetNextSearchPathRate();
         _point = TryGetPositionWhereTargetIsVisible();
         _aiEntity.SetAIPathDestination(_point);
     }
@@ -70,12 +63,10 @@ public class AiMoveCloseToTargetAction : StateAction
         {
             if (_aiEntity.CanSeeTargetFromPoint(_point))
             {
-                //Debug.Log($"// A: point = {_point}, index = {i}");
                 return _point;
             }
             else
             {
-                //Debug.Log($"// B: point = {_point}, index = {i}");
                 _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MoveClose_radius);
             }
         }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectileSO: {fileID: 11400000, guid: 04f6da8ff424c3645a1e5dc30dd4f10a, type: 2}
   _chargedProjectileSO: {fileID: 0}
-  _fireRate: 1
+  _fireRate: 2
   _maxChargeTime: 0
   _maxHeat: 0
   _heatPerShot: 0

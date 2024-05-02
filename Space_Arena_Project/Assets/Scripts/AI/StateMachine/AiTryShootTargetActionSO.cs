@@ -33,7 +33,7 @@ public class AiTryShootTargetAction : StateAction
         if (_aIEntity.IsTargetOnLineOfSight && _aIEntity.IsCloseToTargetEntity(_entitySO.ShootDistance))
         {
             _aiWeaponHandler.PullTrigger();
-            Debug.Log($"// a");
+            Debug.Log($"// PullTrigger()");
         }
     }
 }
