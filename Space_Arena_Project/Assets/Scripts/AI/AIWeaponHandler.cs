@@ -45,13 +45,13 @@ public class AiWeaponHandler : MonoBehaviour
 
         _currentWeapon.PullTrigger();
         float _waitTime = _currentWeapon.GetPullTriggerTotalTime();
-        //Debug.Log($"// GetPullTriggerTotalTime = {_waitTime}");
         yield return new WaitForSeconds(_waitTime);
+        //Debug.Log($"// GetPullTriggerTotalTime = {_waitTime}");
 
         _currentWeapon.ReleaseTrigger();
         _waitTime = _currentWeapon.GetTimeUntilAnotherShot();
-        //Debug.Log($"// GetTimeUntilAnotherShot() = {_waitTime}");
         yield return new WaitForSeconds(_waitTime);
+        //Debug.Log($"// GetTimeUntilAnotherShot() = {_waitTime}");
 
         _canShoot = true;
         onStoppedShooting?.Invoke();
