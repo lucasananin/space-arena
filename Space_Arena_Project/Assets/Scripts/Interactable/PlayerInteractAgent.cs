@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerInteractAgent : InteractAgent
 {
+    public static event System.Action<InteractableBehaviour> onInteractableChange = null;
+
     private void OnEnable()
     {
         InputHandler.onInteractDown += TryInteract;
@@ -16,7 +18,13 @@ public class PlayerInteractAgent : InteractAgent
 
     private void Update()
     {
+        InteractableBehaviour _lastInteractable = _currentInteractable;
         _currentInteractable = SearchForInteractables();
+
+        if (_currentInteractable != _lastInteractable)
+        {
+            onInteractableChange?.Invoke(_currentInteractable);
+        }
     }
 
     private void TryInteract()

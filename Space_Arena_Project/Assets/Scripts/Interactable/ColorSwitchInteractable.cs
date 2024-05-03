@@ -10,4 +10,9 @@ public class ColorSwitchInteractable : InteractableBehaviour
     {
         _spriteRenderer.color = Random.ColorHSV();
     }
+
+    public override string GetText()
+    {
+        return "Change Color";
+    }
 }
