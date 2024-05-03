@@ -1,3 +1,4 @@
+using Pathfinding;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,20 +8,33 @@ public class LootSpawner : MonoBehaviour
 {
     [SerializeField] WeaponSO[] _weaponSOs = null;
     [SerializeField] LootBehaviour _weaponLootPrefab = null;
+    [SerializeField] Transform _parentContainer = null;
+    [SerializeField] BoxCollider2D _boxCollider2D = null;
 
-    private void Start()
-    {
-        SpawnWeaponLoot();
-    }
+    //private GridGraph _graph = null;
+
+    //private void Start()
+    //{
+    //    //SpawnWeaponLoot();
+    //    _graph = AstarPath.active.data.graphs[0] as GridGraph;
+    //}
 
     [Button]
     private void SpawnWeaponLoot()
     {
-        Vector3 _randomPosition = Random.insideUnitCircle * 5f;
-        LootBehaviour _loot = Instantiate(_weaponLootPrefab, _randomPosition, Quaternion.identity);
+        Vector3 _position = GeneralMethods.RandomPointInBounds(_boxCollider2D.bounds);
+        LootBehaviour _loot = Instantiate(_weaponLootPrefab, _position, Quaternion.identity, _parentContainer);
 
-        int _randomIndex = Random.Range(0, _weaponSOs.Length);
-        WeaponSO _so = _weaponSOs[_randomIndex];
+        //GridNode[] _nodes = _graph.nodes;
+        //int _randomNodeIndex = Random.Range(0, _nodes.Length);
+        //Vector3 _position = (Vector3)_nodes[_randomNodeIndex].position;
+        //LootBehaviour _loot = Instantiate(_weaponLootPrefab, _position, Quaternion.identity, _parentContainer);
+
+        //Vector3 _randomPosition = Random.insideUnitCircle * 5f;
+        //LootBehaviour _loot = Instantiate(_weaponLootPrefab, _randomPosition, Quaternion.identity, _parentContainer);
+
+        int _randomWeaponIndex = Random.Range(0, _weaponSOs.Length);
+        WeaponSO _so = _weaponSOs[_randomWeaponIndex];
         _loot.Init(_so);
     }
 }

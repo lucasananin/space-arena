@@ -18,4 +18,13 @@ public class GeneralMethods : MonoBehaviour
 
         return false;
     }
+    public static Vector3 RandomPointInBounds(Bounds _bounds)
+    {
+        return new Vector3(
+            Random.Range(_bounds.min.x, _bounds.max.x),
+            Random.Range(_bounds.min.y, _bounds.max.y),
+            Random.Range(_bounds.min.z, _bounds.max.z)
+        );
+    }
+
 }
