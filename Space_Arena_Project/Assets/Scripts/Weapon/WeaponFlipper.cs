@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WeaponFlipper : SideFlipper
 {
-    [SerializeField] WeaponBehaviour _weaponBehaviour = null;
+    //[SerializeField] WeaponBehaviour _weaponBehaviour = null;
     [SerializeField, ReadOnly] SideFlipper _parentFlipper = null;
 
     private void Awake()

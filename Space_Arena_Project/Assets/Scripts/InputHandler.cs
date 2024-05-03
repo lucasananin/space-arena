@@ -1,19 +1,20 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public static event Action onLeftMouseButtonDown = null;
-    public static event Action onLeftMouseButtonUp = null;
-    public static event Action onMouseScrollUp = null;
-    public static event Action onMouseScrollDown = null;
+    public static event System.Action onLeftMouseButtonDown = null;
+    public static event System.Action onLeftMouseButtonUp = null;
+    public static event System.Action onMouseScrollUp = null;
+    public static event System.Action onMouseScrollDown = null;
+    public static event System.Action onInteractDown = null;
 
     private void Update()
     {
         CheckLeftMouseButtonInput();
         CheckMouseScrollInput();
+        CheckInteractInput();
     }
 
     private void CheckLeftMouseButtonInput()
@@ -40,6 +41,14 @@ public class InputHandler : MonoBehaviour
         else if (_mouseScrollDelta.y < 0)
         {
             onMouseScrollDown?.Invoke();
+        }
+    }
+
+    private void CheckInteractInput()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            onInteractDown?.Invoke();
         }
     }
 
