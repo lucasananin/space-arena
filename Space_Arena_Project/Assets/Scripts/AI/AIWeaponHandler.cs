@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class AiWeaponHandler : MonoBehaviour
 {
+    [SerializeField] EntityBehaviour _entitySource = null;
     [SerializeField] WeaponBehaviour _currentWeapon = null;
     [SerializeField] WeaponRotator _weaponRotator = null;
+
+    [Title("// Debug")]
     [SerializeField, ReadOnly] bool _canShoot = true;
 
     public event System.Action onStoppedShooting = null;
@@ -16,6 +19,7 @@ public class AiWeaponHandler : MonoBehaviour
     private void Awake()
     {
         _canShoot = true;
+        _currentWeapon.Init(_entitySource);
     }
 
     public void StartShooting()

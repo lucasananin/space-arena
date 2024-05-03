@@ -5,18 +5,26 @@ using UnityEngine;
 
 public class WeaponFlipper : SideFlipper
 {
-    [SerializeField] SideFlipper _parentFlipper = null;
+    [SerializeField] WeaponBehaviour _weaponBehaviour = null;
+    [SerializeField, ReadOnly] SideFlipper _parentFlipper = null;
+
+    private void Awake()
+    {
+        _parentFlipper = transform.parent.GetComponent<SideFlipper>();
+    }
 
     //private void OnEnable()
     //{
     //    //_parentFlipper.onFlip += FlipToParent;
-    //    _parentFlipper.onFlip += UpdateFlip;
+    //    //_parentFlipper.onFlip += UpdateFlip;
+    //    _weaponBehaviour.onInit += SetParentFlipper;
     //}
 
     //private void OnDisable()
     //{
     //    //_parentFlipper.onFlip -= FlipToParent;
-    //    _parentFlipper.onFlip -= UpdateFlip;
+    //    //_parentFlipper.onFlip -= UpdateFlip;
+    //    _weaponBehaviour.onInit -= SetParentFlipper;
     //}
 
     private void LateUpdate()
@@ -57,4 +65,12 @@ public class WeaponFlipper : SideFlipper
         //    ForceFlip(-1, -1);
         //}
     }
+
+    //private void SetParentFlipper(WeaponBehaviour _weapon)
+    //{
+    //    if (_parentFlipper == null)
+    //    {
+    //        _parentFlipper = _weapon.EntitySource.GetComponent<SideFlipper>();
+    //    }
+    //}
 }

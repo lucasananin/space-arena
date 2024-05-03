@@ -9,6 +9,7 @@ public class WeaponSO : ScriptableObject
     [Title("// General")]
     [SerializeField, PreviewField] Sprite _iconSprite = null;
     //[SerializeField] string _displayName = null;
+    [SerializeField] WeaponBehaviour _weaponPrefab = null;
 
     [Title("// Projectiles")]
     [SerializeField] ProjectileSO _projectileSO = null;
@@ -40,6 +41,9 @@ public class WeaponSO : ScriptableObject
     [SerializeField, Range(0f, 9f)] float _burstRate = 0f;
     [SerializeField, Range(0, 99)] int _maxBurstShootCount = 0;
 
+    public Sprite SpriteIcon { get => _iconSprite; private set => _iconSprite = value; }
+    public WeaponBehaviour WeaponPrefab { get => _weaponPrefab; set => _weaponPrefab = value; }
+
     public ProjectileSO ProjectileSO { get => _projectileSO; private set => _projectileSO = value; }
     public ProjectileSO ChargedProjectileSO { get => _chargedProjectileSO; private set => _chargedProjectileSO = value; }
 
@@ -57,8 +61,6 @@ public class WeaponSO : ScriptableObject
 
     public float BurstRate { get => _burstRate; private set => _burstRate = value; }
     public int MaxBurstShootCount { get => _maxBurstShootCount; private set => _maxBurstShootCount = value; }
-
-    public Sprite SpriteIcon { get => _iconSprite; private set => _iconSprite = value; }
 
     public bool HasChargeTime()
     {

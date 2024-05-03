@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class PlayerWeaponHandler : MonoBehaviour
 {
-    [SerializeField] List<WeaponBehaviour> _weapons = null;
+    [SerializeField] EntityBehaviour _entitySource = null;
     [SerializeField, Range(0f, 1f)] float _changeWeaponInputDelay = 0.3f;
+    [SerializeField] List<WeaponBehaviour> _weapons = null;
     
     [Title("// Debug")]
     [SerializeField, ReadOnly] WeaponBehaviour _currentWeapon = null;
@@ -76,6 +77,7 @@ public class PlayerWeaponHandler : MonoBehaviour
     private void ChangeCurrentWeapon()
     {
         _currentWeapon = _weapons[_currentWeaponIndex];
+        _currentWeapon.Init(_entitySource);
 
         int _count = _weapons.Count;
 

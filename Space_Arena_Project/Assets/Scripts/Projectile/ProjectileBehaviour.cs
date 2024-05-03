@@ -75,7 +75,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     public bool HasHitSource(GameObject _gameobjectHit)
     {
-        return _gameobjectHit == _shootModel.CharacterSource;
+        return _gameobjectHit == _shootModel.EntitySource.gameObject;
     }
 
     public bool HasAvailableTag(GameObject _gameObjectHit)

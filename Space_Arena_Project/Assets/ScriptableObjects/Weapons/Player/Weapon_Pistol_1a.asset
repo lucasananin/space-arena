@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: _Weapon_SemiAuto
+  m_Name: Weapon_Pistol_1a
   m_EditorClassIdentifier: 
   _iconSprite: {fileID: 21300000, guid: 4f3ac17ec4d2f5b4c8bbaa05326d7514, type: 3}
+  _weaponPrefab: {fileID: 5704818092466949252, guid: c61856f6800231948bf9daedc54fadde, type: 3}
   _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
   _chargedProjectileSO: {fileID: 11400000, guid: 1d8646e43cca1914ba232a22c09afd75, type: 2}
   _fireRate: 0.1

@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: _Weapon_Burst
+  m_Name: Weapon_MachineGun_1a
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: -1512215402, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
-  _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
+  _iconSprite: {fileID: -2094463983, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _weaponPrefab: {fileID: 3562192091433409978, guid: 2b97e7bca5fc4fd4bbfe4b95de0291af, type: 3}
+  _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}
   _chargedProjectileSO: {fileID: 0}
   _fireRate: 0.1
   _maxChargeTime: 0
@@ -21,7 +22,7 @@ MonoBehaviour:
   _heatPerShot: 0
   _heatDecreasePerSecond: 0
   _maxOverheatTime: 0
-  _maxShootAngle: 0
+  _maxShootAngle: 5
   _projectilesPerShot: 1
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0

@@ -7,10 +7,10 @@ public abstract class WeaponBehaviour : MonoBehaviour
 {
     [Title("// Weapon")]
     [SerializeField] protected WeaponSO _weaponSO = null;
-    [SerializeField] protected GameObject _characterSource = null;
     [SerializeField] protected Transform _muzzle = null;
 
     [Title("// Debug - Weapon")]
+    [SerializeField, ReadOnly] protected EntityBehaviour _entitySource = null;
     [SerializeField, ReadOnly] protected float _nextFire = 0;
     [SerializeField, ReadOnly] protected float _chargeTimer = 0f;
     [SerializeField, ReadOnly] protected bool _isCharging = false;
@@ -18,9 +18,12 @@ public abstract class WeaponBehaviour : MonoBehaviour
     [SerializeField, ReadOnly] protected float _overheatTimer = 0f;
     [SerializeField, ReadOnly] protected bool _isOverheated = false;
 
+    public event System.Action<WeaponBehaviour> onInit = null;
     public event System.Action onShoot = null;
     public event System.Action onPullTrigger = null;
     public event System.Action onReleaseTrigger = null;
+
+    public EntityBehaviour EntitySource { get => _entitySource; private set => _entitySource = value; }
 
     protected virtual void Awake()
     {
@@ -30,6 +33,12 @@ public abstract class WeaponBehaviour : MonoBehaviour
     protected virtual void Update()
     {
         DecreaseHeat();
+    }
+
+    public virtual void Init(EntityBehaviour _entityBehaviour)
+    {
+        _entitySource = _entityBehaviour;
+        onInit?.Invoke(this);
     }
 
     public virtual void PullTrigger()
@@ -67,7 +76,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
             Vector3 _position = CalculateProjectilePosition(_projectileSO);
             Quaternion _rotation = CalculateProjectileRotation(i);
             ProjectileBehaviour _projectile = Instantiate(_projectileSO.Prefab, _position, _rotation);
-            ShootModel _shootModel = new ShootModel(_characterSource, this);
+            ShootModel _shootModel = new ShootModel(_entitySource, this);
             _projectile.Init(_shootModel);
         }
     }
