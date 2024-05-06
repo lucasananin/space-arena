@@ -302,6 +302,8 @@ MonoBehaviour:
   _targetEntity: {fileID: 0}
   _isFleeing: 0
   _isTargetOnLineOfSight: 0
+  _timeUntilSearchPath: 0
+  _searchPathTimer: 0
 --- !u!114 &6972132582502089755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,10 +452,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d8df9797d48844092d29f2b745c1b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _entitySource: {fileID: 6972132582502089745}
   _currentWeapon: {fileID: 6972132583126419576}
   _weaponRotator: {fileID: 6972132583126419583}
-  _weaponFlipper: {fileID: 6972132583126419582}
-  _isShooting: 0
+  _canShoot: 1
 --- !u!1 &6972132582996040921
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,8 +637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponSO: {fileID: 11400000, guid: 271fe3cc1f34c4c42bc5085f102782fd, type: 2}
-  _characterSource: {fileID: 6972132582502089762}
   _muzzle: {fileID: 6972132581887060627}
+  _entitySource: {fileID: 0}
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
