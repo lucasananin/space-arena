@@ -11,11 +11,13 @@ public class PlayerInteractPanel : MonoBehaviour
     private void OnEnable()
     {
         PlayerInteractAgent.onInteractableChange += UpdateVisuals;
+        PlayerInteractAgent.onInteracted += UpdateVisuals;
     }
 
     private void OnDisable()
     {
         PlayerInteractAgent.onInteractableChange -= UpdateVisuals;
+        PlayerInteractAgent.onInteracted -= UpdateVisuals;
     }
 
     private void UpdateVisuals(InteractableBehaviour _interactableBehaviour)

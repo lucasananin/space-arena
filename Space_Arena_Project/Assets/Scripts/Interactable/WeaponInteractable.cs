@@ -29,11 +29,12 @@ public class WeaponInteractable : InteractableBehaviour
 
         if (!_weaponHandler.HasWeapon(_weaponSO))
         {
-            // se for uma troca, seta o weapon so aqui ao inves de destruir.
-            // _weaponLoot.init();
+            _weaponHandler.AddWeapon(_weaponSO, out WeaponSO _droppedWeaponSO);
 
-            _weaponHandler.AddWeapon(_weaponSO);
-            Destroy(gameObject);
+            if (_droppedWeaponSO is null)
+                Destroy(gameObject);
+            else
+                _weaponLoot.Init(_droppedWeaponSO);
         }
         else
         {

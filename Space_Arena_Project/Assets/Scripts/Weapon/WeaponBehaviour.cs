@@ -24,6 +24,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
     public event System.Action onReleaseTrigger = null;
 
     public EntityBehaviour EntitySource { get => _entitySource; private set => _entitySource = value; }
+    public WeaponSO WeaponSO { get => _weaponSO; private set => _weaponSO = value; }
 
     protected virtual void Awake()
     {

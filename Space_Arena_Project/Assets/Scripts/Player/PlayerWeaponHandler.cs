@@ -104,19 +104,21 @@ public class PlayerWeaponHandler : MonoBehaviour
         _weaponRotator?.LookAtMouse();
     }
 
-    public void AddWeapon(WeaponSO _weaponSO)
+    public void AddWeapon(WeaponSO _weaponSO, out WeaponSO _droppedWeaponSO)
     {
         var _newWeapon = Instantiate(_weaponSO.WeaponPrefab, transform.position, Quaternion.identity, transform);
 
         if (_weaponsList.Count >= _maxWeaponsCount)
         {
             _weaponsList[_currentWeaponIndex] = _newWeapon;
+            _droppedWeaponSO = _currentWeapon.WeaponSO;
             Destroy(_currentWeapon.gameObject);
             SetCurrentWeapon();
         }
         else
         {
             _weaponsList.Add(_newWeapon);
+            _droppedWeaponSO = null;
             SwapToNextWeapon();
         }
     }

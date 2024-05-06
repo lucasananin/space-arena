@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInteractAgent : InteractAgent
 {
     public static event System.Action<InteractableBehaviour> onInteractableChange = null;
+    public static event System.Action<InteractableBehaviour> onInteracted = null;
 
     private void OnEnable()
     {
@@ -29,6 +30,9 @@ public class PlayerInteractAgent : InteractAgent
 
     private void TryInteract()
     {
-        _currentInteractable?.Interact(this);
+        if (_currentInteractable is null) return;
+
+        _currentInteractable.Interact(this);
+        onInteracted?.Invoke(_currentInteractable);
     }
 }
