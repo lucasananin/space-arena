@@ -38,10 +38,11 @@ public class CanvasGroupView : MonoBehaviour
     {
         _canvasGroup.DOComplete();
         _canvasGroup.alpha = 1;
-        _canvasGroup.DOFade(0, _fadeDuration).
-            OnComplete(()=> 
-            {
-                Hide();
-            });
+        _canvasGroup.DOFade(0, _fadeDuration);
+        //_canvasGroup.DOFade(0, _fadeDuration).
+        //    OnComplete(()=> 
+        //    {
+        //        Hide();
+        //    });
     }
 }
