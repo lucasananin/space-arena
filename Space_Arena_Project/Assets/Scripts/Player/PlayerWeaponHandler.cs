@@ -14,27 +14,27 @@ public class PlayerWeaponHandler : MonoBehaviour
     [SerializeField, ReadOnly] WeaponBehaviour _currentWeapon = null;
     [SerializeField, ReadOnly] WeaponRotator _weaponRotator = null;
     [SerializeField, ReadOnly] int _currentWeaponIndex = 0;
-    [SerializeField, ReadOnly] bool _canInputChangeWeapon = true;
+    [SerializeField, ReadOnly] bool _canSwapWeapon = true;
 
     private void Awake()
     {
-        ChangeCurrentWeapon();
+        SetCurrentWeapon();
     }
 
     private void OnEnable()
     {
         InputHandler.onLeftMouseButtonDown += PullTrigger;
         InputHandler.onLeftMouseButtonUp += ReleaseTrigger;
-        InputHandler.onMouseScrollUp += ChangeToNextWeapon;
-        InputHandler.onMouseScrollDown += ChangeToPreviousWeapon;
+        InputHandler.onMouseScrollUp += SwapToNextWeapon;
+        InputHandler.onMouseScrollDown += SwapToPreviousWeapon;
     }
 
     private void OnDisable()
     {
         InputHandler.onLeftMouseButtonDown -= PullTrigger;
         InputHandler.onLeftMouseButtonUp -= ReleaseTrigger;
-        InputHandler.onMouseScrollUp -= ChangeToNextWeapon;
-        InputHandler.onMouseScrollDown -= ChangeToPreviousWeapon;
+        InputHandler.onMouseScrollUp -= SwapToNextWeapon;
+        InputHandler.onMouseScrollDown -= SwapToPreviousWeapon;
     }
 
     private void PullTrigger()
@@ -47,39 +47,19 @@ public class PlayerWeaponHandler : MonoBehaviour
         _currentWeapon?.ReleaseTrigger();
     }
 
-    private void ChangeToNextWeapon()
+    private void SwapToNextWeapon()
     {
-        //if (!_canInputChangeWeapon) return;
-
-        //_currentWeaponIndex = _weaponsList.IndexOf(_currentWeapon);
-        //_currentWeaponIndex++;
-
-        //if (_currentWeaponIndex >= _weaponsList.Count)
-        //    _currentWeaponIndex = 0;
-
-        //ChangeCurrentWeapon();
-        //StartCoroutine(ChangeWeaponDelay());
-        ChangeWeaponIndex(1);
+        IncreaseWeaponIndex(1);
     }
 
-    private void ChangeToPreviousWeapon()
+    private void SwapToPreviousWeapon()
     {
-        //if (!_canInputChangeWeapon) return;
-
-        //_currentWeaponIndex = _weaponsList.IndexOf(_currentWeapon);
-        //_currentWeaponIndex--;
-
-        //if (_currentWeaponIndex < 0)
-        //    _currentWeaponIndex = _weaponsList.Count - 1;
-
-        //ChangeCurrentWeapon();
-        //StartCoroutine(ChangeWeaponDelay());
-        ChangeWeaponIndex(-1);
+        IncreaseWeaponIndex(-1);
     }
 
-    private void ChangeWeaponIndex(int _value)
+    private void IncreaseWeaponIndex(int _value)
     {
-        if (!_canInputChangeWeapon) return;
+        if (!_canSwapWeapon) return;
 
         _currentWeaponIndex = _weaponsList.IndexOf(_currentWeapon);
         _currentWeaponIndex += _value;
@@ -90,11 +70,11 @@ public class PlayerWeaponHandler : MonoBehaviour
         if (_currentWeaponIndex < 0)
             _currentWeaponIndex = _weaponsList.Count - 1;
 
-        ChangeCurrentWeapon();
-        StartCoroutine(ChangeWeaponDelay());
+        SetCurrentWeapon();
+        StartCoroutine(DisableWeaponSwap_routine());
     }
 
-    private void ChangeCurrentWeapon()
+    private void SetCurrentWeapon()
     {
         if (_weaponsList.Count <= 0) return;
 
@@ -109,15 +89,14 @@ public class PlayerWeaponHandler : MonoBehaviour
             _weaponsList[i].gameObject.SetActive(_isCurrentWeapon);
         }
 
-        //_currentWeapon.GetComponent<WeaponFlipper>().FlipToParent();
         _weaponRotator = _currentWeapon.GetComponent<WeaponRotator>();
     }
 
-    private IEnumerator ChangeWeaponDelay()
+    private IEnumerator DisableWeaponSwap_routine()
     {
-        _canInputChangeWeapon = false;
+        _canSwapWeapon = false;
         yield return new WaitForSeconds(_changeWeaponInputDelay);
-        _canInputChangeWeapon = true;
+        _canSwapWeapon = true;
     }
 
     public void RotateCurrentWeapon()
@@ -127,20 +106,18 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     public void AddWeapon(WeaponSO _weaponSO)
     {
-        var _w = Instantiate(_weaponSO.WeaponPrefab, transform.position, Quaternion.identity, transform);
-        //_weaponsList.Add(_w);
+        var _newWeapon = Instantiate(_weaponSO.WeaponPrefab, transform.position, Quaternion.identity, transform);
 
         if (_weaponsList.Count >= _maxWeaponsCount)
         {
-            // destroy a arma atual.
-            // insert a nova no current index.
-            Debug.Log($"Swap Weapons!");
+            _weaponsList[_currentWeaponIndex] = _newWeapon;
+            Destroy(_currentWeapon.gameObject);
+            SetCurrentWeapon();
         }
         else
         {
-            _weaponsList.Add(_w);
-            ChangeToNextWeapon();
-            Debug.Log($"Add Weapon!");
+            _weaponsList.Add(_newWeapon);
+            SwapToNextWeapon();
         }
     }
 
