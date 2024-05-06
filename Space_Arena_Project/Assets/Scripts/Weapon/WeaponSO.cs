@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Weapon_", menuName = "SO/Combat/Weapon Data")]
 public class WeaponSO : ScriptableObject
 {
+    [SerializeField] protected string _id = null;
+
     [Title("// General")]
     [SerializeField, PreviewField] Sprite _iconSprite = null;
     [SerializeField] WeaponBehaviour _weaponPrefab = null;
@@ -40,6 +42,8 @@ public class WeaponSO : ScriptableObject
     [Title("// Burst - Properties")]
     [SerializeField, Range(0f, 9f)] float _burstRate = 0f;
     [SerializeField, Range(0, 99)] int _maxBurstShootCount = 0;
+
+    public string Id { get => _id; private set => _id = value; }
 
     public Sprite SpriteIcon { get => _iconSprite; private set => _iconSprite = value; }
     public WeaponBehaviour WeaponPrefab { get => _weaponPrefab; private set => _weaponPrefab = value; }

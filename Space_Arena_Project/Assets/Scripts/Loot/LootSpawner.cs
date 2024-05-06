@@ -13,14 +13,14 @@ public class LootSpawner : MonoBehaviour
 
     //private GridGraph _graph = null;
 
-    //private void Start()
-    //{
-    //    //SpawnWeaponLoot();
-    //    _graph = AstarPath.active.data.graphs[0] as GridGraph;
-    //}
+    private void Start()
+    {
+        //_graph = AstarPath.active.data.graphs[0] as GridGraph;
+        SpawnEachOnList();
+    }
 
     [Button]
-    private void SpawnWeaponLoot()
+    private void SpawnRandomWeapon()
     {
         Vector3 _position = GeneralMethods.RandomPointInBounds(_boxCollider2D.bounds);
         LootBehaviour _loot = Instantiate(_weaponLootPrefab, _position, Quaternion.identity, _parentContainer);
@@ -36,6 +36,21 @@ public class LootSpawner : MonoBehaviour
         int _randomWeaponIndex = Random.Range(0, _weaponSOs.Length);
         WeaponSO _so = _weaponSOs[_randomWeaponIndex];
         _loot.Init(_so);
+    }
+
+    [Button]
+    private void SpawnEachOnList()
+    {
+        int _count = _weaponSOs.Length;
+
+        for (int i = 0; i < _count; i++)
+        {
+            Vector3 _position = GeneralMethods.RandomPointInBounds(_boxCollider2D.bounds);
+            LootBehaviour _loot = Instantiate(_weaponLootPrefab, _position, Quaternion.identity, _parentContainer);
+
+            WeaponSO _so = _weaponSOs[i];
+            _loot.Init(_so);
+        }
     }
 }
 

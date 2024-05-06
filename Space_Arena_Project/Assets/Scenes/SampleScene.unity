@@ -7655,17 +7655,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3562192091433409982, guid: 2b97e7bca5fc4fd4bbfe4b95de0291af, type: 3}
   m_PrefabInstance: {fileID: 3562192090779719719}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &658081181 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3562192091433409978, guid: 2b97e7bca5fc4fd4bbfe4b95de0291af, type: 3}
-  m_PrefabInstance: {fileID: 3562192090779719719}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f15682ba2bb08d74ab1393fb60419baf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &667849135
 GameObject:
   m_ObjectHideFlags: 0
@@ -15269,17 +15258,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4843378212357953040, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
   m_PrefabInstance: {fileID: 4843378213631796196}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1410725369 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4843378212357953053, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
-  m_PrefabInstance: {fileID: 4843378213631796196}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce895ca5e13f3b64a8933d2ba0466c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1422076201
 GameObject:
   m_ObjectHideFlags: 0
@@ -20594,17 +20572,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5704818092466949256, guid: c61856f6800231948bf9daedc54fadde, type: 3}
   m_PrefabInstance: {fileID: 5704818090879393342}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1654674106 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5704818092466949252, guid: c61856f6800231948bf9daedc54fadde, type: 3}
-  m_PrefabInstance: {fileID: 5704818090879393342}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb808b67afd45264aa38f541f3bc38d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1689301772
 GameObject:
   m_ObjectHideFlags: 0
@@ -21671,11 +21638,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entitySource: {fileID: 1823301789}
+  _maxWeaponsCount: 2
   _changeWeaponInputDelay: 0.3
-  _weapons:
-  - {fileID: 1654674106}
-  - {fileID: 658081181}
-  - {fileID: 1410725369}
+  _weaponsList: []
   _currentWeapon: {fileID: 0}
   _weaponRotator: {fileID: 0}
   _currentWeaponIndex: 0

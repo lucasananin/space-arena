@@ -25,11 +25,17 @@ public class WeaponInteractable : InteractableBehaviour
 
     public override void Interact(InteractAgent _agent)
     {
-        // pega o weaponhandler.
-        // adiciona na lista.
+        var _weaponHandler = _agent.GetComponent<PlayerWeaponHandler>();
 
-        Debug.Log($"// Weapon taken!");
-        Destroy(gameObject);
+        if (!_weaponHandler.HasWeapon(_weaponSO))
+        {
+            _weaponHandler.AddWeapon(_weaponSO);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log($"// You already have this weapon!");
+        }
     }
 
     public override string GetText()

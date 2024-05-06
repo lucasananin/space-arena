@@ -181,4 +181,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
     {
         return _overheatTimer + _weaponSO.GetTimeUntilAnotherShot();
     }
+
+    public string GetId()
+    {
+        return _weaponSO.Id;
+    }
 }
