@@ -13,6 +13,10 @@ public class WeaponSO : ScriptableObject
     [SerializeField] WeaponBehaviour _weaponPrefab = null;
     [SerializeField] string _displayName = null;
 
+    [Title("// Holster")]
+    [SerializeField] Vector3 _holsterPosition = default;
+    [SerializeField] Vector3 _holsterEuler = default;
+
     [Title("// Projectiles")]
     [SerializeField] ProjectileSO _projectileSO = null;
     [SerializeField] ProjectileSO _chargedProjectileSO = null;
@@ -66,6 +70,9 @@ public class WeaponSO : ScriptableObject
 
     public float BurstRate { get => _burstRate; private set => _burstRate = value; }
     public int MaxBurstShootCount { get => _maxBurstShootCount; private set => _maxBurstShootCount = value; }
+
+    public Vector3 HolsterPosition { get => _holsterPosition; private set => _holsterPosition = value; }
+    public Vector3 HolsterEuler { get => _holsterEuler; private set => _holsterEuler = value; }
 
     public bool HasChargeTime()
     {
