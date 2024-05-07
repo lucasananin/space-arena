@@ -18,6 +18,9 @@ public class PlayerWeaponHandler : MonoBehaviour
     [SerializeField, ReadOnly] int _currentWeaponIndex = 0;
     [SerializeField, ReadOnly] int _lastWeaponIndex = 0;
     [SerializeField, ReadOnly] bool _canSwapWeapon = true;
+    [SerializeField, ReadOnly] bool _canRotateWeapon = false;
+
+    public bool CanRotateWeapon { get => _canRotateWeapon; set => _canRotateWeapon = value; }
 
     private void Awake()
     {
@@ -38,6 +41,14 @@ public class PlayerWeaponHandler : MonoBehaviour
         InputHandler.onLeftMouseButtonUp -= ReleaseTrigger;
         InputHandler.onMouseScrollUp -= SwapToNextWeapon;
         InputHandler.onMouseScrollDown -= SwapToPreviousWeapon;
+    }
+
+    private void FixedUpdate()
+    {
+        if (_canRotateWeapon)
+        {
+            RotateCurrentWeapon();
+        }
     }
 
     private void PullTrigger()

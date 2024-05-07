@@ -22,6 +22,16 @@ public class PlayerAimAction : StateAction
         _playerWeaponHandler = stateMachine.GetComponent<PlayerWeaponHandler>();
     }
 
+    public override void OnStateEnter()
+    {
+        _playerWeaponHandler.CanRotateWeapon = true;
+    }
+
+    public override void OnStateExit()
+    {
+        _playerWeaponHandler.CanRotateWeapon = false;
+    }
+
     public override void OnFixedUpdate()
     {
         //
@@ -29,6 +39,6 @@ public class PlayerAimAction : StateAction
 
     public override void OnUpdate()
     {
-        _playerWeaponHandler.RotateCurrentWeapon();
+        //_playerWeaponHandler.RotateCurrentWeapon();
     }
 }
