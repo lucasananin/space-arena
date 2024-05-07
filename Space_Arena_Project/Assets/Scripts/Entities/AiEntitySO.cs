@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Entity_", menuName = "SO/Entities/AI Entity")]
 public class AiEntitySO : EntitySO
 {
+    [SerializeField] AiEntity _entityPrefab = null;
+
     [Title("// Shoot Target")]
     [SerializeField, Range(0f, 99f)] float _shootDistance = 0f;
 
@@ -14,6 +16,8 @@ public class AiEntitySO : EntitySO
     [SerializeField] bool _stopSearchingPathOnClose = true;
     [SerializeField, Range(0, 99)] int _maxNumberOfTries = 10;
     [SerializeField] Vector2 _minMaxTimeUntilSearchPath = default;
+
+    public AiEntity EntityPrefab { get => _entityPrefab; private set => _entityPrefab = value; }
 
     public float ShootDistance { get => _shootDistance; private set => _shootDistance = value; }
 

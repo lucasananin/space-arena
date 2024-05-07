@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d5a4e750096ac4ab1783d5de629368, type: 3}
   m_Name: Entity_Enemy_2
   m_EditorClassIdentifier: 
+  _entityPrefab: {fileID: 2658297561336904056, guid: e3027df5231167a4da73b72ce65c5deb, type: 3}
   _shootDistance: 5
   _moveClose_radius: 5
   _stopSearchingPathOnClose: 0

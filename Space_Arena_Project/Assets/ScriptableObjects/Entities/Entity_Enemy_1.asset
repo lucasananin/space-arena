@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d5a4e750096ac4ab1783d5de629368, type: 3}
   m_Name: Entity_Enemy_1
   m_EditorClassIdentifier: 
+  _entityPrefab: {fileID: 6972132582502089745, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
   _shootDistance: 0.7
   _moveClose_radius: 3
-  _stopOnCloseEnough: 1
+  _stopSearchingPathOnClose: 1
+  _maxNumberOfTries: 10
+  _minMaxTimeUntilSearchPath: {x: 0, y: 0}

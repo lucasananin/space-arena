@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Weapon_MachineGun_1a
   m_EditorClassIdentifier: 
   _id: machine_gun_1_a
-  _iconSprite: {fileID: -2094463983, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _iconSprite: {fileID: 21300000, guid: 9ca098a3bb5c4fb45bad1a685bb8033b, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: 2b97e7bca5fc4fd4bbfe4b95de0291af, type: 3}
   _displayName: Machine Gun
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
