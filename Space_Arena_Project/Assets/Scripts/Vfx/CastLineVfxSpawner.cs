@@ -19,7 +19,8 @@ public class CastLineVfxSpawner : MonoBehaviour
 
     private void SpawnVfx(List<RaycastHit2D> _pointsHit)
     {
-        CastLineVfx _instance = Instantiate(_lineVfx, transform.position, Quaternion.identity);
+        Vector3 _myPosition = transform.position;
+        CastLineVfx _instance = Instantiate(_lineVfx, _myPosition, transform.rotation);
 
         if (_pointsHit.Count > 0)
         {
@@ -28,7 +29,7 @@ public class CastLineVfxSpawner : MonoBehaviour
         }
         else
         {
-            Vector3 _point = transform.right.normalized * _castProjectile.GetCastMaxDistance();
+            Vector3 _point = _myPosition + (transform.right * _castProjectile.GetCastMaxDistance());
             _instance.Init(_point);
         }
     }
