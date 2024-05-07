@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Weapon_Shotgun
   m_EditorClassIdentifier: 
   _id: shotgun_1_a
-  _iconSprite: {fileID: 521366480, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _iconSprite: {fileID: 21300000, guid: 8dee02ed13ffd584fafcd68b95576d4e, type: 3}
   _weaponPrefab: {fileID: 2751957287607790105, guid: 90cf852f366fdca4392e380ad1d8ca5a, type: 3}
   _displayName: Shotgun
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
