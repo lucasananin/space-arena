@@ -6,8 +6,9 @@ public class InputHandler : MonoBehaviour
 {
     public static event System.Action onLeftMouseButtonDown = null;
     public static event System.Action onLeftMouseButtonUp = null;
-    public static event System.Action onMouseScrollUp = null;
-    public static event System.Action onMouseScrollDown = null;
+    public static event System.Action<float> onMouseScrollSwipe = null;
+    //public static event System.Action onMouseScrollUp = null;
+    //public static event System.Action onMouseScrollDown = null;
     public static event System.Action onInteractDown = null;
 
     private void Update()
@@ -34,14 +35,19 @@ public class InputHandler : MonoBehaviour
     {
         Vector2 _mouseScrollDelta = Input.mouseScrollDelta;
 
-        if (_mouseScrollDelta.y > 0)
+        if (_mouseScrollDelta.y != 0)
         {
-            onMouseScrollUp?.Invoke();
+            onMouseScrollSwipe?.Invoke(_mouseScrollDelta.y);
         }
-        else if (_mouseScrollDelta.y < 0)
-        {
-            onMouseScrollDown?.Invoke();
-        }
+
+        //if (_mouseScrollDelta.y > 0)
+        //{
+        //    onMouseScrollUp?.Invoke();
+        //}
+        //else if (_mouseScrollDelta.y < 0)
+        //{
+        //    onMouseScrollDown?.Invoke();
+        //}
     }
 
     private void CheckInteractInput()

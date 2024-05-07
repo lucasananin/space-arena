@@ -1194,7 +1194,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6, y: 2}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &320982560
 GameObject:
@@ -21423,14 +21423,14 @@ MonoBehaviour:
   _entitySource: {fileID: 1823301789}
   _holster: {fileID: 247042776}
   _maxWeaponsCount: 2
-  _changeWeaponInputDelay: 0.3
+  _swapInputDelay: 0.3
   _weaponsList: []
   _currentWeapon: {fileID: 0}
   _lastWeapon: {fileID: 0}
   _weaponRotator: {fileID: 0}
   _currentWeaponIndex: 0
   _lastWeaponIndex: 0
-  _canSwapWeapon: 1
+  _isWaitingSwapDelay: 0
   _canRotateWeapon: 0
 --- !u!114 &1823301787
 MonoBehaviour:

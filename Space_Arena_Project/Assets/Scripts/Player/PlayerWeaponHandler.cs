@@ -8,7 +8,7 @@ public class PlayerWeaponHandler : MonoBehaviour
     [SerializeField] EntityBehaviour _entitySource = null;
     [SerializeField] EntityHolster _holster = null;
     [SerializeField, Range(1, 9)] int _maxWeaponsCount = 2;
-    [SerializeField, Range(0f, 1f)] float _changeWeaponInputDelay = 0.3f;
+    [SerializeField, Range(0f, 1f)] float _swapInputDelay = 0.3f;
     [SerializeField] List<WeaponBehaviour> _weaponsList = null;
 
     [Title("// Debug")]
@@ -17,7 +17,7 @@ public class PlayerWeaponHandler : MonoBehaviour
     [SerializeField, ReadOnly] WeaponRotator _weaponRotator = null;
     [SerializeField, ReadOnly] int _currentWeaponIndex = 0;
     [SerializeField, ReadOnly] int _lastWeaponIndex = 0;
-    [SerializeField, ReadOnly] bool _canSwapWeapon = true;
+    [SerializeField, ReadOnly] bool _isWaitingSwapDelay = false;
     [SerializeField, ReadOnly] bool _canRotateWeapon = false;
 
     public bool CanRotateWeapon { get => _canRotateWeapon; set => _canRotateWeapon = value; }
@@ -31,16 +31,18 @@ public class PlayerWeaponHandler : MonoBehaviour
     {
         InputHandler.onLeftMouseButtonDown += PullTrigger;
         InputHandler.onLeftMouseButtonUp += ReleaseTrigger;
-        InputHandler.onMouseScrollUp += SwapToNextWeapon;
-        InputHandler.onMouseScrollDown += SwapToPreviousWeapon;
+        InputHandler.onMouseScrollSwipe += SwapThroughInput;
+        //InputHandler.onMouseScrollUp += SwapToNextWeapon;
+        //InputHandler.onMouseScrollDown += SwapToPreviousWeapon;
     }
 
     private void OnDisable()
     {
         InputHandler.onLeftMouseButtonDown -= PullTrigger;
         InputHandler.onLeftMouseButtonUp -= ReleaseTrigger;
-        InputHandler.onMouseScrollUp -= SwapToNextWeapon;
-        InputHandler.onMouseScrollDown -= SwapToPreviousWeapon;
+        InputHandler.onMouseScrollSwipe -= SwapThroughInput;
+        //InputHandler.onMouseScrollUp -= SwapToNextWeapon;
+        //InputHandler.onMouseScrollDown -= SwapToPreviousWeapon;
     }
 
     private void FixedUpdate()
@@ -61,6 +63,18 @@ public class PlayerWeaponHandler : MonoBehaviour
         _currentWeapon?.ReleaseTrigger();
     }
 
+    private void SwapThroughInput(float _y)
+    {
+        if (_isWaitingSwapDelay) return;
+
+        if (_y > 0)
+            SwapToNextWeapon();
+        else if (_y < 0)
+            SwapToPreviousWeapon();
+
+        StartCoroutine(DisableWeaponSwap_routine());
+    }
+
     private void SwapToNextWeapon()
     {
         IncreaseWeaponIndex(1);
@@ -73,8 +87,6 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void IncreaseWeaponIndex(int _value)
     {
-        if (!_canSwapWeapon) return;
-
         _lastWeaponIndex = _currentWeaponIndex;
         _currentWeaponIndex = _weaponsList.IndexOf(_currentWeapon);
         _currentWeaponIndex += _value;
@@ -86,7 +98,6 @@ public class PlayerWeaponHandler : MonoBehaviour
             _currentWeaponIndex = _weaponsList.Count - 1;
 
         SetCurrentWeapon();
-        StartCoroutine(DisableWeaponSwap_routine());
     }
 
     private void SetCurrentWeapon()
@@ -114,13 +125,6 @@ public class PlayerWeaponHandler : MonoBehaviour
         bool _canUpdate = _lastWeapon is not null && _weaponsList.Count >= 2;
         var _so = _canUpdate ? _lastWeapon.WeaponSO : null;
         _holster.Init(_so);
-    }
-
-    private IEnumerator DisableWeaponSwap_routine()
-    {
-        _canSwapWeapon = false;
-        yield return new WaitForSeconds(_changeWeaponInputDelay);
-        _canSwapWeapon = true;
     }
 
     public void RotateCurrentWeapon()
@@ -160,6 +164,13 @@ public class PlayerWeaponHandler : MonoBehaviour
         }
 
         return false;
+    }
+
+    private IEnumerator DisableWeaponSwap_routine()
+    {
+        _isWaitingSwapDelay = true;
+        yield return new WaitForSeconds(_swapInputDelay);
+        _isWaitingSwapDelay = false;
     }
 
     [Button]
