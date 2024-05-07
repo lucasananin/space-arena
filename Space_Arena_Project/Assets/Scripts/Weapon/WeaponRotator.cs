@@ -6,15 +6,11 @@ public class WeaponRotator : MonoBehaviour
 {
     [SerializeField] bool _canRotate = true;
     //[SerializeField] bool _smoothRotation = false;
-    //[SerializeField] float _rotationSpeed = 10f;
+    //[SerializeField] float _rotationSpeed = 0f;
 
     public void LookAtMouse()
     {
-        if (!_canRotate)
-        {
-            ResetRotation();
-            return;
-        }
+        if (!CanRotate()) return;
 
         Vector3 _mousePosition = InputHandler.GetMousePosition();
         Vector3 _direction = _mousePosition - Camera.main.WorldToScreenPoint(transform.position);
@@ -25,11 +21,7 @@ public class WeaponRotator : MonoBehaviour
 
     public void LookAtPosition(Vector3 _targetPosition)
     {
-        if (!_canRotate)
-        {
-            ResetRotation();
-            return;
-        }
+        if (!CanRotate()) return;
 
         Vector3 _direction = _targetPosition - transform.position;
         float _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
@@ -37,18 +29,14 @@ public class WeaponRotator : MonoBehaviour
         SetRotation(_rotation);
     }
 
-    public void LookAtDirection(Vector3 _direction)
-    {
-        if (!_canRotate)
-        {
-            ResetRotation();
-            return;
-        }
+    //public void LookAtDirection(Vector3 _direction)
+    //{
+    //    if (!CanRotate()) return;
 
-        float _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
-        Quaternion _rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
-        SetRotation(_rotation);
-    }
+    //    float _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+    //    Quaternion _rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
+    //    SetRotation(_rotation);
+    //}
 
     public void ResetRotation()
     {
@@ -63,5 +51,13 @@ public class WeaponRotator : MonoBehaviour
         //    transform.rotation = _rotation;
 
         transform.rotation = _rotation;
+    }
+
+    private bool CanRotate()
+    {
+        if (!_canRotate)
+            ResetRotation();
+
+        return _canRotate;
     }
 }

@@ -45,7 +45,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         //InputHandler.onMouseScrollDown -= SwapToPreviousWeapon;
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         if (_canRotateWeapon)
         {
