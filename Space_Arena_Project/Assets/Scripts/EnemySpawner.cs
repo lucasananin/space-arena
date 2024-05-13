@@ -6,12 +6,15 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] AiEntitySO[] _entitySOs = null;
+    [SerializeField] WaveModel[] _waves = null;
+    //[SerializeField] AiEntitySO[] _entitySOs = null;
     [SerializeField] Transform _container = null;
-    [SerializeField, Range(0, 20)] int _maxSpawnedCount = 12;
-    [SerializeField, Range(0, 20)] int _maxActiveSpawnCount = 4;
+    //[SerializeField, Range(0, 20)] int _maxSpawnedCount = 12;
+    //[SerializeField, Range(0, 20)] int _maxActiveSpawnCount = 4;
     [SerializeField, Range(0.1f, 9f)] float _spawnTime = 1f;
     [Space]
+    [SerializeField, ReadOnly] WaveModel _waveModel = null;
+    [SerializeField, ReadOnly] int _waveIndex = 0;
     [SerializeField, ReadOnly] bool _isSpawning = false;
     [SerializeField, ReadOnly] int _activeSpawnCount = 0;
 
@@ -48,13 +51,14 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator Spawn_routine()
     {
         _isSpawning = true;
+        _waveModel = _waves[_waveIndex];
         _activeSpawnCount = 0;
         int _totalSpawnedCount = 0;
         onStart?.Invoke();
 
         do
         {
-            while (_activeSpawnCount >= _maxActiveSpawnCount)
+            while (_activeSpawnCount >= _waveModel.MaxActiveSpawnCount)
             {
                 yield return null;
             }
@@ -62,16 +66,17 @@ public class EnemySpawner : MonoBehaviour
             _activeSpawnCount++;
             _totalSpawnedCount++;
 
-            int _randomIndex = Random.Range(0, _entitySOs.Length);
-            var _prefab = _entitySOs[_randomIndex].EntityPrefab;
+            int _randomIndex = Random.Range(0, _waveModel.EntitySOs.Length);
+            var _prefab = _waveModel.EntitySOs[_randomIndex].EntityPrefab;
             Vector3 _position = GetRandomNodePosition();
             Instantiate(_prefab, _position, Quaternion.identity, _container);
 
             yield return new WaitForSeconds(_spawnTime);
 
-        } while (_totalSpawnedCount < _maxSpawnedCount);
+        } while (_totalSpawnedCount < _waveModel.MaxSpawnedCount);
 
         _isSpawning = false;
+        _waveIndex++;
         onEnd?.Invoke();
     }
 
@@ -99,4 +104,16 @@ public class EnemySpawner : MonoBehaviour
     {
         _activeSpawnCount--;
     }
+}
+
+[System.Serializable]
+public class WaveModel
+{
+    [SerializeField] AiEntitySO[] _entitySOs = null;
+    [SerializeField, Range(0, 20)] int _maxSpawnedCount = 12;
+    [SerializeField, Range(0, 20)] int _maxActiveSpawnCount = 4;
+
+    public AiEntitySO[] EntitySOs { get => _entitySOs; private set => _entitySOs = value; }
+    public int MaxSpawnedCount { get => _maxSpawnedCount; private set => _maxSpawnedCount = value; }
+    public int MaxActiveSpawnCount { get => _maxActiveSpawnCount; private set => _maxActiveSpawnCount = value; }
 }

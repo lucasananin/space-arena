@@ -1,4 +1,4 @@
-using Pathfinding;
+//using Pathfinding;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,13 +10,18 @@ public class LootSpawner : MonoBehaviour
     [SerializeField] LootBehaviour _weaponLootPrefab = null;
     [SerializeField] Transform _parentContainer = null;
     [SerializeField] BoxCollider2D _boxCollider2D = null;
+    [SerializeField] bool _spawnOnStart = false;
 
     //private GridGraph _graph = null;
 
     private void Start()
     {
         //_graph = AstarPath.active.data.graphs[0] as GridGraph;
-        SpawnEachOnList();
+
+        if (_spawnOnStart)
+        {
+            SpawnEachOnList();
+        }
     }
 
     [Button]
