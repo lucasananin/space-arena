@@ -17,6 +17,9 @@ public class EnemySpawner : MonoBehaviour
 
     private GridGraph _graph = null;
 
+    public static event System.Action onStart = null;
+    public static event System.Action onEnd = null;
+
     private void Start()
     {
         _graph = AstarPath.active.data.graphs[0] as GridGraph;
@@ -25,16 +28,13 @@ public class EnemySpawner : MonoBehaviour
     private void OnEnable()
     {
         EnemyHealth.onAnyAiDead += DecreaseActiveSpawnCount;
+        StartRoundInteractable.onInteracted += SpawnEnemies;
     }
 
     private void OnDisable()
     {
         EnemyHealth.onAnyAiDead -= DecreaseActiveSpawnCount;
-    }
-
-    private void DecreaseActiveSpawnCount(HealthBehaviour _obj)
-    {
-        _activeSpawnCount--;
+        StartRoundInteractable.onInteracted -= SpawnEnemies;
     }
 
     [Button]
@@ -48,9 +48,9 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator Spawn_routine()
     {
         _isSpawning = true;
-
         _activeSpawnCount = 0;
         int _totalSpawnedCount = 0;
+        onStart?.Invoke();
 
         do
         {
@@ -72,6 +72,7 @@ public class EnemySpawner : MonoBehaviour
         } while (_totalSpawnedCount < _maxSpawnedCount);
 
         _isSpawning = false;
+        onEnd?.Invoke();
     }
 
     private Vector3 GetRandomNodePosition()
@@ -92,5 +93,10 @@ public class EnemySpawner : MonoBehaviour
         } while (_position == Vector3.zero);
 
         return _position;
+    }
+
+    private void DecreaseActiveSpawnCount(HealthBehaviour _obj)
+    {
+        _activeSpawnCount--;
     }
 }
