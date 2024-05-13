@@ -7,10 +7,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] WaveModel[] _waves = null;
-    //[SerializeField] AiEntitySO[] _entitySOs = null;
     [SerializeField] Transform _container = null;
-    //[SerializeField, Range(0, 20)] int _maxSpawnedCount = 12;
-    //[SerializeField, Range(0, 20)] int _maxActiveSpawnCount = 4;
     [SerializeField, Range(0.1f, 9f)] float _spawnTime = 1f;
     [Space]
     [SerializeField, ReadOnly] WaveModel _waveModel = null;
@@ -66,8 +63,7 @@ public class EnemySpawner : MonoBehaviour
             _activeSpawnCount++;
             _totalSpawnedCount++;
 
-            int _randomIndex = Random.Range(0, _waveModel.EntitySOs.Length);
-            var _prefab = _waveModel.EntitySOs[_randomIndex].EntityPrefab;
+            AiEntity _prefab = _waveModel.GetEntityPrefab();
             Vector3 _position = GetRandomNodePosition();
             Instantiate(_prefab, _position, Quaternion.identity, _container);
 
@@ -114,11 +110,16 @@ public class EnemySpawner : MonoBehaviour
 [System.Serializable]
 public class WaveModel
 {
-    [SerializeField] AiEntitySO[] _entitySOs = null;
+    [SerializeField] AiEntitySO[] _availableEntities = null;
     [SerializeField, Range(0, 20)] int _maxSpawnedCount = 12;
     [SerializeField, Range(0, 20)] int _maxActiveSpawnCount = 4;
 
-    public AiEntitySO[] EntitySOs { get => _entitySOs; private set => _entitySOs = value; }
     public int MaxSpawnedCount { get => _maxSpawnedCount; private set => _maxSpawnedCount = value; }
     public int MaxActiveSpawnCount { get => _maxActiveSpawnCount; private set => _maxActiveSpawnCount = value; }
+
+    public AiEntity GetEntityPrefab()
+    {
+        int _randomIndex = Random.Range(0, _availableEntities.Length);
+        return _availableEntities[_randomIndex].EntityPrefab;
+    }
 }

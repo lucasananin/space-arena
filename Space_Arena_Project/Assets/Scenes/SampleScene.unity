@@ -14917,11 +14917,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waves:
-  - _entitySOs:
+  - _availableEntities:
     - {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
-    _maxSpawnedCount: 4
-    _maxActiveSpawnCount: 2
-  - _entitySOs:
+    _maxSpawnedCount: 10
+    _maxActiveSpawnCount: 5
+  - _availableEntities:
     - {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
     - {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
     _maxSpawnedCount: 12
@@ -14929,7 +14929,7 @@ MonoBehaviour:
   _container: {fileID: 1159678663}
   _spawnTime: 1
   _waveModel:
-    _entitySOs: []
+    _availableEntities: []
     _maxSpawnedCount: 12
     _maxActiveSpawnCount: 4
   _waveIndex: 0
