@@ -75,6 +75,11 @@ public class EnemySpawner : MonoBehaviour
 
         } while (_totalSpawnedCount < _waveModel.MaxSpawnedCount);
 
+        while (_activeSpawnCount > 0)
+        {
+            yield return null;
+        }
+
         _isSpawning = false;
         _waveIndex++;
         onEnd?.Invoke();

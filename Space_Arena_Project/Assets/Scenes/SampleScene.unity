@@ -14919,8 +14919,8 @@ MonoBehaviour:
   _waves:
   - _entitySOs:
     - {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
-    _maxSpawnedCount: 12
-    _maxActiveSpawnCount: 4
+    _maxSpawnedCount: 4
+    _maxActiveSpawnCount: 2
   - _entitySOs:
     - {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
     - {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
