@@ -6,6 +6,8 @@ public class EnemyHealth : HealthBehaviour
 {
     [SerializeField] ParticleSystem _deadVfx = null;
 
+    public static event System.Action<HealthBehaviour> onAnyAiDead = null;
+
     protected override void OnDamageTaken()
     {
         //
@@ -15,5 +17,6 @@ public class EnemyHealth : HealthBehaviour
     {
         Instantiate(_deadVfx, transform.position, transform.rotation);
         gameObject.SetActive(false);
+        onAnyAiDead?.Invoke(this);
     }
 }
