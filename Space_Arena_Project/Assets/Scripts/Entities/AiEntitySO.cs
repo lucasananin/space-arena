@@ -10,6 +10,7 @@ public class AiEntitySO : EntitySO
 
     [Title("// Shoot Target")]
     [SerializeField, Range(0f, 99f)] float _shootDistance = 0f;
+    [SerializeField] Vector2 _minMaxShootTimeOffset = default;
 
     [Title("// Move Close To Target")]
     [SerializeField, Range(0.5f, 9f)] float _moveClose_radius = 0f;
@@ -20,6 +21,7 @@ public class AiEntitySO : EntitySO
     public AiEntity EntityPrefab { get => _entityPrefab; private set => _entityPrefab = value; }
 
     public float ShootDistance { get => _shootDistance; private set => _shootDistance = value; }
+    public Vector2 MinMaxShootTimeOffset { get => _minMaxShootTimeOffset; private set => _minMaxShootTimeOffset = value; }
 
     public float MoveClose_radius { get => _moveClose_radius; private set => _moveClose_radius = value; }
     public bool StopSearchingPathOnClose { get => _stopSearchingPathOnClose; private set => _stopSearchingPathOnClose = value; }

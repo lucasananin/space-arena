@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entityPrefab: {fileID: 2658297561336904056, guid: e3027df5231167a4da73b72ce65c5deb, type: 3}
   _shootDistance: 5
+  _minMaxShootTimeOffset: {x: 1.8, y: 2.2}
   _moveClose_radius: 5
   _stopSearchingPathOnClose: 0
   _maxNumberOfTries: 10
