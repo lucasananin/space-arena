@@ -12,7 +12,7 @@ public class AiWeaponHandler : MonoBehaviour
     [Title("// Debug")]
     [SerializeField, ReadOnly] bool _canShoot = true;
 
-    public event System.Action onStoppedShooting = null;
+    public event System.Action onShoot = null;
 
     public bool CanShoot { get => _canShoot; private set => _canShoot = value; }
 
@@ -52,13 +52,14 @@ public class AiWeaponHandler : MonoBehaviour
         //Debug.Log($"// GetPullTriggerTotalTime = {_waitTime}");
         yield return new WaitForSeconds(_waitTime);
 
+        onShoot?.Invoke();
+
         _currentWeapon.ReleaseTrigger();
         _waitTime = _currentWeapon.GetTimeUntilAnotherShot() + GetShootTimeOffset();
         //Debug.Log($"// GetTimeUntilAnotherShot() = {_waitTime}");
         yield return new WaitForSeconds(_waitTime);
 
         _canShoot = true;
-        onStoppedShooting?.Invoke();
     }
 
     private float GetShootTimeOffset()

@@ -15,7 +15,6 @@ public class AiHasShotConditionSO : StateConditionSO
 
 public class AiHasShotCondition : Condition
 {
-    //private AIEntity _aIEntity = null;
     private AiWeaponHandler _aIWeaponHandler = null;
     private bool _hasShot = false;
 
@@ -26,12 +25,13 @@ public class AiHasShotCondition : Condition
 
     public override void OnStateEnter()
     {
-        _aIWeaponHandler.onStoppedShooting += _aIWeaponHandler_onStoppedShooting;
+        _aIWeaponHandler.onShoot += _aIWeaponHandler_onStoppedShooting;
     }
 
     public override void OnStateExit()
     {
-        _aIWeaponHandler.onStoppedShooting -= _aIWeaponHandler_onStoppedShooting;
+        _aIWeaponHandler.onShoot -= _aIWeaponHandler_onStoppedShooting;
+
         _hasShot = false;
     }
 
