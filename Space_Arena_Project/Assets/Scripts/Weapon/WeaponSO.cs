@@ -96,4 +96,9 @@ public class WeaponSO : ScriptableObject
         float _offset = 0.1f;
         return _totalFireRate + _burstRate + _offset;
     }
+
+    public AmmoSO GetAmmoSO()
+    {
+        return _projectileSO.AmmoSO;
+    }
 }

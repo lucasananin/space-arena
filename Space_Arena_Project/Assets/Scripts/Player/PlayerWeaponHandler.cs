@@ -7,6 +7,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 {
     [SerializeField] EntityBehaviour _entitySource = null;
     [SerializeField] EntityHolster _holster = null;
+    [SerializeField] AmmoHandler _ammoHandler = null;
     [SerializeField, Range(1, 9)] int _maxWeaponsCount = 2;
     [SerializeField, Range(0f, 1f)] float _swapInputDelay = 0.3f;
     [SerializeField] List<WeaponBehaviour> _weaponsList = null;
@@ -106,7 +107,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 
         _currentWeapon = _weaponsList[_currentWeaponIndex];
         _lastWeapon = _weaponsList[_lastWeaponIndex];
-        _currentWeapon.Init(_entitySource);
+        _currentWeapon.Init(_entitySource, _ammoHandler);
 
         int _count = _weaponsList.Count;
 
@@ -116,9 +117,16 @@ public class PlayerWeaponHandler : MonoBehaviour
             _weaponsList[i].gameObject.SetActive(_isCurrentWeapon);
         }
 
+        //_lastWeapon.onShoot -= _currentWeapon_onShoot;
+        //_currentWeapon.onShoot += _currentWeapon_onShoot;
         _weaponRotator = _currentWeapon.GetComponent<WeaponRotator>();
         UpdateHolster();
     }
+
+    //private void _currentWeapon_onShoot()
+    //{
+    //    throw new System.NotImplementedException();
+    //}
 
     private void UpdateHolster()
     {

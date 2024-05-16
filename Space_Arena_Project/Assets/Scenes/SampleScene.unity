@@ -592,6 +592,7 @@ MonoBehaviour:
   _weaponSO: {fileID: 11400000, guid: 1e90c408e692ad5429ca305582984276, type: 2}
   _muzzle: {fileID: 1032113212}
   _entitySource: {fileID: 0}
+  _ammoHandler: {fileID: 0}
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -1771,6 +1772,7 @@ MonoBehaviour:
   _weaponSO: {fileID: 11400000, guid: 67ab5d4e71e797a42afd7a0f1059079e, type: 2}
   _muzzle: {fileID: 1933345600}
   _entitySource: {fileID: 0}
+  _ammoHandler: {fileID: 0}
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -7717,7 +7719,7 @@ MonoBehaviour:
   _weaponLootPrefab: {fileID: 5281741771645536111, guid: ef78d91f80ad7634cb58312915f887b8, type: 3}
   _parentContainer: {fileID: 1514577427}
   _boxCollider2D: {fileID: 304280898}
-  _spawnOnStart: 0
+  _spawnOnStart: 1
 --- !u!1 &615151910
 GameObject:
   m_ObjectHideFlags: 0
@@ -15146,6 +15148,7 @@ MonoBehaviour:
   _weaponSO: {fileID: 11400000, guid: 30ecdf5b450b1474c80b39c9680f3750, type: 2}
   _muzzle: {fileID: 591549172}
   _entitySource: {fileID: 0}
+  _ammoHandler: {fileID: 0}
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -15419,6 +15422,7 @@ MonoBehaviour:
   _weaponSO: {fileID: 11400000, guid: e46385b46b28a5b4197b4fb84c924d92, type: 2}
   _muzzle: {fileID: 1654011518}
   _entitySource: {fileID: 0}
+  _ammoHandler: {fileID: 0}
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -15801,6 +15805,7 @@ MonoBehaviour:
   _weaponSO: {fileID: 11400000, guid: 7a4bfc31aa3613e46ad06fa18e7de690, type: 2}
   _muzzle: {fileID: 1815790236}
   _entitySource: {fileID: 0}
+  _ammoHandler: {fileID: 0}
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -22143,6 +22148,7 @@ MonoBehaviour:
   _weaponSO: {fileID: 11400000, guid: 1e90c408e692ad5429ca305582984276, type: 2}
   _muzzle: {fileID: 1584752070}
   _entitySource: {fileID: 0}
+  _ammoHandler: {fileID: 0}
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -22578,6 +22584,7 @@ MonoBehaviour:
   _weaponSO: {fileID: 11400000, guid: 7a4bfc31aa3613e46ad06fa18e7de690, type: 2}
   _muzzle: {fileID: 889983623}
   _entitySource: {fileID: 0}
+  _ammoHandler: {fileID: 0}
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -22939,6 +22946,7 @@ MonoBehaviour:
   _weaponSO: {fileID: 11400000, guid: 2f39cbcf14a50574886873a3c70cad79, type: 2}
   _muzzle: {fileID: 859633885}
   _entitySource: {fileID: 0}
+  _ammoHandler: {fileID: 0}
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -23238,6 +23246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entitySource: {fileID: 1823301789}
   _holster: {fileID: 247042776}
+  _ammoHandler: {fileID: 1823301791}
   _maxWeaponsCount: 2
   _swapInputDelay: 0.3
   _weaponsList:
@@ -23811,6 +23820,7 @@ MonoBehaviour:
   _weaponSO: {fileID: 11400000, guid: 4cce4e38ee71add4d9c32282c4801e68, type: 2}
   _muzzle: {fileID: 786210460}
   _entitySource: {fileID: 0}
+  _ammoHandler: {fileID: 0}
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0

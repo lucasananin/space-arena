@@ -11,6 +11,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     [Title("// Debug - Weapon")]
     [SerializeField, ReadOnly] protected EntityBehaviour _entitySource = null;
+    [SerializeField, ReadOnly] protected AmmoHandler _ammoHandler = null;
     [SerializeField, ReadOnly] protected float _nextFire = 0;
     [SerializeField, ReadOnly] protected float _chargeTimer = 0f;
     [SerializeField, ReadOnly] protected bool _isCharging = false;
@@ -36,6 +37,12 @@ public abstract class WeaponBehaviour : MonoBehaviour
         DecreaseHeat();
     }
 
+    public virtual void Init(EntityBehaviour _entityBehaviour, AmmoHandler _ammoHandler)
+    {
+        this._ammoHandler = _ammoHandler;
+        Init(_entityBehaviour);
+    }
+
     public virtual void Init(EntityBehaviour _entityBehaviour)
     {
         _entitySource = _entityBehaviour;
@@ -55,6 +62,8 @@ public abstract class WeaponBehaviour : MonoBehaviour
     public virtual void Shoot()
     {
         _nextFire -= _weaponSO.FireRate;
+        _ammoHandler.DecreaseAmmo(_weaponSO);
+
         PrepareProjectile(_weaponSO.ProjectileSO);
         IncreaseHeat(_weaponSO.HeatPerShot);
         onShoot?.Invoke();
@@ -64,6 +73,8 @@ public abstract class WeaponBehaviour : MonoBehaviour
     {
         _nextFire -= _weaponSO.FireRate;
         _chargeTimer -= _weaponSO.MaxChargeTime;
+        _ammoHandler.DecreaseAmmo(_weaponSO);
+
         PrepareProjectile(_weaponSO.ChargedProjectileSO);
         float _heatOffset = 0.9f;
         IncreaseHeat(_weaponSO.MaxHeat + _heatOffset);
@@ -187,4 +198,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
     {
         return _weaponSO.Id;
     }
+
+    //public bool HasAmmo()
+    //{
+    //    return _ammoHandler.HasAmmo();
+    //}
 }

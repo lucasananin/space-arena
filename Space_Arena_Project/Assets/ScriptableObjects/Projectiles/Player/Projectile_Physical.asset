@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7353528016857128665, guid: 2187d2bd70d6c0c458c031848714ca90, type: 3}
   _tagCollectionSO: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}
+  _ammoSO: {fileID: 11400000, guid: b3dc590e3e7accd459b765e535abb941, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 192

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61b2d4b561aae345acc2a04c7c7611a, type: 3}
   m_Name: Ammo_Energy
   m_EditorClassIdentifier: 
+  _id: energy
   _displayName: Energy
   _maxQuantity: 90
