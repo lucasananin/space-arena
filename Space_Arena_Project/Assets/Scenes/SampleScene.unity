@@ -23119,6 +23119,7 @@ GameObject:
   - component: {fileID: 1823301784}
   - component: {fileID: 1823301785}
   - component: {fileID: 1823301786}
+  - component: {fileID: 1823301791}
   - component: {fileID: 1823301788}
   - component: {fileID: 1823301790}
   m_Layer: 6
@@ -23311,6 +23312,23 @@ MonoBehaviour:
     m_Bits: 256
   _radius: 0.5
   _currentInteractable: {fileID: 0}
+--- !u!114 &1823301791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823301780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4023e2bd69e5b54d846e41ea468df1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ammoTypes:
+  - _so: {fileID: 11400000, guid: b3dc590e3e7accd459b765e535abb941, type: 2}
+    _quantity: 0
+  - _so: {fileID: 11400000, guid: c741b913cc5b4bf49b26e7f6a7103b33, type: 2}
+    _quantity: 0
 --- !u!114 &1825438594 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5704818092466949252, guid: c61856f6800231948bf9daedc54fadde, type: 3}
