@@ -28,10 +28,10 @@ public class AmmoHandler : MonoBehaviour
         _model?.DecreaseQuantity(_weaponSO.ProjectilesPerShot);
     }
 
-    public bool HasAmmo(AmmoSO _ammoSO)
+    public bool HasAmmo(WeaponSO _weaponSO)
     {
-        var _model = GetModel(_ammoSO);
-        return _model is not null && _model.HasEnoughQuantity(1);
+        var _model = GetModel(_weaponSO.GetAmmoSO());
+        return _model is not null && _model.HasEnoughQuantity(_weaponSO.ProjectilesPerShot);
     }
 
     private AmmoModel GetModel(AmmoSO _ammoSO)

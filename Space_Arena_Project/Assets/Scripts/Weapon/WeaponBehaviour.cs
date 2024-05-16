@@ -24,7 +24,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
     public event System.Action onPullTrigger = null;
     public event System.Action onReleaseTrigger = null;
 
-    public EntityBehaviour EntitySource { get => _entitySource; private set => _entitySource = value; }
+    const float HEAT_OFFSET = 0.9f;
+
+    //public EntityBehaviour EntitySource { get => _entitySource; private set => _entitySource = value; }
     public WeaponSO WeaponSO { get => _weaponSO; private set => _weaponSO = value; }
 
     protected virtual void Awake()
@@ -62,10 +64,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
     public virtual void Shoot()
     {
         _nextFire -= _weaponSO.FireRate;
-        _ammoHandler.DecreaseAmmo(_weaponSO);
-
         PrepareProjectile(_weaponSO.ProjectileSO);
         IncreaseHeat(_weaponSO.HeatPerShot);
+        DecreaseAmmo();
         onShoot?.Invoke();
     }
 
@@ -73,11 +74,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
     {
         _nextFire -= _weaponSO.FireRate;
         _chargeTimer -= _weaponSO.MaxChargeTime;
-        _ammoHandler.DecreaseAmmo(_weaponSO);
-
         PrepareProjectile(_weaponSO.ChargedProjectileSO);
-        float _heatOffset = 0.9f;
-        IncreaseHeat(_weaponSO.MaxHeat + _heatOffset);
+        IncreaseHeat(_weaponSO.MaxHeat + HEAT_OFFSET);
+        DecreaseAmmo();
         onShoot?.Invoke();
     }
 
@@ -199,8 +198,13 @@ public abstract class WeaponBehaviour : MonoBehaviour
         return _weaponSO.Id;
     }
 
-    //public bool HasAmmo()
-    //{
-    //    return _ammoHandler.HasAmmo();
-    //}
+    private void DecreaseAmmo()
+    {
+        _ammoHandler?.DecreaseAmmo(_weaponSO);
+    }
+
+    public bool HasAmmo()
+    {
+        return _ammoHandler is not null && _ammoHandler.HasAmmo(_weaponSO);
+    }
 }

@@ -26,8 +26,9 @@ public class SemiAutoWeapon : WeaponBehaviour
     {
         _hasShotCharge = false;
 
-        if (_nextFire < _weaponSO.FireRate) return;
+        if (!HasAmmo()) return;
         if (_isOverheated) return;
+        if (_nextFire < _weaponSO.FireRate) return;
 
         if (_weaponSO.HasChargeTime())
         {

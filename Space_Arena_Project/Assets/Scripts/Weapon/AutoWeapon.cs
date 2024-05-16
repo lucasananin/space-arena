@@ -25,6 +25,8 @@ public class AutoWeapon : WeaponBehaviour
 
     public override void PullTrigger()
     {
+        if (!HasAmmo()) return;
+
         _isCharging = true;
         _isHoldingTrigger = true;
         base.PullTrigger();
