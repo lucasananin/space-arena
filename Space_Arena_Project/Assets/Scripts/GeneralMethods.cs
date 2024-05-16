@@ -32,4 +32,10 @@ public class GeneralMethods : MonoBehaviour
     {
         return string.Equals(_a, _b, System.StringComparison.OrdinalIgnoreCase);
     }
+
+    public static bool IsPointCloseToTarget(Vector3 _point, Vector3 _target, float _minDistance)
+    {
+        float _distance = (_target - _point).sqrMagnitude;
+        return _distance < _minDistance * _minDistance;
+    }
 }
