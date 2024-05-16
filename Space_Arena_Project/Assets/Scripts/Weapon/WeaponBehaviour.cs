@@ -26,7 +26,6 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     const float HEAT_OFFSET = 0.9f;
 
-    //public EntityBehaviour EntitySource { get => _entitySource; private set => _entitySource = value; }
     public WeaponSO WeaponSO { get => _weaponSO; private set => _weaponSO = value; }
 
     protected virtual void Awake()
@@ -205,6 +204,13 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     public bool HasAmmo()
     {
-        return _ammoHandler is not null && _ammoHandler.HasAmmo(_weaponSO);
+        if (_ammoHandler is null)
+        {
+            return true;
+        }
+        else
+        {
+            return _ammoHandler.HasAmmo(_weaponSO);
+        }
     }
 }

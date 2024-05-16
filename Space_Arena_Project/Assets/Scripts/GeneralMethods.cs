@@ -18,6 +18,7 @@ public class GeneralMethods : MonoBehaviour
 
         return false;
     }
+
     public static Vector3 RandomPointInBounds(Bounds _bounds)
     {
         return new Vector3(
@@ -27,4 +28,8 @@ public class GeneralMethods : MonoBehaviour
         );
     }
 
+    public static bool IsTheSameString(string _a, string _b)
+    {
+        return string.Equals(_a, _b, System.StringComparison.OrdinalIgnoreCase);
+    }
 }

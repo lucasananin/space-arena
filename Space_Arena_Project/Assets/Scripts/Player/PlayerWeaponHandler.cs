@@ -116,17 +116,9 @@ public class PlayerWeaponHandler : MonoBehaviour
             bool _isCurrentWeapon = i == _currentWeaponIndex;
             _weaponsList[i].gameObject.SetActive(_isCurrentWeapon);
         }
-
-        //_lastWeapon.onShoot -= _currentWeapon_onShoot;
-        //_currentWeapon.onShoot += _currentWeapon_onShoot;
         _weaponRotator = _currentWeapon.GetComponent<WeaponRotator>();
         UpdateHolster();
     }
-
-    //private void _currentWeapon_onShoot()
-    //{
-    //    throw new System.NotImplementedException();
-    //}
 
     private void UpdateHolster()
     {
