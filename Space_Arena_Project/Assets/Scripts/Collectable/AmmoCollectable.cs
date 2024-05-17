@@ -6,6 +6,7 @@ public class AmmoCollectable : CollectableBehaviour
 {
     public override void OnCollect()
     {
-        Debug.Log($"// Collected ammo!");
+        var _ammoHandler = _agent.GetComponent<AmmoHandler>();
+        _ammoHandler.RestoreAmmo();
     }
 }

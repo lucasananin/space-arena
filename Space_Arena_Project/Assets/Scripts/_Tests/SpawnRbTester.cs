@@ -8,6 +8,7 @@ public class SpawnRbTester : MonoBehaviour
     [SerializeField] Transform _center = null;
     [SerializeField] Rigidbody2D _rbPrefab = null;
     [SerializeField] int _spawnCount = 5;
+    [SerializeField] Vector2 _minMaxForce = default;
 
     [Button]
     private void Spawn()
@@ -15,13 +16,14 @@ public class SpawnRbTester : MonoBehaviour
         for (int i = 0; i < _spawnCount; i++)
         {
             var _centerPosition = (Vector2)_center.position;
-            var _instance = Instantiate(_rbPrefab, _center.position, Quaternion.identity);
+            var _randomRotation = Random.rotation;
+            _randomRotation.eulerAngles = new Vector3(0f, 0f, _randomRotation.eulerAngles.z);
 
-            var _randomPosition = Random.insideUnitCircle.normalized * Random.Range(1f, 3f);
-            _randomPosition += _centerPosition;
+            var _instance = Instantiate(_rbPrefab, _centerPosition, _randomRotation);
 
+            var _randomPosition = Random.insideUnitCircle + _centerPosition;
             var _direction = (_randomPosition - _centerPosition).normalized;
-            var _force = _direction * Random.Range(2f, 4f);
+            var _force = _direction * Random.Range(_minMaxForce.x, _minMaxForce.y);
             _instance.AddForce(_force, ForceMode2D.Impulse);
         }
     }

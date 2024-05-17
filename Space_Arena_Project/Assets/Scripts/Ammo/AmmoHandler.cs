@@ -12,7 +12,7 @@ public class AmmoHandler : MonoBehaviour
         RestoreAmmo();
     }
 
-    private void RestoreAmmo()
+    public void RestoreAmmo()
     {
         int _count = _ammoTypes.Length;
 
