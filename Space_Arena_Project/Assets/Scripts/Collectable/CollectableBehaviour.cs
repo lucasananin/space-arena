@@ -7,7 +7,7 @@ public abstract class CollectableBehaviour : MonoBehaviour
 {
     [SerializeField] protected Rigidbody2D _rb = null;
     [SerializeField] protected Collider2D _collider = null;
-    [SerializeField] protected float _moveSpeed = 20f;
+    [SerializeField] protected float _moveSpeed = 10f;
     [SerializeField, ReadOnly] protected CollectableAgent _agent = null;
 
     const float MIN_DISTANCE = 0.5f;
