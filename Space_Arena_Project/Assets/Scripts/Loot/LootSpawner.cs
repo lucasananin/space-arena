@@ -7,9 +7,9 @@ using UnityEngine;
 public class LootSpawner : MonoBehaviour
 {
     [SerializeField] WeaponSO[] _weaponSOs = null;
-    [SerializeField] AmmoSO[] _ammoSOs = null;
     [SerializeField] LootBehaviour _weaponLootPrefab = null;
-    [SerializeField] LootBehaviour _ammoPrefab = null;
+    [SerializeField] CollectableBehaviour _ammoPrefab = null;
+    [SerializeField] CollectableBehaviour _healthPrefab = null;
     [SerializeField] Transform _parentContainer = null;
     [SerializeField] BoxCollider2D _boxCollider2D = null;
     [SerializeField] bool _spawnOnStart = false;
@@ -65,19 +65,17 @@ public class LootSpawner : MonoBehaviour
     {
         var _position = GeneralMethods.RandomPointInBounds(_boxCollider2D.bounds);
         var _randomEuler = new Vector3(0f, 0f, Random.rotation.eulerAngles.z);
-        var _loot = Instantiate(_ammoPrefab, _position, Quaternion.Euler(_randomEuler), _parentContainer);
-        var _randomIndex = Random.Range(0, _ammoSOs.Length);
-        var _so = _ammoSOs[_randomIndex];
-        _loot.Init(_so);
+        Instantiate(_ammoPrefab, _position, Quaternion.Euler(_randomEuler), _parentContainer);
+        //var _loot = Instantiate(_ammoPrefab, _position, Quaternion.Euler(_randomEuler), _parentContainer);
+        //var _randomIndex = Random.Range(0, _ammoSOs.Length);
+        //var _so = _ammoSOs[_randomIndex];
+        //_loot.Init(_so);
     }
-}
 
-[System.Serializable]
-public class LootModel
-{
-    [SerializeField] ScriptableObject _so = null;
-    [SerializeField, Range(0f, 99f)] float _dropChance = 0f;
-
-    public ScriptableObject So { get => _so; set => _so = value; }
-    public float DropChance { get => _dropChance; set => _dropChance = value; }
+    [Button]
+    private void SpawnHealtPack()
+    {
+        var _position = GeneralMethods.RandomPointInBounds(_boxCollider2D.bounds);
+        Instantiate(_healthPrefab, _position, Quaternion.identity, _parentContainer);
+    }
 }

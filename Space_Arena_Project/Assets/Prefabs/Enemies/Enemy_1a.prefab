@@ -655,6 +655,7 @@ MonoBehaviour:
   _weaponSO: {fileID: 11400000, guid: 271fe3cc1f34c4c42bc5085f102782fd, type: 2}
   _muzzle: {fileID: 6972132581887060627}
   _entitySource: {fileID: 0}
+  _ammoHandler: {fileID: 0}
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0

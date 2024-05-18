@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CollectableBehaviour : MonoBehaviour
+public class CollectableBehaviour : MonoBehaviour
 {
+    [SerializeField] CollectableSO _collectableSO = null;
     [SerializeField] protected Rigidbody2D _rb = null;
     [SerializeField] protected Collider2D _collider = null;
     [SerializeField] protected float _moveSpeed = 10f;
@@ -39,7 +40,7 @@ public abstract class CollectableBehaviour : MonoBehaviour
 
         if (GeneralMethods.IsPointCloseToTarget(transform.position, _agent.transform.position, MIN_DISTANCE))
         {
-            OnCollect();
+            _collectableSO.Collect(_agent);
             Destroy(gameObject);
         }
     }
@@ -49,6 +50,4 @@ public abstract class CollectableBehaviour : MonoBehaviour
         _collider.enabled = false;
         _rb.bodyType = RigidbodyType2D.Kinematic;
     }
-
-    public abstract void OnCollect();
 }

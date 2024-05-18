@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmmoCollectable : CollectableBehaviour
+[CreateAssetMenu(fileName = "Collectable_Ammo", menuName = "SO/Collectables/Ammo")]
+public class CollectableAmmoSO : CollectableSO
 {
-    public override void OnCollect()
+    public override void Collect(CollectableAgent _agent)
     {
         var _ammoHandler = _agent.GetComponent<AmmoHandler>();
         _ammoHandler.RestoreAmmo();
