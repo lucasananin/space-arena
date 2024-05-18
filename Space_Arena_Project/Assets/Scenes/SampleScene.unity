@@ -1374,9 +1374,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _center: {fileID: 810572174}
-  _rbPrefab: {fileID: 0}
+  _rbPrefab: {fileID: 1677782039078619368, guid: 04f4d503b7191d74f96662f428487b62, type: 3}
   _spawnCount: 5
-  _minMaxForce: {x: 5, y: 10}
+  _minMaxForce: {x: 5, y: 15}
 --- !u!1 &359201558
 GameObject:
   m_ObjectHideFlags: 0
