@@ -1661,7 +1661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &434345537
 Transform:
   m_ObjectHideFlags: 0
@@ -1689,6 +1689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17f31d289bd89a419c9916a477cd770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lootTableSO: {fileID: 11400000, guid: 0e757d27f5e145d4c88c89998974a9e2, type: 2}
   _lootCollections:
   - _lootModels:
     - _so: {fileID: 11400000, guid: 5d6c4d21e54dcf44187c53ee4eb428fe, type: 2}
@@ -13569,7 +13570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBehaviour: {fileID: 740099034}
+  _healthBehaviour: {fileID: 0}
   _renderTransform: {fileID: 253645502}
   _strength: {x: 1, y: 0.5, z: 0}
   _strenghtMultiplier: 0.1
@@ -16601,7 +16602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBehaviour: {fileID: 1325800519}
+  _healthBehaviour: {fileID: 0}
   _renderTransform: {fileID: 2020808069}
   _strength: {x: 1, y: 0.5, z: 0}
   _strenghtMultiplier: 0.1
@@ -25026,7 +25027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBehaviour: {fileID: 2094770498}
+  _healthBehaviour: {fileID: 0}
   _renderTransform: {fileID: 1695589063}
   _strength: {x: 1, y: 0.5, z: 0}
   _strenghtMultiplier: 0.1

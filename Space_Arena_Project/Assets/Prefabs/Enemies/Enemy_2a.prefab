@@ -52,6 +52,7 @@ MonoBehaviour:
   _weaponSO: {fileID: 11400000, guid: e46385b46b28a5b4197b4fb84c924d92, type: 2}
   _muzzle: {fileID: 2658297561533454330}
   _entitySource: {fileID: 0}
+  _ammoHandler: {fileID: 0}
   _nextFire: 0
   _chargeTimer: 0
   _isCharging: 0
@@ -119,6 +120,7 @@ GameObject:
   - component: {fileID: 2658297561336904054}
   - component: {fileID: 2658297561336904053}
   - component: {fileID: 2658297561336904063}
+  - component: {fileID: -5910192358378338374}
   - component: {fileID: 2658297561336904052}
   - component: {fileID: -592222945812360713}
   m_Layer: 6
@@ -323,6 +325,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 5
   _currentHealth: 0
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2658297561336904052}
+        m_TargetAssemblyTypeName: HitShakeVfx, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDead:
+    m_PersistentCalls:
+      m_Calls: []
   _deadVfx: {fileID: 8119092763937825176, guid: 320028f9a32b15945b86e578c2b92c8b, type: 3}
 --- !u!114 &2658297561336904063
 MonoBehaviour:
@@ -340,6 +360,19 @@ MonoBehaviour:
   _currentWeapon: {fileID: 2658297560621282577}
   _weaponRotator: {fileID: 2658297560621282582}
   _canShoot: 1
+--- !u!114 &-5910192358378338374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658297561336904011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17f31d289bd89a419c9916a477cd770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lootCollections: []
 --- !u!114 &2658297561336904052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBehaviour: {fileID: 2658297561336904053}
   _renderTransform: {fileID: 2658297562365273111}
   _strength: {x: 1, y: 1, z: 0}
   _strenghtMultiplier: 0.1

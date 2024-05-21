@@ -23,15 +23,15 @@ public class HitShakeVfx : MonoBehaviour
 
     private void OnEnable()
     {
-        _healthBehaviour.onDamageTaken += Shake;
+        _healthBehaviour.onDamageTaken += Play;
     }
 
     private void OnDisable()
     {
-        _healthBehaviour.onDamageTaken -= Shake;
+        _healthBehaviour.onDamageTaken -= Play;
     }
 
-    private void Shake()
+    public void Play()
     {
         _renderTransform.DOComplete();
         _renderTransform.DOShakePosition(_duration, _strength * _strenghtMultiplier).
