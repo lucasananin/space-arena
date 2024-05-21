@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be24c64df0a09f5449e3855dc2e86c92, type: 3}
   m_Name: Collectable_Ammo
   m_EditorClassIdentifier: 
+  _prefab: {fileID: 7651030474878422386, guid: 04f4d503b7191d74f96662f428487b62, type: 3}

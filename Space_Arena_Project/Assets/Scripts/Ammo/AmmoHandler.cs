@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,7 +40,6 @@ public class AmmoHandler : MonoBehaviour
         for (int i = 0; i < _count; i++)
         {
             var _model = _ammoTypes[i];
-            //var _haveSameId = string.Equals(_ammoSO.Id, _model.GetId(), System.StringComparison.OrdinalIgnoreCase);
             var _isTheSameId = GeneralMethods.IsTheSameString(_ammoSO.Id, _model.GetId());
 
             if (_isTheSameId)

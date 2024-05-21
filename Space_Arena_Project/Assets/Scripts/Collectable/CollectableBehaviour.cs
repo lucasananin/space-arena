@@ -11,10 +11,6 @@ public class CollectableBehaviour : MonoBehaviour
     [SerializeField] float _moveSpeed = 10f;
     [SerializeField, ReadOnly] CollectableAgent _agent = null;
 
-    //[SerializeField] AnimationCurve _curve = null;
-    //[SerializeField] float _deacceleration = 1f;
-    //[SerializeField, ReadOnly] float _accelerationTime = 0f;
-
     const float MIN_DISTANCE = 0.5f;
 
     private void FixedUpdate()
@@ -23,19 +19,7 @@ public class CollectableBehaviour : MonoBehaviour
         {
             MoveToAgent();
         }
-
-        //CheckAcceleration();
     }
-
-    //private void CheckAcceleration()
-    //{
-    //    if (_rb.isKinematic || _rb.velocity == Vector2.zero) return;
-
-    //    _accelerationTime += Time.fixedDeltaTime * _deacceleration;
-    //    float _curveValue = _curve.Evaluate(_accelerationTime);
-    //    Vector2 _newVelocity = Vector2.Lerp(_rb.velocity, Vector2.zero, _curveValue);
-    //    _rb.velocity = _newVelocity;
-    //}
 
     private void OnTriggerEnter2D(Collider2D _collision)
     {
