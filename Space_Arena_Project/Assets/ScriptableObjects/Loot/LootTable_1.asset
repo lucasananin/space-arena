@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: LootTable_1
   m_EditorClassIdentifier: 
   _lootCollections:
-  - _lootModels:
+  - _models:
     - _so: {fileID: 11400000, guid: 5d6c4d21e54dcf44187c53ee4eb428fe, type: 2}
       _odd: 1
-      _quantity: {x: 1, y: 3}
-  - _lootModels:
+      _minMaxQuantity: {x: 1, y: 3}
+  - _models:
     - _so: {fileID: 11400000, guid: 027cdf8528683574a86b77b2158503e9, type: 2}
       _odd: 1
-      _quantity: {x: 1, y: 1}
+      _minMaxQuantity: {x: 1, y: 1}
     - _so: {fileID: 0}
       _odd: 1
-      _quantity: {x: 1, y: 1}
+      _minMaxQuantity: {x: 1, y: 1}

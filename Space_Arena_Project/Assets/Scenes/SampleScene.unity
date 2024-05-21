@@ -1661,7 +1661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &434345537
 Transform:
   m_ObjectHideFlags: 0
@@ -1690,18 +1690,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootTableSO: {fileID: 11400000, guid: 0e757d27f5e145d4c88c89998974a9e2, type: 2}
-  _lootCollections:
-  - _lootModels:
-    - _so: {fileID: 11400000, guid: 5d6c4d21e54dcf44187c53ee4eb428fe, type: 2}
-      _odd: 1
-      _quantity: {x: 1, y: 3}
-  - _lootModels:
-    - _so: {fileID: 11400000, guid: 027cdf8528683574a86b77b2158503e9, type: 2}
-      _odd: 1
-      _quantity: {x: 1, y: 1}
-    - _so: {fileID: 0}
-      _odd: 1
-      _quantity: {x: 1, y: 1}
 --- !u!4 &478550398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2751957287607790104, guid: 90cf852f366fdca4392e380ad1d8ca5a, type: 3}

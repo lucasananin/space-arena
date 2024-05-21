@@ -6,31 +6,53 @@ using UnityEngine;
 public class LootBag : MonoBehaviour
 {
     [SerializeField] LootTableSO _lootTableSO = null;
-    [SerializeField] LootModelCollection[] _lootCollections = null;
+    //[SerializeField] LootModelCollection[] _lootCollections = null;
 
     [Button]
     public void Roll()
     {
-        int _count = _lootTableSO.LootCollections.Length;
+        var _lootCollection = _lootTableSO.GenerateLootCollection();
+        int _count = _lootCollection.Models.Count;
 
         for (int i = 0; i < _count; i++)
         {
-            var _collection = _lootTableSO.LootCollections[i];
+            var _model = _lootCollection.Models[i];
 
-            int _randomIndex = Random.Range(0, _collection.LootModels.Length);
-            var _model = _collection.LootModels[_randomIndex];
+            var _spawnLootModel = new SpawnLootModel();
+            _spawnLootModel.spawnPosition = transform.position;
+            _spawnLootModel.so = _model.So;
+            _spawnLootModel.quantity = _model.GetRandomQuantity();
 
-            if (_model.So is null)
-            {
-                continue;
-            }
-
-            float _randomQuantity = Random.Range(_model.Quantity.x, _model.Quantity.y);
-            int _quantity = Mathf.RoundToInt(_randomQuantity);
-
-            FindAnyObjectByType<LootSpawner>().SpawnEntityLoot(transform.position, _model.So, _quantity);
+            FindAnyObjectByType<LootSpawner>().SpawnEntityLoot(_spawnLootModel);
         }
+
+        //int _count = _lootTableSO.LootCollections.Length;
+
+        //for (int i = 0; i < _count; i++)
+        //{
+        //    var _collection = _lootTableSO.LootCollections[i];
+
+        //    int _randomIndex = Random.Range(0, _collection.LootModels.Length);
+        //    var _model = _collection.LootModels[_randomIndex];
+
+        //    if (_model.So is null)
+        //    {
+        //        continue;
+        //    }
+
+        //    float _randomQuantity = Random.Range(_model.Quantity.x, _model.Quantity.y);
+        //    int _quantity = Mathf.RoundToInt(_randomQuantity);
+
+        //    FindAnyObjectByType<LootSpawner>().SpawnEntityLoot(transform.position, _model.So, _quantity);
+        //}
     }
+}
+
+public class SpawnLootModel
+{
+    public Vector3 spawnPosition = default;
+    public ScriptableObject so = null;
+    public int quantity = 0;
 }
 
 //[System.Serializable]
