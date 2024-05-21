@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+//using UnityEngine.Events;
 
 public abstract class HealthBehaviour : MonoBehaviour
 {
@@ -26,13 +26,13 @@ public abstract class HealthBehaviour : MonoBehaviour
         if (_currentHealth <= 0)
         {
             _currentHealth = 0;
-            OnDead();
             onDead?.Invoke();
+            OnDead();
         }
         else
         {
-            OnDamageTaken();
             onDamageTaken?.Invoke();
+            OnDamageTaken();
         }
     }
 

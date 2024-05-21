@@ -120,9 +120,9 @@ GameObject:
   - component: {fileID: 2658297561336904054}
   - component: {fileID: 2658297561336904053}
   - component: {fileID: 2658297561336904063}
-  - component: {fileID: -5910192358378338374}
   - component: {fileID: 2658297561336904052}
   - component: {fileID: -592222945812360713}
+  - component: {fileID: -8619076676205812539}
   m_Layer: 6
   m_Name: Enemy_2a
   m_TagString: Enemy
@@ -325,24 +325,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 5
   _currentHealth: 0
-  onDamageTaken:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2658297561336904052}
-        m_TargetAssemblyTypeName: HitShakeVfx, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDead:
-    m_PersistentCalls:
-      m_Calls: []
   _deadVfx: {fileID: 8119092763937825176, guid: 320028f9a32b15945b86e578c2b92c8b, type: 3}
 --- !u!114 &2658297561336904063
 MonoBehaviour:
@@ -360,19 +342,6 @@ MonoBehaviour:
   _currentWeapon: {fileID: 2658297560621282577}
   _weaponRotator: {fileID: 2658297560621282582}
   _canShoot: 1
---- !u!114 &-5910192358378338374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2658297561336904011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b17f31d289bd89a419c9916a477cd770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lootCollections: []
 --- !u!114 &2658297561336904052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthBehaviour: {fileID: 0}
   _renderTransform: {fileID: 2658297562365273111}
   _strength: {x: 1, y: 1, z: 0}
   _strenghtMultiplier: 0.1
@@ -405,6 +375,20 @@ MonoBehaviour:
   _transform: {fileID: 2658297561336904062}
   _duration: 1
   _isAnimating: 0
+--- !u!114 &-8619076676205812539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658297561336904011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571d00091f96b4c48841287083981290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lootTableSO: {fileID: 11400000, guid: 0e757d27f5e145d4c88c89998974a9e2, type: 2}
+  _healthBehaviour: {fileID: 2658297561336904053}
 --- !u!1 &2658297561533454329
 GameObject:
   m_ObjectHideFlags: 0

@@ -1656,12 +1656,12 @@ GameObject:
   - component: {fileID: 434345537}
   - component: {fileID: 434345538}
   m_Layer: 0
-  m_Name: LootTable
+  m_Name: LootDropper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &434345537
 Transform:
   m_ObjectHideFlags: 0
@@ -13558,7 +13558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBehaviour: {fileID: 0}
+  _healthBehaviour: {fileID: 740099034}
   _renderTransform: {fileID: 253645502}
   _strength: {x: 1, y: 0.5, z: 0}
   _strenghtMultiplier: 0.1
@@ -16590,7 +16590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBehaviour: {fileID: 0}
+  _healthBehaviour: {fileID: 1325800519}
   _renderTransform: {fileID: 2020808069}
   _strength: {x: 1, y: 0.5, z: 0}
   _strenghtMultiplier: 0.1
@@ -17579,7 +17579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1514577427
 Transform:
   m_ObjectHideFlags: 0
@@ -25015,7 +25015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBehaviour: {fileID: 0}
+  _healthBehaviour: {fileID: 2094770498}
   _renderTransform: {fileID: 1695589063}
   _strength: {x: 1, y: 0.5, z: 0}
   _strenghtMultiplier: 0.1

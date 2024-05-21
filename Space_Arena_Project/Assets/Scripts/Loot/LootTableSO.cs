@@ -30,7 +30,7 @@ public class LootTableSO : ScriptableObject
         return _newCollection;
     }
 
-    // GetListOfOdds(LootModelCollection _collection) { }
+    // private List<float> GetListOfOdds(LootModelCollection _collection) { }
 }
 
 [System.Serializable]
@@ -58,10 +58,3 @@ public class LootModel
         return Mathf.RoundToInt(_randomQuantity);
     }
 }
-
-//public class LootSpawnInfo
-//{
-//    public Vector3 spawnPosition = default;
-//    public ScriptableObject so = null;
-//    public int quantity = 0;
-//}

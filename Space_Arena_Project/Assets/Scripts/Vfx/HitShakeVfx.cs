@@ -16,6 +16,11 @@ public class HitShakeVfx : MonoBehaviour
     [Space]
     [SerializeField, ReadOnly] Vector3 _defaultPosition = default;
 
+    private void OnValidate()
+    {
+        _healthBehaviour = GetComponent<HealthBehaviour>();
+    }
+
     private void Awake()
     {
         _defaultPosition = _renderTransform.localPosition;

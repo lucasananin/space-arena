@@ -106,30 +106,4 @@ public class LootSpawner : MonoBehaviour
             }
         }
     }
-
-    public void SpawnEntityLoot(Vector3 _spawnPoint, ScriptableObject _so, int _quantity)
-    {
-        for (int i = 0; i < _quantity; i++)
-        {
-            switch (_so)
-            {
-                case CollectableSO:
-                    var _collectableSO = _so as CollectableSO;
-                    var _instance = Instantiate(_collectableSO.Prefab, _spawnPoint, Quaternion.identity, _parentContainer);
-
-                    var _2DPosition = (Vector2)_spawnPoint;
-                    var _randomPosition = Random.insideUnitCircle + _2DPosition;
-                    var _direction = (_randomPosition - _2DPosition).normalized;
-                    var _force = _direction * Random.Range(_minMaxForce.x, _minMaxForce.y);
-                    var _rb = _instance.GetComponent<Rigidbody2D>();
-                    _rb.AddForce(_force, ForceMode2D.Impulse);
-
-                    break;
-                case WeaponSO:
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
 }
