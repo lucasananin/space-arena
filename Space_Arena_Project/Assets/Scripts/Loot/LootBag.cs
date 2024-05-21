@@ -28,25 +28,28 @@ public class LootBag : MonoBehaviour
 
             float _randomQuantity = Random.Range(_model.Quantity.x, _model.Quantity.y);
             int _quantity = Mathf.RoundToInt(_randomQuantity);
+
+            FindAnyObjectByType<LootSpawner>().SpawnEntityLoot(transform.position, _model.So, _quantity);
+
             //Debug.Log($"// float = {_randomQuantity}, int = {_quantity}");
             //int _quantity = (int)_randomQuantity;
             //int _quantity = Mathf.CeilToInt(_randomQuantity);
 
-            for (int j = 0; j < _quantity; j++)
-            {
-                switch (_model.So)
-                {
-                    case CollectableSO:
-                        //var _collectableSO = _model.So as CollectableSO;
-                        //var _position = Random.insideUnitCircle + (Vector2)_spawnPoint.position;
-                        //Instantiate(_collectableSO.Prefab, _position, Quaternion.identity);
-                        break;
-                    case WeaponSO:
-                        break;
-                    default:
-                        break;
-                }
-            }
+            //for (int j = 0; j < _quantity; j++)
+            //{
+            //    switch (_model.So)
+            //    {
+            //        case CollectableSO:
+            //            //var _collectableSO = _model.So as CollectableSO;
+            //            //var _position = Random.insideUnitCircle + (Vector2)_spawnPoint.position;
+            //            //Instantiate(_collectableSO.Prefab, _position, Quaternion.identity);
+            //            break;
+            //        case WeaponSO:
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //}
 
             //Debug.Log($"// Drop {_quantity} {_model.So.name}!");
         }

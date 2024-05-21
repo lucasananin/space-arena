@@ -1670,7 +1670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434345536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7847,6 +7847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52a1e4d6a789934e9a7f8e36edb1ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _parentContainer: {fileID: 1787702167}
+  _minMaxForce: {x: 5, y: 15}
   _weaponSOs:
   - {fileID: 11400000, guid: 1e90c408e692ad5429ca305582984276, type: 2}
   - {fileID: 11400000, guid: 30ecdf5b450b1474c80b39c9680f3750, type: 2}
@@ -7855,7 +7857,6 @@ MonoBehaviour:
   _weaponLootPrefab: {fileID: 5281741771645536111, guid: ef78d91f80ad7634cb58312915f887b8, type: 3}
   _ammoPrefab: {fileID: 7651030474878422386, guid: 04f4d503b7191d74f96662f428487b62, type: 3}
   _healthPrefab: {fileID: 4558754204574171359, guid: 8b56851b8547fb44aad90d846e7f31bc, type: 3}
-  _parentContainer: {fileID: 1787702167}
   _boxCollider2D: {fileID: 304280898}
   _spawnOnStart: 0
 --- !u!1 &615151910
