@@ -49,13 +49,17 @@ public class EnemySpawner : MonoBehaviour
     {
         _isSpawning = true;
         _waveModel = _waves[_waveIndex];
+        _waveModel.ResetRuntimeQuantities();
+
         _activeSpawnCount = 0;
         int _totalSpawnedCount = 0;
+        int _totalSpawnQuantity = _waveModel.GetTotalQuantity();
+
         onStart?.Invoke();
 
         do
         {
-            while (_activeSpawnCount >= _waveModel.MaxActiveSpawnCount)
+            while (_activeSpawnCount >= _waveModel.MaxActiveSpawns)
             {
                 yield return null;
             }
@@ -69,7 +73,8 @@ public class EnemySpawner : MonoBehaviour
 
             yield return new WaitForSeconds(_spawnTime);
 
-        } while (_totalSpawnedCount < _waveModel.MaxSpawnedCount);
+        } while (_totalSpawnedCount < _totalSpawnQuantity);
+        //} while (_totalSpawnedCount < _waveModel.MaxSpawnedCount);
 
         while (_activeSpawnCount > 0)
         {
@@ -78,6 +83,7 @@ public class EnemySpawner : MonoBehaviour
 
         _isSpawning = false;
         _waveIndex++;
+
         onEnd?.Invoke();
     }
 
@@ -110,16 +116,73 @@ public class EnemySpawner : MonoBehaviour
 [System.Serializable]
 public class WaveModel
 {
-    [SerializeField] AiEntitySO[] _availableEntities = null;
-    [SerializeField, Range(0, 20)] int _maxSpawnedCount = 12;
-    [SerializeField, Range(0, 20)] int _maxActiveSpawnCount = 4;
+    [SerializeField] EntityGroup[] _entities = null;
+    //[SerializeField] AiEntitySO[] _availableEntities = null;
+    //[SerializeField, Range(0, 20)] int _maxSpawnedCount = 12;
+    [SerializeField, Range(0, 20)] int _maxActiveSpawns = 4;
+    [SerializeField, ReadOnly] List<float> _runtimeQuantities = null;
 
-    public int MaxSpawnedCount { get => _maxSpawnedCount; private set => _maxSpawnedCount = value; }
-    public int MaxActiveSpawnCount { get => _maxActiveSpawnCount; private set => _maxActiveSpawnCount = value; }
+    //public int MaxSpawnedCount { get => _maxSpawnedCount; private set => _maxSpawnedCount = value; }
+    public int MaxActiveSpawns { get => _maxActiveSpawns; private set => _maxActiveSpawns = value; }
 
     public AiEntity GetEntityPrefab()
     {
-        int _randomIndex = Random.Range(0, _availableEntities.Length);
-        return _availableEntities[_randomIndex].EntityPrefab;
+        //int _randomIndex = Random.Range(0, _availableEntities.Length);
+        //return _availableEntities[_randomIndex].EntityPrefab;
+
+        bool _canSpawn;
+        int _randomIndex;
+
+        do
+        {
+            _randomIndex = Random.Range(0, _entities.Length);
+            _canSpawn = _runtimeQuantities[_randomIndex] > 0;
+
+        } while (!_canSpawn);
+
+        _runtimeQuantities[_randomIndex]--;
+        return _entities[_randomIndex].SO.EntityPrefab;
     }
+
+    [Button]
+    public void ResetRuntimeQuantities()
+    {
+        _runtimeQuantities.Clear();
+
+        int _count = _entities.Length;
+
+        for (int i = 0; i < _count; i++)
+        {
+            _runtimeQuantities.Add(_entities[i].Quantity);
+        }
+    }
+
+    public int GetTotalQuantity()
+    {
+        int _count = _entities.Length;
+        int _total = 0;
+
+        for (int i = 0; i < _count; i++)
+        {
+            _total += _entities[i].Quantity;
+        }
+
+        return _total;
+    }
+
+    //[Button]
+    //public void ClearQuantities()
+    //{
+    //    _quantities.Clear();
+    //}
+}
+
+[System.Serializable]
+public class EntityGroup
+{
+    [SerializeField] AiEntitySO _so = null;
+    [SerializeField, Range(0, 99)] int _quantity = 1;
+
+    public AiEntitySO SO { get => _so; set => _so = value; }
+    public int Quantity { get => _quantity; set => _quantity = value; }
 }

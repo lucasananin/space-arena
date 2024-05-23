@@ -1164,7 +1164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304280896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1195,7 +1195,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6, y: 2}
+  m_Size: {x: 4, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &320982560
 GameObject:
@@ -7049,7 +7049,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7847,7 +7847,7 @@ MonoBehaviour:
   _ammoPrefab: {fileID: 7651030474878422386, guid: 04f4d503b7191d74f96662f428487b62, type: 3}
   _healthPrefab: {fileID: 4558754204574171359, guid: 8b56851b8547fb44aad90d846e7f31bc, type: 3}
   _boxCollider2D: {fileID: 304280898}
-  _spawnOnStart: 0
+  _spawnOnStart: 1
 --- !u!1 &615151910
 GameObject:
   m_ObjectHideFlags: 0
@@ -8238,7 +8238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655962180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15121,21 +15121,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waves:
-  - _availableEntities:
+  - _entities:
+    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
+      _quantity: 4
+    - _so: {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
+      _quantity: 2
+    _availableEntities:
     - {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
-    _maxSpawnedCount: 10
-    _maxActiveSpawnCount: 5
-  - _availableEntities:
+    _maxActiveSpawns: 3
+    _quantities: []
+  - _entities: []
+    _availableEntities:
     - {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
     - {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
-    _maxSpawnedCount: 12
-    _maxActiveSpawnCount: 4
+    _maxActiveSpawns: 4
+    _quantities: []
   _container: {fileID: 1159678663}
   _spawnTime: 1
   _waveModel:
+    _entities: []
     _availableEntities: []
-    _maxSpawnedCount: 12
-    _maxActiveSpawnCount: 4
+    _maxActiveSpawns: 4
+    _quantities: []
   _waveIndex: 0
   _isSpawning: 0
   _activeSpawnCount: 0
@@ -15255,7 +15262,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1823301781}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 7
+    OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -23496,8 +23503,7 @@ MonoBehaviour:
   _ammoHandler: {fileID: 1823301791}
   _maxWeaponsCount: 2
   _swapInputDelay: 0.3
-  _weaponsList:
-  - {fileID: 1825438594}
+  _weaponsList: []
   _currentWeapon: {fileID: 0}
   _lastWeapon: {fileID: 0}
   _weaponRotator: {fileID: 0}
@@ -23611,17 +23617,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 1422076203}
   _playerMover: {fileID: 1823301784}
---- !u!114 &1825438594 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5704818092466949252, guid: c61856f6800231948bf9daedc54fadde, type: 3}
-  m_PrefabInstance: {fileID: 5704818090879393342}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb808b67afd45264aa38f541f3bc38d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1872211008
 GameObject:
   m_ObjectHideFlags: 0
