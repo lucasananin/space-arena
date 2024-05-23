@@ -50,11 +50,9 @@ public class EnemySpawner : MonoBehaviour
         _isSpawning = true;
         _waveModel = _waves[_waveIndex];
         _waveModel.ResetRuntimeQuantities();
-
         _activeSpawnCount = 0;
         int _totalSpawnedCount = 0;
         int _totalSpawnQuantity = _waveModel.GetTotalQuantity();
-
         onStart?.Invoke();
 
         do
@@ -66,7 +64,6 @@ public class EnemySpawner : MonoBehaviour
 
             _activeSpawnCount++;
             _totalSpawnedCount++;
-
             AiEntity _prefab = _waveModel.GetEntityPrefab();
             Vector3 _position = GetRandomNodePosition();
             Instantiate(_prefab, _position, Quaternion.identity, _container);
@@ -74,7 +71,6 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(_spawnTime);
 
         } while (_totalSpawnedCount < _totalSpawnQuantity);
-        //} while (_totalSpawnedCount < _waveModel.MaxSpawnedCount);
 
         while (_activeSpawnCount > 0)
         {
@@ -83,7 +79,6 @@ public class EnemySpawner : MonoBehaviour
 
         _isSpawning = false;
         _waveIndex++;
-
         onEnd?.Invoke();
     }
 
@@ -117,19 +112,13 @@ public class EnemySpawner : MonoBehaviour
 public class WaveModel
 {
     [SerializeField] EntityGroup[] _entities = null;
-    //[SerializeField] AiEntitySO[] _availableEntities = null;
-    //[SerializeField, Range(0, 20)] int _maxSpawnedCount = 12;
     [SerializeField, Range(0, 20)] int _maxActiveSpawns = 4;
     [SerializeField, ReadOnly] List<float> _runtimeQuantities = null;
 
-    //public int MaxSpawnedCount { get => _maxSpawnedCount; private set => _maxSpawnedCount = value; }
     public int MaxActiveSpawns { get => _maxActiveSpawns; private set => _maxActiveSpawns = value; }
 
     public AiEntity GetEntityPrefab()
     {
-        //int _randomIndex = Random.Range(0, _availableEntities.Length);
-        //return _availableEntities[_randomIndex].EntityPrefab;
-
         bool _canSpawn;
         int _randomIndex;
 
@@ -144,7 +133,6 @@ public class WaveModel
         return _entities[_randomIndex].SO.EntityPrefab;
     }
 
-    [Button]
     public void ResetRuntimeQuantities()
     {
         _runtimeQuantities.Clear();
@@ -169,12 +157,6 @@ public class WaveModel
 
         return _total;
     }
-
-    //[Button]
-    //public void ClearQuantities()
-    //{
-    //    _quantities.Clear();
-    //}
 }
 
 [System.Serializable]

@@ -15123,26 +15123,22 @@ MonoBehaviour:
   _waves:
   - _entities:
     - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
+      _quantity: 5
+    _maxActiveSpawns: 3
+    _runtimeQuantities: []
+  - _entities:
+    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
       _quantity: 4
     - _so: {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
       _quantity: 2
-    _availableEntities:
-    - {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
-    _maxActiveSpawns: 3
-    _quantities: []
-  - _entities: []
-    _availableEntities:
-    - {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
-    - {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
     _maxActiveSpawns: 4
-    _quantities: []
+    _runtimeQuantities: []
   _container: {fileID: 1159678663}
   _spawnTime: 1
   _waveModel:
     _entities: []
-    _availableEntities: []
     _maxActiveSpawns: 4
-    _quantities: []
+    _runtimeQuantities: []
   _waveIndex: 0
   _isSpawning: 0
   _activeSpawnCount: 0
