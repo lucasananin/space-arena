@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c83bc7b64efbc1f4e9b1e00bbec38444, type: 3}
-  m_Name: Projectile_Enemy_2
+  m_Name: Projectile_Enemy_3
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7353528016857128665, guid: 94739e0fd502d854a8436a972ce84029, type: 3}
   _tagCollectionSO: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
@@ -22,7 +22,7 @@ MonoBehaviour:
   _minMaxTimeUntilDestroy: {x: 6, y: 8}
   _maxPierceCount: 1
   _explosionRadius: 0
-  _moveSpeed: 5
+  _moveSpeed: 3
   _destroyOnCollision: 1
   _useAccelerationCurve: 0
   _invertAcceleration: 0

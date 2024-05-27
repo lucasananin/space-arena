@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBehaviour: {fileID: 0}
+  _healthBehaviour: {fileID: 6972132582502089756}
   _renderTransform: {fileID: 6972132581380888958}
   _strength: {x: 1, y: 1, z: 0}
   _strenghtMultiplier: 0.1
@@ -628,7 +628,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6972132583126419580}
   - component: {fileID: 6972132583126419576}
-  - component: {fileID: 6972132583126419577}
   - component: {fileID: 6972132583126419582}
   - component: {fileID: 6972132583126419583}
   m_Layer: 0
@@ -678,20 +677,6 @@ MonoBehaviour:
   _overheatTimer: 0
   _isOverheated: 0
   _hasShotCharge: 0
---- !u!114 &6972132583126419577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6972132583126419581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8916b49fbdf6243b6d0e4bbd1e016c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 6972132582502089751}
-  _canFollow: 0
 --- !u!114 &6972132583126419582
 MonoBehaviour:
   m_ObjectHideFlags: 0

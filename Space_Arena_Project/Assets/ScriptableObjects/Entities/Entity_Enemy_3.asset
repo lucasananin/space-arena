@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4d5a4e750096ac4ab1783d5de629368, type: 3}
-  m_Name: Entity_Enemy_2
+  m_Name: Entity_Enemy_3
   m_EditorClassIdentifier: 
-  _entityPrefab: {fileID: 2658297561336904056, guid: e3027df5231167a4da73b72ce65c5deb, type: 3}
-  _shootDistance: 12
+  _entityPrefab: {fileID: 2658297561336904056, guid: c018e4fe6b4b32e4fb0f3aa249a124d9, type: 3}
+  _shootDistance: 8
   _minMaxShootTimeOffset: {x: 1.8, y: 2.2}
-  _moveClose_radius: 8
+  _moveClose_radius: 6
   _stopSearchingPathOnClose: 0
   _maxNumberOfTries: 10
   _minMaxTimeUntilSearchPath: {x: 1, y: 3}
