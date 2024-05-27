@@ -12,7 +12,7 @@ public class SemiAutoWeapon : WeaponBehaviour
     {
         _nextFire += _nextFire < _weaponSO.FireRate ? Time.fixedDeltaTime : 0;
 
-        SetChargeTimer();
+        UpdateChargeTimer();
 
         if (CanAutoChargeShot())
         {

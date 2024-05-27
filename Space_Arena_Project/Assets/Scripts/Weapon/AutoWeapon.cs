@@ -12,21 +12,19 @@ public class AutoWeapon : WeaponBehaviour
     {
         _nextFire += _nextFire < _weaponSO.FireRate ? Time.fixedDeltaTime : 0;
 
-        SetChargeTimer();
+        UpdateChargeTimer();
 
-        if (_chargeTimer >= _weaponSO.MaxChargeTime)
+        if (!HasEnoughChargeTimer()) return;
+        if (!HasAmmo()) return;
+
+        if (_nextFire >= _weaponSO.FireRate && _isHoldingTrigger && !_isOverheated)
         {
-            if (_nextFire >= _weaponSO.FireRate && _isHoldingTrigger && !_isOverheated)
-            {
-                Shoot();
-            }
+            Shoot();
         }
     }
 
     public override void PullTrigger()
     {
-        if (!HasAmmo()) return;
-
         _isCharging = true;
         _isHoldingTrigger = true;
         base.PullTrigger();

@@ -132,9 +132,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
         }
     }
 
-    protected void SetChargeTimer()
+    protected void UpdateChargeTimer()
     {
-        if (!_weaponSO. HasChargeTime()) return;
+        if (!_weaponSO.HasChargeTime()) return;
 
         if (_isCharging)
         {
