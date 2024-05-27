@@ -15133,8 +15133,19 @@ MonoBehaviour:
       _quantity: 2
     _maxActiveSpawns: 4
     _runtimeQuantities: []
+  _randomizedWaves:
+  - _entities:
+    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
+      _quantity: 1
+    - _so: {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
+      _quantity: 1
+    - _so: {fileID: 11400000, guid: c9a872c556f876748aca59a351afa0d5, type: 2}
+      _quantity: 1
+    _quantity: 20
+    _maxActiveSpawns: 6
   _container: {fileID: 1159678663}
   _spawnTime: 1
+  _useRandomizedWaves: 1
   _waveModel:
     _entities: []
     _maxActiveSpawns: 4
@@ -16144,6 +16155,10 @@ PrefabInstance:
     - target: {fileID: 2658297561336904011, guid: c018e4fe6b4b32e4fb0f3aa249a124d9, type: 3}
       propertyPath: m_Name
       value: Enemy_3a
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658297561336904011, guid: c018e4fe6b4b32e4fb0f3aa249a124d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2658297561336904062, guid: c018e4fe6b4b32e4fb0f3aa249a124d9, type: 3}
       propertyPath: m_RootOrder

@@ -18,4 +18,4 @@ MonoBehaviour:
   _moveClose_radius: 8
   _stopSearchingPathOnClose: 0
   _maxNumberOfTries: 10
-  _minMaxTimeUntilSearchPath: {x: 1, y: 3}
+  _minMaxTimeUntilSearchPath: {x: 1, y: 2}

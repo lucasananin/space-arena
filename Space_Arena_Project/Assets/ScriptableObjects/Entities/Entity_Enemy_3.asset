@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Entity_Enemy_3
   m_EditorClassIdentifier: 
   _entityPrefab: {fileID: 2658297561336904056, guid: c018e4fe6b4b32e4fb0f3aa249a124d9, type: 3}
-  _shootDistance: 8
+  _shootDistance: 12
   _minMaxShootTimeOffset: {x: 1.8, y: 2.2}
   _moveClose_radius: 6
   _stopSearchingPathOnClose: 0
   _maxNumberOfTries: 10
-  _minMaxTimeUntilSearchPath: {x: 1, y: 3}
+  _minMaxTimeUntilSearchPath: {x: 1, y: 2}

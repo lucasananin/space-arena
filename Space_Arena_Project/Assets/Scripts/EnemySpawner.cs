@@ -7,8 +7,10 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] WaveModel[] _waves = null;
+    [SerializeField] RandomizedWaveModel[] _randomizedWaves = null;
     [SerializeField] Transform _container = null;
     [SerializeField, Range(0.1f, 9f)] float _spawnTime = 1f;
+    [SerializeField] bool _useRandomizedWaves = false;
     [Space]
     [SerializeField, ReadOnly] WaveModel _waveModel = null;
     [SerializeField, ReadOnly] int _waveIndex = 0;
@@ -52,19 +54,20 @@ public class EnemySpawner : MonoBehaviour
         _waveModel.ResetRuntimeQuantities();
         _activeSpawnCount = 0;
         int _totalSpawnedCount = 0;
-        int _totalSpawnQuantity = _waveModel.GetTotalQuantity();
+        int _totalSpawnQuantity = _useRandomizedWaves ? _randomizedWaves[0].Quantity : _waveModel.GetTotalQuantity();
         onStart?.Invoke();
 
         do
         {
-            while (_activeSpawnCount >= _waveModel.MaxActiveSpawns)
+            var _maxActiveSpawns = _useRandomizedWaves ? _randomizedWaves[0].MaxActiveSpawns : _waveModel.MaxActiveSpawns;
+            while (_activeSpawnCount >= _maxActiveSpawns)
             {
                 yield return null;
             }
 
             _activeSpawnCount++;
             _totalSpawnedCount++;
-            AiEntity _prefab = _waveModel.GetEntityPrefab();
+            AiEntity _prefab = _useRandomizedWaves ? _randomizedWaves[0].GetEntityPrefab() : _waveModel.GetEntityPrefab();
             Vector3 _position = GetRandomNodePosition();
             Instantiate(_prefab, _position, Quaternion.identity, _container);
 
@@ -80,6 +83,11 @@ public class EnemySpawner : MonoBehaviour
         _isSpawning = false;
         _waveIndex++;
         onEnd?.Invoke();
+
+        if (_waveIndex >= _waves.Length)
+        {
+            ResetWaveIndex();
+        }
     }
 
     private Vector3 GetRandomNodePosition()
@@ -105,6 +113,12 @@ public class EnemySpawner : MonoBehaviour
     private void DecreaseActiveSpawnCount(HealthBehaviour _obj)
     {
         _activeSpawnCount--;
+    }
+
+    [Button]
+    private void ResetWaveIndex()
+    {
+        _waveIndex = 0;
     }
 }
 
@@ -156,6 +170,23 @@ public class WaveModel
         }
 
         return _total;
+    }
+}
+
+[System.Serializable]
+public class RandomizedWaveModel
+{
+    [SerializeField] EntityGroup[] _entities = null;
+    [SerializeField, Range(0, 20)] int _quantity = 4;
+    [SerializeField, Range(0, 20)] int _maxActiveSpawns = 4;
+
+    public int Quantity { get => _quantity; private set => _quantity = value; }
+    public int MaxActiveSpawns { get => _maxActiveSpawns; private set => _maxActiveSpawns = value; }
+
+    public AiEntity GetEntityPrefab()
+    {
+        var _randomIndex = Random.Range(0, _entities.Length);
+        return _entities[_randomIndex].SO.EntityPrefab;
     }
 }
 
