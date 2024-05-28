@@ -15142,7 +15142,7 @@ MonoBehaviour:
     - _so: {fileID: 11400000, guid: c9a872c556f876748aca59a351afa0d5, type: 2}
       _quantity: 1
     _quantity: 20
-    _maxActiveSpawns: 6
+    _maxActiveSpawns: 3
   _container: {fileID: 1159678663}
   _spawnTime: 1
   _useRandomizedWaves: 1

@@ -38,4 +38,9 @@ public class GeneralMethods : MonoBehaviour
         float _distance = (_target - _point).sqrMagnitude;
         return _distance < _minDistance * _minDistance;
     }
+
+    public static Vector2 GetRandomInCircle(float _min, float _max)
+    {
+        return Random.insideUnitCircle.normalized * Random.Range(_min, _max);
+    }
 }
