@@ -24,7 +24,6 @@ public class AiEntity : EntityBehaviour
     private void Update()
     {
         _isTargetOnLineOfSight = HasTargetEntity() && CanSeeTargetFromPoint(transform.position);
-        //Debug.Log($"// isMoving = {_aiPath.velocity != Vector3.zero}");
     }
 
     public void SetTargetEntity(EntityBehaviour _entityValue)
@@ -115,7 +114,6 @@ public class AiEntity : EntityBehaviour
     public bool IsWaitingToSearchPath()
     {
         if (!HasReachedPathEnding()) return false;
-        //if (_timeUntilSearchPath <= 0) return false;
 
         _searchPathTimer += Time.deltaTime;
         return _searchPathTimer < _timeUntilSearchPath;
