@@ -30,6 +30,7 @@ public class AiTryShootTargetAction : StateAction
     public override void OnUpdate()
     {
         if (!_aiWeaponHandler.CanShoot) return;
+        if (!_entitySO.CanShootWhileMoving && _aiEntity.IsMoving()) return;
 
         if (_aiEntity.IsTargetOnLineOfSight && _aiEntity.IsCloseToTargetEntity(_entitySO.ShootDistance))
         {

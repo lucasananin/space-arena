@@ -24,6 +24,7 @@ public class AiEntity : EntityBehaviour
     private void Update()
     {
         _isTargetOnLineOfSight = HasTargetEntity() && CanSeeTargetFromPoint(transform.position);
+        //Debug.Log($"// isMoving = {_aiPath.velocity != Vector3.zero}");
     }
 
     public void SetTargetEntity(EntityBehaviour _entityValue)
@@ -53,13 +54,6 @@ public class AiEntity : EntityBehaviour
         return _point;
     }
 
-    //public Vector3 PickRandomPointNearTarget(float _radius)
-    //{
-    //    Vector3 _point = Random.insideUnitCircle * _radius;
-    //    _point += GetTargetEntityPosition();
-    //    return _point;
-    //}
-
     public Vector3 PickRandomPointNearTarget(Vector2 _minMaxValue)
     {
         Vector3 _point = GeneralMethods.GetRandomInCircle(_minMaxValue.x, _minMaxValue.y);
@@ -83,8 +77,6 @@ public class AiEntity : EntityBehaviour
     public bool IsPointCloseToTargetEntity(Vector3 _point, float _minDistance)
     {
         return GeneralMethods.IsPointCloseToTarget(_point, GetTargetEntityPosition(), _minDistance);
-        //float _distance = (GetTargetEntityPosition() - _point).sqrMagnitude;
-        //return _distance < _minDistance * _minDistance;
     }
 
     public void SetAIPathDestination(Vector3 _position)
@@ -134,5 +126,10 @@ public class AiEntity : EntityBehaviour
         Vector2 _minMaxValue = GetEntitySO<AiEntitySO>().MinMaxTimeUntilSearchPath;
         _timeUntilSearchPath = Random.Range(_minMaxValue.x, _minMaxValue.y);
         _searchPathTimer = 0;
+    }
+
+    public bool IsMoving()
+    {
+        return _aiPath.velocity != Vector3.zero;
     }
 }
