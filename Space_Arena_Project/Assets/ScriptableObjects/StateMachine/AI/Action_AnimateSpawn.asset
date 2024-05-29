@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ef07eb6c9158f4eb53ebb1bc389b92, type: 3}
   m_Name: Action_AnimateSpawn
   m_EditorClassIdentifier: 
-  description: 
+  description: Animation when the entity is spawned on the arena.
