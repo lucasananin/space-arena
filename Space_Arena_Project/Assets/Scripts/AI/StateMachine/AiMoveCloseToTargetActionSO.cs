@@ -38,9 +38,9 @@ public class AiMoveCloseToTargetAction : StateAction
     public override void OnUpdate()
     {
         if (_aiEntity.IsWaitingToSearchPath()) return;
-        if (_entitySO.StopSearchingPathOnClose && _aiEntity.IsCloseToTargetEntity(_entitySO.MoveClose_radius)) return;
+        if (_entitySO.StopSearchingPathOnClose && _aiEntity.IsCloseToTargetEntity(_entitySO.MinMax_moveCloseRadius.y)) return;
 
-        bool _isTargetFarFromPoint = !_aiEntity.IsPointCloseToTargetEntity(_point, _entitySO.MoveClose_radius);
+        bool _isTargetFarFromPoint = !_aiEntity.IsPointCloseToTargetEntity(_point, _entitySO.MinMax_moveCloseRadius.y);
 
         if (_aiEntity.HasReachedPathEnding() || _isTargetFarFromPoint)
         {

@@ -31,7 +31,7 @@ public class LootSpawner : MonoBehaviour
     [Button]
     private void SpawnRandomWeapon()
     {
-        Vector3 _position = GeneralMethods.RandomPointInBounds(_boxCollider2D.bounds);
+        Vector3 _position = GeneralMethods.GetRandomPointInBounds(_boxCollider2D.bounds);
         LootBehaviour _loot = Instantiate(_weaponLootPrefab, _position, Quaternion.identity, _parentContainer);
 
         //GridNode[] _nodes = _graph.nodes;
@@ -54,7 +54,7 @@ public class LootSpawner : MonoBehaviour
 
         for (int i = 0; i < _count; i++)
         {
-            Vector3 _position = GeneralMethods.RandomPointInBounds(_boxCollider2D.bounds);
+            Vector3 _position = GeneralMethods.GetRandomPointInBounds(_boxCollider2D.bounds);
             LootBehaviour _loot = Instantiate(_weaponLootPrefab, _position, Quaternion.identity, _parentContainer);
 
             WeaponSO _so = _weaponSOs[i];
@@ -65,7 +65,7 @@ public class LootSpawner : MonoBehaviour
     [Button]
     private void SpawnAmmoPack()
     {
-        var _position = GeneralMethods.RandomPointInBounds(_boxCollider2D.bounds);
+        var _position = GeneralMethods.GetRandomPointInBounds(_boxCollider2D.bounds);
         var _randomEuler = new Vector3(0f, 0f, Random.rotation.eulerAngles.z);
         Instantiate(_ammoPrefab, _position, Quaternion.Euler(_randomEuler), _parentContainer);
         //var _loot = Instantiate(_ammoPrefab, _position, Quaternion.Euler(_randomEuler), _parentContainer);
@@ -77,7 +77,7 @@ public class LootSpawner : MonoBehaviour
     [Button]
     private void SpawnHealtPack()
     {
-        var _position = GeneralMethods.RandomPointInBounds(_boxCollider2D.bounds);
+        var _position = GeneralMethods.GetRandomPointInBounds(_boxCollider2D.bounds);
         Instantiate(_healthPrefab, _position, Quaternion.identity, _parentContainer);
     }
 

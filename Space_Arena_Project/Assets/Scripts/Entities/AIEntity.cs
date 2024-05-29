@@ -82,8 +82,9 @@ public class AiEntity : EntityBehaviour
 
     public bool IsPointCloseToTargetEntity(Vector3 _point, float _minDistance)
     {
-        float _distance = (GetTargetEntityPosition() - _point).sqrMagnitude;
-        return _distance < _minDistance * _minDistance;
+        return GeneralMethods.IsPointCloseToTarget(_point, GetTargetEntityPosition(), _minDistance);
+        //float _distance = (GetTargetEntityPosition() - _point).sqrMagnitude;
+        //return _distance < _minDistance * _minDistance;
     }
 
     public void SetAIPathDestination(Vector3 _position)
