@@ -15,8 +15,8 @@ MonoBehaviour:
   _entityPrefab: {fileID: 2658297561336904056, guid: e3027df5231167a4da73b72ce65c5deb, type: 3}
   _shootDistance: 12
   _minMaxShootTimeOffset: {x: 1.8, y: 2.2}
-  _canShootWhileMoving: 0
-  _canRotateWhileShooting: 0
+  _canShootWhileMoving: 1
+  _canRotateWhileShooting: 1
   _minMaxTimeUntilSearchPath: {x: 1, y: 2}
   _minMax_moveCloseRadius: {x: 4, y: 8}
   _stopSearchingPathOnClose: 0

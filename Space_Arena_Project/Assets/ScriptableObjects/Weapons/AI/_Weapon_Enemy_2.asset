@@ -18,8 +18,8 @@ MonoBehaviour:
   _displayName: 
   _holsterPosition: {x: 0, y: 0, z: 0}
   _holsterEuler: {x: 0, y: 0, z: 0}
-  _projectileSO: {fileID: 11400000, guid: 694fbc204e058fe459fdbe5869493062, type: 2}
-  _chargedProjectileSO: {fileID: 11400000, guid: 694fbc204e058fe459fdbe5869493062, type: 2}
+  _projectileSO: {fileID: 11400000, guid: 04f6da8ff424c3645a1e5dc30dd4f10a, type: 2}
+  _chargedProjectileSO: {fileID: 11400000, guid: 04f6da8ff424c3645a1e5dc30dd4f10a, type: 2}
   _fireRate: 0.1
   _maxChargeTime: 0.1
   _maxHeat: 0
