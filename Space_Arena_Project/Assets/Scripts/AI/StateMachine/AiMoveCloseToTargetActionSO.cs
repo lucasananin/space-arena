@@ -57,7 +57,8 @@ public class AiMoveCloseToTargetAction : StateAction
 
     private Vector3 TryGetPositionWhereTargetIsVisible()
     {
-        Vector3 _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MoveClose_radius);
+        //Vector3 _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MoveClose_radius);
+        Vector3 _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MinMax_moveCloseRadius);
 
         for (int i = 0; i < _entitySO.MaxNumberOfTries; i++)
         {
@@ -67,7 +68,8 @@ public class AiMoveCloseToTargetAction : StateAction
             }
             else
             {
-                _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MoveClose_radius);
+                //_point = _aiEntity.PickRandomPointNearTarget(_entitySO.MoveClose_radius);
+                _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MinMax_moveCloseRadius);
             }
         }
 
