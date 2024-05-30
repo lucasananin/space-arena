@@ -5,25 +5,41 @@ using UnityEngine;
 
 public class DamageArea : MonoBehaviour
 {
+    [Title("// General")]
     [SerializeField] Collider2D _collider2D = null;
     [SerializeField] TagCollectionSO _tagCollectionSO = null;
-    [SerializeField, Range(0f, 9f)] float _fireRate = 1f;
     [SerializeField] ContactFilter2D _contactFilter2D = default;
-    [SerializeField, ReadOnly] float _nextFire = 0f;
+
+    [Title("// Time Properties")]
+    [SerializeField, Range(0f, 9f)] float _damageRate = 1f;
+    [SerializeField] bool _enableDestroyTimer = false;
+    [SerializeField, Range(0f, 9f)] float _timeUntilDestroy = 4f;
+
+    [Title("// Debug")]
+    [SerializeField, ReadOnly] float _nextDamage = 0f;
+    [SerializeField, ReadOnly] float _destroyTimer = 0f;
 
     private RaycastHit2D[] _results = new RaycastHit2D[9];
 
     private void Update()
     {
-        _nextFire += Time.deltaTime;
+        _nextDamage += Time.deltaTime;
 
-        if (_nextFire > _fireRate)
+        if (_nextDamage > _damageRate)
         {
-            _nextFire = 0f;
+            _nextDamage = 0f;
             CauseDamage();
         }
 
-        // destroy by time.
+        if (!_enableDestroyTimer) return;
+
+        _destroyTimer += Time.deltaTime;
+
+        if (_destroyTimer > _timeUntilDestroy)
+        {
+            _destroyTimer = 0f;
+            Destroy(gameObject);
+        }
     }
 
     private void CauseDamage()

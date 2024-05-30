@@ -4961,7 +4961,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider2D: {fileID: 832962447568062901}
   _tagCollectionSO: {fileID: 11400000, guid: c52106f1fa265834bb6d3e13e4ba794c, type: 2}
-  _fireRate: 0.4
   _contactFilter2D:
     useTriggers: 1
     useLayerMask: 1
@@ -4976,4 +4975,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  _nextFire: 0
+  _damageRate: 1
+  _enableDestroyTimer: 1
+  _timeUntilDestroy: 3
+  _nextDamage: 0
+  _destroyTimer: 0
