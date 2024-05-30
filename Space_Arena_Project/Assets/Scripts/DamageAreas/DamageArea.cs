@@ -20,12 +20,13 @@ public class DamageArea : MonoBehaviour
         if (_nextFire > _fireRate)
         {
             _nextFire = 0f;
+            CauseDamage();
         }
 
         // destroy by time.
     }
 
-    private void Cast()
+    private void CauseDamage()
     {
         var _hits = _collider2D.Cast(Vector2.one, _contactFilter2D, _results, 0f, true);
 
