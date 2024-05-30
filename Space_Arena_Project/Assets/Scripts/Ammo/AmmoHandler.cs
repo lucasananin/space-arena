@@ -1,9 +1,11 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AmmoHandler : MonoBehaviour
 {
+    [SerializeField] bool _infiniteAmmo = false;
     [SerializeField] AmmoModel[] _ammoTypes = null;
 
     private void Start()
@@ -11,6 +13,7 @@ public class AmmoHandler : MonoBehaviour
         RestoreAmmo();
     }
 
+    [Button]
     public void RestoreAmmo()
     {
         int _count = _ammoTypes.Length;
@@ -23,6 +26,8 @@ public class AmmoHandler : MonoBehaviour
 
     public void DecreaseAmmo(WeaponSO _weaponSO)
     {
+        if (_infiniteAmmo) return;
+
         var _model = GetModel(_weaponSO.GetAmmoSO());
         _model?.DecreaseQuantity(_weaponSO.ProjectilesPerShot);
     }
