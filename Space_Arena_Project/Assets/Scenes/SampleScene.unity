@@ -23673,7 +23673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb808b67afd45264aa38f541f3bc38d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponSO: {fileID: 11400000, guid: f14c27747a8f8bb48aaeb135e617819c, type: 2}
+  _weaponSO: {fileID: 11400000, guid: bb780b23a3ed9d04cbd2ebfd37864e35, type: 2}
   _muzzle: {fileID: 4426829450367082731}
   _entitySource: {fileID: 0}
   _ammoHandler: {fileID: 0}
