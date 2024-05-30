@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: Weapon_LandMine
   m_EditorClassIdentifier: 
-  _id: land_mine_1
-  _iconSprite: {fileID: 1942869272, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _id: molotov_1
+  _iconSprite: {fileID: -770179075, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
   _weaponPrefab: {fileID: 5704818092466949252, guid: c61856f6800231948bf9daedc54fadde, type: 3}
-  _displayName: Land Mine
+  _displayName: Molotov
   _holsterPosition: {x: -0.25, y: -0.15, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 5f82dc8eb26edec4d88bb534546e8d82, type: 2}
@@ -26,7 +26,7 @@ MonoBehaviour:
   _heatPerShot: 0
   _heatDecreasePerSecond: 0
   _maxOverheatTime: 0
-  _maxShootAngle: 0
+  _maxShootAngle: 5
   _projectilesPerShot: 1
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0
