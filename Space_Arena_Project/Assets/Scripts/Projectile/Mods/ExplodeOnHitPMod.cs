@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplodeOnHitMod : MonoBehaviour
+public class ExplodeOnHitPMod : MonoBehaviour
 {
     [SerializeField] ProjectileBehaviour _projectileBehaviour = null;
     [SerializeField] SimpleExplosionVfx _vfxPrefab = null;
+
+    private void OnValidate()
+    {
+        _projectileBehaviour = GetComponent<ProjectileBehaviour>();
+    }
 
     private void OnEnable()
     {

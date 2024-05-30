@@ -45,7 +45,7 @@ public class PhysicalProjectile : ProjectileBehaviour
 
             if (HasReachedMaxPierceCount() && _projectileSO.DestroyOnCollision)
             {
-                Destroy(gameObject);
+                DestroyByCollision();
                 break;
             }
         }

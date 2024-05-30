@@ -17,6 +17,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     private Collider2D[] _explosionResults = new Collider2D[9];
 
     public event System.Action<RaycastHit2D> onRaycastHit = null;
+    public event System.Action OnDestroyTimerEnd = null;
 
     public virtual void Init(ShootModel _newShootModel)
     {
@@ -35,7 +36,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
         if (_destroyTimer >= _timeUntilDestroy)
         {
-            Destroy(gameObject);
+            DestroyByTime();
         }
     }
 
@@ -86,6 +87,17 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     protected IEnumerator DestroyRoutine()
     {
         yield return new WaitForSeconds(_timeUntilDestroy);
+        DestroyByTime();
+    }
+
+    public void DestroyByTime()
+    {
+        OnDestroyTimerEnd?.Invoke();
+        Destroy(gameObject);
+    }
+
+    public void DestroyByCollision()
+    {
         Destroy(gameObject);
     }
 
