@@ -21,9 +21,10 @@ public class ProjectileSO : ScriptableObject
     [SerializeField] bool _destroyOnCollision = true;
     [Space]
     [SerializeField] bool _useAccelerationCurve = false;
-    [SerializeField] bool _invertAcceleration = false;
     [SerializeField] AnimationCurve _accelerationCurve = null;
+    [SerializeField] bool _invertAcceleration = false;
     [SerializeField, Range(0f, 10f)] float _acelerationMultiplier = 1f;
+    [SerializeField] bool _destroyOnStop = false;
 
     [Title("// Cast")]
     [SerializeField, Range(0f, 99f)] float _maxCastDistance = 0f;
@@ -45,6 +46,7 @@ public class ProjectileSO : ScriptableObject
     public bool InvertAcceleration { get => _invertAcceleration; set => _invertAcceleration = value; }
     public AnimationCurve AccelerationCurve { get => _accelerationCurve; set => _accelerationCurve = value; }
     public float AcelerationMultiplier { get => _acelerationMultiplier; set => _acelerationMultiplier = value; }
+    public bool DestroyOnStop { get => _destroyOnStop; private set => _destroyOnStop = value; }
 
     public float MaxCastDistance { get => _maxCastDistance; private set => _maxCastDistance = value; }
 

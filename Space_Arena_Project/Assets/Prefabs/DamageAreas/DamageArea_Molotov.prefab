@@ -4975,8 +4975,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  _damageRate: 1
+  _damageRate: 0.4
   _enableDestroyTimer: 1
-  _timeUntilDestroy: 3
+  _timeUntilDestroy: 4
   _nextDamage: 0
   _destroyTimer: 0

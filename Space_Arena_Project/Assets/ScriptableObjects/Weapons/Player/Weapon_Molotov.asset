@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: molotov_1
   _iconSprite: {fileID: -770179075, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
-  _weaponPrefab: {fileID: 5704818092466949252, guid: c61856f6800231948bf9daedc54fadde, type: 3}
+  _weaponPrefab: {fileID: 6280535233146275178, guid: 397b0c0af1c262e4aae381fbb206e82f, type: 3}
   _displayName: Molotov
   _holsterPosition: {x: -0.25, y: -0.15, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
@@ -26,7 +26,7 @@ MonoBehaviour:
   _heatPerShot: 0
   _heatDecreasePerSecond: 0
   _maxOverheatTime: 0
-  _maxShootAngle: 5
+  _maxShootAngle: 10
   _projectilesPerShot: 1
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0

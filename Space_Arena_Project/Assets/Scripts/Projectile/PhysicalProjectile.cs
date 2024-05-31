@@ -45,7 +45,7 @@ public class PhysicalProjectile : ProjectileBehaviour
 
             if (HasReachedMaxPierceCount() && _projectileSO.DestroyOnCollision)
             {
-                DestroyByCollision();
+                DestroyThis();
                 break;
             }
         }
@@ -79,6 +79,11 @@ public class PhysicalProjectile : ProjectileBehaviour
                 Vector2.Lerp(_defaultVelocity, Vector2.zero, _curveValue);
 
             _rb.velocity = _newVelocity;
+        }
+
+        if (_rb.velocity == Vector2.zero && _projectileSO.DestroyOnStop)
+        {
+            DestroyThis();
         }
     }
 }
