@@ -22064,7 +22064,8 @@ MonoBehaviour:
   _ammoHandler: {fileID: 1823301791}
   _maxWeaponsCount: 2
   _swapInputDelay: 0.3
-  _weaponsList: []
+  _weaponsList:
+  - {fileID: 4426829449850799216}
   _currentWeapon: {fileID: 0}
   _lastWeapon: {fileID: 0}
   _weaponRotator: {fileID: 0}
@@ -23728,7 +23729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canRotate: 0
+  _canRotate: 1
 --- !u!1 &4426829449850799231
 GameObject:
   m_ObjectHideFlags: 0

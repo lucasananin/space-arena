@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83bc7b64efbc1f4e9b1e00bbec38444, type: 3}
   m_Name: Projectile_Molotov
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7353528016857128665, guid: 8f2e79a0cc57a2b46a0bdef7dd38a5cb, type: 3}
+  _prefab: {fileID: 7353528016857128665, guid: 8e21c25ffd680d145b07c04ca0468243, type: 3}
   _tagCollectionSO: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}
   _ammoSO: {fileID: 11400000, guid: c741b913cc5b4bf49b26e7f6a7103b33, type: 2}
   _layerMask:
@@ -24,13 +24,31 @@ MonoBehaviour:
   _explosionRadius: 0
   _moveSpeed: 10
   _destroyOnCollision: 1
-  _useAccelerationCurve: 0
+  _useAccelerationCurve: 1
   _invertAcceleration: 0
   _accelerationCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _acelerationMultiplier: 0
+  _acelerationMultiplier: 1
   _maxCastDistance: 0
