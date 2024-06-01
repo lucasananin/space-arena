@@ -44,11 +44,11 @@ public class GeneralMethods : MonoBehaviour
         return Random.insideUnitCircle.normalized * Random.Range(_min, _max);
     }
 
-    public static List<T> OrderListByDistance<T>(List<T> _list, Vector3 _point) where T : Component
+    public static List<T> OrderListByDistance<T>(List<T> _list, Vector3 _origin) where T : Component
     {
         _list.Sort(delegate (T _a, T _b)
         {
-            return (_a.transform.position - _point).sqrMagnitude.CompareTo((_b.transform.position - _point).sqrMagnitude);
+            return (_a.transform.position - _origin).sqrMagnitude.CompareTo((_b.transform.position - _origin).sqrMagnitude);
         });
 
         return _list;
@@ -59,5 +59,13 @@ public class GeneralMethods : MonoBehaviour
         Vector3 _targetDir = (_targetPosition - _sourceTransform.position).normalized;
         float _angle = Vector3.Angle(_targetDir, _sourceTransform.right);
         return (int)_angle;
+    }
+
+    public static Quaternion GetLookRotation(Vector3 _origin, Vector3 _target)
+    {
+        var _direction = (_target - _origin).normalized;
+        float _angle2 = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+        Quaternion _rotation = Quaternion.AngleAxis(_angle2, Vector3.forward);
+        return _rotation;
     }
 }

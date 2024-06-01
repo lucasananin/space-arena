@@ -12,20 +12,23 @@ public class WeaponRotator : MonoBehaviour
     {
         if (!CanRotate()) return;
 
-        Vector3 _mousePosition = InputHandler.GetMousePosition();
-        Vector3 _direction = _mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-        float _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
-        Quaternion _rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
+        //Vector3 _mousePosition = InputHandler.GetMousePosition();
+        //Vector3 _direction = _mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+        //float _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+        //Quaternion _rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
+        var _target = Camera.main.ScreenToWorldPoint(InputHandler.GetMousePosition());
+        var _rotation = GeneralMethods.GetLookRotation(transform.position, _target);
         SetRotation(_rotation);
     }
 
-    public void LookAtPosition(Vector3 _targetPosition)
+    public void LookAtPosition(Vector3 _position)
     {
         if (!CanRotate()) return;
 
-        Vector3 _direction = _targetPosition - transform.position;
-        float _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
-        Quaternion _rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
+        //Vector3 _direction = _targetPosition - transform.position;
+        //float _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+        //Quaternion _rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
+        var _rotation = GeneralMethods.GetLookRotation(transform.position, _position);
         SetRotation(_rotation);
     }
 

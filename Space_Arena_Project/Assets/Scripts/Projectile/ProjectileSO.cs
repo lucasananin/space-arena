@@ -58,10 +58,4 @@ public class ProjectileSO : ScriptableObject
     public bool DestroyOnStop { get => _destroyOnStop; private set => _destroyOnStop = value; }
 
     public float MaxCastDistance { get => _maxCastDistance; private set => _maxCastDistance = value; }
-
-    //[Button]
-    //private void UpdatePrefab()
-    //{
-    //    _prefab.SetProjectileSO(this);
-    //}
 }

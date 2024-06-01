@@ -2,7 +2,6 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using System.Linq;
 
 public abstract class ProjectileBehaviour : MonoBehaviour
 {
@@ -16,66 +15,17 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     [SerializeField, ReadOnly] protected int _currentPierceCount = 0;
 
     private Collider2D[] _explosionResults = new Collider2D[9];
+    private List<EntityBehaviour> _entitiesFound = new List<EntityBehaviour>();
 
     public event System.Action<RaycastHit2D> onRaycastHit = null;
     public event System.Action OnDestroy = null;
     public event System.Action OnDestroyTimerEnd = null;
-
-    //[SerializeField] bool _canAutoRotate = false;
-    //[SerializeField] LayerMask _entityLayerMask = default;
-    //[SerializeField] float _maxAngle = 0f;
-    private List<EntityBehaviour> _entitiesFound = new List<EntityBehaviour>();
 
     public virtual void Init(ShootModel _newShootModel)
     {
         _shootModel = _newShootModel;
         SetDestroyTimer();
         TryAutoRotate();
-    }
-
-    private void TryAutoRotate()
-    {
-        if (!_projectileSO.CanAutoRotate) return;
-
-        var _hits = Physics2D.OverlapCircleNonAlloc(transform.position, 5, _explosionResults, _projectileSO.EntityLayerMask);
-
-        // faz uma lista ordenada pelo mais proximo.
-        _entitiesFound.Clear();
-
-        for (int i = 0; i < _hits; i++)
-        {
-            var _colliderHit = _explosionResults[i];
-
-            if (HasHitSource(_colliderHit.gameObject)) continue;
-
-            if (_colliderHit.TryGetComponent(out EntityBehaviour _entity))
-            {
-
-                _entitiesFound.Add(_entity);
-            }
-        }
-
-        _entitiesFound = GeneralMethods.OrderListByDistance(_entitiesFound, transform.position);
-
-        // ve qual dos mais proximos esta dentro de um angulo x.
-        int _count = _entitiesFound.Count;
-
-        for (int i = 0; i < _count; i++)
-        {
-            var _entity = _entitiesFound[i];
-            var _angle = GeneralMethods.CalculateAngle(_entity.transform.position, transform);
-
-            if (_angle < _projectileSO.MaxAngle / 2f)
-            {
-                // rotaciona em direcao a esse inimigo.
-                //Debug.Log($"// {_entity.name}");
-                var _direction = (_entity.transform.position - transform.position).normalized;
-                float _angle2 = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
-                Quaternion _rotation = Quaternion.AngleAxis(_angle2, Vector3.forward);
-                transform.rotation = _rotation;
-                break;
-            }
-        }
     }
 
     protected void SendRaycastHitEvent(RaycastHit2D _value)
@@ -108,6 +58,43 @@ public abstract class ProjectileBehaviour : MonoBehaviour
             if (_explosionResults[i].TryGetComponent(out HealthBehaviour _healthBehaviour))
             {
                 _healthBehaviour.TakeDamage(1);
+            }
+        }
+    }
+
+    private void TryAutoRotate()
+    {
+        if (!_projectileSO.CanAutoRotate) return;
+
+        _entitiesFound.Clear();
+        var _myPosition = transform.position;
+        var _hits = Physics2D.OverlapCircleNonAlloc(_myPosition, 5, _explosionResults, _projectileSO.EntityLayerMask);
+
+        for (int i = 0; i < _hits; i++)
+        {
+            var _colliderHit = _explosionResults[i];
+
+            if (HasHitSource(_colliderHit.gameObject)) continue;
+
+            if (_colliderHit.TryGetComponent(out EntityBehaviour _entity))
+            {
+                _entitiesFound.Add(_entity);
+            }
+        }
+
+        _entitiesFound = GeneralMethods.OrderListByDistance(_entitiesFound, _myPosition);
+
+        int _count = _entitiesFound.Count;
+
+        for (int i = 0; i < _count; i++)
+        {
+            var _entityPosition = _entitiesFound[i].transform.position;
+            var _angle = GeneralMethods.CalculateAngle(_entityPosition, transform);
+
+            if (_angle < _projectileSO.MaxAngle / 2f)
+            {
+                transform.rotation = GeneralMethods.GetLookRotation(_myPosition, _entityPosition);
+                break;
             }
         }
     }
@@ -154,9 +141,4 @@ public abstract class ProjectileBehaviour : MonoBehaviour
         OnDestroy?.Invoke();
         Destroy(gameObject);
     }
-
-    //public void SetProjectileSO(ProjectileSO _value)
-    //{
-    //    _projectileSO = _value;
-    //}
 }
