@@ -43,4 +43,14 @@ public class GeneralMethods : MonoBehaviour
     {
         return Random.insideUnitCircle.normalized * Random.Range(_min, _max);
     }
+
+    public static List<T> OrderListByDistance<T>(List<T> _list, Vector3 _point) where T : Component
+    {
+        _list.Sort(delegate (T _a, T _b)
+        {
+            return (_a.transform.position - _point).sqrMagnitude.CompareTo((_b.transform.position - _point).sqrMagnitude);
+        });
+
+        return _list;
+    }
 }

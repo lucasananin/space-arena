@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using System.Linq;
 
 public abstract class ProjectileBehaviour : MonoBehaviour
 {
@@ -24,6 +25,35 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     {
         _shootModel = _newShootModel;
         SetDestroyTimer();
+
+        // da um overlap para pegar os inimigos ao redor.
+        var _hits = Physics2D.OverlapCircleNonAlloc(transform.position, 5, _explosionResults, LayerMask.NameToLayer("Entity"));
+
+        // faz uma lista ordenada pelo mais proximo.
+        var _list = new List<Transform>();
+        _list.Sort(delegate (Transform _a, Transform _b)
+        {
+            //return Vector2.Distance(transform.position, _a.transform.position).CompareTo(Vector2.Distance(transform.position, _b.transform.position));
+            return (_a.position - transform.position).sqrMagnitude.CompareTo((_b.position - transform.position).sqrMagnitude);
+        });
+
+        // ve qual dos mais proximos esta dentro de um angulo x.
+        // rotaciona em direcao a esse inimigo.
+    }
+
+    private void Fodase(List<Transform> _list)
+    {
+        //_list.Sort(delegate (Transform _a, Transform _b)
+        //{
+        //    return Vector2.Distance(transform.position, _a.transform.position).
+        //    CompareTo(Vector2.Distance(transform.position, _b.transform.position));
+        //});
+
+        _list.Sort(delegate (Transform _a, Transform _b)
+        {
+            //return Vector2.Distance(transform.position, _a.transform.position).CompareTo(Vector2.Distance(transform.position, _b.transform.position));
+            return (_a.position - transform.position).sqrMagnitude.CompareTo((_b.position - transform.position).sqrMagnitude);
+        });
     }
 
     protected void SendRaycastHitEvent(RaycastHit2D _value)

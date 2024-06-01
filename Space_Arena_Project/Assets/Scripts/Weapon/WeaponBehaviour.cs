@@ -83,10 +83,10 @@ public abstract class WeaponBehaviour : MonoBehaviour
     {
         for (int i = 0; i < _weaponSO.ProjectilesPerShot; i++)
         {
-            Vector3 _position = CalculateProjectilePosition(_projectileSO);
-            Quaternion _rotation = CalculateProjectileRotation(i);
-            ProjectileBehaviour _projectile = Instantiate(_projectileSO.Prefab, _position, _rotation);
-            ShootModel _shootModel = new ShootModel(_entitySource, this);
+            var _position = CalculateProjectilePosition(_projectileSO);
+            var _rotation = CalculateProjectileRotation(i);
+            var _projectile = Instantiate(_projectileSO.Prefab, _position, _rotation);
+            var _shootModel = new ShootModel(_entitySource, this);
             _projectile.Init(_shootModel);
         }
     }
