@@ -53,4 +53,11 @@ public class GeneralMethods : MonoBehaviour
 
         return _list;
     }
+
+    public static int CalculateAngle(Vector3 _targetPosition, Transform _sourceTransform)
+    {
+        Vector3 _targetDir = (_targetPosition - _sourceTransform.position).normalized;
+        float _angle = Vector3.Angle(_targetDir, _sourceTransform.right);
+        return (int)_angle;
+    }
 }

@@ -21,39 +21,61 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     public event System.Action OnDestroy = null;
     public event System.Action OnDestroyTimerEnd = null;
 
+    //[SerializeField] bool _canAutoRotate = false;
+    //[SerializeField] LayerMask _entityLayerMask = default;
+    //[SerializeField] float _maxAngle = 0f;
+    private List<EntityBehaviour> _entitiesFound = new List<EntityBehaviour>();
+
     public virtual void Init(ShootModel _newShootModel)
     {
         _shootModel = _newShootModel;
         SetDestroyTimer();
-
-        // da um overlap para pegar os inimigos ao redor.
-        var _hits = Physics2D.OverlapCircleNonAlloc(transform.position, 5, _explosionResults, LayerMask.NameToLayer("Entity"));
-
-        // faz uma lista ordenada pelo mais proximo.
-        var _list = new List<Transform>();
-        _list.Sort(delegate (Transform _a, Transform _b)
-        {
-            //return Vector2.Distance(transform.position, _a.transform.position).CompareTo(Vector2.Distance(transform.position, _b.transform.position));
-            return (_a.position - transform.position).sqrMagnitude.CompareTo((_b.position - transform.position).sqrMagnitude);
-        });
-
-        // ve qual dos mais proximos esta dentro de um angulo x.
-        // rotaciona em direcao a esse inimigo.
+        TryAutoRotate();
     }
 
-    private void Fodase(List<Transform> _list)
+    private void TryAutoRotate()
     {
-        //_list.Sort(delegate (Transform _a, Transform _b)
-        //{
-        //    return Vector2.Distance(transform.position, _a.transform.position).
-        //    CompareTo(Vector2.Distance(transform.position, _b.transform.position));
-        //});
+        if (!_projectileSO.CanAutoRotate) return;
 
-        _list.Sort(delegate (Transform _a, Transform _b)
+        var _hits = Physics2D.OverlapCircleNonAlloc(transform.position, 5, _explosionResults, _projectileSO.EntityLayerMask);
+
+        // faz uma lista ordenada pelo mais proximo.
+        _entitiesFound.Clear();
+
+        for (int i = 0; i < _hits; i++)
         {
-            //return Vector2.Distance(transform.position, _a.transform.position).CompareTo(Vector2.Distance(transform.position, _b.transform.position));
-            return (_a.position - transform.position).sqrMagnitude.CompareTo((_b.position - transform.position).sqrMagnitude);
-        });
+            var _colliderHit = _explosionResults[i];
+
+            if (HasHitSource(_colliderHit.gameObject)) continue;
+
+            if (_colliderHit.TryGetComponent(out EntityBehaviour _entity))
+            {
+
+                _entitiesFound.Add(_entity);
+            }
+        }
+
+        _entitiesFound = GeneralMethods.OrderListByDistance(_entitiesFound, transform.position);
+
+        // ve qual dos mais proximos esta dentro de um angulo x.
+        int _count = _entitiesFound.Count;
+
+        for (int i = 0; i < _count; i++)
+        {
+            var _entity = _entitiesFound[i];
+            var _angle = GeneralMethods.CalculateAngle(_entity.transform.position, transform);
+
+            if (_angle < _projectileSO.MaxAngle / 2f)
+            {
+                // rotaciona em direcao a esse inimigo.
+                //Debug.Log($"// {_entity.name}");
+                var _direction = (_entity.transform.position - transform.position).normalized;
+                float _angle2 = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+                Quaternion _rotation = Quaternion.AngleAxis(_angle2, Vector3.forward);
+                transform.rotation = _rotation;
+                break;
+            }
+        }
     }
 
     protected void SendRaycastHitEvent(RaycastHit2D _value)

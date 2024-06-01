@@ -16,6 +16,11 @@ public class ProjectileSO : ScriptableObject
     [SerializeField, Range(1, 99)] int _maxPierceCount = 1;
     [SerializeField, Range(0f, 99)] float _explosionRadius = 0f;
 
+    [Title("// Auto Aim")]
+    [SerializeField] bool _canAutoRotate = false;
+    [SerializeField] LayerMask _entityLayerMask = default;
+    [SerializeField] float _maxAngle = 0f;
+
     [Title("// Physical")]
     [SerializeField, Range(0f, 99f)] float _moveSpeed = 0f;
     [SerializeField] bool _destroyOnCollision = true;
@@ -32,6 +37,10 @@ public class ProjectileSO : ScriptableObject
     public ProjectileBehaviour Prefab { get => _prefab; private set => _prefab = value; }
     public string[] Tags { get => _tagCollectionSO.Tags; }
     public AmmoSO AmmoSO { get => _ammoSO; private set => _ammoSO = value; }
+
+    public bool CanAutoRotate { get => _canAutoRotate; private set => _canAutoRotate = value; }
+    public LayerMask EntityLayerMask { get => _entityLayerMask; private set => _entityLayerMask = value; }
+    public float MaxAngle { get => _maxAngle; private set => _maxAngle = value; }
 
     public LayerMask LayerMask { get => _layerMask; private set => _layerMask = value; }
     public Vector2 SpawnPositionOffset { get => _spawnPositionOffset; private set => _spawnPositionOffset = value; }

@@ -22,6 +22,11 @@ MonoBehaviour:
   _minMaxTimeUntilDestroy: {x: 3, y: 4}
   _maxPierceCount: 1
   _explosionRadius: 3
+  _canAutoRotate: 0
+  _entityLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _maxAngle: 180
   _moveSpeed: 20
   _destroyOnCollision: 1
   _useAccelerationCurve: 0
