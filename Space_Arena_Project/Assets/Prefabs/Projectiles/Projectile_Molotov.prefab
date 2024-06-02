@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 4705853102255858287}
   - component: {fileID: 7353528016857128665}
   - component: {fileID: 4770859879440592213}
+  - component: {fileID: 1106406964528950017}
   m_Layer: 0
   m_Name: Projectile_Molotov
   m_TagString: Untagged
@@ -198,3 +199,19 @@ MonoBehaviour:
   _damageAreaPrefab: {fileID: 832962447568062898, guid: c8dcb96bbdb18eb4498a41f2c6fb78e9, type: 3}
   _onHit: 1
   _onDestroy: 1
+  _hasSpawned: 0
+--- !u!114 &1106406964528950017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4563d5a4f75a847ac6a6ccf5c0ac1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 7353528016460216318}
+  _multiplier: 4
+  _slowDownMultiplier: 4
