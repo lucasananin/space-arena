@@ -213,5 +213,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 7353528016460216318}
-  _multiplier: 4
-  _slowDownMultiplier: 4
+  _multiplier: 12
+  _slowDownMultiplier: 12
