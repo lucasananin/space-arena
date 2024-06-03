@@ -20,9 +20,14 @@ public class DamageArea : MonoBehaviour
     [SerializeField, ReadOnly] float _destroyTimer = 0f;
 
     private RaycastHit2D[] _results = new RaycastHit2D[9];
+    private bool _canDamage = true;
+
+    public event System.Action OnDestroyStart = null;
 
     private void Update()
     {
+        if (!_canDamage) return;
+
         _nextDamage += Time.deltaTime;
 
         if (_nextDamage > _damageRate)
@@ -38,7 +43,7 @@ public class DamageArea : MonoBehaviour
         if (_destroyTimer > _timeUntilDestroy)
         {
             _destroyTimer = 0f;
-            Destroy(gameObject);
+            StartCoroutine(Destroy_routine());
         }
     }
 
@@ -55,6 +60,14 @@ public class DamageArea : MonoBehaviour
 
             _healthBehaviour?.TakeDamage(1);
         }
+    }
+
+    private IEnumerator Destroy_routine()
+    {
+        _canDamage = false;
+        OnDestroyStart?.Invoke();
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
     private bool HasAvailableTag(GameObject _gameObjectHit)

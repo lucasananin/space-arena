@@ -8,6 +8,11 @@ public class RotateFx : MonoBehaviour
     [SerializeField] float _multiplier = 1f;
     [SerializeField] float _slowDownMultiplier = 1f;
 
+    private void Start()
+    {
+        transform.rotation = Quaternion.identity;
+    }
+
     private void Update()
     {
         _multiplier -= Time.deltaTime * _slowDownMultiplier;
