@@ -34,6 +34,9 @@ public class ProjectileSO : ScriptableObject
     [Title("// Cast")]
     [SerializeField, Range(0f, 99f)] float _maxCastDistance = 0f;
 
+    [Title("// Guided ")]
+    [SerializeField, Range(0f, 9f)] float _maxPositionRadius = 0f;
+
     public ProjectileBehaviour Prefab { get => _prefab; private set => _prefab = value; }
     public string[] Tags { get => _tagCollectionSO.Tags; }
     public AmmoSO AmmoSO { get => _ammoSO; private set => _ammoSO = value; }
@@ -58,4 +61,6 @@ public class ProjectileSO : ScriptableObject
     public bool DestroyOnStop { get => _destroyOnStop; private set => _destroyOnStop = value; }
 
     public float MaxCastDistance { get => _maxCastDistance; private set => _maxCastDistance = value; }
+
+    public float MaxPositionRadius { get => _maxPositionRadius; private set => _maxPositionRadius = value; }
 }

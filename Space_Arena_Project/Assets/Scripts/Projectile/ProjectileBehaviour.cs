@@ -49,6 +49,11 @@ public abstract class ProjectileBehaviour : MonoBehaviour
         _destroyTimer = 0f;
     }
 
+    public void Explode()
+    {
+        Explode(transform.position);
+    }
+
     public void Explode(Vector3 _point)
     {
         int _hits = Physics2D.OverlapCircleNonAlloc(_point, _projectileSO.ExplosionRadius, _explosionResults, _projectileSO.LayerMask);
