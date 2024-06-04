@@ -213,5 +213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 7353528016460216318}
-  _multiplier: 6
-  _slowDownMultiplier: 6
+  _twistsPerSecond: 3
+  _slowDown: 1
+  _speed: 0

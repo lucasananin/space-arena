@@ -26,7 +26,7 @@ MonoBehaviour:
   _heatPerShot: 0
   _heatDecreasePerSecond: 0
   _maxOverheatTime: 0
-  _maxShootAngle: 10
+  _maxShootAngle: 5
   _projectilesPerShot: 1
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0

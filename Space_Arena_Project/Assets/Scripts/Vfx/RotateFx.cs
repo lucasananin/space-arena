@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,18 +6,28 @@ using UnityEngine;
 public class RotateFx : MonoBehaviour
 {
     [SerializeField] Transform _transform = null;
-    [SerializeField] float _multiplier = 1f;
-    [SerializeField] float _slowDownMultiplier = 1f;
+    [SerializeField] float _twistsPerSecond = 1f;
+    [SerializeField] bool _slowDown = false;
+    [SerializeField, ReadOnly] float _speed = 0f;
 
-    private void Start()
+    private void Awake()
     {
-        transform.rotation = Quaternion.identity;
+        _speed = GetDegreesPerSecond();
     }
 
     private void Update()
     {
-        _multiplier -= Time.deltaTime * _slowDownMultiplier;
-        var _euler = Vector3.forward * _multiplier;
+        var _euler = Vector3.forward * _speed * Time.deltaTime;
         _transform.Rotate(_euler);
+
+        if (_slowDown)
+        {
+            _speed -= GetDegreesPerSecond() * Time.deltaTime;
+        }
+    }
+
+    private float GetDegreesPerSecond()
+    {
+        return _twistsPerSecond * 360f;
     }
 }
