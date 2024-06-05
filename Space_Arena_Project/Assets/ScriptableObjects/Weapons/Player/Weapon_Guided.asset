@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
+  m_Name: Weapon_Guided
+  m_EditorClassIdentifier: 
+  _id: guided_1
+  _iconSprite: {fileID: -324715930, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _weaponPrefab: {fileID: 5645198961146414910, guid: 02848841a7026db49bac1ce73524fb1a, type: 3}
+  _displayName: Guided
+  _holsterPosition: {x: -0.25, y: -0.15, z: 0}
+  _holsterEuler: {x: 0, y: 0, z: -60}
+  _projectileSO: {fileID: 11400000, guid: 9db3c891a3009c44291b6bae7a42576f, type: 2}
+  _chargedProjectileSO: {fileID: 0}
+  _fireRate: 0.1
+  _maxChargeTime: 0
+  _maxHeat: 0
+  _heatPerShot: 0
+  _heatDecreasePerSecond: 0
+  _maxOverheatTime: 0
+  _maxShootAngle: 0
+  _projectilesPerShot: 1
+  _isAutoChargeType: 0
+  _hasChargeWeakShot: 0
+  _burstRate: 0
+  _maxBurstShootCount: 0
