@@ -6,6 +6,7 @@ public class TimedExplosionPMod : MonoBehaviour
 {
     [SerializeField] ProjectileBehaviour _projectileBehaviour = null;
     [SerializeField] SimpleExplosionVfx _vfxPrefab = null;
+    [SerializeField] GameObject _particleSystemPrefab = null;
 
     private void OnValidate()
     {
@@ -27,7 +28,15 @@ public class TimedExplosionPMod : MonoBehaviour
         var _myPosition = transform.position;
         _projectileBehaviour.Explode(_myPosition);
 
-        SimpleExplosionVfx _vfxInstance = Instantiate(_vfxPrefab, _myPosition, Quaternion.identity);
-        _vfxInstance.Init(_projectileBehaviour.GetExplosionRadius());
+        if (_vfxPrefab is not null)
+        {
+            var _vfxInstance = Instantiate(_vfxPrefab, _myPosition, Quaternion.identity);
+            _vfxInstance.Init(_projectileBehaviour.GetExplosionRadius());
+        }
+
+        if (_particleSystemPrefab is not null)
+        {
+            Instantiate(_particleSystemPrefab, _myPosition, Quaternion.identity);
+        }
     }
 }

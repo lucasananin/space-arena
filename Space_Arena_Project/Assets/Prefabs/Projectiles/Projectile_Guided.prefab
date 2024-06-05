@@ -108,7 +108,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.2}
+  m_Color: {r: 0.99607843, g: 0.8666667, b: 0.2, a: 0.2}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -222,8 +222,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0.5019608}
+      key0: {r: 0.99607843, g: 0.8666667, b: 0.2, a: 1}
+      key1: {r: 1, g: 0.19999999, b: 0.19999999, a: 0.5019608}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -412,7 +412,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileBehaviour: {fileID: 8552097569084531652}
-  _vfxPrefab: {fileID: 6219246531898581204, guid: 35c5b57ba918f0546ac6035dbf2c3e79, type: 3}
+  _vfxPrefab: {fileID: 0}
+  _particleSystemPrefab: {fileID: 5748780785701455089, guid: c5c99d2dd93660644ab7c38aa57b4de7, type: 3}
 --- !u!114 &8958992088671540006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,7 +521,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.99607843, g: 0.8666667, b: 0.2, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
