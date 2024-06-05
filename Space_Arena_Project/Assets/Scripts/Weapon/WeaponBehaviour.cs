@@ -27,6 +27,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
     const float HEAT_OFFSET = 0.9f;
 
     public WeaponSO WeaponSO { get => _weaponSO; private set => _weaponSO = value; }
+    public Transform Muzzle { get => _muzzle; private set => _muzzle = value; }
 
     protected virtual void Awake()
     {

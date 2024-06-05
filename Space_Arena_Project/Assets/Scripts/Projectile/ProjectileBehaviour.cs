@@ -17,15 +17,23 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     private Collider2D[] _explosionResults = new Collider2D[9];
     private List<EntityBehaviour> _entitiesFound = new List<EntityBehaviour>();
 
+    public event System.Action<ShootModel> OnInit = null;
     public event System.Action<RaycastHit2D> onRaycastHit = null;
     public event System.Action OnDestroy = null;
     public event System.Action OnDestroyTimerEnd = null;
+
+    public float TimeUntilDestroy { get => _timeUntilDestroy; }
 
     public virtual void Init(ShootModel _newShootModel)
     {
         _shootModel = _newShootModel;
         SetDestroyTimer();
         TryAutoRotate();
+    }
+
+    protected void SendInitEvent()
+    {
+        OnInit?.Invoke(_shootModel);
     }
 
     protected void SendRaycastHitEvent(RaycastHit2D _value)

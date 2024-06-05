@@ -23,5 +23,7 @@ public class GuidedProjectile : ProjectileBehaviour
         transform.position = _finalPosition;
 
         _visualTransform.localScale = Vector3.one * _projectileSO.ExplosionRadius * 2f;
+
+        SendInitEvent();
     }
 }
