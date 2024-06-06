@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +9,6 @@ public class DamageAreaPMod : MonoBehaviour
     [SerializeField] bool _onHit = true;
     [SerializeField] bool _onStop = true;
     [SerializeField] bool _onTimerEnd = true;
-    //[SerializeField, ReadOnly] bool _hasSpawned = false;
 
     private void OnEnable()
     {
@@ -28,11 +26,8 @@ public class DamageAreaPMod : MonoBehaviour
 
     private void SpawnAreaByHit(RaycastHit2D _hit)
     {
-        //if (_hasSpawned) return;
-        if (!_onHit) return;
-
-        //_hasSpawned = true;
-        Instantiate(_damageAreaPrefab, _hit.point, Quaternion.identity);
+        if (_onHit)
+            Instantiate(_damageAreaPrefab, _hit.point, Quaternion.identity);
     }
 
     private void SpawnAreaByStop()
@@ -43,9 +38,7 @@ public class DamageAreaPMod : MonoBehaviour
 
     private void SpawnAreaByTimer()
     {
-        //if (_hasSpawned) return;
-        if (!_onTimerEnd) return;
-        //_hasSpawned = true;
-        Instantiate(_damageAreaPrefab, transform.position, Quaternion.identity);
+        if (_onTimerEnd)
+            Instantiate(_damageAreaPrefab, transform.position, Quaternion.identity);
     }
 }

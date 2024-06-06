@@ -19,7 +19,6 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     public event System.Action<ShootModel> OnInit = null;
     public event System.Action<RaycastHit2D> onRaycastHit = null;
-    //public event System.Action OnDestroy = null;
     public event System.Action OnDestroy_TimerEnd = null;
     public event System.Action OnDestroy_Stop = null;
 
@@ -158,7 +157,6 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     public void DestroyThis()
     {
-        //OnDestroy?.Invoke();
         Destroy(gameObject);
     }
 }
