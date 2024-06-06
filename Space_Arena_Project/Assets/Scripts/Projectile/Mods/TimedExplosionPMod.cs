@@ -28,13 +28,13 @@ public class TimedExplosionPMod : MonoBehaviour
         var _myPosition = transform.position;
         _projectileBehaviour.Explode(_myPosition);
 
-        if (_vfxPrefab is not null)
+        if (_vfxPrefab != null)
         {
             var _vfxInstance = Instantiate(_vfxPrefab, _myPosition, Quaternion.identity);
             _vfxInstance.Init(_projectileBehaviour.GetExplosionRadius());
         }
 
-        if (_particleSystemPrefab is not null)
+        if (_particleSystemPrefab != null)
         {
             Instantiate(_particleSystemPrefab, _myPosition, Quaternion.identity);
         }
