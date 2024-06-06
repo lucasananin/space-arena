@@ -21,6 +21,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     public event System.Action<RaycastHit2D> onRaycastHit = null;
     public event System.Action OnDestroy_TimerEnd = null;
     public event System.Action OnDestroy_Stop = null;
+    public event System.Action OnExplode = null;
 
     public float TimeUntilDestroy { get => _timeUntilDestroy; }
 
@@ -73,6 +74,8 @@ public abstract class ProjectileBehaviour : MonoBehaviour
                 _healthBehaviour.TakeDamage(1);
             }
         }
+
+        OnExplode?.Invoke();
     }
 
     private void TryAutoRotate()

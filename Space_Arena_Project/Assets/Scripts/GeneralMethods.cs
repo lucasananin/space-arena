@@ -68,4 +68,9 @@ public class GeneralMethods : MonoBehaviour
         Quaternion _rotation = Quaternion.AngleAxis(_angle2, Vector3.forward);
         return _rotation;
     }
+
+    public static Vector2 GetRandomDirection()
+    {
+        return Random.insideUnitCircle.normalized;
+    }
 }

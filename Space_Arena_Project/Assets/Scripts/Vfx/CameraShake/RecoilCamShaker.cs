@@ -1,10 +1,12 @@
+using Cinemachine;
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RecoilCamShaker : CameraShaker
 {
-    [SerializeField] WeaponBehaviour _weapon = null;
+    [SerializeField, ReadOnly] WeaponBehaviour _weapon = null;
     [SerializeField] float _velocityMultiplier = 1f;
 
     protected override void OnValidate()
@@ -27,7 +29,7 @@ public class RecoilCamShaker : CameraShaker
 
     public override void Shake()
     {
-        SetShape(Cinemachine.CinemachineImpulseDefinition.ImpulseShapes.Recoil);
+        SetShape(CinemachineImpulseDefinition.ImpulseShapes.Recoil);
         var _velocity = -_weapon.transform.right * _velocityMultiplier;
         _impulseSource.GenerateImpulse(_velocity);
     }
