@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 7901992659864453290}
   - component: {fileID: 8958992088671540006}
   - component: {fileID: 5118938156265620501}
+  - component: {fileID: 8206048365224631931}
   m_Layer: 0
   m_Name: Projectile_Guided
   m_TagString: Untagged
@@ -447,6 +448,23 @@ MonoBehaviour:
   _ease: 1
   _jumpPower: 20
   _numJumps: 1
+--- !u!114 &8206048365224631931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a07fae0513b5641ab80297ec1d129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectileBehaviour: {fileID: 8552097569084531652}
+  _damageAreaPrefab: {fileID: 832962447568062898, guid: c8dcb96bbdb18eb4498a41f2c6fb78e9, type: 3}
+  _onHit: 0
+  _onDestroy: 1
+  _hasSpawned: 0
 --- !u!1 &7631533548148489050
 GameObject:
   m_ObjectHideFlags: 0
