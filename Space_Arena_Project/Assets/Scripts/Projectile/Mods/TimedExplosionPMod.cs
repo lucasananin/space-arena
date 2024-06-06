@@ -15,12 +15,12 @@ public class TimedExplosionPMod : MonoBehaviour
 
     private void OnEnable()
     {
-        _projectileBehaviour.OnDestroyTimerEnd += Explode;
+        _projectileBehaviour.OnDestroy_TimerEnd += Explode;
     }
 
     private void OnDisable()
     {
-        _projectileBehaviour.OnDestroyTimerEnd -= Explode;
+        _projectileBehaviour.OnDestroy_TimerEnd -= Explode;
     }
 
     private void Explode()

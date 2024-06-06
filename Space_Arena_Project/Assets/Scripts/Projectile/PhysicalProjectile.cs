@@ -83,7 +83,7 @@ public class PhysicalProjectile : ProjectileBehaviour
 
         if (_rb.velocity == Vector2.zero && _projectileSO.DestroyOnStop)
         {
-            DestroyThis();
+            DestroyByStop();
         }
     }
 }

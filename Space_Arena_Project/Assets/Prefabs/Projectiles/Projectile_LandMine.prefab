@@ -96,8 +96,7 @@ GameObject:
   - component: {fileID: 7523388042507287481}
   - component: {fileID: 4705853102255858287}
   - component: {fileID: 7353528016857128665}
-  - component: {fileID: 5871580310101322097}
-  - component: {fileID: 7901992659864453290}
+  - component: {fileID: -85022992713538875}
   m_Layer: 0
   m_Name: Projectile_LandMine
   m_TagString: Untagged
@@ -183,7 +182,7 @@ MonoBehaviour:
   _lastPosition: {x: 0, y: 0, z: 0}
   _defaultVelocity: {x: 0, y: 0}
   _accelerationTime: 0
---- !u!114 &5871580310101322097
+--- !u!114 &-85022992713538875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,22 +191,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7353528016857128666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd5e44e92bb15d947afd7a0ec6c98d22, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a3d29717e8818347b1bdcd1ae0395ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileBehaviour: {fileID: 7353528016857128665}
-  _vfxPrefab: {fileID: 6219246531898581204, guid: 35c5b57ba918f0546ac6035dbf2c3e79, type: 3}
---- !u!114 &7901992659864453290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7353528016857128666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a8db40d9bd0204da9f5af8e72a92b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _projectileBehaviour: {fileID: 7353528016857128665}
-  _vfxPrefab: {fileID: 6219246531898581204, guid: 35c5b57ba918f0546ac6035dbf2c3e79, type: 3}
+  _simpleExplosionPrefab: {fileID: 6219246531898581204, guid: 35c5b57ba918f0546ac6035dbf2c3e79, type: 3}
+  _particleSystemPrefab: {fileID: 0}
+  _onHit: 1
+  _onStop: 0
+  _onTimerEnd: 1

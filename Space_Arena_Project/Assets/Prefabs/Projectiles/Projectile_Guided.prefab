@@ -352,10 +352,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7353528016857128664}
   - component: {fileID: 8552097569084531652}
-  - component: {fileID: 7901992659864453290}
+  - component: {fileID: -3240933506288511537}
   - component: {fileID: 8958992088671540006}
   - component: {fileID: 5118938156265620501}
-  - component: {fileID: 8206048365224631931}
   m_Layer: 0
   m_Name: Projectile_Guided
   m_TagString: Untagged
@@ -400,7 +399,7 @@ MonoBehaviour:
   _destroyTimer: 0
   _currentPierceCount: 0
   _visualTransform: {fileID: 7353528016460216318}
---- !u!114 &7901992659864453290
+--- !u!114 &-3240933506288511537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -409,12 +408,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7353528016857128666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a8db40d9bd0204da9f5af8e72a92b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a3d29717e8818347b1bdcd1ae0395ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileBehaviour: {fileID: 8552097569084531652}
-  _vfxPrefab: {fileID: 0}
+  _simpleExplosionPrefab: {fileID: 6219246531898581204, guid: 35c5b57ba918f0546ac6035dbf2c3e79, type: 3}
   _particleSystemPrefab: {fileID: 5748780785701455089, guid: c5c99d2dd93660644ab7c38aa57b4de7, type: 3}
+  _onHit: 0
+  _onStop: 0
+  _onTimerEnd: 1
 --- !u!114 &8958992088671540006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,23 +450,6 @@ MonoBehaviour:
   _ease: 1
   _jumpPower: 20
   _numJumps: 1
---- !u!114 &8206048365224631931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7353528016857128666}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69a07fae0513b5641ab80297ec1d129f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _projectileBehaviour: {fileID: 8552097569084531652}
-  _damageAreaPrefab: {fileID: 832962447568062898, guid: c8dcb96bbdb18eb4498a41f2c6fb78e9, type: 3}
-  _onHit: 0
-  _onDestroy: 1
-  _hasSpawned: 0
 --- !u!1 &7631533548148489050
 GameObject:
   m_ObjectHideFlags: 0
