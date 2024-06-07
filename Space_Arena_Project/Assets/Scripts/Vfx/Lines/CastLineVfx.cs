@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class LaserLineVfx : MonoBehaviour
+public abstract class CastLineVfx : MonoBehaviour
 {
     [SerializeField] protected LineRenderer[] _lineRenderers = null;
     [SerializeField] protected float _shrinkTimeMultiplier = 1f;
@@ -56,6 +56,4 @@ public abstract class LaserLineVfx : MonoBehaviour
         yield return new WaitForSeconds(_waitTime);
         Destroy(gameObject);
     }
-
-    //public abstract void Init(RaycastHit2D raycastHit2D);
 }

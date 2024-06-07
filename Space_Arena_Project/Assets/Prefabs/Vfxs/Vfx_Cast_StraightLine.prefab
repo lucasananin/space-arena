@@ -271,9 +271,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3300318201072077149}
-  - component: {fileID: 3240694090834036591}
+  - component: {fileID: 3300318201072077148}
   m_Layer: 0
-  m_Name: Vfx_BrokenLine
+  m_Name: Vfx_Cast_StraightLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,7 +296,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3240694090834036591
+--- !u!114 &3300318201072077148
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3300318201072077146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92e1e1019c495284fbcff3036016cd56, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f59bcf67f296394fbc9e10e0f1aef78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _lineRenderers:
@@ -314,4 +314,3 @@ MonoBehaviour:
   _shrinkTimeMultiplier: 3
   _defaultWidths: []
   _shrinkTimer: 0
-  _linePoints: 4
