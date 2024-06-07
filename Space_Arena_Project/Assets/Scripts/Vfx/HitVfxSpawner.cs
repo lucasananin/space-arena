@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CastHitVfxSpawner : MonoBehaviour
+public class HitVfxSpawner : MonoBehaviour
 {
     [SerializeField] ProjectileBehaviour _projectileBehaviour = null;
     [SerializeField] ParticleSystem _hitVfx = null;

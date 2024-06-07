@@ -8,14 +8,44 @@ public class EletricLineVfx : MonoBehaviour
     [SerializeField] LineRenderer[] _lines = null;
     [SerializeField] float _distance = 10f;
     [SerializeField] Vector2 _minMaxY = default;
-    // opcao para fazer com que as linhas tenham o y oposto.
+    [Space]
+    [SerializeField] Transform _target = null;
+    [SerializeField, Range(2, 9)] int _linePoints = 4;
+    // modo randomize: linhas em direcoes diferentes.
+    // modo tudo junto
 
     [Button]
-    public void Fodase()
+    public void UpdateLines()
     {
-        RandomizeLine(_lines[0]);
-        //RandomizeLine(_lines[1]);
-        CopyFirstLine();
+        //RandomizeLine(_lines[0]);
+        ////RandomizeLine(_lines[1]);
+        //CopyFirstLine();
+        UpdateLine(_lines[0]);
+        UpdateLine(_lines[1]);
+    }
+
+    private void UpdateLine(LineRenderer _line)
+    {
+        _line.positionCount = _linePoints;
+
+        for (int i = 0; i < _linePoints; i++)
+        {
+            float _t = i / ((_linePoints - 1) * 1f);
+            var _position = Vector3.Lerp(transform.position, _target.position, _t);
+
+            bool _isEven = i % 2 == 0;
+            float _yDirection = _isEven ? 1 : -1;
+            //_position.y += Random.Range(_minMaxY.x, _minMaxY.y) * _yDirection;
+
+            // pega a direcao 
+            var _cross = Vector3.Cross(_target.forward, _target.right);
+            _position += _cross * _yDirection;
+
+            _line.SetPosition(i, _position);
+        }
+
+        _line.SetPosition(0, transform.position);
+        _line.SetPosition(_line.positionCount - 1, _target.position);
     }
 
     private void RandomizeLine(LineRenderer _line)
