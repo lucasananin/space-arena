@@ -314,5 +314,6 @@ MonoBehaviour:
   _shrinkTimeMultiplier: 3
   _defaultWidths: []
   _shrinkTimer: 0
-  _linePoints: 6
-  _minMaxY: {x: 0.5, y: 1}
+  _linePoints: 4
+  _minMaxY: {x: 0.6, y: 1.2}
+  _mode: 0

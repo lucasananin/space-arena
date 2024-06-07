@@ -20,7 +20,6 @@ MonoBehaviour:
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}
   _chargedProjectileSO: {fileID: 0}
-  _ammoSO: {fileID: 11400000, guid: c741b913cc5b4bf49b26e7f6a7103b33, type: 2}
   _fireRate: 0.1
   _maxChargeTime: 0
   _maxHeat: 0

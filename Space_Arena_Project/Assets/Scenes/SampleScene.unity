@@ -419,7 +419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &163680056
 Transform:
   m_ObjectHideFlags: 0
@@ -1099,7 +1099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &348940563
 Transform:
   m_ObjectHideFlags: 0
@@ -1140,7 +1140,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348940562}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 312e86bf22ec7ad459a260a1a5a281b4, type: 3}
   m_Name: 
@@ -13181,6 +13181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25cb2d89e36a9748adbeda994c2ffc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canTakeDamage: 1
   _maxHealth: 100
   _currentHealth: 0
 --- !u!1 &743042029
@@ -13308,6 +13309,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6972132582502089751, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972132582502089756, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
+      propertyPath: _canTakeDamage
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6972132582502089762, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
@@ -15768,6 +15773,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6972132582502089756, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
+      propertyPath: _canTakeDamage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6972132582502089762, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
       propertyPath: m_Name
       value: Enemy_1a_1
@@ -16014,6 +16023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25cb2d89e36a9748adbeda994c2ffc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canTakeDamage: 1
   _maxHealth: 100
   _currentHealth: 0
 --- !u!114 &1369350279 stripped
@@ -22667,6 +22677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6dd40c596b8004984a3b34086dc615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canTakeDamage: 1
   _maxHealth: 100
   _currentHealth: 0
 --- !u!114 &1823301789
@@ -24051,6 +24062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25cb2d89e36a9748adbeda994c2ffc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canTakeDamage: 1
   _maxHealth: 100
   _currentHealth: 0
 --- !u!1 &2110332894
@@ -24656,6 +24668,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6972132582502089751, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972132582502089756, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
+      propertyPath: _canTakeDamage
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6972132582502089762, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}

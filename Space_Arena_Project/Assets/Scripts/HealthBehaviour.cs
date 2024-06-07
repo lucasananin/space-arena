@@ -6,6 +6,7 @@ using UnityEngine;
 
 public abstract class HealthBehaviour : MonoBehaviour
 {
+    [SerializeField] bool _canTakeDamage = true;
     [SerializeField] int _maxHealth = 100;
     [SerializeField, ReadOnly] int _currentHealth = 0;
 
@@ -33,6 +34,11 @@ public abstract class HealthBehaviour : MonoBehaviour
         {
             onDamageTaken?.Invoke();
             OnDamageTaken();
+        }
+
+        if (!_canTakeDamage)
+        {
+            RestoreHealth();
         }
     }
 
