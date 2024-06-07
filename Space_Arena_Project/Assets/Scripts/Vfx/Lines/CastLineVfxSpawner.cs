@@ -5,7 +5,7 @@ using UnityEngine;
 public class CastLineVfxSpawner : MonoBehaviour
 {
     [SerializeField] CastProjectile _castProjectile = null;
-    [SerializeField] CastLineVfx _lineVfx = null;
+    [SerializeField] StraightLineVfx _lineVfx = null;
 
     private void OnEnable()
     {
@@ -20,7 +20,7 @@ public class CastLineVfxSpawner : MonoBehaviour
     private void SpawnVfx(List<RaycastHit2D> _pointsHit)
     {
         Vector3 _myPosition = transform.position;
-        CastLineVfx _instance = Instantiate(_lineVfx, _myPosition, transform.rotation);
+        StraightLineVfx _instance = Instantiate(_lineVfx, _myPosition, transform.rotation);
 
         if (_pointsHit.Count > 0)
         {

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EletricLineVfx : MonoBehaviour
+public class EletricLineVfxTest : MonoBehaviour
 {
     [SerializeField] LineRenderer[] _lines = null;
     [SerializeField] float _distance = 10f;

@@ -308,10 +308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f59bcf67f296394fbc9e10e0f1aef78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _line: {fileID: 1405813580822527852}
   _lineRenderers:
   - {fileID: 1405813580822527852}
   - {fileID: 5709473005207900681}
-  _timeMultiplier: 3
+  _shrinkTimeMultiplier: 3
   _defaultWidths: []
-  _currentTime: 0
+  _shrinkTimer: 0
