@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2945808015590850479}
   - component: {fileID: 3761620198474376623}
   - component: {fileID: 7643541444447828504}
+  - component: {fileID: -2459257584825614321}
   - component: {fileID: -1557325256273126192}
   m_Layer: 0
   m_Name: Projectile_Cast
@@ -65,13 +66,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}
   _shootModel:
-    _characterSource: {fileID: 0}
+    _entitySource: {fileID: 0}
     _weaponSource: {fileID: 0}
   _timeUntilDestroy: 0
   _destroyTimer: 0
   _currentPierceCount: 0
   _dummyCircleCollider: {fileID: 2945808015590850479}
-  _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
 --- !u!114 &7643541444447828504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +86,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _castProjectile: {fileID: 3761620198474376623}
   _lineVfx: {fileID: 3300318201072077148, guid: aeef418fa81f492439000cf07b3ba191, type: 3}
+--- !u!114 &-2459257584825614321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22fb740ae42cb164393d21e08f4a7ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _castProjectile: {fileID: 3761620198474376623}
+  _lineVfx: {fileID: 3240694090834036591, guid: 4497565b18c34f64982fce7536d56c19, type: 3}
 --- !u!114 &-1557325256273126192
 MonoBehaviour:
   m_ObjectHideFlags: 0

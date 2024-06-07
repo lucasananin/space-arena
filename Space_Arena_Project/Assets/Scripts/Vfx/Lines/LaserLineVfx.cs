@@ -56,4 +56,6 @@ public abstract class LaserLineVfx : MonoBehaviour
         yield return new WaitForSeconds(_waitTime);
         Destroy(gameObject);
     }
+
+    //public abstract void Init(RaycastHit2D raycastHit2D);
 }
