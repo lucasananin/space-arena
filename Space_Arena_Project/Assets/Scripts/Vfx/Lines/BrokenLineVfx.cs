@@ -6,9 +6,12 @@ using UnityEngine;
 public class BrokenLineVfx : CastLineVfx
 {
     [Title("// Broken")]
-    [SerializeField, Range(2, 9)] int _linePoints = 4;
-    [SerializeField] Vector2 _minMaxY = default;
     [SerializeField] BrokeLineMode _mode = default;
+    [SerializeField] Vector2 _minMaxYOffset = default;
+    [SerializeField] bool _randomizePointsCount = false;
+    //[SerializeField, Range(2, 9)] int _linePoints = 4;
+    [SerializeField] Vector2 _minMaxPointsCount = default;
+    [SerializeField, ReadOnly] int _totalPoints = 0;
 
     public void Init(Transform _target, Vector3 _hitPoint)
     {
@@ -47,21 +50,22 @@ public class BrokenLineVfx : CastLineVfx
 
     private void UpdateLine(LineRenderer _line, Transform _target, Vector3 _point, bool _startEven)
     {
-        // Line points de acordo com a distancia.
-        _line.positionCount = _linePoints;
+        var _initialPosition = transform.position;
+        _totalPoints = GetPositionCount(_initialPosition, _point);
+        _line.positionCount = _totalPoints;
         int _num = _startEven ? 0 : 1;
 
-        for (int i = 0; i < _linePoints; i++)
+        for (int i = 0; i < _totalPoints; i++)
         {
-            float _t = i / ((_linePoints - 1) * 1f);
-            var _position = Vector3.Lerp(transform.position, _point, _t);
+            float _t = i / ((_totalPoints - 1) * 1f);
+            var _position = Vector3.Lerp(_initialPosition, _point, _t);
 
             bool _isEven = _num % 2 == 0;
             _num++;
 
             float _yDirection = _isEven ? 1 : -1;
-            float _yMultiplier = Random.Range(_minMaxY.x, _minMaxY.y);
-            float _yOffset = _yDirection * _yMultiplier;
+            float _randomYOffset = Random.Range(_minMaxYOffset.x, _minMaxYOffset.y);
+            float _yOffset = _yDirection * _randomYOffset;
 
             var _cross = Vector3.Cross(_target.forward, _target.right);
             _position += _cross * _yOffset;
@@ -69,8 +73,24 @@ public class BrokenLineVfx : CastLineVfx
             _line.SetPosition(i, _position);
         }
 
-        _line.SetPosition(0, transform.position);
+        _line.SetPosition(0, _initialPosition);
         _line.SetPosition(_line.positionCount - 1, _point);
+    }
+
+    private int GetPositionCount(Vector3 _initialPosition, Vector3 _point)
+    {
+        if (_randomizePointsCount)
+        {
+            var _distance = Vector2.Distance(_initialPosition, _point);
+            var _randomPointCount = Mathf.RoundToInt(_distance) + Random.Range(-2, 3);
+            return Mathf.Clamp(_randomPointCount, 3, 99);
+        }
+        else
+        {
+            var _randomPointCount = Random.Range(_minMaxPointsCount.x, _minMaxPointsCount.y);
+            return Mathf.RoundToInt(_randomPointCount);
+            //_totalPoints = _linePoints;
+        }
     }
 }
 
