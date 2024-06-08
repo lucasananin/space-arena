@@ -22,7 +22,7 @@ MonoBehaviour:
   _minMaxTimeUntilDestroy: {x: 1, y: 2}
   _maxPierceCount: 1
   _explosionRadius: 2
-  _canAutoRotate: 1
+  _canAutoRotate: 0
   _entityLayerMask:
     serializedVersion: 2
     m_Bits: 64

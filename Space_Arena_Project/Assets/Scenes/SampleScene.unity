@@ -419,7 +419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &163680056
 Transform:
   m_ObjectHideFlags: 0
@@ -1099,7 +1099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &348940563
 Transform:
   m_ObjectHideFlags: 0
@@ -7497,7 +7497,7 @@ MonoBehaviour:
   _ammoPrefab: {fileID: 7651030474878422386, guid: 04f4d503b7191d74f96662f428487b62, type: 3}
   _healthPrefab: {fileID: 4558754204574171359, guid: 8b56851b8547fb44aad90d846e7f31bc, type: 3}
   _boxCollider2D: {fileID: 304280898}
-  _spawnOnStart: 0
+  _spawnOnStart: 1
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -21350,17 +21350,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1616616064 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3562192091433409978, guid: 2b97e7bca5fc4fd4bbfe4b95de0291af, type: 3}
-  m_PrefabInstance: {fileID: 3562192090779719719}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f15682ba2bb08d74ab1393fb60419baf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1622386044
 GameObject:
   m_ObjectHideFlags: 0
@@ -22638,8 +22627,7 @@ MonoBehaviour:
   _ammoHandler: {fileID: 1823301791}
   _maxWeaponsCount: 2
   _swapInputDelay: 0.3
-  _weaponsList:
-  - {fileID: 1616616064}
+  _weaponsList: []
   _currentWeapon: {fileID: 0}
   _lastWeapon: {fileID: 0}
   _weaponRotator: {fileID: 0}
@@ -23058,7 +23046,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9e28af7e4c01ac47bbadee4659c9692, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24426,7 +24414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3562192091433409983, guid: 2b97e7bca5fc4fd4bbfe4b95de0291af, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b97e7bca5fc4fd4bbfe4b95de0291af, type: 3}
