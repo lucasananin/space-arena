@@ -316,7 +316,5 @@ MonoBehaviour:
   _shrinkTimer: 0
   _mode: 2
   _minMaxYOffset: {x: 0.4, y: 0.8}
-  _randomizePointsCount: 0
-  _linePoints: 4
-  _minMaxPointsCount: {x: 3, y: 5}
-  _totalPoints: 0
+  _minMaxPositions: {x: 3, y: 5}
+  _positionCount: 0

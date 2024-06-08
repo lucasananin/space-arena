@@ -8,10 +8,9 @@ public class BrokenLineVfx : CastLineVfx
     [Title("// Broken")]
     [SerializeField] BrokeLineMode _mode = default;
     [SerializeField] Vector2 _minMaxYOffset = default;
-    [SerializeField] bool _randomizePointsCount = false;
-    //[SerializeField, Range(2, 9)] int _linePoints = 4;
-    [SerializeField] Vector2 _minMaxPointsCount = default;
-    [SerializeField, ReadOnly] int _totalPoints = 0;
+    //[SerializeField] bool _randomizePointsCount = false;
+    [SerializeField] Vector2 _minMaxPositions = default;
+    [SerializeField, ReadOnly] int _positionCount = 0;
 
     public void Init(Transform _target, Vector3 _hitPoint)
     {
@@ -51,13 +50,13 @@ public class BrokenLineVfx : CastLineVfx
     private void UpdateLine(LineRenderer _line, Transform _target, Vector3 _point, bool _startEven)
     {
         var _initialPosition = transform.position;
-        _totalPoints = GetPositionCount(_initialPosition, _point);
-        _line.positionCount = _totalPoints;
+        _positionCount = GetPositionCount(_initialPosition, _point);
+        _line.positionCount = _positionCount;
         int _num = _startEven ? 0 : 1;
 
-        for (int i = 0; i < _totalPoints; i++)
+        for (int i = 0; i < _positionCount; i++)
         {
-            float _t = i / ((_totalPoints - 1) * 1f);
+            float _t = i / ((_positionCount - 1) * 1f);
             var _position = Vector3.Lerp(_initialPosition, _point, _t);
 
             bool _isEven = _num % 2 == 0;
@@ -79,18 +78,20 @@ public class BrokenLineVfx : CastLineVfx
 
     private int GetPositionCount(Vector3 _initialPosition, Vector3 _point)
     {
-        if (_randomizePointsCount)
-        {
-            var _distance = Vector2.Distance(_initialPosition, _point);
-            var _randomPointCount = Mathf.RoundToInt(_distance) + Random.Range(-2, 3);
-            return Mathf.Clamp(_randomPointCount, 3, 99);
-        }
-        else
-        {
-            var _randomPointCount = Random.Range(_minMaxPointsCount.x, _minMaxPointsCount.y);
-            return Mathf.RoundToInt(_randomPointCount);
-            //_totalPoints = _linePoints;
-        }
+        var _randomPointCount = Random.Range(_minMaxPositions.x, _minMaxPositions.y);
+        return Mathf.RoundToInt(_randomPointCount);
+
+        //if (_randomizePointsCount)
+        //{
+        //    var _distance = Vector2.Distance(_initialPosition, _point);
+        //    var _randomPointCount = Mathf.RoundToInt(_distance) + Random.Range(-2, 3);
+        //    return Mathf.Clamp(_randomPointCount, 3, 99);
+        //}
+        //else
+        //{
+        //    var _randomPointCount = Random.Range(_minMaxPointsCount.x, _minMaxPointsCount.y);
+        //    return Mathf.RoundToInt(_randomPointCount);
+        //}
     }
 }
 
