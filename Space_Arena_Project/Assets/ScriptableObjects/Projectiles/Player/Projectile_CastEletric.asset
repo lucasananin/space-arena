@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83bc7b64efbc1f4e9b1e00bbec38444, type: 3}
+  m_Name: Projectile_CastEletric
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 3761620198474376623, guid: 94aac633bacadbe4681f57b19791d0ae, type: 3}
+  _tagCollectionSO: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}
+  _ammoSO: {fileID: 11400000, guid: c741b913cc5b4bf49b26e7f6a7103b33, type: 2}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  _spawnPositionOffset: {x: 0, y: 0}
+  _minMaxTimeUntilDestroy: {x: 1, y: 2}
+  _maxPierceCount: 1
+  _explosionRadius: 0
+  _canAutoRotate: 1
+  _entityLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _maxDistance_autoAim: 7
+  _maxAngle: 180
+  _moveSpeed: 0
+  _destroyOnCollision: 0
+  _useAccelerationCurve: 0
+  _accelerationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _invertAcceleration: 0
+  _acelerationMultiplier: 0
+  _destroyOnStop: 0
+  _maxCastDistance: 7
+  _maxGuidedPositionRadius: 0

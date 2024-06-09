@@ -80,11 +80,13 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     private void TryAutoRotate()
     {
-        if (!_projectileSO.CanAutoRotate) return;
+        var _so = _projectileSO;
+
+        if (!_so.CanAutoRotate) return;
 
         _entitiesFound.Clear();
         var _myPosition = transform.position;
-        var _hits = Physics2D.OverlapCircleNonAlloc(_myPosition, 5, _explosionResults, _projectileSO.EntityLayerMask);
+        var _hits = Physics2D.OverlapCircleNonAlloc(_myPosition, _so.MaxDistance_autoAim, _explosionResults, _so.EntityLayerMask);
 
         for (int i = 0; i < _hits; i++)
         {
@@ -107,7 +109,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
             var _entityPosition = _entitiesFound[i].transform.position;
             var _angle = GeneralMethods.CalculateAngle(_entityPosition, transform);
 
-            if (_angle < _projectileSO.MaxAngle / 2f)
+            if (_angle < _so.MaxAngle / 2f)
             {
                 transform.rotation = GeneralMethods.GetLookRotation(_myPosition, _entityPosition);
                 break;

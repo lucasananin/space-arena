@@ -7,7 +7,7 @@ using UnityEngine;
 public class RecoilCamShaker : CameraShaker
 {
     [SerializeField, ReadOnly] WeaponBehaviour _weapon = null;
-    [SerializeField] float _velocityMultiplier = 1f;
+    [SerializeField] float _velocityMultiplier = 0.2f;
 
     protected override void OnValidate()
     {

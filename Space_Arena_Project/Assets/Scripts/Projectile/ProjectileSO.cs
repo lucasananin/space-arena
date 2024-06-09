@@ -19,6 +19,7 @@ public class ProjectileSO : ScriptableObject
     [Title("// Auto Aim")]
     [SerializeField] bool _canAutoRotate = false;
     [SerializeField] LayerMask _entityLayerMask = default;
+    [SerializeField] float _maxDistance_autoAim = 0f;
     [SerializeField] float _maxAngle = 0f;
 
     [Title("// Physical")]
@@ -35,7 +36,7 @@ public class ProjectileSO : ScriptableObject
     [SerializeField, Range(0f, 99f)] float _maxCastDistance = 0f;
 
     [Title("// Guided ")]
-    [SerializeField, Range(0f, 9f)] float _maxPositionRadius = 0f;
+    [SerializeField, Range(0f, 9f)] float _maxGuidedPositionRadius = 0f;
 
     public ProjectileBehaviour Prefab { get => _prefab; private set => _prefab = value; }
     public string[] Tags { get => _tagCollectionSO.Tags; }
@@ -43,6 +44,7 @@ public class ProjectileSO : ScriptableObject
 
     public bool CanAutoRotate { get => _canAutoRotate; private set => _canAutoRotate = value; }
     public LayerMask EntityLayerMask { get => _entityLayerMask; private set => _entityLayerMask = value; }
+    public float MaxDistance_autoAim { get => _maxDistance_autoAim; private set => _maxDistance_autoAim = value; }
     public float MaxAngle { get => _maxAngle; private set => _maxAngle = value; }
 
     public LayerMask LayerMask { get => _layerMask; private set => _layerMask = value; }
@@ -62,5 +64,5 @@ public class ProjectileSO : ScriptableObject
 
     public float MaxCastDistance { get => _maxCastDistance; private set => _maxCastDistance = value; }
 
-    public float MaxPositionRadius { get => _maxPositionRadius; private set => _maxPositionRadius = value; }
+    public float MaxPositionRadius { get => _maxGuidedPositionRadius; private set => _maxGuidedPositionRadius = value; }
 }
