@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cb668af1eafd7458bb2bfb7c2d3e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canTakeDamage: 1
   _maxHealth: 5
   _currentHealth: 0
   _deadVfx: {fileID: 8119092763937825176, guid: 320028f9a32b15945b86e578c2b92c8b, type: 3}
@@ -563,7 +564,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dace3acc146584543b7ecff63979d66f, type: 3}
-  m_Color: {r: 0.7333333, g: 1, b: 0.19999999, a: 1}
+  m_Color: {r: 0.19999999, g: 0.73333323, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
