@@ -575,7 +575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 6972132582502089751}
-  _duration: 1
+  _duration: 0.2
+  _waitTime: 0.8
   _isAnimating: 0
 --- !u!114 &8151347125946582114
 MonoBehaviour:

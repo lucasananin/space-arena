@@ -361,7 +361,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 2658297561336904062}
-  _duration: 1
+  _duration: 0.2
+  _waitTime: 0.8
   _isAnimating: 0
 --- !u!114 &-8619076676205812539
 MonoBehaviour:
@@ -598,12 +599,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 2658297561336904062}
     m_Modifications:
     - target: {fileID: 9212918082609041381, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212918082609041381, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.g
-      value: 0.73333335
+      value: 0.73333323
       objectReference: {fileID: 0}
     - target: {fileID: 9212918082609041381, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.r
-      value: 0.2
+      value: 0.19999999
       objectReference: {fileID: 0}
     - target: {fileID: 9212918082766544899, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Name
@@ -654,12 +659,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.g
-      value: 0.73333335
+      value: 0.73333323
       objectReference: {fileID: 0}
     - target: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.r
-      value: 0.2
+      value: 0.19999999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}

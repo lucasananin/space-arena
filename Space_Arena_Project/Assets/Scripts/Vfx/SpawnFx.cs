@@ -7,8 +7,12 @@ using UnityEngine;
 public class SpawnFx : MonoBehaviour
 {
     [SerializeField] Transform _transform = null;
-    [SerializeField] float _duration = 1f;
+    [SerializeField] float _duration = 0.2f;
+    [SerializeField] float _waitTime = 1f;
     [SerializeField, ReadOnly] bool _isAnimating = false;
+    //[Space]
+    //[SerializeField] Transform _circle = null;
+    //[SerializeField] ParticleSystem _ps = null;
 
     public bool IsAnimating { get => _isAnimating; private set => _isAnimating = value; }
 
@@ -20,7 +24,31 @@ public class SpawnFx : MonoBehaviour
         _transform.DOScale(Vector3.one, _duration).
             OnComplete(() =>
             {
-                _isAnimating = false;
+                StartCoroutine(Play_routine());
             });
     }
+
+    private IEnumerator Play_routine()
+    {
+        yield return new WaitForSeconds(_waitTime);
+        _isAnimating = false;
+    }
+
+    //[Button]
+    //public void PlayNew()
+    //{
+    //    _isAnimating = true;
+
+    //    _transform.localScale = Vector3.zero;
+    //    _circle.gameObject.SetActive(true);
+    //    _circle.position += Vector3.up * 10f;
+
+    //    _circle.DOMove(transform.position, 0.2f).
+    //        OnComplete(() =>
+    //        {
+    //            _circle.gameObject.SetActive(false);
+    //            _ps.Play();
+    //            Play();
+    //        });
+    //}
 }

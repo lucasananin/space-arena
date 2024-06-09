@@ -222,7 +222,7 @@ MonoBehaviour:
   _weaponBehaviour: {fileID: 3562192091433409978}
   _targetTransform: {fileID: 3562192090235152602}
   _recoilOffset: {x: -0.2, y: 0, z: 0}
-  _timeMultiplier: 12
+  _timeMultiplier: 6
   _defaultPosition: {x: 0, y: 0, z: 0}
   _recoilPosition: {x: 0, y: 0, z: 0}
   _timer: 0
