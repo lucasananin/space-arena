@@ -10,9 +10,11 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] RandomizedWaveModel[] _randomizedWaves = null;
     [SerializeField] Transform _container = null;
     [SerializeField, Range(0.1f, 9f)] float _spawnTime = 1f;
+    [SerializeField, Range(0f, 12f)] float _minDistanceFromPlayer = 6f;
     [SerializeField] bool _useRandomizedWaves = false;
     [Space]
     [SerializeField, ReadOnly] WaveModel _waveModel = null;
+    [SerializeField, ReadOnly] PlayerEntity _player = null;
     [SerializeField, ReadOnly] int _waveIndex = 0;
     [SerializeField, ReadOnly] bool _isSpawning = false;
     [SerializeField, ReadOnly] int _activeSpawnCount = 0;
@@ -25,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         _graph = AstarPath.active.data.graphs[0] as GridGraph;
+        _player = FindAnyObjectByType<PlayerEntity>();
     }
 
     private void OnEnable()
@@ -103,6 +106,13 @@ public class EnemySpawner : MonoBehaviour
             if (_node.Walkable)
             {
                 _position = (Vector3)_node.position;
+            }
+
+            var _isCloseToPlayer = GeneralMethods.IsPointCloseToTarget(_position, _player.transform.position, _minDistanceFromPlayer);
+
+            if (_isCloseToPlayer)
+            {
+                _position = Vector3.zero;
             }
 
         } while (_position == Vector3.zero);
