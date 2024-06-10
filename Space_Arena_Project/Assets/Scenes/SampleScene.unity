@@ -5758,7 +5758,7 @@ GameObject:
   - component: {fileID: 304280897}
   - component: {fileID: 304280898}
   m_Layer: 0
-  m_Name: BoxCollider
+  m_Name: BoxCollider_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6004,7 +6004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &348940563
 Transform:
   m_ObjectHideFlags: 0
@@ -16448,7 +16448,7 @@ GameObject:
   - component: {fileID: 569835256}
   - component: {fileID: 569835257}
   m_Layer: 0
-  m_Name: CameraShaker
+  m_Name: CameraShaker_Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17287,6 +17287,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 304280897}
+  - {fileID: 1878020145}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17316,7 +17317,7 @@ MonoBehaviour:
   _weaponLootPrefab: {fileID: 5281741771645536111, guid: ef78d91f80ad7634cb58312915f887b8, type: 3}
   _ammoPrefab: {fileID: 7651030474878422386, guid: 04f4d503b7191d74f96662f428487b62, type: 3}
   _healthPrefab: {fileID: 4558754204574171359, guid: 8b56851b8547fb44aad90d846e7f31bc, type: 3}
-  _boxCollider2D: {fileID: 304280898}
+  _boxCollider2D: {fileID: 1878020144}
   _spawnOnStart: 1
 --- !u!1 &619394800
 GameObject:
@@ -29356,14 +29357,11 @@ MonoBehaviour:
   - _entities:
     - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
       _quantity: 5
-    _maxActiveSpawns: 3
-    _runtimeQuantities: []
-  - _entities:
-    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
-      _quantity: 4
     - _so: {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
+      _quantity: 3
+    - _so: {fileID: 11400000, guid: c9a872c556f876748aca59a351afa0d5, type: 2}
       _quantity: 2
-    _maxActiveSpawns: 4
+    _maxActiveSpawns: 3
     _runtimeQuantities: []
   _randomizedWaves:
   - _entities:
@@ -29377,8 +29375,8 @@ MonoBehaviour:
     _maxActiveSpawns: 3
   _container: {fileID: 1159678663}
   _spawnTime: 1
-  _minDistanceFromPlayer: 6
-  _useRandomizedWaves: 1
+  _minDistanceFromPlayer: 4
+  _useRandomizedWaves: 0
   _waveModel:
     _entities: []
     _maxActiveSpawns: 4
@@ -47271,6 +47269,7 @@ MonoBehaviour:
   _currentWeapon: {fileID: 0}
   _lastWeapon: {fileID: 0}
   _weaponRotator: {fileID: 0}
+  _weaponFlipper: {fileID: 0}
   _currentWeaponIndex: 0
   _lastWeaponIndex: 0
   _isWaitingSwapDelay: 0
@@ -47448,6 +47447,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvasGroup: {fileID: 1872211010}
   _fadeDuration: 0.3
+--- !u!1 &1878020143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1878020145}
+  - component: {fileID: 1878020144}
+  m_Layer: 0
+  m_Name: BoxCollider_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1878020144
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878020143}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12, y: 6}
+  m_EdgeRadius: 0
+--- !u!4 &1878020145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878020143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 606523257}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889534012
 GameObject:
   m_ObjectHideFlags: 0

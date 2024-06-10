@@ -242,7 +242,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1772053551, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  m_Sprite: {fileID: 1271702918, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -543,6 +543,7 @@ MonoBehaviour:
   _entitySource: {fileID: 6972132582502089745}
   _currentWeapon: {fileID: 6972132583126419576}
   _weaponRotator: {fileID: 6972132583126419583}
+  _weaponFlipper: {fileID: 6972132583126419582}
   _canShoot: 1
 --- !u!114 &6972132582502089757
 MonoBehaviour:

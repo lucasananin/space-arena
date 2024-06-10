@@ -27,24 +27,34 @@ public class WeaponFlipper : SideFlipper
     //    _weaponBehaviour.onInit -= SetParentFlipper;
     //}
 
-    private void LateUpdate()
-    {
-        UpdateFlip();
-    }
+    //private void FixedUpdate()
+    //{
+    //    UpdateFlip();
+    //}
 
     //public void FlipToParent()
     //{
     //    Flip(_parentFlipper.IsLookingRight());
     //}
 
-    private void UpdateFlip()
+    public void UpdateFlip()
     {
-        //return;
+        Flip(_parentFlipper.IsLookingRight());
+        //CheckFlip();
+    }
+
+    private void CheckFlip()
+    {
         Vector3 _rightDirection = transform.right;
         bool _isParentFacingRight = _parentFlipper.IsLookingRight();
         bool _isParentFacingLeft = !_parentFlipper.IsLookingRight();
-        bool _isRotatedRight = _rightDirection.x > 0;
+        bool _isRotatedRight = _rightDirection.x >= 0;
         bool _isRotatedLeft = _rightDirection.x < 0;
+
+        //if (_rightDirection == Vector3.zero)
+        //{
+        //    Debug.Log($"// zero");
+        //}
 
         if (_isParentFacingRight && _isRotatedRight)
         {
@@ -55,6 +65,10 @@ public class WeaponFlipper : SideFlipper
         {
             //ForceFlip(1, -1);
             ForceFlip(-1, -1);
+        }
+        else
+        {
+            Flip(_parentFlipper.IsLookingRight());
         }
         //else if (_isParentFacingLeft && _isRotatedRight)
         //{

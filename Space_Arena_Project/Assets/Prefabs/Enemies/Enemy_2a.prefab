@@ -329,6 +329,7 @@ MonoBehaviour:
   _entitySource: {fileID: 2658297561336904056}
   _currentWeapon: {fileID: 2658297560621282577}
   _weaponRotator: {fileID: 2658297560621282582}
+  _weaponFlipper: {fileID: 2658297560621282583}
   _canShoot: 1
 --- !u!114 &2658297561336904052
 MonoBehaviour:

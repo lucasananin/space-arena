@@ -8,6 +8,7 @@ public class AiWeaponHandler : MonoBehaviour
     [SerializeField] EntityBehaviour _entitySource = null;
     [SerializeField] WeaponBehaviour _currentWeapon = null;
     [SerializeField] WeaponRotator _weaponRotator = null;
+    [SerializeField] WeaponFlipper _weaponFlipper = null;
 
     [Title("// Debug")]
     [SerializeField, ReadOnly] bool _canShoot = true;
@@ -32,11 +33,13 @@ public class AiWeaponHandler : MonoBehaviour
     public void RotateWeapon(Vector3 _position)
     {
         _weaponRotator.LookAtPosition(_position);
+        _weaponFlipper.UpdateFlip();
     }
 
     public void ResetWeaponRotation()
     {
         _weaponRotator.ResetRotation();
+        _weaponFlipper.ResetFlip();
     }
 
     // Se o inimigo possuir um "action" que permita a troca de armas, 
@@ -66,5 +69,13 @@ public class AiWeaponHandler : MonoBehaviour
     {
         var _offset = _entitySource.GetEntitySO<AiEntitySO>().MinMaxShootTimeOffset;
         return Random.Range(_offset.x, _offset.y);
+    }
+
+    [Button]
+    private void UpdateReferences()
+    {
+        _currentWeapon = GetComponentInChildren<WeaponBehaviour>();
+        _weaponRotator = GetComponentInChildren<WeaponRotator>();
+        _weaponFlipper = GetComponentInChildren<WeaponFlipper>();
     }
 }

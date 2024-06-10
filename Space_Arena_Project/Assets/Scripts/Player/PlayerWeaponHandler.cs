@@ -16,6 +16,7 @@ public class PlayerWeaponHandler : MonoBehaviour
     [SerializeField, ReadOnly] WeaponBehaviour _currentWeapon = null;
     [SerializeField, ReadOnly] WeaponBehaviour _lastWeapon = null;
     [SerializeField, ReadOnly] WeaponRotator _weaponRotator = null;
+    [SerializeField, ReadOnly] WeaponFlipper _weaponFlipper = null;
     [SerializeField, ReadOnly] int _currentWeaponIndex = 0;
     [SerializeField, ReadOnly] int _lastWeaponIndex = 0;
     [SerializeField, ReadOnly] bool _isWaitingSwapDelay = false;
@@ -46,7 +47,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         //InputHandler.onMouseScrollDown -= SwapToPreviousWeapon;
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         if (_canRotateWeapon)
         {
@@ -109,6 +110,11 @@ public class PlayerWeaponHandler : MonoBehaviour
         _lastWeapon = _weaponsList[_lastWeaponIndex];
         _currentWeapon.Init(_entitySource, _ammoHandler);
 
+        UpdateVisuals();
+    }
+
+    private void UpdateVisuals()
+    {
         int _count = _weaponsList.Count;
 
         for (int i = 0; i < _count; i++)
@@ -116,7 +122,10 @@ public class PlayerWeaponHandler : MonoBehaviour
             bool _isCurrentWeapon = i == _currentWeaponIndex;
             _weaponsList[i].gameObject.SetActive(_isCurrentWeapon);
         }
+
         _weaponRotator = _currentWeapon.GetComponent<WeaponRotator>();
+        _weaponFlipper = _currentWeapon.GetComponent<WeaponFlipper>();
+        RotateCurrentWeapon();
         UpdateHolster();
     }
 
@@ -130,6 +139,7 @@ public class PlayerWeaponHandler : MonoBehaviour
     public void RotateCurrentWeapon()
     {
         _weaponRotator?.LookAtMouse();
+        _weaponFlipper?.UpdateFlip();
     }
 
     public void AddWeapon(WeaponSO _weaponSO, out WeaponSO _droppedWeaponSO)
@@ -173,9 +183,9 @@ public class PlayerWeaponHandler : MonoBehaviour
         _isWaitingSwapDelay = false;
     }
 
-    [Button]
-    private void SetWeaponReference()
-    {
-        _currentWeapon = GetComponentInChildren<WeaponBehaviour>();
-    }
+    //[Button]
+    //private void SetWeaponReference()
+    //{
+    //    _currentWeapon = GetComponentInChildren<WeaponBehaviour>();
+    //}
 }

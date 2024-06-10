@@ -65,6 +65,11 @@ public class SideFlipper : MonoBehaviour
         }
     }
 
+    public void ResetFlip()
+    {
+        ForceFlip(1, 1);
+    }
+
     public bool IsLookingRight()
     {
         return _target.localScale.x >= 0;
