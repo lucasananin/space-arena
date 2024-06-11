@@ -526,6 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 212240875}
   _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _canFlip: 1
   _parentFlipper: {fileID: 1823301785}
 --- !u!114 &212240879
 MonoBehaviour:
@@ -6478,6 +6479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 486806344}
   _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _canFlip: 1
   _parentFlipper: {fileID: 1823301785}
 --- !u!114 &486806348
 MonoBehaviour:
@@ -29813,6 +29815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 908726881}
   _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _canFlip: 1
   _parentFlipper: {fileID: 1823301785}
 --- !u!114 &908726885
 MonoBehaviour:
@@ -30411,6 +30414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1139148448}
   _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _canFlip: 1
   _parentFlipper: {fileID: 1823301785}
 --- !u!114 &1139148452
 MonoBehaviour:
@@ -46416,6 +46420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1689301773}
   _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _canFlip: 1
   _parentFlipper: {fileID: 1823301785}
 --- !u!114 &1689301777
 MonoBehaviour:
@@ -46768,6 +46773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1724033601}
   _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _canFlip: 1
   _parentFlipper: {fileID: 1823301785}
 --- !u!114 &1724033605
 MonoBehaviour:
@@ -46977,6 +46983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1788031209}
   _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _canFlip: 1
   _parentFlipper: {fileID: 1823301785}
 --- !u!114 &1788031213
 MonoBehaviour:
@@ -47364,6 +47371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1823301781}
   _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _canFlip: 1
 --- !u!114 &1823301786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48142,6 +48150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1969171298}
   _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _canFlip: 1
   _parentFlipper: {fileID: 1823301785}
 --- !u!114 &1969171302
 MonoBehaviour:

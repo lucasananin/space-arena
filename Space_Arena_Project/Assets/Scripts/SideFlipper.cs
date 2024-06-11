@@ -7,6 +7,7 @@ public class SideFlipper : MonoBehaviour
     // mudar o nome dessa variavel para _transformToFlip
     [SerializeField] protected Transform _target = null;
     [SerializeField] protected FlipDataSO _flipDataSo = null;
+    [SerializeField] protected bool _canFlip = true;
     //[SerializeField] protected bool _flipX = true;
     //[SerializeField] protected bool _flipY = false;
 
@@ -31,6 +32,8 @@ public class SideFlipper : MonoBehaviour
 
     public void Flip(bool _toTheRight/*, bool _flipX, bool _flipY*/)
     {
+        if (!_canFlip) return;
+
         Vector3 _newScale = Vector3.one;
 
         if (_flipDataSo.FlipX)
