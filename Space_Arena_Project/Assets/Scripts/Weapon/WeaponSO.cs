@@ -21,6 +21,9 @@ public class WeaponSO : ScriptableObject
     [SerializeField] ProjectileSO _projectileSO = null;
     [SerializeField] ProjectileSO _chargedProjectileSO = null;
 
+    [Title("// Damage")]
+    [SerializeField, Range(0, 99)] int _damage = 1;
+
     [Title("// Fire Rate")]
     [SerializeField, Range(0.01f, 9f)] float _fireRate = 0.1f;
 
@@ -55,6 +58,8 @@ public class WeaponSO : ScriptableObject
 
     public ProjectileSO ProjectileSO { get => _projectileSO; private set => _projectileSO = value; }
     public ProjectileSO ChargedProjectileSO { get => _chargedProjectileSO; private set => _chargedProjectileSO = value; }
+
+    public int Damage { get => _damage; private set => _damage = value; }
 
     public float FireRate { get => _fireRate; private set => _fireRate = value; }
     public float MaxChargeTime { get => _maxChargeTime; private set => _maxChargeTime = value; }

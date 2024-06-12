@@ -214,4 +214,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
             return _ammoHandler.HasAmmo(_weaponSO);
         }
     }
+
+    public int GetDamage()
+    {
+        return _weaponSO.Damage;
+    }
 }

@@ -38,7 +38,8 @@ public class PhysicalProjectile : ProjectileBehaviour
             if (_collidersHit.Contains(_colliderHit)) continue;
             if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour) && !HasAvailableTag(_colliderHit.gameObject)) continue;
 
-            _healthBehaviour?.TakeDamage(1);
+            var _damage = _shootModel.WeaponSource.GetDamage();
+            _healthBehaviour?.TakeDamage(_damage);
             _collidersHit.Add(_colliderHit);
             IncreasePierceCount();
             SendRaycastHitEvent(_raycastHit);

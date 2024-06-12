@@ -28,7 +28,8 @@ public class CastProjectile : ProjectileBehaviour
             if (HasHitSource(_colliderHit.gameObject)) continue;
             if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour) && !HasAvailableTag(_colliderHit.gameObject)) continue;
 
-            _healthBehaviour?.TakeDamage(1);
+            var _damage = _shootModel.WeaponSource.GetDamage();
+            _healthBehaviour?.TakeDamage(_damage);
             _raycastHits.Add(_raycastHit);
             IncreasePierceCount();
             SendRaycastHitEvent(_raycastHit);
