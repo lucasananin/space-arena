@@ -42,6 +42,9 @@ public class WeaponSO : ScriptableObject
     [Title("// Projectiles per shot")]
     [SerializeField, Range(1, 36)] int _projectilesPerShot = 1;
 
+    [Title("// Ammo per shot")]
+    [SerializeField, Range(0, 99)] int _ammoPerShot = 1;
+
     [Title("// Semi Auto - Properties")]
     [SerializeField] bool _isAutoChargeType = false;
     [SerializeField] bool _hasChargeWeakShot = false;
@@ -105,5 +108,10 @@ public class WeaponSO : ScriptableObject
     public AmmoSO GetAmmoSO()
     {
         return _projectileSO.AmmoSO;
+    }
+
+    public int GetAmmoPerShot()
+    {
+        return _ammoPerShot;
     }
 }
