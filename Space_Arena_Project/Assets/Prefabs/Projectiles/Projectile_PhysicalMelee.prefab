@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 4705853102255858287}
   - component: {fileID: 7353528016857128665}
   - component: {fileID: -1431117888569425827}
+  - component: {fileID: 4297430842272664210}
   m_Layer: 0
   m_Name: Projectile_PhysicalMelee
   m_TagString: Untagged
@@ -196,3 +197,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectileBehaviour: {fileID: 7353528016857128665}
   _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
+--- !u!114 &4297430842272664210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a61026e9f03252409e85af424ebc509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 700143193, guid: 83b143c1a66bf8944a9f9ced0a9fcb1c, type: 3}
+  - {fileID: 2130205077, guid: 83b143c1a66bf8944a9f9ced0a9fcb1c, type: 3}
+  - {fileID: 1767390584, guid: 83b143c1a66bf8944a9f9ced0a9fcb1c, type: 3}
+  _renderer: {fileID: 7353528016460216317}
+  _duration: 0.3
+  _playOnStart: 1
