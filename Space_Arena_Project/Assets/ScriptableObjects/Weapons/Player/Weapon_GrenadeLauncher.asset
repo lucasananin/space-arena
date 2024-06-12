@@ -10,11 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: _Weapon_Explosive
+  m_Name: Weapon_GrenadeLauncher
   m_EditorClassIdentifier: 
+  _id: grenade_launcher_1
   _iconSprite: {fileID: -2116303741, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _weaponPrefab: {fileID: 8067246484439910053, guid: 9a2677e5df7bfdb498857fbf0b0e54c9, type: 3}
+  _displayName: G-Launcher
+  _holsterPosition: {x: 0, y: 0, z: 0}
+  _holsterEuler: {x: 0, y: 0, z: 0}
   _projectileSO: {fileID: 11400000, guid: f81d1a39b9a143d48a3a67dd1608d115, type: 2}
   _chargedProjectileSO: {fileID: 0}
+  _damage: 1
   _fireRate: 0.3
   _maxChargeTime: 0
   _maxHeat: 0
@@ -23,6 +29,7 @@ MonoBehaviour:
   _maxOverheatTime: 0
   _maxShootAngle: 0
   _projectilesPerShot: 1
+  _ammoPerShot: 1
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0
   _burstRate: 0

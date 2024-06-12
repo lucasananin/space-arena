@@ -266,8 +266,10 @@ GameObject:
   - component: {fileID: 7353528016857128665}
   - component: {fileID: 3037480810754848135}
   - component: {fileID: -6035390557809975588}
+  - component: {fileID: -7987104274200829309}
+  - component: {fileID: 253634176675435744}
   m_Layer: 0
-  m_Name: Projectile_PhysicalExplosive
+  m_Name: Projectile_Explosive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -369,7 +371,7 @@ MonoBehaviour:
   _simpleExplosionPrefab: {fileID: 6219246531898581204, guid: 35c5b57ba918f0546ac6035dbf2c3e79, type: 3}
   _particleSystemPrefab: {fileID: 0}
   _onHit: 1
-  _onStop: 1
+  _onStop: 0
   _onTimerEnd: 1
 --- !u!114 &-6035390557809975588
 MonoBehaviour:
@@ -385,3 +387,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectileBehaviour: {fileID: 7353528016857128665}
   _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
+--- !u!114 &-7987104274200829309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &253634176675435744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3605f335ebc54ba4181ee0a3226621b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _impulseSource: {fileID: -7987104274200829309}
+  _projectileBehaviour: {fileID: 7353528016857128665}
+  _velocityMultiplier: 0.2
