@@ -21,14 +21,15 @@ MonoBehaviour:
   _spawnPositionOffset: {x: 0, y: 0}
   _minMaxTimeUntilDestroy: {x: 1, y: 2}
   _maxPierceCount: 1
-  _explosionRadius: 2
+  _explosionRadius: 0
   _canAutoRotate: 0
   _entityLayerMask:
     serializedVersion: 2
-    m_Bits: 64
-  _maxAngle: 180
-  _moveSpeed: 20
-  _destroyOnCollision: 1
+    m_Bits: 0
+  _maxDistance_autoAim: 0
+  _maxAngle: 0
+  _moveSpeed: 0
+  _destroyOnCollision: 0
   _useAccelerationCurve: 0
   _accelerationCurve:
     serializedVersion: 2
@@ -37,7 +38,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _invertAcceleration: 0
-  _acelerationMultiplier: 1
+  _acelerationMultiplier: 0
   _destroyOnStop: 0
   _maxCastDistance: 99
-  _maxPositionRadius: 0
+  _maxGuidedPositionRadius: 0
