@@ -71,7 +71,8 @@ public abstract class ProjectileBehaviour : MonoBehaviour
         {
             if (_explosionResults[i].TryGetComponent(out HealthBehaviour _healthBehaviour))
             {
-                _healthBehaviour.TakeDamage(1);
+                var _damage = _shootModel.WeaponSource.GetExplosiveDamage();
+                _healthBehaviour.TakeDamage(_damage);
             }
         }
 

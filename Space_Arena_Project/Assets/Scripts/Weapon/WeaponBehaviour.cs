@@ -219,4 +219,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
     {
         return _weaponSO.Damage;
     }
+
+    public int GetExplosiveDamage()
+    {
+        return _weaponSO.ExplosiveDamage;
+    }
 }
