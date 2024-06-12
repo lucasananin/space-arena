@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 7353528016857128665}
   - component: {fileID: -4019677934437214617}
   m_Layer: 0
-  m_Name: Projectile_Physical_Enemy_2
+  m_Name: Projectile_Bullet_Enemy_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

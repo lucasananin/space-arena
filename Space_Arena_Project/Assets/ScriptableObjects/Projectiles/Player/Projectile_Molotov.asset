@@ -22,6 +22,12 @@ MonoBehaviour:
   _minMaxTimeUntilDestroy: {x: 8, y: 8}
   _maxPierceCount: 1
   _explosionRadius: 0
+  _canAutoRotate: 0
+  _entityLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _maxDistance_autoAim: 0
+  _maxAngle: 0
   _moveSpeed: 10
   _destroyOnCollision: 1
   _useAccelerationCurve: 1
@@ -53,3 +59,4 @@ MonoBehaviour:
   _acelerationMultiplier: 1
   _destroyOnStop: 1
   _maxCastDistance: 0
+  _maxGuidedPositionRadius: 0

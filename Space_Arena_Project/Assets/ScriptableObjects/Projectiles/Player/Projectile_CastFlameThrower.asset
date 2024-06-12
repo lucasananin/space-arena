@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 3761620198474376623, guid: 8ec980d4a25158b42b2778ccc4f2aa5e, type: 3}
   _tagCollectionSO: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}
+  _ammoSO: {fileID: 11400000, guid: c741b913cc5b4bf49b26e7f6a7103b33, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 192
@@ -21,15 +22,23 @@ MonoBehaviour:
   _minMaxTimeUntilDestroy: {x: 1, y: 2}
   _maxPierceCount: 10
   _explosionRadius: 5
+  _canAutoRotate: 0
+  _entityLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _maxDistance_autoAim: 0
+  _maxAngle: 0
   _moveSpeed: 20
   _destroyOnCollision: 1
   _useAccelerationCurve: 0
-  _invertAcceleration: 0
   _accelerationCurve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _invertAcceleration: 0
   _acelerationMultiplier: 1
+  _destroyOnStop: 0
   _maxCastDistance: 5
+  _maxGuidedPositionRadius: 0

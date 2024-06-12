@@ -296,6 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 5704818092466949256}
   _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _canFlip: 1
   _parentFlipper: {fileID: 0}
 --- !u!114 &5704818092466949257
 MonoBehaviour:
@@ -396,7 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _impulseSource: {fileID: -7874860500769441361}
   _weapon: {fileID: 5704818092466949252}
-  _velocityMultiplier: 0.2
+  _velocityMultiplier: 0.1
 --- !u!1001 &5704818092456425585
 PrefabInstance:
   m_ObjectHideFlags: 0

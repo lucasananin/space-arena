@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2459257584825614321}
   - component: {fileID: -1557325256273126192}
   m_Layer: 0
-  m_Name: Projectile_CastEletric
+  m_Name: Projectile_Eletric
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
