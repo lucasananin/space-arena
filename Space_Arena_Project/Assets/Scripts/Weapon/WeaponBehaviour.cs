@@ -64,7 +64,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
     public virtual void Shoot()
     {
         _nextFire -= _weaponSO.FireRate;
-        PrepareProjectile(_weaponSO.ProjectileSO);
+        PrepareProjectile(_weaponSO.ProjectileSO, false);
         DecreaseAmmo(_weaponSO.ProjectileSO);
         IncreaseHeat(_weaponSO.HeatPerShot);
         onShoot?.Invoke();
@@ -74,20 +74,20 @@ public abstract class WeaponBehaviour : MonoBehaviour
     {
         _nextFire -= _weaponSO.FireRate;
         _chargeTimer -= _weaponSO.MaxChargeTime;
-        PrepareProjectile(_weaponSO.ChargedProjectileSO);
+        PrepareProjectile(_weaponSO.ChargedProjectileSO, true);
         DecreaseAmmo(_weaponSO.ChargedProjectileSO);
         IncreaseHeat(_weaponSO.MaxHeat + HEAT_OFFSET);
         onShoot?.Invoke();
     }
 
-    private void PrepareProjectile(ProjectileSO _projectileSO)
+    private void PrepareProjectile(ProjectileSO _projectileSO, bool _isChargedShot)
     {
         for (int i = 0; i < _weaponSO.ProjectilesPerShot; i++)
         {
             var _position = CalculateProjectilePosition(_projectileSO);
             var _rotation = CalculateProjectileRotation(i);
             var _projectile = Instantiate(_projectileSO.Prefab, _position, _rotation);
-            var _shootModel = new ShootModel(_entitySource, this, _projectileSO);
+            var _shootModel = new ShootModel(_entitySource, this, _projectileSO, _isChargedShot);
             _projectile.Init(_shootModel);
         }
     }
@@ -213,9 +213,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
         return _ammoHandler is null ? true : _ammoHandler.HasAmmo(_weaponSO.ChargedProjectileSO, _weaponSO);
     }
 
-    public int GetDamage()
+    public int GetDamage(bool _isChargedShot)
     {
-        return _weaponSO.Damage;
+        return _isChargedShot ? _weaponSO.ChargeShotDamage : _weaponSO.Damage;
     }
 
     public int GetExplosiveDamage()
