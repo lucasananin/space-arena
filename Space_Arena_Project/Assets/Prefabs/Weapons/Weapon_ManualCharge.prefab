@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6724074072737659483}
   - component: {fileID: 6724074072737659460}
   m_Layer: 0
-  m_Name: Weapon_AutoCharge
+  m_Name: Weapon_ManualCharge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

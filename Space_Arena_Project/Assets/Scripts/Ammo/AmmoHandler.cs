@@ -24,18 +24,18 @@ public class AmmoHandler : MonoBehaviour
         }
     }
 
-    public void DecreaseAmmo(WeaponSO _weaponSO)
+    public void DecreaseAmmo(ProjectileSO _projectileSO, WeaponSO _weaponSO)
     {
         if (_infiniteAmmo) return;
 
-        var _model = GetModel(_weaponSO.GetAmmoSO());
-        _model?.DecreaseQuantity(_weaponSO.GetAmmoPerShot());
+        var _model = GetModel(_projectileSO.AmmoSO);
+        _model?.DecreaseQuantity(_weaponSO.AmmoPerShot);
     }
 
-    public bool HasAmmo(WeaponSO _weaponSO)
+    public bool HasAmmo(ProjectileSO _projectileSO, WeaponSO _weaponSO)
     {
-        var _model = GetModel(_weaponSO.GetAmmoSO());
-        return _model is not null && _model.HasEnoughQuantity(_weaponSO.GetAmmoPerShot());
+        var _model = GetModel(_projectileSO.AmmoSO);
+        return _model is not null && _model.HasEnoughQuantity(_weaponSO.AmmoPerShot);
     }
 
     private AmmoModel GetModel(AmmoSO _ammoSO)

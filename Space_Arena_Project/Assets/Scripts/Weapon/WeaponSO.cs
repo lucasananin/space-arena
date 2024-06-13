@@ -74,6 +74,7 @@ public class WeaponSO : ScriptableObject
     public float MaxOverheatTime { get => _maxOverheatTime; private set => _maxOverheatTime = value; }
     public int MaxShootAngle { get => _maxShootAngle; private set => _maxShootAngle = value; }
     public int ProjectilesPerShot { get => _projectilesPerShot; private set => _projectilesPerShot = value; }
+    public int AmmoPerShot { get => _ammoPerShot; set => _ammoPerShot = value; }
 
     public bool IsAutoChargeType { get => _isAutoChargeType; private set => _isAutoChargeType = value; }
     public bool HasChargeWeakShot { get => _hasChargeWeakShot; private set => _hasChargeWeakShot = value; }
@@ -107,13 +108,13 @@ public class WeaponSO : ScriptableObject
         return _totalFireRate + _burstRate + _offset;
     }
 
-    public AmmoSO GetAmmoSO()
-    {
-        return HasChargeTime() ? _chargedProjectileSO.AmmoSO: _projectileSO.AmmoSO;
-    }
+    //public AmmoSO GetAmmoSO()
+    //{
+    //    return HasChargeTime() ? _chargedProjectileSO.AmmoSO: _projectileSO.AmmoSO;
+    //}
 
-    public int GetAmmoPerShot()
-    {
-        return _ammoPerShot;
-    }
+    //public int GetAmmoPerShot()
+    //{
+    //    return _ammoPerShot;
+    //}
 }

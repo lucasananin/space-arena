@@ -83,11 +83,11 @@ public class SemiAutoWeapon : WeaponBehaviour
 
     private bool CanWeakShot()
     {
-        return _weaponSO.HasChargeWeakShot && _chargeTimer < _weaponSO.MaxChargeTime;
+        return _weaponSO.HasChargeWeakShot && _chargeTimer < _weaponSO.MaxChargeTime && HasAmmo();
     }
 
     private bool CanAutoChargeShot()
     {
-        return _weaponSO.IsAutoChargeType && HasEnoughChargeTimer() && !_isOverheated;
+        return _weaponSO.IsAutoChargeType && HasEnoughChargeTimer() && !_isOverheated && HasChargeAmmo();
     }
 }

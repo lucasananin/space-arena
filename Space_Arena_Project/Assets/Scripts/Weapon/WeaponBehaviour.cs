@@ -65,8 +65,8 @@ public abstract class WeaponBehaviour : MonoBehaviour
     {
         _nextFire -= _weaponSO.FireRate;
         PrepareProjectile(_weaponSO.ProjectileSO);
+        DecreaseAmmo(_weaponSO.ProjectileSO);
         IncreaseHeat(_weaponSO.HeatPerShot);
-        DecreaseAmmo();
         onShoot?.Invoke();
     }
 
@@ -75,8 +75,8 @@ public abstract class WeaponBehaviour : MonoBehaviour
         _nextFire -= _weaponSO.FireRate;
         _chargeTimer -= _weaponSO.MaxChargeTime;
         PrepareProjectile(_weaponSO.ChargedProjectileSO);
+        DecreaseAmmo(_weaponSO.ChargedProjectileSO);
         IncreaseHeat(_weaponSO.MaxHeat + HEAT_OFFSET);
-        DecreaseAmmo();
         onShoot?.Invoke();
     }
 
@@ -198,21 +198,19 @@ public abstract class WeaponBehaviour : MonoBehaviour
         return _weaponSO.Id;
     }
 
-    private void DecreaseAmmo()
+    private void DecreaseAmmo(ProjectileSO _projectileSO)
     {
-        _ammoHandler?.DecreaseAmmo(_weaponSO);
+        _ammoHandler?.DecreaseAmmo(_projectileSO, _weaponSO);
     }
 
     public bool HasAmmo()
     {
-        if (_ammoHandler is null)
-        {
-            return true;
-        }
-        else
-        {
-            return _ammoHandler.HasAmmo(_weaponSO);
-        }
+        return _ammoHandler is null ? true : _ammoHandler.HasAmmo(_weaponSO.ProjectileSO, _weaponSO);
+    }
+
+    public bool HasChargeAmmo()
+    {
+        return _ammoHandler is null ? true : _ammoHandler.HasAmmo(_weaponSO.ChargedProjectileSO, _weaponSO);
     }
 
     public int GetDamage()
