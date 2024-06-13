@@ -5,11 +5,9 @@ using UnityEngine;
 
 public abstract class ProjectileBehaviour : MonoBehaviour
 {
-    [Title("// General")]
-    [SerializeField] protected ProjectileSO _projectileSO = null;
-
     [Title("// Debug - Projectile")]
     [SerializeField, ReadOnly] protected ShootModel _shootModel = null;
+    [SerializeField, ReadOnly] protected ProjectileSO _projectileSO = null;
     [SerializeField, ReadOnly] protected float _timeUntilDestroy = 0f;
     [SerializeField, ReadOnly] protected float _destroyTimer = 0f;
     [SerializeField, ReadOnly] protected int _currentPierceCount = 0;
@@ -28,6 +26,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     public virtual void Init(ShootModel _newShootModel)
     {
         _shootModel = _newShootModel;
+        _projectileSO = _newShootModel.ProjectileSO;
         SetDestroyTimer();
         TryAutoRotate();
     }

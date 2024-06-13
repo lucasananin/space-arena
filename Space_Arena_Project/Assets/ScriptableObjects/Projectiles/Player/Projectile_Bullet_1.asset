@@ -26,6 +26,7 @@ MonoBehaviour:
   _entityLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  _maxDistance_autoAim: 0
   _maxAngle: 180
   _moveSpeed: 20
   _destroyOnCollision: 1
@@ -40,4 +41,4 @@ MonoBehaviour:
   _acelerationMultiplier: 1
   _destroyOnStop: 0
   _maxCastDistance: 0
-  _maxPositionRadius: 0
+  _maxGuidedPositionRadius: 0
