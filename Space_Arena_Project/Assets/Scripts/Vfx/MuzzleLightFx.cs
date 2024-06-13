@@ -4,20 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class WeaponLightTest : MonoBehaviour
+public class MuzzleLightFx : MonoBehaviour
 {
-    [SerializeField] Light2D _light2D = null;
     [SerializeField] WeaponBehaviour _weapon = null;
+    [SerializeField] Light2D _light2D = null;
+    [Space]
     [SerializeField] float _minIntensity = 3f;
     [SerializeField] float _maxIntensity = 5f;
     [SerializeField] float _minRadiusMultiplier = 1f;
     [SerializeField] float _maxRadiusMultiplier = 2f;
     [Space]
     [SerializeField] float _timeEnabled = 0.05f;
-    [SerializeField, ReadOnly] float _timeUntilDisable = 0;
-
-    private float _defaultInnerRadius = 0;
-    private float _defaultOuterRadius = 0;
+    [Space]
+    [SerializeField, ReadOnly] float _timer = 0f;
+    [SerializeField, ReadOnly] float _defaultInnerRadius = 0f;
+    [SerializeField, ReadOnly] float _defaultOuterRadius = 0f;
 
     private void Awake()
     {
@@ -38,9 +39,11 @@ public class WeaponLightTest : MonoBehaviour
 
     private void Update()
     {
-        _timeUntilDisable -= _timeUntilDisable > 0 ? Time.deltaTime : 0;
+        if (!_light2D.enabled) return;
 
-        if (_timeUntilDisable <= 0)
+        _timer += Time.deltaTime;
+
+        if (_timer >= _timeEnabled)
         {
             _light2D.enabled = false;
         }
@@ -50,10 +53,11 @@ public class WeaponLightTest : MonoBehaviour
     {
         _light2D.enabled = true;
         _light2D.intensity = Random.Range(_minIntensity, _maxIntensity);
+
         float _randomRadiusMultiplier = Random.Range(_minRadiusMultiplier, _maxRadiusMultiplier);
         _light2D.pointLightInnerRadius = _defaultInnerRadius * _randomRadiusMultiplier;
         _light2D.pointLightOuterRadius = _defaultOuterRadius * _randomRadiusMultiplier;
 
-        _timeUntilDisable = _timeEnabled;
+        _timer = 0f;
     }
 }
