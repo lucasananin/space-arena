@@ -109,7 +109,7 @@ public class WeaponSO : ScriptableObject
 
     public AmmoSO GetAmmoSO()
     {
-        return _projectileSO.AmmoSO;
+        return HasChargeTime() ? _chargedProjectileSO.AmmoSO: _projectileSO.AmmoSO;
     }
 
     public int GetAmmoPerShot()
