@@ -24121,7 +24121,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5645198960752627481}
   - component: {fileID: 5645198960752627483}
-  - component: {fileID: 5645198960752627482}
   m_Layer: 0
   m_Name: Light 2D
   m_TagString: Untagged
@@ -24194,26 +24193,6 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &5645198960752627482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5645198960752627480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff3c2e0ba3cdb2b4eacac4b638285b61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _light2D: {fileID: 5645198960752627483}
-  _weapon: {fileID: 5645198961146414910}
-  _minIntensity: 3
-  _maxIntensity: 7
-  _minRadiusMultiplier: 0.9
-  _maxRadiusMultiplier: 1.1
-  _timeEnabled: 0.05
-  _timeUntilDisable: 0
 --- !u!1 &5645198961146414897
 GameObject:
   m_ObjectHideFlags: 0
