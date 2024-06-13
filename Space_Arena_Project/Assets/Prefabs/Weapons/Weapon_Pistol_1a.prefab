@@ -213,14 +213,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff3c2e0ba3cdb2b4eacac4b638285b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _light2D: {fileID: 5704818092340610209}
   _weapon: {fileID: 5704818092466949252}
-  _minIntensity: 3
-  _maxIntensity: 7
+  _light2D: {fileID: 5704818092340610209}
+  _minIntensity: 4
+  _maxIntensity: 6
   _minRadiusMultiplier: 0.9
   _maxRadiusMultiplier: 1.1
   _timeEnabled: 0.05
-  _timeUntilDisable: 0
+  _timeMultiplier: 1
+  _timer: 0
+  _initialIntensity: 0
+  _defaultInnerRadius: 0
+  _defaultOuterRadius: 0
 --- !u!1 &5704818092466949259
 GameObject:
   m_ObjectHideFlags: 0
