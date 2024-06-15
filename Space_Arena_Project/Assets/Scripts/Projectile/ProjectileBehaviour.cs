@@ -23,6 +23,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     public event System.Action OnExplode = null;
 
     public float TimeUntilDestroy { get => _timeUntilDestroy; }
+    public ShootModel ShootModel { get => _shootModel; }
 
     public virtual void Init(ShootModel _newShootModel)
     {

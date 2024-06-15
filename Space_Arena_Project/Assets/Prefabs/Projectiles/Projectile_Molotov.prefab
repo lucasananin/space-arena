@@ -170,10 +170,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0550060135c65749a12e755d50e7073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectileSO: {fileID: 11400000, guid: a3cab79fac1b1a24f860ffade39377bc, type: 2}
   _shootModel:
     _entitySource: {fileID: 0}
     _weaponSource: {fileID: 0}
+    _projectileSO: {fileID: 0}
+    _isChargedShot: 0
+  _projectileSO: {fileID: 11400000, guid: a3cab79fac1b1a24f860ffade39377bc, type: 2}
   _timeUntilDestroy: 100
   _destroyTimer: 0
   _currentPierceCount: 0
@@ -195,8 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a07fae0513b5641ab80297ec1d129f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectileBehaviour: {fileID: 7353528016857128665}
-  _damageAreaPrefab: {fileID: 832962447568062898, guid: c8dcb96bbdb18eb4498a41f2c6fb78e9, type: 3}
+  _projectile: {fileID: 7353528016857128665}
+  _prefab: {fileID: 832962447568062900, guid: c8dcb96bbdb18eb4498a41f2c6fb78e9, type: 3}
   _onHit: 1
   _onStop: 1
   _onTimerEnd: 0

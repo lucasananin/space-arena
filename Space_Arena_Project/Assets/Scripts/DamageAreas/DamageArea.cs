@@ -18,6 +18,7 @@ public class DamageArea : MonoBehaviour
     [Title("// Debug")]
     [SerializeField, ReadOnly] float _nextDamage = 0f;
     [SerializeField, ReadOnly] float _destroyTimer = 0f;
+    [SerializeField, ReadOnly] ShootModel _shootModel = null;
 
     private RaycastHit2D[] _results = new RaycastHit2D[9];
     private bool _canDamage = true;
@@ -47,6 +48,11 @@ public class DamageArea : MonoBehaviour
         }
     }
 
+    public void Init(ShootModel _shootModel)
+    {
+        this._shootModel = _shootModel;
+    }
+
     private void CauseDamage()
     {
         var _hits = _collider2D.Cast(Vector2.one, _contactFilter2D, _results, 0f, true);
@@ -58,7 +64,9 @@ public class DamageArea : MonoBehaviour
 
             if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour) && !HasAvailableTag(_colliderHit.gameObject)) continue;
 
-            _healthBehaviour?.TakeDamage();
+            var _damage = _shootModel.GetExplosiveDamage();
+            var _damageModel = new DamageModel(_shootModel.EntitySource, transform.position, _damage);
+            _healthBehaviour?.TakeDamage(_damageModel);
         }
     }
 

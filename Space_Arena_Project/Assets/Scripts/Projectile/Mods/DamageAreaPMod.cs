@@ -4,41 +4,53 @@ using UnityEngine;
 
 public class DamageAreaPMod : MonoBehaviour
 {
-    [SerializeField] ProjectileBehaviour _projectileBehaviour = null;
-    [SerializeField] GameObject _damageAreaPrefab = null;
+    [SerializeField] ProjectileBehaviour _projectile = null;
+    [SerializeField] DamageArea _prefab = null;
     [SerializeField] bool _onHit = true;
     [SerializeField] bool _onStop = true;
     [SerializeField] bool _onTimerEnd = true;
 
     private void OnEnable()
     {
-        _projectileBehaviour.onRaycastHit += SpawnAreaByHit;
-        _projectileBehaviour.OnDestroy_Stop += SpawnAreaByStop;
-        _projectileBehaviour.OnDestroy_TimerEnd += SpawnAreaByTimer;
+        _projectile.onRaycastHit += SpawnAreaByHit;
+        _projectile.OnDestroy_Stop += SpawnAreaByStop;
+        _projectile.OnDestroy_TimerEnd += SpawnAreaByTimer;
     }
 
     private void OnDisable()
     {
-        _projectileBehaviour.onRaycastHit -= SpawnAreaByHit;
-        _projectileBehaviour.OnDestroy_Stop -= SpawnAreaByStop;
-        _projectileBehaviour.OnDestroy_TimerEnd -= SpawnAreaByTimer;
+        _projectile.onRaycastHit -= SpawnAreaByHit;
+        _projectile.OnDestroy_Stop -= SpawnAreaByStop;
+        _projectile.OnDestroy_TimerEnd -= SpawnAreaByTimer;
     }
 
     private void SpawnAreaByHit(RaycastHit2D _hit)
     {
         if (_onHit)
-            Instantiate(_damageAreaPrefab, _hit.point, Quaternion.identity);
+        {
+            Spawn(_hit.point);
+        }
     }
 
     private void SpawnAreaByStop()
     {
         if (_onStop)
-            Instantiate(_damageAreaPrefab, transform.position, Quaternion.identity);
+        {
+            Spawn(transform.position);
+        }
     }
 
     private void SpawnAreaByTimer()
     {
         if (_onTimerEnd)
-            Instantiate(_damageAreaPrefab, transform.position, Quaternion.identity);
+        {
+            Spawn(transform.position);
+        }
+    }
+
+    private void Spawn(Vector3 _position)
+    {
+        var _instance = Instantiate(_prefab, _position, Quaternion.identity);
+        _instance.Init(_projectile.ShootModel);
     }
 }

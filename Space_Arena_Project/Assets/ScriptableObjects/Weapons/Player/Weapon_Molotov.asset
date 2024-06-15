@@ -20,6 +20,9 @@ MonoBehaviour:
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: a3cab79fac1b1a24f860ffade39377bc, type: 2}
   _chargedProjectileSO: {fileID: 0}
+  _damage: 2
+  _chargeShotDamage: 1
+  _explosiveDamage: 1
   _fireRate: 0.1
   _maxChargeTime: 0
   _maxHeat: 0
@@ -28,6 +31,7 @@ MonoBehaviour:
   _maxOverheatTime: 0
   _maxShootAngle: 5
   _projectilesPerShot: 1
+  _ammoPerShot: 1
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0
   _burstRate: 0
