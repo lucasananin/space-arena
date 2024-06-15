@@ -294,7 +294,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6972132582502089751}
   - component: {fileID: 6972132582502089748}
-  - component: {fileID: 6972132582502089754}
   - component: {fileID: 1991284043732963820}
   - component: {fileID: 6972132582502089745}
   - component: {fileID: 6972132582502089755}
@@ -304,6 +303,7 @@ GameObject:
   - component: {fileID: 6972132582502089756}
   - component: {fileID: 6972132582502089750}
   - component: {fileID: 6972132582502089757}
+  - component: {fileID: -4225074446045680670}
   - component: {fileID: 3641600706552242295}
   - component: {fileID: 8151347125946582114}
   - component: {fileID: -5220123326973939600}
@@ -353,22 +353,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &6972132582502089754
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6972132582502089762}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.1}
-  m_Size: {x: 1, y: 0.6}
-  m_Direction: 1
 --- !u!58 &1991284043732963820
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -528,6 +512,10 @@ MonoBehaviour:
   _canTakeDamage: 1
   _maxHealth: 5
   _currentHealth: 0
+  _lastDamageModel:
+    _entitySource: {fileID: 0}
+    _pointHit: {x: 0, y: 0, z: 0}
+    _value: 0
   _deadVfx: {fileID: 8119092763937825176, guid: 320028f9a32b15945b86e578c2b92c8b, type: 3}
 --- !u!114 &6972132582502089750
 MonoBehaviour:
@@ -564,6 +552,20 @@ MonoBehaviour:
   _strenghtMultiplier: 0.2
   _duration: 0.1
   _defaultPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &-4225074446045680670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972132582502089762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c94250c88646c4dbf9dbffc6235108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 6972132582502089756}
+  _deadVfx: {fileID: 4508168008497764178, guid: 1b816edf66724374db87e61fdd977752, type: 3}
 --- !u!114 &3641600706552242295
 MonoBehaviour:
   m_ObjectHideFlags: 0

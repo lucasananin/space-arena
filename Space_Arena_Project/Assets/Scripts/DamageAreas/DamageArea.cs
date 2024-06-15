@@ -58,7 +58,7 @@ public class DamageArea : MonoBehaviour
 
             if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour) && !HasAvailableTag(_colliderHit.gameObject)) continue;
 
-            _healthBehaviour?.TakeDamage(1);
+            _healthBehaviour?.TakeDamage();
         }
     }
 

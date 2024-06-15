@@ -2,27 +2,35 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Events;
 
 public abstract class HealthBehaviour : MonoBehaviour
 {
-    [SerializeField] bool _canTakeDamage = true;
-    [SerializeField] int _maxHealth = 100;
-    [SerializeField, ReadOnly] int _currentHealth = 0;
+    [SerializeField] protected bool _canTakeDamage = true;
+    [SerializeField] protected int _maxHealth = 100;
+    [SerializeField, ReadOnly] protected int _currentHealth = 0;
+    [SerializeField, ReadOnly] protected DamageModel _lastDamageModel = null;
+
+    public DamageModel LastDamageModel { get => _lastDamageModel; private set => _lastDamageModel = value; }
 
     public event System.Action onDamageTaken = null;
     public event System.Action onDead = null;
-    //public UnityEvent onDamageTaken_UEvent = null;
-    //public UnityEvent onDead_UEvent = null;
 
     private void Awake()
     {
         RestoreHealth();
     }
 
-    public void TakeDamage(int _value)
+    [Button]
+    public void TakeDamage()
     {
-        _currentHealth -= _value;
+        var _damageModel = new DamageModel(null, transform.position, 1);
+        TakeDamage(_damageModel);
+    }
+
+    public void TakeDamage(DamageModel _damageModel)
+    {
+        _lastDamageModel = _damageModel;
+        _currentHealth -= _damageModel.Value;
 
         if (_currentHealth <= 0)
         {
@@ -50,12 +58,6 @@ public abstract class HealthBehaviour : MonoBehaviour
     public bool IsAlive()
     {
         return _currentHealth > 0;
-    }
-
-    [Button]
-    private void TakeDamage()
-    {
-        TakeDamage(1);
     }
 
     protected abstract void OnDead();
