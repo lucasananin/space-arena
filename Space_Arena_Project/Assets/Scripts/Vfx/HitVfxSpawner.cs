@@ -24,7 +24,8 @@ public class HitVfxSpawner : MonoBehaviour
 
     private void SpawnVfx(RaycastHit2D _hitInfo)
     {
-        var _i = Instantiate(_hitVfx, _hitInfo.point, Quaternion.identity);
-        _i.transform.right = _hitInfo.normal;
+        Instantiate(_hitVfx, _hitInfo.point, Quaternion.identity);
+        //var _i = Instantiate(_hitVfx, _hitInfo.point, Quaternion.identity);
+        //_i.transform.right = _hitInfo.normal;
     }
 }

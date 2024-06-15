@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 2658297560621282581}
   _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _canFlip: 1
   _parentFlipper: {fileID: 2658297561336904054}
 --- !u!114 &2658297560621282582
 MonoBehaviour:
@@ -297,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 2658297561336904062}
   _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _canFlip: 1
   _aiPath: {fileID: 2658297561336904048}
 --- !u!114 &2658297561336904053
 MonoBehaviour:
@@ -344,9 +346,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBehaviour: {fileID: 2658297561336904053}
-  _renderTransform: {fileID: 2658297562365273111}
+  _renderTransform: {fileID: 3974821397180803495}
   _strength: {x: 1, y: 1, z: 0}
-  _strenghtMultiplier: 0.1
+  _strenghtMultiplier: 0.2
   _duration: 0.1
   _defaultPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &-592222945812360713
