@@ -12,16 +12,17 @@ public abstract class InteractAgent : MonoBehaviour
     [SerializeField, ReadOnly] protected InteractableBehaviour _currentInteractable = null;
 
     private Collider2D[] _results = new Collider2D[9];
+    private List<Collider2D> _resultsList = new List<Collider2D>();
 
     protected virtual InteractableBehaviour SearchForInteractables()
     {
         int _hits = Physics2D.OverlapCircleNonAlloc(transform.position, _radius, _results, _layerMask);
 
+        UpdateResultsList(_hits);
+
         for (int i = 0; i < _hits; i++)
         {
-            Collider2D _colliderHit = _results[i];
-
-            // Ver qual está mais próximo.
+            var _colliderHit = _resultsList[i];
 
             if (_colliderHit.TryGetComponent(out InteractableBehaviour _interactableBehaviour))
             {
@@ -30,5 +31,17 @@ public abstract class InteractAgent : MonoBehaviour
         }
 
         return null;
+    }
+
+    private void UpdateResultsList(int _hits)
+    {
+        _resultsList.Clear();
+
+        for (int i = 0; i < _hits; i++)
+        {
+            _resultsList.Add(_results[i]);
+        }
+
+        _resultsList = GeneralMethods.OrderListByDistance(_resultsList, transform.position);
     }
 }
