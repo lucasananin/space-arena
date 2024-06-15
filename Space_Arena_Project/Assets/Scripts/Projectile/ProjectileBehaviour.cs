@@ -13,6 +13,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     [SerializeField, ReadOnly] protected int _currentPierceCount = 0;
 
     private Collider2D[] _explosionResults = new Collider2D[9];
+    private RaycastHit2D[] _obstacleResults = new RaycastHit2D[9];
     private List<EntityBehaviour> _entitiesFound = new List<EntityBehaviour>();
 
     public event System.Action<ShootModel> OnInit = null;
@@ -68,14 +69,26 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
         for (int i = 0; i < _hits; i++)
         {
-            if (_explosionResults[i].TryGetComponent(out HealthBehaviour _healthBehaviour))
+            var _colliderHit = _explosionResults[i];
+
+            if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour))
             {
+                if (HasObstacleBetween(_point, _colliderHit.transform.position)) continue;
+
                 var _damage = _shootModel.GetExplosiveDamage();
                 _healthBehaviour.TakeDamage(_damage);
             }
         }
 
         OnExplode?.Invoke();
+    }
+
+    private bool HasObstacleBetween(Vector3 _origin, Vector3 _targetPoint)
+    {
+        var _vector = _targetPoint - _origin;
+        var _rayHitCount = Physics2D.RaycastNonAlloc(_origin, _vector.normalized, _obstacleResults, _vector.magnitude, _projectileSO.ObstacleLayerMask);
+        bool _hitObstacle = _rayHitCount > 0;
+        return _hitObstacle;
     }
 
     private void TryAutoRotate()

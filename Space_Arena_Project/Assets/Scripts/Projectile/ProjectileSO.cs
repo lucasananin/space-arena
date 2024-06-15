@@ -11,6 +11,7 @@ public class ProjectileSO : ScriptableObject
     [SerializeField] TagCollectionSO _tagCollectionSO = null;
     [SerializeField] AmmoSO _ammoSO = null;
     [SerializeField] LayerMask _layerMask = default;
+    [SerializeField] LayerMask _obstacleLayerMask = default;
     [SerializeField] Vector2 _spawnPositionOffset = default;
     [SerializeField] Vector2 _minMaxTimeUntilDestroy = default;
     [SerializeField, Range(1, 99)] int _maxPierceCount = 1;
@@ -49,6 +50,7 @@ public class ProjectileSO : ScriptableObject
     public float MaxAngle { get => _maxAngle; private set => _maxAngle = value; }
 
     public LayerMask LayerMask { get => _layerMask; private set => _layerMask = value; }
+    public LayerMask ObstacleLayerMask { get => _obstacleLayerMask; private set => _obstacleLayerMask = value; }
     public Vector2 SpawnPositionOffset { get => _spawnPositionOffset; private set => _spawnPositionOffset = value; }
     public Vector2 MinMaxTimeUntilDestroy { get => _minMaxTimeUntilDestroy; private set => _minMaxTimeUntilDestroy = value; }
     public int MaxPierceCount { get => _maxPierceCount; private set => _maxPierceCount = value; }
