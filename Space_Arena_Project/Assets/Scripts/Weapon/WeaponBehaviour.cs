@@ -28,6 +28,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     public WeaponSO WeaponSO { get => _weaponSO; private set => _weaponSO = value; }
     public Transform Muzzle { get => _muzzle; private set => _muzzle = value; }
+    public float ChargingTime { get => _weaponSO.MaxChargeTime; }
 
     protected virtual void Awake()
     {
