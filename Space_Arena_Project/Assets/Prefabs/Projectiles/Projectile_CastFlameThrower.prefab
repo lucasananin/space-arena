@@ -62,15 +62,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90be3c4517db8714eb857ec86f6e5f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectileSO: {fileID: 11400000, guid: e99885e4916ad4645ab992f656aacafe, type: 2}
   _shootModel:
-    _characterSource: {fileID: 0}
+    _entitySource: {fileID: 0}
     _weaponSource: {fileID: 0}
+    _projectileSO: {fileID: 0}
+    _isChargedShot: 0
+  _projectileSO: {fileID: 11400000, guid: e99885e4916ad4645ab992f656aacafe, type: 2}
   _timeUntilDestroy: 0
   _destroyTimer: 0
   _currentPierceCount: 0
   _dummyCircleCollider: {fileID: 2945808015590850479}
-  _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
 --- !u!114 &5848107137194161381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +79,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7353528016857128666}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6cf01a22c72c2d74ab6b943d57dea308, type: 3}
   m_Name: 
