@@ -18,17 +18,20 @@ MonoBehaviour:
   _displayName: Burst
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
-  _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
+  _projectileSO: {fileID: 11400000, guid: c7cc412c99a65d44a85a88dd2a28b89d, type: 2}
   _chargedProjectileSO: {fileID: 0}
-  _ammoSO: {fileID: 11400000, guid: b3dc590e3e7accd459b765e535abb941, type: 2}
+  _damage: 2
+  _chargeShotDamage: 1
+  _explosiveDamage: 1
   _fireRate: 0.1
   _maxChargeTime: 0
   _maxHeat: 0
   _heatPerShot: 0
   _heatDecreasePerSecond: 0
   _maxOverheatTime: 0
-  _maxShootAngle: 3
+  _maxShootAngle: 5
   _projectilesPerShot: 1
+  _ammoPerShot: 1
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0
   _burstRate: 0.5

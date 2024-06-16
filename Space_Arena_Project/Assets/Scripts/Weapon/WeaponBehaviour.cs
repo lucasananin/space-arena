@@ -64,7 +64,8 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     public virtual void Shoot()
     {
-        _nextFire -= _weaponSO.FireRate;
+        //_nextFire -= _weaponSO.FireRate;
+        _nextFire = 0;
         PrepareProjectile(_weaponSO.ProjectileSO, false);
         DecreaseAmmo(_weaponSO.ProjectileSO);
         IncreaseHeat(_weaponSO.HeatPerShot);
@@ -73,8 +74,10 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     public virtual void ShootChargedShot()
     {
-        _nextFire -= _weaponSO.FireRate;
-        _chargeTimer -= _weaponSO.MaxChargeTime;
+        //_nextFire -= _weaponSO.FireRate;
+        //_chargeTimer -= _weaponSO.MaxChargeTime;
+        _nextFire = 0;
+        _chargeTimer = 0;
         PrepareProjectile(_weaponSO.ChargedProjectileSO, true);
         DecreaseAmmo(_weaponSO.ChargedProjectileSO);
         IncreaseHeat(_weaponSO.MaxHeat + HEAT_OFFSET);
