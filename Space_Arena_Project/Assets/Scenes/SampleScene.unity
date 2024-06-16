@@ -5806,7 +5806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &348940563
 Transform:
   m_ObjectHideFlags: 0
@@ -27517,6 +27517,7 @@ MonoBehaviour:
   _strength: {x: 1, y: 0.5, z: 0}
   _strenghtMultiplier: 0.1
   _duration: 0.1
+  _vibrato: 10
   _defaultPosition: {x: 0, y: 0, z: 0}
 --- !u!58 &740099031
 CircleCollider2D:
@@ -27586,6 +27587,10 @@ MonoBehaviour:
   _canTakeDamage: 1
   _maxHealth: 100
   _currentHealth: 0
+  _lastDamageModel:
+    _entitySource: {fileID: 0}
+    _pointHit: {x: 0, y: 0, z: 0}
+    _value: 0
 --- !u!1 &743042029
 GameObject:
   m_ObjectHideFlags: 0
@@ -35344,6 +35349,7 @@ MonoBehaviour:
   _strength: {x: 1, y: 0.5, z: 0}
   _strenghtMultiplier: 0.1
   _duration: 0.1
+  _vibrato: 10
   _defaultPosition: {x: 0, y: 0, z: 0}
 --- !u!58 &1325800517
 CircleCollider2D:
@@ -35397,6 +35403,10 @@ MonoBehaviour:
   _canTakeDamage: 1
   _maxHealth: 100
   _currentHealth: 0
+  _lastDamageModel:
+    _entitySource: {fileID: 0}
+    _pointHit: {x: 0, y: 0, z: 0}
+    _value: 0
 --- !u!114 &1369350279 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6972132582502089753, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
@@ -46748,6 +46758,10 @@ MonoBehaviour:
   _canTakeDamage: 1
   _maxHealth: 100
   _currentHealth: 0
+  _lastDamageModel:
+    _entitySource: {fileID: 0}
+    _pointHit: {x: 0, y: 0, z: 0}
+    _value: 0
 --- !u!114 &1823301789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52913,6 +52927,7 @@ MonoBehaviour:
   _strength: {x: 1, y: 0.5, z: 0}
   _strenghtMultiplier: 0.1
   _duration: 0.1
+  _vibrato: 10
   _defaultPosition: {x: 0, y: 0, z: 0}
 --- !u!58 &2094770496
 CircleCollider2D:
@@ -52966,6 +52981,10 @@ MonoBehaviour:
   _canTakeDamage: 1
   _maxHealth: 100
   _currentHealth: 0
+  _lastDamageModel:
+    _entitySource: {fileID: 0}
+    _pointHit: {x: 0, y: 0, z: 0}
+    _value: 0
 --- !u!1 &2110332894
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class HitShakeVfx : MonoBehaviour
     [SerializeField] Vector3 _strength = new Vector3(1f, 1f, 0f);
     [SerializeField, Range(0.1f, 9f)] float _strenghtMultiplier = 1f;
     [SerializeField, Range(0.1f, 1f)] float _duration = 1f;
+    [SerializeField, Range(1, 99)] int _vibrato = 10;
     [Space]
     [SerializeField, ReadOnly] Vector3 _defaultPosition = default;
 
@@ -39,7 +40,7 @@ public class HitShakeVfx : MonoBehaviour
     public void Play()
     {
         _renderTransform.DOComplete();
-        _renderTransform.DOShakePosition(_duration, _strength * _strenghtMultiplier).
+        _renderTransform.DOShakePosition(_duration, _strength * _strenghtMultiplier,_vibrato).
             OnComplete(() =>
             {
                 _renderTransform.localPosition = _defaultPosition;

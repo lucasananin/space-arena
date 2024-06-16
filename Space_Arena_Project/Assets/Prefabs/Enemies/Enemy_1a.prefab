@@ -516,7 +516,6 @@ MonoBehaviour:
     _entitySource: {fileID: 0}
     _pointHit: {x: 0, y: 0, z: 0}
     _value: 0
-  _deadVfx: {fileID: 8119092763937825176, guid: 320028f9a32b15945b86e578c2b92c8b, type: 3}
 --- !u!114 &6972132582502089750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,7 +549,8 @@ MonoBehaviour:
   _renderTransform: {fileID: 4510502177512100175}
   _strength: {x: 1, y: 1, z: 0}
   _strenghtMultiplier: 0.2
-  _duration: 0.1
+  _duration: 0.2
+  _vibrato: 20
   _defaultPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &-4225074446045680670
 MonoBehaviour:
