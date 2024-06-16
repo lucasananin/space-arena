@@ -16,4 +16,6 @@ public abstract class EntityBehaviour : MonoBehaviour
     {
         return _healthBehaviour.IsAlive();
     }
+
+    public abstract bool IsMoving();
 }

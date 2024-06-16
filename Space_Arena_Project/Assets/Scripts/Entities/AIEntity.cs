@@ -126,7 +126,7 @@ public class AiEntity : EntityBehaviour
         _searchPathTimer = 0;
     }
 
-    public bool IsMoving()
+    public override bool IsMoving()
     {
         return _aiPath.velocity != Vector3.zero;
     }
