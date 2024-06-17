@@ -284,7 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectileBehaviour: {fileID: 7353528016857128665}
   _simpleExplosionPrefab: {fileID: 6219246531898581204, guid: 35c5b57ba918f0546ac6035dbf2c3e79, type: 3}
-  _particleSystemPrefab: {fileID: 0}
+  _particleSystemPrefab: {fileID: 5517883229447819339, guid: 33f23304d97b0294b9de46bd0bc482c9, type: 3}
   _onHit: 1
   _onStop: 0
   _onTimerEnd: 1
