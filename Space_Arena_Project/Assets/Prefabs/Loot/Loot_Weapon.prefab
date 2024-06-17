@@ -4992,5 +4992,5 @@ MonoBehaviour:
   _transform: {fileID: 5281741770923695895}
   _useSin: 1
   _speed: 4
-  _yMagnitude: 0.2
+  _yMagnitude: 0.1
   _xMagnitude: 0

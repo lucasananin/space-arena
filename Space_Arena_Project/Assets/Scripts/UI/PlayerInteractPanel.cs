@@ -28,8 +28,9 @@ public class PlayerInteractPanel : MonoBehaviour
         }
         else
         {
+            transform.parent.position = _interactableBehaviour.transform.position;
             _view.Show();
-            _text.text = $"E - {_interactableBehaviour.GetText()}";
+            _text.text = $"{_interactableBehaviour.GetText()}";
         }
     }
 }
