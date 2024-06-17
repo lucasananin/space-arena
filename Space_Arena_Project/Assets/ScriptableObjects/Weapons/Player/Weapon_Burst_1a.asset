@@ -34,5 +34,5 @@ MonoBehaviour:
   _ammoPerShot: 1
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0
-  _burstRate: 0.5
+  _burstRate: 0.3
   _maxBurstShootCount: 3

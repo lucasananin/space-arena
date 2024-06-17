@@ -379,4 +379,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileBehaviour: {fileID: 7353528016857128665}
-  _hitVfx: {fileID: 4595461622765139695, guid: 8a1974664a878cf4f8fd92411f899cac, type: 3}
+  _hitVfx: {fileID: 4595461622765139695, guid: 2f9ac36889fab474ca618ef497c802c6, type: 3}
