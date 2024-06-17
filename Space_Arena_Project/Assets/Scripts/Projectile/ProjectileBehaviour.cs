@@ -157,6 +157,11 @@ public abstract class ProjectileBehaviour : MonoBehaviour
         return GeneralMethods.HasAvailableTag(_gameObjectHit, _projectileSO.Tags);
     }
 
+    public float GetExplodeTimeNormalized()
+    {
+        return Mathf.InverseLerp(0, _timeUntilDestroy, _destroyTimer);
+    }
+
     protected IEnumerator DestroyRoutine()
     {
         yield return new WaitForSeconds(_timeUntilDestroy);

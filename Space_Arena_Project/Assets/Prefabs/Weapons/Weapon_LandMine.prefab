@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 8583216288661687007}
   _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
+  _canFlip: 0
   _parentFlipper: {fileID: 0}
 --- !u!114 &8583216288661687006
 MonoBehaviour:
