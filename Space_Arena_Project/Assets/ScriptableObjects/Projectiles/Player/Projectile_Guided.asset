@@ -44,4 +44,4 @@ MonoBehaviour:
   _acelerationMultiplier: 0
   _destroyOnStop: 0
   _maxCastDistance: 0
-  _maxGuidedPositionRadius: 0
+  _maxGuidedPositionRadius: 0.2

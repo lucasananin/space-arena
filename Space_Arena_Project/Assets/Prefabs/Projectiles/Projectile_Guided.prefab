@@ -331,7 +331,7 @@ SpriteRenderer:
   m_SortingLayerID: -619417749
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a36400a23d0e4ce46bc7cd73c54670fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1478b1e9b71fe274c845c2d7f5f873ce, type: 3}
   m_Color: {r: 1, g: 0.19999999, b: 0.4666668, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -393,10 +393,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6f26004532a1f44bcf660b1da2d341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectileSO: {fileID: 11400000, guid: 9db3c891a3009c44291b6bae7a42576f, type: 2}
   _shootModel:
     _entitySource: {fileID: 0}
     _weaponSource: {fileID: 0}
+    _projectileSO: {fileID: 0}
+    _isChargedShot: 0
+  _projectileSO: {fileID: 11400000, guid: 9db3c891a3009c44291b6bae7a42576f, type: 2}
   _timeUntilDestroy: 0
   _destroyTimer: 0
   _currentPierceCount: 0
