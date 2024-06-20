@@ -62,11 +62,13 @@ public class SearchTargetAction : StateAction
 
     private bool HasAvailableTag(Collider2D _colliderHit)
     {
-        int _count = OriginSO.Tags.Length;
+        //var _tags = OriginSO.Tags.Length;
+        var _tags = _aIEntity.GetOpponentTags();
+        int _count = _tags.Length;
 
         for (int i = 0; i < _count; i++)
         {
-            if (_colliderHit.CompareTag(OriginSO.Tags[i]))
+            if (_colliderHit.CompareTag(_tags[i]))
             {
                 return true;
             }

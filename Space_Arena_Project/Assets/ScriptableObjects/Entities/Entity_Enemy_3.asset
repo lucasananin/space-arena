@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d5a4e750096ac4ab1783d5de629368, type: 3}
   m_Name: Entity_Enemy_3
   m_EditorClassIdentifier: 
+  _opponentTags: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
+  _projectileHitTag: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
   _entityPrefab: {fileID: 2658297561336904056, guid: c018e4fe6b4b32e4fb0f3aa249a124d9, type: 3}
   _shootDistance: 12
   _minMaxShootTimeOffset: {x: 1.8, y: 2.2}
+  _canShootWhileMoving: 1
+  _canRotateWhileShooting: 1
   _minMaxTimeUntilSearchPath: {x: 1, y: 2}
   _minMax_moveCloseRadius: {x: 3, y: 6}
-  _moveClose_radius: 6
   _stopSearchingPathOnClose: 0
   _maxNumberOfTries: 10

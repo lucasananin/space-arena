@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class EntityBehaviour : MonoBehaviour
 {
-    [SerializeField] EntitySO _entitySO = null;
-    [SerializeField] HealthBehaviour _healthBehaviour = null;
+    [SerializeField] protected EntitySO _entitySO = null;
+    [SerializeField] protected HealthBehaviour _healthBehaviour = null;
 
     public T GetEntitySO<T>() where T : EntitySO
     {
@@ -15,6 +15,16 @@ public abstract class EntityBehaviour : MonoBehaviour
     public bool IsAlive()
     {
         return _healthBehaviour.IsAlive();
+    }
+
+    public string[] GetOpponentTags()
+    {
+        return _entitySO.OpponentTags.Tags;
+    }
+
+    public string[] GetProjectileHitTags()
+    {
+        return _entitySO.ProjectileHitTags.Tags;
     }
 
     public abstract bool IsMoving();

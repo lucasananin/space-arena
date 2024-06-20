@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f363c8404315cd439c1d54533cefe0a, type: 3}
   m_Name: Entity_Player
   m_EditorClassIdentifier: 
+  _opponentTags: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}
+  _projectileHitTag: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}
