@@ -356,7 +356,7 @@ MonoBehaviour:
   _strength: {x: 1, y: 1, z: 0}
   _strenghtMultiplier: 0.2
   _duration: 0.2
-  _vibrato: 20
+  _vibrato: 40
   _defaultPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &-1064852920540900804
 MonoBehaviour:
