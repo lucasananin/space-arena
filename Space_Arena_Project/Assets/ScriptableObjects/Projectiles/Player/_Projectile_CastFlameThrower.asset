@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c83bc7b64efbc1f4e9b1e00bbec38444, type: 3}
-  m_Name: Projectile_CastFlameThrower
+  m_Name: _Projectile_CastFlameThrower
   m_EditorClassIdentifier: 
   _prefab: {fileID: 3761620198474376623, guid: 8ec980d4a25158b42b2778ccc4f2aa5e, type: 3}
   _tagCollectionSO: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}

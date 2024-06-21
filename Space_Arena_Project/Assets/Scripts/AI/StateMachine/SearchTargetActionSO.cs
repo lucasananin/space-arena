@@ -9,11 +9,9 @@ public class SearchTargetActionSO : StateActionSO<SearchTargetAction>
 {
     [SerializeField] LayerMask _layerMask = default;
     [SerializeField] float _radius = 5f;
-    [SerializeField] TagCollectionSO _tagCollectionSO = null;
 
     public LayerMask LayerMask { get => _layerMask; private set => _layerMask = value; }
     public float Radius { get => _radius; private set => _radius = value; }
-    public string[] Tags { get => _tagCollectionSO.Tags; }
 }
 
 public class SearchTargetAction : StateAction
@@ -62,7 +60,6 @@ public class SearchTargetAction : StateAction
 
     private bool HasAvailableTag(Collider2D _colliderHit)
     {
-        //var _tags = OriginSO.Tags.Length;
         var _tags = _aIEntity.GetOpponentTags();
         int _count = _tags.Length;
 

@@ -8,7 +8,6 @@ public class ProjectileSO : ScriptableObject
 {
     [Title("// General")]
     [SerializeField] ProjectileBehaviour _prefab = null;
-    [SerializeField] TagCollectionSO _tagCollectionSO = null;
     [SerializeField] AmmoSO _ammoSO = null;
     [SerializeField] LayerMask _layerMask = default;
     [SerializeField] LayerMask _obstacleLayerMask = default;
@@ -41,7 +40,6 @@ public class ProjectileSO : ScriptableObject
     [SerializeField, Range(0f, 9f)] float _maxGuidedPositionRadius = 0f;
 
     public ProjectileBehaviour Prefab { get => _prefab; private set => _prefab = value; }
-    public string[] Tags { get => _tagCollectionSO.Tags; }
     public AmmoSO AmmoSO { get => _ammoSO; private set => _ammoSO = value; }
 
     public bool CanAutoRotate { get => _canAutoRotate; private set => _canAutoRotate = value; }
