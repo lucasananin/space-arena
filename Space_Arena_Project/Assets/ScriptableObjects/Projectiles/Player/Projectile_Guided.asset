@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Projectile_Guided
   m_EditorClassIdentifier: 
   _prefab: {fileID: 8552097569084531652, guid: 867dce2f07944a74c8dfb6e040b891e3, type: 3}
-  _tagCollectionSO: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}
   _ammoSO: {fileID: 11400000, guid: bac4e9de8935da2408558c7a3be51837, type: 2}
   _layerMask:
     serializedVersion: 2
@@ -24,7 +23,7 @@ MonoBehaviour:
   _spawnPositionOffset: {x: 0, y: 0}
   _minMaxTimeUntilDestroy: {x: 1.5, y: 1.5}
   _maxPierceCount: 1
-  _explosionRadius: 1
+  _explosionRadius: 2
   _canAutoRotate: 0
   _entityLayerMask:
     serializedVersion: 2
