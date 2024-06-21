@@ -4825,7 +4825,7 @@ GameObject:
   - component: {fileID: 1588312010376726541}
   - component: {fileID: 1588312010376726530}
   m_Layer: 0
-  m_Name: Vfx_Hit_BloodRibbon_1
+  m_Name: _Vfx_Hit_BloodRibbon_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

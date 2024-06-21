@@ -4884,7 +4884,7 @@ GameObject:
   - component: {fileID: 8777745843820279934}
   - component: {fileID: 8777745843820279935}
   m_Layer: 0
-  m_Name: Vfx_Hit_Sprite_Red
+  m_Name: _Vfx_Hit_Sprite_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

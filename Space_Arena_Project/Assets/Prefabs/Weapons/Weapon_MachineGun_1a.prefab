@@ -426,7 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _impulseSource: {fileID: -3242506195273867952}
   _weapon: {fileID: 3562192091433409978}
-  _velocityMultiplier: 0.1
+  _velocityMultiplier: 0.2
 --- !u!1 &3562192091570808537
 GameObject:
   m_ObjectHideFlags: 0
