@@ -39,7 +39,8 @@ public class WeaponSO : ScriptableObject
     [SerializeField, Range(0f, 99f)] float _maxOverheatTime = 0f;
 
     [Title("// Precision")]
-    [SerializeField, Range(0, 180)] int _maxShootAngle = 0;
+    [SerializeField, Range(0, 360)] float _maxShootAngle = 0;
+    [SerializeReference] ShootArcMode _arcMode = default;
 
     [Title("// Projectiles per shot")]
     [SerializeField, Range(1, 36)] int _projectilesPerShot = 1;
@@ -74,7 +75,7 @@ public class WeaponSO : ScriptableObject
     public float HeatPerShot { get => _heatPerShot; private set => _heatPerShot = value; }
     public float HeatDecreasePerSecond { get => _heatDecreasePerSecond; private set => _heatDecreasePerSecond = value; }
     public float MaxOverheatTime { get => _maxOverheatTime; private set => _maxOverheatTime = value; }
-    public int MaxShootAngle { get => _maxShootAngle; private set => _maxShootAngle = value; }
+    //public float MaxShootAngle { get => _maxShootAngle; private set => _maxShootAngle = value; }
     public int ProjectilesPerShot { get => _projectilesPerShot; private set => _projectilesPerShot = value; }
     public int AmmoPerShot { get => _ammoPerShot; set => _ammoPerShot = value; }
 
@@ -110,6 +111,29 @@ public class WeaponSO : ScriptableObject
         return _totalFireRate + _burstRate + _offset;
     }
 
+    public Quaternion GetProjectileRotation(int _projectileIndex)
+    {
+        if (_maxShootAngle <= 0)
+        {
+            return Quaternion.identity;
+        }
+
+        float _halfAngle = _maxShootAngle / 2f;
+
+        if (_arcMode == ShootArcMode.Spread && _projectilesPerShot > 1)
+        {
+            float _sector = _maxShootAngle;
+            float _divisionCount = _sector / (_projectilesPerShot - 1);
+            float _angle = -_halfAngle + _divisionCount * _projectileIndex;
+            return Quaternion.AngleAxis(_angle, Vector3.forward);
+        }
+        else
+        {
+            float _randomAngle = Random.Range(-_halfAngle, _halfAngle);
+            return Quaternion.AngleAxis(_randomAngle, Vector3.forward);
+        }
+    }
+
     //public AmmoSO GetAmmoSO()
     //{
     //    return HasChargeTime() ? _chargedProjectileSO.AmmoSO: _projectileSO.AmmoSO;
@@ -119,4 +143,10 @@ public class WeaponSO : ScriptableObject
     //{
     //    return _ammoPerShot;
     //}
+}
+
+public enum ShootArcMode
+{
+    Random,
+    Spread,
 }
