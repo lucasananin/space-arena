@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3761620198474376623}
   - component: {fileID: 5848107137194161381}
   m_Layer: 0
-  m_Name: Projectile_CastFlameThrower
+  m_Name: _Projectile_FlameThrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,4 +85,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileBehaviour: {fileID: 3761620198474376623}
-  _hitVfx: {fileID: 4595461622765139695, guid: 639f654554c48174098c08c0ccce3547, type: 3}
+  _hitVfx: {fileID: 4595461622765139695, guid: b14a36aa819990e40a0f52fe00b88f38, type: 3}

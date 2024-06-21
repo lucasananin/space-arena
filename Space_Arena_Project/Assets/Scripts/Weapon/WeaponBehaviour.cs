@@ -205,4 +205,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
     {
         return _weaponSO.ExplosiveDamage;
     }
+
+    public float GetCastProjectileMaxDistance()
+    {
+        return _weaponSO.ProjectileSO.MaxCastDistance;
+    }
 }
