@@ -6,8 +6,9 @@ using UnityEngine;
 public class PlayerWeaponHandler : MonoBehaviour
 {
     [SerializeField] EntityBehaviour _entitySource = null;
-    [SerializeField] EntityHolster _holster = null;
+    [SerializeField] SideFlipper _entityFlipper = null;
     [SerializeField] AmmoHandler _ammoHandler = null;
+    [SerializeField] EntityHolster _holster = null;
     [SerializeField, Range(1, 9)] int _maxWeaponsCount = 2;
     [SerializeField, Range(0f, 1f)] float _swapInputDelay = 0.3f;
     [SerializeField] List<WeaponBehaviour> _weaponsList = null;
@@ -34,6 +35,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         InputHandler.onLeftMouseButtonDown += PullTrigger;
         InputHandler.onLeftMouseButtonUp += ReleaseTrigger;
         InputHandler.onMouseScrollSwipe += SwapThroughInput;
+        _entityFlipper.onFlip += RotateCurrentWeapon;
         //InputHandler.onMouseScrollUp += SwapToNextWeapon;
         //InputHandler.onMouseScrollDown += SwapToPreviousWeapon;
     }
@@ -43,6 +45,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         InputHandler.onLeftMouseButtonDown -= PullTrigger;
         InputHandler.onLeftMouseButtonUp -= ReleaseTrigger;
         InputHandler.onMouseScrollSwipe -= SwapThroughInput;
+        _entityFlipper.onFlip -= RotateCurrentWeapon;
         //InputHandler.onMouseScrollUp -= SwapToNextWeapon;
         //InputHandler.onMouseScrollDown -= SwapToPreviousWeapon;
     }

@@ -10,19 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: _Weapon_Auto_2
+  m_Name: _Weapon_Flamethrower
   m_EditorClassIdentifier: 
+  _id: Flamethrower_1
   _iconSprite: {fileID: -1333489699, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _weaponPrefab: {fileID: 1427115857888813632, guid: 8e1528fe4d3b5874aab1bb2cb04d5b9d, type: 3}
+  _displayName: Flamethrower
+  _holsterPosition: {x: 0, y: 0, z: 0}
+  _holsterEuler: {x: 0, y: 0, z: 0}
   _projectileSO: {fileID: 11400000, guid: e99885e4916ad4645ab992f656aacafe, type: 2}
   _chargedProjectileSO: {fileID: 0}
+  _damage: 1
+  _chargeShotDamage: 1
+  _explosiveDamage: 1
   _fireRate: 0.1
   _maxChargeTime: 0
   _maxHeat: 0
   _heatPerShot: 0
   _heatDecreasePerSecond: 0
   _maxOverheatTime: 0
-  _maxShootAngle: 0
+  _shootAngle: 0
+  _arcMode: 0
   _projectilesPerShot: 1
+  _ammoPerShot: 1
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0
   _burstRate: 0

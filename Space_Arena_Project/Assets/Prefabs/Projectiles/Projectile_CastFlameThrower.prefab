@@ -79,10 +79,10 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7353528016857128666}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6cf01a22c72c2d74ab6b943d57dea308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileBehaviour: {fileID: 3761620198474376623}
-  _hitVfx: {fileID: 6098819007900216103, guid: 36d1af6151286234880b03b6f90eebf9, type: 3}
+  _hitVfx: {fileID: 4595461622765139695, guid: 639f654554c48174098c08c0ccce3547, type: 3}
