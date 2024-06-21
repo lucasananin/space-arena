@@ -98,27 +98,6 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     protected Quaternion CalculateProjectileRotation(int _projectileIndex)
     {
-        //if (_weaponSO.MaxShootAngle <= 0)
-        //{
-        //    return transform.rotation;
-        //}
-
-        //float _halfAngle = _weaponSO.MaxShootAngle / 2f;
-        //Quaternion _rotationOffset;
-
-        //if (_weaponSO.ProjectilesPerShot > 1)
-        //{
-        //    float _sector = _weaponSO.MaxShootAngle * 2f;
-        //    float _divisionCount = _sector / (_weaponSO.ProjectilesPerShot - 1);
-        //    float _angle = -_weaponSO.MaxShootAngle + _divisionCount * _projectileIndex;
-        //    _rotationOffset = Quaternion.AngleAxis(_angle, Vector3.forward);
-        //}
-        //else
-        //{
-        //    float _randomAngle = Random.Range(-_halfAngle, _halfAngle);
-        //    _rotationOffset = Quaternion.AngleAxis(_randomAngle, Vector3.forward);
-        //}
-
         var _rotationOffset = _weaponSO.GetProjectileRotation(_projectileIndex);
         return transform.rotation * _rotationOffset;
     }
