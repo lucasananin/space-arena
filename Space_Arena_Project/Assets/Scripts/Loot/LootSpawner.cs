@@ -10,7 +10,8 @@ public class LootSpawner : MonoBehaviour
     [SerializeField] Transform _parentContainer = null;
 
     [Title("// Weapons")]
-    [SerializeField] bool _spawnOnStart = false;
+    [SerializeField] bool _spawnEachOnStart = false;
+    [SerializeField] bool _spawnRandomOnStart = false;
     [SerializeField] LootBehaviour _weaponLootPrefab = null;
     [SerializeField] BoxCollider2D _weaponCollider = null;
     [SerializeField] WeaponSO[] _weapons = null;
@@ -31,10 +32,11 @@ public class LootSpawner : MonoBehaviour
     {
         //_graph = AstarPath.active.data.graphs[0] as GridGraph;
 
-        if (_spawnOnStart)
-        {
+        if (_spawnEachOnStart)
             SpawnEachWeaponOnList();
-        }
+
+        if (_spawnRandomOnStart)
+            SpawnRandomWeapon();
     }
 
     private void OnEnable()
