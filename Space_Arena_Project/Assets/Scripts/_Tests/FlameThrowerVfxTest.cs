@@ -15,6 +15,12 @@ public class FlameThrowerVfxTest : MonoBehaviour
 
     private RaycastHit2D[] _results = new RaycastHit2D[9];
 
+    private void Start()
+    {
+        _particleSystem.transform.parent = null;
+        _collisionPlane.transform.parent = null;
+    }
+
     private void OnEnable()
     {
         _weaponBehaviour.onPullTrigger += Play;
@@ -31,11 +37,14 @@ public class FlameThrowerVfxTest : MonoBehaviour
 
     // Se acabar a municao e estiver tocando, Stop();
 
-    //private void LateUpdate()
-    //{
-    //    RotatePlane();
-    //    _collisionPlane.position = CalculatePlanePosition();
-    //}
+    private void LateUpdate()
+    {
+        _particleSystem.transform.position = _muzzle.position;
+        _particleSystem.transform.rotation = _weaponBehaviour.transform.rotation;
+
+        RotatePlane();
+        _collisionPlane.position = CalculatePlanePosition();
+    }
 
     private Vector3 CalculatePlanePosition()
     {
