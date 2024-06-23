@@ -5523,7 +5523,7 @@ GameObject:
   - component: {fileID: 304280897}
   - component: {fileID: 304280898}
   m_Layer: 0
-  m_Name: BoxCollider_1
+  m_Name: BoxCollider_Chests
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5537,12 +5537,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304280896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 606523257}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &304280898
 BoxCollider2D:
@@ -5568,7 +5568,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8, y: 2}
+  m_Size: {x: 4, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &306104882
 GameObject:
@@ -12205,8 +12205,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 304280897}
   - {fileID: 1878020145}
+  - {fileID: 304280897}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12223,25 +12223,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentContainer: {fileID: 1787702167}
-  _minMaxForce: {x: 5, y: 15}
-  _weaponSOs:
-  - {fileID: 11400000, guid: 1e90c408e692ad5429ca305582984276, type: 2}
-  - {fileID: 11400000, guid: 30ecdf5b450b1474c80b39c9680f3750, type: 2}
-  - {fileID: 11400000, guid: f56cf73d605c30c4c8ead4dff0644b58, type: 2}
-  - {fileID: 11400000, guid: df7bd8bd2f0c04e478be8536c9603323, type: 2}
-  - {fileID: 11400000, guid: f14c27747a8f8bb48aaeb135e617819c, type: 2}
-  - {fileID: 11400000, guid: bb780b23a3ed9d04cbd2ebfd37864e35, type: 2}
-  - {fileID: 11400000, guid: 2f13db3608cc9b349963b437935972ad, type: 2}
-  - {fileID: 11400000, guid: a7251c2b1d29dcc4a81dfd505a112493, type: 2}
-  - {fileID: 11400000, guid: 4cce4e38ee71add4d9c32282c4801e68, type: 2}
-  - {fileID: 11400000, guid: 67ab5d4e71e797a42afd7a0f1059079e, type: 2}
-  - {fileID: 11400000, guid: d0f1b8eac100580499a379c5c20df720, type: 2}
-  - {fileID: 11400000, guid: 602bcc9b04ff92f43a956d064488f781, type: 2}
+  _spawnOnStart: 1
   _weaponLootPrefab: {fileID: 5281741771645536111, guid: ef78d91f80ad7634cb58312915f887b8, type: 3}
+  _weaponCollider: {fileID: 1878020144}
+  _weapons:
+  - {fileID: 11400000, guid: f56cf73d605c30c4c8ead4dff0644b58, type: 2}
+  - {fileID: 11400000, guid: a7251c2b1d29dcc4a81dfd505a112493, type: 2}
+  - {fileID: 11400000, guid: 67ab5d4e71e797a42afd7a0f1059079e, type: 2}
+  - {fileID: 11400000, guid: 2f13db3608cc9b349963b437935972ad, type: 2}
+  - {fileID: 11400000, guid: f14c27747a8f8bb48aaeb135e617819c, type: 2}
+  - {fileID: 11400000, guid: 30ecdf5b450b1474c80b39c9680f3750, type: 2}
+  - {fileID: 11400000, guid: 602bcc9b04ff92f43a956d064488f781, type: 2}
+  - {fileID: 11400000, guid: 4cce4e38ee71add4d9c32282c4801e68, type: 2}
+  - {fileID: 11400000, guid: bb780b23a3ed9d04cbd2ebfd37864e35, type: 2}
+  - {fileID: 11400000, guid: 1e90c408e692ad5429ca305582984276, type: 2}
+  - {fileID: 11400000, guid: d0f1b8eac100580499a379c5c20df720, type: 2}
+  - {fileID: 11400000, guid: df7bd8bd2f0c04e478be8536c9603323, type: 2}
   _ammoPrefab: {fileID: 7651030474878422386, guid: 04f4d503b7191d74f96662f428487b62, type: 3}
   _healthPrefab: {fileID: 4558754204574171359, guid: 8b56851b8547fb44aad90d846e7f31bc, type: 3}
-  _boxCollider2D: {fileID: 1878020144}
-  _spawnOnStart: 1
+  _minMaxForce: {x: 5, y: 15}
+  _chestPrefab: {fileID: 4888130714981167641, guid: a807b6187623cd649b7cf0ceaace81a5, type: 3}
+  _chestCollider: {fileID: 304280898}
+  _currentChest: {fileID: 0}
 --- !u!1 &615679264
 GameObject:
   m_ObjectHideFlags: 0
@@ -37697,7 +37700,7 @@ GameObject:
   - component: {fileID: 1878020145}
   - component: {fileID: 1878020144}
   m_Layer: 0
-  m_Name: BoxCollider_2
+  m_Name: BoxCollider_Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37727,7 +37730,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12, y: 6}
+  m_Size: {x: 12, y: 5}
   m_EdgeRadius: 0
 --- !u!4 &1878020145
 Transform:
@@ -37737,12 +37740,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878020143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 606523257}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889534012
 GameObject:
