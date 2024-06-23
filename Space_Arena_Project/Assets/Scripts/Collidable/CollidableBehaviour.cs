@@ -15,5 +15,11 @@ public abstract class CollidableBehaviour : MonoBehaviour
         }
     }
 
+    [Button]
+    public virtual void ResetRuntimeValues()
+    {
+        _collided = false;
+    }
+
     public abstract void Collide(CollectableAgent _agent);
 }

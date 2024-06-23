@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class WeaponChestCollidable : CollidableBehaviour
 {
+    [SerializeField] LootDropper _lootDropper = null;
     [SerializeField] SpriteRenderer _renderer = null;
     [SerializeField] Sprite _openedSprite = null;
-    [SerializeField] WeaponLoot _weaponLootPrefab = null;
-    [SerializeField] Transform _spawnTransform = null;
-    [SerializeField] WeaponSO _weaponSo = null;
+    [SerializeField] Transform _spawnPoint = null;
 
     public override void Collide(CollectableAgent _agent)
     {
@@ -16,8 +15,6 @@ public class WeaponChestCollidable : CollidableBehaviour
 
         _collided = true;
         _renderer.sprite = _openedSprite;
-
-        var _instance = Instantiate(_weaponLootPrefab, _spawnTransform.position, Quaternion.identity, transform);
-        _instance.Init(_weaponSo);
+        _lootDropper.Drop(_spawnPoint.position);
     }
 }

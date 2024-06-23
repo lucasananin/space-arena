@@ -89,17 +89,21 @@ public class LootSpawner : MonoBehaviour
             {
                 case CollectableSO:
                     var _collectableSO = _lootSpawnInfo.so as CollectableSO;
-                    var _instance = Instantiate(_collectableSO.Prefab, _lootSpawnInfo.spawnPosition, Quaternion.identity, _parentContainer);
+                    var _collectableInstance = Instantiate(_collectableSO.Prefab, _lootSpawnInfo.spawnPosition, Quaternion.identity, _parentContainer);
 
                     var _2DPosition = (Vector2)_lootSpawnInfo.spawnPosition;
                     var _randomPosition = Random.insideUnitCircle + _2DPosition;
                     var _direction = (_randomPosition - _2DPosition).normalized;
                     var _force = _direction * Random.Range(_minMaxForce.x, _minMaxForce.y);
-                    var _rb = _instance.GetComponent<Rigidbody2D>();
+                    var _rb = _collectableInstance.GetComponent<Rigidbody2D>();
                     _rb.AddForce(_force, ForceMode2D.Impulse);
 
                     break;
                 case WeaponSO:
+                    var _weaponSO = _lootSpawnInfo.so as WeaponSO;
+                    var _weaponLootInstance = Instantiate(_weaponLootPrefab, _lootSpawnInfo.spawnPosition, Quaternion.identity, _parentContainer);
+                    _weaponLootInstance.Init(_weaponSO);
+
                     break;
                 default:
                     break;

@@ -10,6 +10,11 @@ public class LootDropper : MonoBehaviour
     [Button]
     public virtual void Drop()
     {
+        Drop(transform.position);
+    }
+
+    public virtual void Drop(Vector3 _origin)
+    {
         var _lootCollection = _lootTableSO.GenerateLootCollection();
         int _count = _lootCollection.Models.Count;
 
@@ -18,7 +23,7 @@ public class LootDropper : MonoBehaviour
             var _model = _lootCollection.Models[i];
 
             var _spawnLootModel = new SpawnLootModel();
-            _spawnLootModel.spawnPosition = transform.position;
+            _spawnLootModel.spawnPosition = _origin;
             _spawnLootModel.so = _model.So;
             _spawnLootModel.quantity = _model.GetRandomQuantity();
 
