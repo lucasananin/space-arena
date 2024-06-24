@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 3562192091433409977}
   - component: {fileID: -3242506195273867952}
   - component: {fileID: -1916892800950921274}
+  - component: {fileID: 6477207873678277843}
   m_Layer: 0
   m_Name: Weapon_MachineGun_1a
   m_TagString: Untagged
@@ -355,7 +356,6 @@ MonoBehaviour:
   _weaponBehaviour: {fileID: 3562192091433409978}
   _targetTransform: {fileID: 3562192090235152602}
   _recoilOffset: {x: -0.2, y: 0, z: 0}
-  _timeMultiplier: 12
   _duration: 0.08
   _defaultPosition: {x: 0, y: 0, z: 0}
   _recoilPosition: {x: 0, y: 0, z: 0}
@@ -428,6 +428,24 @@ MonoBehaviour:
   _impulseSource: {fileID: -3242506195273867952}
   _weapon: {fileID: 3562192091433409978}
   _velocityMultiplier: 0.2
+--- !u!114 &6477207873678277843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3562192091433409983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daed80ba8e78c314b83925837e9207c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flipper: {fileID: 3562192091433409980}
+  _renderer: {fileID: 3562192090235152603}
+  _minMax: {x: 26, y: 206}
+  _z: 0
+  _isRight: 0
+  _s: 0
 --- !u!1 &3562192091570808537
 GameObject:
   m_ObjectHideFlags: 0
