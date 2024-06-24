@@ -14,6 +14,7 @@ public abstract class HealthBehaviour : MonoBehaviour
 
     public event System.Action onDamageTaken = null;
     public event System.Action onDead = null;
+    public event System.Action OnRestored = null;
 
     private void Awake()
     {
@@ -53,11 +54,17 @@ public abstract class HealthBehaviour : MonoBehaviour
     public void RestoreHealth()
     {
         _currentHealth = _maxHealth;
+        OnRestored?.Invoke();
     }
 
     public bool IsAlive()
     {
         return _currentHealth > 0;
+    }
+
+    public virtual float GetNormalizedValue()
+    {
+        return _currentHealth / (_maxHealth * 1f);
     }
 
     protected abstract void OnDead();
