@@ -109,6 +109,7 @@ MonoBehaviour:
   _targetTransform: {fileID: 2751957288736772841}
   _recoilOffset: {x: -0.3, y: 0.1, z: 0}
   _timeMultiplier: 2
+  _duration: 0.5
   _defaultPosition: {x: 0, y: 0, z: 0}
   _recoilPosition: {x: 0, y: 0, z: 0}
   _timer: 0
@@ -365,7 +366,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8dee02ed13ffd584fafcd68b95576d4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

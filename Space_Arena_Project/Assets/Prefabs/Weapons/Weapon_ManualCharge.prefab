@@ -4955,6 +4955,7 @@ MonoBehaviour:
   _targetTransform: {fileID: 6724074073182966568}
   _recoilOffset: {x: -0.2, y: 0.1, z: 0}
   _timeMultiplier: 5
+  _duration: 0.2
   _defaultPosition: {x: 0, y: 0, z: 0}
   _recoilPosition: {x: 0, y: 0, z: 0}
   _timer: 0
