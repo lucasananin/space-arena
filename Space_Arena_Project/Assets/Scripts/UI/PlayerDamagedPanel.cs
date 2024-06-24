@@ -8,12 +8,12 @@ public class PlayerDamagedPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerHealth.onPlayerDamaged += Show;
+        PlayerHealth.OnPlayerDamaged += Show;
     }
 
     private void OnDisable()
     {
-        PlayerHealth.onPlayerDamaged -= Show;
+        PlayerHealth.OnPlayerDamaged -= Show;
     }
 
     private void Show(PlayerHealth _playerHealth)

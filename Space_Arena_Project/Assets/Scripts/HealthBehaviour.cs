@@ -12,8 +12,8 @@ public abstract class HealthBehaviour : MonoBehaviour
 
     public DamageModel LastDamageModel { get => _lastDamageModel; private set => _lastDamageModel = value; }
 
-    public event System.Action onDamageTaken = null;
-    public event System.Action onDead = null;
+    public event System.Action OnDamageTaken = null;
+    public event System.Action OnDead = null;
     public event System.Action OnRestored = null;
 
     private void Awake()
@@ -36,13 +36,11 @@ public abstract class HealthBehaviour : MonoBehaviour
         if (_currentHealth <= 0)
         {
             _currentHealth = 0;
-            onDead?.Invoke();
-            OnDead();
+            OnDead_();
         }
         else
         {
-            onDamageTaken?.Invoke();
-            OnDamageTaken();
+            OnDamageTaken_();
         }
 
         if (!_canTakeDamage)
@@ -67,6 +65,13 @@ public abstract class HealthBehaviour : MonoBehaviour
         return _currentHealth / (_maxHealth * 1f);
     }
 
-    protected abstract void OnDead();
-    protected abstract void OnDamageTaken();
+    protected virtual void OnDead_()
+    {
+        OnDead?.Invoke();
+    }
+
+    protected virtual void OnDamageTaken_()
+    {
+        OnDamageTaken?.Invoke();
+    }
 }

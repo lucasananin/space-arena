@@ -15,12 +15,12 @@ public class DieVfxSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        _health.onDead += Spawn;
+        _health.OnDead += Spawn;
     }
 
     private void OnDisable()
     {
-        _health.onDead -= Spawn;
+        _health.OnDead -= Spawn;
     }
 
     private void Spawn()

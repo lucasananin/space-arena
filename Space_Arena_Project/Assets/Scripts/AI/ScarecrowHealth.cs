@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class ScarecrowHealth : HealthBehaviour
 {
-    protected override void OnDamageTaken()
+    protected override void OnDamageTaken_()
     {
+        base.OnDamageTaken_();
         RestoreHealth();
-    }
-
-    protected override void OnDead()
-    {
-        //
     }
 }

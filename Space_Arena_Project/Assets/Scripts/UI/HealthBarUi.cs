@@ -13,17 +13,17 @@ public class HealthBarUi : MonoBehaviour
 
     private void OnDisable()
     {
-        _health.onDamageTaken -= UpdateVisuals;
+        _health.OnDamageTaken -= UpdateVisuals;
         _health.OnRestored -= UpdateVisuals;
-        _health.onDead -= UpdateVisuals;
+        _health.OnDead -= UpdateVisuals;
     }
 
     public void Init(HealthBehaviour _health)
     {
         this._health = _health;
-        this._health.onDamageTaken += UpdateVisuals;
+        this._health.OnDamageTaken += UpdateVisuals;
         this._health.OnRestored += UpdateVisuals;
-        this._health.onDead += UpdateVisuals;
+        this._health.OnDead += UpdateVisuals;
         UpdateVisuals();
     }
 

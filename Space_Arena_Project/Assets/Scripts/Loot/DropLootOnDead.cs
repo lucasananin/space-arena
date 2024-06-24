@@ -13,12 +13,12 @@ public class DropLootOnDead : LootDropper
 
     private void OnEnable()
     {
-        _healthBehaviour.onDead += _healthBehaviour_onDead;
+        _healthBehaviour.OnDead += _healthBehaviour_onDead;
     }
 
     private void OnDisable()
     {
-        _healthBehaviour.onDead -= _healthBehaviour_onDead;
+        _healthBehaviour.OnDead -= _healthBehaviour_onDead;
     }
 
     private void _healthBehaviour_onDead()

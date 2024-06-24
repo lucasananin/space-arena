@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class PlayerHealth : HealthBehaviour
 {
-    public static event System.Action<PlayerHealth> onPlayerDamaged = null;
+    public static event System.Action<PlayerHealth> OnPlayerDamaged = null;
 
-    protected override void OnDamageTaken()
+    protected override void OnDamageTaken_()
     {
-        onPlayerDamaged?.Invoke(this);
+        base.OnDamageTaken_();
+        OnPlayerDamaged?.Invoke(this);
     }
 
-    protected override void OnDead()
+    protected override void OnDead_()
     {
         RestoreHealth();
     }

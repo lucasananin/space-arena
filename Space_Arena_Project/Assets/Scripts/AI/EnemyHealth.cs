@@ -6,14 +6,10 @@ public class EnemyHealth : HealthBehaviour
 {
     public static event System.Action<HealthBehaviour> onAnyAiDead = null;
 
-    protected override void OnDamageTaken()
+    protected override void OnDead_()
     {
-        //
-    }
-
-    protected override void OnDead()
-    {
-        gameObject.SetActive(false);
+        base.OnDead_();
         onAnyAiDead?.Invoke(this);
+        gameObject.SetActive(false);
     }
 }

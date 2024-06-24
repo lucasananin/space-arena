@@ -29,12 +29,12 @@ public class HitShakeVfx : MonoBehaviour
 
     private void OnEnable()
     {
-        _healthBehaviour.onDamageTaken += Play;
+        _healthBehaviour.OnDamageTaken += Play;
     }
 
     private void OnDisable()
     {
-        _healthBehaviour.onDamageTaken -= Play;
+        _healthBehaviour.OnDamageTaken -= Play;
     }
 
     public void Play()
