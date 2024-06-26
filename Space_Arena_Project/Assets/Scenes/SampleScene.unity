@@ -19596,6 +19596,7 @@ MonoBehaviour:
   _image_2: {fileID: 673837376}
   _text_2: {fileID: 1745631137}
   _weaponHandler: {fileID: 0}
+  _ammoHandler: {fileID: 0}
 --- !u!1 &803349945
 GameObject:
   m_ObjectHideFlags: 0

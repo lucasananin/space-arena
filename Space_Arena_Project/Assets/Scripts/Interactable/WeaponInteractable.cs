@@ -38,7 +38,7 @@ public class WeaponInteractable : InteractableBehaviour
         }
         else
         {
-            Debug.Log($"// You already have this weapon!");
+            Debug.LogWarning($"// You already have this weapon!");
         }
     }
 

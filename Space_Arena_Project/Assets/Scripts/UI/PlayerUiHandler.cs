@@ -17,6 +17,6 @@ public class PlayerUiHandler : MonoBehaviour
         _ammoUi.Init(_ammoHandler);
 
         var _weaponHandler = FindAnyObjectByType<PlayerWeaponHandler>();
-        _weaponUi.Init(_weaponHandler);
+        _weaponUi.Init(_weaponHandler, _ammoHandler);
     }
 }

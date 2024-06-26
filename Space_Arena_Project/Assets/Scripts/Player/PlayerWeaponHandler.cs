@@ -23,6 +23,8 @@ public class PlayerWeaponHandler : MonoBehaviour
     [SerializeField, ReadOnly] bool _isWaitingSwapDelay = false;
     [SerializeField, ReadOnly] bool _canRotateWeapon = false;
 
+    public event System.Action OnWeaponAdded = null;
+
     public bool CanRotateWeapon { get => _canRotateWeapon; set => _canRotateWeapon = value; }
 
     private void Start()
@@ -162,6 +164,8 @@ public class PlayerWeaponHandler : MonoBehaviour
             _droppedWeaponSO = null;
             SwapToNextWeapon();
         }
+
+        OnWeaponAdded?.Invoke();
     }
 
     public bool HasWeapon(WeaponSO _weaponSO)

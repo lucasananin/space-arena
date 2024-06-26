@@ -12,10 +12,20 @@ public class WeaponUi : MonoBehaviour
     [SerializeField] Image _image_2 = null;
     [SerializeField] TextMeshProUGUI _text_2 = null;
     [SerializeField, ReadOnly] PlayerWeaponHandler _weaponHandler = null;
+    [SerializeField, ReadOnly] AmmoHandler _ammoHandler = null;
 
-    public void Init(PlayerWeaponHandler _weaponHandler)
+    private void OnDisable()
+    {
+        _weaponHandler.OnWeaponAdded -= UpdateVisuals;
+        _ammoHandler.OnAmmoChanged -= UpdateVisuals;
+    }
+
+    public void Init(PlayerWeaponHandler _weaponHandler, AmmoHandler _ammoHandler)
     {
         this._weaponHandler = _weaponHandler;
+        this._ammoHandler = _ammoHandler;
+        this._weaponHandler.OnWeaponAdded += UpdateVisuals;
+        this._ammoHandler.OnAmmoChanged += UpdateVisuals;
         UpdateVisuals();
     }
 
@@ -26,30 +36,6 @@ public class WeaponUi : MonoBehaviour
         var _weapon_2 = _weaponHandler.GetSecondWeapon();
         UpdateWeaponVisual(_weapon_1, _image_1, _text_1);
         UpdateWeaponVisual(_weapon_2, _image_2, _text_2);
-
-        //var _weapon_1 = _weaponHandler.CurrentWeapon;
-
-        //if (_weapon_1 is not null)
-        //{
-        //    _image_1.enabled = true;
-        //    _text_1.enabled = true;
-
-        //    _image_1.sprite = _weapon_1.WeaponSO.SpriteIcon;
-        //    _text_1.text = _weapon_1.GetAmmoString();
-        //}
-        //else
-        //{
-        //    _image_1.enabled = false;
-        //    _text_1.enabled = false;
-        //}
-
-        //var _weapon_2 = _weaponHandler.LastWeapon;
-
-        //if (_weapon_2 is not null)
-        //{
-        //    _image_2.sprite = _weapon_2.WeaponSO.SpriteIcon;
-        //    _text_2.text = _weapon_2.GetAmmoString();
-        //}
     }
 
     private void UpdateWeaponVisual(WeaponBehaviour _weapon, Image _image, TextMeshProUGUI _text)

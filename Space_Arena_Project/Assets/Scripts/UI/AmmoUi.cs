@@ -17,7 +17,7 @@ public class AmmoUi : MonoBehaviour
     public void Init(AmmoHandler _ammoHandler)
     {
         this._ammoHandler = _ammoHandler;
-        _ammoHandler.OnAmmoChanged += UpdateVisuals;
+        this._ammoHandler.OnAmmoChanged += UpdateVisuals;
         UpdateVisuals();
     }
 
