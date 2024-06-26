@@ -20,6 +20,8 @@ public class AmmoModel
     [SerializeField] AmmoSO _so = null;
     [SerializeField, ReadOnly] int _quantity = 0;
 
+    public int Quantity { get => _quantity; private set => _quantity = value; }
+
     public void DecreaseQuantity(int _value)
     {
         _quantity -= _value;

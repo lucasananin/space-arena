@@ -45,6 +45,12 @@ public class AmmoHandler : MonoBehaviour
         return _model is not null && _model.HasEnoughQuantity(_weaponSO.AmmoPerShot);
     }
 
+    public int GetAmmoQuantity(ProjectileSO _projectileSO)
+    {
+        var _model = GetModel(_projectileSO.AmmoSO);
+        return _model is not null ? _model.Quantity : -1;
+    }
+
     private AmmoModel GetModel(AmmoSO _ammoSO)
     {
         int _count = _models.Length;

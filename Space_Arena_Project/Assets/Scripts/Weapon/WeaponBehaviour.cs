@@ -196,6 +196,11 @@ public abstract class WeaponBehaviour : MonoBehaviour
         return _ammoHandler is null ? true : _ammoHandler.HasAmmo(_weaponSO.ChargedProjectileSO, _weaponSO);
     }
 
+    public string GetAmmoString()
+    {
+        return _ammoHandler is null ? $"-" : $"{_ammoHandler.GetAmmoQuantity(_weaponSO.ProjectileSO)}";
+    }
+
     public int GetDamage(bool _isChargedShot)
     {
         return _isChargedShot ? _weaponSO.ChargeShotDamage : _weaponSO.Damage;

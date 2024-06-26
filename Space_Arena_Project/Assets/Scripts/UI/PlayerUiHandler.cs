@@ -6,6 +6,7 @@ public class PlayerUiHandler : MonoBehaviour
 {
     [SerializeField] HealthBarUi _healthBarUi = null;
     [SerializeField] AmmoUi _ammoUi = null;
+    [SerializeField] WeaponUi _weaponUi = null;
 
     private void Start()
     {
@@ -14,5 +15,8 @@ public class PlayerUiHandler : MonoBehaviour
 
         var _ammoHandler = FindAnyObjectByType<AmmoHandler>();
         _ammoUi.Init(_ammoHandler);
+
+        var _weaponHandler = FindAnyObjectByType<PlayerWeaponHandler>();
+        _weaponUi.Init(_weaponHandler);
     }
 }

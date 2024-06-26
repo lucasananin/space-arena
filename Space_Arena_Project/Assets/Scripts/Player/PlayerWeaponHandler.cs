@@ -92,7 +92,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void IncreaseWeaponIndex(int _value)
     {
-        _lastWeaponIndex = _currentWeaponIndex;
+        _lastWeaponIndex = HasMoreThanOneWeapon() ? _currentWeaponIndex : -1;
         _currentWeaponIndex = _weaponsList.IndexOf(_currentWeapon);
         _currentWeaponIndex += _value;
 
@@ -110,7 +110,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         if (_weaponsList.Count <= 0) return;
 
         _currentWeapon = _weaponsList[_currentWeaponIndex];
-        _lastWeapon = _weaponsList[_lastWeaponIndex];
+        _lastWeapon = HasMoreThanOneWeapon() ? _weaponsList[_lastWeaponIndex] : null;
         _currentWeapon.Init(_entitySource, _ammoHandler);
 
         UpdateVisuals();
@@ -134,7 +134,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void UpdateHolster()
     {
-        bool _canUpdate = _lastWeapon is not null && _weaponsList.Count >= 2;
+        bool _canUpdate = _lastWeapon is not null && HasMoreThanOneWeapon();
         var _so = _canUpdate ? _lastWeapon.WeaponSO : null;
         _holster.Init(_so);
     }
@@ -177,6 +177,23 @@ public class PlayerWeaponHandler : MonoBehaviour
         }
 
         return false;
+    }
+
+    private bool HasMoreThanOneWeapon()
+    {
+        return _weaponsList.Count > 1;
+    }
+
+    public WeaponBehaviour GetFirstWeapon()
+    {
+        if (_currentWeapon is null) return null;
+        return _weaponsList[0];
+    }
+
+    public WeaponBehaviour GetSecondWeapon()
+    {
+        if (!HasMoreThanOneWeapon()) return null;
+        return _weaponsList[1];
     }
 
     private IEnumerator DisableWeaponSwap_routine()
