@@ -42,4 +42,9 @@ public class AmmoModel
     {
         return _so.Id;
     }
+
+    public float GetNormalizedValue()
+    {
+        return _quantity / (_so.MaxQuantity * 1f);
+    }
 }

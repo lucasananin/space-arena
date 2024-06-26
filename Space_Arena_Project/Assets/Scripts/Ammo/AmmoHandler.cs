@@ -6,9 +6,13 @@ using UnityEngine;
 public class AmmoHandler : MonoBehaviour
 {
     [SerializeField] bool _infiniteAmmo = false;
-    [SerializeField] AmmoModel[] _ammoTypes = null;
+    [SerializeField] AmmoModel[] _models = null;
 
-    private void Start()
+    public AmmoModel[] Models { get => _models; private set => _models = value; }
+
+    public event System.Action OnAmmoChanged = null;
+
+    private void Awake()
     {
         RestoreAmmo();
     }
@@ -16,12 +20,14 @@ public class AmmoHandler : MonoBehaviour
     [Button]
     public void RestoreAmmo()
     {
-        int _count = _ammoTypes.Length;
+        int _count = _models.Length;
 
         for (int i = 0; i < _count; i++)
         {
-            _ammoTypes[i].RestoreQuantity();
+            _models[i].RestoreQuantity();
         }
+
+        OnAmmoChanged?.Invoke();
     }
 
     public void DecreaseAmmo(ProjectileSO _projectileSO, WeaponSO _weaponSO)
@@ -30,6 +36,7 @@ public class AmmoHandler : MonoBehaviour
 
         var _model = GetModel(_projectileSO.AmmoSO);
         _model?.DecreaseQuantity(_weaponSO.AmmoPerShot);
+        OnAmmoChanged?.Invoke();
     }
 
     public bool HasAmmo(ProjectileSO _projectileSO, WeaponSO _weaponSO)
@@ -40,11 +47,11 @@ public class AmmoHandler : MonoBehaviour
 
     private AmmoModel GetModel(AmmoSO _ammoSO)
     {
-        int _count = _ammoTypes.Length;
+        int _count = _models.Length;
 
         for (int i = 0; i < _count; i++)
         {
-            var _model = _ammoTypes[i];
+            var _model = _models[i];
             var _isTheSameId = GeneralMethods.IsTheSameString(_ammoSO.Id, _model.GetId());
 
             if (_isTheSameId)
