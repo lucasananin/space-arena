@@ -110,7 +110,7 @@ public class LootSpawner : MonoBehaviour
     }
 
     //[Button]
-    private void SpawnHealtPack()
+    private void SpawnHealthPack()
     {
         var _position = GeneralMethods.GetRandomPointInBounds(_weaponCollider.bounds);
         Instantiate(_healthPrefab, _position, Quaternion.identity, _parentContainer);

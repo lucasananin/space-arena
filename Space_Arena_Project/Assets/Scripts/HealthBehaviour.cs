@@ -51,7 +51,14 @@ public abstract class HealthBehaviour : MonoBehaviour
 
     public void RestoreHealth()
     {
-        _currentHealth = _maxHealth;
+        RestoreHealth(999);
+    }
+
+    public void RestoreHealth(int _percentage)
+    {
+        var _value = _maxHealth * (_percentage / 100f);
+        _currentHealth += Mathf.RoundToInt(_value);
+        _currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
         OnRestored?.Invoke();
     }
 
