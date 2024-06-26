@@ -14,17 +14,22 @@ public class AmmoHandler : MonoBehaviour
 
     private void Awake()
     {
-        RestoreAmmo();
+        RestoreAllAmmo();
     }
 
     [Button]
-    public void RestoreAmmo()
+    public void RestoreAllAmmo()
+    {
+        RestoreAllAmmo(999);
+    }
+
+    public void RestoreAllAmmo(int _percentage)
     {
         int _count = _models.Length;
 
         for (int i = 0; i < _count; i++)
         {
-            _models[i].RestoreQuantity();
+            _models[i].RestoreQuantity(_percentage);
         }
 
         OnAmmoChanged?.Invoke();

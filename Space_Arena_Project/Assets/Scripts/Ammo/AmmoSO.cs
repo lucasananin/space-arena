@@ -35,6 +35,13 @@ public class AmmoModel
         _quantity = _so.MaxQuantity;
     }
 
+    public void RestoreQuantity(int _percentage)
+    {
+        var _value = _so.MaxQuantity * (_percentage / 100f);
+        _quantity += Mathf.RoundToInt(_value);
+        _quantity = Mathf.Clamp(_quantity, 0, _so.MaxQuantity);
+    }
+
     public bool HasEnoughQuantity(int _value)
     {
         return _quantity >= _value;
