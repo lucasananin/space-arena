@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Projectile_Bullet_R_1
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7353528016857128665, guid: f1d7f8d99b09ca44dbbc49ebce407414, type: 3}
-  _tagCollectionSO: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}
   _ammoSO: {fileID: 11400000, guid: b3dc590e3e7accd459b765e535abb941, type: 2}
   _layerMask:
     serializedVersion: 2
@@ -24,13 +23,13 @@ MonoBehaviour:
   _spawnPositionOffset: {x: 0.3, y: 0}
   _minMaxTimeUntilDestroy: {x: 3, y: 4}
   _maxPierceCount: 1
-  _explosionRadius: 3
+  _explosionRadius: 0
   _canAutoRotate: 0
   _entityLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   _maxDistance_autoAim: 0
-  _maxAngle: 180
+  _maxAngle: 1
   _moveSpeed: 20
   _destroyOnCollision: 1
   _useAccelerationCurve: 0
@@ -41,7 +40,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _invertAcceleration: 0
-  _acelerationMultiplier: 1
+  _acelerationMultiplier: 0
   _destroyOnStop: 0
   _maxCastDistance: 0
   _maxGuidedPositionRadius: 0

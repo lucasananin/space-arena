@@ -40,6 +40,7 @@ public class AmmoUi : MonoBehaviour
         for (int i = 0; i < _count; i++)
         {
             _fills[i].fillAmount = Random.value;
+            _fills[i].color = Random.ColorHSV();
         }
     }
 }

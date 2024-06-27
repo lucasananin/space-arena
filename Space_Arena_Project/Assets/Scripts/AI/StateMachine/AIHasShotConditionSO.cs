@@ -25,12 +25,12 @@ public class AiHasShotCondition : Condition
 
     public override void OnStateEnter()
     {
-        _aIWeaponHandler.onShoot += _aIWeaponHandler_onStoppedShooting;
+        _aIWeaponHandler.OnShoot += _aIWeaponHandler_onStoppedShooting;
     }
 
     public override void OnStateExit()
     {
-        _aIWeaponHandler.onShoot -= _aIWeaponHandler_onStoppedShooting;
+        _aIWeaponHandler.OnShoot -= _aIWeaponHandler_onStoppedShooting;
 
         _hasShot = false;
     }
