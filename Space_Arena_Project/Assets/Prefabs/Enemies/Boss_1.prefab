@@ -567,15 +567,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entity: {fileID: 8821744782161038674}
   _multiWeapons:
-  - _id: 
-    _weapons:
+  - _weapons:
     - {fileID: 8821744782784512315}
-    - {fileID: 8220772539153272341}
-    _minMaxRate: {x: 1, y: 2}
+    _minMaxRate: {x: 1, y: 1.5}
     _fireRate: 0
     _nextFire: 0
-    _rotators: []
-    _flippers: []
+    _rotators:
+    - {fileID: 8821744782784512316}
+    _flippers:
+    - {fileID: 8821744782784512317}
+  - _weapons:
+    - {fileID: 8220772539153272341}
+    _minMaxRate: {x: 1.5, y: 2}
+    _fireRate: 0
+    _nextFire: 0
+    _rotators:
+    - {fileID: 8220772539153272338}
+    _flippers:
+    - {fileID: 8220772539153272339}
 --- !u!114 &8821744782161038686
 MonoBehaviour:
   m_ObjectHideFlags: 0

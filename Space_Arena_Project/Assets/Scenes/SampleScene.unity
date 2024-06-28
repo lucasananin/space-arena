@@ -28803,8 +28803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entity: {fileID: 0}
   _multiWeapons:
-  - _id: rifle
-    _weapons:
+  - _weapons:
     - {fileID: 0}
     - {fileID: 0}
     _minMaxRate: {x: 1, y: 2}
@@ -28812,8 +28811,7 @@ MonoBehaviour:
     _nextFire: 0
     _rotators: []
     _flippers: []
-  - _id: landMine
-    _weapons:
+  - _weapons:
     - {fileID: 0}
     _minMaxRate: {x: 2, y: 3}
     _fireRate: 2
