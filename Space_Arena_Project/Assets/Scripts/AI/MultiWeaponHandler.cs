@@ -19,7 +19,9 @@ public class MultiWeaponHandler : MonoBehaviour
 
         for (int i = 0; i < _count; i++)
         {
-            _multiWeapons[i].ResetTime();
+            var _m = _multiWeapons[i];
+            _m.ResetTime();
+            _m.InitWeapons(_entity);
         }
     }
 
@@ -34,9 +36,20 @@ public class MultiWeaponHandler : MonoBehaviour
 
             if (_m.CanShoot())
             {
-                _m.StartShooting();
+                _m.ResetTime();
+                //_m.StartShooting();
+                var _weapon = _m.GetRandomWeapon();
+                StartCoroutine(Shoot_routine(_weapon));
             }
         }
+    }
+
+    private IEnumerator Shoot_routine(WeaponBehaviour _weapon)
+    {
+        _weapon.PullTrigger();
+        yield return null;
+        _weapon.ReleaseTrigger();
+        Debug.Log($"// {_weapon.name} has been shot!");
     }
 
     // 2. (talvez seja melhor ignorar isso para facilitar o meu trabalho)
@@ -63,6 +76,16 @@ public class MultiWeaponModel
         _nextFire = 0;
     }
 
+    public void InitWeapons(EntityBehaviour _entitySource)
+    {
+        int _count = _weapons.Count;
+
+        for (int i = 0; i < _count; i++)
+        {
+            _weapons[i].Init(_entitySource);
+        }
+    }
+
     public void IncreaseTime()
     {
         _nextFire += Time.deltaTime;
@@ -72,8 +95,25 @@ public class MultiWeaponModel
     {
         ResetTime();
         int _rand = Random.Range(0, _weapons.Count);
-        Debug.Log($"// {_id} shot weapon {_rand}!");
+        var _weapon = _weapons[_rand];
+        //_weapon.PullTrigger();
+        //_weapon.ReleaseTrigger();
+        Debug.Log($"// {_weapon.name} has been shot!");
+        //Debug.Log($"// {_id} shot weapon {_rand}!");
         // StartShoot_routine();
+    }
+
+    //private IEnumerator Shoot_routine(WeaponBehaviour _weapon)
+    //{
+    //    _weapon.PullTrigger();
+    //    yield return null;
+    //    _weapon.ReleaseTrigger();
+    //}
+
+    public WeaponBehaviour GetRandomWeapon()
+    {
+        int _randomIndex = Random.Range(0, _weapons.Count);
+        return _weapons[_randomIndex];
     }
 
     public bool CanShoot()
