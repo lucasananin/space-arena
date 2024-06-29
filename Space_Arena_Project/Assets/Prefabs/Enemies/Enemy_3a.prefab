@@ -338,9 +338,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entitySource: {fileID: 2658297561336904056}
   _currentWeapon: {fileID: 2658297560621282577}
-  _weaponRotator: {fileID: 2658297560621282582}
-  _weaponFlipper: {fileID: 2658297560621282583}
-  _canShoot: 1
+  _weaponModels:
+  - _weapons:
+    - {fileID: 2658297560621282577}
+    _shootRateRange: {x: 1.8, y: 2.2}
+    _canRotateWhileShooting: 1
+    _isShooting: 0
+    _shootRate: 0
+    _nextShoot: 0
+    _rotators:
+    - {fileID: 2658297560621282582}
+    _flippers:
+    - {fileID: 2658297560621282583}
+  _isShooting: 0
 --- !u!114 &-3123610847405240450
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 8821744782161038682}
   - component: {fileID: 8821744782161038684}
   - component: {fileID: 8821744782161038687}
+  - component: {fileID: -4836501070134159607}
   - component: {fileID: 5946858035499135039}
   - component: {fileID: 1773815946049173928}
   - component: {fileID: 8821744782161038686}
@@ -554,6 +555,36 @@ MonoBehaviour:
     _entitySource: {fileID: 0}
     _pointHit: {x: 0, y: 0, z: 0}
     _value: 0
+--- !u!114 &-4836501070134159607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8821744782161038689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d8df9797d48844092d29f2b745c1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _entitySource: {fileID: 8821744782161038674}
+  _currentWeapon: {fileID: 8821744782784512315}
+  _weaponModels:
+  - _weapons:
+    - {fileID: 8821744782784512315}
+    - {fileID: 8220772539153272341}
+    _shootRateRange: {x: 0, y: 0}
+    _canRotateWhileShooting: 1
+    _isShooting: 0
+    _shootRate: 0
+    _nextShoot: 0
+    _rotators:
+    - {fileID: 8821744782784512316}
+    - {fileID: 8220772539153272338}
+    _flippers:
+    - {fileID: 8821744782784512317}
+    - {fileID: 8220772539153272339}
+  _isShooting: 0
 --- !u!114 &5946858035499135039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,29 +597,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4adb5cab532934cb2518727687a0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entity: {fileID: 8821744782161038674}
+  _sourceEntity: {fileID: 8821744782161038674}
   _multiWeapons:
   - _weapons:
     - {fileID: 8821744782784512315}
-    _fireRateRange: {x: 1, y: 2}
+    - {fileID: 8220772539153272341}
+    _shootRateRange: {x: 1, y: 2}
     _canRotateWhileShooting: 1
     _isShooting: 0
-    _fireRate: 0
-    _nextFire: 0
+    _shootRate: 0
+    _nextShoot: 0
     _rotators:
     - {fileID: 8821744782784512316}
-    _flippers:
-    - {fileID: 8821744782784512317}
-  - _weapons:
-    - {fileID: 8220772539153272341}
-    _fireRateRange: {x: 3, y: 4}
-    _canRotateWhileShooting: 1
-    _isShooting: 0
-    _fireRate: 0
-    _nextFire: 0
-    _rotators:
     - {fileID: 8220772539153272338}
     _flippers:
+    - {fileID: 8821744782784512317}
     - {fileID: 8220772539153272339}
 --- !u!114 &1773815946049173928
 MonoBehaviour:

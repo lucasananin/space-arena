@@ -21940,7 +21940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1155961177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28801,25 +28801,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4adb5cab532934cb2518727687a0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entity: {fileID: 0}
+  _sourceEntity: {fileID: 0}
   _multiWeapons:
   - _weapons:
     - {fileID: 0}
     - {fileID: 0}
-    _fireRateRange: {x: 0, y: 0}
+    _shootRateRange: {x: 0, y: 0}
     _canRotateWhileShooting: 1
     _isShooting: 0
-    _fireRate: 2
-    _nextFire: 0
+    _shootRate: 0
+    _nextShoot: 0
     _rotators: []
     _flippers: []
   - _weapons:
     - {fileID: 0}
-    _fireRateRange: {x: 0, y: 0}
+    _shootRateRange: {x: 0, y: 0}
     _canRotateWhileShooting: 1
     _isShooting: 0
-    _fireRate: 2
-    _nextFire: 0
+    _shootRate: 0
+    _nextShoot: 0
     _rotators: []
     _flippers: []
 --- !u!1 &1514577426

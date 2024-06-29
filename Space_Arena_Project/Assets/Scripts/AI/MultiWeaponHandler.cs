@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MultiWeaponHandler : MonoBehaviour
 {
-    [SerializeField] EntityBehaviour _entity = null;
+    [SerializeField] EntityBehaviour _sourceEntity = null;
     [SerializeField] List<MultiWeaponModel> _multiWeapons = null;
 
     private void Awake()
@@ -16,7 +16,7 @@ public class MultiWeaponHandler : MonoBehaviour
         {
             var _m = _multiWeapons[i];
             _m.ResetTime();
-            _m.InitWeapons(_entity);
+            _m.InitWeapons(_sourceEntity);
         }
     }
 
@@ -40,25 +40,25 @@ public class MultiWeaponHandler : MonoBehaviour
         }
     }
 
-    public void RotateWeapons(Vector3 _position)
-    {
-        int _count = _multiWeapons.Count;
+    //public void RotateWeapons(Vector3 _position)
+    //{
+    //    int _count = _multiWeapons.Count;
 
-        for (int i = 0; i < _count; i++)
-        {
-            _multiWeapons[i].RotateWeapons(_position);
-        }
-    }
+    //    for (int i = 0; i < _count; i++)
+    //    {
+    //        _multiWeapons[i].RotateWeapons(_position);
+    //    }
+    //}
 
-    public void ResetWeaponRotations()
-    {
-        int _count = _multiWeapons.Count;
+    //public void ResetWeaponRotations()
+    //{
+    //    int _count = _multiWeapons.Count;
 
-        for (int i = 0; i < _count; i++)
-        {
-            _multiWeapons[i].ResetWeaponRotations();
-        }
-    }
+    //    for (int i = 0; i < _count; i++)
+    //    {
+    //        _multiWeapons[i].ResetWeaponRotations();
+    //    }
+    //}
 
     private IEnumerator Shoot_routine(WeaponBehaviour _weapon)
     {
@@ -78,15 +78,17 @@ public class MultiWeaponHandler : MonoBehaviour
 public class MultiWeaponModel
 {
     [SerializeField] List<WeaponBehaviour> _weapons = null;
-    [SerializeField] Vector2 _fireRateRange = default;
+    [SerializeField] Vector2 _shootRateRange = default;
     [SerializeField] bool _canRotateWhileShooting = true;
     //[SerializeField] bool _onlyShootOnTargetAcquired = true;
     [SerializeField, ReadOnly] bool _isShooting = false;
     //[SerializeField, ReadOnly] bool _hasTargetOnLineOfSight = false;
-    [SerializeField, ReadOnly] float _fireRate = 0f;
-    [SerializeField, ReadOnly] float _nextFire = 0f;
+    [SerializeField, ReadOnly] float _shootRate = 0f;
+    [SerializeField, ReadOnly] float _nextShoot = 0f;
     [SerializeField, ReadOnly] List<WeaponRotator> _rotators = null;
     [SerializeField, ReadOnly] List<WeaponFlipper> _flippers = null;
+
+    public bool IsShooting { get => _isShooting; set => _isShooting = value; }
 
     public void InitWeapons(EntityBehaviour _entitySource)
     {
@@ -100,13 +102,13 @@ public class MultiWeaponModel
 
     public void ResetTime()
     {
-        _fireRate = Random.Range(_fireRateRange.x, _fireRateRange.y);
-        _nextFire = 0;
+        _shootRate = Random.Range(_shootRateRange.x, _shootRateRange.y);
+        _nextShoot = 0;
     }
 
     public void IncreaseTime()
     {
-        _nextFire += Time.deltaTime;
+        _nextShoot += Time.deltaTime;
     }
 
     public void RotateWeapons(Vector3 _position)
@@ -134,23 +136,24 @@ public class MultiWeaponModel
         }
     }
 
+    public bool HasEnoughFireTime()
+    {
+        return _nextShoot > _shootRate;
+    }
+
     public WeaponBehaviour GetRandomWeapon()
     {
         int _randomIndex = Random.Range(0, _weapons.Count);
         return _weapons[_randomIndex];
     }
 
-    public bool HasEnoughFireTime()
-    {
-        return _nextFire > _fireRate;
-    }
-
     [Button]
     private void SetReferences()
     {
-        int _count = _weapons.Count;
         _rotators.Clear();
         _flippers.Clear();
+
+        int _count = _weapons.Count;
 
         for (int i = 0; i < _count; i++)
         {

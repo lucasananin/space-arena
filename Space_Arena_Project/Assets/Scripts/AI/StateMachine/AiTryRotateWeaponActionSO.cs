@@ -18,8 +18,8 @@ public class AiTryRotateWeaponAction : StateAction
     private AiEntity _aiEntity = null;
     private AiEntitySO _entitySO = null;
     private AIFlipper _aiFlipper = null;
-    private WeaponRotationHandler _weaponRotationHandler = null;
     private AiWeaponHandler _aiWeaponHandler = null;
+    private WeaponRotationHandler _weaponRotationHandler = null;
     private MultiWeaponHandler _multiWeaponHandler = null;
 
     public override void Awake(StateMachine _stateMachine)
@@ -58,23 +58,26 @@ public class AiTryRotateWeaponAction : StateAction
 
     private void TryRotateToTarget()
     {
-        if (_multiWeaponHandler is not null)
-        {
-            if (_aiEntity.IsTargetOnLineOfSight)
-            {
-                //_multiWeaponHandler.RotateWeapons(_aiEntity.GetTargetEntityPosition());
-                _weaponRotationHandler.RotateWeapons(_aiEntity.GetTargetEntityPosition());
-            }
-        }
-        else
-        {
-            if (!_entitySO.CanRotateWhileShooting && !_aiWeaponHandler.CanShoot) return;
+        //if (_multiWeaponHandler is not null)
+        //{
+        //    if (_aiEntity.IsTargetOnLineOfSight)
+        //    {
+        //        _weaponRotationHandler.RotateWeapons(_aiEntity.GetTargetEntityPosition());
+        //    }
+        //}
+        //else
+        //{
+        //    if (!_entitySO.CanRotateWhileShooting && _aiWeaponHandler.IsShooting) return;
 
-            if (_aiEntity.IsTargetOnLineOfSight)
-            {
-                //_aiWeaponHandler.RotateWeapon(_aiEntity.GetTargetEntityPosition());
-                _weaponRotationHandler.RotateWeapons(_aiEntity.GetTargetEntityPosition());
-            }
+        //    if (_aiEntity.IsTargetOnLineOfSight)
+        //    {
+        //        _weaponRotationHandler.RotateWeapons(_aiEntity.GetTargetEntityPosition());
+        //    }
+        //}
+
+        if (_aiEntity.IsTargetOnLineOfSight)
+        {
+            _aiWeaponHandler.RotateWeapons(_aiEntity.GetTargetEntityPosition());
         }
     }
 
@@ -82,9 +85,8 @@ public class AiTryRotateWeaponAction : StateAction
     {
         if (!_aiEntity.IsTargetOnLineOfSight)
         {
-            //_aiWeaponHandler?.ResetWeaponRotation();
-            //_multiWeaponHandler?.ResetWeaponRotations();
-            _weaponRotationHandler.ResetWeaponRotations();
+            _aiWeaponHandler.ResetWeaponRotations();
+            //_weaponRotationHandler.ResetWeaponRotations();
         }
     }
 }

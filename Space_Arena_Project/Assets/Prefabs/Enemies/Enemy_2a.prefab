@@ -34,7 +34,7 @@ Transform:
   - {fileID: 2658297562314880999}
   - {fileID: 2658297561533454330}
   m_Father: {fileID: 2658297561336904062}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2658297560621282577
 MonoBehaviour:
@@ -134,9 +134,9 @@ Transform:
   m_Children:
   - {fileID: 2658297562365273111}
   - {fileID: 7881225114156641568}
-  - {fileID: 2658297560621282581}
   - {fileID: 639920783341116688}
   - {fileID: 4106892105096304491}
+  - {fileID: 2658297560621282581}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -338,9 +338,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entitySource: {fileID: 2658297561336904056}
   _currentWeapon: {fileID: 2658297560621282577}
-  _weaponRotator: {fileID: 2658297560621282582}
-  _weaponFlipper: {fileID: 2658297560621282583}
-  _canShoot: 1
+  _weaponModels:
+  - _weapons:
+    - {fileID: 2658297560621282577}
+    _shootRateRange: {x: 1.8, y: 2.2}
+    _canRotateWhileShooting: 1
+    _isShooting: 0
+    _shootRate: 0
+    _nextShoot: 0
+    _rotators:
+    - {fileID: 2658297560621282582}
+    _flippers:
+    - {fileID: 2658297560621282583}
+  _isShooting: 0
 --- !u!114 &2954679567089471168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 2658297561336904056}
     - target: {fileID: 5598373418099291869, guid: 637c14111edd2294e835f767fb1f5ae3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5598373418099291869, guid: 637c14111edd2294e835f767fb1f5ae3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -816,7 +826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8228046025100010746, guid: 7a141681efffd1944ba83c13873a951b, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8228046025100010746, guid: 7a141681efffd1944ba83c13873a951b, type: 3}
       propertyPath: m_LocalPosition.x
