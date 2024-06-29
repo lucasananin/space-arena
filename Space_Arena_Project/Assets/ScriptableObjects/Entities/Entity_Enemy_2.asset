@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _opponentTags: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
   _projectileHitTag: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
-  _entityPrefab: {fileID: 0}
+  _entityPrefab: {fileID: 2658297561336904056, guid: e3027df5231167a4da73b72ce65c5deb, type: 3}
   _shootDistance: 12
   _minMaxShootTimeOffset: {x: 1.8, y: 2.2}
   _canShootWhileMoving: 1

@@ -46,9 +46,16 @@ public class AiEntity : EntityBehaviour
         return _targetEntity.transform.position;
     }
 
-    public Vector3 PickRandomPointAround(float _radius)
+    //public Vector3 PickRandomPointAround(float _radius)
+    //{
+    //    Vector3 _point = Random.insideUnitCircle * _radius;
+    //    _point += _aiPath.position;
+    //    return _point;
+    //}
+
+    public Vector3 PickRandomPointAround(Vector2 _range)
     {
-        Vector3 _point = Random.insideUnitCircle * _radius;
+        Vector3 _point = GeneralMethods.GetRandomInCircle(_range.x, _range.y);
         _point += _aiPath.position;
         return _point;
     }

@@ -7,9 +7,9 @@ using UOP1.StateMachine.ScriptableObjects;
 [CreateAssetMenu(fileName = "Action_Ai_Wander", menuName = "SO/State Machines/Actions/AI Wander")]
 public class AiWanderActionSO : StateActionSO
 {
-    [SerializeField] float _radius = 5f;
+    //[SerializeField] float _radius = 5f;
 
-    public float Radius { get => _radius; private set => _radius = value; }
+    //public float Radius { get => _radius; private set => _radius = value; }
 
     protected override StateAction CreateAction()
     {
@@ -19,13 +19,15 @@ public class AiWanderActionSO : StateActionSO
 
 public class AiWanderAction : StateAction
 {
-    private new AiWanderActionSO OriginSO => (AiWanderActionSO)base.OriginSO;
+    //private new AiWanderActionSO OriginSO => (AiWanderActionSO)base.OriginSO;
 
     private AiEntity _aiEntity = null;
+    private AiEntitySO _entitySO = null;
 
     public override void Awake(StateMachine _stateMachine)
     {
         _aiEntity = _stateMachine.GetComponent<AiEntity>();
+        _entitySO = _aiEntity.GetEntitySO<AiEntitySO>();
     }
 
     public override void OnFixedUpdate()
@@ -49,7 +51,7 @@ public class AiWanderAction : StateAction
 
     private void SearchPath()
     {
-        Vector3 _point = _aiEntity.PickRandomPointAround(OriginSO.Radius);
+        Vector3 _point = _aiEntity.PickRandomPointAround(_entitySO.MinMax_moveCloseRadius);
         _aiEntity.SetAIPathDestination(_point);
         _aiEntity.ResetTimeUntilSearchPath();
     }
