@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 2658297561336904054}
   - component: {fileID: 2658297561336904053}
   - component: {fileID: 2658297561336904063}
+  - component: {fileID: 2954679567089471168}
   - component: {fileID: 2658297561336904052}
   - component: {fileID: -7623101571160955741}
   - component: {fileID: 1791672264423258299}
@@ -340,6 +341,22 @@ MonoBehaviour:
   _weaponRotator: {fileID: 2658297560621282582}
   _weaponFlipper: {fileID: 2658297560621282583}
   _canShoot: 1
+--- !u!114 &2954679567089471168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658297561336904011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f72df0247abe134dac21712c8260069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotators:
+  - {fileID: 2658297560621282582}
+  _flippers:
+  - {fileID: 2658297560621282583}
 --- !u!114 &2658297561336904052
 MonoBehaviour:
   m_ObjectHideFlags: 0

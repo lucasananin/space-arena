@@ -40,6 +40,26 @@ public class MultiWeaponHandler : MonoBehaviour
         }
     }
 
+    public void RotateWeapons(Vector3 _position)
+    {
+        int _count = _multiWeapons.Count;
+
+        for (int i = 0; i < _count; i++)
+        {
+            _multiWeapons[i].RotateWeapons(_position);
+        }
+    }
+
+    public void ResetWeaponRotations()
+    {
+        int _count = _multiWeapons.Count;
+
+        for (int i = 0; i < _count; i++)
+        {
+            _multiWeapons[i].ResetWeaponRotations();
+        }
+    }
+
     private IEnumerator Shoot_routine(WeaponBehaviour _weapon)
     {
         _weapon.PullTrigger();
@@ -58,7 +78,11 @@ public class MultiWeaponHandler : MonoBehaviour
 public class MultiWeaponModel
 {
     [SerializeField] List<WeaponBehaviour> _weapons = null;
-    [SerializeField] Vector2 _minMaxRate = default;
+    [SerializeField] Vector2 _fireRateRange = default;
+    [SerializeField] bool _canRotateWhileShooting = true;
+    //[SerializeField] bool _onlyShootOnTargetAcquired = true;
+    [SerializeField, ReadOnly] bool _isShooting = false;
+    //[SerializeField, ReadOnly] bool _hasTargetOnLineOfSight = false;
     [SerializeField, ReadOnly] float _fireRate = 0f;
     [SerializeField, ReadOnly] float _nextFire = 0f;
     [SerializeField, ReadOnly] List<WeaponRotator> _rotators = null;
@@ -76,13 +100,38 @@ public class MultiWeaponModel
 
     public void ResetTime()
     {
-        _fireRate = Random.Range(_minMaxRate.x, _minMaxRate.y);
+        _fireRate = Random.Range(_fireRateRange.x, _fireRateRange.y);
         _nextFire = 0;
     }
 
     public void IncreaseTime()
     {
         _nextFire += Time.deltaTime;
+    }
+
+    public void RotateWeapons(Vector3 _position)
+    {
+        if (!_canRotateWhileShooting && _isShooting) return;
+        //if (_onlyShootOnTargetAcquired && !_hasTargetOnLineOfSight) return;
+
+        int _count = _weapons.Count;
+
+        for (int i = 0; i < _count; i++)
+        {
+            _rotators[i].LookAtPosition(_position);
+            _flippers[i].UpdateFlip();
+        }
+    }
+
+    public void ResetWeaponRotations()
+    {
+        int _count = _weapons.Count;
+
+        for (int i = 0; i < _count; i++)
+        {
+            _rotators[i].ResetRotation();
+            _flippers[i].ResetFlip();
+        }
     }
 
     public WeaponBehaviour GetRandomWeapon()

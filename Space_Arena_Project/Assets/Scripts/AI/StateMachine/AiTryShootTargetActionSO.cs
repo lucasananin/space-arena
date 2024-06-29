@@ -15,11 +15,13 @@ public class AiTryShootTargetAction : StateAction
     private AiEntitySO _entitySO = null;
     private AiWeaponHandler _aiWeaponHandler = null;
 
-    public override void Awake(StateMachine stateMachine)
+    public override void Awake(StateMachine _stateMachine)
     {
-        _aiEntity = stateMachine.GetComponent<AiEntity>();
-        _aiWeaponHandler = stateMachine.GetComponent<AiWeaponHandler>();
+        _aiEntity = _stateMachine.GetComponent<AiEntity>();
         _entitySO = _aiEntity.GetEntitySO<AiEntitySO>();
+
+        if (_stateMachine.TryGetComponent(out AiWeaponHandler _aiWeaponHandler))
+            this._aiWeaponHandler = _aiWeaponHandler;
     }
 
     public override void OnFixedUpdate()

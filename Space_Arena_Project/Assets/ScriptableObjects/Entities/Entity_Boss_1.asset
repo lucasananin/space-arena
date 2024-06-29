@@ -15,10 +15,11 @@ MonoBehaviour:
   _opponentTags: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
   _projectileHitTag: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
   _entityPrefab: {fileID: 0}
-  _shootDistance: 99
-  _minMaxShootTimeOffset: {x: 1.8, y: 2.2}
-  _canShootWhileMoving: 1
+  _alwaysFaceTarget: 1
   _canRotateWhileShooting: 1
+  _shootDistance: 99
+  _minMaxShootTimeOffset: {x: 0, y: 0}
+  _canShootWhileMoving: 1
   _minMaxTimeUntilSearchPath: {x: 1, y: 2}
   _minMax_moveCloseRadius: {x: 4, y: 8}
   _stopSearchingPathOnClose: 0
