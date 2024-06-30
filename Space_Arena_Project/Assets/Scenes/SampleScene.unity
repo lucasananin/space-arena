@@ -21189,6 +21189,39 @@ MonoBehaviour:
     m_FrequencyGain: 1
     m_Duration: 1
     m_NoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!114 &904466721 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1427115857888813632, guid: 8e1528fe4d3b5874aab1bb2cb04d5b9d, type: 3}
+  m_PrefabInstance: {fileID: 26824907}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f15682ba2bb08d74ab1393fb60419baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &904466723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1427115857888813633, guid: 8e1528fe4d3b5874aab1bb2cb04d5b9d, type: 3}
+  m_PrefabInstance: {fileID: 26824907}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &904466724 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1427115857888813638, guid: 8e1528fe4d3b5874aab1bb2cb04d5b9d, type: 3}
+  m_PrefabInstance: {fileID: 26824907}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &908726880
 GameObject:
   m_ObjectHideFlags: 0
@@ -39269,7 +39302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canTakeDamage: 1
-  _maxHealth: 12
+  _maxHealth: 8
   _currentHealth: 0
   _lastDamageModel:
     _entitySource: {fileID: 0}
@@ -45669,6 +45702,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4836501070134159607, guid: c01742c01e5ccf440a195ff790aab54a, type: 3}
+      propertyPath: _weaponModels.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4836501070134159607, guid: c01742c01e5ccf440a195ff790aab54a, type: 3}
+      propertyPath: _weaponModels.Array.data[2]._shootDistance
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -4836501070134159607, guid: c01742c01e5ccf440a195ff790aab54a, type: 3}
+      propertyPath: _weaponModels.Array.data[2]._weapons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4836501070134159607, guid: c01742c01e5ccf440a195ff790aab54a, type: 3}
+      propertyPath: _weaponModels.Array.data[2]._canShootWhileMoving
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4836501070134159607, guid: c01742c01e5ccf440a195ff790aab54a, type: 3}
+      propertyPath: _weaponModels.Array.data[2]._flippers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4836501070134159607, guid: c01742c01e5ccf440a195ff790aab54a, type: 3}
+      propertyPath: _weaponModels.Array.data[2]._rotators.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4836501070134159607, guid: c01742c01e5ccf440a195ff790aab54a, type: 3}
+      propertyPath: _weaponModels.Array.data[2]._weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 904466721}
+    - target: {fileID: -4836501070134159607, guid: c01742c01e5ccf440a195ff790aab54a, type: 3}
+      propertyPath: _weaponModels.Array.data[2]._canRotateWhileShooting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4836501070134159607, guid: c01742c01e5ccf440a195ff790aab54a, type: 3}
+      propertyPath: _weaponModels.Array.data[2]._flippers.Array.data[0]
+      value: 
+      objectReference: {fileID: 904466724}
+    - target: {fileID: -4836501070134159607, guid: c01742c01e5ccf440a195ff790aab54a, type: 3}
+      propertyPath: _weaponModels.Array.data[2]._rotators.Array.data[0]
+      value: 
+      objectReference: {fileID: 904466723}
+    - target: {fileID: -4836501070134159607, guid: c01742c01e5ccf440a195ff790aab54a, type: 3}
+      propertyPath: _weaponModels.Array.data[2]._onlyShootOnTargetAcquired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8821744782161038676, guid: c01742c01e5ccf440a195ff790aab54a, type: 3}
       propertyPath: m_RootOrder
       value: 31

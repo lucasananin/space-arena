@@ -11,12 +11,13 @@ public class AiWeaponModel
     [SerializeField] bool _canRotateWhileShooting = true;
     [SerializeField] bool _canShootWhileMoving = true;
     [SerializeField] bool _onlyShootOnTargetAcquired = true;
-    [SerializeField] float _shootDistance = 12f;
+    [SerializeField, Range(1, 99)] float _shootDistance = 12f;
     [SerializeField, ReadOnly] bool _isShooting = false;
-    [SerializeField, ReadOnly] float _shootRate = 0f;
-    [SerializeField, ReadOnly] float _nextShoot = 0f;
-    [SerializeField, ReadOnly] List<WeaponRotator> _rotators = null;
-    [SerializeField, ReadOnly] List<WeaponFlipper> _flippers = null;
+    [SerializeField, ReadOnly] float _timeUntilShoot = 0f;
+    [SerializeField, ReadOnly] float _shootTimer = 0f;
+
+    private readonly List<WeaponRotator> _rotators = new();
+    private readonly List<WeaponFlipper> _flippers = new();
 
     public bool IsShooting { get => _isShooting; set => _isShooting = value; }
     public bool CanShootWhileMoving { get => _canShootWhileMoving; private set => _canShootWhileMoving = value; }
@@ -35,13 +36,13 @@ public class AiWeaponModel
 
     public void ResetTime()
     {
-        _shootRate = Random.Range(_shootRateRange.x, _shootRateRange.y);
-        _nextShoot = 0;
+        _timeUntilShoot = Random.Range(_shootRateRange.x, _shootRateRange.y);
+        _shootTimer = 0;
     }
 
     public void IncreaseTime()
     {
-        _nextShoot += Time.deltaTime;
+        _shootTimer += Time.deltaTime;
     }
 
     public void RotateWeapons(Vector3 _position)
@@ -70,7 +71,7 @@ public class AiWeaponModel
 
     public bool HasEnoughFireTime()
     {
-        return _nextShoot > _shootRate;
+        return _shootTimer > _timeUntilShoot;
     }
 
     public WeaponBehaviour GetRandomWeapon()
@@ -79,9 +80,11 @@ public class AiWeaponModel
         return _weapons[_randomIndex];
     }
 
-    [Button]
+    //[Button]
     public void SetReferences()
     {
+        if (_rotators is null) return;
+
         _rotators.Clear();
         _flippers.Clear();
 
