@@ -6,20 +6,17 @@ using UnityEngine;
 public class AiWeaponHandler : MonoBehaviour
 {
     [SerializeField] EntityBehaviour _entitySource = null;
-    [SerializeField] WeaponBehaviour _currentWeapon = null;
-    [SerializeField] List<MultiWeaponModel> _weaponModels = null;
-
-    [Title("// Debug")]
-    [SerializeField, ReadOnly] bool _isShooting = false;
+    [SerializeField] List<AiWeaponModel> _weaponModels = null;
 
     public event System.Action OnShoot = null;
 
-    public bool IsShooting { get => _isShooting; private set => _isShooting = value; }
+    private void OnValidate()
+    {
+        UpdateReferences();
+    }
 
     private void Awake()
     {
-        _currentWeapon.Init(_entitySource);
-
         int _count = _weaponModels.Count;
 
         for (int i = 0; i < _count; i++)
@@ -44,11 +41,6 @@ public class AiWeaponHandler : MonoBehaviour
             _weaponModels[i].ResetWeaponRotations();
     }
 
-    //public void IncreaseTimer()
-    //{
-    //    _weaponModels[0].IncreaseTime();
-    //}
-
     public void TryShootAll(AiEntity _aiEntity)
     {
         int _count = _weaponModels.Count;
@@ -65,49 +57,33 @@ public class AiWeaponHandler : MonoBehaviour
             if (_model.OnlyShootOnTargetAcquired && !_aiEntity.IsTargetOnLineOfSight) continue;
 
             _model.ResetTime();
-            StartCoroutine(StartShooting_routine(_model));
+            StartCoroutine(Shoot_routine(_model));
         }
     }
 
-    public void StartShooting()
-    {
-        //if (_isShooting) return;
-
-        StartCoroutine(StartShooting_routine(_weaponModels[0]));
-        //StartCoroutine(StartShooting_routine(_currentWeapon));
-    }
-
-    // Se o inimigo possuir um "action" que permita a troca de armas, 
-    // vai ser preciso fazer ela esperar o _canShoot
-    // ou dar um stopCoroutine e resetar o _canShoot ao fazer a troca.
-    private IEnumerator StartShooting_routine(MultiWeaponModel _model)
+    private IEnumerator Shoot_routine(AiWeaponModel _model)
     {
         _model.IsShooting = true;
-        _isShooting = true;
         yield return null;
 
         var _weapon = _model.GetRandomWeapon();
         _weapon.PullTrigger();
         float _waitTime = _weapon.GetPullTriggerTotalTime();
-        //Debug.Log($"// GetPullTriggerTotalTime = {_waitTime}");
         yield return new WaitForSeconds(_waitTime);
 
         OnShoot?.Invoke();
 
         _weapon.ReleaseTrigger();
-        _waitTime = _weapon.GetTimeUntilAnotherShot() /*+ GetShootTimeOffset()*/;
-        //Debug.Log($"// GetTimeUntilAnotherShot() = {_waitTime}");
+        _waitTime = _weapon.GetTimeUntilAnotherShot();
         yield return new WaitForSeconds(_waitTime);
 
         _model.IsShooting = false;
-        _isShooting = false;
     }
 
-    private float GetShootTimeOffset()
+    private void UpdateReferences()
     {
-        // botar o shootTime aqui ao inves de ficar aumentando o tempo todo?
-        // ** nao vai funcionar com o multiweapons, pois ele vai disparar todas as armas ao iniciar.
-        var _offset = _entitySource.GetEntitySO<AiEntitySO>().MinMaxShootTimeOffset;
-        return Random.Range(_offset.x, _offset.y);
+        int _count = _weaponModels.Count;
+        for (int i = 0; i < _count; i++)
+            _weaponModels[i].SetReferences();
     }
 }

@@ -16,14 +16,14 @@ public class AiTryFlipToTargetActionSO : StateActionSO
 public class AiTryFlipToTargetAction : StateAction
 {
     private AiEntity _aiEntity = null;
-    private AiEntitySO _aiEntitySO = null;
+    //private AiEntitySO _aiEntitySO = null;
     private AIFlipper _aiFlipper = null;
 
     public override void Awake(StateMachine _stateMachine)
     {
         _aiEntity = _stateMachine.GetComponent<AiEntity>();
         _aiFlipper = _stateMachine.GetComponent<AIFlipper>();
-        _aiEntitySO = _aiEntity.GetEntitySO<AiEntitySO>();
+        //_aiEntitySO = _aiEntity.GetEntitySO<AiEntitySO>();
     }
 
     public override void OnFixedUpdate()
@@ -33,7 +33,7 @@ public class AiTryFlipToTargetAction : StateAction
 
     public override void OnUpdate()
     {
-        if (_aiEntity.IsTargetOnLineOfSight || _aiEntitySO.AlwaysFaceTarget)
+        if (_aiEntity.IsTargetOnLineOfSight/* || _aiEntitySO.AlwaysFaceTarget*/)
         {
             _aiFlipper.FlipToTarget(_aiEntity.GetTargetEntityPosition());
         }

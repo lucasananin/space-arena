@@ -8,16 +8,8 @@ public class AiEntitySO : EntitySO
 {
     [SerializeField] AiEntity _entityPrefab = null;
 
-    [Title("// Flip")]
-    [SerializeField] bool _alwaysFaceTarget = false;
-
-    [Title("// Rotate Weapon")]
-    [SerializeField] bool _canRotateWhileShooting = true;
-
-    [Title("// Shoot Target")]
-    [SerializeField, Range(0f, 99f)] float _shootDistance = 0f;
-    [SerializeField] Vector2 _minMaxShootTimeOffset = default;
-    [SerializeField] bool _canShootWhileMoving = true;
+    //[Title("// Flip")]
+    //[SerializeField] bool _alwaysFaceTarget = false;
 
     [Title("// Wait Until Search Path")]
     [SerializeField] Vector2 _minMaxTimeUntilSearchPath = default;
@@ -28,16 +20,8 @@ public class AiEntitySO : EntitySO
     [SerializeField, Range(0, 99)] int _maxNumberOfTries = 10;
 
     public AiEntity EntityPrefab { get => _entityPrefab; private set => _entityPrefab = value; }
-
-    public bool AlwaysFaceTarget { get => _alwaysFaceTarget; set => _alwaysFaceTarget = value; }
-    public bool CanRotateWhileShooting { get => _canRotateWhileShooting; private set => _canRotateWhileShooting = value; }
-
-    public float ShootDistance { get => _shootDistance; private set => _shootDistance = value; }
-    public Vector2 MinMaxShootTimeOffset { get => _minMaxShootTimeOffset; private set => _minMaxShootTimeOffset = value; }
-    public bool CanShootWhileMoving { get => _canShootWhileMoving; private set => _canShootWhileMoving = value; }
-
+    //public bool AlwaysFaceTarget { get => _alwaysFaceTarget; set => _alwaysFaceTarget = value; }
     public Vector2 MinMaxTimeUntilSearchPath { get => _minMaxTimeUntilSearchPath; private set => _minMaxTimeUntilSearchPath = value; }
-
     public Vector2 MinMax_moveCloseRadius { get => _minMax_moveCloseRadius; private set => _minMax_moveCloseRadius = value; }
     public bool StopSearchingPathOnClose { get => _stopSearchingPathOnClose; private set => _stopSearchingPathOnClose = value; }
     public int MaxNumberOfTries { get => _maxNumberOfTries; private set => _maxNumberOfTries = value; }
