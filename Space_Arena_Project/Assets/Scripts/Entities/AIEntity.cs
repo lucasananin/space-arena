@@ -128,7 +128,7 @@ public class AiEntity : EntityBehaviour
 
     public void ResetTimeUntilSearchPath()
     {
-        Vector2 _minMaxValue = GetEntitySO<AiEntitySO>().MinMaxTimeUntilSearchPath;
+        Vector2 _minMaxValue = GetEntitySO<AiEntitySO>().MoveRateRange;
         _timeUntilSearchPath = Random.Range(_minMaxValue.x, _minMaxValue.y);
         _searchPathTimer = 0;
     }

@@ -11,18 +11,19 @@ public class AiEntitySO : EntitySO
     //[Title("// Flip")]
     //[SerializeField] bool _alwaysFaceTarget = false;
 
-    [Title("// Wait Until Search Path")]
-    [SerializeField] Vector2 _minMaxTimeUntilSearchPath = default;
+    [Title("// Time Until Move Again")]
+    [SerializeField] Vector2 _moveRateRange = default;
 
     [Title("// Move Close To Target")]
-    [SerializeField] Vector2 _minMax_moveCloseRadius = Vector2.one;
-    [SerializeField] bool _stopSearchingPathOnClose = true;
+    [SerializeField] Vector2 _moveCloseRange = Vector2.one;
+    [SerializeField] bool _stopMovingOnClose = true;
     [SerializeField, Range(0, 99)] int _maxNumberOfTries = 10;
 
     public AiEntity EntityPrefab { get => _entityPrefab; private set => _entityPrefab = value; }
     //public bool AlwaysFaceTarget { get => _alwaysFaceTarget; set => _alwaysFaceTarget = value; }
-    public Vector2 MinMaxTimeUntilSearchPath { get => _minMaxTimeUntilSearchPath; private set => _minMaxTimeUntilSearchPath = value; }
-    public Vector2 MinMax_moveCloseRadius { get => _minMax_moveCloseRadius; private set => _minMax_moveCloseRadius = value; }
-    public bool StopSearchingPathOnClose { get => _stopSearchingPathOnClose; private set => _stopSearchingPathOnClose = value; }
+    public Vector2 MoveRateRange { get => _moveRateRange; private set => _moveRateRange = value; }
+
+    public Vector2 MinMax_moveCloseRadius { get => _moveCloseRange; private set => _moveCloseRange = value; }
+    public bool StopmovingOnClose { get => _stopMovingOnClose; private set => _stopMovingOnClose = value; }
     public int MaxNumberOfTries { get => _maxNumberOfTries; private set => _maxNumberOfTries = value; }
 }
