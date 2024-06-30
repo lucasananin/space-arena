@@ -356,7 +356,7 @@ MonoBehaviour:
   _weaponBehaviour: {fileID: 3562192091433409978}
   _targetTransform: {fileID: 3562192090235152602}
   _recoilOffset: {x: -0.2, y: 0, z: 0}
-  _duration: 0.08
+  _duration: 0.2
   _defaultPosition: {x: 0, y: 0, z: 0}
   _recoilPosition: {x: 0, y: 0, z: 0}
   _timer: 0
@@ -442,10 +442,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flipper: {fileID: 3562192091433409980}
   _renderer: {fileID: 3562192090235152603}
-  _minMax: {x: 26, y: 206}
-  _z: 0
-  _isRight: 0
-  _s: 0
+  _minRightAngle: 26
+  _minLeftAngle: 206
 --- !u!1 &3562192091570808537
 GameObject:
   m_ObjectHideFlags: 0

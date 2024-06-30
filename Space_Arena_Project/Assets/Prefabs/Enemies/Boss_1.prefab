@@ -573,8 +573,11 @@ MonoBehaviour:
   - _weapons:
     - {fileID: 8821744782784512315}
     - {fileID: 8220772539153272341}
-    _shootRateRange: {x: 0, y: 0}
+    _shootRateRange: {x: 1, y: 2}
     _canRotateWhileShooting: 1
+    _canShootWhileMoving: 1
+    _onlyShootOnTargetAcquired: 1
+    _shootDistance: 12
     _isShooting: 0
     _shootRate: 0
     _nextShoot: 0
@@ -592,7 +595,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8821744782161038689}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f4adb5cab532934cb2518727687a0ec, type: 3}
   m_Name: 
@@ -604,6 +607,9 @@ MonoBehaviour:
     - {fileID: 8220772539153272341}
     _shootRateRange: {x: 1, y: 2}
     _canRotateWhileShooting: 1
+    _canShootWhileMoving: 1
+    _onlyShootOnTargetAcquired: 1
+    _shootDistance: 12
     _isShooting: 0
     _shootRate: 0
     _nextShoot: 0

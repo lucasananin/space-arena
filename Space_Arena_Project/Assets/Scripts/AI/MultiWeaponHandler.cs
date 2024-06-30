@@ -80,6 +80,9 @@ public class MultiWeaponModel
     [SerializeField] List<WeaponBehaviour> _weapons = null;
     [SerializeField] Vector2 _shootRateRange = default;
     [SerializeField] bool _canRotateWhileShooting = true;
+    [SerializeField] bool _canShootWhileMoving = true;
+    [SerializeField] bool _onlyShootOnTargetAcquired = true;
+    [SerializeField] float _shootDistance = 12f;
     //[SerializeField] bool _onlyShootOnTargetAcquired = true;
     [SerializeField, ReadOnly] bool _isShooting = false;
     //[SerializeField, ReadOnly] bool _hasTargetOnLineOfSight = false;
@@ -89,6 +92,9 @@ public class MultiWeaponModel
     [SerializeField, ReadOnly] List<WeaponFlipper> _flippers = null;
 
     public bool IsShooting { get => _isShooting; set => _isShooting = value; }
+    public bool CanShootWhileMoving { get => _canShootWhileMoving; private set => _canShootWhileMoving = value; }
+    public bool OnlyShootOnTargetAcquired { get => _onlyShootOnTargetAcquired; private set => _onlyShootOnTargetAcquired = value; }
+    public float ShootDistance { get => _shootDistance; private set => _shootDistance = value; }
 
     public void InitWeapons(EntityBehaviour _entitySource)
     {

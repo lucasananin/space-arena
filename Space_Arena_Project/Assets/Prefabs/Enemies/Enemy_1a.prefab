@@ -538,6 +538,9 @@ MonoBehaviour:
     - {fileID: 6972132583126419576}
     _shootRateRange: {x: 1, y: 1}
     _canRotateWhileShooting: 1
+    _canShootWhileMoving: 1
+    _onlyShootOnTargetAcquired: 1
+    _shootDistance: 0.7
     _isShooting: 0
     _shootRate: 0
     _nextShoot: 0

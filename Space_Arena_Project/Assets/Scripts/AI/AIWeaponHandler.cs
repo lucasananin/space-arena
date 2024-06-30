@@ -44,14 +44,34 @@ public class AiWeaponHandler : MonoBehaviour
             _weaponModels[i].ResetWeaponRotations();
     }
 
-    public void IncreaseTimer()
+    //public void IncreaseTimer()
+    //{
+    //    _weaponModels[0].IncreaseTime();
+    //}
+
+    public void TryShootAll(AiEntity _aiEntity)
     {
-        _weaponModels[0].IncreaseTime();
+        int _count = _weaponModels.Count;
+
+        for (int i = 0; i < _count; i++)
+        {
+            var _model = _weaponModels[i];
+            _model.IncreaseTime();
+
+            if (_model.IsShooting) continue;
+            if (!_model.HasEnoughFireTime()) continue;
+            if (!_model.CanShootWhileMoving && _aiEntity.IsMoving()) continue;
+            if (!_aiEntity.IsCloseToTargetEntity(_model.ShootDistance)) continue;
+            if (_model.OnlyShootOnTargetAcquired && !_aiEntity.IsTargetOnLineOfSight) continue;
+
+            _model.ResetTime();
+            StartCoroutine(StartShooting_routine(_model));
+        }
     }
 
     public void StartShooting()
     {
-        if (_isShooting) return;
+        //if (_isShooting) return;
 
         StartCoroutine(StartShooting_routine(_weaponModels[0]));
         //StartCoroutine(StartShooting_routine(_currentWeapon));
@@ -75,7 +95,7 @@ public class AiWeaponHandler : MonoBehaviour
         OnShoot?.Invoke();
 
         _weapon.ReleaseTrigger();
-        _waitTime = _weapon.GetTimeUntilAnotherShot() + GetShootTimeOffset();
+        _waitTime = _weapon.GetTimeUntilAnotherShot() /*+ GetShootTimeOffset()*/;
         //Debug.Log($"// GetTimeUntilAnotherShot() = {_waitTime}");
         yield return new WaitForSeconds(_waitTime);
 

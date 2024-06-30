@@ -21173,7 +21173,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889986704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
   m_Name: 
@@ -28808,6 +28808,9 @@ MonoBehaviour:
     - {fileID: 0}
     _shootRateRange: {x: 0, y: 0}
     _canRotateWhileShooting: 1
+    _canShootWhileMoving: 1
+    _onlyShootOnTargetAcquired: 1
+    _shootDistance: 12
     _isShooting: 0
     _shootRate: 0
     _nextShoot: 0
@@ -28817,6 +28820,9 @@ MonoBehaviour:
     - {fileID: 0}
     _shootRateRange: {x: 0, y: 0}
     _canRotateWhileShooting: 1
+    _canShootWhileMoving: 1
+    _onlyShootOnTargetAcquired: 1
+    _shootDistance: 12
     _isShooting: 0
     _shootRate: 0
     _nextShoot: 0
