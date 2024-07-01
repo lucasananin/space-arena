@@ -11,13 +11,12 @@ public class AiWeaponModel
     [SerializeField] bool _canRotateWhileShooting = true;
     [SerializeField] bool _canShootWhileMoving = true;
     [SerializeField] bool _onlyShootOnTargetAcquired = true;
-    [SerializeField, Range(1, 99)] float _shootDistance = 12f;
+    [SerializeField, Range(0.1f, 99f)] float _shootDistance = 12f;
     [SerializeField, ReadOnly] bool _isShooting = false;
     [SerializeField, ReadOnly] float _timeUntilShoot = 0f;
     [SerializeField, ReadOnly] float _shootTimer = 0f;
-
-    private readonly List<WeaponRotator> _rotators = new();
-    private readonly List<WeaponFlipper> _flippers = new();
+    [SerializeField, ReadOnly] List<WeaponRotator> _rotators = new();
+    [SerializeField, ReadOnly] List<WeaponFlipper> _flippers = new();
 
     public bool IsShooting { get => _isShooting; set => _isShooting = value; }
     public bool CanShootWhileMoving { get => _canShootWhileMoving; private set => _canShootWhileMoving = value; }

@@ -30,7 +30,7 @@ MonoBehaviour:
     m_Bits: 0
   _maxDistance_autoAim: 0
   _maxAngle: 0
-  _moveSpeed: 20
+  _moveSpeed: 30
   _destroyOnCollision: 1
   _useAccelerationCurve: 0
   _accelerationCurve:

@@ -532,7 +532,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entitySource: {fileID: 6972132582502089745}
-  _currentWeapon: {fileID: 6972132583126419576}
   _weaponModels:
   - _weapons:
     - {fileID: 6972132583126419576}
@@ -542,13 +541,12 @@ MonoBehaviour:
     _onlyShootOnTargetAcquired: 1
     _shootDistance: 0.7
     _isShooting: 0
-    _shootRate: 0
-    _nextShoot: 0
+    _timeUntilShoot: 0
+    _shootTimer: 0
     _rotators:
     - {fileID: 6972132583126419583}
     _flippers:
     - {fileID: 6972132583126419582}
-  _isShooting: 0
 --- !u!114 &7746086957435750477
 MonoBehaviour:
   m_ObjectHideFlags: 0
