@@ -34,9 +34,9 @@ public class AiFlankAction : StateAction
     public override void OnUpdate()
     {
         if (_aiEntity.IsWaitingToSearchPath()) return;
-        if (_entitySO.StopmovingOnClose && _aiEntity.IsCloseToTargetEntity(_entitySO.MoveCloseRange.y)) return;
+        if (_entitySO.StopMovingOnClose && _aiEntity.IsCloseToTargetEntity(_entitySO.FlankDistance)) return;
 
-        bool _isTargetFarFromPoint = !_aiEntity.IsPointCloseToTargetEntity(_point, _entitySO.MoveCloseRange.y);
+        bool _isTargetFarFromPoint = /*_entitySO.RepathOnTargetFarAway && */!_aiEntity.IsPointCloseToTargetEntity(_point, _entitySO.FlankDistance + _entitySO.FlankRange.y);
 
         if (_aiEntity.HasReachedPathEnding() || _isTargetFarFromPoint)
         {
