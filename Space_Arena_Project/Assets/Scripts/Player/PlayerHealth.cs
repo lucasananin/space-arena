@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealth : HealthBehaviour
 {
     public static event System.Action<PlayerHealth> OnPlayerDamaged = null;
+    public static event System.Action<PlayerHealth> OnPlayerDead = null;
 
     protected override void OnDamageTaken_()
     {
@@ -15,6 +16,7 @@ public class PlayerHealth : HealthBehaviour
     protected override void OnDead_()
     {
         //RestoreHealth();
+        OnPlayerDead?.Invoke(this);
         gameObject.SetActive(false);
     }
 }
