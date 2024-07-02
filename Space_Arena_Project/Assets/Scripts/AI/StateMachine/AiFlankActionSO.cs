@@ -53,9 +53,7 @@ public class AiFlankAction : StateAction
 
     private Vector3 TryGetPositionWhereTargetIsVisible()
     {
-        var _radius = 0.1f;
-        var _distance = 3f;
-        Vector3 _point = _aiEntity.PickTargetFlank(_radius, _distance);
+        Vector3 _point = _aiEntity.PickTargetFlank(_entitySO.FlankRange, _entitySO.FlankDistance);
 
         for (int i = 0; i < _entitySO.MaxNumberOfTries; i++)
         {
@@ -65,7 +63,7 @@ public class AiFlankAction : StateAction
             }
             else
             {
-                _point = _aiEntity.PickTargetFlank(_radius, _distance);
+                _point = _aiEntity.PickTargetFlank(_entitySO.FlankRange, _entitySO.FlankDistance);
             }
         }
 

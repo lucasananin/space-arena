@@ -67,13 +67,13 @@ public class AiEntity : EntityBehaviour
         return _point;
     }
 
-    public Vector3 PickTargetFlank(float _radius, float _distance)
+    public Vector3 PickTargetFlank(Vector3 _range, float _distance)
     {
         var _direction = (transform.position - GetTargetEntityPosition()).normalized;
         var _cross = Vector3.Cross(_direction, transform.forward);
         _cross *= Random.Range(0, 2) == 0 ? 1f : -1f;
 
-        Vector3 _point = Random.insideUnitCircle * _radius;
+        Vector3 _point = GeneralMethods.GetRandomInCircle(_range.x, _range.y);
         _point += GetTargetEntityPosition();
         _point += _cross * _distance;
         return _point;
