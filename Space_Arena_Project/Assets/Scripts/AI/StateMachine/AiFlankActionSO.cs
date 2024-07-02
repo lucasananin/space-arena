@@ -4,24 +4,20 @@ using UnityEngine;
 using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
-[CreateAssetMenu(fileName = "Action_Ai_MoveCloserToTarget", menuName = "SO/State Machines/Actions/AI Move Closer To Target")]
-public class AiMoveCloseToTargetActionSO : StateActionSO
+[CreateAssetMenu(fileName = "Action_Ai_FlankTarget", menuName = "SO/State Machines/Actions/AI Flank Target")]
+public class AiFlankActionSO : StateActionSO<AiFlankAction>
 {
-    protected override StateAction CreateAction()
-    {
-        return new AiMoveCloseToTargetAction();
-    }
 }
 
-public class AiMoveCloseToTargetAction : StateAction
+public class AiFlankAction : StateAction
 {
     private AiEntity _aiEntity = null;
     private AiEntitySO _entitySO = null;
     private Vector3 _point = default;
 
-    public override void Awake(StateMachine stateMachine)
+    public override void Awake(StateMachine _stateMachine)
     {
-        _aiEntity = stateMachine.GetComponent<AiEntity>();
+        _aiEntity = _stateMachine.GetComponent<AiEntity>();
         _entitySO = _aiEntity.GetEntitySO<AiEntitySO>();
     }
 
@@ -32,7 +28,7 @@ public class AiMoveCloseToTargetAction : StateAction
 
     public override void OnFixedUpdate()
     {
-        //
+        throw new System.NotImplementedException();
     }
 
     public override void OnUpdate()
@@ -57,7 +53,9 @@ public class AiMoveCloseToTargetAction : StateAction
 
     private Vector3 TryGetPositionWhereTargetIsVisible()
     {
-        Vector3 _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MoveCloseRange);
+        var _radius = 0.1f;
+        var _distance = 3f;
+        Vector3 _point = _aiEntity.PickTargetFlank(_radius, _distance);
 
         for (int i = 0; i < _entitySO.MaxNumberOfTries; i++)
         {
@@ -67,7 +65,7 @@ public class AiMoveCloseToTargetAction : StateAction
             }
             else
             {
-                _point = _aiEntity.PickRandomPointNearTarget(_entitySO.MoveCloseRange);
+                _point = _aiEntity.PickTargetFlank(_radius, _distance);
             }
         }
 

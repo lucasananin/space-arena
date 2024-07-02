@@ -6044,7 +6044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &320982561
 Transform:
   m_ObjectHideFlags: 0
@@ -19303,7 +19303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25cb2d89e36a9748adbeda994c2ffc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canTakeDamage: 1
+  _invincibility: 0
   _maxHealth: 100
   _currentHealth: 0
   _lastDamageModel:
@@ -27585,7 +27585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25cb2d89e36a9748adbeda994c2ffc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canTakeDamage: 1
+  _invincibility: 0
   _maxHealth: 100
   _currentHealth: 0
   _lastDamageModel:
@@ -39301,7 +39301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6dd40c596b8004984a3b34086dc615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canTakeDamage: 1
+  _invincibility: 1
   _maxHealth: 8
   _currentHealth: 0
   _lastDamageModel:
@@ -39352,7 +39352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4023e2bd69e5b54d846e41ea468df1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _infiniteAmmo: 0
+  _infiniteAmmo: 1
   _models:
   - _so: {fileID: 11400000, guid: b3dc590e3e7accd459b765e535abb941, type: 2}
     _quantity: 0
@@ -45655,7 +45655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25cb2d89e36a9748adbeda994c2ffc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canTakeDamage: 1
+  _invincibility: 0
   _maxHealth: 100
   _currentHealth: 0
   _lastDamageModel:

@@ -23,7 +23,7 @@ public class AiEntitySO : EntitySO
     //public bool AlwaysFaceTarget { get => _alwaysFaceTarget; set => _alwaysFaceTarget = value; }
     public Vector2 MoveRateRange { get => _moveRateRange; private set => _moveRateRange = value; }
 
-    public Vector2 MinMax_moveCloseRadius { get => _moveCloseRange; private set => _moveCloseRange = value; }
+    public Vector2 MoveCloseRange { get => _moveCloseRange; private set => _moveCloseRange = value; }
     public bool StopmovingOnClose { get => _stopMovingOnClose; private set => _stopMovingOnClose = value; }
     public int MaxNumberOfTries { get => _maxNumberOfTries; private set => _maxNumberOfTries = value; }
 }

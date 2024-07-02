@@ -51,7 +51,7 @@ public class AiWanderAction : StateAction
 
     private void SearchPath()
     {
-        Vector3 _point = _aiEntity.PickRandomPointAround(_entitySO.MinMax_moveCloseRadius);
+        Vector3 _point = _aiEntity.PickRandomPointAround(_entitySO.MoveCloseRange);
         _aiEntity.SetAIPathDestination(_point);
         _aiEntity.ResetTimeUntilSearchPath();
     }

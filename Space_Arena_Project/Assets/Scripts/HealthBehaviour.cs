@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class HealthBehaviour : MonoBehaviour
 {
-    [SerializeField] protected bool _canTakeDamage = true;
+    [SerializeField] protected bool _invincibility = false;
     [SerializeField] protected int _maxHealth = 100;
     [SerializeField, ReadOnly] protected int _currentHealth = 0;
     [SerializeField, ReadOnly] protected DamageModel _lastDamageModel = null;
@@ -43,7 +43,7 @@ public abstract class HealthBehaviour : MonoBehaviour
             OnDamageTaken_();
         }
 
-        if (!_canTakeDamage)
+        if (_invincibility)
         {
             RestoreHealth();
         }
