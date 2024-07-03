@@ -11,14 +11,16 @@ public class AiEntity : EntityBehaviour
     [SerializeField] LayerMask _layerMask = default;
     [SerializeField, ReadOnly] EntityBehaviour _targetEntity = null;
     [SerializeField, ReadOnly] bool _isFleeing = false;
+    [SerializeField, ReadOnly] bool _isCowering = false;
     [SerializeField, ReadOnly] bool _isTargetOnLineOfSight = false;
     [SerializeField, ReadOnly] float _timeUntilSearchPath = 0f;
     [SerializeField, ReadOnly] float _searchPathTimer = 0f;
 
     private RaycastHit2D[] _results = new RaycastHit2D[9];
 
-    public bool IsFleeing { get => _isFleeing; set => _isFleeing = value; }
     public AIPath AiPath { get => _aiPath; private set => _aiPath = value; }
+    public bool IsFleeing { get => _isFleeing; set => _isFleeing = value; }
+    public bool IsCowering { get => _isCowering; set => _isCowering = value; }
     public bool IsTargetOnLineOfSight { get => _isTargetOnLineOfSight; private set => _isTargetOnLineOfSight = value; }
 
     private void Update()
@@ -101,6 +103,11 @@ public class AiEntity : EntityBehaviour
     {
         _aiPath.destination = _position;
         _aiPath.SearchPath();
+    }
+
+    public void StopAiPath()
+    {
+        SetAIPathDestination(transform.position);
     }
 
     public bool HasReachedPathEnding()

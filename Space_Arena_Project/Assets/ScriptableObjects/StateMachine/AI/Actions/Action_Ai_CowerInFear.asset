@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a9cb61ac96eef4fa8eb91aad1b7e55, type: 3}
-  m_Name: Condition_Ai_HasTargetEntity
+  m_Script: {fileID: 11500000, guid: e6fff55d8fc68a046a238e8513c963b4, type: 3}
+  m_Name: Action_Ai_CowerInFear
   m_EditorClassIdentifier: 
+  description: Set the property "IsCowering" to true and after a time, to false again.
