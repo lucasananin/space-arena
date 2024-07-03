@@ -21,3 +21,4 @@ MonoBehaviour:
   _maxNumberOfTries: 10
   _flankRange: {x: 1, y: 2}
   _flankDistance: 4
+  _cowerTimeRange: {x: 3, y: 3}

@@ -20,9 +20,12 @@ public class AiEntitySO : EntitySO
     [SerializeField] bool _stopMovingOnClose = true;
     [SerializeField, Range(0, 99)] int _maxNumberOfTries = 10;
 
-    [Title("// Flank Properties")]
+    [Title("// Flank - Properties")]
     [SerializeField] Vector2 _flankRange = Vector2.one;
     [SerializeField] float _flankDistance = 3f;
+
+    [Title("// Cower in Fear - Properties")]
+    [SerializeField] Vector2 _cowerTimeRange = Vector2.zero;
 
     public AiEntity EntityPrefab { get => _entityPrefab; private set => _entityPrefab = value; }
     //public bool AlwaysFaceTarget { get => _alwaysFaceTarget; set => _alwaysFaceTarget = value; }
@@ -35,4 +38,6 @@ public class AiEntitySO : EntitySO
 
     public Vector2 FlankRange { get => _flankRange; private set => _flankRange = value; }
     public float FlankDistance { get => _flankDistance; private set => _flankDistance = value; }
+
+    public Vector2 CowerTimeRange { get => _cowerTimeRange; private set => _cowerTimeRange = value; }
 }

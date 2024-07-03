@@ -12,20 +12,34 @@ public class AiCowerInFearActionSO : StateActionSO<AiCowerInFearAction>
 public class AiCowerInFearAction : StateAction
 {
     private AiEntity _aiEntity = null;
+    private AiEntitySO _aiEntitySO = null;
+    private ShieldHealth _shieldHealth = null;
     private float _timer = 0f;
+    private float _timeUntilEnd = 0f;
 
     public override void Awake(StateMachine _stateMachine)
     {
         _aiEntity = _stateMachine.GetComponent<AiEntity>();
+        _aiEntitySO = _aiEntity.GetEntitySO<AiEntitySO>();
+        _shieldHealth = _stateMachine.GetComponentInChildren<ShieldHealth>();
     }
 
     public override void OnStateEnter()
     {
-        _timer = 0f;
+        ResetTime();
         _aiEntity.StopAiPath();
         _aiEntity.IsCowering = true;
-        // se o escudo for atingido, zera o timer.
+
+        _shieldHealth.OnDamageTaken += ResetTime;
+        _shieldHealth.OnDead += ResetTime;
+
         // tremiliqueVfx.
+    }
+
+    public override void OnStateExit()
+    {
+        _shieldHealth.OnDamageTaken -= ResetTime;
+        _shieldHealth.OnDead -= ResetTime;
     }
 
     public override void OnFixedUpdate()
@@ -37,9 +51,15 @@ public class AiCowerInFearAction : StateAction
     {
         _timer += Time.deltaTime;
 
-        if (_timer > 3f)
+        if (_timer > _timeUntilEnd)
         {
             _aiEntity.IsCowering = false;
         }
+    }
+
+    private void ResetTime()
+    {
+        _timer = 0f;
+        _timeUntilEnd = Random.Range(_aiEntitySO.CowerTimeRange.x, _aiEntitySO.CowerTimeRange.y);
     }
 }
