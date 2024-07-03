@@ -19,7 +19,6 @@ public class PhysicalProjectile : ProjectileBehaviour
 
     private void FixedUpdate()
     {
-        _lastPosition = transform.position;
         CheckAcceleration();
         CheckDestroyTime();
     }
@@ -52,6 +51,8 @@ public class PhysicalProjectile : ProjectileBehaviour
                 break;
             }
         }
+
+        SetLastPosition();
     }
 
     public override void Init(ShootModel _newShootModel)
@@ -88,5 +89,10 @@ public class PhysicalProjectile : ProjectileBehaviour
         {
             DestroyByStop();
         }
+    }
+
+    private void SetLastPosition()
+    {
+        _lastPosition = transform.position;
     }
 }
