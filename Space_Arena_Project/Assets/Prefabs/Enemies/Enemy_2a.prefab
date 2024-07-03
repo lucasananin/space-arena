@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: 2658297561336904054}
   - component: {fileID: 2658297561336904053}
   - component: {fileID: 2658297561336904063}
-  - component: {fileID: 2954679567089471168}
   - component: {fileID: 2658297561336904052}
   - component: {fileID: -7623101571160955741}
   - component: {fileID: 1791672264423258299}
@@ -317,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cb668af1eafd7458bb2bfb7c2d3e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canTakeDamage: 1
+  _invincibility: 0
   _maxHealth: 5
   _currentHealth: 0
   _lastDamageModel:
@@ -337,36 +336,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entitySource: {fileID: 2658297561336904056}
-  _currentWeapon: {fileID: 2658297560621282577}
   _weaponModels:
   - _weapons:
     - {fileID: 2658297560621282577}
     _shootRateRange: {x: 1.8, y: 2.2}
     _canRotateWhileShooting: 1
+    _canShootWhileMoving: 1
+    _onlyShootOnTargetAcquired: 1
+    _shootDistance: 12
     _isShooting: 0
-    _shootRate: 0
-    _nextShoot: 0
+    _timeUntilShoot: 0
+    _shootTimer: 0
     _rotators:
     - {fileID: 2658297560621282582}
     _flippers:
     - {fileID: 2658297560621282583}
-  _isShooting: 0
---- !u!114 &2954679567089471168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2658297561336904011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f72df0247abe134dac21712c8260069, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotators:
-  - {fileID: 2658297560621282582}
-  _flippers:
-  - {fileID: 2658297560621282583}
 --- !u!114 &2658297561336904052
 MonoBehaviour:
   m_ObjectHideFlags: 0

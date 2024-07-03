@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8228046025100010746}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fx_BlobShadow_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8228046025942726978}
   - component: {fileID: 8228046025942726979}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sprite_Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -33,6 +33,9 @@ public abstract class HealthBehaviour : MonoBehaviour
         _lastDamageModel = _damageModel;
         _currentHealth -= _damageModel.Value;
 
+        if (_invincibility)
+            RestoreHealth();
+
         if (_currentHealth <= 0)
         {
             _currentHealth = 0;
@@ -41,11 +44,6 @@ public abstract class HealthBehaviour : MonoBehaviour
         else
         {
             OnDamageTaken_();
-        }
-
-        if (_invincibility)
-        {
-            RestoreHealth();
         }
     }
 

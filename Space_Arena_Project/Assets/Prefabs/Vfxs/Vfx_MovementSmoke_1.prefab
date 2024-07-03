@@ -4822,7 +4822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5598373418099291869}
   - component: {fileID: 5598373418099291868}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Vfx_MovementSmoke_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

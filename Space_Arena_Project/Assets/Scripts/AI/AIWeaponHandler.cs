@@ -51,6 +51,7 @@ public class AiWeaponHandler : MonoBehaviour
             _model.IncreaseTime();
 
             if (_model.IsShooting) continue;
+            if (!_model.IsShootable()) continue;
             if (!_model.HasEnoughFireTime()) continue;
             if (!_model.CanShootWhileMoving && _aiEntity.IsMoving()) continue;
             if (!_aiEntity.IsCloseToTargetEntity(_model.ShootDistance)) continue;

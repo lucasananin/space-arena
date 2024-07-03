@@ -73,6 +73,11 @@ public class AiWeaponModel
         return _shootTimer > _timeUntilShoot;
     }
 
+    public bool IsShootable()
+    {
+        return _shootRateRange.x + _shootRateRange.y > 0;
+    }
+
     public WeaponBehaviour GetRandomWeapon()
     {
         int _randomIndex = Random.Range(0, _weapons.Count);
