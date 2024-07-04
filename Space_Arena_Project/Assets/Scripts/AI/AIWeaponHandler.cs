@@ -100,4 +100,9 @@ public class AiWeaponHandler : MonoBehaviour
         for (int i = 0; i < _count; i++)
             _weaponModels[i].SetReferences();
     }
+
+    public AiWeaponModel GetModel(int _index)
+    {
+        return _weaponModels[_index];
+    }
 }

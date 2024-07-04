@@ -83,6 +83,11 @@ public class AiWeaponModel
         return !_canRotateWhileShooting && _isShooting;
     }
 
+    public float GetNormalizedTime()
+    {
+        return _shootTimer / _timeUntilShoot;
+    }
+
     public WeaponBehaviour GetRandomWeapon()
     {
         int _randomIndex = Random.Range(0, _weapons.Count);
