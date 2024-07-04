@@ -48,6 +48,13 @@ public class AiWeaponHandler : MonoBehaviour
         for (int i = 0; i < _count; i++)
         {
             var _model = _weaponModels[i];
+
+            if (_model.ResetTimeOnLostTarget && !_aiEntity.IsTargetOnLineOfSight)
+            {
+                _model.ResetTime();
+                continue;
+            }
+
             _model.IncreaseTime();
 
             if (_model.IsShooting) continue;

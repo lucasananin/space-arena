@@ -11,6 +11,7 @@ public class AiWeaponModel
     [SerializeField] bool _canRotateWhileShooting = true;
     [SerializeField] bool _canShootWhileMoving = true;
     [SerializeField] bool _onlyShootOnTargetAcquired = true;
+    [SerializeField] bool _resetTimeOnLostTarget = false;
     [SerializeField, Range(0.1f, 99f)] float _shootDistance = 12f;
     [SerializeField, ReadOnly] bool _isShooting = false;
     [SerializeField, ReadOnly] float _timeUntilShoot = 0f;
@@ -21,6 +22,7 @@ public class AiWeaponModel
     public bool IsShooting { get => _isShooting; set => _isShooting = value; }
     public bool CanShootWhileMoving { get => _canShootWhileMoving; private set => _canShootWhileMoving = value; }
     public bool OnlyShootOnTargetAcquired { get => _onlyShootOnTargetAcquired; private set => _onlyShootOnTargetAcquired = value; }
+    public bool ResetTimeOnLostTarget { get => _resetTimeOnLostTarget; private set => _resetTimeOnLostTarget = value; }
     public float ShootDistance { get => _shootDistance; private set => _shootDistance = value; }
 
     public void InitWeapons(EntityBehaviour _entitySource)

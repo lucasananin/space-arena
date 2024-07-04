@@ -387,6 +387,7 @@ MonoBehaviour:
     _canRotateWhileShooting: 0
     _canShootWhileMoving: 1
     _onlyShootOnTargetAcquired: 1
+    _resetTimeOnLostTarget: 1
     _shootDistance: 99
     _isShooting: 0
     _timeUntilShoot: 0
@@ -625,6 +626,7 @@ MonoBehaviour:
     _canRotateWhileShooting: 1
     _canShootWhileMoving: 1
     _onlyShootOnTargetAcquired: 1
+    _resetTimeOnLostTarget: 0
     _shootDistance: 12
     _isShooting: 0
     _timeUntilShoot: 0
