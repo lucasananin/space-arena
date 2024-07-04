@@ -46,7 +46,7 @@ public class AiWeaponModel
 
     public void RotateWeapons(Vector3 _position)
     {
-        if (!_canRotateWhileShooting && _isShooting) return;
+        if (CanBlockRotation()) return;
 
         int _count = _weapons.Count;
 
@@ -76,6 +76,11 @@ public class AiWeaponModel
     public bool IsShootable()
     {
         return _shootRateRange.x + _shootRateRange.y > 0;
+    }
+
+    public bool CanBlockRotation()
+    {
+        return !_canRotateWhileShooting && _isShooting;
     }
 
     public WeaponBehaviour GetRandomWeapon()

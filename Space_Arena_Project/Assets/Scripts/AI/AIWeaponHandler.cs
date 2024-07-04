@@ -81,6 +81,19 @@ public class AiWeaponHandler : MonoBehaviour
         _model.IsShooting = false;
     }
 
+    public bool IsBlockingRotation()
+    {
+        int _count = _weaponModels.Count;
+
+        for (int i = 0; i < _count; i++)
+        {
+            if (_weaponModels[i].CanBlockRotation())
+                return true;
+        }
+
+        return false;
+    }
+
     private void UpdateReferences()
     {
         int _count = _weaponModels.Count;

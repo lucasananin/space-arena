@@ -28,7 +28,7 @@ public class AiFlankAction : StateAction
 
     public override void OnFixedUpdate()
     {
-        throw new System.NotImplementedException();
+        //
     }
 
     public override void OnUpdate()
