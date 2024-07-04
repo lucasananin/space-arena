@@ -16,8 +16,9 @@ MonoBehaviour:
   _projectileHitTag: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
   _entityPrefab: {fileID: 6972132582502089745, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
   _moveRateRange: {x: 0.1, y: 0.1}
-  _minMax_moveCloseRadius: {x: 2, y: 3}
   _moveCloseRange: {x: 2, y: 3}
-  _stopSearchingPathOnClose: 1
   _stopMovingOnClose: 1
   _maxNumberOfTries: 10
+  _flankRange: {x: 0, y: 0}
+  _flankDistance: 0
+  _cowerTimeRange: {x: 0, y: 0}

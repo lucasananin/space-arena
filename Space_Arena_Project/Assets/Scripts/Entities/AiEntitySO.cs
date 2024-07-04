@@ -15,7 +15,7 @@ public class AiEntitySO : EntitySO
     [SerializeField] Vector2 _moveRateRange = default;
     //[SerializeField] bool _repathOnTargetFarAway = true;
 
-    [Title("// Move Close To Target")]
+    [Title("// Move Close To Target - Properties")]
     [SerializeField] Vector2 _moveCloseRange = Vector2.one;
     [SerializeField] bool _stopMovingOnClose = true;
     [SerializeField, Range(0, 99)] int _maxNumberOfTries = 10;

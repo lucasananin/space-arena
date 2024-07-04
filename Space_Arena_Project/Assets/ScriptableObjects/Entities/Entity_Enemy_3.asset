@@ -20,4 +20,5 @@ MonoBehaviour:
   _stopMovingOnClose: 0
   _maxNumberOfTries: 10
   _flankRange: {x: 1, y: 2}
-  _flankDistance: 4
+  _flankDistance: 3
+  _cowerTimeRange: {x: 0, y: 0}
