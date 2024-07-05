@@ -107,6 +107,7 @@ public class AiEntity : EntityBehaviour
 
     public void StopAiPath()
     {
+        if (!IsMoving()) return;
         SetAIPathDestination(transform.position);
     }
 

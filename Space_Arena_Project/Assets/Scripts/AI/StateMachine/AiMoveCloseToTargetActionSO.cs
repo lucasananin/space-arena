@@ -5,12 +5,8 @@ using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
 [CreateAssetMenu(fileName = "Action_Ai_MoveCloserToTarget", menuName = "SO/State Machines/Actions/AI Move Closer To Target")]
-public class AiMoveCloseToTargetActionSO : StateActionSO
+public class AiMoveCloseToTargetActionSO : StateActionSO<AiMoveCloseToTargetAction>
 {
-    protected override StateAction CreateAction()
-    {
-        return new AiMoveCloseToTargetAction();
-    }
 }
 
 public class AiMoveCloseToTargetAction : StateAction
@@ -19,9 +15,9 @@ public class AiMoveCloseToTargetAction : StateAction
     private AiEntitySO _entitySO = null;
     private Vector3 _point = default;
 
-    public override void Awake(StateMachine stateMachine)
+    public override void Awake(StateMachine _stateMachine)
     {
-        _aiEntity = stateMachine.GetComponent<AiEntity>();
+        _aiEntity = _stateMachine.GetComponent<AiEntity>();
         _entitySO = _aiEntity.GetEntitySO<AiEntitySO>();
     }
 
@@ -37,6 +33,12 @@ public class AiMoveCloseToTargetAction : StateAction
 
     public override void OnUpdate()
     {
+        if (_entitySO.StopMovingOnTargetAcquired && _aiEntity.IsTargetOnLineOfSight)
+        {
+            _aiEntity.StopAiPath();
+            return;
+        }
+
         if (_aiEntity.IsWaitingToSearchPath()) return;
         if (_entitySO.StopMovingOnClose && _aiEntity.IsCloseToTargetEntity(_entitySO.MoveCloseRange.y)) return;
 

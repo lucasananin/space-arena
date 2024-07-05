@@ -33,6 +33,12 @@ public class AiFlankAction : StateAction
 
     public override void OnUpdate()
     {
+        if (_entitySO.StopMovingOnTargetAcquired && _aiEntity.IsTargetOnLineOfSight)
+        {
+            _aiEntity.StopAiPath();
+            return;
+        }
+
         if (_aiEntity.IsWaitingToSearchPath()) return;
         if (_entitySO.StopMovingOnClose && _aiEntity.IsCloseToTargetEntity(_entitySO.FlankDistance)) return;
 
