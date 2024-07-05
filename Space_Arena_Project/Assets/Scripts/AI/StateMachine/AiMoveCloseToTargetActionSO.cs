@@ -39,12 +39,12 @@ public class AiMoveCloseToTargetAction : StateAction
             return;
         }
 
-        if (_aiEntity.IsWaitingToSearchPath()) return;
         if (_entitySO.StopMovingOnClose && _aiEntity.IsCloseToTargetEntity(_entitySO.MoveCloseRange.y)) return;
 
-        bool _isTargetFarFromPoint = /*_entitySO.RepathOnTargetFarAway && */!_aiEntity.IsPointCloseToTargetEntity(_point, _entitySO.MoveCloseRange.y);
+        bool _isTargetFarFromPoint = _entitySO.RepathOnTargetFarAway && !_aiEntity.IsPointCloseToTargetEntity(_point, _entitySO.MoveCloseRange.y);
+        bool _canSearchPath = _aiEntity.HasReachedPathEnding() && !_aiEntity.IsWaitingToSearchPath();
 
-        if (_aiEntity.HasReachedPathEnding() || _isTargetFarFromPoint)
+        if (_canSearchPath || _isTargetFarFromPoint)
         {
             SearchPath();
         }

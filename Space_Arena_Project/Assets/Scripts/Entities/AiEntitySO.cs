@@ -10,6 +10,7 @@ public class AiEntitySO : EntitySO
     [SerializeField] AiEntity _entityPrefab = null;
     [SerializeField] bool _stopMovingOnClose = true;
     [SerializeField] bool _stopMovingOnTargetAcquired = false;
+    [SerializeField] bool _repathOnTargetFarAway = true;
     [SerializeField, Range(0, 99)] int _maxNumberOfTries = 10;
 
     //[Title("// Flip")]
@@ -17,7 +18,6 @@ public class AiEntitySO : EntitySO
 
     [Title("// Time Until Move Again")]
     [SerializeField] Vector2 _moveRateRange = default;
-    //[SerializeField] bool _repathOnTargetFarAway = true;
 
     [Title("// Move Close To Target - Properties")]
     [SerializeField] Vector2 _moveCloseRange = Vector2.one;
@@ -33,10 +33,10 @@ public class AiEntitySO : EntitySO
     public bool StopMovingOnClose { get => _stopMovingOnClose; private set => _stopMovingOnClose = value; }
     public bool StopMovingOnTargetAcquired { get => _stopMovingOnTargetAcquired; private set => _stopMovingOnTargetAcquired = value; }
     public int MaxNumberOfTries { get => _maxNumberOfTries; private set => _maxNumberOfTries = value; }
+    public bool RepathOnTargetFarAway { get => _repathOnTargetFarAway; private set => _repathOnTargetFarAway = value; }
 
     //public bool AlwaysFaceTarget { get => _alwaysFaceTarget; set => _alwaysFaceTarget = value; }
     public Vector2 MoveRateRange { get => _moveRateRange; private set => _moveRateRange = value; }
-    //public bool RepathOnTargetFarAway { get => _repathOnTargetFarAway; private set => _repathOnTargetFarAway = value; }
 
     public Vector2 MoveCloseRange { get => _moveCloseRange; private set => _moveCloseRange = value; }
 

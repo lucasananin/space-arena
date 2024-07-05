@@ -140,8 +140,6 @@ public class AiEntity : EntityBehaviour
 
     public bool IsWaitingToSearchPath()
     {
-        if (!HasReachedPathEnding()) return false;
-
         _searchPathTimer += Time.deltaTime;
         return _searchPathTimer < _timeUntilSearchPath;
     }

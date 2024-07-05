@@ -39,12 +39,12 @@ public class AiFlankAction : StateAction
             return;
         }
 
-        if (_aiEntity.IsWaitingToSearchPath()) return;
         if (_entitySO.StopMovingOnClose && _aiEntity.IsCloseToTargetEntity(_entitySO.FlankDistance)) return;
 
-        bool _isTargetFarFromPoint = /*_entitySO.RepathOnTargetFarAway && */!_aiEntity.IsPointCloseToTargetEntity(_point, _entitySO.FlankDistance + _entitySO.FlankRange.y);
+        bool _isTargetFarFromPoint = _entitySO.RepathOnTargetFarAway && !_aiEntity.IsPointCloseToTargetEntity(_point, _entitySO.FlankDistance + _entitySO.FlankRange.y);
+        bool _canSearchPath = _aiEntity.HasReachedPathEnding() && !_aiEntity.IsWaitingToSearchPath();
 
-        if (_aiEntity.HasReachedPathEnding() || _isTargetFarFromPoint)
+        if (_canSearchPath || _isTargetFarFromPoint)
         {
             SearchPath();
         }
