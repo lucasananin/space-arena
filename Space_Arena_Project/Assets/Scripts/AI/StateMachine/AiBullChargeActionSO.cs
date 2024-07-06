@@ -8,13 +8,19 @@ using UOP1.StateMachine.ScriptableObjects;
 [CreateAssetMenu(fileName = "Action_Ai_BullCharge", menuName = "SO/State Machines/Actions/AI Bull Charge")]
 public class AiBullChargeActionSO : StateActionSO<AiBullChargeAction>
 {
+    [SerializeField] LayerMask _obstacleLayerMask = default;
+
+    public LayerMask ObstacleLayerMask { get => _obstacleLayerMask; private set => _obstacleLayerMask = value; }
 }
 
 public class AiBullChargeAction : StateAction
 {
+    private new AiBullChargeActionSO OriginSO => (AiBullChargeActionSO)base.OriginSO;
+
     private AiEntity _aiEntity = null;
     private AiEntitySO _entitySO = null;
     private AIPath _aiPath = null;
+    private RaycastHit2D[] _results = new RaycastHit2D[2];
     private float _timer = 0f;
     private float _waitTime = 0f;
 
@@ -64,10 +70,22 @@ public class AiBullChargeAction : StateAction
 
     private void SearchPath()
     {
-        var _targetPosition = _aiEntity.GetTargetEntityPosition();
-        var _direction = (_targetPosition - _aiEntity.transform.position).normalized;
-        var _point = _targetPosition + _direction * _entitySO.ChargingDistance;
+        var _point = GetPoint();
         _aiEntity.SetAIPathDestination(_point);
         _aiEntity.ResetTimeUntilSearchPath();
+    }
+
+    private Vector3 GetPoint()
+    {
+        var _targetPosition = _aiEntity.GetTargetEntityPosition();
+        var _direction = (_targetPosition - _aiEntity.transform.position).normalized;
+        var _hits = Physics2D.RaycastNonAlloc(_targetPosition, _direction, _results, _entitySO.ChargingDistance, OriginSO.ObstacleLayerMask);
+
+        for (int i = 0; i < _hits; i++)
+        {
+            return _results[0].point;
+        }
+
+        return _targetPosition + _direction * _entitySO.ChargingDistance;
     }
 }
