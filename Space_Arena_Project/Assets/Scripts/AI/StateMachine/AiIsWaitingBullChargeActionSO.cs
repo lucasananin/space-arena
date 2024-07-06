@@ -4,12 +4,12 @@ using UnityEngine;
 using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
-[CreateAssetMenu(fileName = "Condition_Ai_IsChargingMovement", menuName = "SO/State Machines/Conditions/AI Is Charging Movement")]
-public class AiIsChargingMovementConditionSO : StateConditionSO<AiIsChargingMovementCondition>
+[CreateAssetMenu(fileName = "Condition_Ai_IsWaitingBullCharge", menuName = "SO/State Machines/Conditions/AI Is Is Waiting Bull Charge")]
+public class AiIsWaitingBullChargeActionSO : StateConditionSO<AiIsWaitingBullChargeCondition>
 {
 }
 
-public class AiIsChargingMovementCondition : Condition
+public class AiIsWaitingBullChargeCondition : Condition
 {
     private AiEntity _aiEntity = null;
 
@@ -20,6 +20,6 @@ public class AiIsChargingMovementCondition : Condition
 
     protected override bool Statement()
     {
-        return _aiEntity.IsChargingMovement;
+        return _aiEntity.IsWaitingBullCharge;
     }
 }
