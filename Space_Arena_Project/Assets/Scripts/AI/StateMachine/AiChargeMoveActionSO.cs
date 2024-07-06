@@ -13,34 +13,32 @@ public class AiChargeMoveActionSO : StateActionSO<AiChargeMoveAction>
 public class AiChargeMoveAction : StateAction
 {
     private AiEntity _aiEntity = null;
-    //private AiEntitySO _entitySO = null;
-
+    private AiEntitySO _entitySO = null;
     private AIPath _aiPath = null;
     private float _timer = 0f;
-    private bool _isCharging = false;
+    private float _waitTime = 0f;
+    private bool _isWaiting = true;
 
     public override void Awake(StateMachine _stateMachine)
     {
         _aiEntity = _stateMachine.GetComponent<AiEntity>();
-        //_entitySO = _aiEntity.GetEntitySO<AiEntitySO>();
+        _entitySO = _aiEntity.GetEntitySO<AiEntitySO>();
         _aiPath = _stateMachine.GetComponent<AIPath>();
     }
 
     public override void OnStateEnter()
     {
-        // aumenta a velocidade de movimento.
-        //SearchPath();
         _timer = 0;
-        _isCharging = false;
-        _aiEntity.IsFleeing = true;
+        _waitTime = Random.Range(_entitySO.ChargingWaitRange.x, _entitySO.ChargingWaitRange.y);
+        _isWaiting = true;
+        _aiEntity.IsChargingMovement = true;
         _aiEntity.StopAiPath();
-        _aiPath.maxSpeed += 3;
+        _aiPath.maxSpeed *= _entitySO.ChargingSpeedMultiplier;
     }
 
     public override void OnStateExit()
     {
-        // reseta a velocidade de movimento.
-        _aiPath.maxSpeed -= 3;
+        _aiPath.maxSpeed /= _entitySO.ChargingSpeedMultiplier;
     }
 
     public override void OnFixedUpdate()
@@ -52,28 +50,26 @@ public class AiChargeMoveAction : StateAction
     {
         _timer += Time.deltaTime;
 
-        if (_timer > 3)
+        if (_timer > _waitTime)
         {
-            _timer = -99;
-            _isCharging = true;
+            _timer = -999f;
+            _isWaiting = false;
             SearchPath();
-            Debug.Log($"// start charging");
+            //Debug.Log($"// start charging");
         }
 
-        bool _canSearchPath = _aiEntity.HasReachedPathEnding() /*&& !_aiEntity.IsWaitingToSearchPath()*/;
-
-        if (_canSearchPath && _isCharging)
+        if (_aiEntity.HasReachedPathEnding() && !_isWaiting)
         {
-            _aiEntity.IsFleeing = false;
-            //SearchPath();
-            Debug.Log($"// stop charging");
+            _aiEntity.IsChargingMovement = false;
+            //Debug.Log($"// stop charging");
         }
     }
 
     private void SearchPath()
     {
-        // pega uma posicao que atravesse o target.
-        var _point = _aiEntity.GetTargetEntityPosition();
+        var _targetPosition = _aiEntity.GetTargetEntityPosition();
+        var _direction = (_targetPosition - _aiEntity.transform.position).normalized;
+        var _point = _targetPosition + _direction * _entitySO.ChargingDistance;
         _aiEntity.SetAIPathDestination(_point);
         _aiEntity.ResetTimeUntilSearchPath();
     }

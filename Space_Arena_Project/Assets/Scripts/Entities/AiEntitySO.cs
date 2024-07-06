@@ -29,6 +29,11 @@ public class AiEntitySO : EntitySO
     [Title("// Cower in Fear - Properties")]
     [SerializeField] Vector2 _cowerTimeRange = Vector2.zero;
 
+    [Title("// Charging Movement - Properties")]
+    [SerializeField] float _chargingSpeedMultiplier = 5f;
+    [SerializeField] float _chargingDistance = 5f;
+    [SerializeField] Vector2 _chargingWaitRange = Vector2.one;
+
     public AiEntity EntityPrefab { get => _entityPrefab; private set => _entityPrefab = value; }
     public bool StopMovingOnClose { get => _stopMovingOnClose; private set => _stopMovingOnClose = value; }
     public bool StopMovingOnTargetAcquired { get => _stopMovingOnTargetAcquired; private set => _stopMovingOnTargetAcquired = value; }
@@ -44,4 +49,8 @@ public class AiEntitySO : EntitySO
     public float FlankDistance { get => _flankDistance; private set => _flankDistance = value; }
 
     public Vector2 CowerTimeRange { get => _cowerTimeRange; private set => _cowerTimeRange = value; }
+
+    public float ChargingSpeedMultiplier { get => _chargingSpeedMultiplier; private set => _chargingSpeedMultiplier = value; }
+    public float ChargingDistance { get => _chargingDistance; private set => _chargingDistance = value; }
+    public Vector2 ChargingWaitRange { get => _chargingWaitRange; private set => _chargingWaitRange = value; }
 }

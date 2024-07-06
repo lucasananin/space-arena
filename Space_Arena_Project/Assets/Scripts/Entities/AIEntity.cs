@@ -12,6 +12,7 @@ public class AiEntity : EntityBehaviour
     [SerializeField, ReadOnly] EntityBehaviour _targetEntity = null;
     [SerializeField, ReadOnly] bool _isFleeing = false;
     [SerializeField, ReadOnly] bool _isCowering = false;
+    [SerializeField, ReadOnly] bool _isChargingMovement = false;
     [SerializeField, ReadOnly] bool _isTargetOnLineOfSight = false;
     [SerializeField, ReadOnly] float _timeUntilSearchPath = 0f;
     [SerializeField, ReadOnly] float _searchPathTimer = 0f;
@@ -21,6 +22,7 @@ public class AiEntity : EntityBehaviour
     public AIPath AiPath { get => _aiPath; private set => _aiPath = value; }
     public bool IsFleeing { get => _isFleeing; set => _isFleeing = value; }
     public bool IsCowering { get => _isCowering; set => _isCowering = value; }
+    public bool IsChargingMovement { get => _isChargingMovement; set => _isChargingMovement = value; }
     public bool IsTargetOnLineOfSight { get => _isTargetOnLineOfSight; private set => _isTargetOnLineOfSight = value; }
 
     private void Update()
