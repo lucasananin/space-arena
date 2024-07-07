@@ -39,4 +39,10 @@ MonoBehaviour:
       Operator: 0
     - ExpectedResult: 1
       Condition: {fileID: 11400000, guid: 82845e8143f8a5e4380545043a0b9e8a, type: 2}
+      Operator: 1
+    - ExpectedResult: 0
+      Condition: {fileID: 11400000, guid: b265b079b7f6d4346a827175bf3e3066, type: 2}
+      Operator: 0
+    - ExpectedResult: 1
+      Condition: {fileID: 11400000, guid: 81cffdcd69dd39841a33b8d177a7244f, type: 2}
       Operator: 0
