@@ -22,6 +22,6 @@ public class AiIsCloseToTargetCondition : Condition
 
     protected override bool Statement()
     {
-        return _aiEntity.IsCloseToTargetEntity(_aiEntitySO.MinDistance);
+        return _aiEntity.IsCloseToTargetEntity(_aiEntitySO.MinTargetDistance);
     }
 }

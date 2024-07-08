@@ -18,7 +18,7 @@ MonoBehaviour:
   _stopMovingOnClose: 1
   _stopMovingOnTargetAcquired: 0
   _repathOnTargetFarAway: 1
-  _minDistance: 1
+  _minTargetDistance: 1
   _maxNumberOfTries: 10
   _moveRateRange: {x: 0.2, y: 0.4}
   _moveCloseRange: {x: 2, y: 3}
@@ -28,4 +28,4 @@ MonoBehaviour:
   _chargingSpeedMultiplier: 0
   _chargingDistance: 0
   _chargingWaitRange: {x: 0, y: 0}
-  _timeUntilExplode: 1
+  _selfDestructTime: 1

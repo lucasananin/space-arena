@@ -11,7 +11,7 @@ public class AiEntitySO : EntitySO
     [SerializeField] bool _stopMovingOnClose = true;
     [SerializeField] bool _stopMovingOnTargetAcquired = false;
     [SerializeField] bool _repathOnTargetFarAway = true;
-    [SerializeField, Range(0f, 9f)] float _minDistance = 0f;
+    [SerializeField, Range(0f, 9f)] float _minTargetDistance = 0f;
     [SerializeField, Range(0, 99)] int _maxNumberOfTries = 10;
 
     //[Title("// Flip")]
@@ -42,7 +42,7 @@ public class AiEntitySO : EntitySO
     public bool StopMovingOnClose { get => _stopMovingOnClose; private set => _stopMovingOnClose = value; }
     public bool StopMovingOnTargetAcquired { get => _stopMovingOnTargetAcquired; private set => _stopMovingOnTargetAcquired = value; }
     public bool RepathOnTargetFarAway { get => _repathOnTargetFarAway; private set => _repathOnTargetFarAway = value; }
-    public float MinDistance { get => _minDistance; set => _minDistance = value; }
+    public float MinTargetDistance { get => _minTargetDistance; set => _minTargetDistance = value; }
     public int MaxNumberOfTries { get => _maxNumberOfTries; private set => _maxNumberOfTries = value; }
 
     //public bool AlwaysFaceTarget { get => _alwaysFaceTarget; set => _alwaysFaceTarget = value; }

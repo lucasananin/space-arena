@@ -6,29 +6,31 @@ using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
 [CreateAssetMenu(fileName = "Action_AIMoveToTarget", menuName = "SO/State Machines/Actions/AI Move To Target")]
-public class MoveToTargetActionSO : StateActionSO
+public class MoveToTargetActionSO : StateActionSO<MoveToTargetAction>
 {
-    [SerializeField] float _radius = 1f;
+    //[SerializeField] float _radius = 1f;
 
-    public float Radius { get => _radius; private set => _radius = value; }
+    //public float Radius { get => _radius; private set => _radius = value; }
 
-    protected override StateAction CreateAction()
-    {
-        return new MoveToTargetAction();
-    }
+    //protected override StateAction CreateAction()
+    //{
+    //    return new MoveToTargetAction();
+    //}
 }
 
 public class MoveToTargetAction : StateAction
 {
-    private new MoveToTargetActionSO OriginSO => (MoveToTargetActionSO)base.OriginSO;
+    //private new MoveToTargetActionSO OriginSO => (MoveToTargetActionSO)base.OriginSO;
 
-    private AiEntity _aIEntity = null;
+    private AiEntity _aiEntity = null;
+    private AiEntitySO _aiEntitySO = null;
     private IAstarAI _aiPath = default;
 
-    public override void Awake(StateMachine stateMachine)
+    public override void Awake(StateMachine _stateMachine)
     {
-        _aIEntity = stateMachine.GetComponent<AiEntity>();
-        _aiPath = _aIEntity.AiPath;
+        _aiEntity = _stateMachine.GetComponent<AiEntity>();
+        _aiEntitySO = _aiEntity.GetEntitySO<AiEntitySO>();
+        _aiPath = _aiEntity.AiPath;
     }
 
     //public override void OnStateEnter()
@@ -43,7 +45,8 @@ public class MoveToTargetAction : StateAction
 
     public override void OnUpdate()
     {
-        if (_aIEntity.IsCloseToTargetEntity(OriginSO.Radius))
+        //if (_aiEntity.IsCloseToTargetEntity(OriginSO.Radius))
+        if (_aiEntity.IsCloseToTargetEntity(_aiEntitySO.MinTargetDistance))
         {
             SetPath();
         }
@@ -52,7 +55,7 @@ public class MoveToTargetAction : StateAction
     private void SetPath()
     {
         //_aiPath.destination = PickRandomPointNearTarget();
-        _aiPath.destination = _aIEntity.GetTargetEntityPosition();
+        _aiPath.destination = _aiEntity.GetTargetEntityPosition();
         _aiPath.SearchPath();
     }
 
