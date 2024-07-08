@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
+using DG.Tweening;
 
 [CreateAssetMenu(fileName = "Action_Ai_ExplodeItself", menuName = "SO/State Machines/Actions/AI Explode Itself")]
 public class AiExplodeItselfActionSO : StateActionSO<AiExplodeItselfAction>
@@ -33,7 +34,11 @@ public class AiExplodeItselfAction : StateAction
         if (_health.IsAlive())
             _health.ForceDie();
 
-        // animacao de enchendo e tremendo.
+        // Transformar isso em um script próprio.
+        var _transform = _aiEntity.transform;
+        var _scale = _transform.localScale;
+        _transform.DOScale(_scale * 1.5f, _aiEntitySO.TimeUntilExplode);
+        //_transform.DOShakePosition(_aiEntitySO.TimeUntilExplode);
     }
 
     public override void OnFixedUpdate()

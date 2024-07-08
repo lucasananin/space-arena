@@ -344,7 +344,7 @@ MonoBehaviour:
   _weaponModels:
   - _weapons:
     - {fileID: 2658297560621282577}
-    _shootRateRange: {x: 1, y: 1}
+    _shootRateRange: {x: 123456, y: 123456}
     _canRotateWhileShooting: 1
     _canShootWhileMoving: 1
     _onlyShootOnTargetAcquired: 1

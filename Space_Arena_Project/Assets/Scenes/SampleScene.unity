@@ -434,6 +434,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_7a
       objectReference: {fileID: 0}
+    - target: {fileID: 2658297561336904011, guid: 885fd00c330408046a2fa47bcb93172d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2658297561336904062, guid: 885fd00c330408046a2fa47bcb93172d, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -21148,7 +21152,9 @@ MonoBehaviour:
       _quantity: 2
     - _so: {fileID: 11400000, guid: a42a8a25fe96be045817c3868439cf58, type: 2}
       _quantity: 2
-    _maxActiveSpawns: 4
+    - _so: {fileID: 11400000, guid: 732d5d93c5288984884d72ba30534349, type: 2}
+      _quantity: 2
+    _maxActiveSpawns: 3
     _runtimeQuantities: []
   _randomizedWaves:
   - _entities:
