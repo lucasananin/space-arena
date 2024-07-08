@@ -13129,8 +13129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentContainer: {fileID: 1787702167}
-  _spawnEachOnStart: 0
-  _spawnRandomOnStart: 1
+  _spawnEachOnStart: 1
+  _spawnRandomOnStart: 0
   _weaponLootPrefab: {fileID: 5281741771645536111, guid: ef78d91f80ad7634cb58312915f887b8, type: 3}
   _weaponCollider: {fileID: 1878020144}
   _weapons:
@@ -52982,6 +52982,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5704818092466949256, guid: c61856f6800231948bf9daedc54fadde, type: 3}
   m_PrefabInstance: {fileID: 5704818090879393342}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1654674103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5704818092466949252, guid: c61856f6800231948bf9daedc54fadde, type: 3}
+  m_PrefabInstance: {fileID: 5704818090879393342}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb808b67afd45264aa38f541f3bc38d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1695589062
 GameObject:
   m_ObjectHideFlags: 0
@@ -53941,7 +53952,8 @@ MonoBehaviour:
   _holster: {fileID: 247042776}
   _maxWeaponsCount: 2
   _swapInputDelay: 0.3
-  _weaponsList: []
+  _weaponsList:
+  - {fileID: 1654674103}
   _currentWeapon: {fileID: 0}
   _lastWeapon: {fileID: 0}
   _weaponRotator: {fileID: 0}
@@ -65599,10 +65611,6 @@ PrefabInstance:
     - target: {fileID: 5704818092466949259, guid: c61856f6800231948bf9daedc54fadde, type: 3}
       propertyPath: m_Name
       value: Weapon_Pistol_1a
-      objectReference: {fileID: 0}
-    - target: {fileID: 5704818092466949259, guid: c61856f6800231948bf9daedc54fadde, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61856f6800231948bf9daedc54fadde, type: 3}

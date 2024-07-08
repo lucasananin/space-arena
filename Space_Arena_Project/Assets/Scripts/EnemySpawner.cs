@@ -32,13 +32,13 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        EnemyHealth.onAnyAiDead += DecreaseActiveSpawnCount;
+        EnemyHealth.OnAnyAiDead += DecreaseActiveSpawnCount;
         StartRoundInteractable.onInteracted += SpawnEnemies;
     }
 
     private void OnDisable()
     {
-        EnemyHealth.onAnyAiDead -= DecreaseActiveSpawnCount;
+        EnemyHealth.OnAnyAiDead -= DecreaseActiveSpawnCount;
         StartRoundInteractable.onInteracted -= SpawnEnemies;
     }
 

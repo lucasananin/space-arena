@@ -16,13 +16,13 @@ public class TimeFxHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        EnemyHealth.onAnyAiDead += Play;
+        EnemyHealth.OnAnyAiDead += Play;
         PlayerHealth.OnPlayerDead += Play_HitAndSlow;
     }
 
     private void OnDisable()
     {
-        EnemyHealth.onAnyAiDead -= Play;
+        EnemyHealth.OnAnyAiDead -= Play;
         PlayerHealth.OnPlayerDead -= Play_HitAndSlow;
     }
 

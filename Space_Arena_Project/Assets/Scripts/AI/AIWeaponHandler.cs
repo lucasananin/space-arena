@@ -41,6 +41,18 @@ public class AiWeaponHandler : MonoBehaviour
             _weaponModels[i].ResetWeaponRotations();
     }
 
+    public void ForceShootAll()
+    {
+        int _count = _weaponModels.Count;
+
+        for (int i = 0; i < _count; i++)
+        {
+            var _model = _weaponModels[i];
+            _model.ResetTime();
+            StartCoroutine(Shoot_routine(_model));
+        }
+    }
+
     public void TryShootAll(AiEntity _aiEntity)
     {
         int _count = _weaponModels.Count;

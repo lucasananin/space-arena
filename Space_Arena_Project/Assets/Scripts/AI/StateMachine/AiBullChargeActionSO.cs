@@ -81,11 +81,13 @@ public class AiBullChargeAction : StateAction
         var _direction = (_targetPosition - _aiEntity.transform.position).normalized;
         var _hits = Physics2D.RaycastNonAlloc(_targetPosition, _direction, _results, _entitySO.ChargingDistance, OriginSO.ObstacleLayerMask);
 
-        for (int i = 0; i < _hits; i++)
+        if (_hits > 0)
         {
             return _results[0].point;
         }
-
-        return _targetPosition + _direction * _entitySO.ChargingDistance;
+        else
+        {
+            return _targetPosition + _direction * _entitySO.ChargingDistance;
+        }
     }
 }
