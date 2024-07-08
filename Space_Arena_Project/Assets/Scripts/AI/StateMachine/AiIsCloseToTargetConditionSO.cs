@@ -4,12 +4,12 @@ using UnityEngine;
 using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
-[CreateAssetMenu(fileName = "Condition_Ai_IsFleeing", menuName = "SO/State Machines/Conditions/AI Is Fleeing")]
-public class AiIsFleeingConditionSO : StateConditionSO<AiIsFleeingCondition>
+[CreateAssetMenu(fileName = "Condition_Ai_IsCloseToTarget", menuName = "SO/State Machines/Conditions/AI Is Is Close To Target")]
+public class AiIsCloseToTargetConditionSO : StateConditionSO<AiIsCloseToTargetCondition>
 {
 }
 
-public class AiIsFleeingCondition : Condition
+public class AiIsCloseToTargetCondition : Condition
 {
     private AiEntity _aiEntity = null;
 
@@ -20,6 +20,6 @@ public class AiIsFleeingCondition : Condition
 
     protected override bool Statement()
     {
-        return _aiEntity.IsFleeing;
+        return _aiEntity.IsCloseToTargetEntity(1f);
     }
 }
