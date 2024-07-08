@@ -35,8 +35,8 @@ public class AiEntitySO : EntitySO
     [SerializeField] float _chargingDistance = 0f;
     [SerializeField] Vector2 _chargingWaitRange = Vector2.one;
 
-    [Title("// Explode Itself - Properties")]
-    [SerializeField] float _timeUntilExplode = 0f;
+    [Title("// Self Destruct - Properties")]
+    [SerializeField] float _selfDestructTime = 0f;
 
     public AiEntity EntityPrefab { get => _entityPrefab; private set => _entityPrefab = value; }
     public bool StopMovingOnClose { get => _stopMovingOnClose; private set => _stopMovingOnClose = value; }
@@ -58,5 +58,5 @@ public class AiEntitySO : EntitySO
     public float ChargingSpeedMultiplier { get => _chargingSpeedMultiplier; private set => _chargingSpeedMultiplier = value; }
     public float ChargingDistance { get => _chargingDistance; private set => _chargingDistance = value; }
     public Vector2 ChargingWaitRange { get => _chargingWaitRange; private set => _chargingWaitRange = value; }
-    public float TimeUntilExplode { get => _timeUntilExplode; private set => _timeUntilExplode = value; }
+    public float SelfDestructTime { get => _selfDestructTime; private set => _selfDestructTime = value; }
 }

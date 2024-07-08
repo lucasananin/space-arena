@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d4165e9757d3c24ab4f27eb76f19568, type: 3}
-  m_Name: Action_Ai_ExplodeItself
+  m_Name: Action_Ai_SelfDestruct
   m_EditorClassIdentifier: 
   description: 

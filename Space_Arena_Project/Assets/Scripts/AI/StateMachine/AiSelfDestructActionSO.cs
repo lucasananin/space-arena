@@ -5,12 +5,12 @@ using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 using DG.Tweening;
 
-[CreateAssetMenu(fileName = "Action_Ai_ExplodeItself", menuName = "SO/State Machines/Actions/AI Explode Itself")]
-public class AiExplodeItselfActionSO : StateActionSO<AiExplodeItselfAction>
+[CreateAssetMenu(fileName = "Action_Ai_SelfDestruct", menuName = "SO/State Machines/Actions/AI Self Destruct")]
+public class AiSelfDestructActionSO : StateActionSO<AiSelfDestructAction>
 {
 }
 
-public class AiExplodeItselfAction : StateAction
+public class AiSelfDestructAction : StateAction
 {
     private AiEntity _aiEntity = null;
     private AiEntitySO _aiEntitySO = null;
@@ -37,7 +37,7 @@ public class AiExplodeItselfAction : StateAction
         // Transformar isso em um script próprio.
         var _transform = _aiEntity.transform;
         var _scale = _transform.localScale;
-        _transform.DOScale(_scale * 1.5f, _aiEntitySO.TimeUntilExplode);
+        _transform.DOScale(_scale * 1.5f, _aiEntitySO.SelfDestructTime);
         //_transform.DOShakePosition(_aiEntitySO.TimeUntilExplode);
     }
 
@@ -50,7 +50,7 @@ public class AiExplodeItselfAction : StateAction
     {
         _timer += Time.deltaTime;
 
-        if (_timer > _aiEntitySO.TimeUntilExplode)
+        if (_timer > _aiEntitySO.SelfDestructTime)
         {
             _timer = -99f;
             _aiWeaponHandler.ForceShootAll();

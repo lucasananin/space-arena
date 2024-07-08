@@ -46,14 +46,7 @@ public abstract class HealthBehaviour : MonoBehaviour
 
         if (_currentHealth <= 0 && !_isDying)
         {
-            if (_deathDelay > 0)
-            {
-                StartCoroutine(Dead_routine());
-            }
-            else
-            {
-                OnDead_();
-            }
+            Die();
         }
         else
         {
@@ -63,6 +56,7 @@ public abstract class HealthBehaviour : MonoBehaviour
 
     public void RestoreHealth()
     {
+        _isDying = false;
         RestoreHealth(999);
     }
 
@@ -94,6 +88,18 @@ public abstract class HealthBehaviour : MonoBehaviour
     protected virtual void OnDamageTaken_()
     {
         OnDamageTaken?.Invoke();
+    }
+
+    private void Die()
+    {
+        if (_deathDelay > 0)
+        {
+            StartCoroutine(Dead_routine());
+        }
+        else
+        {
+            OnDead_();
+        }
     }
 
     private IEnumerator Dead_routine()
