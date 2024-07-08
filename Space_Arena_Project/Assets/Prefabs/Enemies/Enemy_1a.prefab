@@ -329,8 +329,8 @@ Transform:
   m_Children:
   - {fileID: 9012124566750695360}
   - {fileID: 6972132582996040920}
-  - {fileID: 6972132583126419580}
   - {fileID: 7715744199995257005}
+  - {fileID: 6972132583126419580}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -392,6 +392,9 @@ MonoBehaviour:
     m_Bits: 192
   _targetEntity: {fileID: 0}
   _isFleeing: 0
+  _isCowering: 0
+  _isWaitingBullCharge: 0
+  _isBullCharging: 0
   _isTargetOnLineOfSight: 0
   _timeUntilSearchPath: 0
   _searchPathTimer: 0
@@ -538,6 +541,7 @@ MonoBehaviour:
     _canRotateWhileShooting: 1
     _canShootWhileMoving: 1
     _onlyShootOnTargetAcquired: 1
+    _resetTimeOnLostTarget: 0
     _shootDistance: 0.7
     _isShooting: 0
     _timeUntilShoot: 0
@@ -810,7 +814,7 @@ Transform:
   - {fileID: 6972132581599054478}
   - {fileID: 6972132581887060627}
   m_Father: {fileID: 6972132582502089751}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6972132583126419576
 MonoBehaviour:
@@ -877,7 +881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8228046025100010746, guid: 7a141681efffd1944ba83c13873a951b, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8228046025100010746, guid: 7a141681efffd1944ba83c13873a951b, type: 3}
       propertyPath: m_LocalPosition.x

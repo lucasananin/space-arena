@@ -53,8 +53,6 @@ public class AiBullChargeAction : StateAction
 
     public override void OnUpdate()
     {
-        // perder de vista enquanto carrega, sai do estado.
-
         _timer += Time.deltaTime;
 
         if (_timer > _waitTime && _aiEntity.IsWaitingBullCharge)
