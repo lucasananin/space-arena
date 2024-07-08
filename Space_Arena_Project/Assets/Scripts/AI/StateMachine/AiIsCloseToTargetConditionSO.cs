@@ -12,14 +12,16 @@ public class AiIsCloseToTargetConditionSO : StateConditionSO<AiIsCloseToTargetCo
 public class AiIsCloseToTargetCondition : Condition
 {
     private AiEntity _aiEntity = null;
+    private AiEntitySO _aiEntitySO = null;
 
     public override void Awake(StateMachine _stateMachine)
     {
         _aiEntity = _stateMachine.GetComponent<AiEntity>();
+        _aiEntitySO = _aiEntity.GetEntitySO<AiEntitySO>();
     }
 
     protected override bool Statement()
     {
-        return _aiEntity.IsCloseToTargetEntity(1f);
+        return _aiEntity.IsCloseToTargetEntity(_aiEntitySO.MinDistance);
     }
 }

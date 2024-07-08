@@ -19505,7 +19505,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _invincibility: 0
   _maxHealth: 100
+  _deathDelay: 0
   _currentHealth: 0
+  _isDying: 0
   _lastDamageModel:
     _entitySource: {fileID: 0}
     _pointHit: {x: 0, y: 0, z: 0}
@@ -37420,7 +37422,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _invincibility: 0
   _maxHealth: 100
+  _deathDelay: 0
   _currentHealth: 0
+  _isDying: 0
   _lastDamageModel:
     _entitySource: {fileID: 0}
     _pointHit: {x: 0, y: 0, z: 0}
@@ -53994,7 +53998,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _invincibility: 1
   _maxHealth: 8
+  _deathDelay: 0
   _currentHealth: 0
+  _isDying: 0
   _lastDamageModel:
     _entitySource: {fileID: 0}
     _pointHit: {x: 0, y: 0, z: 0}
@@ -65222,7 +65228,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _invincibility: 0
   _maxHealth: 100
+  _deathDelay: 0
   _currentHealth: 0
+  _isDying: 0
   _lastDamageModel:
     _entitySource: {fileID: 0}
     _pointHit: {x: 0, y: 0, z: 0}

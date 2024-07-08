@@ -7,7 +7,9 @@ public abstract class HealthBehaviour : MonoBehaviour
 {
     [SerializeField] protected bool _invincibility = false;
     [SerializeField] protected int _maxHealth = 100;
+    [SerializeField] protected float _deathDelay = 0f;
     [SerializeField, ReadOnly] protected int _currentHealth = 0;
+    [SerializeField, ReadOnly] protected bool _isDying = false;
     [SerializeField, ReadOnly] protected DamageModel _lastDamageModel = null;
 
     public DamageModel LastDamageModel { get => _lastDamageModel; private set => _lastDamageModel = value; }
@@ -28,6 +30,12 @@ public abstract class HealthBehaviour : MonoBehaviour
         TakeDamage(_damageModel);
     }
 
+    public void ForceDie()
+    {
+        var _damageModel = new DamageModel(null, transform.position, _currentHealth);
+        TakeDamage(_damageModel);
+    }
+
     public void TakeDamage(DamageModel _damageModel)
     {
         _lastDamageModel = _damageModel;
@@ -36,10 +44,16 @@ public abstract class HealthBehaviour : MonoBehaviour
         if (_invincibility)
             RestoreHealth();
 
-        if (_currentHealth <= 0)
+        if (_currentHealth <= 0 && !_isDying)
         {
-            _currentHealth = 0;
-            OnDead_();
+            if (_deathDelay > 0)
+            {
+                StartCoroutine(Dead_routine());
+            }
+            else
+            {
+                OnDead_();
+            }
         }
         else
         {
@@ -72,11 +86,19 @@ public abstract class HealthBehaviour : MonoBehaviour
 
     protected virtual void OnDead_()
     {
+        _isDying = true;
+        _currentHealth = 0;
         OnDead?.Invoke();
     }
 
     protected virtual void OnDamageTaken_()
     {
         OnDamageTaken?.Invoke();
+    }
+
+    private IEnumerator Dead_routine()
+    {
+        yield return new WaitForSeconds(_deathDelay);
+        OnDead_();
     }
 }
