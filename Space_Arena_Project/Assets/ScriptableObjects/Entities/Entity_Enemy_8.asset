@@ -18,10 +18,10 @@ MonoBehaviour:
   _stopMovingOnClose: 0
   _stopMovingOnTargetAcquired: 0
   _repathOnTargetFarAway: 0
-  _minTargetDistance: 3
+  _minTargetDistance: 5
   _maxNumberOfTries: 10
   _moveRateRange: {x: 1, y: 2}
-  _moveCloseRange: {x: 4, y: 5}
+  _moveCloseRange: {x: 8, y: 12}
   _flankRange: {x: 0, y: 0}
   _flankDistance: 0
   _cowerTimeRange: {x: 0, y: 0}
