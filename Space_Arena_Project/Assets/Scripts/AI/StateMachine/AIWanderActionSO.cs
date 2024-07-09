@@ -14,7 +14,6 @@ public class AiWanderAction : StateAction
 {
     private AiEntity _aiEntity = null;
     private AiEntitySO _entitySO = null;
-    //private AIPath _aiPath = null;
     private GridGraph _graph = null;
     private const int GRAPH_INDEX = 0;
 
@@ -22,7 +21,6 @@ public class AiWanderAction : StateAction
     {
         _aiEntity = _stateMachine.GetComponent<AiEntity>();
         _entitySO = _aiEntity.GetEntitySO<AiEntitySO>();
-        //_aiPath = _aiEntity.GetComponent<AIPath>();
         _graph = AstarPath.active.data.graphs[GRAPH_INDEX] as GridGraph;
     }
 
@@ -38,7 +36,6 @@ public class AiWanderAction : StateAction
         // the ai has reached the end of the path or it has no path at all;
         bool _canSearchPath = _aiEntity.HasReachedPathEnding() && !_aiEntity.IsWaitingToSearchPath();
 
-        //if (_aiEntity.HasReachedPathEnding())
         if (_canSearchPath)
         {
             SearchPath();
@@ -47,7 +44,6 @@ public class AiWanderAction : StateAction
 
     private void SearchPath()
     {
-        //Vector3 _point = _aiEntity.PickRandomPointAround(_entitySO.MoveCloseRange);
         var _point = GetPosition();
         _aiEntity.SetAIPathDestination(_point);
         _aiEntity.ResetTimeUntilSearchPath();
@@ -55,8 +51,10 @@ public class AiWanderAction : StateAction
 
     private Vector3 GetPosition()
     {
-        // bota os points em uma lista e procura um posicao que esteja longe.
-        // limitar o tamanho da lista.
+        // Um alternativa seria:
+        // Botar os "points" em uma lista e procurar um posicao que esteja distante das anteriores.
+        // Limitar o tamanho dessa lista.
+        // Isso poderia ser usado tambem para filtrar ainda mais a procura abaixo.
 
         Vector3 _position = default;
         var _foundNode = false;
@@ -66,7 +64,6 @@ public class AiWanderAction : StateAction
             var _nodes = _graph.nodes;
             int _randomIndex = Random.Range(0, _nodes.Length);
             var _node = _graph.nodes[_randomIndex];
-            Debug.Log($"// A");
 
             if (!_node.Walkable) continue;
 
@@ -74,13 +71,11 @@ public class AiWanderAction : StateAction
             var _myPosition = _aiEntity.transform.position;
             var _isTooClose = GeneralMethods.IsPointCloseToTarget(_myPosition, _nodePosition, _entitySO.MoveCloseRange.x);
             var _isTooFar = !GeneralMethods.IsPointCloseToTarget(_myPosition, _nodePosition, _entitySO.MoveCloseRange.y);
-            Debug.Log($"// B");
 
             if (_isTooClose || _isTooFar) continue;
 
             _foundNode = true;
             _position = _nodePosition;
-            Debug.Log($"// C");
 
         } while (!_foundNode);
 

@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _invincibility: 0
-  _maxHealth: 100
+  _maxHealth: 5
   _deathDelay: 0
   _currentHealth: 0
   _isDying: 0
@@ -559,15 +559,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.b
-      value: 0.37787315
+      value: 0.7019608
       objectReference: {fileID: 0}
     - target: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.g
-      value: 0.9176787
+      value: 0.45882353
       objectReference: {fileID: 0}
     - target: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.r
-      value: 0.86546314
+      value: 0.21568626
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
@@ -631,6 +631,25 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 9212918082766544897, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
   m_PrefabInstance: {fileID: 5479871380964751628}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3735372862570699023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9212918082766544899, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
+  m_PrefabInstance: {fileID: 5479871380964751628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5196266626466192642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3735372862570699023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6b4f4fc46a01c4f9230bf060bc8d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 3735372861438333121}
 --- !u!1001 &8022080402373625911
 PrefabInstance:
   m_ObjectHideFlags: 0
