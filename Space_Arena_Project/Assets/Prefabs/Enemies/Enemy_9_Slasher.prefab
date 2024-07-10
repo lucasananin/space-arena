@@ -257,7 +257,7 @@ MonoBehaviour:
   - _weapons:
     - {fileID: 9051635098416743787}
     _shootRateRange: {x: 1, y: 2}
-    _canRotateWhileShooting: 0
+    _canRotateWhileShooting: 1
     _canShootWhileMoving: 1
     _onlyShootOnTargetAcquired: 1
     _resetTimeOnLostTarget: 0
@@ -450,6 +450,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2658297561336904062}
     m_Modifications:
+    - target: {fileID: 8534141530301458178, guid: 5cc1b6df160d50445bb1785f8803f2f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 8534141530301458181, guid: 5cc1b6df160d50445bb1785f8803f2f9, type: 3}
       propertyPath: m_Sprite
       value: 
