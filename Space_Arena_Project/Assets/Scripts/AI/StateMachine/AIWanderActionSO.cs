@@ -56,6 +56,14 @@ public class AiWanderAction : StateAction
         // Limitar o tamanho dessa lista.
         // Isso poderia ser usado tambem para filtrar ainda mais a procura abaixo.
 
+        var _moveRange = _entitySO.MoveCloseRange;
+
+        if (_moveRange.x <= 0 || _moveRange.y <= 0)
+        {
+            Debug.LogError($"// The entity must have a higher \"_moveCloseRange\" value!");
+            return default;
+        }
+
         Vector3 _position = default;
         var _foundNode = false;
 
@@ -69,8 +77,8 @@ public class AiWanderAction : StateAction
 
             var _nodePosition = (Vector3)_node.position;
             var _myPosition = _aiEntity.transform.position;
-            var _isTooClose = GeneralMethods.IsPointCloseToTarget(_myPosition, _nodePosition, _entitySO.MoveCloseRange.x);
-            var _isTooFar = !GeneralMethods.IsPointCloseToTarget(_myPosition, _nodePosition, _entitySO.MoveCloseRange.y);
+            var _isTooClose = GeneralMethods.IsPointCloseToTarget(_myPosition, _nodePosition, _moveRange.x);
+            var _isTooFar = !GeneralMethods.IsPointCloseToTarget(_myPosition, _nodePosition, _moveRange.y);
 
             if (_isTooClose || _isTooFar) continue;
 

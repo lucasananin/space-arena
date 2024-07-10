@@ -17,9 +17,15 @@ MonoBehaviour:
   _entityPrefab: {fileID: 2658297561336904056, guid: f74272d3619466949a794d17c5d1b8a1, type: 3}
   _stopMovingOnClose: 0
   _stopMovingOnTargetAcquired: 1
+  _repathOnTargetFarAway: 1
+  _minTargetDistance: 0
   _maxNumberOfTries: 10
   _moveRateRange: {x: 0.2, y: 0.4}
-  _moveCloseRange: {x: 4, y: 8}
+  _moveCloseRange: {x: 2, y: 3}
   _flankRange: {x: 1, y: 2}
   _flankDistance: 10
   _cowerTimeRange: {x: 0, y: 0}
+  _chargingSpeedMultiplier: 0
+  _chargingDistance: 0
+  _chargingWaitRange: {x: 0, y: 0}
+  _selfDestructTime: 0
