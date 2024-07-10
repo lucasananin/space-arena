@@ -38,6 +38,10 @@ public class AiEntitySO : EntitySO
     [Title("// Self Destruct - Properties")]
     [SerializeField] float _selfDestructTime = 0f;
 
+    [Title("// Flee - Properties")]
+    [SerializeField] Vector2 _fleeRange = default;
+    [SerializeField] float _fleeDistance = 0f;
+
     public AiEntity EntityPrefab { get => _entityPrefab; private set => _entityPrefab = value; }
     public bool StopMovingOnClose { get => _stopMovingOnClose; private set => _stopMovingOnClose = value; }
     public bool StopMovingOnTargetAcquired { get => _stopMovingOnTargetAcquired; private set => _stopMovingOnTargetAcquired = value; }
@@ -59,4 +63,7 @@ public class AiEntitySO : EntitySO
     public float ChargingDistance { get => _chargingDistance; private set => _chargingDistance = value; }
     public Vector2 ChargingWaitRange { get => _chargingWaitRange; private set => _chargingWaitRange = value; }
     public float SelfDestructTime { get => _selfDestructTime; private set => _selfDestructTime = value; }
+
+    public Vector2 FleeRange { get => _fleeRange; private set => _fleeRange = value; }
+    public float FleeDistance { get => _fleeDistance; private set => _fleeDistance = value; }
 }

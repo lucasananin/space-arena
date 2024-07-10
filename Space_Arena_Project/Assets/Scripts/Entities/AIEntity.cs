@@ -73,7 +73,7 @@ public class AiEntity : EntityBehaviour
         return _point;
     }
 
-    public Vector3 PickTargetFlank(Vector3 _range, float _distance)
+    public Vector3 PickTargetFlank(Vector2 _range, float _distance)
     {
         var _direction = (transform.position - GetTargetEntityPosition()).normalized;
         var _cross = Vector3.Cross(_direction, transform.forward);
@@ -85,9 +85,17 @@ public class AiEntity : EntityBehaviour
         return _point;
     }
 
-    public Vector3 PickRandomPointAwayFromTarget(float _radius, float _distance)
+    //public Vector3 PickRandomPointAwayFromTarget(float _radius, float _distance)
+    //{
+    //    Vector3 _point = Random.insideUnitCircle * _radius;
+    //    _point += GetTargetEntityPosition();
+    //    _point += (transform.position - GetTargetEntityPosition()).normalized * _distance;
+    //    return _point;
+    //}
+
+    public Vector3 PickRandomPointAwayFromTarget(Vector2 _range, float _distance)
     {
-        Vector3 _point = Random.insideUnitCircle * _radius;
+        Vector3 _point = GeneralMethods.GetRandomInCircle(_range.x, _range.y);
         _point += GetTargetEntityPosition();
         _point += (transform.position - GetTargetEntityPosition()).normalized * _distance;
         return _point;

@@ -5,35 +5,25 @@ using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
 [CreateAssetMenu(fileName = "Action_Ai_FleeFromTarget", menuName = "SO/State Machines/Actions/AI Flee From Target")]
-public class AiFleeFromTargetActionSO : StateActionSO
+public class AiFleeFromTargetActionSO : StateActionSO<AiFleeFromTargetAction>
 {
-    [SerializeField] float _radius = 1f;
-    [SerializeField] float _distance = 1f;
-
-    public float Radius { get => _radius; private set => _radius = value; }
-    public float Distance { get => _distance; private set => _distance = value; }
-
-    protected override StateAction CreateAction()
-    {
-        return new AiFleeFromTargetAction();
-    }
 }
 
 public class AiFleeFromTargetAction : StateAction
 {
-    private new AiFleeFromTargetActionSO OriginSO => (AiFleeFromTargetActionSO)base.OriginSO;
-
-    private AiEntity _aIEntity = null;
+    private AiEntity _aiEntity = null;
+    private AiEntitySO _aiEntitySO = null;
     private Vector3 _point = default;
 
-    public override void Awake(StateMachine stateMachine)
+    public override void Awake(StateMachine _stateMachine)
     {
-        _aIEntity = stateMachine.GetComponent<AiEntity>();
+        _aiEntity = _stateMachine.GetComponent<AiEntity>();
+        _aiEntitySO = _aiEntity.GetEntitySO<AiEntitySO>();
     }
 
     public override void OnStateEnter()
     {
-        _aIEntity.IsFleeing = true;
+        _aiEntity.IsFleeing = true;
         SearchPath();
     }
 
@@ -44,16 +34,16 @@ public class AiFleeFromTargetAction : StateAction
 
     public override void OnUpdate()
     {
-        if (_aIEntity.HasReachedPathEnding() || !_aIEntity.IsPointCloseToTargetEntity(_point, OriginSO.Distance))
+        if (_aiEntity.HasReachedPathEnding() || !_aiEntity.IsPointCloseToTargetEntity(_point, _aiEntitySO.FleeDistance))
         {
-            _aIEntity.IsFleeing = false;
+            _aiEntity.IsFleeing = false;
         }
     }
 
     private void SearchPath()
     {
-        _point = _aIEntity.PickRandomPointAwayFromTarget(OriginSO.Radius, OriginSO.Distance);
-        _aIEntity.SetAIPathDestination(_point);
-        _point = _aIEntity.transform.position;
+        _point = _aiEntity.PickRandomPointAwayFromTarget(_aiEntitySO.FlankRange, _aiEntitySO.FleeDistance);
+        _aiEntity.SetAIPathDestination(_point);
+        _point = _aiEntity.transform.position;
     }
 }
