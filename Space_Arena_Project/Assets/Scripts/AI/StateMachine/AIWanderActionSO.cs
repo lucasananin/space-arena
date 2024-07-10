@@ -60,7 +60,7 @@ public class AiWanderAction : StateAction
 
         if (_moveRange.x <= 0 || _moveRange.y <= 0)
         {
-            Debug.LogError($"// The entity must have a higher \"_moveCloseRange\" value!");
+            Debug.LogError($"// The entity must have a higher \"_moveCloseRange\" value!", _aiEntity.gameObject);
             return default;
         }
 

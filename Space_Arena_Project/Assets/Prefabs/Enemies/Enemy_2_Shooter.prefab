@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb808b67afd45264aa38f541f3bc38d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponSO: {fileID: 11400000, guid: 46582ab5a3329d64eb2d059530d9feca, type: 2}
+  _weaponSO: {fileID: 11400000, guid: e46385b46b28a5b4197b4fb84c924d92, type: 2}
   _muzzle: {fileID: 2658297561533454330}
   _entitySource: {fileID: 0}
   _ammoHandler: {fileID: 0}
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 2658297560621282581}
   _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 0
+  _canFlip: 1
   _parentFlipper: {fileID: 2658297561336904054}
 --- !u!114 &2658297560621282582
 MonoBehaviour:
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canRotate: 0
+  _canRotate: 1
 --- !u!1 &2658297561336904011
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: -8619076676205812539}
   - component: {fileID: 7875930278180568344}
   m_Layer: 6
-  m_Name: Enemy_7a
+  m_Name: Enemy_2_Shooter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1589833ecf1d14dae2efb704397456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entitySO: {fileID: 11400000, guid: 732d5d93c5288984884d72ba30534349, type: 2}
+  _entitySO: {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
   _healthBehaviour: {fileID: 2658297561336904053}
   _aiPath: {fileID: 2658297561336904048}
   _obstacleTags: {fileID: 11400000, guid: e91634ae7f5698244a3a04c41348ac30, type: 2}
@@ -197,9 +197,6 @@ MonoBehaviour:
     m_Bits: 192
   _targetEntity: {fileID: 0}
   _isFleeing: 0
-  _isCowering: 0
-  _isWaitingBullCharge: 0
-  _isBullCharging: 0
   _isTargetOnLineOfSight: 0
   _timeUntilSearchPath: 0
   _searchPathTimer: 0
@@ -215,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eeda163c70b3cb4ebb88ba92f608fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitionTableSO: {fileID: 11400000, guid: a9781a1ded2410a4a824f5c9aab57ebc, type: 2}
+  _transitionTableSO: {fileID: 11400000, guid: c02749e4fde68eb45a4f8de2195a1535, type: 2}
   _debugger:
     debugTransitions: 0
     appendConditionsInfo: 1
@@ -320,10 +317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _invincibility: 0
-  _maxHealth: 2
-  _deathDelay: 1.5
+  _maxHealth: 5
   _currentHealth: 0
-  _isDying: 0
   _lastDamageModel:
     _entitySource: {fileID: 0}
     _pointHit: {x: 0, y: 0, z: 0}
@@ -344,12 +339,11 @@ MonoBehaviour:
   _weaponModels:
   - _weapons:
     - {fileID: 2658297560621282577}
-    _shootRateRange: {x: 123456, y: 123456}
+    _shootRateRange: {x: 1.8, y: 2.2}
     _canRotateWhileShooting: 1
     _canShootWhileMoving: 1
     _onlyShootOnTargetAcquired: 1
-    _resetTimeOnLostTarget: 0
-    _shootDistance: 0.7
+    _shootDistance: 12
     _isShooting: 0
     _timeUntilShoot: 0
     _shootTimer: 0
@@ -396,7 +390,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2658297561336904011}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9c94250c88646c4dbf9dbffc6235108, type: 3}
   m_Name: 
@@ -470,8 +464,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2658297561533454329}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.96, y: -0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -502,14 +496,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2658297562314880998}
-  m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
-  m_LocalPosition: {x: -0.3, y: -0.15, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2658297560621282581}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2658297562314880992
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -550,10 +544,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 589112669, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 1321182122, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -655,15 +649,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9212918082609041381, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.b
-      value: 0.27
+      value: 0.16470589
       objectReference: {fileID: 0}
     - target: {fileID: 9212918082609041381, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.g
-      value: 0.27
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9212918082609041381, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.r
-      value: 0.9
+      value: 0.83137256
       objectReference: {fileID: 0}
     - target: {fileID: 9212918082766544899, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Name
@@ -715,15 +709,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.b
-      value: 0.27
+      value: 0.16470589
       objectReference: {fileID: 0}
     - target: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.g
-      value: 0.27
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.r
-      value: 0.9
+      value: 0.83137256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
@@ -732,39 +726,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9212918082766544902, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
   m_PrefabInstance: {fileID: 1334578775125593382}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7881225114156641573 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9212918082766544899, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
-  m_PrefabInstance: {fileID: 1334578775125593382}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4876641965611231853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7881225114156641573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d6b4f4fc46a01c4f9230bf060bc8d64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sprites:
-  - {fileID: 7881225115305911531}
-  - {fileID: 7881225114263241411}
 --- !u!95 &7881225114156641575 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9212918082766544897, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
-  m_PrefabInstance: {fileID: 1334578775125593382}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &7881225114263241411 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 9212918082609041381, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
-  m_PrefabInstance: {fileID: 1334578775125593382}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &7881225115305911531 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
   m_PrefabInstance: {fileID: 1334578775125593382}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4994525494052645837
