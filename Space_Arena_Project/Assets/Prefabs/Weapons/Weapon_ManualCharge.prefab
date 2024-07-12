@@ -4823,7 +4823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 129424718864847853}
   m_Layer: 0
-  m_Name: Vfx_Charging
+  m_Name: Vfx_ChargingShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4837,7 +4837,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107283918445843000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.69, y: -0.07000001, z: 0}
+  m_LocalPosition: {x: 0.69, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4954,7 +4954,6 @@ MonoBehaviour:
   _weaponBehaviour: {fileID: 6724074072737659463}
   _targetTransform: {fileID: 6724074073182966568}
   _recoilOffset: {x: -0.2, y: 0.1, z: 0}
-  _timeMultiplier: 5
   _duration: 0.2
   _defaultPosition: {x: 0, y: 0, z: 0}
   _recoilPosition: {x: 0, y: 0, z: 0}

@@ -8,6 +8,11 @@ public class MuzzleFlashVfx : MonoBehaviour
     [SerializeField] WeaponBehaviour _weapon = null;
     [SerializeField] ParticleSystem _ps = null;
 
+    private void OnValidate()
+    {
+        SetReferences();
+    }
+
     private void OnEnable()
     {
         _weapon.onShoot += Play;
@@ -23,9 +28,10 @@ public class MuzzleFlashVfx : MonoBehaviour
         _ps.Play();
     }
 
-    [Button]
+    //[Button]
     private void SetReferences()
     {
-        _weapon = GetComponentInParent<WeaponBehaviour>(true);
+        if (_weapon is null)
+            _weapon = GetComponentInParent<WeaponBehaviour>(true);
     }
 }

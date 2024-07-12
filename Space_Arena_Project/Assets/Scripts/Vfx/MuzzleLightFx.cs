@@ -8,14 +8,13 @@ public class MuzzleLightFx : MonoBehaviour
 {
     [SerializeField] WeaponBehaviour _weapon = null;
     [SerializeField] Light2D _light2D = null;
-    [Space]
     [SerializeField] float _minIntensity = 4f;
     [SerializeField] float _maxIntensity = 6f;
+    [SerializeField] Vector2 _intensityRange = new Vector2(4f, 6f);
     [SerializeField] float _minRadiusMultiplier = 1f;
     [SerializeField] float _maxRadiusMultiplier = 2f;
-    [Space]
+    [SerializeField] Vector2 _radiusRange = new Vector2(1f, 2f);
     [SerializeField] float _duration = 0.08f;
-    [Space]
     [SerializeField, ReadOnly] float _timer = 0f;
     [SerializeField, ReadOnly] float _initialIntensity = 0f;
     [SerializeField, ReadOnly] float _defaultInnerRadius = 0f;
@@ -50,9 +49,9 @@ public class MuzzleLightFx : MonoBehaviour
     {
         _timer = 0f;
         _light2D.enabled = true;
-        _initialIntensity = Random.Range(_minIntensity, _maxIntensity);
+        _initialIntensity = Random.Range(_intensityRange.x, _intensityRange.y);
 
-        float _randomRadiusMultiplier = Random.Range(_minRadiusMultiplier, _maxRadiusMultiplier);
+        float _randomRadiusMultiplier = Random.Range(_radiusRange.x, _radiusRange.y);
         _light2D.pointLightInnerRadius = _defaultInnerRadius * _randomRadiusMultiplier;
         _light2D.pointLightOuterRadius = _defaultOuterRadius * _randomRadiusMultiplier;
     }

@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 5704818092340610209}
   - component: {fileID: 5704818092340610208}
   m_Layer: 0
-  m_Name: Light 2D
+  m_Name: Vfx_MuzzleLight_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5704818092340610210}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -214,8 +214,10 @@ MonoBehaviour:
   _light2D: {fileID: 5704818092340610209}
   _minIntensity: 4
   _maxIntensity: 6
+  _intensityRange: {x: 4, y: 6}
   _minRadiusMultiplier: 0.9
   _maxRadiusMultiplier: 1.1
+  _radiusRange: {x: 1, y: 2}
   _duration: 0.08
   _timer: 0
   _initialIntensity: 0

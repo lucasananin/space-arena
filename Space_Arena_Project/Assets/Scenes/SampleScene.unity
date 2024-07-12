@@ -13072,7 +13072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentContainer: {fileID: 1787702167}
-  _spawnEachOnStart: 0
+  _spawnEachOnStart: 1
   _spawnRandomOnStart: 0
   _weaponLootPrefab: {fileID: 5281741771645536111, guid: ef78d91f80ad7634cb58312915f887b8, type: 3}
   _weaponCollider: {fileID: 1878020144}
@@ -42451,8 +42451,10 @@ MonoBehaviour:
   _light2D: {fileID: 1394732649}
   _minIntensity: 3
   _maxIntensity: 7
+  _intensityRange: {x: 4, y: 6}
   _minRadiusMultiplier: 0.9
   _maxRadiusMultiplier: 1.1
+  _radiusRange: {x: 1, y: 2}
   _duration: 0.06
   _timer: 0
   _initialIntensity: 0
@@ -59336,7 +59338,7 @@ Transform:
   - {fileID: 559922186}
   - {fileID: 1983875306}
   m_Father: {fileID: 959033388}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &1945456391
 SortingGroup:

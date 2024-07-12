@@ -85,14 +85,6 @@ public class AiEntity : EntityBehaviour
         return _point;
     }
 
-    //public Vector3 PickRandomPointAwayFromTarget(float _radius, float _distance)
-    //{
-    //    Vector3 _point = Random.insideUnitCircle * _radius;
-    //    _point += GetTargetEntityPosition();
-    //    _point += (transform.position - GetTargetEntityPosition()).normalized * _distance;
-    //    return _point;
-    //}
-
     public Vector3 PickRandomPointAwayFromTarget(Vector2 _range, float _distance)
     {
         Vector3 _point = GeneralMethods.GetRandomInCircle(_range.x, _range.y);

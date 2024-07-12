@@ -398,7 +398,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _invincibility: 0
   _maxHealth: 1
+  _deathDelay: 0
   _currentHealth: 0
+  _isDying: 0
   _lastDamageModel:
     _entitySource: {fileID: 0}
     _pointHit: {x: 0, y: 0, z: 0}
@@ -533,6 +535,8 @@ MonoBehaviour:
   _targetEntity: {fileID: 0}
   _isFleeing: 0
   _isCowering: 0
+  _isWaitingBullCharge: 0
+  _isBullCharging: 0
   _isTargetOnLineOfSight: 0
   _timeUntilSearchPath: 0
   _searchPathTimer: 0
@@ -654,7 +658,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _invincibility: 0
   _maxHealth: 5
+  _deathDelay: 0
   _currentHealth: 0
+  _isDying: 0
   _lastDamageModel:
     _entitySource: {fileID: 0}
     _pointHit: {x: 0, y: 0, z: 0}
@@ -679,6 +685,7 @@ MonoBehaviour:
     _canRotateWhileShooting: 1
     _canShootWhileMoving: 1
     _onlyShootOnTargetAcquired: 1
+    _resetTimeOnLostTarget: 0
     _shootDistance: 12
     _isShooting: 0
     _timeUntilShoot: 0
@@ -693,6 +700,7 @@ MonoBehaviour:
     _canRotateWhileShooting: 0
     _canShootWhileMoving: 0
     _onlyShootOnTargetAcquired: 0
+    _resetTimeOnLostTarget: 0
     _shootDistance: 0.1
     _isShooting: 0
     _timeUntilShoot: 0
@@ -1198,7 +1206,13 @@ PrefabInstance:
       propertyPath: _weaponSO
       value: 
       objectReference: {fileID: 11400000, guid: 505944c4d0673d443b061cb12a407c40, type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 7427310108541956550, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7427310108541956550, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
+    - {fileID: -3700964492024119886, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
 --- !u!4 &104800483893885205 stripped
 Transform:
