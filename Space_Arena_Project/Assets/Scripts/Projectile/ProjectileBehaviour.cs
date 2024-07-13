@@ -11,6 +11,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     [SerializeField, ReadOnly] protected float _timeUntilDestroy = 0f;
     [SerializeField, ReadOnly] protected float _destroyTimer = 0f;
     [SerializeField, ReadOnly] protected int _currentPierceCount = 0;
+    [SerializeField, ReadOnly] protected List<string> _tagsList = null;
 
     private Collider2D[] _explosionResults = new Collider2D[9];
     private RaycastHit2D[] _obstacleResults = new RaycastHit2D[9];
@@ -22,6 +23,8 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     public event System.Action OnDestroy_Stop = null;
     public event System.Action OnExplode = null;
 
+    const string PROJECTILE_TAG = "Projectile";
+
     public float TimeUntilDestroy { get => _timeUntilDestroy; }
     public ShootModel ShootModel { get => _shootModel; }
 
@@ -29,6 +32,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     {
         _shootModel = _newShootModel;
         _projectileSO = _newShootModel.ProjectileSO;
+        UpdateTagsList();
         SetDestroyTimer();
         TryAutoRotate();
     }
@@ -142,6 +146,14 @@ public abstract class ProjectileBehaviour : MonoBehaviour
         _currentPierceCount++;
     }
 
+    protected void UpdateTagsList()
+    {
+        // Melhorar e otimizar esse codigo.
+        _tagsList.Clear();
+        _tagsList.AddRange(_shootModel.EntitySource.GetProjectileHitTags());
+        if (_projectileSO.CanDamageProjectiles) _tagsList.Add(PROJECTILE_TAG);
+    }
+
     public bool HasReachedMaxPierceCount()
     {
         return _currentPierceCount >= _projectileSO.MaxPierceCount;
@@ -154,18 +166,18 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     public bool HasAvailableTag(GameObject _gameObjectHit)
     {
-        // organizar e otimizar esse codigo.
-        if (_projectileSO.CanDamageProjectiles)
-        {
-            var _t = new string[] { "Projectile" };
-            var _tags = _shootModel.EntitySource.GetProjectileHitTags();
-            return GeneralMethods.HasAvailableTag(_gameObjectHit, _t) || GeneralMethods.HasAvailableTag(_gameObjectHit, _tags);
-        }
-        else
-        {
-            var _tags = _shootModel.EntitySource.GetProjectileHitTags();
-            return GeneralMethods.HasAvailableTag(_gameObjectHit, _tags);
-        }
+        //if (_projectileSO.CanDamageProjectiles)
+        //{
+        //    var _t = new string[] { "Projectile" };
+        //    var _tags = _shootModel.EntitySource.GetProjectileHitTags();
+        //    return GeneralMethods.HasAvailableTag(_gameObjectHit, _t) || GeneralMethods.HasAvailableTag(_gameObjectHit, _tags);
+        //}
+        //else
+        //{
+        //    var _tags = _shootModel.EntitySource.GetProjectileHitTags();
+        //    return GeneralMethods.HasAvailableTag(_gameObjectHit, _tags);
+        //}
+        return GeneralMethods.HasAvailableTag(_gameObjectHit, _tagsList);
     }
 
     public float GetExplodeTimeNormalized()

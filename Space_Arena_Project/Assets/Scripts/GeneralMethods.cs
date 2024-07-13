@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GeneralMethods : MonoBehaviour
 {
-    public static bool HasAvailableTag(GameObject _gameObjectHit, string[] _tags)
+    public static bool HasAvailableTag<T>(GameObject _gameObjectHit, IReadOnlyList<T> _tags)
     {
-        int _count = _tags.Length;
+        int _count = _tags.Count;
 
         for (int i = 0; i < _count; i++)
         {
-            if (_gameObjectHit.CompareTag(_tags[i]))
+            if (_gameObjectHit.CompareTag(_tags[i] as string))
             {
                 return true;
             }
@@ -18,6 +18,36 @@ public class GeneralMethods : MonoBehaviour
 
         return false;
     }
+
+    //public static bool HasAvailableTag(GameObject _gameObjectHit, string[] _tags)
+    //{
+    //    int _count = _tags.Length;
+
+    //    for (int i = 0; i < _count; i++)
+    //    {
+    //        if (_gameObjectHit.CompareTag(_tags[i]))
+    //        {
+    //            return true;
+    //        }
+    //    }
+
+    //    return false;
+    //}
+
+    //public static bool HasAvailableTag(GameObject _gameObjectHit, List<string> _tags)
+    //{
+    //    int _count = _tags.Count;
+
+    //    for (int i = 0; i < _count; i++)
+    //    {
+    //        if (_gameObjectHit.CompareTag(_tags[i]))
+    //        {
+    //            return true;
+    //        }
+    //    }
+
+    //    return false;
+    //}
 
     public static Vector3 GetRandomPointInBounds(Bounds _bounds)
     {
