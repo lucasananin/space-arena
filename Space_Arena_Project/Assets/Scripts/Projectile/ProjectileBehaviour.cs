@@ -148,7 +148,6 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     protected void UpdateTagsList()
     {
-        // Melhorar e otimizar esse codigo.
         _tagsList.Clear();
         _tagsList.AddRange(_shootModel.EntitySource.GetProjectileHitTags());
         if (_projectileSO.CanDamageProjectiles) _tagsList.Add(PROJECTILE_TAG);
@@ -166,17 +165,6 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     public bool HasAvailableTag(GameObject _gameObjectHit)
     {
-        //if (_projectileSO.CanDamageProjectiles)
-        //{
-        //    var _t = new string[] { "Projectile" };
-        //    var _tags = _shootModel.EntitySource.GetProjectileHitTags();
-        //    return GeneralMethods.HasAvailableTag(_gameObjectHit, _t) || GeneralMethods.HasAvailableTag(_gameObjectHit, _tags);
-        //}
-        //else
-        //{
-        //    var _tags = _shootModel.EntitySource.GetProjectileHitTags();
-        //    return GeneralMethods.HasAvailableTag(_gameObjectHit, _tags);
-        //}
         return GeneralMethods.HasAvailableTag(_gameObjectHit, _tagsList);
     }
 
