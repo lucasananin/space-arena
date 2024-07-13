@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4d5a4e750096ac4ab1783d5de629368, type: 3}
-  m_Name: Entity_Enemy_2
+  m_Name: Entity_Ally_1
   m_EditorClassIdentifier: 
-  _opponentTags: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
-  _projectileHitTag: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
-  _entityPrefab: {fileID: 2658297561336904056, guid: e3027df5231167a4da73b72ce65c5deb, type: 3}
+  _opponentTags: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}
+  _projectileHitTag: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}
+  _entityPrefab: {fileID: 2658297561336904056, guid: d376b6a5c7c4be24fadb4df012e18577, type: 3}
   _stopMovingOnClose: 0
   _stopMovingOnTargetAcquired: 0
   _repathOnTargetFarAway: 1
