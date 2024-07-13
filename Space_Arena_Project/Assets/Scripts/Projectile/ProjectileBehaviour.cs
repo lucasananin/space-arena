@@ -154,8 +154,18 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     public bool HasAvailableTag(GameObject _gameObjectHit)
     {
-        var _tags = _shootModel.EntitySource.GetProjectileHitTags();
-        return GeneralMethods.HasAvailableTag(_gameObjectHit, _tags);
+        // organizar e otimizar esse codigo.
+        if (_projectileSO.CanDamageProjectiles)
+        {
+            var _t = new string[] { "Projectile" };
+            var _tags = _shootModel.EntitySource.GetProjectileHitTags();
+            return GeneralMethods.HasAvailableTag(_gameObjectHit, _t) || GeneralMethods.HasAvailableTag(_gameObjectHit, _tags);
+        }
+        else
+        {
+            var _tags = _shootModel.EntitySource.GetProjectileHitTags();
+            return GeneralMethods.HasAvailableTag(_gameObjectHit, _tags);
+        }
     }
 
     public float GetExplodeTimeNormalized()

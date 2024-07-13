@@ -21099,18 +21099,14 @@ MonoBehaviour:
     _runtimeQuantities: []
   _randomizedWaves:
   - _entities:
-    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
-      _quantity: 1
     - _so: {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
       _quantity: 1
-    - _so: {fileID: 11400000, guid: c9a872c556f876748aca59a351afa0d5, type: 2}
-      _quantity: 1
-    _quantity: 20
-    _maxActiveSpawns: 3
+    _quantity: 6
+    _maxActiveSpawns: 1
   _container: {fileID: 1159678663}
   _spawnTime: 1
   _minDistanceFromPlayer: 4
-  _useRandomizedWaves: 0
+  _useRandomizedWaves: 1
   _waveModel:
     _entities: []
     _maxActiveSpawns: 4
@@ -53754,7 +53750,7 @@ GameObject:
   - component: {fileID: 1823301793}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

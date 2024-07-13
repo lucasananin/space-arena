@@ -15,7 +15,7 @@ public class ProjectileSO : ScriptableObject
     [SerializeField] Vector2 _minMaxTimeUntilDestroy = default;
     [SerializeField, Range(1, 99)] int _maxPierceCount = 1;
     [SerializeField, Range(0f, 99)] float _explosionRadius = 0f;
-    //[SerializeField, Range(0, 99)] int _ammoPerShot = 1;
+    [SerializeField] bool _canDamageProjectiles = false;
 
     [Title("// Auto Aim")]
     [SerializeField] bool _canAutoRotate = false;
@@ -53,7 +53,7 @@ public class ProjectileSO : ScriptableObject
     public Vector2 MinMaxTimeUntilDestroy { get => _minMaxTimeUntilDestroy; private set => _minMaxTimeUntilDestroy = value; }
     public int MaxPierceCount { get => _maxPierceCount; private set => _maxPierceCount = value; }
     public float ExplosionRadius { get => _explosionRadius; private set => _explosionRadius = value; }
-    //public int AmmoPerShot { get => _ammoPerShot; set => _ammoPerShot = value; }
+    public bool CanDamageProjectiles { get => _canDamageProjectiles; private set => _canDamageProjectiles = value; }
 
     public float MoveSpeed { get => _moveSpeed; private set => _moveSpeed = value; }
     public bool DestroyOnCollision { get => _destroyOnCollision; private set => _destroyOnCollision = value; }
