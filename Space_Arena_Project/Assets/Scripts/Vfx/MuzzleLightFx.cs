@@ -8,11 +8,7 @@ public class MuzzleLightFx : MonoBehaviour
 {
     [SerializeField] WeaponBehaviour _weapon = null;
     [SerializeField] Light2D _light2D = null;
-    [SerializeField] float _minIntensity = 4f;
-    [SerializeField] float _maxIntensity = 6f;
     [SerializeField] Vector2 _intensityRange = new Vector2(4f, 6f);
-    [SerializeField] float _minRadiusMultiplier = 1f;
-    [SerializeField] float _maxRadiusMultiplier = 2f;
     [SerializeField] Vector2 _radiusRange = new Vector2(1f, 2f);
     [SerializeField] float _duration = 0.08f;
     [SerializeField, ReadOnly] float _timer = 0f;
