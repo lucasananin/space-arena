@@ -18,7 +18,7 @@ TagManager:
   - Entity
   - Obstacle
   - Interactable
-  - Bg
+  - Virtual Camera
   - 
   - 
   - 
