@@ -11,15 +11,11 @@ public class InputHandler : MonoBehaviour
     //public static event System.Action onMouseScrollDown = null;
     public static event System.Action onInteractDown = null;
 
-    public Vector3 _mousePos = default;
-
     private void Update()
     {
         CheckLeftMouseButtonInput();
         CheckMouseScrollInput();
         CheckInteractInput();
-
-        _mousePos = GetMousePosition();
     }
 
     private void CheckLeftMouseButtonInput()
