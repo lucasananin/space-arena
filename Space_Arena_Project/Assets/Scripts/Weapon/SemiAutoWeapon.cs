@@ -66,28 +66,28 @@ public class SemiAutoWeapon : WeaponBehaviour
                 _hasShotCharge = true;
                 ShootChargedShot();
             }
-            else if (CanWeakShot())
-            {
-                _hasShotCharge = true;
-                Shoot();
-            }
+            //else if (CanWeakShot())
+            //{
+            //    _hasShotCharge = true;
+            //    Shoot();
+            //}
         }
-        else if (CanWeakShot())
-        {
-            _hasShotCharge = true;
-            Shoot();
-        }
+        //else if (CanWeakShot())
+        //{
+        //    _hasShotCharge = true;
+        //    Shoot();
+        //}
 
         _isCharging = false;
     }
 
-    private bool CanWeakShot()
-    {
-        return _weaponSO.Stats.HasChargeWeakShot && _chargeTimer < _weaponSO.Stats.ChargeTime && HasAmmo();
-    }
+    //private bool CanWeakShot()
+    //{
+    //    return _weaponSO.Stats.HasChargeWeakShot && _chargeTimer < _weaponSO.Stats.ChargeTime && HasAmmo();
+    //}
 
     private bool CanAutoChargeShot()
     {
-        return _weaponSO.Stats.IsAutoChargeType && HasEnoughChargeTimer() && !_isOverheated && HasChargeAmmo();
+        return _weaponSO.Stats.IsAutoChargeType && HasEnoughChargeTimer() && !_isOverheated && HasAmmo();
     }
 }

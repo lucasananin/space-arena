@@ -66,7 +66,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
     {
         //_nextFire -= _weaponSO.FireRate;
         _nextFire = 0;
-        PrepareProjectile(_weaponSO.ProjectileSO, false);
+        PrepareProjectile(_weaponSO.ProjectileSO/*, false*/);
         DecreaseAmmo(_weaponSO.ProjectileSO);
         IncreaseHeat(_weaponSO.Stats.HeatPerShot);
         onShoot?.Invoke();
@@ -78,20 +78,20 @@ public abstract class WeaponBehaviour : MonoBehaviour
         //_chargeTimer -= _weaponSO.MaxChargeTime;
         _nextFire = 0;
         _chargeTimer = 0;
-        PrepareProjectile(_weaponSO.ChargedProjectileSO, true);
-        DecreaseAmmo(_weaponSO.ChargedProjectileSO);
+        PrepareProjectile(_weaponSO.ProjectileSO/*, true*/);
+        DecreaseAmmo(_weaponSO.ProjectileSO);
         IncreaseHeat(_weaponSO.Stats.MaxHeat + HEAT_OFFSET);
         onShoot?.Invoke();
     }
 
-    private void PrepareProjectile(ProjectileSO _projectileSO, bool _isChargedShot)
+    private void PrepareProjectile(ProjectileSO _projectileSO/*, bool _isChargedShot*/)
     {
         for (int i = 0; i < _weaponSO.Stats.ProjectilesPerShot; i++)
         {
             var _position = CalculateProjectilePosition(_projectileSO);
             var _rotation = CalculateProjectileRotation(i);
             var _projectile = Instantiate(_projectileSO.Prefab, _position, _rotation);
-            var _shootModel = new ShootModel(_entitySource, this, _projectileSO, _isChargedShot);
+            var _shootModel = new ShootModel(_entitySource, this, _projectileSO/*, _isChargedShot*/);
             _projectile.Init(_shootModel);
         }
     }
@@ -191,19 +191,20 @@ public abstract class WeaponBehaviour : MonoBehaviour
         return _ammoHandler is null ? true : _ammoHandler.HasAmmo(_weaponSO.ProjectileSO, _weaponSO);
     }
 
-    public bool HasChargeAmmo()
-    {
-        return _ammoHandler is null ? true : _ammoHandler.HasAmmo(_weaponSO.ChargedProjectileSO, _weaponSO);
-    }
+    //public bool HasChargeAmmo()
+    //{
+    //    return _ammoHandler is null ? true : _ammoHandler.HasAmmo(_weaponSO.ChargedProjectileSO, _weaponSO);
+    //}
 
     public string GetAmmoString()
     {
         return _ammoHandler is null ? $"-" : $"{_ammoHandler.GetAmmoQuantity(_weaponSO.ProjectileSO)}";
     }
 
-    public int GetDamage(bool _isChargedShot)
+    public int GetDamage(/*bool _isChargedShot*/)
     {
-        return _isChargedShot ? _weaponSO.Stats.ChargeShotDamage : _weaponSO.Stats.Damage;
+        return _weaponSO.Stats.Damage;
+        //return _isChargedShot ? _weaponSO.Stats.ChargeShotDamage : _weaponSO.Stats.Damage;
     }
 
     public int GetExplosiveDamage()

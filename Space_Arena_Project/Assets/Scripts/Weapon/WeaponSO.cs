@@ -18,7 +18,7 @@ public class WeaponSO : ScriptableObject
 
     [Title("// Projectiles")]
     [SerializeField] ProjectileSO _projectileSO = null;
-    [SerializeField] ProjectileSO _chargedProjectileSO = null;
+    //[SerializeField] ProjectileSO _chargedProjectileSO = null;
 
     [Title("// Stats")]
     [SerializeField] WeaponStats _stats = null;
@@ -31,18 +31,10 @@ public class WeaponSO : ScriptableObject
     public Vector3 HolsterPosition { get => _holsterPosition; private set => _holsterPosition = value; }
     public Vector3 HolsterEuler { get => _holsterEuler; private set => _holsterEuler = value; }
     public ProjectileSO ProjectileSO { get => _projectileSO; private set => _projectileSO = value; }
-    public ProjectileSO ChargedProjectileSO { get => _chargedProjectileSO; private set => _chargedProjectileSO = value; }
+    //public ProjectileSO ChargedProjectileSO { get => _chargedProjectileSO; private set => _chargedProjectileSO = value; }
 
     public WeaponStats Stats { get => _stats; private set => _stats = value; }
     public ProjectileStats ProjectileStats { get => _projectileStats; private set => _projectileStats = value; }
-
-    //private void OnValidate()
-    //{
-    //    if (!HasChargeTime())
-    //        _projectileStats.Copy(_projectileSO);
-    //    else
-    //        _projectileStats.Copy(_chargedProjectileSO);
-    //}
 
     public bool HasChargeTime()
     {
@@ -96,7 +88,7 @@ public class WeaponStats
 {
     [Title("// Damage")]
     [SerializeField, Range(0, 99)] int _damage = 1;
-    [SerializeField, Range(0, 99)] int _chargeShotDamage = 1;
+    //[SerializeField, Range(0, 99)] int _chargeShotDamage = 1;
     [SerializeField, Range(0, 99)] int _explosiveDamage = 1;
     [Title("// Fire Rate")]
     [SerializeField, Range(0.01f, 9f)] float _fireRate = 0.1f;
@@ -116,13 +108,13 @@ public class WeaponStats
     [Title("- WEAPON SPECIFICS -", null, TitleAlignments.Centered)]
     [Title("// Semi-Auto Behaviour: Properties")]
     [SerializeField] bool _isAutoChargeType = false;
-    [SerializeField] bool _hasChargeWeakShot = false;
+    //[SerializeField] bool _hasChargeWeakShot = false;
     [Title("// Burst Behaviour: Properties")]
     [SerializeField, Range(0f, 9f)] float _burstRate = 0f;
     [SerializeField, Range(0, 99)] int _shotsPerBurst = 0;
 
     public int Damage { get => _damage; private set => _damage = value; }
-    public int ChargeShotDamage { get => _chargeShotDamage; private set => _chargeShotDamage = value; }
+    //public int ChargeShotDamage { get => _chargeShotDamage; private set => _chargeShotDamage = value; }
     public int ExplosiveDamage { get => _explosiveDamage; private set => _explosiveDamage = value; }
     public float FireRate { get => _fireRate; private set => _fireRate = value; }
     public float ChargeTime { get => _chargeTime; set => _chargeTime = value; }
@@ -135,7 +127,7 @@ public class WeaponStats
     public int ProjectilesPerShot { get => _projectilesPerShot; private set => _projectilesPerShot = value; }
     public int AmmoPerShot { get => _ammoPerShot; set => _ammoPerShot = value; }
     public bool IsAutoChargeType { get => _isAutoChargeType; private set => _isAutoChargeType = value; }
-    public bool HasChargeWeakShot { get => _hasChargeWeakShot; private set => _hasChargeWeakShot = value; }
+    //public bool HasChargeWeakShot { get => _hasChargeWeakShot; private set => _hasChargeWeakShot = value; }
     public float BurstRate { get => _burstRate; private set => _burstRate = value; }
     public int ShotsPerBurst { get => _shotsPerBurst; set => _shotsPerBurst = value; }
 }
