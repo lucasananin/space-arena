@@ -28,11 +28,11 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     public WeaponSO WeaponSO { get => _weaponSO; private set => _weaponSO = value; }
     public Transform Muzzle { get => _muzzle; private set => _muzzle = value; }
-    public float ChargingTime { get => _weaponSO.MaxChargeTime; }
+    public float ChargingTime { get => _weaponSO.Stats.ChargeTime; }
 
     protected virtual void Awake()
     {
-        _nextFire = _weaponSO.FireRate;
+        _nextFire = _weaponSO.Stats.FireRate;
     }
 
     protected virtual void Update()
@@ -68,7 +68,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
         _nextFire = 0;
         PrepareProjectile(_weaponSO.ProjectileSO, false);
         DecreaseAmmo(_weaponSO.ProjectileSO);
-        IncreaseHeat(_weaponSO.HeatPerShot);
+        IncreaseHeat(_weaponSO.Stats.HeatPerShot);
         onShoot?.Invoke();
     }
 
@@ -80,13 +80,13 @@ public abstract class WeaponBehaviour : MonoBehaviour
         _chargeTimer = 0;
         PrepareProjectile(_weaponSO.ChargedProjectileSO, true);
         DecreaseAmmo(_weaponSO.ChargedProjectileSO);
-        IncreaseHeat(_weaponSO.MaxHeat + HEAT_OFFSET);
+        IncreaseHeat(_weaponSO.Stats.MaxHeat + HEAT_OFFSET);
         onShoot?.Invoke();
     }
 
     private void PrepareProjectile(ProjectileSO _projectileSO, bool _isChargedShot)
     {
-        for (int i = 0; i < _weaponSO.ProjectilesPerShot; i++)
+        for (int i = 0; i < _weaponSO.Stats.ProjectilesPerShot; i++)
         {
             var _position = CalculateProjectilePosition(_projectileSO);
             var _rotation = CalculateProjectileRotation(i);
@@ -122,7 +122,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
         if (_isCharging)
         {
-            _chargeTimer += _chargeTimer < _weaponSO.MaxChargeTime ? Time.fixedDeltaTime : 0;
+            _chargeTimer += _chargeTimer < _weaponSO.Stats.ChargeTime ? Time.fixedDeltaTime : 0;
         }
         else
         {
@@ -132,7 +132,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     protected bool HasEnoughChargeTimer()
     {
-        return _chargeTimer >= _weaponSO.MaxChargeTime;
+        return _chargeTimer >= _weaponSO.Stats.ChargeTime;
     }
 
     protected void IncreaseHeat(float _value)
@@ -141,9 +141,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
         _currentHeat += _value;
 
-        if (_currentHeat >= _weaponSO.MaxHeat)
+        if (_currentHeat >= _weaponSO.Stats.MaxHeat)
         {
-            _currentHeat = _weaponSO.MaxHeat;
+            _currentHeat = _weaponSO.Stats.MaxHeat;
             _overheatTimer = 0;
             _isOverheated = true;
         }
@@ -153,13 +153,13 @@ public abstract class WeaponBehaviour : MonoBehaviour
     {
         if (!_weaponSO.CanOverheat()) return;
 
-        _currentHeat -= _currentHeat > 0 ? _weaponSO.HeatDecreasePerSecond * Time.deltaTime : 0;
+        _currentHeat -= _currentHeat > 0 ? _weaponSO.Stats.HeatDecreasePerSecond * Time.deltaTime : 0;
 
         if (_isOverheated)
         {
-            _overheatTimer += _overheatTimer < _weaponSO.MaxOverheatTime ? Time.deltaTime : 0;
+            _overheatTimer += _overheatTimer < _weaponSO.Stats.MaxOverheatTime ? Time.deltaTime : 0;
 
-            if (_overheatTimer >= _weaponSO.MaxOverheatTime)
+            if (_overheatTimer >= _weaponSO.Stats.MaxOverheatTime)
             {
                 _isOverheated = false;
             }
@@ -203,12 +203,12 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     public int GetDamage(bool _isChargedShot)
     {
-        return _isChargedShot ? _weaponSO.ChargeShotDamage : _weaponSO.Damage;
+        return _isChargedShot ? _weaponSO.Stats.ChargeShotDamage : _weaponSO.Stats.Damage;
     }
 
     public int GetExplosiveDamage()
     {
-        return _weaponSO.ExplosiveDamage;
+        return _weaponSO.Stats.ExplosiveDamage;
     }
 
     public float GetCastProjectileMaxDistance()

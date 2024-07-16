@@ -10,7 +10,7 @@ public class SemiAutoWeapon : WeaponBehaviour
 
     private void FixedUpdate()
     {
-        _nextFire += _nextFire < _weaponSO.FireRate ? Time.fixedDeltaTime : 0;
+        _nextFire += _nextFire < _weaponSO.Stats.FireRate ? Time.fixedDeltaTime : 0;
 
         UpdateChargeTimer();
 
@@ -28,7 +28,7 @@ public class SemiAutoWeapon : WeaponBehaviour
 
         if (!HasAmmo()) return;
         if (_isOverheated) return;
-        if (_nextFire < _weaponSO.FireRate) return;
+        if (_nextFire < _weaponSO.Stats.FireRate) return;
 
         if (_weaponSO.HasChargeTime())
         {
@@ -59,7 +59,7 @@ public class SemiAutoWeapon : WeaponBehaviour
         if (_hasShotCharge) return;
         if (_isOverheated) return;
 
-        if (!_weaponSO.IsAutoChargeType)
+        if (!_weaponSO.Stats.IsAutoChargeType)
         {
             if (HasEnoughChargeTimer())
             {
@@ -83,11 +83,11 @@ public class SemiAutoWeapon : WeaponBehaviour
 
     private bool CanWeakShot()
     {
-        return _weaponSO.HasChargeWeakShot && _chargeTimer < _weaponSO.MaxChargeTime && HasAmmo();
+        return _weaponSO.Stats.HasChargeWeakShot && _chargeTimer < _weaponSO.Stats.ChargeTime && HasAmmo();
     }
 
     private bool CanAutoChargeShot()
     {
-        return _weaponSO.IsAutoChargeType && HasEnoughChargeTimer() && !_isOverheated && HasChargeAmmo();
+        return _weaponSO.Stats.IsAutoChargeType && HasEnoughChargeTimer() && !_isOverheated && HasChargeAmmo();
     }
 }

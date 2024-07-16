@@ -68,3 +68,30 @@ public class ProjectileSO : ScriptableObject
 
     public float MaxPositionRadius { get => _maxGuidedPositionRadius; private set => _maxGuidedPositionRadius = value; }
 }
+
+[System.Serializable]
+public class ProjectileStats
+{
+    [Title("// General")]
+    [SerializeField] Vector2 _destroyTimeRange = default;
+    [SerializeField, Range(1, 99)] int _maxPierceCount = 1;
+    [SerializeField, Range(0f, 99)] float _explosionRadius = 0f;
+    [SerializeField] bool _canDamageProjectiles = false;
+    [Title("// Auto Aim")]
+    [SerializeField] bool _canAutoAim = false;
+    [SerializeField] float _autoAimDistance = 0f;
+    [SerializeField] float _autoAimAngle = 0f;
+    [Title("- PROJECTILE SPECIFICS -", null, TitleAlignments.Centered)]
+    [Title("// Physical Projectile: Properties")]
+    [SerializeField, Range(0f, 99f)] float _moveSpeed = 0f;
+    [SerializeField] bool _destroyOnCollision = false;
+    [SerializeField] bool _destroyOnStop = false;
+    [SerializeField] bool _useAccelerationCurve = false;
+    [SerializeField] bool _invertAcceleration = false;
+    [SerializeField] AnimationCurve _accelerationCurve = null;
+    [SerializeField, Range(0f, 10f)] float _acelerationMultiplier = 0;
+    [Title("// Cast Projectile: Properties")]
+    [SerializeField, Range(0f, 99f)] float _maxCastDistance = 0f;
+    [Title("// Guided Projectile: Properties")]
+    [SerializeField, Range(0f, 9f)] float _maxGuidedRadius = 0f;
+}

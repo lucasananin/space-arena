@@ -13,31 +13,31 @@ public class BurstWeapon : WeaponBehaviour
     protected override void Awake()
     {
         base.Awake();
-        _nextBurst = _weaponSO.BurstRate;
+        _nextBurst = _weaponSO.Stats.BurstRate;
     }
 
     private void FixedUpdate()
     {
         if (_isBursting)
         {
-            _nextFire += _nextFire < _weaponSO.FireRate ? Time.fixedDeltaTime : 0;
+            _nextFire += _nextFire < _weaponSO.Stats.FireRate ? Time.fixedDeltaTime : 0;
 
-            if (_nextFire >= _weaponSO.FireRate)
+            if (_nextFire >= _weaponSO.Stats.FireRate)
             {
                 Shoot();
 
                 _currentShootCount++;
 
-                if (_currentShootCount >= _weaponSO.MaxBurstShootCount)
+                if (_currentShootCount >= _weaponSO.Stats.ShotsPerBurst)
                 {
-                    _nextFire = _weaponSO.FireRate;
+                    _nextFire = _weaponSO.Stats.FireRate;
                     _isBursting = false;
                 }
             }
         }
         else
         {
-            _nextBurst += _nextBurst < _weaponSO.BurstRate? Time.fixedDeltaTime : 0;
+            _nextBurst += _nextBurst < _weaponSO.Stats.BurstRate? Time.fixedDeltaTime : 0;
         }
     }
 
@@ -45,9 +45,9 @@ public class BurstWeapon : WeaponBehaviour
     {
         if (!HasAmmo()) return;
         if (_isOverheated) return;
-        if (_nextBurst < _weaponSO.BurstRate) return;
+        if (_nextBurst < _weaponSO.Stats.BurstRate) return;
 
-        _nextBurst -= _weaponSO.BurstRate;
+        _nextBurst -= _weaponSO.Stats.BurstRate;
         _currentShootCount = 0;
         _isBursting = true;
         base.PullTrigger();

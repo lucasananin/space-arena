@@ -10,25 +10,51 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: _Weapon_Enemy_1
+  m_Name: Weapon_Enemy_7
   m_EditorClassIdentifier: 
-  _id: 
   _iconSprite: {fileID: 0}
   _weaponPrefab: {fileID: 0}
+  _id: 
   _displayName: 
   _holsterPosition: {x: 0, y: 0, z: 0}
   _holsterEuler: {x: 0, y: 0, z: 0}
-  _projectileSO: {fileID: 11400000, guid: f378e2e143334de4eb0422d2d2c1854a, type: 2}
+  _projectileSO: {fileID: 11400000, guid: a8169918b3fcd9244ad5a16246f23484, type: 2}
   _chargedProjectileSO: {fileID: 0}
+  _damage: 0
+  _chargeShotDamage: 0
+  _explosiveDamage: 5
   _fireRate: 0.1
   _maxChargeTime: 0
   _maxHeat: 0
   _heatPerShot: 0
   _heatDecreasePerSecond: 0
   _maxOverheatTime: 0
-  _maxShootAngle: 0
+  _shootAngle: 0
+  _arcMode: 0
   _projectilesPerShot: 1
+  _ammoPerShot: 1
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0
   _burstRate: 0
   _maxBurstShootCount: 0
+  _destroyTimeRange: {x: 0.1, y: 0.1}
+  _maxPierceCount: 1
+  _explosionRadius: 3
+  _canDamageProjectiles: 0
+  _canAutoAim: 0
+  _autoAimDistance: 0
+  _autoAimAngle: 0
+  _moveSpeed: 0
+  _destroyOnCollision: 0
+  _destroyOnStop: 0
+  _useAccelerationCurve: 0
+  _invertAcceleration: 0
+  _accelerationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _acelerationMultiplier: 0
+  _maxCastDistance: 0.1
+  _maxGuidedRadius: 0

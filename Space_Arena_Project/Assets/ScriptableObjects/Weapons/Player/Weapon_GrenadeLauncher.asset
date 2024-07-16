@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: Weapon_GrenadeLauncher
   m_EditorClassIdentifier: 
-  _id: grenade_launcher_1
   _iconSprite: {fileID: -2116303741, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
   _weaponPrefab: {fileID: 8067246484439910053, guid: 9a2677e5df7bfdb498857fbf0b0e54c9, type: 3}
+  _id: grenade_launcher_1
   _displayName: G-Launcher
   _holsterPosition: {x: 0, y: 0, z: 0}
   _holsterEuler: {x: 0, y: 0, z: 0}
   _projectileSO: {fileID: 11400000, guid: f81d1a39b9a143d48a3a67dd1608d115, type: 2}
   _chargedProjectileSO: {fileID: 0}
   _damage: 2
+  _chargeShotDamage: 1
   _explosiveDamage: 5
   _fireRate: 0.3
   _maxChargeTime: 0
@@ -28,10 +29,50 @@ MonoBehaviour:
   _heatPerShot: 0
   _heatDecreasePerSecond: 0
   _maxOverheatTime: 0
-  _maxShootAngle: 0
+  _shootAngle: 0
+  _arcMode: 0
   _projectilesPerShot: 1
   _ammoPerShot: 1
   _isAutoChargeType: 0
   _hasChargeWeakShot: 0
   _burstRate: 0
   _maxBurstShootCount: 0
+  _destroyTimeRange: {x: 3, y: 4}
+  _maxPierceCount: 1
+  _explosionRadius: 3
+  _canDamageProjectiles: 0
+  _canAutoAim: 0
+  _autoAimDistance: 0
+  _autoAimAngle: 0
+  _moveSpeed: 20
+  _destroyOnCollision: 1
+  _destroyOnStop: 0
+  _useAccelerationCurve: 1
+  _invertAcceleration: 0
+  _accelerationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _acelerationMultiplier: 1
+  _maxCastDistance: 0
+  _maxGuidedRadius: 0
