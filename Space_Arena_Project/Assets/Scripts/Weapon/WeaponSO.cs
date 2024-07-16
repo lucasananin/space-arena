@@ -59,24 +59,42 @@ public class WeaponSO : ScriptableObject
     [SerializeField, Range(0, 99)] int _maxBurstShootCount = 0;
 
     [Title("- PROJECTILE PROPERTIES -", null, TitleAlignments.Centered)]
-    public ShootModel _s = null;
-    [SerializeField] int _a = 1;
+
+    [Title("// General")]
+    [SerializeField] Vector2 _destroyTimeRange = default;
+    [SerializeField, Range(1, 99)] int _maxPierceCount = 1;
+    [SerializeField, Range(0f, 99)] float _explosionRadius = 0f;
+    [SerializeField] bool _canDamageProjectiles = false;
+    [Title("// Auto Aim")]
+    [SerializeField] bool _canAutoAim = false;
+    [SerializeField] float _autoAimDistance = 0f;
+    [SerializeField] float _autoAimAngle = 0f;
+    [Title("- PROJECTILE SPECIFICS -", null, TitleAlignments.Centered)]
+    [Title("// Physical Projectile: Properties")]
+    [SerializeField, Range(0f, 99f)] float _moveSpeed = 0f;
+    [SerializeField] bool _destroyOnCollision = false;
+    [SerializeField] bool _destroyOnStop = false;
+    [SerializeField] bool _useAccelerationCurve = false;
+    [SerializeField] bool _invertAcceleration = false;
+    [SerializeField] AnimationCurve _accelerationCurve = null;
+    [SerializeField, Range(0f, 10f)] float _acelerationMultiplier = 0;
+    [Title("// Cast Projectile: Properties")]
+    [SerializeField, Range(0f, 99f)] float _maxCastDistance = 0f;
+    [Title("// Guided Projectile: Properties")]
+    [SerializeField, Range(0f, 9f)] float _maxGuidedRadius = 0f;
 
     public Sprite SpriteIcon { get => _iconSprite; private set => _iconSprite = value; }
     public WeaponBehaviour WeaponPrefab { get => _weaponPrefab; private set => _weaponPrefab = value; }
     public string Id { get => _id; private set => _id = value; }
     public string DisplayName { get => _displayName; private set => _displayName = value; }
-
     public Vector3 HolsterPosition { get => _holsterPosition; private set => _holsterPosition = value; }
     public Vector3 HolsterEuler { get => _holsterEuler; private set => _holsterEuler = value; }
-
     public ProjectileSO ProjectileSO { get => _projectileSO; private set => _projectileSO = value; }
     public ProjectileSO ChargedProjectileSO { get => _chargedProjectileSO; private set => _chargedProjectileSO = value; }
 
     public int Damage { get => _damage; private set => _damage = value; }
     public int ChargeShotDamage { get => _chargeShotDamage; private set => _chargeShotDamage = value; }
     public int ExplosiveDamage { get => _explosiveDamage; private set => _explosiveDamage = value; }
-
     public float FireRate { get => _fireRate; private set => _fireRate = value; }
     public float MaxChargeTime { get => _maxChargeTime; private set => _maxChargeTime = value; }
     public float MaxHeat { get => _maxHeat; private set => _maxHeat = value; }
@@ -85,12 +103,27 @@ public class WeaponSO : ScriptableObject
     public float MaxOverheatTime { get => _maxOverheatTime; private set => _maxOverheatTime = value; }
     public int ProjectilesPerShot { get => _projectilesPerShot; private set => _projectilesPerShot = value; }
     public int AmmoPerShot { get => _ammoPerShot; set => _ammoPerShot = value; }
-
     public bool IsAutoChargeType { get => _isAutoChargeType; private set => _isAutoChargeType = value; }
     public bool HasChargeWeakShot { get => _hasChargeWeakShot; private set => _hasChargeWeakShot = value; }
-
     public float BurstRate { get => _burstRate; private set => _burstRate = value; }
     public int MaxBurstShootCount { get => _maxBurstShootCount; private set => _maxBurstShootCount = value; }
+
+    public Vector2 DestroyTimeRange { get => _destroyTimeRange; private set => _destroyTimeRange = value; }
+    public int MaxPierceCount { get => _maxPierceCount; private set => _maxPierceCount = value; }
+    public float ExplosionRadius { get => _explosionRadius; private set => _explosionRadius = value; }
+    public bool CanDamageProjectiles { get => _canDamageProjectiles; private set => _canDamageProjectiles = value; }
+    public bool CanAutoAim { get => _canAutoAim; private set => _canAutoAim = value; }
+    public float AutoAimDistance { get => _autoAimDistance; private set => _autoAimDistance = value; }
+    public float AutoAimAngle { get => _autoAimAngle; private set => _autoAimAngle = value; }
+    public float MoveSpeed { get => _moveSpeed; private set => _moveSpeed = value; }
+    public bool DestroyOnCollision { get => _destroyOnCollision; private set => _destroyOnCollision = value; }
+    public bool DestroyOnStop { get => _destroyOnStop; private set => _destroyOnStop = value; }
+    public bool UseAccelerationCurve { get => _useAccelerationCurve; private set => _useAccelerationCurve = value; }
+    public bool InvertAcceleration { get => _invertAcceleration; private set => _invertAcceleration = value; }
+    public AnimationCurve AccelerationCurve { get => _accelerationCurve; private set => _accelerationCurve = value; }
+    public float AcelerationMultiplier { get => _acelerationMultiplier; private set => _acelerationMultiplier = value; }
+    public float MaxCastDistance { get => _maxCastDistance; private set => _maxCastDistance = value; }
+    public float MaxGuidedRadius { get => _maxGuidedRadius; private set => _maxGuidedRadius = value; }
 
     public bool HasChargeTime()
     {

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: Weapon_Pistol_1a
   m_EditorClassIdentifier: 
-  _id: pistol_1_a
   _iconSprite: {fileID: 21300000, guid: 4f3ac17ec4d2f5b4c8bbaa05326d7514, type: 3}
   _weaponPrefab: {fileID: 5704818092466949252, guid: c61856f6800231948bf9daedc54fadde, type: 3}
+  _id: pistol_1_a
   _displayName: Pistol
   _holsterPosition: {x: -0.25, y: -0.15, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
@@ -37,3 +37,24 @@ MonoBehaviour:
   _hasChargeWeakShot: 0
   _burstRate: 0
   _maxBurstShootCount: 0
+  _destroyTimeRange: {x: 0, y: 0}
+  _maxPierceCount: 1
+  _explosionRadius: 0
+  _canDamageProjectiles: 0
+  _canAutoAim: 0
+  _autoAimDistance: 0
+  _autoAimAngle: 0
+  _moveSpeed: 0
+  _destroyOnCollision: 0
+  _destroyOnStop: 0
+  _useAccelerationCurve: 0
+  _invertAcceleration: 0
+  _accelerationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _acelerationMultiplier: 0
+  _maxCastDistance: 0
+  _maxGuidedRadius: 0

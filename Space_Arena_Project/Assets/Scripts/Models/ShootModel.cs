@@ -13,7 +13,6 @@ public class ShootModel
     public EntityBehaviour EntitySource { get => _entitySource; private set => _entitySource = value; }
     public WeaponBehaviour WeaponSource { get => _weaponSource; private set => _weaponSource = value; }
     public ProjectileSO ProjectileSO { get => _projectileSO; private set => _projectileSO = value; }
-    public bool IsChargedShot { get => _isChargedShot; private set => _isChargedShot = value; }
 
     public ShootModel(EntityBehaviour _entitySource, WeaponBehaviour _weaponSource, ProjectileSO _projectileSO, bool _isChargedShot)
     {
