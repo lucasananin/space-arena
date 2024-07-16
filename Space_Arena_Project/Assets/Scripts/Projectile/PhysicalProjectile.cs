@@ -45,7 +45,7 @@ public class PhysicalProjectile : ProjectileBehaviour
             IncreasePierceCount();
             SendRaycastHitEvent(_raycastHit);
 
-            if (HasReachedMaxPierceCount() && _projectileSO.DestroyOnCollision)
+            if (HasReachedMaxPierceCount() && _stats.DestroyOnCollision)
             {
                 DestroyThis();
                 break;
@@ -59,7 +59,7 @@ public class PhysicalProjectile : ProjectileBehaviour
     {
         base.Init(_newShootModel);
         _lastPosition = transform.position;
-        _rb.velocity = transform.right * _projectileSO.MoveSpeed;
+        _rb.velocity = transform.right * _stats.MoveSpeed;
         _collidersHit.Clear();
 
         InitAccelerationParameters();
@@ -73,19 +73,19 @@ public class PhysicalProjectile : ProjectileBehaviour
 
     private void CheckAcceleration()
     {
-        if (_projectileSO.UseAccelerationCurve)
+        if (_stats.UseAccelerationCurve)
         {
-            _accelerationTime += Time.fixedDeltaTime * _projectileSO.AcelerationMultiplier;
-            float _curveValue = _projectileSO.AccelerationCurve.Evaluate(_accelerationTime);
+            _accelerationTime += Time.fixedDeltaTime * _stats.AcelerationMultiplier;
+            float _curveValue = _stats.AccelerationCurve.Evaluate(_accelerationTime);
 
-            Vector2 _newVelocity = _projectileSO.InvertAcceleration ?
+            Vector2 _newVelocity = _stats.InvertAcceleration ?
                 Vector2.Lerp(Vector2.zero, _defaultVelocity, _curveValue) :
                 Vector2.Lerp(_defaultVelocity, Vector2.zero, _curveValue);
 
             _rb.velocity = _newVelocity;
         }
 
-        if (_rb.velocity == Vector2.zero && _projectileSO.DestroyOnStop)
+        if (_rb.velocity == Vector2.zero && _stats.DestroyOnStop)
         {
             DestroyByStop();
         }

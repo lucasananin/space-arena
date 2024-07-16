@@ -8,6 +8,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     [Title("// Debug - Projectile")]
     [SerializeField, ReadOnly] protected ShootModel _shootModel = null;
     [SerializeField, ReadOnly] protected ProjectileSO _projectileSO = null;
+    [SerializeField, ReadOnly] protected ProjectileStats _stats = null;
     [SerializeField, ReadOnly] protected float _timeUntilDestroy = 0f;
     [SerializeField, ReadOnly] protected float _destroyTimer = 0f;
     [SerializeField, ReadOnly] protected int _currentPierceCount = 0;
@@ -25,13 +26,14 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     const string PROJECTILE_TAG = "Projectile";
 
-    public float TimeUntilDestroy { get => _timeUntilDestroy; }
     public ShootModel ShootModel { get => _shootModel; }
+    public float TimeUntilDestroy { get => _timeUntilDestroy; }
 
     public virtual void Init(ShootModel _newShootModel)
     {
         _shootModel = _newShootModel;
         _projectileSO = _newShootModel.ProjectileSO;
+        _stats = _newShootModel.WeaponSource.WeaponSO.ProjectileStats;
         UpdateTagsList();
         SetDestroyTimer();
         TryAutoRotate();
@@ -59,7 +61,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     protected void SetDestroyTimer()
     {
-        _timeUntilDestroy = Random.Range(_projectileSO.MinMaxTimeUntilDestroy.x, _projectileSO.MinMaxTimeUntilDestroy.y);
+        _timeUntilDestroy = Random.Range(_stats.DestroyTimeRange.x, _stats.DestroyTimeRange.y);
         _destroyTimer = 0f;
     }
 
@@ -70,7 +72,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     public void Explode(Vector3 _point)
     {
-        int _hits = Physics2D.OverlapCircleNonAlloc(_point, _projectileSO.ExplosionRadius, _explosionResults, _projectileSO.LayerMask);
+        int _hits = Physics2D.OverlapCircleNonAlloc(_point, _stats.ExplosionRadius, _explosionResults, _projectileSO.LayerMask);
 
         for (int i = 0; i < _hits; i++)
         {
@@ -101,11 +103,11 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     {
         var _so = _projectileSO;
 
-        if (!_so.CanAutoRotate) return;
+        if (!_stats.CanAutoAim) return;
 
         _entitiesFound.Clear();
         var _myPosition = transform.position;
-        var _hits = Physics2D.OverlapCircleNonAlloc(_myPosition, _so.MaxDistance_autoAim, _explosionResults, _so.EntityLayerMask);
+        var _hits = Physics2D.OverlapCircleNonAlloc(_myPosition, _stats.AutoAimDistance, _explosionResults, _so.EntityLayerMask);
 
         for (int i = 0; i < _hits; i++)
         {
@@ -128,7 +130,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
             var _entityPosition = _entitiesFound[i].transform.position;
             var _angle = GeneralMethods.CalculateAngle(_entityPosition, transform);
 
-            if (_angle < _so.MaxAngle / 2f)
+            if (_angle < _stats.AutoAimAngle / 2f)
             {
                 transform.rotation = GeneralMethods.GetLookRotation(_myPosition, _entityPosition);
                 break;
@@ -138,7 +140,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     public float GetExplosionRadius()
     {
-        return _projectileSO.ExplosionRadius;
+        return _stats.ExplosionRadius;
     }
 
     public void IncreasePierceCount()
@@ -150,12 +152,12 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     {
         _tagsList.Clear();
         _tagsList.AddRange(_shootModel.EntitySource.GetProjectileHitTags());
-        if (_projectileSO.CanDamageProjectiles) _tagsList.Add(PROJECTILE_TAG);
+        if (_stats.CanDamageProjectiles) _tagsList.Add(PROJECTILE_TAG);
     }
 
     public bool HasReachedMaxPierceCount()
     {
-        return _currentPierceCount >= _projectileSO.MaxPierceCount;
+        return _currentPierceCount >= _stats.MaxPierceCount;
     }
 
     public bool HasHitSource(GameObject _gameobjectHit)

@@ -34,6 +34,7 @@ public class WeaponSO : ScriptableObject
     public ProjectileSO ChargedProjectileSO { get => _chargedProjectileSO; private set => _chargedProjectileSO = value; }
 
     public WeaponStats Stats { get => _stats; private set => _stats = value; }
+    public ProjectileStats ProjectileStats { get => _projectileStats; private set => _projectileStats = value; }
 
     //private void OnValidate()
     //{

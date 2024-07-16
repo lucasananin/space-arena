@@ -17,21 +17,21 @@ public class GuidedProjectile : ProjectileBehaviour
     {
         base.Init(_newShootModel);
         transform.position = GeneratePosition(_newShootModel);
-        _visualTransform.localScale = Vector3.one * _projectileSO.ExplosionRadius * 2f;
+        _visualTransform.localScale = Vector3.one * _stats.ExplosionRadius * 2f;
         SendInitEvent();
     }
 
     private Vector3 GeneratePosition(ShootModel _newShootModel)
     {
+        var _randomPosition = Random.insideUnitCircle * _stats.MaxGuidedRadius;
+
         if (_newShootModel.EntitySource is AiEntity _aiEntity)
         {
-            var _randomPosition = Random.insideUnitCircle * _projectileSO.MaxPositionRadius;
             return (Vector2)_aiEntity.GetTargetEntityPosition() + _randomPosition;
         }
         else
         {
             var _mouseWorldPosition = Camera.main.ScreenToWorldPoint(InputHandler.GetMousePosition());
-            var _randomPosition = Random.insideUnitCircle * _projectileSO.MaxPositionRadius;
             return (Vector2)_mouseWorldPosition + _randomPosition;
         }
     }

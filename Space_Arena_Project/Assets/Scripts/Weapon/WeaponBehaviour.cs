@@ -213,6 +213,6 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     public float GetCastProjectileMaxDistance()
     {
-        return _weaponSO.ProjectileSO.MaxCastDistance;
+        return _weaponSO.ProjectileStats.MaxCastDistance;
     }
 }

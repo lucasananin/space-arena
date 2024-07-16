@@ -18,7 +18,7 @@ public class CastProjectile : ProjectileBehaviour
         base.Init(_newShootModel);
         _raycastHits.Clear();
 
-        int _hits = Physics2D.CircleCastNonAlloc(transform.position, _dummyCircleCollider.radius, transform.right, _results, _projectileSO.MaxCastDistance, _projectileSO.LayerMask);
+        int _hits = Physics2D.CircleCastNonAlloc(transform.position, _dummyCircleCollider.radius, transform.right, _results, _stats.MaxCastDistance, _projectileSO.LayerMask);
 
         for (int i = 0; i < _hits; i++)
         {
@@ -48,6 +48,6 @@ public class CastProjectile : ProjectileBehaviour
 
     public float GetCastMaxDistance()
     {
-        return _projectileSO.MaxCastDistance;
+        return _stats.MaxCastDistance;
     }
 }
