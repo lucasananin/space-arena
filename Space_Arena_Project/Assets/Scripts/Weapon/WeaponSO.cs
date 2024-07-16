@@ -6,11 +6,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Weapon_", menuName = "SO/Combat/Weapon Data")]
 public class WeaponSO : ScriptableObject
 {
-    [SerializeField] protected string _id = null;
 
     [Title("// General")]
     [SerializeField, PreviewField] Sprite _iconSprite = null;
     [SerializeField] WeaponBehaviour _weaponPrefab = null;
+    [SerializeField] string _id = null;
     [SerializeField] string _displayName = null;
 
     [Title("// Holster")]
@@ -20,6 +20,8 @@ public class WeaponSO : ScriptableObject
     [Title("// Projectiles")]
     [SerializeField] ProjectileSO _projectileSO = null;
     [SerializeField] ProjectileSO _chargedProjectileSO = null;
+
+    [Title("- WEAPON PROPERTIES -", null, TitleAlignments.Centered)]
 
     [Title("// Damage")]
     [SerializeField, Range(0, 99)] int _damage = 1;
@@ -42,25 +44,31 @@ public class WeaponSO : ScriptableObject
     [SerializeField, Range(0, 360)] float _shootAngle = 0;
     [SerializeReference] ShootArcMode _arcMode = default;
 
-    [Title("// Projectiles per shot")]
+    [Title("// Ammo")]
     [SerializeField, Range(1, 36)] int _projectilesPerShot = 1;
-
-    [Title("// Ammo per shot")]
     [SerializeField, Range(0, 99)] int _ammoPerShot = 1;
 
-    [Title("// Semi Auto - Properties")]
+    [Title("- WEAPON SPECIFICS -", null, TitleAlignments.Centered)]
+
+    [Title("// Semi-Auto Behaviour: Properties")]
     [SerializeField] bool _isAutoChargeType = false;
     [SerializeField] bool _hasChargeWeakShot = false;
 
-    [Title("// Burst - Properties")]
+    [Title("// Burst Behaviour: Properties")]
     [SerializeField, Range(0f, 9f)] float _burstRate = 0f;
     [SerializeField, Range(0, 99)] int _maxBurstShootCount = 0;
 
-    public string Id { get => _id; private set => _id = value; }
+    [Title("- PROJECTILE PROPERTIES -", null, TitleAlignments.Centered)]
+    public ShootModel _s = null;
+    [SerializeField] int _a = 1;
 
     public Sprite SpriteIcon { get => _iconSprite; private set => _iconSprite = value; }
     public WeaponBehaviour WeaponPrefab { get => _weaponPrefab; private set => _weaponPrefab = value; }
+    public string Id { get => _id; private set => _id = value; }
     public string DisplayName { get => _displayName; private set => _displayName = value; }
+
+    public Vector3 HolsterPosition { get => _holsterPosition; private set => _holsterPosition = value; }
+    public Vector3 HolsterEuler { get => _holsterEuler; private set => _holsterEuler = value; }
 
     public ProjectileSO ProjectileSO { get => _projectileSO; private set => _projectileSO = value; }
     public ProjectileSO ChargedProjectileSO { get => _chargedProjectileSO; private set => _chargedProjectileSO = value; }
@@ -83,9 +91,6 @@ public class WeaponSO : ScriptableObject
 
     public float BurstRate { get => _burstRate; private set => _burstRate = value; }
     public int MaxBurstShootCount { get => _maxBurstShootCount; private set => _maxBurstShootCount = value; }
-
-    public Vector3 HolsterPosition { get => _holsterPosition; private set => _holsterPosition = value; }
-    public Vector3 HolsterEuler { get => _holsterEuler; private set => _holsterEuler = value; }
 
     public bool HasChargeTime()
     {
