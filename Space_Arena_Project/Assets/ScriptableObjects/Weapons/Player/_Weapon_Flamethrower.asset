@@ -12,14 +12,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: _Weapon_Flamethrower
   m_EditorClassIdentifier: 
-  _id: Flamethrower_1
   _iconSprite: {fileID: -1333489699, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
   _weaponPrefab: {fileID: 1427115857888813632, guid: 8e1528fe4d3b5874aab1bb2cb04d5b9d, type: 3}
+  _id: Flamethrower_1
   _displayName: Flamethrower
   _holsterPosition: {x: 0, y: 0, z: 0}
   _holsterEuler: {x: 0, y: 0, z: 0}
   _projectileSO: {fileID: 11400000, guid: e99885e4916ad4645ab992f656aacafe, type: 2}
   _chargedProjectileSO: {fileID: 0}
+  _stats:
+    _damage: 1
+    _chargeShotDamage: 0
+    _explosiveDamage: 0
+    _fireRate: 0.1
+    _chargeTime: 0
+    _maxHeat: 0
+    _heatPerShot: 0
+    _heatDecreasePerSecond: 0
+    _maxOverheatTime: 0
+    _shootAngle: 0
+    _arcMode: 0
+    _projectilesPerShot: 1
+    _ammoPerShot: 1
+    _isAutoChargeType: 0
+    _hasChargeWeakShot: 0
+    _burstRate: 0
+    _shotsPerBurst: 0
+  _projectileStats:
+    _destroyTimeRange: {x: 0, y: 0}
+    _maxPierceCount: 1
+    _explosionRadius: 0
+    _canDamageProjectiles: 0
+    _canAutoAim: 0
+    _autoAimDistance: 0
+    _autoAimAngle: 0
+    _moveSpeed: 0
+    _destroyOnCollision: 0
+    _destroyOnStop: 0
+    _useAccelerationCurve: 0
+    _invertAcceleration: 0
+    _accelerationCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _acelerationMultiplier: 0
+    _maxCastDistance: 0
+    _maxGuidedRadius: 0
   _damage: 1
   _chargeShotDamage: 1
   _explosiveDamage: 1
@@ -37,3 +77,24 @@ MonoBehaviour:
   _hasChargeWeakShot: 0
   _burstRate: 0
   _maxBurstShootCount: 0
+  _destroyTimeRange: {x: 0, y: 0}
+  _maxPierceCount: 1
+  _explosionRadius: 0
+  _canDamageProjectiles: 0
+  _canAutoAim: 0
+  _autoAimDistance: 0
+  _autoAimAngle: 0
+  _moveSpeed: 0
+  _destroyOnCollision: 0
+  _destroyOnStop: 0
+  _useAccelerationCurve: 0
+  _invertAcceleration: 0
+  _accelerationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _acelerationMultiplier: 0
+  _maxCastDistance: 0
+  _maxGuidedRadius: 0
