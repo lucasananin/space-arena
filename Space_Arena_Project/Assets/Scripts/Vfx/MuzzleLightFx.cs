@@ -25,12 +25,12 @@ public class MuzzleLightFx : MonoBehaviour
 
     private void OnEnable()
     {
-        _weapon.onShoot += Init;
+        _weapon.OnShoot += Init;
     }
 
     private void OnDisable()
     {
-        _weapon.onShoot -= Init;
+        _weapon.OnShoot -= Init;
     }
 
     private void Update()

@@ -19,12 +19,12 @@ public class RecoilCamShaker : CameraShaker
 
     private void OnEnable()
     {
-        _weapon.onShoot += Shake;
+        _weapon.OnShoot += Shake;
     }
 
     private void OnDisable()
     {
-        _weapon.onShoot -= Shake;
+        _weapon.OnShoot -= Shake;
     }
 
     public override void Shake()

@@ -22,12 +22,12 @@ public class RecoilFx : MonoBehaviour
 
     private void OnEnable()
     {
-        _weaponBehaviour.onShoot += _weapon_onShoot;
+        _weaponBehaviour.OnShoot += _weapon_onShoot;
     }
 
     private void OnDisable()
     {
-        _weaponBehaviour.onShoot -= _weapon_onShoot;
+        _weaponBehaviour.OnShoot -= _weapon_onShoot;
     }
 
     private void Update()

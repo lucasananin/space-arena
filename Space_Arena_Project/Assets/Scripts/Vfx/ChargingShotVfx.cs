@@ -17,16 +17,16 @@ public class ChargingShotVfx : MonoBehaviour
 
     private void OnEnable()
     {
-        _weapon.onPullTrigger += Play;
-        _weapon.onReleaseTrigger += Stop;
-        _weapon.onShoot += Stop;
+        _weapon.OnPullTrigger += Play;
+        _weapon.OnReleaseTrigger += Stop;
+        _weapon.OnShoot += Stop;
     }
 
     private void OnDisable()
     {
-        _weapon.onPullTrigger -= Play;
-        _weapon.onReleaseTrigger -= Stop;
-        _weapon.onShoot -= Stop;
+        _weapon.OnPullTrigger -= Play;
+        _weapon.OnReleaseTrigger -= Stop;
+        _weapon.OnShoot -= Stop;
     }
 
     private void Play()

@@ -8,6 +8,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
     [Title("// Weapon")]
     [SerializeField] protected WeaponSO _weaponSO = null;
     [SerializeField] protected Transform _muzzle = null;
+    //[SerializeField] protected Transform[] _muzzles = null;
 
     [Title("// Debug - Weapon")]
     [SerializeField, ReadOnly] protected EntityBehaviour _entitySource = null;
@@ -19,10 +20,10 @@ public abstract class WeaponBehaviour : MonoBehaviour
     [SerializeField, ReadOnly] protected float _overheatTimer = 0f;
     [SerializeField, ReadOnly] protected bool _isOverheated = false;
 
-    public event System.Action<WeaponBehaviour> onInit = null;
-    public event System.Action onShoot = null;
-    public event System.Action onPullTrigger = null;
-    public event System.Action onReleaseTrigger = null;
+    public event System.Action<WeaponBehaviour> OnInit = null;
+    public event System.Action OnShoot = null;
+    public event System.Action OnPullTrigger = null;
+    public event System.Action OnReleaseTrigger = null;
 
     const float HEAT_OFFSET = 0.9f;
 
@@ -49,17 +50,17 @@ public abstract class WeaponBehaviour : MonoBehaviour
     public virtual void Init(EntityBehaviour _entityBehaviour)
     {
         _entitySource = _entityBehaviour;
-        onInit?.Invoke(this);
+        OnInit?.Invoke(this);
     }
 
     public virtual void PullTrigger()
     {
-        onPullTrigger?.Invoke();
+        OnPullTrigger?.Invoke();
     }
 
     public virtual void ReleaseTrigger()
     {
-        onReleaseTrigger?.Invoke();
+        OnReleaseTrigger?.Invoke();
     }
 
     public virtual void Shoot()
@@ -69,7 +70,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
         PrepareProjectile(_weaponSO.ProjectileSO/*, false*/);
         DecreaseAmmo(_weaponSO.ProjectileSO);
         IncreaseHeat(_weaponSO.Stats.HeatPerShot);
-        onShoot?.Invoke();
+        OnShoot?.Invoke();
     }
 
     public virtual void ShootChargedShot()
@@ -81,7 +82,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
         PrepareProjectile(_weaponSO.ProjectileSO/*, true*/);
         DecreaseAmmo(_weaponSO.ProjectileSO);
         IncreaseHeat(_weaponSO.Stats.MaxHeat + HEAT_OFFSET);
-        onShoot?.Invoke();
+        OnShoot?.Invoke();
     }
 
     private void PrepareProjectile(ProjectileSO _projectileSO/*, bool _isChargedShot*/)

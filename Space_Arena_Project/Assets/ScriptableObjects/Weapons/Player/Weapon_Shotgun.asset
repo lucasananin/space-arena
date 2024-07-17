@@ -18,24 +18,21 @@ MonoBehaviour:
   _displayName: Shotgun
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
-  _projectileSO: {fileID: 11400000, guid: cbc2f2ef0648fca488053811810e86d5, type: 2}
-  _chargedProjectileSO: {fileID: 0}
+  _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
   _stats:
-    _damage: 5
-    _chargeShotDamage: 0
+    _damage: 2
     _explosiveDamage: 0
-    _fireRate: 0.6
+    _fireRate: 0.4
     _chargeTime: 0
     _maxHeat: 0
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 90
+    _shootAngle: 45
     _arcMode: 1
-    _projectilesPerShot: 5
-    _ammoPerShot: 5
+    _projectilesPerShot: 8
+    _ammoPerShot: 1
     _isAutoChargeType: 0
-    _hasChargeWeakShot: 0
     _burstRate: 0
     _shotsPerBurst: 0
   _projectileStats:
@@ -47,6 +44,7 @@ MonoBehaviour:
     _autoAimDistance: 0
     _autoAimAngle: 0
     _moveSpeed: 30
+    _moveSpeedRange: {x: 15, y: 30}
     _destroyOnCollision: 1
     _destroyOnStop: 1
     _useAccelerationCurve: 1
@@ -57,24 +55,24 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
         time: 1
         value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    _acelerationMultiplier: 3
+    _acelerationMultiplier: 1
     _maxCastDistance: 0
     _maxGuidedRadius: 0

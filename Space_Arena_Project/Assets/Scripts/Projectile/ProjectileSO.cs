@@ -36,7 +36,8 @@ public class ProjectileStats
     [SerializeField] float _autoAimAngle = 0f;
     [Title("- PROJECTILE SPECIFICS -", null, TitleAlignments.Centered)]
     [Title("// Physical Projectile: Properties")]
-    [SerializeField, Range(0f, 99f)] float _moveSpeed = 0f;
+    //[SerializeField, Range(0f, 99f)] float _moveSpeed = 0f;
+    [SerializeField] Vector2 _moveSpeedRange = default;
     [SerializeField] bool _destroyOnCollision = false;
     [SerializeField] bool _destroyOnStop = false;
     [SerializeField] bool _useAccelerationCurve = false;
@@ -55,7 +56,8 @@ public class ProjectileStats
     public bool CanAutoAim { get => _canAutoAim; private set => _canAutoAim = value; }
     public float AutoAimDistance { get => _autoAimDistance; private set => _autoAimDistance = value; }
     public float AutoAimAngle { get => _autoAimAngle; private set => _autoAimAngle = value; }
-    public float MoveSpeed { get => _moveSpeed; private set => _moveSpeed = value; }
+    //public float MoveSpeed { get => _moveSpeed; private set => _moveSpeed = value; }
+    public Vector2 MoveSpeedRange { get => _moveSpeedRange; set => _moveSpeedRange = value; }
     public bool DestroyOnCollision { get => _destroyOnCollision; private set => _destroyOnCollision = value; }
     public bool DestroyOnStop { get => _destroyOnStop; private set => _destroyOnStop = value; }
     public bool UseAccelerationCurve { get => _useAccelerationCurve; private set => _useAccelerationCurve = value; }
@@ -64,4 +66,10 @@ public class ProjectileStats
     public float AcelerationMultiplier { get => _acelerationMultiplier; private set => _acelerationMultiplier = value; }
     public float MaxCastDistance { get => _maxCastDistance; private set => _maxCastDistance = value; }
     public float MaxGuidedRadius { get => _maxGuidedRadius; private set => _maxGuidedRadius = value; }
+
+    //[Button]
+    //public void Fodase()
+    //{
+    //    _moveSpeedRange = new Vector2(_moveSpeed, _moveSpeed);
+    //}
 }

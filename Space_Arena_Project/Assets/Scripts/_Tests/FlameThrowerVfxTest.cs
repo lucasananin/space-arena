@@ -23,15 +23,15 @@ public class FlameThrowerVfxTest : MonoBehaviour
 
     private void OnEnable()
     {
-        _weaponBehaviour.onPullTrigger += Play;
-        _weaponBehaviour.onReleaseTrigger += Stop;
+        _weaponBehaviour.OnPullTrigger += Play;
+        _weaponBehaviour.OnReleaseTrigger += Stop;
         //_weaponFlipper.onFlip += Restart;
     }
 
     private void OnDisable()
     {
-        _weaponBehaviour.onPullTrigger -= Play;
-        _weaponBehaviour.onReleaseTrigger -= Stop;
+        _weaponBehaviour.OnPullTrigger -= Play;
+        _weaponBehaviour.OnReleaseTrigger -= Stop;
         //_weaponFlipper.onFlip -= Restart;
     }
 

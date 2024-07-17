@@ -59,7 +59,8 @@ public class PhysicalProjectile : ProjectileBehaviour
     {
         base.Init(_newShootModel);
         _lastPosition = transform.position;
-        _rb.velocity = transform.right * _stats.MoveSpeed;
+        _rb.velocity = transform.right * Random.Range(_stats.MoveSpeedRange.x, _stats.MoveSpeedRange.y);
+        //_rb.velocity = transform.right * _stats.MoveSpeed;
         _collidersHit.Clear();
 
         InitAccelerationParameters();

@@ -23,12 +23,12 @@ public class MeleeSwingFx : MonoBehaviour
 
     private void OnEnable()
     {
-        _weapon.onShoot += Play;
+        _weapon.OnShoot += Play;
     }
 
     private void OnDisable()
     {
-        _weapon.onShoot -= Play;
+        _weapon.OnShoot -= Play;
     }
 
     private void Play()
