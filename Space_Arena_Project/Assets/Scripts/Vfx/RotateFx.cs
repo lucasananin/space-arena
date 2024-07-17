@@ -17,6 +17,7 @@ public class RotateFx : MonoBehaviour
 
     private void Update()
     {
+        // Fazer com que os twists sejam relativos a velocidade do projetil.
         var _euler = Vector3.forward * _speed * Time.deltaTime;
         _transform.Rotate(_euler);
 

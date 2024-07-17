@@ -21272,11 +21272,7 @@ MonoBehaviour:
       _quantity: 2
     - _so: {fileID: 11400000, guid: 5ea292a48494e2249841f864c84dadb2, type: 2}
       _quantity: 2
-    - _so: {fileID: 11400000, guid: a42a8a25fe96be045817c3868439cf58, type: 2}
-      _quantity: 2
     - _so: {fileID: 11400000, guid: 732d5d93c5288984884d72ba30534349, type: 2}
-      _quantity: 2
-    - _so: {fileID: 11400000, guid: b39038621683cd549b3fe30edf92a918, type: 2}
       _quantity: 2
     _maxActiveSpawns: 3
     _runtimeQuantities: []
