@@ -25,6 +25,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     public event System.Action OnExplode = null;
 
     const string PROJECTILE_TAG = "Projectile";
+    const string OBSTACLE_TAG = "Obstacle";
 
     public ShootModel ShootModel { get => _shootModel; }
     public float TimeUntilDestroy { get => _timeUntilDestroy; }
@@ -158,6 +159,11 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     public bool HasReachedMaxPierceCount()
     {
         return _currentPierceCount >= _stats.MaxPierceCount;
+    }
+
+    public bool HasHitObstacle(Collider2D _colliderHit)
+    {
+        return _colliderHit.CompareTag(OBSTACLE_TAG) && !_stats.CanPierceObstacles;
     }
 
     public bool HasHitSource(GameObject _gameobjectHit)

@@ -11,7 +11,7 @@ public class CastProjectile : ProjectileBehaviour
     private RaycastHit2D[] _results = new RaycastHit2D[9];
     private List<RaycastHit2D> _raycastHits = new List<RaycastHit2D>();
 
-    public event System.Action<List<RaycastHit2D>> onCastEnd = null;
+    public event System.Action<List<RaycastHit2D>> OnCastEnd = null;
 
     public override void Init(ShootModel _newShootModel)
     {
@@ -36,13 +36,13 @@ public class CastProjectile : ProjectileBehaviour
             IncreasePierceCount();
             SendRaycastHitEvent(_raycastHit);
 
-            if (HasReachedMaxPierceCount())
+            if (HasReachedMaxPierceCount() || HasHitObstacle(_colliderHit))
             {
                 break;
             }
         }
 
-        onCastEnd?.Invoke(_raycastHits);
+        OnCastEnd?.Invoke(_raycastHits);
         StartCoroutine(DestroyRoutine());
     }
 

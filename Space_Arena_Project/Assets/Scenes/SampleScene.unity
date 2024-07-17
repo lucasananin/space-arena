@@ -21571,7 +21571,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponSO: {fileID: 11400000, guid: 30ecdf5b450b1474c80b39c9680f3750, type: 2}
   _muzzle: {fileID: 591549172}
-  _muzzles: []
   _entitySource: {fileID: 0}
   _ammoHandler: {fileID: 0}
   _nextFire: 0
@@ -53560,7 +53559,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponSO: {fileID: 11400000, guid: 2f39cbcf14a50574886873a3c70cad79, type: 2}
   _muzzle: {fileID: 859633885}
-  _muzzles: []
   _entitySource: {fileID: 0}
   _ammoHandler: {fileID: 0}
   _nextFire: 0
@@ -65530,9 +65528,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6972132582502089753, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
+      propertyPath: canMove
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6972132582502089756, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
       propertyPath: _canTakeDamage
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972132582502089756, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
+      propertyPath: _invincibility
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6972132582502089762, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
       propertyPath: m_Name

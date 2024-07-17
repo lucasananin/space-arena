@@ -9,12 +9,12 @@ public class BrokenLineSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        _castProjectile.onCastEnd += SpawnVfx;
+        _castProjectile.OnCastEnd += SpawnVfx;
     }
 
     private void OnDisable()
     {
-        _castProjectile.onCastEnd += SpawnVfx;
+        _castProjectile.OnCastEnd += SpawnVfx;
     }
 
     private void SpawnVfx(List<RaycastHit2D> _pointsHit)

@@ -15,7 +15,7 @@ public class PhysicalProjectile : ProjectileBehaviour
     [SerializeField, ReadOnly] Vector2 _defaultVelocity = default;
     [SerializeField, ReadOnly] float _accelerationTime = 0f;
 
-    private RaycastHit2D[] _results = new RaycastHit2D[9];
+    private readonly RaycastHit2D[] _results = new RaycastHit2D[9];
 
     private void FixedUpdate()
     {
@@ -45,7 +45,7 @@ public class PhysicalProjectile : ProjectileBehaviour
             IncreasePierceCount();
             SendRaycastHitEvent(_raycastHit);
 
-            if (HasReachedMaxPierceCount() && _stats.DestroyOnCollision)
+            if (HasReachedMaxPierceCount() || HasHitObstacle(_colliderHit))
             {
                 DestroyThis();
                 break;
@@ -60,7 +60,6 @@ public class PhysicalProjectile : ProjectileBehaviour
         base.Init(_newShootModel);
         _lastPosition = transform.position;
         _rb.velocity = transform.right * Random.Range(_stats.MoveSpeedRange.x, _stats.MoveSpeedRange.y);
-        //_rb.velocity = transform.right * _stats.MoveSpeed;
         _collidersHit.Clear();
 
         InitAccelerationParameters();

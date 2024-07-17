@@ -31,19 +31,19 @@ MonoBehaviour:
     _shootAngle: 45
     _arcMode: 1
     _projectilesPerShot: 8
-    _ammoPerShot: 1
+    _ammoPerShot: 8
     _isAutoChargeType: 0
     _burstRate: 0
     _shotsPerBurst: 0
   _projectileStats:
     _destroyTimeRange: {x: 3, y: 4}
     _maxPierceCount: 1
+    _canPierceObstacles: 0
     _explosionRadius: 0
     _canDamageProjectiles: 0
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
-    _moveSpeed: 30
     _moveSpeedRange: {x: 15, y: 30}
     _destroyOnCollision: 1
     _destroyOnStop: 1
