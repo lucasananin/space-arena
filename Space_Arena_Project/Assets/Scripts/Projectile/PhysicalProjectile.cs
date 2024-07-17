@@ -14,6 +14,7 @@ public class PhysicalProjectile : ProjectileBehaviour
     [SerializeField, ReadOnly] Vector3 _lastPosition = default;
     [SerializeField, ReadOnly] Vector2 _defaultVelocity = default;
     [SerializeField, ReadOnly] float _accelerationTime = 0f;
+    [SerializeField, ReadOnly] float _speedMultiplier = 0f;
 
     private readonly RaycastHit2D[] _results = new RaycastHit2D[9];
 
@@ -45,6 +46,13 @@ public class PhysicalProjectile : ProjectileBehaviour
             IncreasePierceCount();
             SendRaycastHitEvent(_raycastHit);
 
+            bool _canBounce = true;
+
+            if (_canBounce)
+            {
+                Reflect(_raycastHit);
+            }
+
             if (HasReachedMaxPierceCount() || HasHitObstacle(_colliderHit))
             {
                 DestroyThis();
@@ -59,9 +67,9 @@ public class PhysicalProjectile : ProjectileBehaviour
     {
         base.Init(_newShootModel);
         _lastPosition = transform.position;
-        _rb.velocity = transform.right * Random.Range(_stats.MoveSpeedRange.x, _stats.MoveSpeedRange.y);
+        _speedMultiplier = Random.Range(_stats.MoveSpeedRange.x, _stats.MoveSpeedRange.y);
+        _rb.velocity = transform.right * _speedMultiplier;
         _collidersHit.Clear();
-
         InitAccelerationParameters();
     }
 
@@ -89,6 +97,14 @@ public class PhysicalProjectile : ProjectileBehaviour
         {
             DestroyByStop();
         }
+    }
+
+    private void Reflect(RaycastHit2D _raycastHit)
+    {
+        var _reflect = Vector2.Reflect(transform.right, _raycastHit.normal);
+        transform.right = _reflect;
+        _rb.velocity = transform.right * _speedMultiplier;
+        _defaultVelocity = _rb.velocity;
     }
 
     private void SetLastPosition()
