@@ -149,6 +149,11 @@ public abstract class ProjectileBehaviour : MonoBehaviour
         _currentPierceCount++;
     }
 
+    public void DecreasePierceCount()
+    {
+        _currentPierceCount--;
+    }
+
     protected void UpdateTagsList()
     {
         _tagsList.Clear();

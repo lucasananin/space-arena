@@ -43,30 +43,28 @@ public class PhysicalProjectile : ProjectileBehaviour
             _healthBehaviour?.TakeDamage(_damageModel);
 
             _collidersHit.Add(_colliderHit);
-
-            if (_healthBehaviour is not null)
-                IncreasePierceCount();
-
+            IncreasePierceCount();
             SendRaycastHitEvent(_raycastHit);
 
-            // Se atravessar obstaculos nao pode dar bounce.
-
             var _dot = Vector3.Dot(transform.right, _raycastHit.normal);
-            bool _hasHitAnOppositeNormal = _dot < 0;
-            bool _canBounce = true;
-            if (_canBounce && HasHitObstacle(_colliderHit) && _hasHitAnOppositeNormal)
+            var _hasHitAnOppositeNormal = _dot < 0;
+            var _hasHitObstacle = HasHitObstacle(_colliderHit);
+
+            if (_hasHitObstacle && _stats.CanBounce)
             {
                 _collidersHit.Remove(_colliderHit);
-                Reflect(_raycastHit);
-                continue;
+                DecreasePierceCount();
+
+                if (_hasHitAnOppositeNormal)
+                {
+                    Reflect(_raycastHit);
+                    continue;
+                }
             }
 
-            if (HasHitObstacle(_colliderHit))
-            {
-                _collidersHit.Remove(_colliderHit);
-            }
+            //var _bounced = TryBounce(_raycastHit, _colliderHit);
 
-            if (HasReachedMaxPierceCount() || (HasHitObstacle(_colliderHit) && !_canBounce))
+            if (HasReachedMaxPierceCount() || (_hasHitObstacle && !_stats.CanBounce))
             {
                 DestroyThis();
                 break;
@@ -74,7 +72,6 @@ public class PhysicalProjectile : ProjectileBehaviour
         }
 
         SetLastPosition();
-        //Debug.Log($"// {transform.right}");
     }
 
     public override void Init(ShootModel _newShootModel)
@@ -113,6 +110,34 @@ public class PhysicalProjectile : ProjectileBehaviour
         }
     }
 
+    private void SetLastPosition()
+    {
+        _lastPosition = transform.position;
+    }
+
+    private bool TryBounce(RaycastHit2D _raycastHit, Collider2D _colliderHit)
+    {
+        if (!_stats.CanBounce) return false;
+
+        var _dot = Vector3.Dot(transform.right, _raycastHit.normal);
+        var _hasHitAnOppositeNormal = _dot < 0;
+        var _hasHitObstacle = HasHitObstacle(_colliderHit);
+
+        if (_hasHitObstacle/* && _stats.CanBounce*/)
+        {
+            _collidersHit.Remove(_colliderHit);
+            DecreasePierceCount();
+
+            if (_hasHitAnOppositeNormal)
+            {
+                Reflect(_raycastHit);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private void Reflect(RaycastHit2D _raycastHit)
     {
         var _reflect = Vector2.Reflect(transform.right, _raycastHit.normal);
@@ -120,39 +145,4 @@ public class PhysicalProjectile : ProjectileBehaviour
         _rb.velocity = transform.right * _speedMultiplier;
         _defaultVelocity = _rb.velocity;
     }
-
-    private void SetLastPosition()
-    {
-        _lastPosition = transform.position;
-    }
-
-    //private bool IsNormalOnTheSameDirection(Vector3 _normal)
-    //{
-    //    var _myPosition = transform.position;
-    //    var _right = transform.right;
-
-    //    if (_right.x >= 0 && _right.y >= 0)
-    //    {
-    //        // right Up.
-    //        return _normal.x >= 0 && _normal.y >= 0;
-    //        //return _myPosition.x > _point.x;
-    //    }
-    //    else if (_right.x >= 0 && _right.y < 0)
-    //    {
-    //        // right Down.
-    //        //return _myPosition.x > _point.x;
-    //    }
-    //    else if (_right.x < 0 && _right.y < 0)
-    //    {
-    //        // Left Down
-    //        //return _myPosition.x < _point.x;
-    //    }
-    //    else if (_right.x < 0 && _right.y >= 0)
-    //    {
-    //        // Left Up
-    //        //return _myPosition.x < _point.x;
-    //    }
-
-    //    return false;
-    //}
 }
