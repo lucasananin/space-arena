@@ -43,17 +43,30 @@ public class PhysicalProjectile : ProjectileBehaviour
             _healthBehaviour?.TakeDamage(_damageModel);
 
             _collidersHit.Add(_colliderHit);
-            IncreasePierceCount();
+
+            if (_healthBehaviour is not null)
+                IncreasePierceCount();
+
             SendRaycastHitEvent(_raycastHit);
 
-            bool _canBounce = true;
+            // Se atravessar obstaculos nao pode dar bounce.
 
-            if (_canBounce)
+            var _dot = Vector3.Dot(transform.right, _raycastHit.normal);
+            bool _hasHitAnOppositeNormal = _dot < 0;
+            bool _canBounce = true;
+            if (_canBounce && HasHitObstacle(_colliderHit) && _hasHitAnOppositeNormal)
             {
+                _collidersHit.Remove(_colliderHit);
                 Reflect(_raycastHit);
+                continue;
             }
 
-            if (HasReachedMaxPierceCount() || HasHitObstacle(_colliderHit))
+            if (HasHitObstacle(_colliderHit))
+            {
+                _collidersHit.Remove(_colliderHit);
+            }
+
+            if (HasReachedMaxPierceCount() || (HasHitObstacle(_colliderHit) && !_canBounce))
             {
                 DestroyThis();
                 break;
@@ -61,6 +74,7 @@ public class PhysicalProjectile : ProjectileBehaviour
         }
 
         SetLastPosition();
+        //Debug.Log($"// {transform.right}");
     }
 
     public override void Init(ShootModel _newShootModel)
@@ -111,4 +125,34 @@ public class PhysicalProjectile : ProjectileBehaviour
     {
         _lastPosition = transform.position;
     }
+
+    //private bool IsNormalOnTheSameDirection(Vector3 _normal)
+    //{
+    //    var _myPosition = transform.position;
+    //    var _right = transform.right;
+
+    //    if (_right.x >= 0 && _right.y >= 0)
+    //    {
+    //        // right Up.
+    //        return _normal.x >= 0 && _normal.y >= 0;
+    //        //return _myPosition.x > _point.x;
+    //    }
+    //    else if (_right.x >= 0 && _right.y < 0)
+    //    {
+    //        // right Down.
+    //        //return _myPosition.x > _point.x;
+    //    }
+    //    else if (_right.x < 0 && _right.y < 0)
+    //    {
+    //        // Left Down
+    //        //return _myPosition.x < _point.x;
+    //    }
+    //    else if (_right.x < 0 && _right.y >= 0)
+    //    {
+    //        // Left Up
+    //        //return _myPosition.x < _point.x;
+    //    }
+
+    //    return false;
+    //}
 }
