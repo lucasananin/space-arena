@@ -168,7 +168,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     public bool HasHitObstacle(Collider2D _colliderHit)
     {
-        return _colliderHit.CompareTag(OBSTACLE_TAG) /*&& !_stats.CanPierceObstacles*/;
+        return _colliderHit.CompareTag(OBSTACLE_TAG);
     }
 
     public bool HasHitSource(GameObject _gameobjectHit)

@@ -7,7 +7,8 @@ public class ExplosivePMod : MonoBehaviour
     [SerializeField] ProjectileBehaviour _projectileBehaviour = null;
     [SerializeField] SimpleExplosionVfx _simpleExplosionPrefab = null;
     [SerializeField] GameObject _particleSystemPrefab = null;
-    [SerializeField] bool _onHit = true;
+    [SerializeField] bool _onHitAny = true;
+    [SerializeField] bool _onHitEntity = true;
     [SerializeField] bool _onStop = true;
     [SerializeField] bool _onTimerEnd = true;
 
@@ -27,8 +28,17 @@ public class ExplosivePMod : MonoBehaviour
 
     private void ExplodeByHit(RaycastHit2D _raycastHit)
     {
-        if (_onHit)
+        if (_onHitAny)
+        {
             Explode(_raycastHit.point);
+        }
+        else if (
+            _onHitEntity && 
+            _raycastHit.collider.TryGetComponent(out EntityBehaviour _entityBehaviour) ||
+            _raycastHit.collider.transform.parent.TryGetComponent(out EntityBehaviour _parentEntityBehaviour))
+        {
+            Explode(_raycastHit.point);
+        }
     }
 
     private void ExplodeByStop()

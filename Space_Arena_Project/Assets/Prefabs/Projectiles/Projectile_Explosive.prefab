@@ -351,6 +351,7 @@ MonoBehaviour:
     _destroyTimeRange: {x: 0, y: 0}
     _explosionRadius: 0
     _canDamageProjectiles: 0
+    _canPierceObstacles: 0
     _maxPierceCount: 1
     _canAutoAim: 0
     _autoAimDistance: 0
@@ -395,7 +396,8 @@ MonoBehaviour:
   _projectileBehaviour: {fileID: 7353528016857128665}
   _simpleExplosionPrefab: {fileID: 6219246531898581204, guid: 35c5b57ba918f0546ac6035dbf2c3e79, type: 3}
   _particleSystemPrefab: {fileID: 0}
-  _onHit: 0
+  _onHitAny: 0
+  _onHitEntity: 1
   _onStop: 0
   _onTimerEnd: 1
 --- !u!114 &-6035390557809975588

@@ -261,17 +261,41 @@ MonoBehaviour:
     _entitySource: {fileID: 0}
     _weaponSource: {fileID: 0}
     _projectileSO: {fileID: 0}
-    _isChargedShot: 0
   _projectileSO: {fileID: 11400000, guid: 5f82dc8eb26edec4d88bb534546e8d82, type: 2}
+  _stats:
+    _destroyTimeRange: {x: 0, y: 0}
+    _explosionRadius: 0
+    _canDamageProjectiles: 0
+    _canPierceObstacles: 0
+    _maxPierceCount: 1
+    _canAutoAim: 0
+    _autoAimDistance: 0
+    _autoAimAngle: 0
+    _moveSpeedRange: {x: 0, y: 0}
+    _canBounce: 0
+    _destroyOnStop: 0
+    _useAccelerationCurve: 0
+    _invertAcceleration: 0
+    _accelerationCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _acelerationMultiplier: 0
+    _maxCastDistance: 0
+    _maxGuidedRadius: 0
   _timeUntilDestroy: 100
   _destroyTimer: 0
   _currentPierceCount: 0
+  _tagsList: []
   _rb: {fileID: 7523388042507287481}
   _dummyCircleCollider: {fileID: 4705853102255858287}
   _collidersHit: []
   _lastPosition: {x: 0, y: 0, z: 0}
   _defaultVelocity: {x: 0, y: 0}
   _accelerationTime: 0
+  _speedMultiplier: 0
 --- !u!114 &-85022992713538875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +312,7 @@ MonoBehaviour:
   _simpleExplosionPrefab: {fileID: 6219246531898581204, guid: 35c5b57ba918f0546ac6035dbf2c3e79, type: 3}
   _particleSystemPrefab: {fileID: 5517883229447819339, guid: 33f23304d97b0294b9de46bd0bc482c9, type: 3}
   _onHit: 1
+  _onHitEntity: 0
   _onStop: 0
   _onTimerEnd: 1
 --- !u!114 &-2325827176786225397
