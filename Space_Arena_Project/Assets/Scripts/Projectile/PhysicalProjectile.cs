@@ -42,73 +42,34 @@ public class PhysicalProjectile : ProjectileBehaviour
             {
                 if (_stats.CanBounce)
                 {
-                    var _dot = Vector3.Dot(transform.right, _raycastHit.normal);
-                    var _hasHitAnOppositeNormal = _dot < 0;
-
-                    if (_hasHitAnOppositeNormal)
-                    {
-                        SendRaycastHitEvent(_raycastHit);
-                        Reflect(_raycastHit);
-                        Debug.Log($"a");
-                        continue;
-                    }
+                    TryBounce(_raycastHit);
                 }
-                //else if (!_stats.CanPierceObstacles)
-                //{
-                //    DestroyThis();
-                //    break;
-                //}
                 else
                 {
-                    var _damage = _shootModel.GetDamage();
-                    var _damageModel = new DamageModel(_shootModel.EntitySource, _raycastHit.point, _damage);
-                    _healthBehaviour?.TakeDamage(_damageModel);
-
-                    //_collidersHit.Add(_colliderHit);
-                    //IncreasePierceCount();
+                    _collidersHit.Add(_colliderHit);
+                    TryDamage(_healthBehaviour, _raycastHit);
                     SendRaycastHitEvent(_raycastHit);
-                    DestroyThis();
-                    break;
 
-                    //if (HasReachedMaxPierceCount() ||!_stats.CanPierceObstacles)
-                    //{
-                    //    DestroyThis();
-                    //    break;
-                    //}
+                    if (!_stats.CanPierceObstacles)
+                    {
+                        DestroyThis();
+                        break;
+                    }
                 }
             }
             else
             {
-                var _damage = _shootModel.GetDamage();
-                var _damageModel = new DamageModel(_shootModel.EntitySource, _raycastHit.point, _damage);
-                _healthBehaviour?.TakeDamage(_damageModel);
-
                 _collidersHit.Add(_colliderHit);
-                IncreasePierceCount();
+                TryDamage(_healthBehaviour, _raycastHit);
                 SendRaycastHitEvent(_raycastHit);
+                IncreasePierceCount();
 
-                if (HasReachedMaxPierceCount() /*|| (HasHitObstacle(_colliderHit) && !_stats.CanPierceObstacles)*/)
+                if (HasReachedMaxPierceCount())
                 {
                     DestroyThis();
                     break;
                 }
             }
-
-            //var _bounced = TryBounce(_raycastHit, _colliderHit);
-
-            //if (_bounced)
-            //{
-            //    Debug.Log($"a");
-            //    continue;
-            //}
-
-            //var _hasHitObstacle = HasHitObstacle(_colliderHit);
-
-            //if (HasReachedMaxPierceCount() || (HasHitObstacle(_colliderHit) && !_stats.CanBounce))
-            //{
-            //    DestroyThis();
-            //    break;
-            //}
         }
 
         SetLastPosition();
@@ -150,31 +111,23 @@ public class PhysicalProjectile : ProjectileBehaviour
         }
     }
 
-    private void SetLastPosition()
+    private void TryDamage(HealthBehaviour _healthBehaviour, RaycastHit2D _raycastHit)
     {
-        _lastPosition = transform.position;
+        var _damage = _shootModel.GetDamage();
+        var _damageModel = new DamageModel(_shootModel.EntitySource, _raycastHit.point, _damage);
+        _healthBehaviour?.TakeDamage(_damageModel);
     }
 
-    private bool TryBounce(RaycastHit2D _raycastHit, Collider2D _colliderHit)
+    private void TryBounce(RaycastHit2D _raycastHit)
     {
-        if (!_stats.CanBounce) return false;
-
         var _dot = Vector3.Dot(transform.right, _raycastHit.normal);
         var _hasHitAnOppositeNormal = _dot < 0;
 
-        if (HasHitObstacle(_colliderHit))
+        if (_hasHitAnOppositeNormal)
         {
-            _collidersHit.Remove(_colliderHit);
-            DecreasePierceCount();
-
-            if (_hasHitAnOppositeNormal)
-            {
-                Reflect(_raycastHit);
-                return true;
-            }
+            SendRaycastHitEvent(_raycastHit);
+            Reflect(_raycastHit);
         }
-
-        return false;
     }
 
     private void Reflect(RaycastHit2D _raycastHit)
@@ -183,5 +136,10 @@ public class PhysicalProjectile : ProjectileBehaviour
         transform.right = _reflect;
         _rb.velocity = transform.right * _speedMultiplier;
         _defaultVelocity = _rb.velocity;
+    }
+
+    private void SetLastPosition()
+    {
+        _lastPosition = transform.position;
     }
 }

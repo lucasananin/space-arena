@@ -40,7 +40,7 @@ MonoBehaviour:
     _explosionRadius: 0
     _canDamageProjectiles: 0
     _canPierceObstacles: 0
-    _maxPierceCount: 7
+    _maxPierceCount: 1
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
