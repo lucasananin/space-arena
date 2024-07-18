@@ -37,15 +37,15 @@ MonoBehaviour:
     _shotsPerBurst: 0
   _projectileStats:
     _destroyTimeRange: {x: 3, y: 4}
-    _maxPierceCount: 1
     _explosionRadius: 0
     _canDamageProjectiles: 0
+    _canPierceObstacles: 0
+    _maxPierceCount: 1
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
-    _moveSpeed: 30
     _moveSpeedRange: {x: 30, y: 30}
-    _destroyOnCollision: 1
+    _canBounce: 0
     _destroyOnStop: 0
     _useAccelerationCurve: 0
     _invertAcceleration: 0

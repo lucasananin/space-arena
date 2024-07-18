@@ -38,37 +38,77 @@ public class PhysicalProjectile : ProjectileBehaviour
             if (_collidersHit.Contains(_colliderHit)) continue;
             if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour) && !HasAvailableTag(_colliderHit.gameObject)) continue;
 
-            var _damage = _shootModel.GetDamage();
-            var _damageModel = new DamageModel(_shootModel.EntitySource, _raycastHit.point, _damage);
-            _healthBehaviour?.TakeDamage(_damageModel);
-
-            _collidersHit.Add(_colliderHit);
-            IncreasePierceCount();
-            SendRaycastHitEvent(_raycastHit);
-
-            var _dot = Vector3.Dot(transform.right, _raycastHit.normal);
-            var _hasHitAnOppositeNormal = _dot < 0;
-            var _hasHitObstacle = HasHitObstacle(_colliderHit);
-
-            if (_hasHitObstacle && _stats.CanBounce)
+            if (HasHitObstacle(_colliderHit))
             {
-                _collidersHit.Remove(_colliderHit);
-                DecreasePierceCount();
-
-                if (_hasHitAnOppositeNormal)
+                if (_stats.CanBounce)
                 {
-                    Reflect(_raycastHit);
-                    continue;
+                    var _dot = Vector3.Dot(transform.right, _raycastHit.normal);
+                    var _hasHitAnOppositeNormal = _dot < 0;
+
+                    if (_hasHitAnOppositeNormal)
+                    {
+                        SendRaycastHitEvent(_raycastHit);
+                        Reflect(_raycastHit);
+                        Debug.Log($"a");
+                        continue;
+                    }
+                }
+                //else if (!_stats.CanPierceObstacles)
+                //{
+                //    DestroyThis();
+                //    break;
+                //}
+                else
+                {
+                    var _damage = _shootModel.GetDamage();
+                    var _damageModel = new DamageModel(_shootModel.EntitySource, _raycastHit.point, _damage);
+                    _healthBehaviour?.TakeDamage(_damageModel);
+
+                    //_collidersHit.Add(_colliderHit);
+                    //IncreasePierceCount();
+                    SendRaycastHitEvent(_raycastHit);
+                    DestroyThis();
+                    break;
+
+                    //if (HasReachedMaxPierceCount() ||!_stats.CanPierceObstacles)
+                    //{
+                    //    DestroyThis();
+                    //    break;
+                    //}
+                }
+            }
+            else
+            {
+                var _damage = _shootModel.GetDamage();
+                var _damageModel = new DamageModel(_shootModel.EntitySource, _raycastHit.point, _damage);
+                _healthBehaviour?.TakeDamage(_damageModel);
+
+                _collidersHit.Add(_colliderHit);
+                IncreasePierceCount();
+                SendRaycastHitEvent(_raycastHit);
+
+                if (HasReachedMaxPierceCount() /*|| (HasHitObstacle(_colliderHit) && !_stats.CanPierceObstacles)*/)
+                {
+                    DestroyThis();
+                    break;
                 }
             }
 
             //var _bounced = TryBounce(_raycastHit, _colliderHit);
 
-            if (HasReachedMaxPierceCount() || (_hasHitObstacle && !_stats.CanBounce))
-            {
-                DestroyThis();
-                break;
-            }
+            //if (_bounced)
+            //{
+            //    Debug.Log($"a");
+            //    continue;
+            //}
+
+            //var _hasHitObstacle = HasHitObstacle(_colliderHit);
+
+            //if (HasReachedMaxPierceCount() || (HasHitObstacle(_colliderHit) && !_stats.CanBounce))
+            //{
+            //    DestroyThis();
+            //    break;
+            //}
         }
 
         SetLastPosition();
@@ -121,9 +161,8 @@ public class PhysicalProjectile : ProjectileBehaviour
 
         var _dot = Vector3.Dot(transform.right, _raycastHit.normal);
         var _hasHitAnOppositeNormal = _dot < 0;
-        var _hasHitObstacle = HasHitObstacle(_colliderHit);
 
-        if (_hasHitObstacle/* && _stats.CanBounce*/)
+        if (HasHitObstacle(_colliderHit))
         {
             _collidersHit.Remove(_colliderHit);
             DecreasePierceCount();
