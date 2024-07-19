@@ -21278,9 +21278,9 @@ MonoBehaviour:
     _runtimeQuantities: []
   _randomizedWaves:
   - _entities:
-    - _so: {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
-      _quantity: 1
-    _quantity: 6
+    - _so: {fileID: 11400000, guid: 5cb6b2abc3018174ba97dcc2df7fc902, type: 2}
+      _quantity: 3
+    _quantity: 3
     _maxActiveSpawns: 1
   _container: {fileID: 1159678663}
   _spawnTime: 1

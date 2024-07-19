@@ -36,7 +36,7 @@ public class CastProjectile : ProjectileBehaviour
             IncreasePierceCount();
             SendRaycastHitEvent(_raycastHit);
 
-            if (HasReachedMaxPierceCount() || HasHitObstacle(_colliderHit))
+            if (HasReachedMaxPierceCount() || HasBlockPierceTag(_colliderHit.gameObject))
             {
                 break;
             }

@@ -33,6 +33,7 @@ public class ProjectileStats
     [Title("// Piercing")]
     //[SerializeField] bool _canPierceObstacles = false;
     [SerializeField, Range(1, 99)] int _maxPierceCount = 1;
+    [SerializeField] TagCollectionSO _blockPierceTags = null;
 
     [Title("// Auto Aim")]
     [SerializeField] bool _canAutoAim = false;
@@ -63,6 +64,7 @@ public class ProjectileStats
 
     //public bool CanPierceObstacles { get => _canPierceObstacles; set => _canPierceObstacles = value; }
     public int MaxPierceCount { get => _maxPierceCount; private set => _maxPierceCount = value; }
+    public TagCollectionSO BlockPierceTags { get => _blockPierceTags; private set => _blockPierceTags = value; }
 
     public bool CanAutoAim { get => _canAutoAim; private set => _canAutoAim = value; }
     public float AutoAimDistance { get => _autoAimDistance; private set => _autoAimDistance = value; }
@@ -74,8 +76,8 @@ public class ProjectileStats
     public bool InvertAcceleration { get => _invertAcceleration; private set => _invertAcceleration = value; }
     public AnimationCurve AccelerationCurve { get => _accelerationCurve; private set => _accelerationCurve = value; }
     public float AcelerationMultiplier { get => _acelerationMultiplier; private set => _acelerationMultiplier = value; }
-    public bool CanBounce { get => _canBounce; set => _canBounce = value; }
-    public TagCollectionSO BounceTags { get => _bounceTags; set => _bounceTags = value; }
+    public bool CanBounce { get => _canBounce; private set => _canBounce = value; }
+    public TagCollectionSO BounceTags { get => _bounceTags; private set => _bounceTags = value; }
 
     public float MaxCastDistance { get => _maxCastDistance; private set => _maxCastDistance = value; }
 

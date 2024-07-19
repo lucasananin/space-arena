@@ -51,7 +51,7 @@ public class PhysicalProjectile : ProjectileBehaviour
                 SendRaycastHitEvent(_raycastHit);
                 IncreasePierceCount();
 
-                if (HasReachedMaxPierceCount())
+                if (HasReachedMaxPierceCount() || HasBlockPierceTag(_colliderHit.gameObject))
                 {
                     DestroyThis();
                     break;
@@ -133,9 +133,11 @@ public class PhysicalProjectile : ProjectileBehaviour
 
     private void TryDamage(HealthBehaviour _healthBehaviour, RaycastHit2D _raycastHit)
     {
+        if (_healthBehaviour is null) return;
+
         var _damage = _shootModel.GetDamage();
         var _damageModel = new DamageModel(_shootModel.EntitySource, _raycastHit.point, _damage);
-        _healthBehaviour?.TakeDamage(_damageModel);
+        _healthBehaviour.TakeDamage(_damageModel);
     }
 
     private void TryBounce(RaycastHit2D _raycastHit)
