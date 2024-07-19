@@ -40,7 +40,7 @@ public class PhysicalProjectile : ProjectileBehaviour
 
             if (HasHitObstacle(_colliderHit))
             {
-                if (_stats.CanBounce)
+                if (_stats.CanBounce /*&& HasBounceTag(_colliderHit.gameObject)*/)
                 {
                     TryBounce(_raycastHit);
                 }

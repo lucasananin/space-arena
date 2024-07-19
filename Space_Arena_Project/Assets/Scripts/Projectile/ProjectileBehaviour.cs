@@ -181,6 +181,11 @@ public abstract class ProjectileBehaviour : MonoBehaviour
         return GeneralMethods.HasAvailableTag(_gameObjectHit, _tagsList);
     }
 
+    public bool HasBounceTag(GameObject _gameObjectHit)
+    {
+        return GeneralMethods.HasAvailableTag(_gameObjectHit, _stats.BounceTags.Tags);
+    }
+
     public float GetExplodeTimeNormalized()
     {
         return Mathf.InverseLerp(0, _timeUntilDestroy, _destroyTimer);
