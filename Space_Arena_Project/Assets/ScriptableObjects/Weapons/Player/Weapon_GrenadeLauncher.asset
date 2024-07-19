@@ -39,12 +39,12 @@ MonoBehaviour:
     _destroyTimeRange: {x: 3, y: 4}
     _explosionRadius: 3
     _canDamageProjectiles: 0
+    _canPierceObstacles: 0
     _maxPierceCount: 1
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
     _moveSpeedRange: {x: 20, y: 20}
-    _canBounce: 1
     _destroyOnStop: 0
     _useAccelerationCurve: 1
     _invertAcceleration: 0
@@ -73,5 +73,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _acelerationMultiplier: 1
+    _canBounce: 1
+    _bounceTags: {fileID: 11400000, guid: 8f86bb6b935e0c5469d64ca4ac6ca586, type: 2}
     _maxCastDistance: 0
     _maxGuidedRadius: 0

@@ -38,24 +38,11 @@ public class PhysicalProjectile : ProjectileBehaviour
             if (_collidersHit.Contains(_colliderHit)) continue;
             if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour) && !HasAvailableTag(_colliderHit.gameObject)) continue;
 
-            if (HasHitObstacle(_colliderHit))
+            if (_stats.CanBounce && HasBounceTag(_colliderHit.gameObject))
             {
-                if (_stats.CanBounce /*&& HasBounceTag(_colliderHit.gameObject)*/)
-                {
-                    TryBounce(_raycastHit);
-                }
-                else
-                {
-                    _collidersHit.Add(_colliderHit);
-                    TryDamage(_healthBehaviour, _raycastHit);
-                    SendRaycastHitEvent(_raycastHit);
-
-                    if (!_stats.CanPierceObstacles)
-                    {
-                        DestroyThis();
-                        break;
-                    }
-                }
+                TryBounce(_raycastHit);
+                TryDamage(_healthBehaviour, _raycastHit);
+                continue;
             }
             else
             {
@@ -70,6 +57,39 @@ public class PhysicalProjectile : ProjectileBehaviour
                     break;
                 }
             }
+
+            //if (HasHitObstacle(_colliderHit))
+            //{
+            //    if (_stats.CanBounce)
+            //    {
+            //        TryBounce(_raycastHit);
+            //    }
+            //    else
+            //    {
+            //        _collidersHit.Add(_colliderHit);
+            //        TryDamage(_healthBehaviour, _raycastHit);
+            //        SendRaycastHitEvent(_raycastHit);
+
+            //        if (!_stats.CanPierceObstacles)
+            //        {
+            //            DestroyThis();
+            //            break;
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    _collidersHit.Add(_colliderHit);
+            //    TryDamage(_healthBehaviour, _raycastHit);
+            //    SendRaycastHitEvent(_raycastHit);
+            //    IncreasePierceCount();
+
+            //    if (HasReachedMaxPierceCount())
+            //    {
+            //        DestroyThis();
+            //        break;
+            //    }
+            //}
         }
 
         SetLastPosition();

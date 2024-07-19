@@ -31,7 +31,7 @@ public class ProjectileStats
     [SerializeField] bool _canDamageProjectiles = false;
 
     [Title("// Piercing")]
-    [SerializeField] bool _canPierceObstacles = false;
+    //[SerializeField] bool _canPierceObstacles = false;
     [SerializeField, Range(1, 99)] int _maxPierceCount = 1;
 
     [Title("// Auto Aim")]
@@ -40,6 +40,7 @@ public class ProjectileStats
     [SerializeField] float _autoAimAngle = 0f;
 
     [Title("- PROJECTILE SPECIFICS -", null, TitleAlignments.Centered)]
+
     [Title("// Physical Projectile: Properties")]
     [SerializeField] Vector2 _moveSpeedRange = default;
     [SerializeField] bool _destroyOnStop = false;
@@ -60,7 +61,7 @@ public class ProjectileStats
     public float ExplosionRadius { get => _explosionRadius; private set => _explosionRadius = value; }
     public bool CanDamageProjectiles { get => _canDamageProjectiles; private set => _canDamageProjectiles = value; }
 
-    public bool CanPierceObstacles { get => _canPierceObstacles; set => _canPierceObstacles = value; }
+    //public bool CanPierceObstacles { get => _canPierceObstacles; set => _canPierceObstacles = value; }
     public int MaxPierceCount { get => _maxPierceCount; private set => _maxPierceCount = value; }
 
     public bool CanAutoAim { get => _canAutoAim; private set => _canAutoAim = value; }
