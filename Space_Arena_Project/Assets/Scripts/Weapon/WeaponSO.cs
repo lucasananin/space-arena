@@ -90,25 +90,33 @@ public class WeaponStats
     [SerializeField, Range(0, 99)] int _damage = 1;
     //[SerializeField, Range(0, 99)] int _chargeShotDamage = 1;
     [SerializeField, Range(0, 99)] int _explosiveDamage = 1;
+
     [Title("// Fire Rate")]
     [SerializeField, Range(0.01f, 9f)] float _fireRate = 0.1f;
+
     [Title("// Charge")]
     [SerializeField, Range(0f, 9f)] float _chargeTime = 0f;
+
     [Title("// Heat")]
     [SerializeField, Range(0f, 99f)] float _maxHeat = 0f;
     [SerializeField, Range(0f, 99f)] float _heatPerShot = 0f;
     [SerializeField, Range(0f, 99f)] float _heatDecreasePerSecond = 0f;
     [SerializeField, Range(0f, 99f)] float _maxOverheatTime = 0f;
+
     [Title("// Precision")]
     [SerializeField, Range(0, 360)] float _shootAngle = 0;
     [SerializeReference] ShootArcMode _arcMode = default;
+
     [Title("// Ammo")]
     [SerializeField, Range(1, 36)] int _projectilesPerShot = 1;
     [SerializeField, Range(0, 99)] int _ammoPerShot = 1;
+
     [Title("- WEAPON SPECIFICS -", null, TitleAlignments.Centered)]
+
     [Title("// Semi-Auto Behaviour: Properties")]
     [SerializeField] bool _isAutoChargeType = false;
     //[SerializeField] bool _hasChargeWeakShot = false;
+
     [Title("// Burst Behaviour: Properties")]
     [SerializeField, Range(0f, 9f)] float _burstRate = 0f;
     [SerializeField, Range(0, 99)] int _shotsPerBurst = 0;
@@ -116,18 +124,25 @@ public class WeaponStats
     public int Damage { get => _damage; private set => _damage = value; }
     //public int ChargeShotDamage { get => _chargeShotDamage; private set => _chargeShotDamage = value; }
     public int ExplosiveDamage { get => _explosiveDamage; private set => _explosiveDamage = value; }
+
     public float FireRate { get => _fireRate; private set => _fireRate = value; }
+
     public float ChargeTime { get => _chargeTime; set => _chargeTime = value; }
+
     public float MaxHeat { get => _maxHeat; private set => _maxHeat = value; }
     public float HeatPerShot { get => _heatPerShot; private set => _heatPerShot = value; }
     public float HeatDecreasePerSecond { get => _heatDecreasePerSecond; private set => _heatDecreasePerSecond = value; }
     public float MaxOverheatTime { get => _maxOverheatTime; private set => _maxOverheatTime = value; }
+
     public float ShootAngle { get => _shootAngle; set => _shootAngle = value; }
     public ShootArcMode ArcMode { get => _arcMode; set => _arcMode = value; }
+
     public int ProjectilesPerShot { get => _projectilesPerShot; private set => _projectilesPerShot = value; }
     public int AmmoPerShot { get => _ammoPerShot; set => _ammoPerShot = value; }
+
     public bool IsAutoChargeType { get => _isAutoChargeType; private set => _isAutoChargeType = value; }
     //public bool HasChargeWeakShot { get => _hasChargeWeakShot; private set => _hasChargeWeakShot = value; }
+
     public float BurstRate { get => _burstRate; private set => _burstRate = value; }
     public int ShotsPerBurst { get => _shotsPerBurst; set => _shotsPerBurst = value; }
 }

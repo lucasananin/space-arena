@@ -31,7 +31,6 @@ public class ProjectileStats
     [SerializeField] bool _canDamageProjectiles = false;
 
     [Title("// Piercing")]
-    //[SerializeField] bool _canPierceObstacles = false;
     [SerializeField, Range(1, 99)] int _maxPierceCount = 1;
     [SerializeField] TagCollectionSO _blockPierceTags = null;
 
@@ -62,7 +61,6 @@ public class ProjectileStats
     public float ExplosionRadius { get => _explosionRadius; private set => _explosionRadius = value; }
     public bool CanDamageProjectiles { get => _canDamageProjectiles; private set => _canDamageProjectiles = value; }
 
-    //public bool CanPierceObstacles { get => _canPierceObstacles; set => _canPierceObstacles = value; }
     public int MaxPierceCount { get => _maxPierceCount; private set => _maxPierceCount = value; }
     public TagCollectionSO BlockPierceTags { get => _blockPierceTags; private set => _blockPierceTags = value; }
 

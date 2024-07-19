@@ -57,39 +57,6 @@ public class PhysicalProjectile : ProjectileBehaviour
                     break;
                 }
             }
-
-            //if (HasHitObstacle(_colliderHit))
-            //{
-            //    if (_stats.CanBounce)
-            //    {
-            //        TryBounce(_raycastHit);
-            //    }
-            //    else
-            //    {
-            //        _collidersHit.Add(_colliderHit);
-            //        TryDamage(_healthBehaviour, _raycastHit);
-            //        SendRaycastHitEvent(_raycastHit);
-
-            //        if (!_stats.CanPierceObstacles)
-            //        {
-            //            DestroyThis();
-            //            break;
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    _collidersHit.Add(_colliderHit);
-            //    TryDamage(_healthBehaviour, _raycastHit);
-            //    SendRaycastHitEvent(_raycastHit);
-            //    IncreasePierceCount();
-
-            //    if (HasReachedMaxPierceCount())
-            //    {
-            //        DestroyThis();
-            //        break;
-            //    }
-            //}
         }
 
         SetLastPosition();
