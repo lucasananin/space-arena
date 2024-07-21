@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class HealthBehaviour : MonoBehaviour
 {
-    [SerializeField] protected bool _invincibility = false;
+    [SerializeField] protected bool _isInvincible = false;
     [SerializeField] protected int _maxHealth = 100;
     [SerializeField] protected float _deathDelay = 0f;
     [SerializeField, ReadOnly] protected int _currentHealth = 0;
@@ -41,7 +41,7 @@ public abstract class HealthBehaviour : MonoBehaviour
         _lastDamageModel = _damageModel;
         _currentHealth -= _damageModel.Value;
 
-        if (_invincibility)
+        if (_isInvincible)
             RestoreHealth();
 
         if (_currentHealth <= 0 && !_isDying)

@@ -32,10 +32,7 @@ public class ExplosivePMod : MonoBehaviour
         {
             Explode(_raycastHit.point);
         }
-        else if (
-            _onHitEntity && 
-            _raycastHit.collider.TryGetComponent(out EntityBehaviour _entityBehaviour) ||
-            _raycastHit.collider.transform.parent.TryGetComponent(out EntityBehaviour _parentEntityBehaviour))
+        else if (_onHitEntity && HasHitEntity(_raycastHit))
         {
             Explode(_raycastHit.point);
         }
@@ -67,5 +64,11 @@ public class ExplosivePMod : MonoBehaviour
         {
             Instantiate(_particleSystemPrefab, _position, Quaternion.identity);
         }
+    }
+
+    private bool HasHitEntity(RaycastHit2D _raycastHit)
+    {
+        return _raycastHit.collider.TryGetComponent(out EntityBehaviour _) 
+            || _raycastHit.collider.transform.parent.TryGetComponent(out EntityBehaviour _);
     }
 }
