@@ -14,12 +14,12 @@ public class ExplodeOnHitPMod : MonoBehaviour
 
     private void OnEnable()
     {
-        _projectileBehaviour.onRaycastHit += Explode;
+        _projectileBehaviour.OnRaycastHit += Explode;
     }
 
     private void OnDisable()
     {
-        _projectileBehaviour.onRaycastHit -= Explode;
+        _projectileBehaviour.OnRaycastHit -= Explode;
     }
 
     private void Explode(RaycastHit2D _raycastHit)

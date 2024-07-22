@@ -14,14 +14,14 @@ public class ExplosivePMod : MonoBehaviour
 
     private void OnEnable()
     {
-        _projectileBehaviour.onRaycastHit += ExplodeByHit;
+        _projectileBehaviour.OnRaycastHit += ExplodeByHit;
         _projectileBehaviour.OnDestroy_Stop += ExplodeByStop;
         _projectileBehaviour.OnDestroy_TimerEnd += ExplodeByTimer;
     }
 
     private void OnDisable()
     {
-        _projectileBehaviour.onRaycastHit -= ExplodeByHit;
+        _projectileBehaviour.OnRaycastHit -= ExplodeByHit;
         _projectileBehaviour.OnDestroy_Stop -= ExplodeByStop;
         _projectileBehaviour.OnDestroy_TimerEnd -= ExplodeByTimer;
     }

@@ -19,7 +19,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
     private List<EntityBehaviour> _entitiesFound = new List<EntityBehaviour>();
 
     public event System.Action<ShootModel> OnInit = null;
-    public event System.Action<RaycastHit2D> onRaycastHit = null;
+    public event System.Action<RaycastHit2D> OnRaycastHit = null;
     public event System.Action OnDestroy_TimerEnd = null;
     public event System.Action OnDestroy_Stop = null;
     public event System.Action OnExplode = null;
@@ -46,7 +46,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
     protected void SendRaycastHitEvent(RaycastHit2D _value)
     {
-        onRaycastHit?.Invoke(_value);
+        OnRaycastHit?.Invoke(_value);
     }
 
     protected void CheckDestroyTime()

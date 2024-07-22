@@ -12,14 +12,14 @@ public class DamageAreaPMod : MonoBehaviour
 
     private void OnEnable()
     {
-        _projectile.onRaycastHit += SpawnAreaByHit;
+        _projectile.OnRaycastHit += SpawnAreaByHit;
         _projectile.OnDestroy_Stop += SpawnAreaByStop;
         _projectile.OnDestroy_TimerEnd += SpawnAreaByTimer;
     }
 
     private void OnDisable()
     {
-        _projectile.onRaycastHit -= SpawnAreaByHit;
+        _projectile.OnRaycastHit -= SpawnAreaByHit;
         _projectile.OnDestroy_Stop -= SpawnAreaByStop;
         _projectile.OnDestroy_TimerEnd -= SpawnAreaByTimer;
     }

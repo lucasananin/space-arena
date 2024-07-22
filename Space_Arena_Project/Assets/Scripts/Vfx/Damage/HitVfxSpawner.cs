@@ -14,12 +14,12 @@ public class HitVfxSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        _projectileBehaviour.onRaycastHit += SpawnVfx;
+        _projectileBehaviour.OnRaycastHit += SpawnVfx;
     }
 
     private void OnDisable()
     {
-        _projectileBehaviour.onRaycastHit -= SpawnVfx;
+        _projectileBehaviour.OnRaycastHit -= SpawnVfx;
     }
 
     private void SpawnVfx(RaycastHit2D _hitInfo)
