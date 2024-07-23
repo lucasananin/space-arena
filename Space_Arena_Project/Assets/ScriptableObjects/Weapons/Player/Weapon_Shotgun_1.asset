@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _iconSprite: {fileID: 21300000, guid: 8dee02ed13ffd584fafcd68b95576d4e, type: 3}
   _weaponPrefab: {fileID: 2751957287607790105, guid: 90cf852f366fdca4392e380ad1d8ca5a, type: 3}
-  _id: shotgun_1_a
+  _id: shotgun_1
   _displayName: Shotgun
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
-  _projectileSO: {fileID: 11400000, guid: cbc2f2ef0648fca488053811810e86d5, type: 2}
+  _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
   _stats:
     _damage: 2
     _explosiveDamage: 0
@@ -45,6 +45,7 @@ MonoBehaviour:
     _autoAimDistance: 0
     _autoAimAngle: 0
     _moveSpeedRange: {x: 15, y: 30}
+    _scaleMultiplier: 1
     _destroyOnStop: 1
     _useAccelerationCurve: 1
     _invertAcceleration: 0

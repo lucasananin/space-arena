@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: Weapon_Shotgun_2
+  m_Name: Weapon_Shotgun_4
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: -1887115566, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
-  _weaponPrefab: {fileID: 2751957287607790105, guid: 4738b38225bf6454fb581043ce66a214, type: 3}
-  _id: shotgun_2
-  _displayName: Double Trouble
+  _iconSprite: {fileID: 1321182122, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _weaponPrefab: {fileID: 2751957287607790105, guid: e42f97ca89e5a1344af51d51f283899e, type: 3}
+  _id: shotgun_4
+  _displayName: Close Shot
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
   _stats:
-    _damage: 4
+    _damage: 5
     _explosiveDamage: 0
-    _fireRate: 0.4
+    _fireRate: 0.3
     _chargeTime: 0
     _maxHeat: 0
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 20
+    _shootAngle: 135
     _arcMode: 1
-    _projectilesPerShot: 2
-    _ammoPerShot: 2
+    _projectilesPerShot: 6
+    _ammoPerShot: 6
     _isAutoChargeType: 0
     _burstRate: 0
     _shotsPerBurst: 0
@@ -39,13 +39,13 @@ MonoBehaviour:
     _destroyTimeRange: {x: 3, y: 4}
     _explosionRadius: 0
     _canDamageProjectiles: 0
-    _maxPierceCount: 3
+    _maxPierceCount: 2
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
-    _moveSpeedRange: {x: 20, y: 25}
-    _scaleMultiplier: 1.3
+    _moveSpeedRange: {x: 10, y: 30}
+    _scaleMultiplier: 1.5
     _destroyOnStop: 1
     _useAccelerationCurve: 1
     _invertAcceleration: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    _acelerationMultiplier: 1
+    _acelerationMultiplier: 3
     _canBounce: 1
     _bounceTags: {fileID: 11400000, guid: 8f86bb6b935e0c5469d64ca4ac6ca586, type: 2}
     _maxCastDistance: 0

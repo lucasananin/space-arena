@@ -13261,6 +13261,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 39d9fecc542490341af759819af88e94, type: 2}
   - {fileID: 11400000, guid: 4f49ae87579d729418b4d7fc357905cc, type: 2}
   - {fileID: 11400000, guid: 828b28747f809a54e9866ae62659bd7d, type: 2}
+  - {fileID: 11400000, guid: c43643a8ac0a09f44a2450ed4d9ca113, type: 2}
   _ammoPrefab: {fileID: 7651030474878422386, guid: 04f4d503b7191d74f96662f428487b62, type: 3}
   _healthPrefab: {fileID: 4558754204574171359, guid: 8b56851b8547fb44aad90d846e7f31bc, type: 3}
   _minMaxForce: {x: 5, y: 15}
