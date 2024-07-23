@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2751957287607790308}
   - component: {fileID: -66830320206636449}
   - component: {fileID: -6227193792625866324}
+  - component: {fileID: -608991930123864276}
   m_Layer: 0
   m_Name: Weapon_Shotgun_1
   m_TagString: Untagged
@@ -106,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponBehaviour: {fileID: 2751957287607790105}
   _targetTransform: {fileID: 2751957288736772841}
-  _recoilOffset: {x: -0.2, y: 0.1, z: 0}
+  _recoilOffset: {x: -0.5, y: 0, z: 0}
   _duration: 0.5
   _defaultPosition: {x: 0, y: 0, z: 0}
   _recoilPosition: {x: 0, y: 0, z: 0}
@@ -179,6 +180,22 @@ MonoBehaviour:
   _impulseSource: {fileID: -66830320206636449}
   _weapon: {fileID: 2751957287607790105}
   _velocityMultiplier: 0.3
+--- !u!114 &-608991930123864276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751957287607790107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daed80ba8e78c314b83925837e9207c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flipper: {fileID: 2751957287607790311}
+  _renderer: {fileID: 2751957288736772854}
+  _minRightAngle: 26
+  _minLeftAngle: 206
 --- !u!1 &2751957288326732440
 GameObject:
   m_ObjectHideFlags: 0
