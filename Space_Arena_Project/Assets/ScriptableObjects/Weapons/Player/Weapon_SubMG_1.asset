@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 1355702113, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: b08bfb25ec595334897f48cd68bedeef, type: 3}
   _id: sub_mg_1_a
-  _displayName: Sub MG
+  _displayName: Sub-MG
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
@@ -39,13 +39,13 @@ MonoBehaviour:
     _destroyTimeRange: {x: 3, y: 4}
     _explosionRadius: 0
     _canDamageProjectiles: 0
-    _scaleMultiplier: 1
     _maxPierceCount: 1
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
     _moveSpeedRange: {x: 30, y: 30}
+    _scaleMultiplier: 1
     _destroyOnStop: 0
     _useAccelerationCurve: 0
     _invertAcceleration: 0

@@ -180,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _impulseSource: {fileID: -66830320206636449}
   _weapon: {fileID: 2751957287607790105}
-  _velocityMultiplier: 0.3
+  _velocityMultiplier: 0.4
 --- !u!114 &6539308639036894465
 MonoBehaviour:
   m_ObjectHideFlags: 0
