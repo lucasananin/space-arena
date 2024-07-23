@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: Weapon_MachineGun_1a
+  m_Name: Weapon_SubMG_1
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: 21300000, guid: 9ca098a3bb5c4fb45bad1a685bb8033b, type: 3}
-  _weaponPrefab: {fileID: 3562192091433409978, guid: 2b97e7bca5fc4fd4bbfe4b95de0291af, type: 3}
-  _id: machine_gun_1_a
-  _displayName: Machine Gun
+  _iconSprite: {fileID: 1355702113, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _weaponPrefab: {fileID: 3562192091433409978, guid: b08bfb25ec595334897f48cd68bedeef, type: 3}
+  _id: sub_mg_1_a
+  _displayName: Sub MG
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
@@ -28,7 +28,7 @@ MonoBehaviour:
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 20
+    _shootAngle: 30
     _arcMode: 0
     _projectilesPerShot: 1
     _ammoPerShot: 1
