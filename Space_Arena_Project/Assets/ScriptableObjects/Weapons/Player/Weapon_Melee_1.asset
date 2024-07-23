@@ -16,8 +16,8 @@ MonoBehaviour:
   _weaponPrefab: {fileID: 8534141531701759386, guid: 5cc1b6df160d50445bb1785f8803f2f9, type: 3}
   _id: melee_1
   _displayName: Melee_1
-  _holsterPosition: {x: 0, y: 0, z: 0}
-  _holsterEuler: {x: 0, y: 0, z: 0}
+  _holsterPosition: {x: -0.25, y: 0.3, z: 0}
+  _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 0550e4f298432344dbbe5bd3bce6b4e3, type: 2}
   _stats:
     _damage: 5

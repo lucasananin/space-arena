@@ -16,8 +16,8 @@ MonoBehaviour:
   _weaponPrefab: {fileID: 6280535233146275178, guid: 397b0c0af1c262e4aae381fbb206e82f, type: 3}
   _id: molotov_1
   _displayName: Molotov
-  _holsterPosition: {x: -0.25, y: -0.15, z: 0}
-  _holsterEuler: {x: 0, y: 0, z: -60}
+  _holsterPosition: {x: -0.25, y: 0.3, z: 0}
+  _holsterEuler: {x: 0, y: 0, z: 30}
   _projectileSO: {fileID: 11400000, guid: a3cab79fac1b1a24f860ffade39377bc, type: 2}
   _stats:
     _damage: 1

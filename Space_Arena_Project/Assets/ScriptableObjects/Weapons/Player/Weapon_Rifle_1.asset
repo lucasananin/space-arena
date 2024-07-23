@@ -16,7 +16,7 @@ MonoBehaviour:
   _weaponPrefab: {fileID: 258936880920263144, guid: 389857240bf88cf499b74df5a4577b3d, type: 3}
   _id: rifle_1
   _displayName: Laser-SR
-  _holsterPosition: {x: -0.25, y: -0.15, z: 0}
+  _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}
   _stats:

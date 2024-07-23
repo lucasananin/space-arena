@@ -16,8 +16,8 @@ MonoBehaviour:
   _weaponPrefab: {fileID: 8067246484439910053, guid: 9a2677e5df7bfdb498857fbf0b0e54c9, type: 3}
   _id: grenade_launcher_1
   _displayName: G-Launcher
-  _holsterPosition: {x: 0, y: 0, z: 0}
-  _holsterEuler: {x: 0, y: 0, z: 0}
+  _holsterPosition: {x: -0.25, y: 0.3, z: 0}
+  _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: f81d1a39b9a143d48a3a67dd1608d115, type: 2}
   _stats:
     _damage: 2
