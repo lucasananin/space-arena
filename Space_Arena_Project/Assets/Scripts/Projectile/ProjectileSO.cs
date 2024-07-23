@@ -43,6 +43,7 @@ public class ProjectileStats
 
     [Title("// Physical Projectile: Properties")]
     [SerializeField] Vector2 _moveSpeedRange = default;
+    [SerializeField, Range(0.1f, 5f)] float _scaleMultiplier = 1f;
     [SerializeField] bool _destroyOnStop = false;
     [SerializeField] bool _useAccelerationCurve = false;
     [SerializeField] bool _invertAcceleration = false;
@@ -68,7 +69,8 @@ public class ProjectileStats
     public float AutoAimDistance { get => _autoAimDistance; private set => _autoAimDistance = value; }
     public float AutoAimAngle { get => _autoAimAngle; private set => _autoAimAngle = value; }
 
-    public Vector2 MoveSpeedRange { get => _moveSpeedRange; set => _moveSpeedRange = value; }
+    public Vector2 MoveSpeedRange { get => _moveSpeedRange; private set => _moveSpeedRange = value; }
+    public float ScaleMultiplier { get => _scaleMultiplier; private set => _scaleMultiplier = value; }
     public bool DestroyOnStop { get => _destroyOnStop; private set => _destroyOnStop = value; }
     public bool UseAccelerationCurve { get => _useAccelerationCurve; private set => _useAccelerationCurve = value; }
     public bool InvertAcceleration { get => _invertAcceleration; private set => _invertAcceleration = value; }

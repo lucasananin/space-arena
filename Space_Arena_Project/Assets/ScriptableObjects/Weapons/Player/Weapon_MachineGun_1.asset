@@ -39,6 +39,7 @@ MonoBehaviour:
     _destroyTimeRange: {x: 3, y: 4}
     _explosionRadius: 0
     _canDamageProjectiles: 0
+    _scaleMultiplier: 1.3
     _maxPierceCount: 1
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 0

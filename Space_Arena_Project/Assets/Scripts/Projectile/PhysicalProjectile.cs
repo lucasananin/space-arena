@@ -8,6 +8,7 @@ public class PhysicalProjectile : ProjectileBehaviour
     [Title("// Physical")]
     [SerializeField] Rigidbody2D _rb = null;
     [SerializeField] CircleCollider2D _dummyCircleCollider = null;
+    [SerializeField] Transform _renderTransform = null;
 
     [Title("// Debug - Physical")]
     [SerializeField, ReadOnly] List<Collider2D> _collidersHit = default;
@@ -69,7 +70,14 @@ public class PhysicalProjectile : ProjectileBehaviour
         _speedMultiplier = Random.Range(_stats.MoveSpeedRange.x, _stats.MoveSpeedRange.y);
         _rb.velocity = transform.right * _speedMultiplier;
         _collidersHit.Clear();
+        UpdateScale();
         InitAccelerationParameters();
+    }
+
+    private void UpdateScale()
+    {
+        _renderTransform.localScale *= _stats.ScaleMultiplier;
+        _dummyCircleCollider.radius *= _stats.ScaleMultiplier;
     }
 
     private void InitAccelerationParameters()

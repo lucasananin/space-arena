@@ -5205,6 +5205,7 @@ MonoBehaviour:
     _destroyTimeRange: {x: 0, y: 0}
     _explosionRadius: 0
     _canDamageProjectiles: 0
+    _scaleMultiplier: 1
     _maxPierceCount: 1
     _blockPierceTags: {fileID: 0}
     _canAutoAim: 0
@@ -5231,6 +5232,7 @@ MonoBehaviour:
   _tagsList: []
   _rb: {fileID: 7523388042507287481}
   _dummyCircleCollider: {fileID: 4705853102255858287}
+  _renderTransform: {fileID: 2827864850259383272}
   _collidersHit: []
   _lastPosition: {x: 0, y: 0, z: 0}
   _defaultVelocity: {x: 0, y: 0}
