@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectile: {fileID: 8552097569084531652}
   _lineVfx: {fileID: 3300318201072077148, guid: aeef418fa81f492439000cf07b3ba191, type: 3}
+  _offset: {x: -5, y: 20, z: 0}
 --- !u!114 &6031725739143003102
 MonoBehaviour:
   m_ObjectHideFlags: 0
