@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
+  m_Name: Weapon_RocketLauncher_1
+  m_EditorClassIdentifier: 
+  _iconSprite: {fileID: 137500684, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _weaponPrefab: {fileID: 8067246484439910053, guid: 79cdc3ba6fa4a8342b9aaa1d5340c4ba, type: 3}
+  _id: rocket_laucher_1
+  _displayName: R-Launcher
+  _holsterPosition: {x: -0.25, y: 0.3, z: 0}
+  _holsterEuler: {x: 0, y: 0, z: -60}
+  _projectileSO: {fileID: 11400000, guid: 008e992b91b8a4c4da24cf58b975da63, type: 2}
+  _stats:
+    _damage: 5
+    _explosiveDamage: 5
+    _fireRate: 0.3
+    _chargeTime: 0
+    _maxHeat: 0
+    _heatPerShot: 0
+    _heatDecreasePerSecond: 0
+    _maxOverheatTime: 0
+    _shootAngle: 5
+    _arcMode: 0
+    _projectilesPerShot: 1
+    _ammoPerShot: 1
+    _isAutoChargeType: 0
+    _burstRate: 0
+    _shotsPerBurst: 0
+  _projectileStats:
+    _destroyTimeRange: {x: 3, y: 4}
+    _explosionRadius: 3
+    _canDamageProjectiles: 0
+    _maxPierceCount: 1
+    _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
+    _canAutoAim: 0
+    _autoAimDistance: 0
+    _autoAimAngle: 0
+    _moveSpeedRange: {x: 30, y: 30}
+    _scaleMultiplier: 1
+    _destroyOnStop: 0
+    _useAccelerationCurve: 1
+    _invertAcceleration: 1
+    _accelerationCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _acelerationMultiplier: 1
+    _canBounce: 0
+    _bounceTags: {fileID: 11400000, guid: 8f86bb6b935e0c5469d64ca4ac6ca586, type: 2}
+    _maxCastDistance: 0
+    _maxGuidedRadius: 0
