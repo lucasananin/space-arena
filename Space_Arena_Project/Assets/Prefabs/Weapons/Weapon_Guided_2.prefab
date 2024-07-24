@@ -9,14 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5645198961146414898}
-  - component: {fileID: 5645198961146414910}
+  - component: {fileID: 4216914223775342002}
   - component: {fileID: 5645198961146414908}
   - component: {fileID: 5645198961146414899}
   - component: {fileID: 5645198961146414911}
   - component: {fileID: 1176470449266367607}
   - component: {fileID: 8438835601221691482}
   m_Layer: 0
-  m_Name: Weapon_Guided
+  m_Name: Weapon_Guided_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +39,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5645198961146414910
+--- !u!114 &4216914223775342002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,10 +48,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5645198961146414897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb808b67afd45264aa38f541f3bc38d5, type: 3}
+  m_Script: {fileID: 11500000, guid: ce895ca5e13f3b64a8933d2ba0466c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponSO: {fileID: 11400000, guid: 2f13db3608cc9b349963b437935972ad, type: 2}
+  _weaponSO: {fileID: 11400000, guid: 8e6d532bee06d3742895a5864eeed65b, type: 2}
   _muzzle: {fileID: 5645198961662698405}
   _entitySource: {fileID: 0}
   _ammoHandler: {fileID: 0}
@@ -61,7 +61,9 @@ MonoBehaviour:
   _currentHeat: 0
   _overheatTimer: 0
   _isOverheated: 0
-  _hasShotCharge: 0
+  _nextBurst: 0
+  _currentShootCount: 0
+  _isBursting: 0
 --- !u!114 &5645198961146414908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,12 +100,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5645198961146414897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2548cc95313026e4d9011298a9694c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponBehaviour: {fileID: 5645198961146414910}
+  _weaponBehaviour: {fileID: 4216914223775342002}
   _targetTransform: {fileID: 5645198961911611334}
   _recoilOffset: {x: 0, y: -0.2, z: 0}
   _duration: 0.2
@@ -170,13 +172,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5645198961146414897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8354868badc60446878ec52079e1c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _impulseSource: {fileID: 1176470449266367607}
-  _weapon: {fileID: 5645198961146414910}
+  _weapon: {fileID: 4216914223775342002}
   _velocityMultiplier: 0.2
 --- !u!1 &5645198961662698404
 GameObject:
@@ -201,8 +203,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5645198961662698404}
-  m_LocalRotation: {x: -0, y: -0, z: 0.60876137, w: 0.7933534}
-  m_LocalPosition: {x: -0.08, y: 0.62, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -233,14 +235,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5645198961911611333}
-  m_LocalRotation: {x: 0, y: 0, z: 0.60876137, w: 0.7933534}
-  m_LocalPosition: {x: -0.2, y: 0.1, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.86602545, w: 0.49999994}
+  m_LocalPosition: {x: -0.18, y: -0.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5645198961146414898}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 75}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 120}
 --- !u!212 &5645198961911611335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -282,7 +284,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -324715930, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  m_Sprite: {fileID: -257911558, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
