@@ -18,7 +18,7 @@ MonoBehaviour:
   _displayName: Red Rain
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
-  _projectileSO: {fileID: 11400000, guid: 9db3c891a3009c44291b6bae7a42576f, type: 2}
+  _projectileSO: {fileID: 11400000, guid: d917a465c39ae1047949beae81aee504, type: 2}
   _stats:
     _damage: 0
     _explosiveDamage: 5
