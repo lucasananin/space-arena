@@ -241,6 +241,8 @@ MonoBehaviour:
   _targetEntity: {fileID: 0}
   _isFleeing: 0
   _isCowering: 0
+  _isWaitingBullCharge: 0
+  _isBullCharging: 0
   _isTargetOnLineOfSight: 0
   _timeUntilSearchPath: 0
   _searchPathTimer: 0
@@ -360,9 +362,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cb668af1eafd7458bb2bfb7c2d3e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _invincibility: 0
-  _maxHealth: 5
+  _isInvincible: 0
+  _maxHealth: 2
+  _deathDelay: 0
   _currentHealth: 0
+  _isDying: 0
   _lastDamageModel:
     _entitySource: {fileID: 0}
     _pointHit: {x: 0, y: 0, z: 0}
@@ -456,7 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 2658297561336904062}
   _duration: 0.2
-  _waitTime: 0.8
+  _waitTime: 0.2
   _isAnimating: 0
 --- !u!114 &-8619076676205812539
 MonoBehaviour:
@@ -601,7 +605,7 @@ Transform:
   m_Children:
   - {fileID: 6763135673102937580}
   m_Father: {fileID: 8675617637408569564}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8041141117417211476
 MonoBehaviour:
@@ -615,10 +619,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2fa089e9e6c23149ab3c25f256e2878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _line: {fileID: 6313559574080417271}
   _aiEntity: {fileID: 2658297561336904056}
   _aiWeaponHandler: {fileID: 2658297561336904063}
+  _line: {fileID: 6313559574080417271}
   _minTime: 0.5
+  _lineLength: 20
   _modelStartIndex: 0
   _aiWeaponModel:
     _weapons: []

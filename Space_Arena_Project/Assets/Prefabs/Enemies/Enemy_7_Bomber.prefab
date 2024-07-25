@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cb668af1eafd7458bb2bfb7c2d3e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _invincibility: 0
+  _isInvincible: 0
   _maxHealth: 2
   _deathDelay: 1.5
   _currentHealth: 0
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 2658297561336904062}
   _duration: 0.2
-  _waitTime: 0.8
+  _waitTime: 0.2
   _isAnimating: 0
 --- !u!114 &-8619076676205812539
 MonoBehaviour:

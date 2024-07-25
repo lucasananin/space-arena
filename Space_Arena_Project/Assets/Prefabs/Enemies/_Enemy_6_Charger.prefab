@@ -393,6 +393,8 @@ MonoBehaviour:
   _targetEntity: {fileID: 0}
   _isFleeing: 0
   _isCowering: 0
+  _isWaitingBullCharge: 0
+  _isBullCharging: 0
   _isTargetOnLineOfSight: 0
   _timeUntilSearchPath: 0
   _searchPathTimer: 0
@@ -512,9 +514,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cb668af1eafd7458bb2bfb7c2d3e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _invincibility: 0
+  _isInvincible: 0
   _maxHealth: 5
+  _deathDelay: 0
   _currentHealth: 0
+  _isDying: 0
   _lastDamageModel:
     _entitySource: {fileID: 0}
     _pointHit: {x: 0, y: 0, z: 0}
@@ -608,7 +612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 6972132582502089751}
   _duration: 0.2
-  _waitTime: 0.8
+  _waitTime: 0.2
   _isAnimating: 0
 --- !u!114 &8151347125946582114
 MonoBehaviour:
