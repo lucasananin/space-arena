@@ -10,71 +10,53 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: Weapon_Shotgun_4
+  m_Name: Weapon_SubMG_2
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: 1321182122, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
-  _weaponPrefab: {fileID: 2751957287607790105, guid: e42f97ca89e5a1344af51d51f283899e, type: 3}
-  _id: shotgun_4
-  _displayName: Close Shot
+  _iconSprite: {fileID: -1895561700, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _weaponPrefab: {fileID: 3562192091433409978, guid: d97b617afac7f0544901c434005d342c, type: 3}
+  _id: sub_mg_2
+  _displayName: Laser-SMG
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
-  _projectileSO: {fileID: 11400000, guid: cbc2f2ef0648fca488053811810e86d5, type: 2}
+  _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}
   _stats:
-    _damage: 5
+    _damage: 1
     _explosiveDamage: 0
-    _fireRate: 0.3
+    _fireRate: 0.1
     _chargeTime: 0
     _maxHeat: 0
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 135
-    _arcMode: 1
-    _projectilesPerShot: 6
-    _ammoPerShot: 6
+    _shootAngle: 15
+    _arcMode: 0
+    _projectilesPerShot: 1
+    _ammoPerShot: 1
     _isAutoChargeType: 0
     _burstRate: 0
     _shotsPerBurst: 0
   _projectileStats:
-    _destroyTimeRange: {x: 3, y: 4}
+    _destroyTimeRange: {x: 1, y: 2}
     _explosionRadius: 0
     _canDamageProjectiles: 0
-    _maxPierceCount: 2
+    _maxPierceCount: 1
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
-    _moveSpeedRange: {x: 10, y: 30}
-    _scaleMultiplier: 1.5
-    _destroyOnStop: 1
-    _useAccelerationCurve: 1
+    _moveSpeedRange: {x: 0, y: 0}
+    _scaleMultiplier: 1
+    _destroyOnStop: 0
+    _useAccelerationCurve: 0
     _invertAcceleration: 0
     _accelerationCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 2
-        outSlope: 2
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    _acelerationMultiplier: 3
-    _canBounce: 1
+    _acelerationMultiplier: 0
+    _canBounce: 0
     _bounceTags: {fileID: 11400000, guid: 8f86bb6b935e0c5469d64ca4ac6ca586, type: 2}
-    _maxCastDistance: 0
+    _maxCastDistance: 99
     _maxGuidedRadius: 0

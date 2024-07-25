@@ -13,50 +13,14 @@ MonoBehaviour:
   m_Name: Projectile_Molotov
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7353528016857128665, guid: 8e21c25ffd680d145b07c04ca0468243, type: 3}
-  _tagCollectionSO: {fileID: 11400000, guid: eb4797a2cf36d774fbef7a6823269be6, type: 2}
   _ammoSO: {fileID: 11400000, guid: c741b913cc5b4bf49b26e7f6a7103b33, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 192
-  _spawnPositionOffset: {x: 0, y: 0}
-  _minMaxTimeUntilDestroy: {x: 8, y: 8}
-  _maxPierceCount: 1
-  _explosionRadius: 0
-  _canAutoRotate: 0
   _entityLayerMask:
     serializedVersion: 2
-    m_Bits: 0
-  _maxDistance_autoAim: 0
-  _maxAngle: 0
-  _moveSpeed: 10
-  _destroyOnCollision: 1
-  _useAccelerationCurve: 1
-  _accelerationCurve:
+    m_Bits: 64
+  _obstacleLayerMask:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _invertAcceleration: 0
-  _acelerationMultiplier: 1
-  _destroyOnStop: 1
-  _maxCastDistance: 0
-  _maxGuidedPositionRadius: 0
+    m_Bits: 0
+  _spawnPositionOffset: {x: 0, y: 0}
