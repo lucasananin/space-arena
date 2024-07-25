@@ -15,20 +15,20 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: 9ca098a3bb5c4fb45bad1a685bb8033b, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: 2b97e7bca5fc4fd4bbfe4b95de0291af, type: 3}
   _id: machine_gun_1
-  _displayName: Machine Gun
+  _displayName: Purple-MG
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
   _stats:
-    _damage: 2
+    _damage: 1
     _explosiveDamage: 0
-    _fireRate: 0.15
+    _fireRate: 0.1
     _chargeTime: 0
     _maxHeat: 0
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 20
+    _shootAngle: 15
     _arcMode: 0
     _projectilesPerShot: 1
     _ammoPerShot: 1
@@ -45,7 +45,7 @@ MonoBehaviour:
     _autoAimDistance: 0
     _autoAimAngle: 0
     _moveSpeedRange: {x: 30, y: 30}
-    _scaleMultiplier: 1.3
+    _scaleMultiplier: 1
     _destroyOnStop: 0
     _useAccelerationCurve: 0
     _invertAcceleration: 0
