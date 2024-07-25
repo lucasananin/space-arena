@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: Weapon_Pistol_1a
+  m_Name: Weapon_Pistol_1
   m_EditorClassIdentifier: 
   _iconSprite: {fileID: 21300000, guid: 4f3ac17ec4d2f5b4c8bbaa05326d7514, type: 3}
   _weaponPrefab: {fileID: 5704818092466949252, guid: c61856f6800231948bf9daedc54fadde, type: 3}
-  _id: pistol_1_a
+  _id: pistol_1
   _displayName: Pistol
   _holsterPosition: {x: -0.25, y: -0.15, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
@@ -45,6 +45,7 @@ MonoBehaviour:
     _autoAimDistance: 0
     _autoAimAngle: 0
     _moveSpeedRange: {x: 30, y: 30}
+    _scaleMultiplier: 1
     _destroyOnStop: 0
     _useAccelerationCurve: 0
     _invertAcceleration: 0
