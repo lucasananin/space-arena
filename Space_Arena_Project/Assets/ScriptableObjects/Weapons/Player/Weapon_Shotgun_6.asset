@@ -32,14 +32,14 @@ MonoBehaviour:
     _arcMode: 1
     _projectilesPerShot: 5
     _ammoPerShot: 5
-    _isAutoChargeType: 0
+    _isAutoChargeType: 1
     _burstRate: 0
     _shotsPerBurst: 0
   _projectileStats:
     _destroyTimeRange: {x: 3, y: 4}
     _explosionRadius: 0
     _canDamageProjectiles: 0
-    _maxPierceCount: 99
+    _maxPierceCount: 2
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 0
     _autoAimDistance: 0

@@ -32,7 +32,7 @@ MonoBehaviour:
     _arcMode: 1
     _projectilesPerShot: 1
     _ammoPerShot: 1
-    _isAutoChargeType: 1
+    _isAutoChargeType: 0
     _burstRate: 0
     _shotsPerBurst: 0
   _projectileStats:
