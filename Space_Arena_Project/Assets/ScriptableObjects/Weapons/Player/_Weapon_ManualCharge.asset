@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: _Weapon_MachineGun_3
+  m_Name: _Weapon_ManualCharge
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: 943674230, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
-  _weaponPrefab: {fileID: 3562192091433409978, guid: 9e8e169bdd8833048b66fe438cf0e50d, type: 3}
-  _id: machine_gun_3
-  _displayName: Heavy Striker
-  _holsterPosition: {x: -0.25, y: 0.3, z: 0}
+  _iconSprite: {fileID: -1562107574, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _weaponPrefab: {fileID: 6724074072737659463, guid: 45dca2e579e19e14e9250acbcfd36263, type: 3}
+  _id: manual_charge_1
+  _displayName: M-Charge
+  _holsterPosition: {x: -0.25, y: -0.15, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
-  _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
+  _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}
   _stats:
-    _damage: 2
+    _damage: 5
     _explosiveDamage: 0
-    _fireRate: 0.2
-    _chargeTime: 0
+    _fireRate: 0.1
+    _chargeTime: 0.5
     _maxHeat: 0
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 15
+    _shootAngle: 0
     _arcMode: 0
     _projectilesPerShot: 1
     _ammoPerShot: 1
@@ -36,7 +36,7 @@ MonoBehaviour:
     _burstRate: 0
     _shotsPerBurst: 0
   _projectileStats:
-    _destroyTimeRange: {x: 3, y: 4}
+    _destroyTimeRange: {x: 1, y: 2}
     _explosionRadius: 0
     _canDamageProjectiles: 0
     _maxPierceCount: 1
@@ -44,8 +44,8 @@ MonoBehaviour:
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
-    _moveSpeedRange: {x: 30, y: 30}
-    _scaleMultiplier: 1.3
+    _moveSpeedRange: {x: 0, y: 0}
+    _scaleMultiplier: 1
     _destroyOnStop: 0
     _useAccelerationCurve: 0
     _invertAcceleration: 0
@@ -58,5 +58,5 @@ MonoBehaviour:
     _acelerationMultiplier: 0
     _canBounce: 0
     _bounceTags: {fileID: 11400000, guid: 8f86bb6b935e0c5469d64ca4ac6ca586, type: 2}
-    _maxCastDistance: 0
+    _maxCastDistance: 99
     _maxGuidedRadius: 0

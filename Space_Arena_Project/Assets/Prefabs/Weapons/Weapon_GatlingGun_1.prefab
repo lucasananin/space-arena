@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: -1916892800950921274}
   - component: {fileID: 6477207873678277843}
   m_Layer: 0
-  m_Name: _Weapon_MachineGun_3
+  m_Name: Weapon_GatlingGun_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15682ba2bb08d74ab1393fb60419baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponSO: {fileID: 11400000, guid: fdf51011eaf8e0b43ac0b34ffaf03b39, type: 2}
+  _weaponSO: {fileID: 11400000, guid: ebcaa205537aee4428db9a4aa27a90cb, type: 2}
   _muzzle: {fileID: 3562192089651418423}
   _entitySource: {fileID: 0}
   _ammoHandler: {fileID: 0}
