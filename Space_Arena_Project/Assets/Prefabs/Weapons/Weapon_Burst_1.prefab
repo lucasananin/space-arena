@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3700964492024119886}
   - component: {fileID: 7427310108541956550}
   m_Layer: 0
-  m_Name: Weapon_Burst_1a
+  m_Name: Weapon_Burst_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
