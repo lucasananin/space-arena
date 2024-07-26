@@ -20,7 +20,7 @@ MonoBehaviour:
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: c7cc412c99a65d44a85a88dd2a28b89d, type: 2}
   _stats:
-    _damage: 2
+    _damage: 1
     _explosiveDamage: 0
     _fireRate: 0.1
     _chargeTime: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 10
+    _shootAngle: 12
     _arcMode: 0
     _projectilesPerShot: 1
     _ammoPerShot: 1
@@ -45,7 +45,7 @@ MonoBehaviour:
     _autoAimDistance: 0
     _autoAimAngle: 1
     _moveSpeedRange: {x: 20, y: 20}
-    _scaleMultiplier: 1
+    _scaleMultiplier: 1.2
     _destroyOnStop: 0
     _useAccelerationCurve: 0
     _invertAcceleration: 0

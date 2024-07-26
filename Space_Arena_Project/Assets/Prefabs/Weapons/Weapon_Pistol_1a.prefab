@@ -212,11 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weapon: {fileID: 5704818092466949252}
   _light2D: {fileID: 5704818092340610209}
-  _minIntensity: 4
-  _maxIntensity: 6
   _intensityRange: {x: 4, y: 6}
-  _minRadiusMultiplier: 0.9
-  _maxRadiusMultiplier: 1.1
   _radiusRange: {x: 1, y: 2}
   _duration: 0.08
   _timer: 0
@@ -330,7 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponBehaviour: {fileID: 5704818092466949252}
   _targetTransform: {fileID: 5704818091080987772}
-  _recoilOffset: {x: -0.2, y: 0.1, z: 0}
+  _recoilOffset: {x: -0.2, y: 0, z: 0}
   _duration: 0.2
   _defaultPosition: {x: 0, y: 0, z: 0}
   _recoilPosition: {x: 0, y: 0, z: 0}

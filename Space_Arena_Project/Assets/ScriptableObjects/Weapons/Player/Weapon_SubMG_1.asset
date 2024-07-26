@@ -28,7 +28,7 @@ MonoBehaviour:
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 20
+    _shootAngle: 24
     _arcMode: 0
     _projectilesPerShot: 1
     _ammoPerShot: 1

@@ -20,7 +20,7 @@ MonoBehaviour:
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 0550e4f298432344dbbe5bd3bce6b4e3, type: 2}
   _stats:
-    _damage: 5
+    _damage: 2
     _explosiveDamage: 0
     _fireRate: 0.3
     _chargeTime: 0
@@ -55,25 +55,25 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
         time: 1
         value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    _acelerationMultiplier: 3
+    _acelerationMultiplier: 1
     _canBounce: 0
     _bounceTags: {fileID: 11400000, guid: 8f86bb6b935e0c5469d64ca4ac6ca586, type: 2}
     _maxCastDistance: 0

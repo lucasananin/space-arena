@@ -12,23 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: Weapon_Rifle_2
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: -2094463983, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _iconSprite: {fileID: -1534692000, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
   _weaponPrefab: {fileID: 5704818092466949252, guid: 918390cc2b6dbfe48b389eed4458e9d6, type: 3}
   _id: rifle_2
-  _displayName: B-Rifle
+  _displayName: Bullet-SR
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
   _stats:
     _damage: 2
     _explosiveDamage: 0
-    _fireRate: 0.3
+    _fireRate: 0.2
     _chargeTime: 0
     _maxHeat: 0
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 0
+    _shootAngle: 2
     _arcMode: 0
     _projectilesPerShot: 1
     _ammoPerShot: 1
@@ -45,7 +45,7 @@ MonoBehaviour:
     _autoAimDistance: 0
     _autoAimAngle: 0
     _moveSpeedRange: {x: 30, y: 30}
-    _scaleMultiplier: 1.3
+    _scaleMultiplier: 1.2
     _destroyOnStop: 0
     _useAccelerationCurve: 0
     _invertAcceleration: 0

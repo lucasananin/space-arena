@@ -18,7 +18,7 @@ MonoBehaviour:
   _displayName: Soviet Babe
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
-  _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}
+  _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}
   _stats:
     _damage: 1
     _explosiveDamage: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 10
+    _shootAngle: 12
     _arcMode: 0
     _projectilesPerShot: 1
     _ammoPerShot: 1
@@ -58,5 +58,5 @@ MonoBehaviour:
     _acelerationMultiplier: 0
     _canBounce: 0
     _bounceTags: {fileID: 11400000, guid: 8f86bb6b935e0c5469d64ca4ac6ca586, type: 2}
-    _maxCastDistance: 0
+    _maxCastDistance: 99
     _maxGuidedRadius: 0

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5704818090834962462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.15, y: -0.11, z: 0}
+  m_LocalPosition: {x: 1.42, y: -0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5704818091080987775}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -0.15, z: 0}
+  m_LocalPosition: {x: 0.6, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2094463983, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  m_Sprite: {fileID: -1534692000, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _impulseSource: {fileID: -7874860500769441361}
   _weapon: {fileID: 5704818092466949252}
-  _velocityMultiplier: 0.2
+  _velocityMultiplier: 0.3
 --- !u!114 &1336525720108659730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5200175596249306067, guid: 961ef88eb81389c4c9cff28476d26a08, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.15
+      value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 5200175596249306067, guid: 961ef88eb81389c4c9cff28476d26a08, type: 3}
       propertyPath: m_LocalPosition.y

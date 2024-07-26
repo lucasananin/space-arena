@@ -292,4 +292,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _impulseSource: {fileID: 8926880579969385397}
   _weapon: {fileID: 8067246484439910053}
-  _velocityMultiplier: 0.2
+  _velocityMultiplier: 0.3

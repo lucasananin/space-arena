@@ -426,7 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _impulseSource: {fileID: -3242506195273867952}
   _weapon: {fileID: 3562192091433409978}
-  _velocityMultiplier: 0.2
+  _velocityMultiplier: 0.1
 --- !u!114 &6477207873678277843
 MonoBehaviour:
   m_ObjectHideFlags: 0

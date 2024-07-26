@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponBehaviour: {fileID: 5704818092466949252}
   _targetTransform: {fileID: 5704818091080987772}
-  _recoilOffset: {x: -0.2, y: 0.1, z: 0}
+  _recoilOffset: {x: -0.2, y: 0, z: 0}
   _duration: 0.2
   _defaultPosition: {x: 0, y: 0, z: 0}
   _recoilPosition: {x: 0, y: 0, z: 0}
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _impulseSource: {fileID: -7874860500769441361}
   _weapon: {fileID: 5704818092466949252}
-  _velocityMultiplier: 0.2
+  _velocityMultiplier: 0.3
 --- !u!1001 &5704818092456425585
 PrefabInstance:
   m_ObjectHideFlags: 0
