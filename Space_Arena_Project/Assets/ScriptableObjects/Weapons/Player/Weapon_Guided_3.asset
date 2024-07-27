@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: Weapon_Guided_2
+  m_Name: Weapon_Guided_3
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: -257911558, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
-  _weaponPrefab: {fileID: 4216914223775342002, guid: 134b80a060a753f46afa9d14afe14cd1, type: 3}
-  _id: guided_2
-  _displayName: Red Rain
+  _iconSprite: {fileID: 9152810, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _weaponPrefab: {fileID: 2797867902814346651, guid: ea5edf88176beeb4098699eb9a5dc65f, type: 3}
+  _id: guided_3
+  _displayName: Guided Laucher
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
-  _projectileSO: {fileID: 11400000, guid: d917a465c39ae1047949beae81aee504, type: 2}
+  _projectileSO: {fileID: 11400000, guid: fd35df3f7defe414fa0b33c90cf0cda6, type: 2}
   _stats:
     _damage: 0
-    _explosiveDamage: 5
+    _explosiveDamage: 2
     _fireRate: 0.1
     _chargeTime: 0
     _maxHeat: 0
@@ -31,13 +31,13 @@ MonoBehaviour:
     _shootAngle: 0
     _arcMode: 0
     _projectilesPerShot: 1
-    _ammoPerShot: 5
+    _ammoPerShot: 3
     _isAutoChargeType: 0
-    _burstRate: 1
-    _shotsPerBurst: 5
+    _burstRate: 0.3
+    _shotsPerBurst: 3
   _projectileStats:
-    _destroyTimeRange: {x: 1.5, y: 1.5}
-    _explosionRadius: 1.5
+    _destroyTimeRange: {x: 0.8, y: 0.8}
+    _explosionRadius: 1
     _canDamageProjectiles: 0
     _maxPierceCount: 1
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
@@ -59,4 +59,4 @@ MonoBehaviour:
     _canBounce: 0
     _bounceTags: {fileID: 11400000, guid: 8f86bb6b935e0c5469d64ca4ac6ca586, type: 2}
     _maxCastDistance: 0
-    _maxGuidedRadius: 2
+    _maxGuidedRadius: 1

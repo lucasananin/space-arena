@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83bc7b64efbc1f4e9b1e00bbec38444, type: 3}
+  m_Name: Projectile_Guided_3
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 8552097569084531652, guid: 5b18daa366c50a2439d894cc65c8f160, type: 3}
+  _ammoSO: {fileID: 11400000, guid: bac4e9de8935da2408558c7a3be51837, type: 2}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  _entityLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _spawnPositionOffset: {x: 0, y: 0}
