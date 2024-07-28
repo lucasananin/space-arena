@@ -6,12 +6,12 @@ using UnityEngine;
 public class TimeFxHandler : MonoBehaviour
 {
     [Title("// Hit Stop")]
-    [SerializeField] float _time_hs = 0.1f;
-    [SerializeField] float _scale_hs = 0.01f;
+    [SerializeField] float _hitStopTime = 0.2f;
+    [SerializeField] float _hitStopScale = 0.1f;
 
     [Title("// Slow Motion")]
-    [SerializeField] float _time_sm = 0.1f;
-    [SerializeField] float _scale_sm = 0.01f;
+    [SerializeField] float _slowMoTime = 3f;
+    [SerializeField] float _slowMoScale = 0.3f;
     [SerializeField, Range(0, 99)] int _odd = 10;
 
     private void OnEnable()
@@ -42,12 +42,12 @@ public class TimeFxHandler : MonoBehaviour
 
     private void PlaySlowMotion()
     {
-        StartCoroutine(Play_routine(_scale_sm, _time_sm));
+        StartCoroutine(Play_routine(_slowMoScale, _slowMoTime));
     }
 
     private void PlayHitStop()
     {
-        StartCoroutine(Play_routine(_scale_hs, _time_hs));
+        StartCoroutine(Play_routine(_hitStopScale, _hitStopTime));
     }
 
     private IEnumerator Play_routine(float _scale, float _time)
@@ -65,7 +65,7 @@ public class TimeFxHandler : MonoBehaviour
     private IEnumerator Play_HitstopAndTheSlowMotion_routine()
     {
         PlayHitStop();
-        yield return new WaitForSeconds(_time_hs);
+        yield return new WaitForSeconds(_hitStopTime);
         PlaySlowMotion();
     }
 }

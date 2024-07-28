@@ -8,7 +8,8 @@ public class ChargingShotVfx : MonoBehaviour
     [SerializeField] WeaponBehaviour _weapon = null;
     [SerializeField] ParticleSystem _ps = null;
     [SerializeField] Transform _circle = null;
-    [SerializeField] Vector3 _maxScale = Vector3.one;
+    [SerializeField] Ease _ease = default;
+    [SerializeField, Range(0.1f, 2f)] float _scaleMultiplier = 0.5f;
 
     private void Awake()
     {
@@ -35,7 +36,7 @@ public class ChargingShotVfx : MonoBehaviour
 
         ResetValues();
         var _duration = _weapon.ChargingTime;
-        _circle.DOScale(_maxScale, _duration);
+        _circle.DOScale(_scaleMultiplier, _duration).SetEase(_ease);
     }
 
     private void Stop()
