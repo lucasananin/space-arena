@@ -21325,11 +21325,11 @@ MonoBehaviour:
   _waves:
   - _entities:
     - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
-      _quantity: 4
-    - _so: {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
       _quantity: 8
-    - _so: {fileID: 11400000, guid: c9a872c556f876748aca59a351afa0d5, type: 2}
+    - _so: {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
       _quantity: 6
+    - _so: {fileID: 11400000, guid: c9a872c556f876748aca59a351afa0d5, type: 2}
+      _quantity: 4
     - _so: {fileID: 11400000, guid: 5cb6b2abc3018174ba97dcc2df7fc902, type: 2}
       _quantity: 0
     - _so: {fileID: 11400000, guid: 5ea292a48494e2249841f864c84dadb2, type: 2}
@@ -59275,7 +59275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4023e2bd69e5b54d846e41ea468df1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _infiniteAmmo: 1
+  _infiniteAmmo: 0
   _models:
   - _so: {fileID: 11400000, guid: b3dc590e3e7accd459b765e535abb941, type: 2}
     _quantity: 0

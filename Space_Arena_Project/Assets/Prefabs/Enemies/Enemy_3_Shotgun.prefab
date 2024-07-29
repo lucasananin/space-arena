@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isInvincible: 0
-  _maxHealth: 3
+  _maxHealth: 2
   _deathDelay: 0
   _currentHealth: 0
   _isDying: 0

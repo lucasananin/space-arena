@@ -22,7 +22,7 @@ MonoBehaviour:
   _stats:
     _damage: 1
     _explosiveDamage: 0
-    _fireRate: 0.4
+    _fireRate: 0.8
     _chargeTime: 0
     _maxHeat: 0
     _heatPerShot: 0
