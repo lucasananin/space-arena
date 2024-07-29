@@ -300,9 +300,10 @@ GameObject:
   - component: {fileID: 1371806021717860764}
   - component: {fileID: 7353528016857128665}
   - component: {fileID: 9165684251094917796}
-  m_Layer: 0
+  - component: {fileID: 6599587875688167298}
+  m_Layer: 6
   m_Name: Projectile_Shell_1_Red
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,7 +353,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7353528016857128666}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -393,13 +394,13 @@ MonoBehaviour:
     _destroyTimeRange: {x: 0, y: 0}
     _explosionRadius: 0
     _canDamageProjectiles: 0
-    _scaleMultiplier: 1
     _maxPierceCount: 1
     _blockPierceTags: {fileID: 0}
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
     _moveSpeedRange: {x: 0, y: 0}
+    _scaleMultiplier: 1
     _destroyOnStop: 0
     _useAccelerationCurve: 0
     _invertAcceleration: 0
@@ -440,6 +441,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectileBehaviour: {fileID: 7353528016857128665}
   _hitVfx: {fileID: 4595461622765139695, guid: 639f654554c48174098c08c0ccce3547, type: 3}
+--- !u!114 &6599587875688167298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8d3ca22c68a1b47bada30050b9dc4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isInvincible: 0
+  _maxHealth: 1
+  _deathDelay: 0
+  _currentHealth: 0
+  _isDying: 0
+  _lastDamageModel:
+    _entitySource: {fileID: 0}
+    _pointHit: {x: 0, y: 0, z: 0}
+    _value: 0
 --- !u!1 &8182280237864687526
 GameObject:
   m_ObjectHideFlags: 0
