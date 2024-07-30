@@ -6,7 +6,7 @@ using UnityEngine;
 public class ShrinkFx : MonoBehaviour
 {
     [SerializeField] Transform[] _transforms = null;
-    [SerializeField] float _shrinkTimeMultiplier = 1f;
+    [SerializeField] float _shrinkDuration = 0.3f;
     [SerializeField, ReadOnly] List<Vector3> _defaultScales = null;
     [SerializeField, ReadOnly] float _shrinkTimer = 0f;
 
@@ -24,7 +24,7 @@ public class ShrinkFx : MonoBehaviour
     {
         if (_shrinkTimer > 1) return;
 
-        _shrinkTimer += Time.deltaTime * _shrinkTimeMultiplier;
+        _shrinkTimer += Time.deltaTime * (1f / _shrinkDuration);
         int _count = _transforms.Length;
 
         for (int i = 0; i < _count; i++)
