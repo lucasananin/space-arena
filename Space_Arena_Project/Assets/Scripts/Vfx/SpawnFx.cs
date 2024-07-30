@@ -1,4 +1,4 @@
-using DG.Tweening;
+//using DG.Tweening;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class SpawnFx : MonoBehaviour
 {
-    [SerializeField] Transform _transform = null;
-    [SerializeField] float _duration = 0.2f;
+    //[SerializeField] Transform _transform = null;
+    [SerializeField] ParticleSystem _ps = null;
+    //[SerializeField] float _duration = 0.2f;
     [SerializeField] float _waitTime = 1f;
     [SerializeField, ReadOnly] bool _isAnimating = false;
     //[Space]
@@ -18,18 +19,22 @@ public class SpawnFx : MonoBehaviour
 
     public void Play()
     {
-        _isAnimating = true;
-        _transform.localScale = Vector3.zero;
+        StartCoroutine(Play_routine());
+        //_isAnimating = true;
+        //_transform.localScale = Vector3.zero;
+        //_ps.Play();
 
-        _transform.DOScale(Vector3.one, _duration).
-            OnComplete(() =>
-            {
-                StartCoroutine(Play_routine());
-            });
+        //_transform.DOScale(Vector3.one, _duration).
+        //    OnComplete(() =>
+        //    {
+        //        StartCoroutine(Play_routine());
+        //    });
     }
 
     private IEnumerator Play_routine()
     {
+        _ps.Play();
+        _isAnimating = true;
         yield return new WaitForSeconds(_waitTime);
         _isAnimating = false;
     }
