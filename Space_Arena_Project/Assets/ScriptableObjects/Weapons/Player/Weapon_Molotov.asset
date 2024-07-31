@@ -44,7 +44,7 @@ MonoBehaviour:
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
-    _moveSpeedRange: {x: 18, y: 20}
+    _moveSpeedRange: {x: 15, y: 15}
     _scaleMultiplier: 1
     _destroyOnStop: 1
     _useAccelerationCurve: 1
