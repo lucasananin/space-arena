@@ -21315,6 +21315,7 @@ MonoBehaviour:
     _maxActiveSpawns: 1
   _container: {fileID: 1159678663}
   _spawnTime: 0.2
+  _distanceRange: {x: 5, y: 10}
   _minDistanceFromPlayer: 4
   _useRandomizedWaves: 0
   _waveModel:
@@ -36989,7 +36990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACwn+sqdMS1WgIAABUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzqWDUyhJb61DSA8kTEgnF1821hprkCWPPgIkw3/vSraxSycnxNu3q/d2V/5gQtkac6fN0gi+0hzZjxELZ/Zl1Afv8QBbrTbiHTvOi+CuDCSInCdwQhOehDSrK3RG5D/VVgbyhECvRKFNteBbTLV1luACpEUKGe1CtiLoY8QO9DO+CSlHOl3Nw+mdTjeT0YmOOSqHpqd2xI7WsLzKJVQ18iC5Jyezlp3MIk2RmZYRhOdaSmFbJcwd6+g0hdp68kEELoCcxesnX0OtEsW2dEHnMP2xKCy6VpSB460w1KKmLvulm75VYHeNsjeQPkq4uo6qmqKr/+LjJIYLo6v77t5kEu5wpch3T3DMwbpBY4fwbS89iQ3ag9zBq8SXEtWDXhrtFaegMz6keotXt/3fs7W0xHzX443UC9DXn48neDhF94dUiuo1dnLaABupY8fj8NHQbH6T4Lgati1BaFDxx+IzbIc71AbuhLGOQq1LFeS9am8ClS1iz4Ib71JtFJphhRoVSHdcUx13OcOL2OdZdxCeS3t7G+tewUVKhHv+ZHIRWuv9eVq21PsV2vLROykU9q0OgQdqVKqValZsaKlL23hTQD5I23rB/90thtc3s2Q2Qyhgzqez+XgO07xA/M6nxXT+bQ4sLp9Q5BPkuhHatofGpvriihat+4qMlgbquO7cwH4p3itte6ZQhd7kBlE9NhXOwtHQJfQw+YILatAGnRMqDpx9ZEzqfIc8OxfKotPFwRnI+ioZq8WbdgHJWBo/GxkL8HmZ1wbfBO7D5V2xEzv9BVBLAwQUAAAICAAAsJ/rHMHCam0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0UqqFpamhqWlqYlqieYqJqbmueaJJclpqqlmKSZqJubF5olIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAsJ/rKnTEtVoCAAAVBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAsJ/rHMHCam0AAAB4AAAACQAkAAAAAAAAAAAAAACnAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAF8DAAAAAA==
+    dataString: UEsDBBQAAAgIAACwn+uH3QZeWQIAABUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk0HEihJb61DSA8JTGgnF18Wa401yJJHH+Fr+O9dyTZ26eSEePt29d7uyicmlK0wc9rMjeAvmiP7PmDhzL4MuuAz7mGj1UocseW8C+6KQILIeQMnNOGjkGZ1ic6I7IfayEAeEuiVyLUpZ3yDibbOEpyDtEgho13IVgSdBmxPPzcPIeVAp9tpOB3p9DAcnOmYoXJoOmpLbGk1y6tMQlkhD5I78l3Lvqtpisw0jCA801IK2yhh7lBFpwlU1pMPInAB5CxeP/w6IaBAsSlc0NlPX+S5RdeIMnB4FIZaVNdlP3XdtxLstlb2AdJHCbf3UVVd9OW/+M0ohnOjy+f23tEw3OEKkW3f4JCBdb3G9uHHTvooNmgHcgtrie8Fqlc9N9orTkFnfEj1Fm8fu78Xa0mB2bbDa6lXoK8+H0/wcI7u94kU5Tp2clwDK6ljx+Pw0dBsfpHguBq2KUFoUPHH4m/Y9HeoCTwJYx2FGpcqyFtrbwKVzWLPghvvEm0Umn6FChVId1hSHXc9w6vY51lPEJ5Lc3sTa1/BVUqEO/5weBVa6t1lWrbQuxe0xcI7KRR2rQ6BV2pUopWqV6xvqU1beZND1kvbeMH/3S2G9w+T0WSCkMOUjyfTmymMsxzxGx/n4+ndFFhcPqHIJ8hlLbRpD41NdcUVLVr7FRnMDVRx3bmB3VwcS207plC5XmUGUS3qChfhaOgSeph8xgU1aIXOCRUHzk4pkzrbIk8vhdLodLZ3BtKuSsoq8aFdQFKWxM9GygJ8WealwQ+Bu3B5W+zMzn8BUEsDBBQAAAgIAACwn+scwcJqbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrRSqoWlqaGpaWpiWqJ5iompua55oklyWmqqWYpJmom5sXmiUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACwn+uH3QZeWQIAABUFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACwn+scwcJqbQAAAHgAAAAJACQAAAAAAAAAAAAAAKYCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAXgMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -37061,7 +37062,7 @@ MonoBehaviour:
     seed: 0
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
-  showGraphs: 0
+  showGraphs: 1
 --- !u!1 &1202935682
 GameObject:
   m_ObjectHideFlags: 0
@@ -62775,7 +62776,7 @@ Transform:
   m_GameObject: {fileID: 1600357227}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 1, z: 1}
+  m_LocalScale: {x: 15, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 886021319}
@@ -63965,7 +63966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6dd40c596b8004984a3b34086dc615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isInvincible: 0
+  _isInvincible: 1
   _maxHealth: 8
   _deathDelay: 0
   _currentHealth: 0
@@ -64018,7 +64019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4023e2bd69e5b54d846e41ea468df1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _infiniteAmmo: 0
+  _infiniteAmmo: 1
   _models:
   - _so: {fileID: 11400000, guid: b3dc590e3e7accd459b765e535abb941, type: 2}
     _quantity: 0

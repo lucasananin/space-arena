@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] RandomizedWaveModel[] _randomizedWaves = null;
     [SerializeField] Transform _container = null;
     [SerializeField, Range(0.1f, 9f)] float _spawnTime = 1f;
-    [SerializeField, Range(0f, 12f)] float _minDistanceFromPlayer = 6f;
+    [SerializeField] Vector2 _distanceRange = default;
     [SerializeField] bool _useRandomizedWaves = false;
     [Space]
     [SerializeField, ReadOnly] WaveModel _waveModel = null;
@@ -95,7 +95,8 @@ public class EnemySpawner : MonoBehaviour
 
     private Vector3 GetRandomNodePosition()
     {
-        Vector3 _position = Vector3.zero;
+        var _finalPosition = Vector3.zero;
+        var _playerPosition = _player.transform.position;
 
         do
         {
@@ -105,19 +106,20 @@ public class EnemySpawner : MonoBehaviour
 
             if (_node.Walkable)
             {
-                _position = (Vector3)_node.position;
+                _finalPosition = (Vector3)_node.position;
             }
 
-            var _isCloseToPlayer = GeneralMethods.IsPointCloseToTarget(_position, _player.transform.position, _minDistanceFromPlayer);
+            var _isCloseToPlayer = GeneralMethods.IsPointCloseToTarget(_finalPosition, _playerPosition, _distanceRange.x);
+            var _isFarFromPlayer = !GeneralMethods.IsPointCloseToTarget(_finalPosition, _playerPosition, _distanceRange.y);
 
-            if (_isCloseToPlayer)
+            if (_isCloseToPlayer || _isFarFromPlayer)
             {
-                _position = Vector3.zero;
+                _finalPosition = Vector3.zero;
             }
 
-        } while (_position == Vector3.zero);
+        } while (_finalPosition == Vector3.zero);
 
-        return _position;
+        return _finalPosition;
     }
 
     private void DecreaseActiveSpawnCount(HealthBehaviour _obj)
