@@ -16,7 +16,7 @@ MonoBehaviour:
   _ammoSO: {fileID: 11400000, guid: b3dc590e3e7accd459b765e535abb941, type: 2}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 704
   _entityLayerMask:
     serializedVersion: 2
     m_Bits: 64

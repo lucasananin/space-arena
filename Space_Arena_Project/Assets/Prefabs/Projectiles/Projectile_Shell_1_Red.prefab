@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 7353528016857128665}
   - component: {fileID: 9165684251094917796}
   - component: {fileID: 6599587875688167298}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Projectile_Shell_1_Red
   m_TagString: Projectile
   m_Icon: {fileID: 0}

@@ -265,9 +265,9 @@ GameObject:
   - component: {fileID: 4705853102255858287}
   - component: {fileID: 7353528016857128665}
   - component: {fileID: 689311955822870261}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: _Projectile_PhysicalCharged
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -343,17 +343,44 @@ MonoBehaviour:
     _entitySource: {fileID: 0}
     _weaponSource: {fileID: 0}
     _projectileSO: {fileID: 0}
-    _isChargedShot: 0
   _projectileSO: {fileID: 11400000, guid: 1d8646e43cca1914ba232a22c09afd75, type: 2}
+  _stats:
+    _destroyTimeRange: {x: 0, y: 0}
+    _explosionRadius: 0
+    _canDamageProjectiles: 0
+    _maxPierceCount: 1
+    _blockPierceTags: {fileID: 0}
+    _canAutoAim: 0
+    _autoAimDistance: 0
+    _autoAimAngle: 0
+    _moveSpeedRange: {x: 0, y: 0}
+    _scaleMultiplier: 1
+    _destroyOnStop: 0
+    _useAccelerationCurve: 0
+    _invertAcceleration: 0
+    _accelerationCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _acelerationMultiplier: 0
+    _canBounce: 0
+    _bounceTags: {fileID: 0}
+    _maxCastDistance: 0
+    _maxGuidedRadius: 0
   _timeUntilDestroy: 100
   _destroyTimer: 0
   _currentPierceCount: 0
+  _tagsList: []
   _rb: {fileID: 7523388042507287481}
   _dummyCircleCollider: {fileID: 4705853102255858287}
+  _renderTransform: {fileID: 0}
   _collidersHit: []
   _lastPosition: {x: 0, y: 0, z: 0}
   _defaultVelocity: {x: 0, y: 0}
   _accelerationTime: 0
+  _speedMultiplier: 0
 --- !u!114 &689311955822870261
 MonoBehaviour:
   m_ObjectHideFlags: 0

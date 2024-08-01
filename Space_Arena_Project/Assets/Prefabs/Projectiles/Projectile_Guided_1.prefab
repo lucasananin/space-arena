@@ -357,9 +357,9 @@ GameObject:
   - component: {fileID: 5118938156265620501}
   - component: {fileID: 6031725739143003102}
   - component: {fileID: -4530696284390413604}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Projectile_Guided_1
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -402,13 +402,13 @@ MonoBehaviour:
     _destroyTimeRange: {x: 0, y: 0}
     _explosionRadius: 0
     _canDamageProjectiles: 0
-    _canPierceObstacles: 0
     _maxPierceCount: 1
+    _blockPierceTags: {fileID: 0}
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
     _moveSpeedRange: {x: 0, y: 0}
-    _canBounce: 0
+    _scaleMultiplier: 1
     _destroyOnStop: 0
     _useAccelerationCurve: 0
     _invertAcceleration: 0
@@ -419,6 +419,8 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _acelerationMultiplier: 0
+    _canBounce: 0
+    _bounceTags: {fileID: 0}
     _maxCastDistance: 0
     _maxGuidedRadius: 0
   _timeUntilDestroy: 0

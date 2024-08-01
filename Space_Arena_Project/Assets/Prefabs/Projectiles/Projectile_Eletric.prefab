@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3761620198474376623}
   - component: {fileID: -2459257584825614321}
   - component: {fileID: -1557325256273126192}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Projectile_Eletric
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
