@@ -15,7 +15,7 @@ MonoBehaviour:
   _opponentTags: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
   _projectileHitTag: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
   _entityPrefab: {fileID: 6972132582502089745, guid: a3a98dab633ada24893296867a5f82ee, type: 3}
-  _stopMovingOnClose: 1
+  _stopMovingOnClose: 0
   _stopMovingOnTargetAcquired: 0
   _repathOnTargetFarAway: 0
   _minTargetDistance: 3
