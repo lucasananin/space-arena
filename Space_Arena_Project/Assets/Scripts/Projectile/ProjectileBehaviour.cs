@@ -80,6 +80,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour
 
             if (_colliderHit.TryGetComponent(out HealthBehaviour _healthBehaviour))
             {
+                if (!_stats.CanDamageSource && HasHitSource(_colliderHit.gameObject)) continue;
                 if (HasObstacleBetween(_point, _colliderHit.transform.position)) continue;
 
                 var _damage = _shootModel.GetExplosiveDamage();

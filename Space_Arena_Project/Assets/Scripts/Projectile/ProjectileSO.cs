@@ -27,8 +27,11 @@ public class ProjectileStats
 {
     [Title("// General")]
     [SerializeField] Vector2 _destroyTimeRange = default;
-    [SerializeField, Range(0f, 99)] float _explosionRadius = 0f;
     [SerializeField] bool _canDamageProjectiles = false;
+
+    [Title("// Explosion")]
+    [SerializeField, Range(0f, 99)] float _explosionRadius = 0f;
+    [SerializeField] bool _canDamageSource = false;
 
     [Title("// Piercing")]
     [SerializeField, Range(1, 99)] int _maxPierceCount = 1;
@@ -59,8 +62,10 @@ public class ProjectileStats
     [SerializeField, Range(0f, 9f)] float _maxGuidedRadius = 0f;
 
     public Vector2 DestroyTimeRange { get => _destroyTimeRange; private set => _destroyTimeRange = value; }
-    public float ExplosionRadius { get => _explosionRadius; private set => _explosionRadius = value; }
     public bool CanDamageProjectiles { get => _canDamageProjectiles; private set => _canDamageProjectiles = value; }
+
+    public float ExplosionRadius { get => _explosionRadius; private set => _explosionRadius = value; }
+    public bool CanDamageSource { get => _canDamageSource; private set => _canDamageSource = value; }
 
     public int MaxPierceCount { get => _maxPierceCount; private set => _maxPierceCount = value; }
     public TagCollectionSO BlockPierceTags { get => _blockPierceTags; private set => _blockPierceTags = value; }
