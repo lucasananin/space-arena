@@ -12142,8 +12142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _volume: {fileID: 528917374}
+  _range: {x: 1, y: 0}
   _duration: 0.1
-  _cAbe: {fileID: 0}
+  _component: {fileID: 0}
   _time: 0
 --- !u!1 &559922185
 GameObject:
