@@ -37,8 +37,9 @@ MonoBehaviour:
     _shotsPerBurst: 5
   _projectileStats:
     _destroyTimeRange: {x: 1.5, y: 1.5}
-    _explosionRadius: 1.5
     _canDamageProjectiles: 0
+    _explosionRadius: 1.5
+    _canDamageSource: 1
     _maxPierceCount: 1
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 0
