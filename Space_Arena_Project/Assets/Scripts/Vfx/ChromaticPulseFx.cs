@@ -8,8 +8,9 @@ using UnityEngine.Rendering.Universal;
 public class ChromaticPulseFx : MonoBehaviour
 {
     [SerializeField] Volume _volume = null;
+    [SerializeField] Vector2 _range = Vector2.right;
     [SerializeField] float _duration = 1f;
-    [SerializeField, ReadOnly] ChromaticAberration _cAbe = null;
+    [SerializeField, ReadOnly] ChromaticAberration _component = null;
     [SerializeField, ReadOnly] float _time = 0f;
 
     private void Awake()
@@ -36,7 +37,7 @@ public class ChromaticPulseFx : MonoBehaviour
     {
         if (_time > 1f) return;
         _time += Time.deltaTime * (1f / _duration);
-        _cAbe.intensity.Override(Mathf.Lerp(1f, 0f, _time));
+        _component.intensity.Override(Mathf.Lerp(_range.x, _range.y, _time));
     }
 
     private void ResetTime(HealthBehaviour _health)
@@ -46,26 +47,20 @@ public class ChromaticPulseFx : MonoBehaviour
 
     private void InitReferences()
     {
-        VolumeProfile _volumeProfile = _volume.profile;
+        var _profile = _volume.profile;
 
-        if (!_volumeProfile)
+        if (!_profile)
         {
             throw new System.NullReferenceException(nameof(VolumeProfile));
         }
 
-        if (_volumeProfile.TryGet(out ChromaticAberration _cAbe))
+        if (_profile.TryGet(out ChromaticAberration _cAbe))
         {
-            this._cAbe = _cAbe;
+            _component = _cAbe;
         }
         else
         {
             throw new System.NullReferenceException(nameof(_cAbe));
         }
-    }
-
-    [Button]
-    private void Play()
-    {
-        ResetTime(null);
     }
 }

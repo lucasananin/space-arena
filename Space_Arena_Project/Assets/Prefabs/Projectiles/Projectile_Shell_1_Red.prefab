@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72698953132579288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -93,6 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3208823025128649072}
+  - component: {fileID: 5418601023169697694}
   m_Layer: 0
   m_Name: Renders
   m_TagString: Untagged
@@ -118,6 +119,17 @@ Transform:
   m_Father: {fileID: 7353528016857128664}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &5418601023169697694
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2153646109469632683}
+  m_Enabled: 1
+  m_SortingLayerID: -619417749
+  m_SortingLayer: 1
+  m_SortingOrder: 0
 --- !u!1 &4055043769393349797
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +309,6 @@ GameObject:
   - component: {fileID: 7353528016857128664}
   - component: {fileID: 7523388042507287481}
   - component: {fileID: 4705853102255858287}
-  - component: {fileID: 1371806021717860764}
   - component: {fileID: 7353528016857128665}
   - component: {fileID: 9165684251094917796}
   - component: {fileID: 6599587875688167298}
@@ -362,17 +373,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
---- !u!210 &1371806021717860764
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7353528016857128666}
-  m_Enabled: 1
-  m_SortingLayerID: -619417749
-  m_SortingLayer: 1
-  m_SortingOrder: 0
 --- !u!114 &7353528016857128665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,8 +392,9 @@ MonoBehaviour:
   _projectileSO: {fileID: 11400000, guid: 54efe47f8009a524fa89def17fec7adb, type: 2}
   _stats:
     _destroyTimeRange: {x: 0, y: 0}
-    _explosionRadius: 0
     _canDamageProjectiles: 0
+    _explosionRadius: 0
+    _canDamageSource: 0
     _maxPierceCount: 1
     _blockPierceTags: {fileID: 0}
     _canAutoAim: 0
