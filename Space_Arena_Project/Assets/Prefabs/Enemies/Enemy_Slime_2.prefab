@@ -605,7 +605,7 @@ MonoBehaviour:
   - {fileID: 7900603053009498708}
   _health: {fileID: 6972132582502089756}
   _hitMaterial: {fileID: 2100000, guid: 7cc9f605a43fb2f4e90e8c3a56ee86b7, type: 2}
-  _duration: 0.05
+  _duration: 0.1
   _defaultMaterials: []
   _timer: 0
   _isHit: 0

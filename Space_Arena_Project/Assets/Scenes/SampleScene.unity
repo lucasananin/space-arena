@@ -12163,7 +12163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6972132582502089751, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6972132582502089751, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12203,7 +12203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6972132582502089762, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7900603053009498708, guid: 84aa5e10c8e41cd4bb5395505b7bc0e1, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -21317,7 +21317,7 @@ MonoBehaviour:
   _container: {fileID: 1159678663}
   _spawnTime: 0.2
   _distanceRange: {x: 5, y: 10}
-  _useRandomizedWaves: 1
+  _useRandomizedWaves: 0
   _waveModel:
     _entities: []
     _maxActiveSpawns: 4
