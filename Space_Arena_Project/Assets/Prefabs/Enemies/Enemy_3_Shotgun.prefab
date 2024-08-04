@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 2658297561336904053}
   - component: {fileID: 2658297561336904063}
   - component: {fileID: 2658297561336904052}
+  - component: {fileID: 1072701033595980916}
   - component: {fileID: -6225871189802186454}
   - component: {fileID: -1064852920540900804}
   - component: {fileID: -592222945812360713}
@@ -365,7 +366,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2658297561336904011}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28e18d0f3e377ce499584319cc0517cc, type: 3}
   m_Name: 
@@ -377,6 +378,26 @@ MonoBehaviour:
   _duration: 0.2
   _vibrato: 40
   _defaultPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &1072701033595980916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658297561336904011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 798a0e8db6191f74ca30a883644d640b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderers:
+  - {fileID: 3974821397676983876}
+  - {fileID: 3974821396568531052}
+  _health: {fileID: 2658297561336904053}
+  _hitMaterial: {fileID: 2100000, guid: 7cc9f605a43fb2f4e90e8c3a56ee86b7, type: 2}
+  _duration: 0.05
+  _defaultMaterials: []
+  _timer: 0
 --- !u!114 &-6225871189802186454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,6 +935,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
+--- !u!212 &3974821396568531052 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
+  m_PrefabInstance: {fileID: 5256751002564413857}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &3974821397180803488 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9212918082766544897, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
@@ -922,5 +948,10 @@ Animator:
 --- !u!4 &3974821397180803495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9212918082766544902, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
+  m_PrefabInstance: {fileID: 5256751002564413857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &3974821397676983876 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9212918082609041381, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
   m_PrefabInstance: {fileID: 5256751002564413857}
   m_PrefabAsset: {fileID: 0}
