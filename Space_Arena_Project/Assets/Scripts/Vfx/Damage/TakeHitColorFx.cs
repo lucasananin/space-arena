@@ -64,7 +64,10 @@ public class TakeHitColorFx : MonoBehaviour
         int _count = _renderers.Length;
 
         for (int i = 0; i < _count; i++)
-            _renderers[i].material = _mat;
+        {
+            _renderers[i].sharedMaterial = _mat;
+            //_renderers[i].material.SetFloat("_HitEffectBlend", 1);
+        }
     }
 
     private void ResetMaterials()
@@ -72,7 +75,9 @@ public class TakeHitColorFx : MonoBehaviour
         int _count = _renderers.Length;
 
         for (int i = 0; i < _count; i++)
-            _renderers[i].material = _defaultMaterials[i];
+        {
+            _renderers[i].sharedMaterial = _defaultMaterials[i];
+        }
     }
 
     private void SetDefaults()
@@ -80,6 +85,6 @@ public class TakeHitColorFx : MonoBehaviour
         int _count = _renderers.Length;
 
         for (int i = 0; i < _count; i++)
-            _defaultMaterials.Add(_renderers[i].material);
+            _defaultMaterials.Add(_renderers[i].sharedMaterial);
     }
 }
