@@ -346,7 +346,7 @@ MonoBehaviour:
   _weaponModels:
   - _weapons:
     - {fileID: 5154796510546133376}
-    _shootRateRange: {x: 1, y: 3}
+    _shootRateRange: {x: 2, y: 3}
     _canRotateWhileShooting: 1
     _canShootWhileMoving: 1
     _onlyShootOnTargetAcquired: 1
@@ -397,6 +397,7 @@ MonoBehaviour:
   _hitMaterial: {fileID: 2100000, guid: 7cc9f605a43fb2f4e90e8c3a56ee86b7, type: 2}
   _duration: 0.06
   _defaultMaterials: []
+  _timer: 0
 --- !u!114 &-7623101571160955741
 MonoBehaviour:
   m_ObjectHideFlags: 0

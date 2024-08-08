@@ -10,12 +10,13 @@ public class TakeHitColorFx : MonoBehaviour
     [SerializeField] Material _hitMaterial = null;
     [SerializeField] float _duration = 0.06f;
     [SerializeField, ReadOnly] List<Material> _defaultMaterials = null;
+    [SerializeField, ReadOnly] float _timer = 0f;
 
-    private WaitForSeconds _waitForSeconds = null;
+    //private WaitForSeconds _waitForSeconds = null;
 
     private void Awake()
     {
-        _waitForSeconds = new WaitForSeconds(_duration);
+        //_waitForSeconds = new WaitForSeconds(_duration);
         SetDefaults();
     }
 
@@ -29,17 +30,31 @@ public class TakeHitColorFx : MonoBehaviour
         _health.OnDamageTaken -= _health_OnDamageTaken;
     }
 
-    private void _health_OnDamageTaken()
+    private void Update()
     {
-        StartCoroutine(ChangeMaterial_routine());
+        if (_timer >= _duration) return;
+
+        _timer += Time.deltaTime;
+
+        if (_timer >= _duration)
+        {
+            ResetMaterials();
+        }
     }
 
-    private IEnumerator ChangeMaterial_routine()
+    private void _health_OnDamageTaken()
     {
+        _timer = 0f;
         SetMaterials(_hitMaterial);
-        yield return _waitForSeconds;
-        ResetMaterials();
+        //StartCoroutine(ChangeMaterial_routine());
     }
+
+    //private IEnumerator ChangeMaterial_routine()
+    //{
+    //    SetMaterials(_hitMaterial);
+    //    yield return _waitForSeconds;
+    //    ResetMaterials();
+    //}
 
     private void SetMaterials(Material _mat)
     {
