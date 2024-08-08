@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: Weapon_Ai_4_Burst
+  m_Name: Weapon_Ai_Rifle_1
   m_EditorClassIdentifier: 
   _iconSprite: {fileID: 0}
   _weaponPrefab: {fileID: 0}
@@ -18,7 +18,7 @@ MonoBehaviour:
   _displayName: 
   _holsterPosition: {x: 0, y: 0, z: 0}
   _holsterEuler: {x: 0, y: 0, z: 0}
-  _projectileSO: {fileID: 11400000, guid: c7cc412c99a65d44a85a88dd2a28b89d, type: 2}
+  _projectileSO: {fileID: 11400000, guid: 04f6da8ff424c3645a1e5dc30dd4f10a, type: 2}
   _stats:
     _damage: 1
     _explosiveDamage: 0
@@ -28,13 +28,13 @@ MonoBehaviour:
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 60
+    _shootAngle: 0
     _arcMode: 0
     _projectilesPerShot: 1
     _ammoPerShot: 1
     _isAutoChargeType: 0
-    _burstRate: 0.3
-    _shotsPerBurst: 3
+    _burstRate: 0
+    _shotsPerBurst: 0
   _projectileStats:
     _destroyTimeRange: {x: 6, y: 8}
     _explosionRadius: 0
