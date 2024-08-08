@@ -177,8 +177,9 @@ MonoBehaviour:
   _projectileSO: {fileID: 11400000, guid: a3cab79fac1b1a24f860ffade39377bc, type: 2}
   _stats:
     _destroyTimeRange: {x: 0, y: 0}
-    _explosionRadius: 0
     _canDamageProjectiles: 0
+    _explosionRadius: 0
+    _canDamageSource: 0
     _maxPierceCount: 1
     _blockPierceTags: {fileID: 0}
     _canAutoAim: 0
@@ -241,7 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4563d5a4f75a847ac6a6ccf5c0ac1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rb: {fileID: 7523388042507287481}
   _transform: {fileID: 7353528016460216318}
-  _twistsPerSecond: 3
+  _twistsPerSecond: 5
+  _defaultMagnitude: 15
   _slowDown: 1
   _speed: 0

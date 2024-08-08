@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 8552097569084531652}
   - component: {fileID: -3240933506288511537}
   - component: {fileID: 8958992088671540006}
+  - component: {fileID: 3559780495949695814}
   - component: {fileID: 1966103484699862939}
   - component: {fileID: 6031725739143003102}
   - component: {fileID: -4530696284390413604}
@@ -141,8 +142,9 @@ MonoBehaviour:
   _projectileSO: {fileID: 11400000, guid: 9db3c891a3009c44291b6bae7a42576f, type: 2}
   _stats:
     _destroyTimeRange: {x: 0, y: 0}
-    _explosionRadius: 0
     _canDamageProjectiles: 0
+    _explosionRadius: 0
+    _canDamageSource: 0
     _maxPierceCount: 1
     _blockPierceTags: {fileID: 0}
     _canAutoAim: 0
@@ -195,15 +197,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7353528016857128666}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f4563d5a4f75a847ac6a6ccf5c0ac1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rb: {fileID: 0}
   _transform: {fileID: 7353528016460216318}
   _twistsPerSecond: 1
+  _defaultMagnitude: 20
   _slowDown: 0
   _speed: 0
+--- !u!114 &3559780495949695814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a1a366de8d10147a3ac2d4d737093e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 7353528016460216318}
+  _twistsPerSecond: 1
 --- !u!114 &1966103484699862939
 MonoBehaviour:
   m_ObjectHideFlags: 0
