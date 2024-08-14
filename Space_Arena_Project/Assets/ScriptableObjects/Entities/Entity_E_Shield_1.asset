@@ -22,6 +22,7 @@ MonoBehaviour:
   _maxNumberOfTries: 10
   _moveRateRange: {x: 1, y: 3}
   _moveCloseRange: {x: 2, y: 3}
+  _moveToTargetDistance: 0
   _flankRange: {x: 1, y: 2}
   _flankDistance: 4
   _cowerTimeRange: {x: 3, y: 3}

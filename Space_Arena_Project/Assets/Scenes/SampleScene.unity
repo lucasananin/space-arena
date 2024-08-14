@@ -21199,13 +21199,13 @@ MonoBehaviour:
     _runtimeQuantities: []
   _randomizedWaves:
   - _entities:
-    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
-      _quantity: 3
+    - _so: {fileID: 11400000, guid: 732d5d93c5288984884d72ba30534349, type: 2}
+      _quantity: 0
     _quantity: 6
-    _maxActiveSpawns: 6
+    _maxActiveSpawns: 3
   _container: {fileID: 1159678663}
   _spawnTime: 0.2
-  _distanceRange: {x: 10, y: 15}
+  _distanceRange: {x: 5, y: 15}
   _useRandomizedWaves: 1
   _waveModel:
     _entities: []

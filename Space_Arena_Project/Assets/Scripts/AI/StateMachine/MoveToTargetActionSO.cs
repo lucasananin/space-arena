@@ -27,7 +27,7 @@ public class MoveToTargetAction : StateAction
 
     public override void OnUpdate()
     {
-        if (_aiEntity.IsCloseToTargetEntity(_aiEntitySO.MinTargetDistance))
+        if (_aiEntity.IsCloseToTargetEntity(_aiEntitySO.MoveToTargetDistance))
         {
             SetPath();
         }

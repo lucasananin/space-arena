@@ -23,6 +23,9 @@ public class AiEntitySO : EntitySO
     [Title("// Move Close To Target - Properties")]
     [SerializeField] Vector2 _moveCloseRange = Vector2.one;
 
+    [Title("// Move To Target - Properties")]
+    [SerializeField, Range(0f, 9f)] float _moveToTargetDistance = 3f;
+
     [Title("// Flank Target - Properties")]
     [SerializeField] Vector2 _flankRange = Vector2.one;
     [SerializeField] float _flankDistance = 3f;
@@ -53,6 +56,8 @@ public class AiEntitySO : EntitySO
     public Vector2 MoveRateRange { get => _moveRateRange; private set => _moveRateRange = value; }
 
     public Vector2 MoveCloseRange { get => _moveCloseRange; private set => _moveCloseRange = value; }
+
+    public float MoveToTargetDistance { get => _moveToTargetDistance; private set => _moveToTargetDistance = value; }
 
     public Vector2 FlankRange { get => _flankRange; private set => _flankRange = value; }
     public float FlankDistance { get => _flankDistance; private set => _flankDistance = value; }
