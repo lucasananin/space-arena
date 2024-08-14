@@ -34,11 +34,12 @@ public class AiSelfDestructAction : StateAction
         if (_health.IsAlive())
             _health.ForceDie();
 
-        // Transformar isso em um script próprio.
+        // Transformar isso em um script próprio. ====================
         var _transform = _aiEntity.transform;
         var _scale = _transform.localScale;
         _transform.DOScale(_scale * 1.5f, _aiEntitySO.SelfDestructTime);
-        //_transform.DOShakePosition(_aiEntitySO.TimeUntilExplode);
+        //_transform.DOShakePosition(_aiEntitySO.SelfDestructTime);
+        // ==================== Transformar isso em um script próprio.
     }
 
     public override void OnFixedUpdate()

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: Weapon_AI_3_Shotgun
+  m_Name: Weapon_Ai_Shotgun_1
   m_EditorClassIdentifier: 
   _iconSprite: {fileID: 0}
   _weaponPrefab: {fileID: 0}
@@ -28,7 +28,7 @@ MonoBehaviour:
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 60
+    _shootAngle: 66
     _arcMode: 1
     _projectilesPerShot: 3
     _ammoPerShot: 1
@@ -37,25 +37,45 @@ MonoBehaviour:
     _shotsPerBurst: 0
   _projectileStats:
     _destroyTimeRange: {x: 6, y: 8}
-    _explosionRadius: 0
     _canDamageProjectiles: 0
+    _explosionRadius: 0
+    _canDamageSource: 0
     _maxPierceCount: 1
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
-    _moveSpeedRange: {x: 3, y: 3}
-    _destroyOnStop: 0
-    _useAccelerationCurve: 0
+    _moveSpeedRange: {x: 6, y: 12}
+    _scaleMultiplier: 1
+    _destroyOnStop: 1
+    _useAccelerationCurve: 1
     _invertAcceleration: 0
     _accelerationCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    _acelerationMultiplier: 0
-    _canBounce: 0
+    _acelerationMultiplier: 0.4
+    _canBounce: 1
     _bounceTags: {fileID: 11400000, guid: 8f86bb6b935e0c5469d64ca4ac6ca586, type: 2}
     _maxCastDistance: 0
     _maxGuidedRadius: 0

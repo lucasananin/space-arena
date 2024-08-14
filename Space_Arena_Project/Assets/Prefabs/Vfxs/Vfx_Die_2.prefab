@@ -4839,7 +4839,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -441497993
   m_SortingLayer: 2
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4881,6 +4881,7 @@ GameObject:
   - component: {fileID: 4508168008497764176}
   - component: {fileID: 4508168008497764178}
   - component: {fileID: 4508168008497764177}
+  - component: {fileID: 2651230499196130541}
   m_Layer: 6
   m_Name: Vfx_Die_2
   m_TagString: Untagged
@@ -9687,6 +9688,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!210 &2651230499196130541
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508168008497764207}
+  m_Enabled: 1
+  m_SortingLayerID: -441497993
+  m_SortingLayer: 2
+  m_SortingOrder: 5
 --- !u!1 &5481464207908328301
 GameObject:
   m_ObjectHideFlags: 0
@@ -14526,7 +14538,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -441497993
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -19397,7 +19409,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -441497993
   m_SortingLayer: 2
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: Weapon_Ai_5_Sniper
+  m_Name: Weapon_Ai_Bomber
   m_EditorClassIdentifier: 
   _iconSprite: {fileID: 0}
   _weaponPrefab: {fileID: 0}
@@ -18,12 +18,12 @@ MonoBehaviour:
   _displayName: 
   _holsterPosition: {x: 0, y: 0, z: 0}
   _holsterEuler: {x: 0, y: 0, z: 0}
-  _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}
+  _projectileSO: {fileID: 11400000, guid: a8169918b3fcd9244ad5a16246f23484, type: 2}
   _stats:
-    _damage: 1
-    _explosiveDamage: 0
-    _fireRate: 0.1
-    _chargeTime: 0.2
+    _damage: 0
+    _explosiveDamage: 5
+    _fireRate: 0.01
+    _chargeTime: 0
     _maxHeat: 0
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
@@ -36,15 +36,17 @@ MonoBehaviour:
     _burstRate: 0
     _shotsPerBurst: 0
   _projectileStats:
-    _destroyTimeRange: {x: 1, y: 2}
-    _explosionRadius: 0
+    _destroyTimeRange: {x: 0.1, y: 0.2}
     _canDamageProjectiles: 0
+    _explosionRadius: 3
+    _canDamageSource: 0
     _maxPierceCount: 1
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
     _moveSpeedRange: {x: 0, y: 0}
+    _scaleMultiplier: 1
     _destroyOnStop: 0
     _useAccelerationCurve: 0
     _invertAcceleration: 0
@@ -57,5 +59,5 @@ MonoBehaviour:
     _acelerationMultiplier: 0
     _canBounce: 0
     _bounceTags: {fileID: 11400000, guid: 8f86bb6b935e0c5469d64ca4ac6ca586, type: 2}
-    _maxCastDistance: 99
+    _maxCastDistance: 0.1
     _maxGuidedRadius: 0
