@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4d5a4e750096ac4ab1783d5de629368, type: 3}
-  m_Name: Entity_E_5_Sniper
+  m_Name: Entity_E_Bomber_1
   m_EditorClassIdentifier: 
   _opponentTags: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
   _projectileHitTag: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
-  _entityPrefab: {fileID: 2658297561336904056, guid: f74272d3619466949a794d17c5d1b8a1, type: 3}
+  _entityPrefab: {fileID: 2658297561336904056, guid: 885fd00c330408046a2fa47bcb93172d, type: 3}
   _stopMovingOnClose: 0
-  _stopMovingOnTargetAcquired: 1
+  _stopMovingOnTargetAcquired: 0
   _repathOnTargetFarAway: 1
-  _minTargetDistance: 0
+  _minTargetDistance: 3
   _maxNumberOfTries: 10
-  _moveRateRange: {x: 0.2, y: 0.4}
+  _moveRateRange: {x: 0.1, y: 0.2}
   _moveCloseRange: {x: 2, y: 3}
-  _flankRange: {x: 1, y: 2}
-  _flankDistance: 10
+  _flankRange: {x: 0, y: 0}
+  _flankDistance: 0
   _cowerTimeRange: {x: 0, y: 0}
   _chargingSpeedMultiplier: 0
   _chargingDistance: 0
   _chargingWaitRange: {x: 0, y: 0}
-  _selfDestructTime: 0
+  _selfDestructTime: 1
   _fleeRange: {x: 0, y: 0}
   _fleeDistance: 0

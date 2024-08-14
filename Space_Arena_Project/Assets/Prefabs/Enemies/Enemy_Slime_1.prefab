@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 8151347125946582114}
   - component: {fileID: -5220123326973939600}
   m_Layer: 6
-  m_Name: Enemy_1_Slime
+  m_Name: Enemy_Slime_1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

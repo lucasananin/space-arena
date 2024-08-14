@@ -42,7 +42,7 @@ public class AiFleeFromTargetAction : StateAction
 
     private void SearchPath()
     {
-        _point = _aiEntity.PickRandomPointAwayFromTarget(_aiEntitySO.FlankRange, _aiEntitySO.FleeDistance);
+        _point = _aiEntity.PickRandomPointAwayFromTarget(_aiEntitySO.FleeRange, _aiEntitySO.FleeDistance);
         _aiEntity.SetAIPathDestination(_point);
         _point = _aiEntity.transform.position;
     }

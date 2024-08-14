@@ -14,6 +14,12 @@ public class TakeHitColorFx : MonoBehaviour
     //[SerializeField, ReadOnly] bool _isOn = false;
     //private WaitForSeconds _waitForSeconds = null;
 
+    private void OnValidate()
+    {
+        if (_health is null)
+            _health = GetComponent<HealthBehaviour>();
+    }
+
     private void Awake()
     {
         //_waitForSeconds = new WaitForSeconds(_duration);
