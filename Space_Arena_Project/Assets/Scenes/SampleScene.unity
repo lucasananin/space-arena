@@ -21213,7 +21213,7 @@ MonoBehaviour:
     _runtimeQuantities: []
   _randomizedWaves:
   - _entities:
-    - _so: {fileID: 11400000, guid: c9a872c556f876748aca59a351afa0d5, type: 2}
+    - _so: {fileID: 11400000, guid: f93b4cc80a0138e49bcc38c18a58931f, type: 2}
       _quantity: 0
     _quantity: 6
     _maxActiveSpawns: 1
