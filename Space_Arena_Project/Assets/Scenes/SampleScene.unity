@@ -5790,6 +5790,7 @@ GameObject:
   - component: {fileID: 253902484}
   - component: {fileID: 253902483}
   - component: {fileID: 253902482}
+  - component: {fileID: 253902485}
   m_Layer: 7
   m_Name: Tilemap_Walls_3
   m_TagString: Obstacle
@@ -7117,6 +7118,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &253902485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253902480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414a64bfc2ddf8045b48672269ad552a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitVfx: {fileID: 7861420613545570279, guid: 5fa6ff51b3953274f85e496ad5bdff36, type: 3}
 --- !u!1 &255938310
 GameObject:
   m_ObjectHideFlags: 0
@@ -21206,7 +21220,7 @@ MonoBehaviour:
   _container: {fileID: 1159678663}
   _spawnTime: 0.2
   _distanceRange: {x: 5, y: 15}
-  _useRandomizedWaves: 1
+  _useRandomizedWaves: 0
   _waveModel:
     _entities: []
     _maxActiveSpawns: 4
