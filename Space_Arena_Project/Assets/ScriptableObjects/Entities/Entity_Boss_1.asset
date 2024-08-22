@@ -14,20 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _opponentTags: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
   _projectileHitTag: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
-  _entityPrefab: {fileID: 0}
+  _entityPrefab: {fileID: 8821744782161038674, guid: c01742c01e5ccf440a195ff790aab54a, type: 3}
   _stopMovingOnClose: 0
   _stopMovingOnTargetAcquired: 0
-  _repathOnTargetFarAway: 1
+  _repathOnTargetFarAway: 0
   _minTargetDistance: 0
   _maxNumberOfTries: 10
   _moveRateRange: {x: 1, y: 2}
-  _moveCloseRange: {x: 4, y: 8}
-  _flankRange: {x: 1, y: 1}
-  _flankDistance: 3
+  _moveCloseRange: {x: 12, y: 24}
+  _moveToTargetDistance: 0
+  _flankRange: {x: 0, y: 0}
+  _flankDistance: 0
   _cowerTimeRange: {x: 0, y: 0}
   _chargingSpeedMultiplier: 0
   _chargingDistance: 0
-  _chargingWaitRange: {x: 1, y: 1}
+  _chargingWaitRange: {x: 0, y: 0}
   _selfDestructTime: 0
   _fleeRange: {x: 0, y: 0}
   _fleeDistance: 0

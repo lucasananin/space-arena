@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4d5a4e750096ac4ab1783d5de629368, type: 3}
-  m_Name: _Entity_Enemy_8
+  m_Name: _Entity_E_LandMine
   m_EditorClassIdentifier: 
   _opponentTags: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
   _projectileHitTag: {fileID: 11400000, guid: 15b72a7dfece6734c920e0fbff1dfe04, type: 2}
