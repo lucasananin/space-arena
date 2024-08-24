@@ -96,6 +96,11 @@ public class LootSpawner : MonoBehaviour
     {
         if (_currentChest is not null)
             Destroy(_currentChest.gameObject);
+
+        var _weapons = FindObjectsOfType<WeaponLoot>();
+        int _count = _weapons.Length;
+        for (int i = _count - 1; i >= 0; i--)
+            Destroy(_weapons[i].gameObject);
     }
 
     //[Button]
