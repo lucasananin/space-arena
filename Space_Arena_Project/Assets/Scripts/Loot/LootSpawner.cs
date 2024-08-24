@@ -22,9 +22,9 @@ public class LootSpawner : MonoBehaviour
     [SerializeField] Vector2 _minMaxForce = default;
 
     [Title("// Chests")]
-    [SerializeField] WeaponChestCollidable _chestPrefab = null;
+    [SerializeField] LootDropper _chestPrefab = null;
     [SerializeField] BoxCollider2D _chestCollider = null;
-    [SerializeField, ReadOnly] WeaponChestCollidable _currentChest = null;
+    [SerializeField, ReadOnly] LootDropper _currentChest = null;
 
     //private GridGraph _graph = null;
 
@@ -84,14 +84,15 @@ public class LootSpawner : MonoBehaviour
     }
 
     [Button]
-    private void SpawnChest()
+    private void SpawnChest(WaveModel _wave)
     {
         var _position = GeneralMethods.GetRandomPointInBounds(_chestCollider.bounds);
         var _chest = Instantiate(_chestPrefab, _position, Quaternion.identity, _parentContainer);
+        _chest.SetLoot(_wave.WeaponLoot);
         _currentChest = _chest;
     }
 
-    private void DestroyChest()
+    private void DestroyChest(WaveModel _wave)
     {
         if (_currentChest is not null)
             Destroy(_currentChest.gameObject);

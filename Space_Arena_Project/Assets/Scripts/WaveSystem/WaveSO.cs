@@ -15,11 +15,13 @@ public class WaveSO : ScriptableObject
 public class WaveModel
 {
     [SerializeField] EntityGroup[] _entities = null;
+    [SerializeField] LootTableSO _weaponLoot = null;
     [SerializeField, Range(1, 20)] int _maxActiveSpawns = 4;
     [SerializeField, Range(0.1f, 9f)] float _spawnTime = 1f;
-    [SerializeField] Vector2 _distanceRange = new Vector2(5f, 15f);
+    [SerializeField] Vector2 _distanceRange = new(5f, 15f);
     [SerializeField, ReadOnly] List<float> _runtimeQuantities = null;
 
+    public LootTableSO WeaponLoot { get => _weaponLoot; set => _weaponLoot = value; }
     public int MaxActiveSpawns { get => _maxActiveSpawns; private set => _maxActiveSpawns = value; }
     public float SpawnTime { get => _spawnTime; private set => _spawnTime = value; }
     public Vector2 DistanceRange { get => _distanceRange; private set => _distanceRange = value; }
@@ -43,7 +45,6 @@ public class WaveModel
     public void ResetRuntimeQuantities()
     {
         _runtimeQuantities.Clear();
-
         int _count = _entities.Length;
 
         for (int i = 0; i < _count; i++)

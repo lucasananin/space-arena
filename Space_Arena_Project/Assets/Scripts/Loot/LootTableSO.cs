@@ -36,7 +36,7 @@ public class LootTableSO : ScriptableObject
 [System.Serializable]
 public class LootModelCollection
 {
-    [SerializeField] List<LootModel> _models = new List<LootModel>();
+    [SerializeField] List<LootModel> _models = new();
 
     public List<LootModel> Models { get => _models; set => _models = value; }
 }

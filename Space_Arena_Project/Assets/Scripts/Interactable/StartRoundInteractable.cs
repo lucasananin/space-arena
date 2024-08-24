@@ -30,7 +30,7 @@ public class StartRoundInteractable : InteractableBehaviour
         return $"Start Round";
     }
 
-    private void Show()
+    private void Show(WaveModel _wave)
     {
         _spriteRenderer.enabled = true;
         _collider.enabled = true;

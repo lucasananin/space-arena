@@ -10,17 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba4b722260f84594bb3a4c2f387c459e, type: 3}
-  m_Name: LootTable_1
+  m_Name: LootTable_Weapons_1
   m_EditorClassIdentifier: 
   _lootCollections:
   - _models:
-    - _so: {fileID: 11400000, guid: 5d6c4d21e54dcf44187c53ee4eb428fe, type: 2}
+    - _so: {fileID: 11400000, guid: f56cf73d605c30c4c8ead4dff0644b58, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
-  - _models:
-    - _so: {fileID: 11400000, guid: 027cdf8528683574a86b77b2158503e9, type: 2}
+    - _so: {fileID: 11400000, guid: 30ecdf5b450b1474c80b39c9680f3750, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
-    - _so: {fileID: 0}
+    - _so: {fileID: 11400000, guid: 4cce4e38ee71add4d9c32282c4801e68, type: 2}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 11400000, guid: 4f49ae87579d729418b4d7fc357905cc, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}

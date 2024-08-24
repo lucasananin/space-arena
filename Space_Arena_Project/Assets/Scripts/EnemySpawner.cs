@@ -12,8 +12,6 @@ public class EnemySpawner : MonoBehaviour
     [Space]
     [SerializeField] Transform _container = null;
     [SerializeField] WaveSO _waveSO = null;
-    //[SerializeField, Range(0.1f, 9f)] float _spawnTime = 1f;
-    //[SerializeField] Vector2 _distanceRange = default;
     [Space]
     [SerializeField, ReadOnly] WaveModel _currentWave = null;
     [SerializeField, ReadOnly] PlayerEntity _player = null;
@@ -23,8 +21,8 @@ public class EnemySpawner : MonoBehaviour
 
     private GridGraph _graph = null;
 
-    public static event System.Action OnStart = null;
-    public static event System.Action OnEnd = null;
+    public static event System.Action<WaveModel> OnStart = null;
+    public static event System.Action<WaveModel> OnEnd = null;
 
     private void Start()
     {
@@ -54,14 +52,15 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator Spawn_routine()
     {
+        if (_waveIndex >= _waveSO.Waves.Length) ResetWaveIndex();
+
         _isSpawning = true;
-        //_waveModel = _waves[_waveIndex];
         _currentWave = _waveSO.Waves[_waveIndex];
         _currentWave.ResetRuntimeQuantities();
         _activeSpawnCount = 0;
         int _totalSpawnedCount = 0;
         int _totalSpawnQuantity = _useRandomizedWaves ? _randomizedWaves[0].Quantity : _currentWave.GetTotalQuantity();
-        OnStart?.Invoke();
+        OnStart?.Invoke(_currentWave);
 
         do
         {
@@ -78,7 +77,6 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(_prefab, _position, Quaternion.identity, _container);
 
             yield return new WaitForSeconds(_currentWave.SpawnTime);
-            //yield return new WaitForSeconds(_spawnTime);
 
         } while (_totalSpawnedCount < _totalSpawnQuantity);
 
@@ -89,13 +87,7 @@ public class EnemySpawner : MonoBehaviour
 
         _isSpawning = false;
         _waveIndex++;
-        OnEnd?.Invoke();
-
-        //if (_waveIndex >= _waves.Length)
-        if (_waveIndex >= _waveSO.Waves.Length)
-        {
-            ResetWaveIndex();
-        }
+        OnEnd?.Invoke(_currentWave);
     }
 
     private Vector3 GetRandomNodePosition()
@@ -114,8 +106,6 @@ public class EnemySpawner : MonoBehaviour
                 _finalPosition = (Vector3)_node.position;
             }
 
-            //var _isCloseToPlayer = GeneralMethods.IsPointCloseToTarget(_finalPosition, _playerPosition, _distanceRange.x);
-            //var _isFarFromPlayer = !GeneralMethods.IsPointCloseToTarget(_finalPosition, _playerPosition, _distanceRange.y);
             var _isCloseToPlayer = GeneralMethods.IsPointCloseToTarget(_finalPosition, _playerPosition, _currentWave.DistanceRange.x);
             var _isFarFromPlayer = !GeneralMethods.IsPointCloseToTarget(_finalPosition, _playerPosition, _currentWave.DistanceRange.y);
 
@@ -141,57 +131,6 @@ public class EnemySpawner : MonoBehaviour
     }
 }
 
-//[System.Serializable]
-//public class WaveModel
-//{
-//    [SerializeField] EntityGroup[] _entities = null;
-//    [SerializeField, Range(0, 20)] int _maxActiveSpawns = 4;
-//    [SerializeField, ReadOnly] List<float> _runtimeQuantities = null;
-
-//    public int MaxActiveSpawns { get => _maxActiveSpawns; private set => _maxActiveSpawns = value; }
-
-//    public AiEntity GetEntityPrefab()
-//    {
-//        bool _canSpawn;
-//        int _randomIndex;
-
-//        do
-//        {
-//            _randomIndex = Random.Range(0, _entities.Length);
-//            _canSpawn = _runtimeQuantities[_randomIndex] > 0;
-
-//        } while (!_canSpawn);
-
-//        _runtimeQuantities[_randomIndex]--;
-//        return _entities[_randomIndex].SO.EntityPrefab;
-//    }
-
-//    public void ResetRuntimeQuantities()
-//    {
-//        _runtimeQuantities.Clear();
-
-//        int _count = _entities.Length;
-
-//        for (int i = 0; i < _count; i++)
-//        {
-//            _runtimeQuantities.Add(_entities[i].Quantity);
-//        }
-//    }
-
-//    public int GetTotalQuantity()
-//    {
-//        int _count = _entities.Length;
-//        int _total = 0;
-
-//        for (int i = 0; i < _count; i++)
-//        {
-//            _total += _entities[i].Quantity;
-//        }
-
-//        return _total;
-//    }
-//}
-
 [System.Serializable]
 public class RandomizedWaveModel
 {
@@ -208,13 +147,3 @@ public class RandomizedWaveModel
         return _entities[_randomIndex].SO.EntityPrefab;
     }
 }
-
-//[System.Serializable]
-//public class EntityGroup
-//{
-//    [SerializeField] AiEntitySO _so = null;
-//    [SerializeField, Range(0, 99)] int _quantity = 1;
-
-//    public AiEntitySO SO { get => _so; set => _so = value; }
-//    public int Quantity { get => _quantity; set => _quantity = value; }
-//}

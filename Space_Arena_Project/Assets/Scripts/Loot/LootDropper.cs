@@ -30,6 +30,11 @@ public class LootDropper : MonoBehaviour
             FindAnyObjectByType<LootSpawner>().SpawnEntityLoot(_spawnLootModel);
         }
     }
+
+    public void SetLoot(LootTableSO _lootTable)
+    {
+        _lootTableSO = _lootTable;
+    }
 }
 
 public class SpawnLootModel
