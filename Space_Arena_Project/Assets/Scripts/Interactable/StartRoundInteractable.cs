@@ -11,12 +11,12 @@ public class StartRoundInteractable : InteractableBehaviour
 
     private void OnEnable()
     {
-        EnemySpawner.onEnd += Show;
+        EnemySpawner.OnEnd += Show;
     }
 
     private void OnDisable()
     {
-        EnemySpawner.onEnd += Show;
+        EnemySpawner.OnEnd += Show;
     }
 
     public override void Interact(InteractAgent _agent)

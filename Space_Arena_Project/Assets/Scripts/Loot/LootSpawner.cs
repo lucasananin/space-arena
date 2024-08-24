@@ -41,14 +41,14 @@ public class LootSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        EnemySpawner.onEnd += SpawnChest;
-        EnemySpawner.onStart += DestroyChest;
+        EnemySpawner.OnEnd += SpawnChest;
+        EnemySpawner.OnStart += DestroyChest;
     }
 
     private void OnDisable()
     {
-        EnemySpawner.onEnd -= SpawnChest;
-        EnemySpawner.onStart -= DestroyChest;
+        EnemySpawner.OnEnd -= SpawnChest;
+        EnemySpawner.OnStart -= DestroyChest;
     }
 
     [Button]

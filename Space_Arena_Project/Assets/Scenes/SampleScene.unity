@@ -21210,7 +21210,9 @@ MonoBehaviour:
       _quantity: 0
     - _so: {fileID: 11400000, guid: 5cb6b2abc3018174ba97dcc2df7fc902, type: 2}
       _quantity: 0
-    _maxActiveSpawns: 3
+    _maxActiveSpawns: 5
+    _spawnTime: 1
+    _distanceRange: {x: 0, y: 0}
     _runtimeQuantities: []
   _randomizedWaves:
   - _entities:
@@ -21218,13 +21220,14 @@ MonoBehaviour:
       _quantity: 0
     _quantity: 1
     _maxActiveSpawns: 1
+  _waveSO: {fileID: 11400000, guid: f9da2d434eae4784cb37123ecd476f94, type: 2}
   _container: {fileID: 1159678663}
-  _spawnTime: 0.2
-  _distanceRange: {x: 5, y: 15}
-  _useRandomizedWaves: 1
-  _waveModel:
+  _useRandomizedWaves: 0
+  _currentWave:
     _entities: []
     _maxActiveSpawns: 4
+    _spawnTime: 1
+    _distanceRange: {x: 5, y: 15}
     _runtimeQuantities: []
   _player: {fileID: 0}
   _waveIndex: 0
