@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,8 +19,11 @@ public class LootTableSO : ScriptableObject
         {
             var _collection = _lootCollections[i];
 
+            // dá um "do while" loop aqui para evitar repeticoes.
             var _randomIndex = Random.Range(0, _collection.Models.Count);
             var _model = _collection.Models[_randomIndex];
+            _collection.OriginalIndexes.Add(_randomIndex);
+            // dá um "do while" loop aqui para evitar repeticoes.
 
             if (_model.So is not null)
             {
@@ -37,8 +41,10 @@ public class LootTableSO : ScriptableObject
 public class LootModelCollection
 {
     [SerializeField] List<LootModel> _models = new();
+    [SerializeField, ReadOnly] List<int> _originalIndexes = new();
 
     public List<LootModel> Models { get => _models; set => _models = value; }
+    public List<int> OriginalIndexes { get => _originalIndexes; set => _originalIndexes = value; }
 }
 
 [System.Serializable]
@@ -50,7 +56,7 @@ public class LootModel
 
     public ScriptableObject So { get => _so; set => _so = value; }
     public float Odd { get => _odd; set => _odd = value; }
-    public Vector2 Quantity { get => _minMaxQuantity; set => _minMaxQuantity = value; }
+    //public Vector2 Quantity { get => _minMaxQuantity; set => _minMaxQuantity = value; }
 
     public int GetRandomQuantity()
     {

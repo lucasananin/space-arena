@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] WaveModel[] _waves = null;
+    //[SerializeField] WaveModel[] _waves = null;
     [SerializeField] RandomizedWaveModel[] _randomizedWaves = null;
     [SerializeField] bool _useRandomizedWaves = false;
     [Space]
