@@ -23,7 +23,6 @@ public class LootDropper : MonoBehaviour
 
     public virtual void Drop(Vector3 _origin)
     {
-        //var _lootCollection = _lootTableSO.GenerateLootCollection();
         var _lootCollection = GenerateLootCollection();
         int _count = _lootCollection.Models.Count;
 
@@ -38,29 +37,28 @@ public class LootDropper : MonoBehaviour
                 quantity = _model.GetRandomQuantity()
             };
 
-            _lootSpawner.SpawnLoot(this, _spawnLootModel);
+            _lootSpawner.SpawnLoot(_spawnLootModel);
         }
     }
 
     private LootModelCollection GenerateLootCollection()
     {
-        //bool _hasRepetition = false;
         LootModelCollection _finalCollection = new();
-        //int _count;
 
         for (int i = 0; i < MAX_ATTEMPTS; i++)
         {
             _finalCollection = _lootTableSO.GenerateLootCollection();
-            int _count = _finalCollection.Models.Count;
-            bool _hasRepeatedWeapon = false;
+
+            var _count = _finalCollection.Models.Count;
+            var _hasRepeatedWeapon = false;
 
             for (int j = 0; j < _count; j++)
             {
                 var _model = _finalCollection.Models[j];
 
+                if (_model.So is not WeaponSO) continue;
                 if (_lootSpawner.HasWeaponAlreadyBeenDropped(_model.So as WeaponSO))
                 {
-                    Debug.Log($"// {i}");
                     _hasRepeatedWeapon = true;
                     break;
                 }
@@ -72,40 +70,8 @@ public class LootDropper : MonoBehaviour
             }
         }
 
-        //do
-        //{
-        //    _finalCollection = _lootTableSO.GenerateLootCollection();
-        //    _count = _finalCollection.Models.Count;
-
-        //    for (int i = 0; i < _count; i++)
-        //    {
-        //        var _model = _finalCollection.Models[i];
-
-        //        if (_lootSpawner.HasWeaponAlreadyBeenDropped(_model.So as WeaponSO))
-        //        {
-        //            _hasRepetition = true;
-        //            break;
-        //        }
-        //        else
-        //        {
-        //            _hasRepetition = false;
-        //        }
-        //    }
-
-        //} while (_hasRepetition);
-
         return _finalCollection;
     }
-
-    //public virtual void ReDrop(WeaponSO _weaponSO, SpawnLootModel _spawnLootModel)
-    //{
-    //    do
-    //    {
-    //        var _lootCollection = _lootTableSO.GenerateLootCollection();
-    //        int _count = _lootCollection.Models.Count;
-
-    //    } while (true);
-    //}
 
     public void SetLoot(LootTableSO _lootTable)
     {

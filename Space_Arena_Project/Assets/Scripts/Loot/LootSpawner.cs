@@ -16,19 +16,14 @@ public class LootSpawner : MonoBehaviour
     [SerializeField] BoxCollider2D _weaponCollider = null;
     [SerializeField] WeaponSO[] _weapons = null;
     [SerializeField, ReadOnly] List<WeaponSO> _droppedWeapons = null;
-    [SerializeField, ReadOnly] LootModelCollection _lastLootCollection = null;
 
     [Title("// Collectables")]
-    //[SerializeField] CollectableBehaviour _ammoPrefab = null;
-    //[SerializeField] CollectableBehaviour _healthPrefab = null;
     [SerializeField] Vector2 _minMaxForce = default;
 
     [Title("// Chests")]
     [SerializeField] LootDropper _chestPrefab = null;
     [SerializeField] BoxCollider2D _chestCollider = null;
     [SerializeField, ReadOnly] LootDropper _currentChest = null;
-
-    public List<WeaponSO> DroppedWeapons { get => _droppedWeapons; private set => _droppedWeapons = value; }
 
     //private GridGraph _graph = null;
 
@@ -107,26 +102,7 @@ public class LootSpawner : MonoBehaviour
             Destroy(_weapons[i].gameObject);
     }
 
-    ////[Button]
-    //private void SpawnAmmoPack()
-    //{
-    //    var _position = GeneralMethods.GetRandomPointInBounds(_weaponCollider.bounds);
-    //    var _randomEuler = new Vector3(0f, 0f, Random.rotation.eulerAngles.z);
-    //    Instantiate(_ammoPrefab, _position, Quaternion.Euler(_randomEuler), _parentContainer);
-    //    //var _loot = Instantiate(_ammoPrefab, _position, Quaternion.Euler(_randomEuler), _parentContainer);
-    //    //var _randomIndex = Random.Range(0, _ammoSOs.Length);
-    //    //var _so = _ammoSOs[_randomIndex];
-    //    //_loot.Init(_so);
-    //}
-
-    ////[Button]
-    //private void SpawnHealthPack()
-    //{
-    //    var _position = GeneralMethods.GetRandomPointInBounds(_weaponCollider.bounds);
-    //    Instantiate(_healthPrefab, _position, Quaternion.identity, _parentContainer);
-    //}
-
-    public void SpawnLoot(LootDropper _lootSource, SpawnLootModel _lootSpawnInfo)
+    public void SpawnLoot(SpawnLootModel _lootSpawnInfo)
     {
         for (int i = 0; i < _lootSpawnInfo.quantity; i++)
         {
@@ -149,11 +125,7 @@ public class LootSpawner : MonoBehaviour
                     var _weaponLootInstance = Instantiate(_weaponLootPrefab, _lootSpawnInfo.spawnPosition, Quaternion.identity, _parentContainer);
                     _weaponLootInstance.Init(_weaponSO);
 
-                    if (HasWeaponAlreadyBeenDropped(_weaponSO))
-                    {
-                        Debug.Log($"// This Weapon has been dropped already!");
-                    }
-                    else
+                    if (!HasWeaponAlreadyBeenDropped(_weaponSO))
                     {
                         _droppedWeapons.Add(_weaponSO);
                     }
@@ -169,16 +141,5 @@ public class LootSpawner : MonoBehaviour
     public bool HasWeaponAlreadyBeenDropped(WeaponSO _value)
     {
         return _droppedWeapons.Count > 0 && _droppedWeapons.Contains(_value);
-        //int _count = _droppedWeapons.Count;
-
-        //for (int i = 0; i < _count; i++)
-        //{
-        //    if (_droppedWeapons[i].DisplayName == _value.DisplayName)
-        //    {
-        //        return true;
-        //    }
-        //}
-
-        //return false;
     }
 }

@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waves:
   - _entities:
-    - _so: {fileID: 11400000, guid: 299b6c5e8110a9f4ea3cb369e8af3174, type: 2}
+    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
       _quantity: 1
     _weaponLoot: {fileID: 11400000, guid: 0e757d27f5e145d4c88c89998974a9e2, type: 2}
     _maxActiveSpawns: 1
     _spawnTime: 1
     _distanceRange: {x: 5, y: 10}
-    _runtimeQuantities: []
+    _runtimeQuantities:
+    - 0
