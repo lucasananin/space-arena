@@ -89,7 +89,6 @@ public class LootSpawner : MonoBehaviour
 
         for (int i = 0; i < _count; i++)
         {
-            //var _position = GeneralMethods.GetRandomPointInBounds(_chestCollider.bounds);
             var _position = GetChestPosition(_count, i);
             var _chest = Instantiate(_chestPrefab, _position, Quaternion.identity, _parentContainer);
             _chest.SetLoot(_wave.Loots[i]);
