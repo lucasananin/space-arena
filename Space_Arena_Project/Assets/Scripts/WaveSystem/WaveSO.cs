@@ -9,21 +9,35 @@ public class WaveSO : ScriptableObject
     [SerializeField] WaveModel[] _waves = null;
 
     public WaveModel[] Waves { get => _waves; private set => _waves = value; }
+
+    [Button]
+    private void SetAllSpawnTimers(float _value)
+    {
+        int _count = _waves.Length;
+
+        for (int i = 0; i < _count; i++)
+        {
+            _waves[i].SpawnTime = _value;
+        }
+    }
 }
 
 [System.Serializable]
 public class WaveModel
 {
     [SerializeField] EntityGroup[] _entities = null;
-    [SerializeField] LootTableSO _weaponLoot = null;
+    [SerializeField] LootTableSO[] _loots = null;
+    //[SerializeField] LootTableSO _weaponLoot = null;
     [SerializeField, Range(1, 20)] int _maxActiveSpawns = 4;
     [SerializeField, Range(0.1f, 9f)] float _spawnTime = 1f;
     [SerializeField] Vector2 _distanceRange = new(5f, 15f);
-    [SerializeField, ReadOnly] List<float> _runtimeQuantities = null;
+    /*[SerializeField, ReadOnly]*/
+    readonly List<float> _runtimeQuantities = new();
 
-    public LootTableSO WeaponLoot { get => _weaponLoot; set => _weaponLoot = value; }
+    public LootTableSO[] Loots { get => _loots; set => _loots = value; }
+    //public LootTableSO WeaponLoot { get => _weaponLoot; set => _weaponLoot = value; }
     public int MaxActiveSpawns { get => _maxActiveSpawns; private set => _maxActiveSpawns = value; }
-    public float SpawnTime { get => _spawnTime; private set => _spawnTime = value; }
+    public float SpawnTime { get => _spawnTime; set => _spawnTime = value; }
     public Vector2 DistanceRange { get => _distanceRange; private set => _distanceRange = value; }
 
     public AiEntity GetEntityPrefab()

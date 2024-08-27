@@ -47,6 +47,8 @@ public class LootDropper : MonoBehaviour
 
         for (int i = 0; i < MAX_ATTEMPTS; i++)
         {
+            //Debug.Log($"// Attempt!");
+
             _finalCollection = _lootTableSO.GenerateLootCollection();
 
             var _count = _finalCollection.Models.Count;

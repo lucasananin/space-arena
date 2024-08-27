@@ -23,7 +23,8 @@ public class LootSpawner : MonoBehaviour
     [Title("// Chests")]
     [SerializeField] LootDropper _chestPrefab = null;
     [SerializeField] BoxCollider2D _chestCollider = null;
-    [SerializeField, ReadOnly] LootDropper _currentChest = null;
+    [SerializeField, ReadOnly] List<LootDropper> _chestsSpawned = null;
+    //[SerializeField, ReadOnly] LootDropper _currentChest = null;
 
     //private GridGraph _graph = null;
 
@@ -85,19 +86,35 @@ public class LootSpawner : MonoBehaviour
     [Button]
     private void SpawnChest(WaveModel _wave)
     {
-        var _position = GeneralMethods.GetRandomPointInBounds(_chestCollider.bounds);
-        var _chest = Instantiate(_chestPrefab, _position, Quaternion.identity, _parentContainer);
-        _chest.SetLoot(_wave.WeaponLoot);
-        _currentChest = _chest;
+        int _count = _wave.Loots.Length;
+
+        for (int i = 0; i < _count; i++)
+        {
+            var _position = GeneralMethods.GetRandomPointInBounds(_chestCollider.bounds);
+            var _chest = Instantiate(_chestPrefab, _position, Quaternion.identity, _parentContainer);
+            _chest.SetLoot(_wave.Loots[i]);
+            _chestsSpawned.Add(_chest);
+            //_currentChest = _chest;
+        }
+
+        //var _position = GeneralMethods.GetRandomPointInBounds(_chestCollider.bounds);
+        //var _chest = Instantiate(_chestPrefab, _position, Quaternion.identity, _parentContainer);
+        //_chest.SetLoot(_wave.WeaponLoot);
+        //_currentChest = _chest;
     }
 
     private void DestroyChest(WaveModel _wave)
     {
-        if (_currentChest is not null)
-            Destroy(_currentChest.gameObject);
+        //if (_currentChest is not null)
+        //    Destroy(_currentChest.gameObject);
+
+        int _count = _chestsSpawned.Count;
+        for (int i = _count - 1; i >= 0; i--)
+            Destroy(_chestsSpawned[i].gameObject);
+        _chestsSpawned.Clear();
 
         var _weapons = FindObjectsOfType<WeaponLoot>();
-        int _count = _weapons.Length;
+        _count = _weapons.Length;
         for (int i = _count - 1; i >= 0; i--)
             Destroy(_weapons[i].gameObject);
     }

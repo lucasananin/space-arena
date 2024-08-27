@@ -7222,7 +7222,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 4, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &306104882
 GameObject:
@@ -14316,7 +14316,7 @@ MonoBehaviour:
   _minMaxForce: {x: 5, y: 15}
   _chestPrefab: {fileID: 318452930903926227, guid: a807b6187623cd649b7cf0ceaace81a5, type: 3}
   _chestCollider: {fileID: 304280898}
-  _currentChest: {fileID: 0}
+  _chestsSpawned: []
 --- !u!1 &613780859
 GameObject:
   m_ObjectHideFlags: 0
@@ -21200,7 +21200,7 @@ MonoBehaviour:
   _waveSO: {fileID: 11400000, guid: 9cfed207a4029ed4db413a922f6c9efe, type: 2}
   _currentWave:
     _entities: []
-    _weaponLoot: {fileID: 0}
+    _loots: []
     _maxActiveSpawns: 4
     _spawnTime: 1
     _distanceRange: {x: 5, y: 15}

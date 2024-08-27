@@ -20,4 +20,9 @@ MonoBehaviour:
     - _so: {fileID: 11400000, guid: 30ecdf5b450b1474c80b39c9680f3750, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
-    _originalIndexes: 
+    - _so: {fileID: 11400000, guid: 809e46affc34a0e42985edb226545a88, type: 2}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 11400000, guid: 4f49ae87579d729418b4d7fc357905cc, type: 2}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
