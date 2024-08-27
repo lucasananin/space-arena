@@ -24,7 +24,6 @@ public class LootSpawner : MonoBehaviour
     [SerializeField] LootDropper _chestPrefab = null;
     [SerializeField] BoxCollider2D _chestCollider = null;
     [SerializeField, ReadOnly] List<LootDropper> _chestsSpawned = null;
-    //[SerializeField, ReadOnly] LootDropper _currentChest = null;
 
     //private GridGraph _graph = null;
 
@@ -83,31 +82,31 @@ public class LootSpawner : MonoBehaviour
         }
     }
 
-    [Button]
+    //[Button]
     private void SpawnChest(WaveModel _wave)
     {
         int _count = _wave.Loots.Length;
 
         for (int i = 0; i < _count; i++)
         {
-            var _position = GeneralMethods.GetRandomPointInBounds(_chestCollider.bounds);
+            //var _position = GeneralMethods.GetRandomPointInBounds(_chestCollider.bounds);
+            var _position = GetChestPosition(_count, i);
             var _chest = Instantiate(_chestPrefab, _position, Quaternion.identity, _parentContainer);
             _chest.SetLoot(_wave.Loots[i]);
             _chestsSpawned.Add(_chest);
-            //_currentChest = _chest;
         }
+    }
 
-        //var _position = GeneralMethods.GetRandomPointInBounds(_chestCollider.bounds);
-        //var _chest = Instantiate(_chestPrefab, _position, Quaternion.identity, _parentContainer);
-        //_chest.SetLoot(_wave.WeaponLoot);
-        //_currentChest = _chest;
+    private Vector3 GetChestPosition(int _count, int _index)
+    {
+        var _indexCenter = _chestCollider.size.x / _count;
+        var _x = _chestCollider.bounds.min.x + _indexCenter * ++_index - (_indexCenter / 2f);
+        var _y = GeneralMethods.GetRandomPointInBounds(_chestCollider.bounds).y;
+        return new Vector2(_x, _y);
     }
 
     private void DestroyChest(WaveModel _wave)
     {
-        //if (_currentChest is not null)
-        //    Destroy(_currentChest.gameObject);
-
         int _count = _chestsSpawned.Count;
         for (int i = _count - 1; i >= 0; i--)
             Destroy(_chestsSpawned[i].gameObject);

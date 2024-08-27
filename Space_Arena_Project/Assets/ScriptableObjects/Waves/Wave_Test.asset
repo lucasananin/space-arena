@@ -23,5 +23,3 @@ MonoBehaviour:
     _maxActiveSpawns: 1
     _spawnTime: 1
     _distanceRange: {x: 5, y: 10}
-    _runtimeQuantities:
-    - 0
