@@ -8,7 +8,7 @@ public class GraphUpdateTest : MonoBehaviour
 {
     public GridGraph _graph;
     public int _graphIndex;
-    public GameObject[] _walls = null;
+    //public GameObject[] _walls = null;
     //public List<Vector2Int> _wallGridPositions = null;
 
     private void Start()
@@ -41,13 +41,13 @@ public class GraphUpdateTest : MonoBehaviour
         }
     }
 
-    [Button]
+    //[Button]
     private void AlternateWallsVisibility()
     {
-        for (int i = 0; i < _walls.Length; i++)
-        {
-            _walls[i].SetActive(!_walls[i].activeSelf);
-        }
+        //for (int i = 0; i < _walls.Length; i++)
+        //{
+        //    _walls[i].SetActive(!_walls[i].activeSelf);
+        //}
 
         //_wallGridPositions.Clear();
 
@@ -60,7 +60,7 @@ public class GraphUpdateTest : MonoBehaviour
     }
 
     [Button]
-    private void UpdateGraph()
+    public void UpdateGraph()
     {
         //// Recalculate only the first grid graph
         //var graphToScan = AstarPath.active.data.gridGraph;

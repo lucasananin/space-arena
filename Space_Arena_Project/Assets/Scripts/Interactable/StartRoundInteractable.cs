@@ -12,11 +12,13 @@ public class StartRoundInteractable : InteractableBehaviour
     private void OnEnable()
     {
         EnemySpawner.OnEndWave += Show;
+        EnemySpawner.OnEndWaveGroupChanged += Show;
     }
 
     private void OnDisable()
     {
-        EnemySpawner.OnEndWave += Show;
+        EnemySpawner.OnEndWave -= Show;
+        EnemySpawner.OnEndWaveGroupChanged -= Show;
     }
 
     public override void Interact(InteractAgent _agent)
@@ -28,6 +30,12 @@ public class StartRoundInteractable : InteractableBehaviour
     public override string GetText()
     {
         return $"Start Round";
+    }
+
+    private void Show(WaveSO _so)
+    {
+        _spriteRenderer.enabled = true;
+        _collider.enabled = true;
     }
 
     private void Show(WaveModel _wave)

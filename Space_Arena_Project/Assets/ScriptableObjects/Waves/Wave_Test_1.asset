@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bc977aa93978c74982ef301d2fe8217, type: 3}
-  m_Name: Wave_2
+  m_Name: Wave_Test_1
   m_EditorClassIdentifier: 
-  _environment: {fileID: 8506344680095507289, guid: 89ea2d48b87b55040b06342df2bcf1b5, type: 3}
+  _environment: {fileID: 8506344680095507289, guid: 7faf6c26c7753964eb0470ddb4b150ae, type: 3}
   _distanceRange: {x: 6, y: 12}
   _spawnTime: 0.4
   _waves:
   - _entities:
-    - _so: {fileID: 11400000, guid: c9a872c556f876748aca59a351afa0d5, type: 2}
+    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
       _quantity: 1
     _loots:
+    - {fileID: 11400000, guid: 0e757d27f5e145d4c88c89998974a9e2, type: 2}
     - {fileID: 11400000, guid: d4d5651bdc0e44744a9bb9717bb44550, type: 2}
-    _maxActiveSpawns: 2
+    - {fileID: 11400000, guid: 1de1469d6f475124483e3a891ca52a0b, type: 2}
+    _maxActiveSpawns: 1

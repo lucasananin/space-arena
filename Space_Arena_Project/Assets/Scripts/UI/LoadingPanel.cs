@@ -23,7 +23,7 @@ public class LoadingPanel : MonoBehaviour
         _view.Show();
     }
 
-    private void Hide()
+    private void Hide(WaveSO _waveSo)
     {
         _view.Hide();
     }

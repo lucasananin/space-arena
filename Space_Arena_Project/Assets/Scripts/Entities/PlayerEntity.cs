@@ -27,7 +27,7 @@ public class PlayerEntity : EntityBehaviour
         return _mover.HasMovementInput();
     }
 
-    private void ResetPosition()
+    private void ResetPosition(WaveSO _waveSo)
     {
         transform.position = Vector3.zero;
     }

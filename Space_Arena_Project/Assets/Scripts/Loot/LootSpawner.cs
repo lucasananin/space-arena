@@ -108,12 +108,17 @@ public class LootSpawner : MonoBehaviour
         return new Vector2(_x, _y);
     }
 
-    private void DestroyChests()
+    private void DestroyChests(WaveSO _waveSo)
     {
-        DestroyChests(null);
+        DestroyChests();
     }
 
     private void DestroyChests(WaveModel _wave)
+    {
+        DestroyChests();
+    }
+
+    private void DestroyChests()
     {
         int _count = _chestsSpawned.Count;
         for (int i = _count - 1; i >= 0; i--)
@@ -124,6 +129,8 @@ public class LootSpawner : MonoBehaviour
         _count = _weapons.Length;
         for (int i = _count - 1; i >= 0; i--)
             Destroy(_weapons[i].gameObject);
+
+        // destroy all collectables.
     }
 
     public void SpawnLoot(SpawnLootModel _lootSpawnInfo)

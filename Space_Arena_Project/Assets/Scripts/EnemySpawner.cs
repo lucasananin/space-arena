@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     private GridGraph _graph = null;
 
     public static event System.Action OnStartWaveGroupChanged = null;
-    public static event System.Action OnEndWaveGroupChanged = null;
+    public static event System.Action<WaveSO> OnEndWaveGroupChanged = null;
     public static event System.Action<WaveModel> OnStartWave = null;
     public static event System.Action<WaveModel> OnEndWave = null;
     public static event System.Action<WaveModel> OnEndFinalWave = null;
@@ -70,10 +70,11 @@ public class EnemySpawner : MonoBehaviour
         _groupIndex++;
         if (_groupIndex >= _waveGroups.Count)
             _groupIndex = 0;
+        _waveGroup = _waveGroups[_groupIndex];
 
         ResetWaveIndex();
-        OnEndWaveGroupChanged?.Invoke();
-        OnEndWave?.Invoke(null);
+        OnEndWaveGroupChanged?.Invoke(_waveGroup);
+        //OnEndWave?.Invoke(null);
     }
 
     private IEnumerator Spawn_routine()
