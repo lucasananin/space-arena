@@ -5,11 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Collectable_Ammo", menuName = "SO/Collectables/Ammo")]
 public class CollectableAmmoSO : CollectableSO
 {
-    [SerializeField, Range(0, 100)] int _restorePercentage = 10;
+    [SerializeField, Range(0, 100)] int _minRestorePercentage = 8;
+    [SerializeField, Range(0, 100)] int _maxRestorePercentage = 12;
 
     public override void Collect(CollectableAgent _agent)
     {
         var _ammoHandler = _agent.GetComponent<AmmoHandler>();
-        _ammoHandler.RestoreAllAmmo(_restorePercentage);
+        var _percentage = Random.Range(_minRestorePercentage, _maxRestorePercentage);
+        _ammoHandler.RestoreAmmo(_percentage);
     }
 }

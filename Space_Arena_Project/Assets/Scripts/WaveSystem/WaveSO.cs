@@ -14,17 +14,23 @@ public class WaveSO : ScriptableObject
     private void SetAllSpawnTimers(float _value)
     {
         int _count = _waves.Length;
-
         for (int i = 0; i < _count; i++)
-        {
             _waves[i].SpawnTime = _value;
-        }
+    }
+
+    [Button]
+    private void SetAllRanges(Vector2 _value)
+    {
+        int _count = _waves.Length;
+        for (int i = 0; i < _count; i++)
+            _waves[i].DistanceRange = _value;
     }
 }
 
 [System.Serializable]
 public class WaveModel
 {
+    [Title("- WAVE -", null, TitleAlignments.Centered)]
     [SerializeField] EntityGroup[] _entities = null;
     [SerializeField] LootTableSO[] _loots = null;
     [SerializeField, Range(1, 20)] int _maxActiveSpawns = 4;
@@ -35,7 +41,7 @@ public class WaveModel
     public LootTableSO[] Loots { get => _loots; set => _loots = value; }
     public int MaxActiveSpawns { get => _maxActiveSpawns; private set => _maxActiveSpawns = value; }
     public float SpawnTime { get => _spawnTime; set => _spawnTime = value; }
-    public Vector2 DistanceRange { get => _distanceRange; private set => _distanceRange = value; }
+    public Vector2 DistanceRange { get => _distanceRange; set => _distanceRange = value; }
 
     public AiEntity GetEntityPrefab()
     {

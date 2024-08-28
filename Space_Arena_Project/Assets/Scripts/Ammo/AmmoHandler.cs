@@ -20,10 +20,10 @@ public class AmmoHandler : MonoBehaviour
     [Button]
     public void RestoreAllAmmo()
     {
-        RestoreAllAmmo(999);
+        RestoreAmmo(999);
     }
 
-    public void RestoreAllAmmo(int _percentage)
+    public void RestoreAmmo(int _percentage)
     {
         int _count = _models.Length;
 

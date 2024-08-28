@@ -13005,7 +13005,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11}
+  m_LocalPosition: {x: 0.000000059604645, y: 0, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21197,7 +21197,7 @@ MonoBehaviour:
     _maxActiveSpawns: 1
   _useRandomizedWaves: 0
   _container: {fileID: 1159678663}
-  _waveSO: {fileID: 11400000, guid: 9cfed207a4029ed4db413a922f6c9efe, type: 2}
+  _waveSO: {fileID: 11400000, guid: f9da2d434eae4784cb37123ecd476f94, type: 2}
   _currentWave:
     _entities: []
     _loots: []
@@ -21371,7 +21371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889986704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11}
+  m_LocalPosition: {x: 0.000000059604645, y: 0, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -59074,7 +59074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6dd40c596b8004984a3b34086dc615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isInvincible: 1
+  _isInvincible: 0
   _maxHealth: 8
   _deathDelay: 0
   _currentHealth: 0
@@ -59127,7 +59127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4023e2bd69e5b54d846e41ea468df1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _infiniteAmmo: 1
+  _infiniteAmmo: 0
   _models:
   - _so: {fileID: 11400000, guid: b3dc590e3e7accd459b765e535abb941, type: 2}
     _quantity: 0
