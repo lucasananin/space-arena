@@ -12,8 +12,23 @@ public class PlayerEntity : EntityBehaviour
             _mover = GetComponent<PlayerMover>();
     }
 
+    private void OnEnable()
+    {
+        EnemySpawner.OnEndWaveGroupChanged += ResetPosition;
+    }
+
+    private void OnDisable()
+    {
+        EnemySpawner.OnEndWaveGroupChanged -= ResetPosition;
+    }
+
     public override bool IsMoving()
     {
         return _mover.HasMovementInput();
+    }
+
+    private void ResetPosition()
+    {
+        transform.position = Vector3.zero;
     }
 }

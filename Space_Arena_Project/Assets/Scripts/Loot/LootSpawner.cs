@@ -40,14 +40,16 @@ public class LootSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        EnemySpawner.OnEnd += SpawnChest;
-        EnemySpawner.OnStart += DestroyChest;
+        EnemySpawner.OnEndWave += SpawnChest;
+        EnemySpawner.OnStartWave += DestroyChests;
+        EnemySpawner.OnEndWaveGroupChanged += DestroyChests;
     }
 
     private void OnDisable()
     {
-        EnemySpawner.OnEnd -= SpawnChest;
-        EnemySpawner.OnStart -= DestroyChest;
+        EnemySpawner.OnEndWave -= SpawnChest;
+        EnemySpawner.OnStartWave -= DestroyChests;
+        EnemySpawner.OnEndWaveGroupChanged -= DestroyChests;
     }
 
     [Button]
@@ -106,7 +108,12 @@ public class LootSpawner : MonoBehaviour
         return new Vector2(_x, _y);
     }
 
-    private void DestroyChest(WaveModel _wave)
+    private void DestroyChests()
+    {
+        DestroyChests(null);
+    }
+
+    private void DestroyChests(WaveModel _wave)
     {
         int _count = _chestsSpawned.Count;
         for (int i = _count - 1; i >= 0; i--)

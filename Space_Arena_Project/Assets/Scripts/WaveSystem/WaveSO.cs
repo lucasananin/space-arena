@@ -6,29 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Wave_", menuName = "SO/Wave")]
 public class WaveSO : ScriptableObject
 {
-    [SerializeField, Range(0.1f, 9f)] float _spawnTime = 0.4f;
     [SerializeField] Vector2 _distanceRange = new(6f, 12f);
+    [SerializeField, Range(0.1f, 9f)] float _spawnTime = 0.4f;
     [SerializeField] WaveModel[] _waves = null;
 
     public WaveModel[] Waves { get => _waves; private set => _waves = value; }
-    public float SpawnTime { get => _spawnTime; set => _spawnTime = value; }
-    public Vector2 DistanceRange { get => _distanceRange; set => _distanceRange = value; }
-
-    //[Button]
-    //private void SetAllSpawnTimers(float _value)
-    //{
-    //    int _count = _waves.Length;
-    //    for (int i = 0; i < _count; i++)
-    //        _waves[i].SpawnTime = _value;
-    //}
-
-    //[Button]
-    //private void SetAllRanges(Vector2 _value)
-    //{
-    //    int _count = _waves.Length;
-    //    for (int i = 0; i < _count; i++)
-    //        _waves[i].DistanceRange = _value;
-    //}
+    public Vector2 DistanceRange { get => _distanceRange; private set => _distanceRange = value; }
+    public float SpawnTime { get => _spawnTime; private set => _spawnTime = value; }
 }
 
 [System.Serializable]
@@ -38,6 +22,7 @@ public class WaveModel
     [SerializeField] EntityGroup[] _entities = null;
     [SerializeField] LootTableSO[] _loots = null;
     [SerializeField, Range(1, 20)] int _maxActiveSpawns = 4;
+
     readonly List<float> _runtimeQuantities = new();
 
     public LootTableSO[] Loots { get => _loots; set => _loots = value; }
