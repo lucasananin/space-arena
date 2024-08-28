@@ -7,6 +7,7 @@ public class EnvironmentHandler : MonoBehaviour
 {
     [SerializeField] GraphUpdateTest _graphUpdater = null;
     [SerializeField] GameObject _defaultEnvironment = null;
+    [SerializeField] bool _changeEnvironment = false;
     [SerializeField, ReadOnly] GameObject _currentEnvironment = null;
 
     private void Awake()
@@ -26,6 +27,8 @@ public class EnvironmentHandler : MonoBehaviour
 
     private void ChangeEnvironment(WaveSO _waveSo)
     {
+        if (!_changeEnvironment) return;
+
         _currentEnvironment.SetActive(false);
 
         var _instance = Instantiate(_waveSo.Environment, transform.position, Quaternion.identity);
