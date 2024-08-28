@@ -21191,20 +21191,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _randomizedWaves:
   - _entities:
-    - _so: {fileID: 11400000, guid: 299b6c5e8110a9f4ea3cb369e8af3174, type: 2}
-      _quantity: 0
-    _quantity: 1
-    _maxActiveSpawns: 1
+    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
+      _quantity: 2
+    _quantity: 2
+    _maxActiveSpawns: 2
   _useRandomizedWaves: 0
   _container: {fileID: 1159678663}
-  _waveSO: {fileID: 11400000, guid: f9da2d434eae4784cb37123ecd476f94, type: 2}
+  _waveSOs:
+  - {fileID: 11400000, guid: f9da2d434eae4784cb37123ecd476f94, type: 2}
+  _waveSO: {fileID: 0}
   _currentWave:
     _entities: []
     _loots: []
     _maxActiveSpawns: 4
-    _spawnTime: 1
-    _distanceRange: {x: 5, y: 15}
   _player: {fileID: 0}
+  _soIndex: 0
   _waveIndex: 0
   _isSpawning: 0
   _activeSpawnCount: 0

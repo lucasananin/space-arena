@@ -85,6 +85,8 @@ public class LootSpawner : MonoBehaviour
     //[Button]
     private void SpawnChest(WaveModel _wave)
     {
+        if (_wave is null) return;
+
         int _count = _wave.Loots.Length;
 
         for (int i = 0; i < _count; i++)

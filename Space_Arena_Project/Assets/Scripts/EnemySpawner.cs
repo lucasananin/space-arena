@@ -10,10 +10,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] bool _useRandomizedWaves = false;
     [Space]
     [SerializeField] Transform _container = null;
-    [SerializeField] WaveSO _waveSO = null;
+    [SerializeField] List<WaveSO> _waveGroups = null;
+    //[SerializeField] WaveSO _waveSO = null;
     [Space]
-    [SerializeField, ReadOnly] WaveModel _currentWave = null;
     [SerializeField, ReadOnly] PlayerEntity _player = null;
+    [SerializeField, ReadOnly] WaveSO _currentWaveGroup = null;
+    [SerializeField, ReadOnly] WaveModel _currentWave = null;
+    [SerializeField, ReadOnly] int _groupIndex = 0;
     [SerializeField, ReadOnly] int _waveIndex = 0;
     [SerializeField, ReadOnly] bool _isSpawning = false;
     [SerializeField, ReadOnly] int _activeSpawnCount = 0;
@@ -27,6 +30,7 @@ public class EnemySpawner : MonoBehaviour
     {
         _graph = AstarPath.active.data.graphs[0] as GridGraph;
         _player = FindAnyObjectByType<PlayerEntity>();
+        _currentWaveGroup = _waveGroups[_groupIndex];
     }
 
     private void OnEnable()
@@ -46,15 +50,49 @@ public class EnemySpawner : MonoBehaviour
     {
         if (_isSpawning) return;
 
-        StartCoroutine(Spawn_routine());
+        if (_waveIndex >= _currentWaveGroup.Waves.Length)
+        {
+            //_soIndex++;
+            //ResetWaveIndex();
+            StartCoroutine(ChangeSO_routine());
+        }
+        else
+        {
+            StartCoroutine(Spawn_routine());
+        }
+
+        //StartCoroutine(Spawn_routine());
+    }
+
+    private IEnumerator ChangeSO_routine()
+    {
+        yield return new WaitForSeconds(1);
+
+        _groupIndex++;
+
+        if (_groupIndex >= _waveGroups.Count)
+        {
+            _groupIndex = 0;
+        }
+
+        //_waveSO = _waveSOs[_soIndex];
+        ResetWaveIndex();
+        OnEnd?.Invoke(null);
     }
 
     private IEnumerator Spawn_routine()
     {
-        if (_waveIndex >= _waveSO.Waves.Length) ResetWaveIndex();
+        //if (_waveIndex >= _waveSO.Waves.Length) ResetWaveIndex();
+        //if (_waveIndex >= _waveSO.Waves.Length)
+        //{
+        //    _soIndex++;
+        //    ResetWaveIndex();
+        //}
 
         _isSpawning = true;
-        _currentWave = _waveSO.Waves[_waveIndex];
+        //_waveSO = _waveSOs[_soIndex];
+        //_currentWave = _waveSO.Waves[_waveIndex];
+        _currentWave = _currentWaveGroup.Waves[_waveIndex];
         _currentWave.ResetRuntimeQuantities();
         _activeSpawnCount = 0;
         int _totalSpawnedCount = 0;
@@ -75,7 +113,7 @@ public class EnemySpawner : MonoBehaviour
             Vector3 _position = GetRandomNodePosition();
             Instantiate(_prefab, _position, Quaternion.identity, _container);
 
-            yield return new WaitForSeconds(_currentWave.SpawnTime);
+            yield return new WaitForSeconds(_currentWaveGroup.SpawnTime);
 
         } while (_totalSpawnedCount < _totalSpawnQuantity);
 
@@ -105,8 +143,8 @@ public class EnemySpawner : MonoBehaviour
                 _finalPosition = (Vector3)_node.position;
             }
 
-            var _isCloseToPlayer = GeneralMethods.IsPointCloseToTarget(_finalPosition, _playerPosition, _currentWave.DistanceRange.x);
-            var _isFarFromPlayer = !GeneralMethods.IsPointCloseToTarget(_finalPosition, _playerPosition, _currentWave.DistanceRange.y);
+            var _isCloseToPlayer = GeneralMethods.IsPointCloseToTarget(_finalPosition, _playerPosition, _currentWaveGroup.DistanceRange.x);
+            var _isFarFromPlayer = !GeneralMethods.IsPointCloseToTarget(_finalPosition, _playerPosition, _currentWaveGroup.DistanceRange.y);
 
             if (_isCloseToPlayer || _isFarFromPlayer)
             {
