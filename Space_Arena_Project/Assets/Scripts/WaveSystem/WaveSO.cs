@@ -75,7 +75,7 @@ public class WaveModel
 public class EntityGroup
 {
     [SerializeField] AiEntitySO _so = null;
-    [SerializeField, Range(0, 99)] int _quantity = 1;
+    [SerializeField, Range(0, 20)] int _quantity = 1;
 
     public AiEntitySO SO { get => _so; set => _so = value; }
     public int Quantity { get => _quantity; set => _quantity = value; }
