@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Projectiles_Yellow
+  m_Name: Laser_Green_1
   m_Shader: {fileID: 4800000, guid: 79ee6cefbc672a44e97359d4d14ea301, type: 3}
   m_ValidKeywords:
   - BLUR_ON
@@ -57,7 +57,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 2f862e52cf98dcf4db7ce0779880dfd1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -117,9 +117,9 @@ Material:
     - _Contrast: 1
     - _CullingOption: 0
     - _DistortAmount: 0.3
-    - _DistortTexXSpeed: 5
-    - _DistortTexYSpeed: 0
-    - _EditorDrawers: 2
+    - _DistortTexXSpeed: 0
+    - _DistortTexYSpeed: 5
+    - _EditorDrawers: 0
     - _EnableExternalAlpha: 0
     - _FadeAmount: -0.1
     - _FadeBurnGlow: 2
@@ -134,7 +134,7 @@ Material:
     - _GhostTransparency: 0
     - _GlitchAmount: 3
     - _GlitchSize: 1
-    - _Glow: 1
+    - _Glow: 10
     - _GlowAffectLight: 1
     - _GlowGlobal: 1
     - _GradBlend: 1

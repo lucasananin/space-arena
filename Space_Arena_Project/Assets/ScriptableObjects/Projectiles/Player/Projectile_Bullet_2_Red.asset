@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c83bc7b64efbc1f4e9b1e00bbec38444, type: 3}
-  m_Name: Projectile_Bullet_2_Blue
+  m_Name: Projectile_Bullet_2_Red
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7353528016857128665, guid: f1d7f8d99b09ca44dbbc49ebce407414, type: 3}
+  _prefab: {fileID: 7353528016857128665, guid: a55d643c57a9f0d43a784481ea7f5423, type: 3}
   _ammoSO: {fileID: 11400000, guid: b3dc590e3e7accd459b765e535abb941, type: 2}
   _layerMask:
     serializedVersion: 2
