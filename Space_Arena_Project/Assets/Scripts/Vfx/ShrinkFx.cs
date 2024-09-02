@@ -6,7 +6,6 @@ using UnityEngine;
 public class ShrinkFx : MonoBehaviour
 {
     [SerializeField] Transform[] _transforms = null;
-    [SerializeField] Vector3 _targetScale = Vector3.zero;
     [SerializeField] float _shrinkDuration = 0.3f;
     [SerializeField, ReadOnly] List<Vector3> _defaultScales = null;
     [SerializeField, ReadOnly] float _shrinkTimer = 0f;
@@ -30,7 +29,7 @@ public class ShrinkFx : MonoBehaviour
 
         for (int i = 0; i < _count; i++)
         {
-            _transforms[i].localScale = Vector3.Lerp(_defaultScales[i], _targetScale, _shrinkTimer);
+            _transforms[i].localScale = Vector3.Lerp(_defaultScales[i], Vector3.zero, _shrinkTimer);
         }
     }
 
