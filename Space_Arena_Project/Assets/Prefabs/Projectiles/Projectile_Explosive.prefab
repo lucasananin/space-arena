@@ -701,12 +701,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f156bad3a5a6ec148bea92ba23d4ded6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _projectile: {fileID: 7353528016857128665}
+  _renderer: {fileID: 4262095024129470701}
   _sprites:
   - {fileID: 21300000, guid: 1949b75b81a3b3e4f8728cad3f5a421b, type: 3}
   - {fileID: 21300000, guid: 82e3f3d5036cb3c4c802809634437f9d, type: 3}
-  _renderer: {fileID: 4262095024129470701}
-  _projectile: {fileID: 7353528016857128665}
   _normalizedMinValue: 0.5
   _defaultTimeMultiplier: 2
   _fastTimeMultiplier: 10
-  _t: 0
+  _timer: 0
