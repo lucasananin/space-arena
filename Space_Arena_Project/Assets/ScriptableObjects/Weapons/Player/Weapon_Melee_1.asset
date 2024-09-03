@@ -36,15 +36,16 @@ MonoBehaviour:
     _burstRate: 0
     _shotsPerBurst: 0
   _projectileStats:
-    _destroyTimeRange: {x: 1, y: 2}
-    _explosionRadius: 0
+    _destroyTimeRange: {x: 10, y: 10}
     _canDamageProjectiles: 1
+    _explosionRadius: 0
+    _canDamageSource: 0
     _maxPierceCount: 99
     _blockPierceTags: {fileID: 11400000, guid: 5c03807d747206d4ea4d69c8c970930e, type: 2}
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
-    _moveSpeedRange: {x: 10, y: 10}
+    _moveSpeedRange: {x: 20, y: 20}
     _scaleMultiplier: 1
     _destroyOnStop: 1
     _useAccelerationCurve: 1
@@ -73,7 +74,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    _acelerationMultiplier: 2
+    _acelerationMultiplier: 4
     _canBounce: 0
     _bounceTags: {fileID: 11400000, guid: 8f86bb6b935e0c5469d64ca4ac6ca586, type: 2}
     _maxCastDistance: 0
