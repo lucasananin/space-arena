@@ -5,6 +5,7 @@ using UnityEngine;
 public class SimpleSpriteAnimator : MonoBehaviour
 {
     [SerializeField] Sprite[] _sprites = null;
+    [SerializeField] float[] _durations = null;
     [SerializeField] SpriteRenderer _renderer = null;
     [SerializeField] float _duration = 1f;
     [SerializeField] bool _playOnStart = true;
@@ -31,7 +32,8 @@ public class SimpleSpriteAnimator : MonoBehaviour
         {
             _renderer.sprite = _sprites[_index];
 
-            float _waitTime = _duration / _sprites.Length;
+            //float _waitTime = _duration / _sprites.Length;
+            float _waitTime = _durations[_index];
             yield return new WaitForSeconds(_waitTime);
 
             _index++;

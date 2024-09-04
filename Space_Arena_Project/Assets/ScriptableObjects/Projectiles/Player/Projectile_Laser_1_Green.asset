@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c83bc7b64efbc1f4e9b1e00bbec38444, type: 3}
-  m_Name: Projectile_Cast
+  m_Name: Projectile_Laser_1_Green
   m_EditorClassIdentifier: 
   _prefab: {fileID: 3761620198474376623, guid: 45d10daf33c382f41a876028f024ad04, type: 3}
   _ammoSO: {fileID: 11400000, guid: c741b913cc5b4bf49b26e7f6a7103b33, type: 2}

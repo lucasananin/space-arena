@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7353528016857128666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7353528016857128664}
+  - component: {fileID: 2945808015590850479}
+  - component: {fileID: 3761620198474376623}
+  - component: {fileID: 7643541444447828504}
+  - component: {fileID: -1557325256273126192}
+  m_Layer: 9
+  m_Name: Projectile_Laser_Red
+  m_TagString: Projectile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7353528016857128664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2945808015590850479
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
+--- !u!114 &3761620198474376623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90be3c4517db8714eb857ec86f6e5f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shootModel:
+    _entitySource: {fileID: 0}
+    _weaponSource: {fileID: 0}
+    _projectileSO: {fileID: 0}
+  _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}
+  _stats:
+    _destroyTimeRange: {x: 0, y: 0}
+    _canDamageProjectiles: 0
+    _explosionRadius: 0
+    _canDamageSource: 0
+    _maxPierceCount: 1
+    _blockPierceTags: {fileID: 0}
+    _canAutoAim: 0
+    _autoAimDistance: 0
+    _autoAimAngle: 0
+    _moveSpeedRange: {x: 0, y: 0}
+    _scaleMultiplier: 1
+    _destroyOnStop: 0
+    _useAccelerationCurve: 0
+    _invertAcceleration: 0
+    _accelerationCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _acelerationMultiplier: 0
+    _canBounce: 0
+    _bounceTags: {fileID: 0}
+    _maxCastDistance: 0
+    _maxGuidedRadius: 0
+  _timeUntilDestroy: 0
+  _destroyTimer: 0
+  _currentPierceCount: 0
+  _tagsList: []
+  _dummyCircleCollider: {fileID: 2945808015590850479}
+--- !u!114 &7643541444447828504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aad92afbb7622947ac0d5885dfbd938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _castProjectile: {fileID: 3761620198474376623}
+  _lineVfx: {fileID: 3300318201072077148, guid: 90503be5624fc1b46b44fc1c86cbcaab, type: 3}
+--- !u!114 &-1557325256273126192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf01a22c72c2d74ab6b943d57dea308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectileBehaviour: {fileID: 3761620198474376623}
+  _hitVfx: {fileID: 4595461622765139695, guid: b14a36aa819990e40a0f52fe00b88f38, type: 3}
