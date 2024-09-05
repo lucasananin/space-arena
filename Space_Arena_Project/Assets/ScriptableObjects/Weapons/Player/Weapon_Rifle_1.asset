@@ -18,7 +18,7 @@ MonoBehaviour:
   _displayName: Laser-SR
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
-  _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}
+  _projectileSO: {fileID: 11400000, guid: 15d259ee4233be34e89ccae4d1e06b44, type: 2}
   _stats:
     _damage: 5
     _explosiveDamage: 0
@@ -37,8 +37,9 @@ MonoBehaviour:
     _shotsPerBurst: 0
   _projectileStats:
     _destroyTimeRange: {x: 1, y: 2}
-    _explosionRadius: 0
     _canDamageProjectiles: 0
+    _explosionRadius: 0
+    _canDamageSource: 0
     _maxPierceCount: 2
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 0

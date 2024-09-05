@@ -18,7 +18,7 @@ MonoBehaviour:
   _displayName: 
   _holsterPosition: {x: 0, y: 0, z: 0}
   _holsterEuler: {x: 0, y: 0, z: 0}
-  _projectileSO: {fileID: 11400000, guid: 54efe47f8009a524fa89def17fec7adb, type: 2}
+  _projectileSO: {fileID: 11400000, guid: 33635cd10cbe9f44ba26b33a30b2213e, type: 2}
   _stats:
     _damage: 1
     _explosiveDamage: 0

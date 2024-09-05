@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c83bc7b64efbc1f4e9b1e00bbec38444, type: 3}
-  m_Name: Projectile_Shell_1_Red
+  m_Name: Projectile_Shell_3_Purple
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7353528016857128665, guid: d16a55ba6d341d142a6897c2a9081d46, type: 3}
+  _prefab: {fileID: 7353528016857128665, guid: fafd090863f71974b9bb880653e14802, type: 3}
   _ammoSO: {fileID: 11400000, guid: 34fdbfb2e9946f64592624dbab4ac89e, type: 2}
   _layerMask:
     serializedVersion: 2
@@ -23,4 +23,4 @@ MonoBehaviour:
   _obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  _spawnPositionOffset: {x: 0.3, y: 0}
+  _spawnPositionOffset: {x: 0, y: 0}

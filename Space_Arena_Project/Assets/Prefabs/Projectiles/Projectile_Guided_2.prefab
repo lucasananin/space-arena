@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: a36400a23d0e4ce46bc7cd73c54670fa, type: 3}
-  m_Color: {r: 1, g: 0.19999999, b: 0.73333323, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectile: {fileID: 8552097569084531652}
-  _lineVfx: {fileID: 3300318201072077148, guid: aeef418fa81f492439000cf07b3ba191, type: 3}
+  _lineVfx: {fileID: 3300318201072077148, guid: 90503be5624fc1b46b44fc1c86cbcaab, type: 3}
   _offset: {x: -5, y: 20, z: 0}
 --- !u!114 &6031725739143003102
 MonoBehaviour:

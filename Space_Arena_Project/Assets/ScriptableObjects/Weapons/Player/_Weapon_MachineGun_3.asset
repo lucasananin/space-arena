@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: Weapon_MachineGun_3
+  m_Name: _Weapon_MachineGun_3
   m_EditorClassIdentifier: 
   _iconSprite: {fileID: -111368136, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: 735cb7c36d2b3424482dc13a33ac77c7, type: 3}

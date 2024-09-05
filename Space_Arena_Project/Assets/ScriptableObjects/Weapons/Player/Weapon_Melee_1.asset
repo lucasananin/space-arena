@@ -18,11 +18,11 @@ MonoBehaviour:
   _displayName: Sword
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
-  _projectileSO: {fileID: 11400000, guid: 0550e4f298432344dbbe5bd3bce6b4e3, type: 2}
+  _projectileSO: {fileID: 11400000, guid: d12c296cdbe1d88459fd1563d92f20d1, type: 2}
   _stats:
-    _damage: 4
+    _damage: 2
     _explosiveDamage: 0
-    _fireRate: 0.5
+    _fireRate: 0.2
     _chargeTime: 0
     _maxHeat: 0
     _heatPerShot: 0

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
-  m_Name: Weapon_Melee_2
+  m_Name: _Weapon_Melee_Overlap
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: -1772053551, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
-  _weaponPrefab: {fileID: 8534141531701759386, guid: 6ece4e9e570b38647921188f88b1ae64, type: 3}
-  _id: melee_2
-  _displayName: Knife
-  _holsterPosition: {x: -0.25, y: 0.3, z: 0}
-  _holsterEuler: {x: 0, y: 0, z: -60}
-  _projectileSO: {fileID: 11400000, guid: 0550e4f298432344dbbe5bd3bce6b4e3, type: 2}
+  _iconSprite: {fileID: 1271702918, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _weaponPrefab: {fileID: 0}
+  _id: 
+  _displayName: 
+  _holsterPosition: {x: 0, y: 0, z: 0}
+  _holsterEuler: {x: 0, y: 0, z: 0}
+  _projectileSO: {fileID: 11400000, guid: 449cc4ef671e7fb41b2a0e3c121af069, type: 2}
   _stats:
     _damage: 1
     _explosiveDamage: 0
@@ -28,53 +28,34 @@ MonoBehaviour:
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 4
-    _arcMode: 1
+    _shootAngle: 0
+    _arcMode: 0
     _projectilesPerShot: 1
-    _ammoPerShot: 0
+    _ammoPerShot: 1
     _isAutoChargeType: 0
     _burstRate: 0
     _shotsPerBurst: 0
   _projectileStats:
-    _destroyTimeRange: {x: 1, y: 2}
+    _destroyTimeRange: {x: 0, y: 0}
     _explosionRadius: 0
-    _canDamageProjectiles: 1
-    _maxPierceCount: 99
+    _canDamageProjectiles: 0
+    _maxPierceCount: 1
     _blockPierceTags: {fileID: 11400000, guid: 5c03807d747206d4ea4d69c8c970930e, type: 2}
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
-    _moveSpeedRange: {x: 10, y: 10}
-    _scaleMultiplier: 0.5
-    _destroyOnStop: 1
-    _useAccelerationCurve: 1
+    _moveSpeedRange: {x: 20, y: 20}
+    _destroyOnStop: 0
+    _useAccelerationCurve: 0
     _invertAcceleration: 0
     _accelerationCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 2
-        outSlope: 2
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    _acelerationMultiplier: 2
+    _acelerationMultiplier: 1
     _canBounce: 0
     _bounceTags: {fileID: 11400000, guid: 8f86bb6b935e0c5469d64ca4ac6ca586, type: 2}
-    _maxCastDistance: 0
+    _maxCastDistance: 99
     _maxGuidedRadius: 0

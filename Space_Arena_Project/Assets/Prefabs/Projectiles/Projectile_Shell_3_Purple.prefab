@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6974198562d2f874ebec884b07b7fa77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7888fd6e1d93284094c92fee325f973, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 9165684251094917796}
   - component: {fileID: 6599587875688167298}
   m_Layer: 9
-  m_Name: Projectile_Shell_1_Red
+  m_Name: Projectile_Shell_3_Purple
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
