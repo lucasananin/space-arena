@@ -7,7 +7,7 @@ public class SimpleSpriteAnimator : MonoBehaviour
     [SerializeField] Sprite[] _sprites = null;
     [SerializeField] float[] _durations = null;
     [SerializeField] SpriteRenderer _renderer = null;
-    [SerializeField] float _duration = 1f;
+    //[SerializeField] float _duration = 1f;
     [SerializeField] bool _playOnStart = true;
 
     private void Start()
