@@ -22864,7 +22864,7 @@ MonoBehaviour:
   _useRandomizedWaves: 0
   _container: {fileID: 1159678663}
   _waveGroups:
-  - {fileID: 11400000, guid: 5cf1d8cc6dd25c9498080c13b249e055, type: 2}
+  - {fileID: 11400000, guid: 9cfed207a4029ed4db413a922f6c9efe, type: 2}
   _player: {fileID: 0}
   _waveGroup: {fileID: 0}
   _waveModel:
