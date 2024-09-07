@@ -4869,6 +4869,7 @@ GameObject:
   - component: {fileID: 4705853102255858287}
   - component: {fileID: 7353528016857128665}
   - component: {fileID: 9165684251094917796}
+  - component: {fileID: -8977344071992003808}
   m_Layer: 9
   m_Name: Projectile_Shell_3_Green
   m_TagString: Projectile
@@ -4999,6 +5000,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectileBehaviour: {fileID: 7353528016857128665}
   _hitVfx: {fileID: 4595461622765139695, guid: 8a1974664a878cf4f8fd92411f899cac, type: 3}
+--- !u!114 &-8977344071992003808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353528016857128666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8d3ca22c68a1b47bada30050b9dc4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isInvincible: 0
+  _maxHealth: 1
+  _deathDelay: 0
+  _currentHealth: 0
+  _isDying: 0
+  _lastDamageModel:
+    _entitySource: {fileID: 0}
+    _pointHit: {x: 0, y: 0, z: 0}
+    _value: 0
 --- !u!1 &8608752996645218613
 GameObject:
   m_ObjectHideFlags: 0
