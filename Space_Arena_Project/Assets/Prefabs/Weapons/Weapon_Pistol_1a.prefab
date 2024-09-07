@@ -256,8 +256,8 @@ Transform:
   - {fileID: 5704818091080987772}
   - {fileID: 5704818090834962463}
   - {fileID: 5704818092340610211}
-  - {fileID: 504730758323006370}
   - {fileID: 8880170517485267356}
+  - {fileID: 1162946239432647385}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -417,7 +417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8880170517485267356
 Transform:
   m_ObjectHideFlags: 0
@@ -431,7 +431,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5704818092466949256}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2071679678741297304
 MonoBehaviour:
@@ -504,7 +504,7 @@ MonoBehaviour:
   _initialIntensity: 0
   _defaultInnerRadius: 0
   _defaultOuterRadius: 0
---- !u!1001 &5704818092456425585
+--- !u!1001 &6343638204559274250
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -517,7 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 5704818092466949252}
     - target: {fileID: 5200175596249306067, guid: 961ef88eb81389c4c9cff28476d26a08, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5200175596249306067, guid: 961ef88eb81389c4c9cff28476d26a08, type: 3}
       propertyPath: m_LocalPosition.x
@@ -561,12 +561,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5200175596249306076, guid: 961ef88eb81389c4c9cff28476d26a08, type: 3}
       propertyPath: m_Name
-      value: Vfx_MuzzleFlash_1
+      value: Vfx_MuzzleFlash_1_Yellow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 961ef88eb81389c4c9cff28476d26a08, type: 3}
---- !u!4 &504730758323006370 stripped
+--- !u!4 &1162946239432647385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5200175596249306067, guid: 961ef88eb81389c4c9cff28476d26a08, type: 3}
-  m_PrefabInstance: {fileID: 5704818092456425585}
+  m_PrefabInstance: {fileID: 6343638204559274250}
   m_PrefabAsset: {fileID: 0}

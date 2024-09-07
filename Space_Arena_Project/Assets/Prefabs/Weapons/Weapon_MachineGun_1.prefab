@@ -284,7 +284,7 @@ Transform:
   - {fileID: 3562192090235152602}
   - {fileID: 3562192089651418423}
   - {fileID: 3562192089921406556}
-  - {fileID: 8738618191889868201}
+  - {fileID: 4309277872001659024}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -443,7 +443,7 @@ MonoBehaviour:
   _renderer: {fileID: 3562192090235152603}
   _minRightAngle: 26
   _minLeftAngle: 206
---- !u!1001 &3562192091360851578
+--- !u!1001 &8351676210518188867
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -500,12 +500,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5200175596249306076, guid: 961ef88eb81389c4c9cff28476d26a08, type: 3}
       propertyPath: m_Name
-      value: Vfx_MuzzleFlash_1
+      value: Vfx_MuzzleFlash_1_Yellow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 961ef88eb81389c4c9cff28476d26a08, type: 3}
---- !u!4 &8738618191889868201 stripped
+--- !u!4 &4309277872001659024 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5200175596249306067, guid: 961ef88eb81389c4c9cff28476d26a08, type: 3}
-  m_PrefabInstance: {fileID: 3562192091360851578}
+  m_PrefabInstance: {fileID: 8351676210518188867}
   m_PrefabAsset: {fileID: 0}

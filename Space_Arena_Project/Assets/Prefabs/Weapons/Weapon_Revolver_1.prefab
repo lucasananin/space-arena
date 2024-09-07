@@ -151,7 +151,7 @@ Transform:
   m_Children:
   - {fileID: 5704818091080987772}
   - {fileID: 5704818090834962463}
-  - {fileID: 504730758323006370}
+  - {fileID: 8517677559316789223}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -294,7 +294,7 @@ MonoBehaviour:
   _impulseSource: {fileID: -7874860500769441361}
   _weapon: {fileID: 5704818092466949252}
   _velocityMultiplier: 0.3
---- !u!1001 &5704818092456425585
+--- !u!1001 &4476123637677351988
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -351,12 +351,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5200175596249306076, guid: 961ef88eb81389c4c9cff28476d26a08, type: 3}
       propertyPath: m_Name
-      value: Vfx_MuzzleFlash_1
+      value: Vfx_MuzzleFlash_1_Yellow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 961ef88eb81389c4c9cff28476d26a08, type: 3}
---- !u!4 &504730758323006370 stripped
+--- !u!4 &8517677559316789223 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5200175596249306067, guid: 961ef88eb81389c4c9cff28476d26a08, type: 3}
-  m_PrefabInstance: {fileID: 5704818092456425585}
+  m_PrefabInstance: {fileID: 4476123637677351988}
   m_PrefabAsset: {fileID: 0}
