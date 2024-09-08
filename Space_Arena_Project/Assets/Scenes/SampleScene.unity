@@ -14607,18 +14607,13 @@ MonoBehaviour:
   _weaponCollider: {fileID: 1878020144}
   _weapons:
   - {fileID: 11400000, guid: f56cf73d605c30c4c8ead4dff0644b58, type: 2}
-  - {fileID: 11400000, guid: 5fb5b14102a6e6348a24ddfd0eff20e7, type: 2}
   - {fileID: 11400000, guid: 30ecdf5b450b1474c80b39c9680f3750, type: 2}
   - {fileID: 11400000, guid: 4f49ae87579d729418b4d7fc357905cc, type: 2}
   - {fileID: 11400000, guid: fdf51011eaf8e0b43ac0b34ffaf03b39, type: 2}
   - {fileID: 11400000, guid: df7bd8bd2f0c04e478be8536c9603323, type: 2}
-  - {fileID: 11400000, guid: 39d9fecc542490341af759819af88e94, type: 2}
-  - {fileID: 11400000, guid: 828b28747f809a54e9866ae62659bd7d, type: 2}
-  - {fileID: 11400000, guid: c43643a8ac0a09f44a2450ed4d9ca113, type: 2}
-  - {fileID: 11400000, guid: b67f3d7f7f1ed6845ac77d4b9a4c70e9, type: 2}
-  - {fileID: 11400000, guid: 73294017542b14d43ae666669f2cfb71, type: 2}
   - {fileID: 11400000, guid: 4cce4e38ee71add4d9c32282c4801e68, type: 2}
-  - {fileID: 11400000, guid: 1fa9ede65d9aaee4c98498489289ce0c, type: 2}
+  - {fileID: 11400000, guid: bb780b23a3ed9d04cbd2ebfd37864e35, type: 2}
+  - {fileID: 11400000, guid: b4bc92b3fe5926047865acc25794c23a, type: 2}
   _droppedWeapons: []
   _minMaxForce: {x: 5, y: 15}
   _chestPrefab: {fileID: 318452930903926227, guid: a807b6187623cd649b7cf0ceaace81a5, type: 3}
