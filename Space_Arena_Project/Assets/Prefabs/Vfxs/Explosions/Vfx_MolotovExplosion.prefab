@@ -4882,7 +4882,7 @@ GameObject:
   - component: {fileID: 5748780785701455087}
   - component: {fileID: 5748780785701455088}
   m_Layer: 0
-  m_Name: Vfx_Explosion_1
+  m_Name: Vfx_MolotovExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
