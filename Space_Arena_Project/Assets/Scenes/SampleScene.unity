@@ -14606,6 +14606,7 @@ MonoBehaviour:
   _weaponLootPrefab: {fileID: 5281741771645536111, guid: ef78d91f80ad7634cb58312915f887b8, type: 3}
   _weaponCollider: {fileID: 1878020144}
   _weapons:
+  - {fileID: 11400000, guid: 1e90c408e692ad5429ca305582984276, type: 2}
   - {fileID: 11400000, guid: f56cf73d605c30c4c8ead4dff0644b58, type: 2}
   - {fileID: 11400000, guid: 30ecdf5b450b1474c80b39c9680f3750, type: 2}
   - {fileID: 11400000, guid: 4f49ae87579d729418b4d7fc357905cc, type: 2}
