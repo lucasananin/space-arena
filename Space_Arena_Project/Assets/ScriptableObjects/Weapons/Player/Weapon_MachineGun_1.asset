@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: Weapon_MachineGun_1
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: 21300000, guid: d79c017e91b519f47a4a83a9660c7da3, type: 3}
+  _iconSprite: {fileID: 21300000, guid: bff05bd457023284da3e9dde2c38d61d, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: 2b97e7bca5fc4fd4bbfe4b95de0291af, type: 3}
   _id: machine_gun_1
   _displayName: Purple-MG
