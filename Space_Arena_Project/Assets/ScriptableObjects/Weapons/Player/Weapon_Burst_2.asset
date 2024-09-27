@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: Weapon_Burst_2
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: -1512215402, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _iconSprite: {fileID: 21300000, guid: 60921fdbad21bed42847d6dd15525593, type: 3}
   _weaponPrefab: {fileID: 4843378212357953053, guid: fe4ddcd81b1dd6c42a28f7a8a86972f7, type: 3}
   _id: burst_2
   _displayName: Double Burst
@@ -37,8 +37,9 @@ MonoBehaviour:
     _shotsPerBurst: 2
   _projectileStats:
     _destroyTimeRange: {x: 3, y: 4}
-    _explosionRadius: 0
     _canDamageProjectiles: 0
+    _explosionRadius: 0
+    _canDamageSource: 0
     _maxPierceCount: 1
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 0

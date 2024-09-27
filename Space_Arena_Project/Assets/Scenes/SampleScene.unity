@@ -14608,14 +14608,12 @@ MonoBehaviour:
   _weapons:
   - {fileID: 11400000, guid: 1e90c408e692ad5429ca305582984276, type: 2}
   - {fileID: 11400000, guid: f56cf73d605c30c4c8ead4dff0644b58, type: 2}
+  - {fileID: 11400000, guid: 5fb5b14102a6e6348a24ddfd0eff20e7, type: 2}
   - {fileID: 11400000, guid: 30ecdf5b450b1474c80b39c9680f3750, type: 2}
   - {fileID: 11400000, guid: 4f49ae87579d729418b4d7fc357905cc, type: 2}
   - {fileID: 11400000, guid: fdf51011eaf8e0b43ac0b34ffaf03b39, type: 2}
-  - {fileID: 11400000, guid: df7bd8bd2f0c04e478be8536c9603323, type: 2}
-  - {fileID: 11400000, guid: 4cce4e38ee71add4d9c32282c4801e68, type: 2}
   - {fileID: 11400000, guid: bb780b23a3ed9d04cbd2ebfd37864e35, type: 2}
   - {fileID: 11400000, guid: b4bc92b3fe5926047865acc25794c23a, type: 2}
-  - {fileID: 11400000, guid: 2f13db3608cc9b349963b437935972ad, type: 2}
   - {fileID: 11400000, guid: 8e6d532bee06d3742895a5864eeed65b, type: 2}
   - {fileID: 11400000, guid: cceedf6304df3074bb0d2b1d07aa1149, type: 2}
   - {fileID: 11400000, guid: b67f3d7f7f1ed6845ac77d4b9a4c70e9, type: 2}
