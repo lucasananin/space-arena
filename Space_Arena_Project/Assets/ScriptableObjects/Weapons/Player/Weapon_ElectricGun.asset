@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: Weapon_ElectricGun
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: 21300000, guid: 008f42a01ef26f04eab621fd256186fa, type: 3}
+  _iconSprite: {fileID: 21300000, guid: ad65ebe6c66a63b4f949fa1837ef19f9, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: 66284afa900f5c3428c4c7a427bb8f8e, type: 3}
   _id: eletric_gun
   _displayName: Eletric Gun
@@ -37,14 +37,16 @@ MonoBehaviour:
     _shotsPerBurst: 0
   _projectileStats:
     _destroyTimeRange: {x: 1, y: 2}
-    _explosionRadius: 0
     _canDamageProjectiles: 0
+    _explosionRadius: 0
+    _canDamageSource: 0
     _maxPierceCount: 1
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 1
     _autoAimDistance: 7
     _autoAimAngle: 180
     _moveSpeedRange: {x: 0, y: 0}
+    _scaleMultiplier: 1
     _destroyOnStop: 0
     _useAccelerationCurve: 0
     _invertAcceleration: 0
