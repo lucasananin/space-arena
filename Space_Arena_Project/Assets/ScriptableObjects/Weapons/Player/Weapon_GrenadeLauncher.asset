@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: Weapon_GrenadeLauncher
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: -2116303741, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _iconSprite: {fileID: 21300000, guid: 8799ec90e05b46645974aa7c67f3226d, type: 3}
   _weaponPrefab: {fileID: 8067246484439910053, guid: 9a2677e5df7bfdb498857fbf0b0e54c9, type: 3}
   _id: grenade_launcher_1
   _displayName: G-Launcher
