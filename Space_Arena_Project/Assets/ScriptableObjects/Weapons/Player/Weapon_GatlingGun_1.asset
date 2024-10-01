@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: Weapon_GatlingGun_1
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: 943674230, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _iconSprite: {fileID: 21300000, guid: a6d14c6c5f9e1c14fa47c8f9002330a0, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: aa4d0fe08b87ba94faff65f0366cde68, type: 3}
   _id: gatling_gun_1
   _displayName: Gatlling Gun
@@ -28,7 +28,7 @@ MonoBehaviour:
     _heatPerShot: 0
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
-    _shootAngle: 32
+    _shootAngle: 24
     _arcMode: 1
     _projectilesPerShot: 3
     _ammoPerShot: 3
