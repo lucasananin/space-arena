@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: Weapon_Guided_3
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: 9152810, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _iconSprite: {fileID: 21300000, guid: e5083f46d13b8a745a4e3c97f15d26a3, type: 3}
   _weaponPrefab: {fileID: 2797867902814346651, guid: ea5edf88176beeb4098699eb9a5dc65f, type: 3}
   _id: guided_3
   _displayName: Guided Laucher

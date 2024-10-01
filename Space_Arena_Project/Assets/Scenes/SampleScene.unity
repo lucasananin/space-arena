@@ -14482,6 +14482,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 67ab5d4e71e797a42afd7a0f1059079e, type: 2}
   - {fileID: 11400000, guid: 2f13db3608cc9b349963b437935972ad, type: 2}
   - {fileID: 11400000, guid: 8e6d532bee06d3742895a5864eeed65b, type: 2}
+  - {fileID: 11400000, guid: cceedf6304df3074bb0d2b1d07aa1149, type: 2}
   - {fileID: 11400000, guid: 30ecdf5b450b1474c80b39c9680f3750, type: 2}
   _droppedWeapons: []
   _minMaxForce: {x: 5, y: 15}
