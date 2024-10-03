@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: -2721646956382398946}
   - component: {fileID: -5312559171396479280}
   m_Layer: 0
-  m_Name: Weapon_Melee_2
+  m_Name: _Weapon_Melee_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
