@@ -14474,7 +14474,6 @@ MonoBehaviour:
   _weaponLootPrefab: {fileID: 5281741771645536111, guid: ef78d91f80ad7634cb58312915f887b8, type: 3}
   _weaponCollider: {fileID: 1878020144}
   _weapons:
-  - {fileID: 11400000, guid: 1e90c408e692ad5429ca305582984276, type: 2}
   - {fileID: 11400000, guid: f56cf73d605c30c4c8ead4dff0644b58, type: 2}
   - {fileID: 11400000, guid: 5fb5b14102a6e6348a24ddfd0eff20e7, type: 2}
   - {fileID: 11400000, guid: a7251c2b1d29dcc4a81dfd505a112493, type: 2}
@@ -14488,6 +14487,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fdf51011eaf8e0b43ac0b34ffaf03b39, type: 2}
   - {fileID: 11400000, guid: 4cce4e38ee71add4d9c32282c4801e68, type: 2}
   - {fileID: 11400000, guid: 1fa9ede65d9aaee4c98498489289ce0c, type: 2}
+  - {fileID: 11400000, guid: 1e90c408e692ad5429ca305582984276, type: 2}
+  - {fileID: 11400000, guid: 8c625e80ab439ab47a20f272ede18fc7, type: 2}
   _droppedWeapons: []
   _minMaxForce: {x: 5, y: 15}
   _chestPrefab: {fileID: 318452930903926227, guid: a807b6187623cd649b7cf0ceaace81a5, type: 3}
