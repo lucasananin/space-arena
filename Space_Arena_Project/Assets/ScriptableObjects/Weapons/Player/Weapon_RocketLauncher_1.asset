@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: Weapon_RocketLauncher_1
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: 137500684, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  _iconSprite: {fileID: 21300000, guid: 7c45460a106e80c44b275298234cc5ac, type: 3}
   _weaponPrefab: {fileID: 8067246484439910053, guid: 79cdc3ba6fa4a8342b9aaa1d5340c4ba, type: 3}
   _id: rocket_laucher_1
   _displayName: R-Launcher
