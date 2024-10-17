@@ -33,7 +33,7 @@ MonoBehaviour:
     _projectilesPerShot: 1
     _ammoPerShot: 1
     _isAutoChargeType: 0
-    _burstRate: 0.3
+    _burstRate: 0.2
     _shotsPerBurst: 3
   _projectileStats:
     _destroyTimeRange: {x: 3, y: 4}
