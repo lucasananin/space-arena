@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38d23a79ffe0b4eb5c3a1b2ffd0aeb, type: 3}
   m_Name: Weapon_MachineGun_1
   m_EditorClassIdentifier: 
-  _iconSprite: {fileID: 21300000, guid: b67f2de171bfd7349bd22fe110e24d3f, type: 3}
+  _iconSprite: {fileID: 21300000, guid: f25f7b226609c8547b9e7f2cd2d86898, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: 2b97e7bca5fc4fd4bbfe4b95de0291af, type: 3}
   _id: machine_gun_1
   _displayName: Purple-MG
@@ -46,7 +46,7 @@ MonoBehaviour:
     _autoAimDistance: 0
     _autoAimAngle: 0
     _moveSpeedRange: {x: 20, y: 20}
-    _scaleMultiplier: 1.2
+    _scaleMultiplier: 1
     _destroyOnStop: 0
     _useAccelerationCurve: 0
     _invertAcceleration: 0
