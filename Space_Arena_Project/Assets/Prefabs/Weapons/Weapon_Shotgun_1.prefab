@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2751957287607790104}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1040289249941802769
 SpriteRenderer:
@@ -120,9 +120,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2751957288736772841}
+  - {fileID: 4995723920224977468}
   - {fileID: 2751957288326732441}
   - {fileID: 9191991141208775583}
-  - {fileID: 4995723920224977468}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -305,12 +305,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2751957288326732440}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.06, y: -0.15, z: 0}
+  m_LocalPosition: {x: 0.98, y: -0.1335, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2751957287607790104}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2751957288736772840
 GameObject:
@@ -337,7 +337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2751957288736772840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.407, y: -0.13, z: 0}
+  m_LocalPosition: {x: 0.405, y: -0.142, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -384,7 +384,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 7a837027b261f0c49a935b67e1d7d2a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -409,15 +409,15 @@ PrefabInstance:
       objectReference: {fileID: 2751957287607790105}
     - target: {fileID: 5200175596249306067, guid: b9ae69ae1e520db4b9e5db7905d7b2f7, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5200175596249306067, guid: b9ae69ae1e520db4b9e5db7905d7b2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.06
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 5200175596249306067, guid: b9ae69ae1e520db4b9e5db7905d7b2f7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.15
+      value: -0.1335
       objectReference: {fileID: 0}
     - target: {fileID: 5200175596249306067, guid: b9ae69ae1e520db4b9e5db7905d7b2f7, type: 3}
       propertyPath: m_LocalPosition.z
