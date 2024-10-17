@@ -29,7 +29,7 @@ MonoBehaviour:
     _heatDecreasePerSecond: 0
     _maxOverheatTime: 0
     _shootAngle: 24
-    _arcMode: 1
+    _arcMode: 0
     _projectilesPerShot: 3
     _ammoPerShot: 3
     _isAutoChargeType: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
-    _moveSpeedRange: {x: 20, y: 20}
+    _moveSpeedRange: {x: 16, y: 20}
     _scaleMultiplier: 1
     _destroyOnStop: 0
     _useAccelerationCurve: 0
