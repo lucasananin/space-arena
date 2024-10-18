@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 5704818092466949253}
   - component: {fileID: -7874860500769441361}
   - component: {fileID: -4274399588789183488}
+  - component: {fileID: -574920201553627956}
   m_Layer: 0
   m_Name: Weapon_Pistol_1a
   m_TagString: Untagged
@@ -294,6 +295,22 @@ MonoBehaviour:
   _impulseSource: {fileID: -7874860500769441361}
   _weapon: {fileID: 5704818092466949252}
   _velocityMultiplier: 0.2
+--- !u!114 &-574920201553627956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5704818092466949259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daed80ba8e78c314b83925837e9207c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flipper: {fileID: 5704818092466949254}
+  _renderer: {fileID: 5704818091080987773}
+  _minRightAngle: 24
+  _minLeftAngle: 204
 --- !u!1001 &6343638204559274250
 PrefabInstance:
   m_ObjectHideFlags: 0

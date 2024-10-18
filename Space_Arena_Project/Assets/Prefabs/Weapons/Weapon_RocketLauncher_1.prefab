@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 8067246484439910054}
   - component: {fileID: 8067246484439910049}
   - component: {fileID: 8926880579969385397}
-  - component: {fileID: -4404796516930567134}
+  - component: {fileID: 2673581882131704270}
   m_Layer: 0
   m_Name: Weapon_RocketLauncher_1
   m_TagString: Untagged
@@ -363,18 +363,19 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
---- !u!114 &-4404796516930567134
+--- !u!114 &2673581882131704270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8067246484439910059}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8354868badc60446878ec52079e1c39, type: 3}
+  m_Script: {fileID: 11500000, guid: daed80ba8e78c314b83925837e9207c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _impulseSource: {fileID: 8926880579969385397}
-  _weapon: {fileID: 8067246484439910053}
-  _velocityMultiplier: 0.3
+  _flipper: {fileID: 8067246484439910055}
+  _renderer: {fileID: 8067246482870670673}
+  _minRightAngle: 14
+  _minLeftAngle: 194

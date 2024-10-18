@@ -131,7 +131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3562192089921406556
 Transform:
   m_ObjectHideFlags: 0
@@ -527,8 +527,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flipper: {fileID: 3562192091433409980}
   _renderer: {fileID: 3562192090235152603}
-  _minRightAngle: 26
-  _minLeftAngle: 206
+  _minRightAngle: 18
+  _minLeftAngle: 198
 --- !u!1001 &7377491316421550459
 PrefabInstance:
   m_ObjectHideFlags: 0

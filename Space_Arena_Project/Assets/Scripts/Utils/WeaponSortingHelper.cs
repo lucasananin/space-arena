@@ -8,9 +8,15 @@ public class WeaponSortingHelper : MonoBehaviour
     [SerializeField] WeaponFlipper _flipper = null;
     [SerializeField] SpriteRenderer _renderer = null;
     [SerializeField] float _minRightAngle = 26f;
-    [SerializeField] float _minLeftAngle = 206f;
-    //[SerializeField] Vector2 _minMax = default;
+    [SerializeField, ReadOnly] float _minLeftAngle = 206f;
     //[SerializeField, ReadOnly] float _zRotation = 0f;
+
+    private void OnValidate()
+    {
+        _flipper = GetComponent<WeaponFlipper>();
+        _renderer = GetComponentInChildren<SpriteRenderer>();
+        _minLeftAngle = +_minRightAngle + 180;
+    }
 
     private void LateUpdate()
     {

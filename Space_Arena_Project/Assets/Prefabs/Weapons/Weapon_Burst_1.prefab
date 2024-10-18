@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 109030493403453423}
   - component: {fileID: -3700964492024119886}
   - component: {fileID: 7427310108541956550}
+  - component: {fileID: -4020388462939021318}
   m_Layer: 0
   m_Name: Weapon_Burst_1
   m_TagString: Untagged
@@ -184,6 +185,22 @@ MonoBehaviour:
   _impulseSource: {fileID: -3700964492024119886}
   _weapon: {fileID: 4843378212357953053}
   _velocityMultiplier: 0.2
+--- !u!114 &-4020388462939021318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4843378212357953047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daed80ba8e78c314b83925837e9207c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flipper: {fileID: 4843378212357953043}
+  _renderer: {fileID: 4843378212925968550}
+  _minRightAngle: 34
+  _minLeftAngle: 214
 --- !u!1 &4843378212925968548
 GameObject:
   m_ObjectHideFlags: 0

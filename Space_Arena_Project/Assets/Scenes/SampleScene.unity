@@ -14497,6 +14497,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 73294017542b14d43ae666669f2cfb71, type: 2}
   - {fileID: 11400000, guid: 4f49ae87579d729418b4d7fc357905cc, type: 2}
   - {fileID: 11400000, guid: 097ee911a1b06424096887e949fcde5c, type: 2}
+  - {fileID: 11400000, guid: bb780b23a3ed9d04cbd2ebfd37864e35, type: 2}
   _droppedWeapons: []
   _minMaxForce: {x: 5, y: 15}
   _chestPrefab: {fileID: 318452930903926227, guid: a807b6187623cd649b7cf0ceaace81a5, type: 3}

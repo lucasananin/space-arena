@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2751957287607790308}
   - component: {fileID: -66830320206636449}
   - component: {fileID: -6227193792625866324}
-  - component: {fileID: 6539308639036894465}
+  - component: {fileID: 6651509997141879018}
   m_Layer: 0
   m_Name: Weapon_Shotgun_3
   m_TagString: Untagged
@@ -181,7 +181,7 @@ MonoBehaviour:
   _impulseSource: {fileID: -66830320206636449}
   _weapon: {fileID: 2751957287607790105}
   _velocityMultiplier: 0.3
---- !u!114 &6539308639036894465
+--- !u!114 &6651509997141879018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flipper: {fileID: 2751957287607790311}
   _renderer: {fileID: 2751957288736772854}
-  _minRightAngle: 26
-  _minLeftAngle: 206
+  _minRightAngle: 16
+  _minLeftAngle: 196
 --- !u!1 &2751957288326732440
 GameObject:
   m_ObjectHideFlags: 0

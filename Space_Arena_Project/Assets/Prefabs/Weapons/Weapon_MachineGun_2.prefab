@@ -131,7 +131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3562192089921406556
 Transform:
   m_ObjectHideFlags: 0
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 3562192091433409977}
   - component: {fileID: -3242506195273867952}
   - component: {fileID: -1916892800950921274}
-  - component: {fileID: 6477207873678277843}
+  - component: {fileID: -9121289586228852556}
   m_Layer: 0
   m_Name: Weapon_MachineGun_2
   m_TagString: Untagged
@@ -512,7 +512,7 @@ MonoBehaviour:
   _impulseSource: {fileID: -3242506195273867952}
   _weapon: {fileID: 3562192091433409978}
   _velocityMultiplier: 0.2
---- !u!114 &6477207873678277843
+--- !u!114 &-9121289586228852556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -526,8 +526,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flipper: {fileID: 3562192091433409980}
   _renderer: {fileID: 3562192090235152603}
-  _minRightAngle: 26
-  _minLeftAngle: 206
+  _minRightAngle: 20
+  _minLeftAngle: 200
 --- !u!1001 &8625980683768585762
 PrefabInstance:
   m_ObjectHideFlags: 0

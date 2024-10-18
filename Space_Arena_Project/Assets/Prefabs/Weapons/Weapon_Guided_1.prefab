@@ -182,7 +182,6 @@ GameObject:
   - component: {fileID: 5645198961146414899}
   - component: {fileID: 5645198961146414911}
   - component: {fileID: 1176470449266367607}
-  - component: {fileID: 8438835601221691482}
   m_Layer: 0
   m_Name: Weapon_Guided_1
   m_TagString: Untagged
@@ -333,21 +332,6 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
---- !u!114 &8438835601221691482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5645198961146414897}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8354868badc60446878ec52079e1c39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _impulseSource: {fileID: 1176470449266367607}
-  _weapon: {fileID: 5645198961146414910}
-  _velocityMultiplier: 0.2
 --- !u!1 &5645198961662698404
 GameObject:
   m_ObjectHideFlags: 0

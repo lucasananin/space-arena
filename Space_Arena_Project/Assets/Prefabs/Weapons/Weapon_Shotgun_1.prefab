@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 2751957287607790308}
   - component: {fileID: -66830320206636449}
   - component: {fileID: -6227193792625866324}
-  - component: {fileID: -608991930123864276}
+  - component: {fileID: 2045091030746317873}
   m_Layer: 0
   m_Name: Weapon_Shotgun_1
   m_TagString: Untagged
@@ -265,7 +265,7 @@ MonoBehaviour:
   _impulseSource: {fileID: -66830320206636449}
   _weapon: {fileID: 2751957287607790105}
   _velocityMultiplier: 0.3
---- !u!114 &-608991930123864276
+--- !u!114 &2045091030746317873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,8 +279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flipper: {fileID: 2751957287607790311}
   _renderer: {fileID: 2751957288736772854}
-  _minRightAngle: 26
-  _minLeftAngle: 206
+  _minRightAngle: 19
+  _minLeftAngle: 199
 --- !u!1 &2751957288326732440
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +384,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7a837027b261f0c49a935b67e1d7d2a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

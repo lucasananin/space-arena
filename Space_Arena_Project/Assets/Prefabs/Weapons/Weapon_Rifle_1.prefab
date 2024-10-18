@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 258936880920263145}
   - component: {fileID: 6776396213989723331}
   - component: {fileID: 581580440325597548}
+  - component: {fileID: 9108302164563767642}
   m_Layer: 0
   m_Name: Weapon_Rifle_1
   m_TagString: Untagged
@@ -180,6 +181,22 @@ MonoBehaviour:
   _impulseSource: {fileID: 6776396213989723331}
   _weapon: {fileID: 258936880920263144}
   _velocityMultiplier: 0.3
+--- !u!114 &9108302164563767642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258936880920263143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daed80ba8e78c314b83925837e9207c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flipper: {fileID: 258936880920263146}
+  _renderer: {fileID: 258936881630380305}
+  _minRightAngle: 7
+  _minLeftAngle: 187
 --- !u!1 &258936881477688690
 GameObject:
   m_ObjectHideFlags: 0

@@ -131,7 +131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3562192089921406556
 Transform:
   m_ObjectHideFlags: 0
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 3562192091433409977}
   - component: {fileID: -3242506195273867952}
   - component: {fileID: -1916892800950921274}
-  - component: {fileID: 6477207873678277843}
+  - component: {fileID: -4196251020941625110}
   m_Layer: 0
   m_Name: Weapon_SubMG_1
   m_TagString: Untagged
@@ -428,7 +428,7 @@ MonoBehaviour:
   _impulseSource: {fileID: -3242506195273867952}
   _weapon: {fileID: 3562192091433409978}
   _velocityMultiplier: 0.1
---- !u!114 &6477207873678277843
+--- !u!114 &-4196251020941625110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -442,8 +442,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flipper: {fileID: 3562192091433409980}
   _renderer: {fileID: 2977743618269026905}
-  _minRightAngle: 26
-  _minLeftAngle: 206
+  _minRightAngle: 46
+  _minLeftAngle: 226
 --- !u!1 &8452124352971607064
 GameObject:
   m_ObjectHideFlags: 0
