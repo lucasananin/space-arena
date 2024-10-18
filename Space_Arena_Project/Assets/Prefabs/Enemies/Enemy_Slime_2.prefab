@@ -1059,6 +1059,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6972132582502089751}
     m_Modifications:
+    - target: {fileID: -6768262375857746920, guid: ea5edf88176beeb4098699eb9a5dc65f, type: 3}
+      propertyPath: _renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -6768262375857746920, guid: ea5edf88176beeb4098699eb9a5dc65f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2797867902814346651, guid: ea5edf88176beeb4098699eb9a5dc65f, type: 3}
       propertyPath: _weaponSO
       value: 
