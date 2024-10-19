@@ -388,6 +388,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8067246484439910052}
     m_Modifications:
+    - target: {fileID: 5491278646568374431, guid: a58ebfa195ec8d04087a63c5d9b2368a, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6119268432936442758, guid: a58ebfa195ec8d04087a63c5d9b2368a, type: 3}
       propertyPath: m_Name
       value: Vfx_MuzzleFlash_Explosive_1
