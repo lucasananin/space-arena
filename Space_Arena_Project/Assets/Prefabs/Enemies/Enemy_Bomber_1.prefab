@@ -452,6 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootTableSO: {fileID: 11400000, guid: 0e757d27f5e145d4c88c89998974a9e2, type: 2}
+  _lootSpawner: {fileID: 0}
   _healthBehaviour: {fileID: 2658297561336904053}
 --- !u!114 &7875930278180568344
 MonoBehaviour:
@@ -514,7 +515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2658297562314880999
 Transform:
   m_ObjectHideFlags: 0

@@ -804,6 +804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootTableSO: {fileID: 11400000, guid: 0e757d27f5e145d4c88c89998974a9e2, type: 2}
+  _lootSpawner: {fileID: 0}
   _healthBehaviour: {fileID: 2658297561336904053}
 --- !u!114 &6782337161747948019
 MonoBehaviour:
@@ -1017,6 +1018,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8228046025100010746, guid: 7a141681efffd1944ba83c13873a951b, type: 3}
   m_PrefabInstance: {fileID: 1559391490307523209}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1918999870793866631
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 104800483893885205}
+    m_Modifications:
+    - target: {fileID: 5200175596249306066, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
+      propertyPath: _weapon
+      value: 
+      objectReference: {fileID: 104800483893885208}
+    - target: {fileID: 5200175596249306067, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200175596249306067, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200175596249306067, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.098
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200175596249306067, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200175596249306067, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200175596249306067, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200175596249306067, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200175596249306067, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200175596249306067, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200175596249306067, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200175596249306067, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200175596249306076, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
+      propertyPath: m_Name
+      value: Vfx_MuzzleFlash_1_Blue
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2572f90f349c2de44a2b3093c34953ec, type: 3}
 --- !u!1001 &3449173847265030226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1157,6 +1219,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2658297561336904062}
     m_Modifications:
+    - target: {fileID: 2652291318094379220, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4843378212357953040, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1209,6 +1275,14 @@ PrefabInstance:
       propertyPath: _weaponSO
       value: 
       objectReference: {fileID: 11400000, guid: 505944c4d0673d443b061cb12a407c40, type: 2}
+    - target: {fileID: 4843378212925968550, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108007368058179221, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4039216
+      objectReference: {fileID: 0}
     - target: {fileID: 7427310108541956550, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1216,6 +1290,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7427310108541956550, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
     - {fileID: -3700964492024119886, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
+    - {fileID: -4020388462939021318, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
 --- !u!4 &104800483893885205 stripped
 Transform:
