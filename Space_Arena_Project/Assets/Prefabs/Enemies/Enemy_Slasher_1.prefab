@@ -364,6 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootTableSO: {fileID: 11400000, guid: 0e757d27f5e145d4c88c89998974a9e2, type: 2}
+  _lootSpawner: {fileID: 0}
   _healthBehaviour: {fileID: 2658297561336904053}
 --- !u!114 &7875930278180568344
 MonoBehaviour:
@@ -390,10 +391,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 8534141530301458181, guid: 5cc1b6df160d50445bb1785f8803f2f9, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 411266923, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
     - target: {fileID: 8534141531701759384, guid: 5cc1b6df160d50445bb1785f8803f2f9, type: 3}
       propertyPath: m_Name
       value: Weapon_Melee_1
