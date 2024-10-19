@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponBehaviour: {fileID: 2797867902814346651}
   _targetTransform: {fileID: 5645198961911611334}
-  _recoilOffset: {x: -0.2, y: 0, z: 0}
+  _recoilOffset: {x: -0.3, y: 0, z: 0}
   _duration: 0.2
   _defaultPosition: {x: 0, y: 0, z: 0}
   _recoilPosition: {x: 0, y: 0, z: 0}
