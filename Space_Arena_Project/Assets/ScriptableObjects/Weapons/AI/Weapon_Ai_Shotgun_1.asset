@@ -45,10 +45,10 @@ MonoBehaviour:
     _canAutoAim: 0
     _autoAimDistance: 0
     _autoAimAngle: 0
-    _moveSpeedRange: {x: 6, y: 12}
-    _scaleMultiplier: 1
+    _moveSpeedRange: {x: 4, y: 6}
+    _scaleMultiplier: 1.5
     _destroyOnStop: 1
-    _useAccelerationCurve: 1
+    _useAccelerationCurve: 0
     _invertAcceleration: 0
     _accelerationCurve:
       serializedVersion: 2
