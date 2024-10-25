@@ -840,15 +840,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9212918082609041381, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.b
-      value: 0.39260334
+      value: 0.83921576
       objectReference: {fileID: 0}
     - target: {fileID: 9212918082609041381, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.g
-      value: 0.36863896
+      value: 0.93725497
       objectReference: {fileID: 0}
     - target: {fileID: 9212918082609041381, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Color.r
-      value: 0.19512402
+      value: 0.9568628
       objectReference: {fileID: 0}
     - target: {fileID: 9212918082766544899, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
       propertyPath: m_Name
@@ -898,18 +898,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9212918083647252940, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
+      propertyPath: m_SpriteLibraryAsset
+      value: 
+      objectReference: {fileID: 7108339969198208228, guid: 31556c8330831bf42bd37eed2a5d82df, type: 3}
     - target: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
-      propertyPath: m_Color.b
-      value: 0.39260334
-      objectReference: {fileID: 0}
-    - target: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
-      propertyPath: m_Color.g
-      value: 0.36863896
-      objectReference: {fileID: 0}
-    - target: {fileID: 9212918083647252941, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
-      propertyPath: m_Color.r
-      value: 0.19512402
-      objectReference: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d8cfcbe7add7f6f48ae701e41ec0e908, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ecba988315a0749a7a58fd5a0427a0, type: 3}
 --- !u!212 &3974821396568531052 stripped
