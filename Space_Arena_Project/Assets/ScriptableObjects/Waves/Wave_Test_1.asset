@@ -33,6 +33,8 @@ MonoBehaviour:
       _quantity: 1
     - _so: {fileID: 11400000, guid: 3e88b57291848b14da56c4653e715e2c, type: 2}
       _quantity: 1
+    - _so: {fileID: 11400000, guid: 732d5d93c5288984884d72ba30534349, type: 2}
+      _quantity: 1
     _loots:
     - {fileID: 11400000, guid: d4d5651bdc0e44744a9bb9717bb44550, type: 2}
     - {fileID: 11400000, guid: 1de1469d6f475124483e3a891ca52a0b, type: 2}
