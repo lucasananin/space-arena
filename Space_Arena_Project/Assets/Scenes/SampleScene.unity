@@ -5779,7 +5779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &253902481
 Transform:
   m_ObjectHideFlags: 0
@@ -13972,7 +13972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &602380039
 Transform:
   m_ObjectHideFlags: 0
@@ -22923,7 +22923,7 @@ MonoBehaviour:
   _useRandomizedWaves: 0
   _container: {fileID: 1159678663}
   _waveGroups:
-  - {fileID: 11400000, guid: f9da2d434eae4784cb37123ecd476f94, type: 2}
+  - {fileID: 11400000, guid: 9cfed207a4029ed4db413a922f6c9efe, type: 2}
   - {fileID: 11400000, guid: 936adc74c76bc6947aabda0bda81222f, type: 2}
   - {fileID: 11400000, guid: 7d729f6b23d9cbd4a8b074d082f34749, type: 2}
   _player: {fileID: 0}
@@ -61117,7 +61117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6dd40c596b8004984a3b34086dc615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isInvincible: 0
+  _isInvincible: 1
   _maxHealth: 8
   _deathDelay: 0
   _currentHealth: 0
