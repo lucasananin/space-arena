@@ -482,6 +482,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2751957287607790104}
     m_Modifications:
+    - target: {fileID: 304028244646419251, guid: a337dae86174de7409447022a9663116, type: 3}
+      propertyPath: m_Size.x
+      value: 10.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 304028244646419251, guid: a337dae86174de7409447022a9663116, type: 3}
+      propertyPath: m_Size.y
+      value: 10.24
+      objectReference: {fileID: 0}
     - target: {fileID: 1140253462470704147, guid: a337dae86174de7409447022a9663116, type: 3}
       propertyPath: _weapon
       value: 
