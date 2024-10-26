@@ -634,7 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 6972132582502089756}
-  _deadVfx: {fileID: 4508168008497764178, guid: 1b816edf66724374db87e61fdd977752, type: 3}
+  _deadVfx: {fileID: 4508168008497764178, guid: 781656f95e5a52a4eb3e6bf6aa9f1c99, type: 3}
 --- !u!114 &3641600706552242295
 MonoBehaviour:
   m_ObjectHideFlags: 0

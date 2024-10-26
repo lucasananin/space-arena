@@ -14536,7 +14536,7 @@ GameObject:
   - component: {fileID: 4508168008497764178}
   - component: {fileID: 4508168008497764177}
   m_Layer: 6
-  m_Name: Vfx_Die_Red
+  m_Name: Vfx_Die_Blue_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19560,8 +19560,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.17, g: 0, b: 0, a: 1}
-      maxColor: {r: 0.37, g: 0, b: 0, a: 1}
+      minColor: {r: 0, g: 0.13490191, b: 0.16862746, a: 1}
+      maxColor: {r: 0, g: 0.29490185, b: 0.36862746, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -24431,7 +24431,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 0.335, g: 0, b: 0, a: 1}
-      maxColor: {r: 0.6666667, g: 0, b: 0, a: 1}
+      maxColor: {r: 0, g: 0.5333332, b: 0.6666667, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -34171,7 +34171,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.6666667, g: 0, b: 0, a: 1}
+      maxColor: {r: 0, g: 0.5333332, b: 0.6666667, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -39041,7 +39041,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 0.1393305, g: 1, b: 0, a: 1}
-      maxColor: {r: 0.6666667, g: 0, b: 0, a: 1}
+      maxColor: {r: 0, g: 0.5333332, b: 0.6666667, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

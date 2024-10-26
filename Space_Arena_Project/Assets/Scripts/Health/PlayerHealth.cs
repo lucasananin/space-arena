@@ -16,6 +16,7 @@ public class PlayerHealth : HealthBehaviour
     protected override void OnDead_()
     {
         //RestoreHealth();
+        base.OnDead_();
         OnPlayerDead?.Invoke(this);
         gameObject.SetActive(false);
     }
