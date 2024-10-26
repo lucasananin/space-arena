@@ -20,7 +20,7 @@ MonoBehaviour:
   _holsterEuler: {x: 0, y: 0, z: 0}
   _projectileSO: {fileID: 11400000, guid: d9902f1e710724b4e8612be33543e75b, type: 2}
   _stats:
-    _damage: 1
+    _damage: 3
     _explosiveDamage: 0
     _fireRate: 0.1
     _chargeTime: 0.2

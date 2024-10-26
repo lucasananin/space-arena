@@ -40,7 +40,7 @@ MonoBehaviour:
     _canDamageProjectiles: 0
     _explosionRadius: 0
     _canDamageSource: 0
-    _maxPierceCount: 1
+    _maxPierceCount: 2
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 0
     _autoAimDistance: 0

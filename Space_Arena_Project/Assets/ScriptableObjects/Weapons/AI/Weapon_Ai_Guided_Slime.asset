@@ -21,7 +21,7 @@ MonoBehaviour:
   _projectileSO: {fileID: 11400000, guid: 1f394d97e124a494b8fdcfdd0038d6e1, type: 2}
   _stats:
     _damage: 0
-    _explosiveDamage: 1
+    _explosiveDamage: 3
     _fireRate: 0.1
     _chargeTime: 0
     _maxHeat: 0

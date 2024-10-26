@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Projectile_Molotov
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7353528016857128665, guid: 8e21c25ffd680d145b07c04ca0468243, type: 3}
-  _ammoSO: {fileID: 11400000, guid: c741b913cc5b4bf49b26e7f6a7103b33, type: 2}
+  _ammoSO: {fileID: 11400000, guid: bac4e9de8935da2408558c7a3be51837, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 192

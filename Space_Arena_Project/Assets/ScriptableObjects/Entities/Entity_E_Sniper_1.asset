@@ -17,7 +17,7 @@ MonoBehaviour:
   _entityPrefab: {fileID: 2658297561336904056, guid: f74272d3619466949a794d17c5d1b8a1, type: 3}
   _stopMovingOnClose: 0
   _stopMovingOnTargetAcquired: 1
-  _repathOnTargetFarAway: 1
+  _repathOnTargetFarAway: 0
   _minTargetDistance: 0
   _maxNumberOfTries: 10
   _moveRateRange: {x: 0.2, y: 0.4}

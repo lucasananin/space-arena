@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Projectile_Guided_2
   m_EditorClassIdentifier: 
   _prefab: {fileID: 8552097569084531652, guid: 4977f9a4f2c7e2e4bbb10dd9108a7c94, type: 3}
-  _ammoSO: {fileID: 11400000, guid: c741b913cc5b4bf49b26e7f6a7103b33, type: 2}
+  _ammoSO: {fileID: 11400000, guid: bac4e9de8935da2408558c7a3be51837, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 192
