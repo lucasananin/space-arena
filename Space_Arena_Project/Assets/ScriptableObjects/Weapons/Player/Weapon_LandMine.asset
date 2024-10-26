@@ -16,8 +16,8 @@ MonoBehaviour:
   _weaponPrefab: {fileID: 8583216288661686995, guid: 190edf560d350634998f8afaffe517ee, type: 3}
   _id: land_mine_1
   _displayName: Land Mine
-  _holsterPosition: {x: -0.25, y: -0.15, z: 0}
-  _holsterEuler: {x: 0, y: 0, z: -60}
+  _holsterPosition: {x: -0.25, y: 0.3, z: 0}
+  _holsterEuler: {x: 0, y: 0, z: 30}
   _projectileSO: {fileID: 11400000, guid: 5f82dc8eb26edec4d88bb534546e8d82, type: 2}
   _stats:
     _damage: 0
