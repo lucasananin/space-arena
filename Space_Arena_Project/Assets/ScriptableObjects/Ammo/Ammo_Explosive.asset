@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Ammo_Explosive
   m_EditorClassIdentifier: 
   _id: explosive
-  _maxQuantity: 60
+  _maxQuantity: 30

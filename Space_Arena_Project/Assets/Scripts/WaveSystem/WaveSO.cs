@@ -15,6 +15,16 @@ public class WaveSO : ScriptableObject
     public Vector2 DistanceRange { get => _distanceRange; private set => _distanceRange = value; }
     public float SpawnTime { get => _spawnTime; private set => _spawnTime = value; }
     public GameObject Environment { get => _environment; private set => _environment = value; }
+
+    private void OnValidate()
+    {
+        int _count = _waves.Length;
+
+        for (int i = 0; i < _count; i++)
+        {
+            _waves[i].ResetEditorValues();
+        }
+    }
 }
 
 [System.Serializable]
@@ -24,6 +34,7 @@ public class WaveModel
     [SerializeField] EntityGroup[] _entities = null;
     [SerializeField] LootTableSO[] _loots = null;
     [SerializeField, Range(1, 20)] int _maxActiveSpawns = 4;
+    [SerializeField, ReadOnly] int _totalQuantity = 0;
 
     readonly List<float> _runtimeQuantities = new();
 
@@ -55,6 +66,11 @@ public class WaveModel
         {
             _runtimeQuantities.Add(_entities[i].Quantity);
         }
+    }
+
+    public void ResetEditorValues()
+    {
+        _totalQuantity = GetTotalQuantity();
     }
 
     public int GetTotalQuantity()

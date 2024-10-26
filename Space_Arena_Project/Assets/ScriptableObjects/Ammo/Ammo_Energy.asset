@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Ammo_Energy
   m_EditorClassIdentifier: 
   _id: energy
-  _maxQuantity: 180
+  _maxQuantity: 80

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Ammo_Shell
   m_EditorClassIdentifier: 
   _id: shell
-  _maxQuantity: 120
+  _maxQuantity: 60

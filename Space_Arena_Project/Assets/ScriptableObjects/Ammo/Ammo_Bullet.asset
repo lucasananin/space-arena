@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Ammo_Bullet
   m_EditorClassIdentifier: 
   _id: bullet
-  _maxQuantity: 240
+  _maxQuantity: 120
