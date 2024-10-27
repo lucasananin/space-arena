@@ -75,6 +75,8 @@ public class WaveModel
 
     public int GetTotalQuantity()
     {
+        if (_entities is null) return 0;
+
         int _count = _entities.Length;
         int _total = 0;
 

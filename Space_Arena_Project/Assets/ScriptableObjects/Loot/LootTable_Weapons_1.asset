@@ -23,12 +23,6 @@ MonoBehaviour:
     - _so: {fileID: 11400000, guid: 097ee911a1b06424096887e949fcde5c, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
-    - _so: {fileID: 11400000, guid: d0f1b8eac100580499a379c5c20df720, type: 2}
-      _odd: 1
-      _minMaxQuantity: {x: 1, y: 1}
     - _so: {fileID: 11400000, guid: 4cce4e38ee71add4d9c32282c4801e68, type: 2}
-      _odd: 1
-      _minMaxQuantity: {x: 1, y: 1}
-    - _so: {fileID: 11400000, guid: fdf51011eaf8e0b43ac0b34ffaf03b39, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
