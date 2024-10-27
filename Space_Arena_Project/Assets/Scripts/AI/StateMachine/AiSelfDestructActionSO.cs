@@ -16,6 +16,7 @@ public class AiSelfDestructAction : StateAction
     private AiEntitySO _aiEntitySO = null;
     private AiWeaponHandler _aiWeaponHandler = null;
     private EnemyHealth _health = null;
+    private SelfDestructFx _selfDestructFx = null;
     private float _timer = 0f;
 
     public override void Awake(StateMachine _stateMachine)
@@ -24,6 +25,7 @@ public class AiSelfDestructAction : StateAction
         _aiWeaponHandler = _stateMachine.GetComponent<AiWeaponHandler>();
         _aiEntitySO = _aiEntity.GetEntitySO<AiEntitySO>();
         _health = _stateMachine.GetComponent<EnemyHealth>();
+        _selfDestructFx = _stateMachine.GetComponent<SelfDestructFx>();
     }
 
     public override void OnStateEnter()
@@ -34,12 +36,14 @@ public class AiSelfDestructAction : StateAction
         if (_health.IsAlive())
             _health.ForceDie();
 
-        // Transformar isso em um script próprio. ====================
-        var _transform = _aiEntity.transform;
-        var _scale = _transform.localScale;
-        _transform.DOScale(_scale * 1.5f, _aiEntitySO.SelfDestructTime);
-        //_transform.DOShakePosition(_aiEntitySO.SelfDestructTime);
-        // ==================== Transformar isso em um script próprio.
+        _selfDestructFx.Play();
+
+        //// Transformar isso em um script próprio. ====================
+        //var _transform = _aiEntity.transform;
+        //var _scale = _transform.localScale;
+        //_transform.DOScale(_scale * 1.5f, _aiEntitySO.SelfDestructTime);
+        ////_transform.DOShakePosition(_aiEntitySO.SelfDestructTime);
+        //// ==================== Transformar isso em um script próprio.
     }
 
     public override void OnFixedUpdate()
