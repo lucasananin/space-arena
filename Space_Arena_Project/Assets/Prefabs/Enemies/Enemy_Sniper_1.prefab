@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414a64bfc2ddf8045b48672269ad552a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitVfx: {fileID: 4595461622765139695, guid: 2f9ac36889fab474ca618ef497c802c6, type: 3}
+  _hitVfx: {fileID: 4595461622765139695, guid: 070c1c4f691251d43bb10a50624f28d1, type: 3}
 --- !u!114 &-1064852920540900804
 MonoBehaviour:
   m_ObjectHideFlags: 0

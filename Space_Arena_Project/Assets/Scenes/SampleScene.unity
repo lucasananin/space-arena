@@ -22923,7 +22923,7 @@ MonoBehaviour:
   _useRandomizedWaves: 0
   _container: {fileID: 1159678663}
   _waveGroups:
-  - {fileID: 11400000, guid: 5cf1d8cc6dd25c9498080c13b249e055, type: 2}
+  - {fileID: 11400000, guid: 9cfed207a4029ed4db413a922f6c9efe, type: 2}
   _player: {fileID: 0}
   _waveGroup: {fileID: 0}
   _waveModel:
@@ -61117,7 +61117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6dd40c596b8004984a3b34086dc615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isInvincible: 0
+  _isInvincible: 1
   _maxHealth: 8
   _deathDelay: 0
   _currentHealth: 0
@@ -61170,7 +61170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4023e2bd69e5b54d846e41ea468df1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _infiniteAmmo: 0
+  _infiniteAmmo: 1
   _models:
   - _so: {fileID: 11400000, guid: b3dc590e3e7accd459b765e535abb941, type: 2}
     _quantity: 0
@@ -61232,7 +61232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414a64bfc2ddf8045b48672269ad552a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitVfx: {fileID: 4595461622765139695, guid: 2f9ac36889fab474ca618ef497c802c6, type: 3}
+  _hitVfx: {fileID: 4595461622765139695, guid: 8a2845f0a62cd2c45b7e74db1f241467, type: 3}
 --- !u!1 &1841307362
 GameObject:
   m_ObjectHideFlags: 0

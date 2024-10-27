@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414a64bfc2ddf8045b48672269ad552a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitVfx: {fileID: 4595461622765139695, guid: 2f9ac36889fab474ca618ef497c802c6, type: 3}
+  _hitVfx: {fileID: 4595461622765139695, guid: 0efcc9ceb12999d49a838360635f8411, type: 3}
 --- !u!114 &-4225074446045680670
 MonoBehaviour:
   m_ObjectHideFlags: 0
