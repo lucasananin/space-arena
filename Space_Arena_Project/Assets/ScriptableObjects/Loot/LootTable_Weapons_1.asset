@@ -17,12 +17,24 @@ MonoBehaviour:
     - _so: {fileID: 11400000, guid: f56cf73d605c30c4c8ead4dff0644b58, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 11400000, guid: 5fb5b14102a6e6348a24ddfd0eff20e7, type: 2}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
     - _so: {fileID: 11400000, guid: 30ecdf5b450b1474c80b39c9680f3750, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
-    - _so: {fileID: 11400000, guid: 097ee911a1b06424096887e949fcde5c, type: 2}
+    - _so: {fileID: 11400000, guid: fdf51011eaf8e0b43ac0b34ffaf03b39, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
     - _so: {fileID: 11400000, guid: 4cce4e38ee71add4d9c32282c4801e68, type: 2}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 11400000, guid: 8c625e80ab439ab47a20f272ede18fc7, type: 2}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 11400000, guid: 4f49ae87579d729418b4d7fc357905cc, type: 2}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 11400000, guid: 097ee911a1b06424096887e949fcde5c, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}

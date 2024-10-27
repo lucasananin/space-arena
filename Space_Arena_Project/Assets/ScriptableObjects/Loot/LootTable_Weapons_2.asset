@@ -14,15 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lootCollections:
   - _models:
-    - _so: {fileID: 11400000, guid: 2f13db3608cc9b349963b437935972ad, type: 2}
+    - _so: {fileID: 11400000, guid: 67ab5d4e71e797a42afd7a0f1059079e, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
-    - _so: {fileID: 11400000, guid: 67ab5d4e71e797a42afd7a0f1059079e, type: 2}
+    - _so: {fileID: 11400000, guid: 8e6d532bee06d3742895a5864eeed65b, type: 2}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 11400000, guid: cceedf6304df3074bb0d2b1d07aa1149, type: 2}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 11400000, guid: f14c27747a8f8bb48aaeb135e617819c, type: 2}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 11400000, guid: d0f1b8eac100580499a379c5c20df720, type: 2}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 11400000, guid: b4bc92b3fe5926047865acc25794c23a, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
     - _so: {fileID: 11400000, guid: df7bd8bd2f0c04e478be8536c9603323, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
-    - _so: {fileID: 11400000, guid: f14c27747a8f8bb48aaeb135e617819c, type: 2}
+    - _so: {fileID: 11400000, guid: b67f3d7f7f1ed6845ac77d4b9a4c70e9, type: 2}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
