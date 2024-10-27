@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wave_1
   m_EditorClassIdentifier: 
   _environment: {fileID: 8506344680095507289, guid: 7faf6c26c7753964eb0470ddb4b150ae, type: 3}
-  _distanceRange: {x: 6, y: 10}
+  _distanceRange: {x: 6, y: 9}
   _spawnTime: 0.4
   _waves:
   - _entities:
@@ -41,5 +41,6 @@ MonoBehaviour:
       _quantity: 4
     _loots:
     - {fileID: 11400000, guid: d4d5651bdc0e44744a9bb9717bb44550, type: 2}
+    - {fileID: 11400000, guid: 134b7f2cfae04354587ad504e1601926, type: 2}
     _maxActiveSpawns: 5
     _totalQuantity: 16
