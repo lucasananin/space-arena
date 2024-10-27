@@ -51,6 +51,9 @@ TagManager:
   - name: Projectiles
     uniqueID: 3675549547
     locked: 0
+  - name: Ceiling
+    uniqueID: 1787224309
+    locked: 0
   - name: VFX
     uniqueID: 3853469303
     locked: 0
