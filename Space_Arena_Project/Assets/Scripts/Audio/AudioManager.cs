@@ -22,11 +22,11 @@ public class AudioManager : MonoBehaviour
 
 	[Header("Audio control")]
 	[SerializeField] private AudioMixer audioMixer = default;
-	[Range(0f, 1f)]
+	[Range(0.0001f, 1f)]
 	[SerializeField] private float _masterVolume = 1f;
-	[Range(0f, 1f)]
+	[Range(0.0001f, 1f)]
 	[SerializeField] private float _musicVolume = 1f;
-	[Range(0f, 1f)]
+	[Range(0.0001f, 1f)]
 	[SerializeField] private float _sfxVolume = 1f;
 
 	private SoundEmitterVault _soundEmitterVault;
@@ -99,9 +99,9 @@ public class AudioManager : MonoBehaviour
 	}
 	public void SetGroupVolume(string parameterName, float normalizedVolume)
 	{
-		//var _value = Mathf.Log10(NormalizedToMixerValue(normalizedVolume)) * 20;
-		//bool volumeSet = audioMixer.SetFloat(parameterName, _value);
-		bool volumeSet = audioMixer.SetFloat(parameterName, NormalizedToMixerValue(normalizedVolume));
+		var _value = Mathf.Log10(normalizedVolume) * 20;
+		bool volumeSet = audioMixer.SetFloat(parameterName, _value);
+		//bool volumeSet = audioMixer.SetFloat(parameterName, NormalizedToMixerValue(normalizedVolume));
 		if (!volumeSet)
 			Debug.LogError("The AudioMixer parameter was not found");
 	}
