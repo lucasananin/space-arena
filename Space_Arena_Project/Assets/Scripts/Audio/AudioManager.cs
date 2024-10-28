@@ -99,6 +99,8 @@ public class AudioManager : MonoBehaviour
 	}
 	public void SetGroupVolume(string parameterName, float normalizedVolume)
 	{
+		//var _value = Mathf.Log10(NormalizedToMixerValue(normalizedVolume)) * 20;
+		//bool volumeSet = audioMixer.SetFloat(parameterName, _value);
 		bool volumeSet = audioMixer.SetFloat(parameterName, NormalizedToMixerValue(normalizedVolume));
 		if (!volumeSet)
 			Debug.LogError("The AudioMixer parameter was not found");
