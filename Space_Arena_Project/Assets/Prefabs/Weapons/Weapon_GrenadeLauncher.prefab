@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 8067246484439910049}
   - component: {fileID: 8926880579969385397}
   - component: {fileID: 5635095031199874002}
+  - component: {fileID: -219095101463095325}
   m_Layer: 0
   m_Name: Weapon_GrenadeLauncher
   m_TagString: Untagged
@@ -381,6 +382,23 @@ MonoBehaviour:
   _renderer: {fileID: 8067246482870670673}
   _minRightAngle: 14
   _minLeftAngle: 194
+--- !u!114 &-219095101463095325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8067246484439910059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2b4ac349b3f2741ab85783afa65e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 17db7c3a25992184fbbf0ab96d0c64a4, type: 2}
+  _playOnStart: 0
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 929d020e5adcba1479617f5c05ac2cf2, type: 2}
+  _weapon: {fileID: 8067246484439910053}
 --- !u!1001 &2456128667471589089
 PrefabInstance:
   m_ObjectHideFlags: 0

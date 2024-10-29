@@ -38,6 +38,9 @@ public class AudioConfigurationSO : ScriptableObject
 	public bool IgnoreListenerVolume = false;
 	public bool IgnoreListenerPause = false;
 
+	[Header("Other")]
+	[SerializeField, Range(0f, 1f)] float _time = 0f;
+
 	private enum PriorityLevel
 	{
 		Highest = 0,
@@ -67,5 +70,6 @@ public class AudioConfigurationSO : ScriptableObject
 		audioSource.maxDistance = this.MaxDistance;
 		audioSource.ignoreListenerVolume = this.IgnoreListenerVolume;
 		audioSource.ignoreListenerPause = this.IgnoreListenerPause;
+		audioSource.time = _time;
 	}
 }
