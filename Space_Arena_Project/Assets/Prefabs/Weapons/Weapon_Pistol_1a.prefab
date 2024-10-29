@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: -7874860500769441361}
   - component: {fileID: -4274399588789183488}
   - component: {fileID: -574920201553627956}
+  - component: {fileID: 2650901111886977327}
   m_Layer: 0
   m_Name: Weapon_Pistol_1a
   m_TagString: Untagged
@@ -312,6 +313,23 @@ MonoBehaviour:
   _renderer: {fileID: 5704818091080987773}
   _minRightAngle: 24
   _minLeftAngle: 204
+--- !u!114 &2650901111886977327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5704818092466949259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2b4ac349b3f2741ab85783afa65e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 2327defa714d0104782bd9c55ecabb41, type: 2}
+  _playOnStart: 0
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
+  _weapon: {fileID: 5704818092466949252}
 --- !u!1001 &1513106518460106554
 PrefabInstance:
   m_ObjectHideFlags: 0
