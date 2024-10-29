@@ -23717,7 +23717,7 @@ MonoBehaviour:
   _masterVolumeEventChannel: {fileID: 11400000, guid: 13e4f5dfe966e1447ba01306e125c0c0, type: 2}
   audioMixer: {fileID: 24100000, guid: 548a7f001ca6d3d4cb67c8edf84f62a3, type: 2}
   _masterVolume: 1
-  _musicVolume: 1
+  _musicVolume: 0.2
   _sfxVolume: 1
 --- !u!4 &833723709
 Transform:
@@ -63924,7 +63924,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1844144252}
-  - component: {fileID: 1844144251}
+  - component: {fileID: 1844144253}
   m_Layer: 0
   m_Name: MusicPlayer
   m_TagString: Untagged
@@ -63932,22 +63932,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1844144251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844144250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3ee17f7e90d61642a624386af6c9e2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventChannelSO: {fileID: 11400000, guid: 51854f522e1d88442a90b878b27ea839, type: 2}
-  _configurationSO: {fileID: 11400000, guid: 7dc92129d2e4ae84dabc197b593ba446, type: 2}
-  _audioCueSO: {fileID: 11400000, guid: 8223a345cd897d4429b3c38d640139b6, type: 2}
-  _playOnStart: 1
 --- !u!4 &1844144252
 Transform:
   m_ObjectHideFlags: 0
@@ -63963,6 +63947,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1844144253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844144250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f92f965dbe44449b252b814ddc7137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 8223a345cd897d4429b3c38d640139b6, type: 2}
+  _playOnStart: 1
+  _audioCueEventChannel: {fileID: 11400000, guid: 51854f522e1d88442a90b878b27ea839, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 7dc92129d2e4ae84dabc197b593ba446, type: 2}
 --- !u!1 &1851182035
 GameObject:
   m_ObjectHideFlags: 0
