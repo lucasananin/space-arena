@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 8583216288661686995}
   - component: {fileID: 8583216288661686993}
   - component: {fileID: 8583216288661687006}
+  - component: {fileID: -2715133884312814679}
   m_Layer: 0
   m_Name: Weapon_LandMine
   m_TagString: Untagged
@@ -173,6 +174,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 0
+--- !u!114 &-2715133884312814679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8583216288661687004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2b4ac349b3f2741ab85783afa65e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 42f62a4131f777449bf3c3b43f5c1aaa, type: 2}
+  _playOnStart: 0
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
+  _weapon: {fileID: 8583216288661686995}
 --- !u!1 &8583216290301259337
 GameObject:
   m_ObjectHideFlags: 0

@@ -216,7 +216,7 @@ MonoBehaviour:
   _audioCue: {fileID: 11400000, guid: de79c351cdd7fc74488c6ccd44a0dd71, type: 2}
   _playOnStart: 0
   _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
-  _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: cf4e25453e03baa4c979e813744740f9, type: 2}
   _weapon: {fileID: 4843378212357953053}
 --- !u!1 &4843378212925968548
 GameObject:
