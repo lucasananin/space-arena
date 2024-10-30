@@ -117,7 +117,8 @@ public class SoundEmitter : MonoBehaviour
 
 	IEnumerator FinishedPlaying(float clipLength)
 	{
-		yield return new WaitForSeconds(clipLength);
+		float _offset = 1f;
+		yield return new WaitForSeconds(clipLength + _offset);
 
 		NotifyBeingDone();
 	}
