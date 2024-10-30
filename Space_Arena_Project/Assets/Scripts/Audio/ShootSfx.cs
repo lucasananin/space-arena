@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootAudioPlayer : AudioCue
+public class ShootSfx : AudioCue
 {
     [Title("// Weapons")]
     [SerializeField] WeaponBehaviour _weapon = null;
