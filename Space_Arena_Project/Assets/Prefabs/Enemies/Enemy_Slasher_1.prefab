@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: -8619076676205812539}
   - component: {fileID: 7875930278180568344}
   - component: {fileID: -253078100917706919}
+  - component: {fileID: 359812488824587967}
   m_Layer: 6
   m_Name: Enemy_Slasher_1
   m_TagString: Enemy
@@ -394,6 +395,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioCue: {fileID: 11400000, guid: bed6b6f35ebd2fd4888e7e7ab4ea1898, type: 2}
+  _playOnStart: 0
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
+  _health: {fileID: 2658297561336904053}
+--- !u!114 &359812488824587967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658297561336904011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52715916d80c7d14b9d5166c9fa58870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: d172d2b50cad69d4598a83ebe42c75ed, type: 2}
   _playOnStart: 0
   _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
   _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
