@@ -40,6 +40,8 @@ public class AudioConfigurationSO : ScriptableObject
 
 	[Header("Other")]
 	[SerializeField, Range(0f, 1f)] float _time = 0f;
+	[SerializeField] bool _usePitchRange = false;
+	[SerializeField] Vector2 _pitchRange = default;
 
 	private enum PriorityLevel
 	{
@@ -59,8 +61,18 @@ public class AudioConfigurationSO : ScriptableObject
 		audioSource.bypassReverbZones = this.BypassReverbZones;
 		audioSource.priority = this.Priority;
 		audioSource.volume = this.Volume;
-		audioSource.pitch = this.Pitch;
-		audioSource.panStereo = this.PanStereo;
+
+        if (_usePitchRange)
+        {
+            var _randomPitch = Random.Range(_pitchRange.x, _pitchRange.y);
+            audioSource.pitch = _randomPitch;
+        }
+		else
+        {
+            audioSource.pitch = this.Pitch;
+        }
+
+        audioSource.panStereo = this.PanStereo;
 		audioSource.spatialBlend = this.SpatialBlend;
 		audioSource.reverbZoneMix = this.ReverbZoneMix;
 		audioSource.dopplerLevel = this.DopplerLevel;
