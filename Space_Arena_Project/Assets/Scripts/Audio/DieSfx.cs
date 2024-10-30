@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DieSx : AudioCue
+public class DieSfx : AudioCue
 {
     [Title("// Health")]
     [SerializeField] HealthBehaviour _health = null;

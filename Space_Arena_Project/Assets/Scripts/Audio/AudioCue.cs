@@ -10,6 +10,7 @@ public class AudioCue : MonoBehaviour
 	[Header("Sound definition")]
 	[SerializeField] private AudioCueSO _audioCue = default;
 	[SerializeField] private bool _playOnStart = false;
+	[SerializeField] private float _delay = 1f;
 
 	[Header("Configuration")]
 	[SerializeField] private AudioCueEventChannelSO _audioCueEventChannel = default;
@@ -32,7 +33,7 @@ public class AudioCue : MonoBehaviour
 	private IEnumerator PlayDelayed()
 	{
 		//The wait allows the AudioManager to be ready for play requests
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(_delay);
 
 		//This additional check prevents the AudioCue from playing if the object is disabled or the scene unloaded
 		//This prevents playing a looping AudioCue which then would be never stopped
