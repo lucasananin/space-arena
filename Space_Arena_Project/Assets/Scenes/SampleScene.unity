@@ -23772,10 +23772,7 @@ MonoBehaviour:
   _useRandomizedWaves: 0
   _container: {fileID: 1159678663}
   _waveGroups:
-  - {fileID: 11400000, guid: f9da2d434eae4784cb37123ecd476f94, type: 2}
-  - {fileID: 11400000, guid: 936adc74c76bc6947aabda0bda81222f, type: 2}
-  - {fileID: 11400000, guid: 7d729f6b23d9cbd4a8b074d082f34749, type: 2}
-  - {fileID: 11400000, guid: 465631426b245c34e91708ba090d6b3a, type: 2}
+  - {fileID: 11400000, guid: 5cf1d8cc6dd25c9498080c13b249e055, type: 2}
   _player: {fileID: 0}
   _waveGroup: {fileID: 0}
   _waveModel:
@@ -30223,7 +30220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1155961177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63865,6 +63862,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioCue: {fileID: 11400000, guid: d172d2b50cad69d4598a83ebe42c75ed, type: 2}
   _playOnStart: 0
+  _stopOnDisable: 1
+  _delay: 1
   _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
   _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
   _health: {fileID: 1823301788}
@@ -64020,6 +64019,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioCue: {fileID: 11400000, guid: 8223a345cd897d4429b3c38d640139b6, type: 2}
   _playOnStart: 1
+  _stopOnDisable: 1
+  _delay: 1
   _audioCueEventChannel: {fileID: 11400000, guid: 51854f522e1d88442a90b878b27ea839, type: 2}
   _audioConfiguration: {fileID: 11400000, guid: 7dc92129d2e4ae84dabc197b593ba446, type: 2}
 --- !u!1 &1851182035

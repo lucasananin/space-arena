@@ -17,14 +17,10 @@ MonoBehaviour:
   _spawnTime: 0.4
   _waves:
   - _entities:
-    - _so: {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
-      _quantity: 2
-    - _so: {fileID: 11400000, guid: 65f89ac0930aec64dbcadf4e39ca6898, type: 2}
-      _quantity: 2
-    - _so: {fileID: 11400000, guid: c9a872c556f876748aca59a351afa0d5, type: 2}
+    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
       _quantity: 2
     _loots:
     - {fileID: 11400000, guid: d4d5651bdc0e44744a9bb9717bb44550, type: 2}
     - {fileID: 11400000, guid: 1de1469d6f475124483e3a891ca52a0b, type: 2}
-    _maxActiveSpawns: 3
-    _totalQuantity: 6
+    _maxActiveSpawns: 2
+    _totalQuantity: 2

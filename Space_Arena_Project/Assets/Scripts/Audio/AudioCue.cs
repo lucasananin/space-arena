@@ -10,6 +10,7 @@ public class AudioCue : MonoBehaviour
 	[Header("Sound definition")]
 	[SerializeField] private AudioCueSO _audioCue = default;
 	[SerializeField] private bool _playOnStart = false;
+	[SerializeField] private bool _stopOnDisable = true;
 	[SerializeField] private float _delay = 1f;
 
 	[Header("Configuration")]
@@ -27,7 +28,9 @@ public class AudioCue : MonoBehaviour
 	private void OnDisable()
 	{
 		_playOnStart = false;
-		StopAudioCue();
+
+		if (_stopOnDisable)
+			StopAudioCue();
 	}
 
 	private IEnumerator PlayDelayed()

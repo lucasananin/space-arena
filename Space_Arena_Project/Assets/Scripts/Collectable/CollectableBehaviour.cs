@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CollectableBehaviour : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class CollectableBehaviour : MonoBehaviour
     [SerializeField] Collider2D _collider = null;
     [SerializeField] float _moveSpeed = 10f;
     [SerializeField, ReadOnly] CollectableAgent _agent = null;
+
+    [Title("// Unity Events")]
+    [SerializeField] UnityEvent OnCollected = null;
 
     const float MIN_DISTANCE = 0.5f;
 
@@ -41,6 +45,7 @@ public class CollectableBehaviour : MonoBehaviour
         if (GeneralMethods.IsPointCloseToTarget(transform.position, _agent.transform.position, MIN_DISTANCE))
         {
             _collectableSO.Collect(_agent);
+            OnCollected?.Invoke();
             Destroy(gameObject);
         }
     }

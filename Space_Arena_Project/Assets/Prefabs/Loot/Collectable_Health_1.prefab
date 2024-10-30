@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1259258148824428859}
   - component: {fileID: 4558754204574171359}
   - component: {fileID: 2670254353772349682}
+  - component: {fileID: -7236422225800688069}
   m_Layer: 8
   m_Name: Collectable_Health_1
   m_TagString: Untagged
@@ -117,6 +118,21 @@ MonoBehaviour:
   _collider: {fileID: 1259258148824428853}
   _moveSpeed: 10
   _agent: {fileID: 0}
+  OnCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7236422225800688069}
+        m_TargetAssemblyTypeName: AudioCue, Assembly-CSharp
+        m_MethodName: PlayAudioCue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2670254353772349682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +172,24 @@ MonoBehaviour:
     m_RotationOrder: 4
   _multiplier: 1
   _time: 0
+--- !u!114 &-7236422225800688069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259258148824428861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f92f965dbe44449b252b814ddc7137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 13b8a79a03cc1f248a168a9841db6bea, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 0
+  _delay: 0
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
 --- !u!1 &5893614641070838241
 GameObject:
   m_ObjectHideFlags: 0

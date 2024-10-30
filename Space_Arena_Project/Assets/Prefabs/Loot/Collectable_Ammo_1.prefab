@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1677782039078619370}
   - component: {fileID: 7651030474878422386}
   - component: {fileID: -1878758752984821341}
+  - component: {fileID: 4654271461861152634}
   m_Layer: 8
   m_Name: Collectable_Ammo_1
   m_TagString: Untagged
@@ -107,6 +108,21 @@ MonoBehaviour:
   _collider: {fileID: 1677782039078619369}
   _moveSpeed: 10
   _agent: {fileID: 0}
+  OnCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4654271461861152634}
+        m_TargetAssemblyTypeName: AudioCue, Assembly-CSharp
+        m_MethodName: PlayAudioCue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-1878758752984821341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +162,24 @@ MonoBehaviour:
     m_RotationOrder: 4
   _multiplier: 1
   _time: 0
+--- !u!114 &4654271461861152634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677782039078619372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f92f965dbe44449b252b814ddc7137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 28eb11474f05df7498978273a1a5c034, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 0
+  _delay: 0
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
 --- !u!1 &6106784409016415300
 GameObject:
   m_ObjectHideFlags: 0
