@@ -16,7 +16,9 @@ public class AudioConfigurationSO : ScriptableObject
 		set { _priorityLevel = (PriorityLevel)value; }
 	}
 
-	[Header("Sound properties")]
+    public float Time { get => _time; private set => _time = value; }
+
+    [Header("Sound properties")]
 	public bool Mute = false;
 	[Range(0f, 1f)] public float Volume = 1f;
 	[Range(-3f, 3f)] public float Pitch = 1f;
@@ -82,6 +84,6 @@ public class AudioConfigurationSO : ScriptableObject
 		audioSource.maxDistance = this.MaxDistance;
 		audioSource.ignoreListenerVolume = this.IgnoreListenerVolume;
 		audioSource.ignoreListenerPause = this.IgnoreListenerPause;
-		audioSource.time = _time;
+		//audioSource.time = _time;
 	}
 }

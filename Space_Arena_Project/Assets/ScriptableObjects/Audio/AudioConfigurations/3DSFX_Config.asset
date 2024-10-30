@@ -30,3 +30,6 @@ MonoBehaviour:
   BypassReverbZones: 0
   IgnoreListenerVolume: 0
   IgnoreListenerPause: 0
+  _time: 0
+  _usePitchRange: 0
+  _pitchRange: {x: 0, y: 0}
