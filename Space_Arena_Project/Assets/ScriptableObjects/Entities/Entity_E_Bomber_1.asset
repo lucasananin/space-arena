@@ -29,6 +29,6 @@ MonoBehaviour:
   _chargingSpeedMultiplier: 0
   _chargingDistance: 0
   _chargingWaitRange: {x: 0, y: 0}
-  _selfDestructTime: 1
+  _selfDestructTime: 1.5
   _fleeRange: {x: 0, y: 0}
   _fleeDistance: 0

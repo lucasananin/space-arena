@@ -325,7 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isInvincible: 0
   _maxHealth: 6
-  _deathDelay: 1.3
+  _deathDelay: 1.8
   _currentHealth: 0
   _isDying: 0
   _lastDamageModel:

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioCue: {fileID: 11400000, guid: 6cdacf47229d24546b5b8539ff95547a, type: 2}
-  _playOnStart: 1
+  _playOnStart: 0
   _stopOnDisable: 0
   _delay: 0
   _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
