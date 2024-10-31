@@ -24,6 +24,7 @@ public class PlayerWeaponHandler : MonoBehaviour
     [SerializeField, ReadOnly] bool _canRotateWeapon = false;
 
     public event System.Action OnWeaponAdded = null;
+    public event System.Action OnWeaponSwapped = null;
 
     public bool CanRotateWeapon { get => _canRotateWeapon; set => _canRotateWeapon = value; }
 
@@ -73,12 +74,14 @@ public class PlayerWeaponHandler : MonoBehaviour
     private void SwapThroughInput(float _y)
     {
         if (_isWaitingSwapDelay) return;
+        if (_weaponsList.Count < 2) return;
 
         if (_y > 0)
             SwapToNextWeapon();
         else if (_y < 0)
             SwapToPreviousWeapon();
 
+        OnWeaponSwapped?.Invoke();
         StartCoroutine(DisableWeaponSwap_routine());
     }
 

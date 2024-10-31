@@ -7,7 +7,7 @@ public class StartRoundInteractable : InteractableBehaviour
     [SerializeField] SpriteRenderer _spriteRenderer = null;
     [SerializeField] Collider2D _collider = null;
 
-    public static event System.Action onInteracted = null;
+    public static event System.Action OnInteracted = null;
 
     private void OnEnable()
     {
@@ -23,7 +23,8 @@ public class StartRoundInteractable : InteractableBehaviour
 
     public override void Interact(InteractAgent _agent)
     {
-        onInteracted?.Invoke();
+        base.Interact(_agent);
+        OnInteracted?.Invoke();
         Hide();
     }
 

@@ -38,13 +38,13 @@ public class EnemySpawner : MonoBehaviour
     private void OnEnable()
     {
         EnemyHealth.OnAnyAiDead += DecreaseActiveSpawnCount;
-        StartRoundInteractable.onInteracted += SpawnEnemies;
+        StartRoundInteractable.OnInteracted += SpawnEnemies;
     }
 
     private void OnDisable()
     {
         EnemyHealth.OnAnyAiDead -= DecreaseActiveSpawnCount;
-        StartRoundInteractable.onInteracted -= SpawnEnemies;
+        StartRoundInteractable.OnInteracted -= SpawnEnemies;
     }
 
     [Button]
