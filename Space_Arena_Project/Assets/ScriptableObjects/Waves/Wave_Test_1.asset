@@ -17,26 +17,35 @@ MonoBehaviour:
   _spawnTime: 0.4
   _waves:
   - _entities:
+    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
+      _quantity: 3
     - _so: {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
+      _quantity: 3
+    - _so: {fileID: 11400000, guid: c9a872c556f876748aca59a351afa0d5, type: 2}
+      _quantity: 3
+    _loots:
+    - {fileID: 11400000, guid: d4d5651bdc0e44744a9bb9717bb44550, type: 2}
+    _maxActiveSpawns: 4
+    _totalQuantity: 9
+  - _entities:
+    - _so: {fileID: 11400000, guid: 3e88b57291848b14da56c4653e715e2c, type: 2}
       _quantity: 3
     - _so: {fileID: 11400000, guid: 65f89ac0930aec64dbcadf4e39ca6898, type: 2}
       _quantity: 3
     - _so: {fileID: 11400000, guid: 5ea292a48494e2249841f864c84dadb2, type: 2}
       _quantity: 3
-    - _so: {fileID: 11400000, guid: c9a872c556f876748aca59a351afa0d5, type: 2}
+    _loots:
+    - {fileID: 11400000, guid: 1de1469d6f475124483e3a891ca52a0b, type: 2}
+    _maxActiveSpawns: 4
+    _totalQuantity: 9
+  - _entities:
+    - _so: {fileID: 11400000, guid: 732d5d93c5288984884d72ba30534349, type: 2}
       _quantity: 3
     - _so: {fileID: 11400000, guid: 5cb6b2abc3018174ba97dcc2df7fc902, type: 2}
       _quantity: 3
     - _so: {fileID: 11400000, guid: f93b4cc80a0138e49bcc38c18a58931f, type: 2}
       _quantity: 3
-    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
-      _quantity: 3
-    - _so: {fileID: 11400000, guid: 3e88b57291848b14da56c4653e715e2c, type: 2}
-      _quantity: 3
-    - _so: {fileID: 11400000, guid: 732d5d93c5288984884d72ba30534349, type: 2}
-      _quantity: 3
     _loots:
-    - {fileID: 11400000, guid: d4d5651bdc0e44744a9bb9717bb44550, type: 2}
-    - {fileID: 11400000, guid: 1de1469d6f475124483e3a891ca52a0b, type: 2}
+    - {fileID: 11400000, guid: f1d99ff7211567442a4e012cb840928b, type: 2}
     _maxActiveSpawns: 4
-    _totalQuantity: 27
+    _totalQuantity: 9
