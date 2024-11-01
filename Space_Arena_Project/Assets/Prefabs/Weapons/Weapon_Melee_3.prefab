@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 8534141531701759390}
   - component: {fileID: -2721646956382398946}
   - component: {fileID: -5312559171396479280}
+  - component: {fileID: 3353898814983328378}
   m_Layer: 0
   m_Name: Weapon_Melee_3
   m_TagString: Untagged
@@ -412,3 +413,22 @@ MonoBehaviour:
   _impulseSource: {fileID: -2721646956382398946}
   _weapon: {fileID: 8534141531701759386}
   _velocityMultiplier: 0.3
+--- !u!114 &3353898814983328378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8534141531701759384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2b4ac349b3f2741ab85783afa65e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 857f63ddef9d9494497c7dd82db6e120, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 1
+  _delay: 1
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
+  _weapon: {fileID: 8534141531701759386}
