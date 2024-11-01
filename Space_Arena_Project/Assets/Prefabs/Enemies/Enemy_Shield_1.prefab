@@ -284,6 +284,8 @@ GameObject:
   - component: {fileID: 2024151012}
   - component: {fileID: 2024151015}
   - component: {fileID: 2024151011}
+  - component: {fileID: 6613037500286854918}
+  - component: {fileID: 5322197709154760396}
   m_Layer: 6
   m_Name: Shield_Enemy
   m_TagString: Enemy
@@ -424,6 +426,44 @@ MonoBehaviour:
   _duration: 0.2
   _vibrato: 40
   _defaultPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &6613037500286854918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024151008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff0b77b3e6933942b4160804687317a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 55525c8751955a64595d81a9e0a06489, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 0
+  _delay: 1
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
+  _health: {fileID: 2024151015}
+--- !u!114 &5322197709154760396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024151008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52715916d80c7d14b9d5166c9fa58870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 55525c8751955a64595d81a9e0a06489, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 0
+  _delay: 1
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
+  _health: {fileID: 2024151015}
 --- !u!1 &2658297561336904011
 GameObject:
   m_ObjectHideFlags: 0
