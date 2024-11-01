@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5645198961146414911}
   - component: {fileID: 1176470449266367607}
   - component: {fileID: -6768262375857746920}
+  - component: {fileID: 3317596158114575148}
   m_Layer: 0
   m_Name: Weapon_Guided_3
   m_TagString: Untagged
@@ -184,6 +185,25 @@ MonoBehaviour:
   _renderer: {fileID: 5645198961911611335}
   _minRightAngle: 16
   _minLeftAngle: 196
+--- !u!114 &3317596158114575148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5645198961146414897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2b4ac349b3f2741ab85783afa65e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: c0f18c3818e63d54e849d6c50e4e853c, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 1
+  _delay: 1
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: cf4e25453e03baa4c979e813744740f9, type: 2}
+  _weapon: {fileID: 2797867902814346651}
 --- !u!1 &5645198961662698404
 GameObject:
   m_ObjectHideFlags: 0

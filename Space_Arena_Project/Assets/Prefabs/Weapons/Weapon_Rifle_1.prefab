@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6776396213989723331}
   - component: {fileID: 581580440325597548}
   - component: {fileID: 9108302164563767642}
+  - component: {fileID: 5714928120698494439}
   m_Layer: 0
   m_Name: Weapon_Rifle_1
   m_TagString: Untagged
@@ -198,6 +199,25 @@ MonoBehaviour:
   _renderer: {fileID: 258936881630380305}
   _minRightAngle: 7
   _minLeftAngle: 187
+--- !u!114 &5714928120698494439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258936880920263143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2b4ac349b3f2741ab85783afa65e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: de79c351cdd7fc74488c6ccd44a0dd71, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 1
+  _delay: 1
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
+  _weapon: {fileID: 258936880920263144}
 --- !u!1 &258936881477688690
 GameObject:
   m_ObjectHideFlags: 0

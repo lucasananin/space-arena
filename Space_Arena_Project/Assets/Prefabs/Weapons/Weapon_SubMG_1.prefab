@@ -460,8 +460,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioCue: {fileID: 11400000, guid: be4a4f3615870a143933b58bd805971d, type: 2}
   _playOnStart: 0
+  _stopOnDisable: 1
+  _delay: 1
   _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
-  _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: cf4e25453e03baa4c979e813744740f9, type: 2}
   _weapon: {fileID: 3562192091433409978}
 --- !u!1 &8452124352971607064
 GameObject:

@@ -815,6 +815,7 @@ GameObject:
   - component: {fileID: 6972132583126419576}
   - component: {fileID: 6972132583126419582}
   - component: {fileID: 6972132583126419583}
+  - component: {fileID: 3167018345654036693}
   m_Layer: 0
   m_Name: Weapon_Melee
   m_TagString: Untagged
@@ -891,6 +892,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+--- !u!114 &3167018345654036693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972132583126419581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2b4ac349b3f2741ab85783afa65e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: b6a00e56c81fee2478d8656a25518fd7, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 1
+  _delay: 1
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
+  _weapon: {fileID: 6972132583126419576}
 --- !u!1001 &1459823166869212284
 PrefabInstance:
   m_ObjectHideFlags: 0
