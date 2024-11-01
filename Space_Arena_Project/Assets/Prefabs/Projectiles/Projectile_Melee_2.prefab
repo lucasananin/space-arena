@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileBehaviour: {fileID: 7353528016857128665}
-  _hitVfx: {fileID: 4595461622765139695, guid: 8a1974664a878cf4f8fd92411f899cac, type: 3}
+  _hitVfx: {fileID: 4595461622765139695, guid: b14a36aa819990e40a0f52fe00b88f38, type: 3}
 --- !u!114 &4297430842272664210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,5 +331,4 @@ MonoBehaviour:
   - 0.1
   - 0.1
   _renderer: {fileID: 7353528016460216317}
-  _duration: 0.2
   _playOnStart: 1

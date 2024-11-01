@@ -4999,7 +4999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileBehaviour: {fileID: 7353528016857128665}
-  _hitVfx: {fileID: 4595461622765139695, guid: 8a1974664a878cf4f8fd92411f899cac, type: 3}
+  _hitVfx: {fileID: 4595461622765139695, guid: 65ff3adad5eed684a884b5051594e05b, type: 3}
 --- !u!114 &5982981067879630702
 MonoBehaviour:
   m_ObjectHideFlags: 0

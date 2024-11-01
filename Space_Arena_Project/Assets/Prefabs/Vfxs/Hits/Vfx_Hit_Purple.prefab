@@ -6410,7 +6410,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 8def2bbe9a4d1144891d75e60d89b585, type: 3}
+    - sprite: {fileID: 21300000, guid: d7888fd6e1d93284094c92fee325f973, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -9753,7 +9753,7 @@ GameObject:
   - component: {fileID: 4595461622765139692}
   - component: {fileID: 1226887756983657047}
   m_Layer: 0
-  m_Name: Vfx_Hit_Yellow
+  m_Name: Vfx_Hit_Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
