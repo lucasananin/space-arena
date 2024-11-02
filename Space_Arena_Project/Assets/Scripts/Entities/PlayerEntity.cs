@@ -12,15 +12,15 @@ public class PlayerEntity : EntityBehaviour
             _mover = GetComponent<PlayerMover>();
     }
 
-    private void OnEnable()
-    {
-        EnemySpawner.OnEndWaveGroupChanged += ResetPosition;
-    }
+    //private void OnEnable()
+    //{
+    //    EnemySpawner.OnEndWaveGroupChanged += ResetPosition;
+    //}
 
-    private void OnDisable()
-    {
-        EnemySpawner.OnEndWaveGroupChanged -= ResetPosition;
-    }
+    //private void OnDisable()
+    //{
+    //    EnemySpawner.OnEndWaveGroupChanged -= ResetPosition;
+    //}
 
     public override bool IsMoving()
     {
