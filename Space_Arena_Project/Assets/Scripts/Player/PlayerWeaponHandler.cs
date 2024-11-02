@@ -28,7 +28,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     public bool CanRotateWeapon { get => _canRotateWeapon; set => _canRotateWeapon = value; }
 
-    private void Start()
+    private void Awake()
     {
         SetCurrentWeapon();
     }
