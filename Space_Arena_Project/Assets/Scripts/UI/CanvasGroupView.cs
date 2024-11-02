@@ -45,4 +45,9 @@ public class CanvasGroupView : MonoBehaviour
         //        Hide();
         //    });
     }
+
+    public bool IsVisible()
+    {
+        return _canvasGroup.alpha > 0;
+    }
 }

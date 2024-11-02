@@ -13,6 +13,8 @@ public class InputHandler : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == Mathf.Epsilon) return;
+
         CheckLeftMouseButtonInput();
         CheckMouseScrollInput();
         CheckInteractInput();
@@ -60,6 +62,8 @@ public class InputHandler : MonoBehaviour
 
     public static Vector3 GetMovementInput()
     {
+        if (Time.timeScale == Mathf.Epsilon) return default;
+
         float _x = Input.GetAxisRaw("Horizontal");
         float _y = Input.GetAxisRaw("Vertical");
         Vector2 _moveAxis = new Vector2(_x, _y);
