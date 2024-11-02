@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1066285101805186569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7319573938262419466}
+  - component: {fileID: 4490316988724034983}
+  m_Layer: 6
+  m_Name: SFX_LockOn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7319573938262419466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066285101805186569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2658297561336904062}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4490316988724034983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066285101805186569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f92f965dbe44449b252b814ddc7137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: c1eaa54434877794cb83c0bf176f1124, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 1
+  _delay: 1
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: a08c5fc2e1b2d424cb3075d9100c4158, type: 2}
 --- !u!1 &2041553090410569504
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +230,7 @@ Transform:
   - {fileID: 7461327723704264307}
   - {fileID: 7025007926487187171}
   - {fileID: 8675617637408569564}
+  - {fileID: 7319573938262419466}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -559,6 +610,7 @@ MonoBehaviour:
   _aiEntity: {fileID: 2658297561336904056}
   _aiWeaponHandler: {fileID: 2658297561336904063}
   _line: {fileID: 6313559574080417271}
+  _sfx: {fileID: 4490316988724034983}
   _minTime: 0.5
   _lineLength: 20
   _modelStartIndex: 0
@@ -575,6 +627,7 @@ MonoBehaviour:
     _shootTimer: 0
     _rotators: []
     _flippers: []
+  _wasEnabled: 0
 --- !u!1001 &1430151410358569475
 PrefabInstance:
   m_ObjectHideFlags: 0
