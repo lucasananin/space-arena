@@ -810,7 +810,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
 --- !u!1 &1509285517988174948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,10 +1940,6 @@ PrefabInstance:
     - target: {fileID: 2891704570449894853, guid: 3f82d0fd8b2aa8f429e765ce405191a5, type: 3}
       propertyPath: m_Color.g
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5704818091080987773, guid: 3f82d0fd8b2aa8f429e765ce405191a5, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5704818092466949252, guid: 3f82d0fd8b2aa8f429e765ce405191a5, type: 3}
       propertyPath: _weaponSO
