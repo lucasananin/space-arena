@@ -44,7 +44,7 @@ MonoBehaviour:
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 1
     _autoAimDistance: 7
-    _autoAimAngle: 180
+    _autoAimAngle: 90
     _moveSpeedRange: {x: 0, y: 0}
     _scaleMultiplier: 1
     _destroyOnStop: 0
