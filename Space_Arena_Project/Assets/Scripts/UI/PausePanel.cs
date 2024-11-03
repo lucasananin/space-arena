@@ -12,14 +12,24 @@ public class PausePanel : MonoBehaviour
         {
             if (_view.IsVisible())
             {
-                _view.Hide();
-                Time.timeScale = 1;
+                Hide();
             }
             else
             {
-                _view.Show();
-                Time.timeScale = Mathf.Epsilon;
+                Show();
             }
         }
+    }
+
+    public void Show()
+    {
+        _view.Show();
+        Time.timeScale = Mathf.Epsilon;
+    }
+
+    public void Hide()
+    {
+        _view.Hide();
+        Time.timeScale = 1;
     }
 }
