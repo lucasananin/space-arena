@@ -68,9 +68,11 @@ public class TimeFxHandler : MonoBehaviour
 
     private IEnumerator Play_HitstopAndTheSlowMotion_routine()
     {
-        PlayHitStop();
-        yield return new WaitForSecondsRealtime(_hitStopTime);
-        PlaySlowMotion();
+        //PlayHitStop();
+        //yield return new WaitForSecondsRealtime(_hitStopTime);
+        //PlaySlowMotion();
+        yield return StartCoroutine(Play_routine(_hitStopScale, _hitStopTime));
+        StartCoroutine(Play_routine(_slowMoScale, _slowMoTime));
     }
 
     private void StopAllRoutines()
