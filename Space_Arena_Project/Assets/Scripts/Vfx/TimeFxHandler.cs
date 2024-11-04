@@ -18,12 +18,14 @@ public class TimeFxHandler : MonoBehaviour
     {
         EnemyHealth.OnAnyAiDead += Play;
         PlayerHealth.OnPlayerDead += Play_HitAndSlow;
+        PausePanel.OnPause += StopAllRoutines;
     }
 
     private void OnDisable()
     {
         EnemyHealth.OnAnyAiDead -= Play;
         PlayerHealth.OnPlayerDead -= Play_HitAndSlow;
+        PausePanel.OnPause -= StopAllRoutines;
     }
 
     private void Play(HealthBehaviour _health)
@@ -42,13 +44,13 @@ public class TimeFxHandler : MonoBehaviour
 
     private void PlaySlowMotion()
     {
-        StopAllCoroutines();
+        StopAllRoutines();
         StartCoroutine(Play_routine(_slowMoScale, _slowMoTime));
     }
 
     private void PlayHitStop()
     {
-        StopAllCoroutines();
+        StopAllRoutines();
         StartCoroutine(Play_routine(_hitStopScale, _hitStopTime));
     }
 
@@ -69,5 +71,10 @@ public class TimeFxHandler : MonoBehaviour
         PlayHitStop();
         yield return new WaitForSecondsRealtime(_hitStopTime);
         PlaySlowMotion();
+    }
+
+    private void StopAllRoutines()
+    {
+        StopAllCoroutines();
     }
 }

@@ -6,6 +6,9 @@ public class PausePanel : MonoBehaviour
 {
     [SerializeField] CanvasGroupView _view = null;
 
+    public static event System.Action OnPause = null;
+    public static event System.Action OnUnpause = null;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -24,12 +27,14 @@ public class PausePanel : MonoBehaviour
     public void Show()
     {
         _view.Show();
+        OnPause?.Invoke();
         Time.timeScale = Mathf.Epsilon;
     }
 
     public void Hide()
     {
         _view.Hide();
+        OnUnpause?.Invoke();
         Time.timeScale = 1;
     }
 }
