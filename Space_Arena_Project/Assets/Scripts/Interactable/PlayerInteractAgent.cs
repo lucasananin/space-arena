@@ -9,12 +9,12 @@ public class PlayerInteractAgent : InteractAgent
 
     private void OnEnable()
     {
-        InputHandler.onInteractDown += TryInteract;
+        InputHandler.OnInteractDown += TryInteract;
     }
 
     private void OnDisable()
     {
-        InputHandler.onInteractDown -= TryInteract;
+        InputHandler.OnInteractDown -= TryInteract;
     }
 
     private void Update()

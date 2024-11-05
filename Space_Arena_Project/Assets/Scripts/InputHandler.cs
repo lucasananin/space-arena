@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public static event System.Action onLeftMouseButtonDown = null;
-    public static event System.Action onLeftMouseButtonUp = null;
-    public static event System.Action<float> onMouseScrollSwipe = null;
+    public static event System.Action OnLeftMouseButtonDown = null;
+    public static event System.Action OnLeftMouseButtonUp = null;
+    public static event System.Action<float> OnMouseScrollSwipe = null;
     //public static event System.Action onMouseScrollUp = null;
     //public static event System.Action onMouseScrollDown = null;
-    public static event System.Action onInteractDown = null;
+    public static event System.Action OnInteractDown = null;
 
     private void Update()
     {
@@ -24,12 +24,12 @@ public class InputHandler : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            onLeftMouseButtonDown?.Invoke();
+            OnLeftMouseButtonDown?.Invoke();
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            onLeftMouseButtonUp?.Invoke();
+            OnLeftMouseButtonUp?.Invoke();
         }
     }
 
@@ -39,7 +39,7 @@ public class InputHandler : MonoBehaviour
 
         if (_mouseScrollDelta.y != 0)
         {
-            onMouseScrollSwipe?.Invoke(_mouseScrollDelta.y);
+            OnMouseScrollSwipe?.Invoke(_mouseScrollDelta.y);
         }
 
         //if (_mouseScrollDelta.y > 0)
@@ -56,7 +56,7 @@ public class InputHandler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            onInteractDown?.Invoke();
+            OnInteractDown?.Invoke();
         }
     }
 
