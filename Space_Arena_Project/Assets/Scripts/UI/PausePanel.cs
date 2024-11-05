@@ -9,6 +9,16 @@ public class PausePanel : MonoBehaviour
     public static event System.Action OnPause = null;
     public static event System.Action OnUnpause = null;
 
+    private void OnEnable()
+    {
+        PlayerHealth.OnPlayerDead += Disable;
+    }
+
+    private void OnDisable()
+    {
+        PlayerHealth.OnPlayerDead -= Disable;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -36,5 +46,10 @@ public class PausePanel : MonoBehaviour
         _view.Hide();
         OnUnpause?.Invoke();
         Time.timeScale = 1;
+    }
+
+    private void Disable(PlayerHealth _health)
+    {
+        gameObject.SetActive(false);
     }
 }
