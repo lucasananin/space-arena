@@ -32657,7 +32657,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1172737485
 GameObject:
@@ -37541,9 +37541,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 1, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -43236,7 +43236,7 @@ Transform:
   - {fileID: 1374036300}
   - {fileID: 1546003139}
   m_Father: {fileID: 1823301781}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1309546751
 MonoBehaviour:
@@ -49036,7 +49036,7 @@ Transform:
   - {fileID: 648341411}
   - {fileID: 412944544}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1400074200
 GameObject:
@@ -104453,7 +104453,7 @@ Transform:
   - {fileID: 1636704962}
   - {fileID: 2032467139}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1518569257
 GameObject:
@@ -119970,7 +119970,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1796631385
 GameObject:
@@ -120227,7 +120227,6 @@ Transform:
   - {fileID: 8067246483518715535}
   - {fileID: 326323190}
   - {fileID: 722793754}
-  - {fileID: 1839085678}
   - {fileID: 1309546750}
   m_Father: {fileID: 0}
   m_RootOrder: 26
@@ -120559,6 +120558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1839085678}
   - component: {fileID: 1839085679}
+  - component: {fileID: 1839085680}
   m_Layer: 6
   m_Name: AudioListener
   m_TagString: Untagged
@@ -120573,13 +120573,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839085677}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1823301781}
-  m_RootOrder: 6
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &1839085679
 AudioListener:
@@ -120589,6 +120589,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839085677}
   m_Enabled: 1
+--- !u!114 &1839085680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839085677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff89bf654ff19a64a8b1a477adbb4e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1823301781}
+  _offset: {x: 0, y: 0, z: -5}
 --- !u!1 &1841307362
 GameObject:
   m_ObjectHideFlags: 0
