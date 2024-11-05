@@ -1080,6 +1080,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5714928120698494439, guid: 389857240bf88cf499b74df5a4577b3d, type: 3}
+      propertyPath: _audioConfiguration
+      value: 
+      objectReference: {fileID: 11400000, guid: a08c5fc2e1b2d424cb3075d9100c4158, type: 2}
     - target: {fileID: 8834707055348392826, guid: 389857240bf88cf499b74df5a4577b3d, type: 3}
       propertyPath: m_RootOrder
       value: 5
