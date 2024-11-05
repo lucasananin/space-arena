@@ -10,9 +10,12 @@ public class InputHandler : MonoBehaviour
     //public static event System.Action onMouseScrollUp = null;
     //public static event System.Action onMouseScrollDown = null;
     public static event System.Action OnInteractDown = null;
+    public static event System.Action OnPauseDown = null;
 
     private void Update()
     {
+        CheckPauseInput();
+
         if (Time.timeScale == Mathf.Epsilon) return;
 
         CheckLeftMouseButtonInput();
@@ -57,6 +60,14 @@ public class InputHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             OnInteractDown?.Invoke();
+        }
+    }
+
+    private void CheckPauseInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OnPauseDown?.Invoke();
         }
     }
 

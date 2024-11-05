@@ -11,26 +11,40 @@ public class PausePanel : MonoBehaviour
 
     private void OnEnable()
     {
+        InputHandler.OnPauseDown += TryPause;
         PlayerHealth.OnPlayerDead += Disable;
     }
 
     private void OnDisable()
     {
+        InputHandler.OnPauseDown -= TryPause;
         PlayerHealth.OnPlayerDead -= Disable;
     }
 
-    private void Update()
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Escape))
+    //    {
+    //        if (_view.IsVisible())
+    //        {
+    //            Hide();
+    //        }
+    //        else
+    //        {
+    //            Show();
+    //        }
+    //    }
+    //}
+
+    private void TryPause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (_view.IsVisible())
         {
-            if (_view.IsVisible())
-            {
-                Hide();
-            }
-            else
-            {
-                Show();
-            }
+            Hide();
+        }
+        else
+        {
+            Show();
         }
     }
 
