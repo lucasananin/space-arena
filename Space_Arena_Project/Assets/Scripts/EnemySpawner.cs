@@ -117,8 +117,8 @@ public class EnemySpawner : MonoBehaviour
 
         if (_waveIndex >= _waveGroup.Waves.Length)
         {
-            //OnEndFinalWave?.Invoke(_currentWave);
-            OnEndWave?.Invoke(_waveModel);
+            OnEndFinalWave?.Invoke(_waveModel);
+            //OnEndWave?.Invoke(_waveModel);
         }
         else
         {

@@ -13,12 +13,14 @@ public class StartRoundInteractable : InteractableBehaviour
     {
         EnemySpawner.OnEndWave += Show;
         EnemySpawner.OnEndWaveGroupChanged += Show;
+        EnemySpawner.OnEndFinalWave += Disable;
     }
 
     private void OnDisable()
     {
         EnemySpawner.OnEndWave -= Show;
         EnemySpawner.OnEndWaveGroupChanged -= Show;
+        EnemySpawner.OnEndFinalWave -= Disable;
     }
 
     public override void Interact(InteractAgent _agent)
@@ -49,5 +51,10 @@ public class StartRoundInteractable : InteractableBehaviour
     {
         _spriteRenderer.enabled = false;
         _collider.enabled = false;
+    }
+
+    private void Disable(WaveModel obj)
+    {
+        gameObject.SetActive(false);
     }
 }
