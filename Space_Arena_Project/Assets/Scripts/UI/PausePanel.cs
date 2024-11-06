@@ -52,7 +52,7 @@ public class PausePanel : MonoBehaviour
     {
         _view.Show();
         OnPause?.Invoke();
-        Time.timeScale = Mathf.Epsilon;
+        //Time.timeScale = Mathf.Epsilon;
     }
 
     public void Hide()

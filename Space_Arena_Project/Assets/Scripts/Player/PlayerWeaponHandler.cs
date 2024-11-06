@@ -37,7 +37,7 @@ public class PlayerWeaponHandler : MonoBehaviour
     {
         InputHandler.OnLeftMouseButtonDown += PullTrigger;
         InputHandler.OnLeftMouseButtonUp += ReleaseTrigger;
-        InputHandler.OnMouseScrollSwipe += SwapThroughInput;
+        //InputHandler.OnMouseScrollSwipe += SwapThroughInput;
         _entityFlipper.onFlip += RotateCurrentWeapon;
         //InputHandler.onMouseScrollUp += SwapToNextWeapon;
         //InputHandler.onMouseScrollDown += SwapToPreviousWeapon;
@@ -47,7 +47,7 @@ public class PlayerWeaponHandler : MonoBehaviour
     {
         InputHandler.OnLeftMouseButtonDown -= PullTrigger;
         InputHandler.OnLeftMouseButtonUp -= ReleaseTrigger;
-        InputHandler.OnMouseScrollSwipe -= SwapThroughInput;
+        //InputHandler.OnMouseScrollSwipe -= SwapThroughInput;
         _entityFlipper.onFlip -= RotateCurrentWeapon;
         //InputHandler.onMouseScrollUp -= SwapToNextWeapon;
         //InputHandler.onMouseScrollDown -= SwapToPreviousWeapon;
@@ -71,7 +71,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         _currentWeapon?.ReleaseTrigger();
     }
 
-    private void SwapThroughInput(float _y)
+    public void SwapThroughInput(float _y)
     {
         if (_isWaitingSwapDelay) return;
         if (_weaponsList.Count < 2) return;
