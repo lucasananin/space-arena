@@ -21,20 +21,36 @@ public class CanvasGroupView : MonoBehaviour
 
     public void Show()
     {
-        _canvasGroup.DOComplete();
-        _canvasGroup.alpha = 0;
+        if (_fadeDuration > 0)
+        {
+            _canvasGroup.DOComplete();
+            _canvasGroup.alpha = 0;
+            _canvasGroup.DOFade(1, _fadeDuration);
+        }
+        else
+        {
+            _canvasGroup.alpha = 1;
+        }
+
         _canvasGroup.interactable = _defaultInteractable;
         _canvasGroup.blocksRaycasts = _defaultBlockRaycasts;
-        _canvasGroup.DOFade(1, _fadeDuration);
     }
 
     public void Hide()
     {
-        _canvasGroup.DOComplete();
-        _canvasGroup.alpha = 1;
+        if (_fadeDuration > 0)
+        {
+            _canvasGroup.DOComplete();
+            _canvasGroup.alpha = 1;
+            _canvasGroup.DOFade(0, _fadeDuration);
+        }
+        else
+        {
+            _canvasGroup.alpha = 0;
+        }
+
         _canvasGroup.interactable = false;
         _canvasGroup.blocksRaycasts = false;
-        _canvasGroup.DOFade(0, _fadeDuration);
     }
 
     public void InstantHide()
@@ -49,9 +65,10 @@ public class CanvasGroupView : MonoBehaviour
     {
         _canvasGroup.DOComplete();
         _canvasGroup.alpha = 1;
+        _canvasGroup.DOFade(0, _fadeDuration);
+
         _canvasGroup.interactable = false;
         _canvasGroup.blocksRaycasts = false;
-        _canvasGroup.DOFade(0, _fadeDuration);
         //_canvasGroup.DOFade(0, _fadeDuration).
         //    OnComplete(()=> 
         //    {
