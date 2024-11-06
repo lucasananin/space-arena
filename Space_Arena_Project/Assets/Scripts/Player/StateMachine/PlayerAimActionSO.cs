@@ -16,10 +16,12 @@ public class PlayerAimActionSO : StateActionSO
 public class PlayerAimAction : StateAction
 {
     private PlayerWeaponHandler _playerWeaponHandler = null;
+    private PlayerFlipper _playerFlipper = null;
 
-    public override void Awake(StateMachine stateMachine)
+    public override void Awake(StateMachine _stateMachine)
     {
-        _playerWeaponHandler = stateMachine.GetComponent<PlayerWeaponHandler>();
+        _playerWeaponHandler = _stateMachine.GetComponent<PlayerWeaponHandler>();
+        _playerFlipper = _stateMachine.GetComponent<PlayerFlipper>();
     }
 
     public override void OnStateEnter()
@@ -40,5 +42,6 @@ public class PlayerAimAction : StateAction
     public override void OnUpdate()
     {
         //_playerWeaponHandler.RotateCurrentWeapon();
+        _playerFlipper.FlipToMouse();
     }
 }
