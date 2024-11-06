@@ -23,9 +23,7 @@ public class FinishGameInteractable : InteractableBehaviour
     {
         base.Interact(_agent);
         OnInteracted?.Invoke();
-        // dá um "despawn" no player.
         // ativa o tela de finalizacao.
-        // usar o UnityEvent para ativar as linhas acima.
     }
 
     private void Show(WaveModel obj)
