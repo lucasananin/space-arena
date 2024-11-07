@@ -62,8 +62,13 @@ public class PausePanel : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    private void Disable(PlayerHealth _health)
+    public void Disable()
     {
         gameObject.SetActive(false);
+    }
+
+    private void Disable(PlayerHealth _health)
+    {
+        Disable();
     }
 }
