@@ -21,4 +21,9 @@ public class EndgamePanel : MonoBehaviour
     {
         _defeatPanel.Show();
     }
+
+    public void ShowVictoryPanel()
+    {
+        _victoryPanel.Show();
+    }
 }

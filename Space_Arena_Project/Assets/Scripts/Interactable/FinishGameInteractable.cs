@@ -23,7 +23,6 @@ public class FinishGameInteractable : InteractableBehaviour
     {
         base.Interact(_agent);
         OnInteracted?.Invoke();
-        // ativa o tela de finalizacao.
     }
 
     private void Show(WaveModel obj)

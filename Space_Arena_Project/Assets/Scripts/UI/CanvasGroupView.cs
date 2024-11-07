@@ -22,7 +22,27 @@ public class CanvasGroupView : MonoBehaviour
 
     public void Show()
     {
-        StartCoroutine(Show_routine());
+        if (_delay > 0)
+            StartCoroutine(Show_routine());
+        else
+            ShowView();
+    }
+
+    private void ShowView()
+    {
+        if (_fadeDuration > 0)
+        {
+            _canvasGroup.DOComplete();
+            _canvasGroup.alpha = 0;
+            _canvasGroup.DOFade(1, _fadeDuration);
+        }
+        else
+        {
+            _canvasGroup.alpha = 1;
+        }
+
+        _canvasGroup.interactable = _defaultInteractable;
+        _canvasGroup.blocksRaycasts = _defaultBlockRaycasts;
     }
 
     public void Hide()
@@ -73,19 +93,6 @@ public class CanvasGroupView : MonoBehaviour
     private IEnumerator Show_routine()
     {
         yield return new WaitForSeconds(_delay);
-
-        if (_fadeDuration > 0)
-        {
-            _canvasGroup.DOComplete();
-            _canvasGroup.alpha = 0;
-            _canvasGroup.DOFade(1, _fadeDuration);
-        }
-        else
-        {
-            _canvasGroup.alpha = 1;
-        }
-
-        _canvasGroup.interactable = _defaultInteractable;
-        _canvasGroup.blocksRaycasts = _defaultBlockRaycasts;
+        ShowView();
     }
 }
