@@ -6,6 +6,7 @@ public class DespawnVfx : MonoBehaviour
 {
     [SerializeField] GameObject _player = null;
     [SerializeField] ParticleSystem _vfx = null;
+    [SerializeField] AudioCue _sfx = null;
 
     public void Play()
     {
@@ -17,6 +18,7 @@ public class DespawnVfx : MonoBehaviour
         yield return null;
         _vfx.transform.parent = null;
         _vfx.Play();
+        _sfx.PlayAudioCue();
         _player.gameObject.SetActive(false);
     }
 }

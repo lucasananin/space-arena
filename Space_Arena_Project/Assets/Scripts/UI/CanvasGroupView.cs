@@ -8,6 +8,7 @@ public class CanvasGroupView : MonoBehaviour
 {
     [SerializeField] CanvasGroup _canvasGroup = null;
     [SerializeField] float _fadeDuration = 0.3f;
+    [SerializeField] float _delay = 0f;
 
     private bool _defaultInteractable = false;
     private bool _defaultBlockRaycasts = false;
@@ -21,19 +22,7 @@ public class CanvasGroupView : MonoBehaviour
 
     public void Show()
     {
-        if (_fadeDuration > 0)
-        {
-            _canvasGroup.DOComplete();
-            _canvasGroup.alpha = 0;
-            _canvasGroup.DOFade(1, _fadeDuration);
-        }
-        else
-        {
-            _canvasGroup.alpha = 1;
-        }
-
-        _canvasGroup.interactable = _defaultInteractable;
-        _canvasGroup.blocksRaycasts = _defaultBlockRaycasts;
+        StartCoroutine(Show_routine());
     }
 
     public void Hide()
@@ -79,5 +68,24 @@ public class CanvasGroupView : MonoBehaviour
     public bool IsVisible()
     {
         return _canvasGroup.alpha > 0;
+    }
+
+    private IEnumerator Show_routine()
+    {
+        yield return new WaitForSeconds(_delay);
+
+        if (_fadeDuration > 0)
+        {
+            _canvasGroup.DOComplete();
+            _canvasGroup.alpha = 0;
+            _canvasGroup.DOFade(1, _fadeDuration);
+        }
+        else
+        {
+            _canvasGroup.alpha = 1;
+        }
+
+        _canvasGroup.interactable = _defaultInteractable;
+        _canvasGroup.blocksRaycasts = _defaultBlockRaycasts;
     }
 }
