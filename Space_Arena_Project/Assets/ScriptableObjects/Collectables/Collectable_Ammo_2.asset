@@ -15,3 +15,4 @@ MonoBehaviour:
   _prefab: {fileID: 7651030474878422386, guid: 96cd4b3772216044c8658f3fc2d2c885, type: 3}
   _minRestorePercentage: 40
   _maxRestorePercentage: 60
+  _restoreType: 1

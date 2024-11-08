@@ -6,6 +6,7 @@ using UnityEngine;
 public class AmmoHandler : MonoBehaviour
 {
     [SerializeField] bool _infiniteAmmo = false;
+    [SerializeField, Range(0f, 99f)] int _initialAmmoPercentage = 50;
     [SerializeField] AmmoModel[] _models = null;
 
     public AmmoModel[] Models { get => _models; private set => _models = value; }
@@ -14,11 +15,12 @@ public class AmmoHandler : MonoBehaviour
 
     private void Awake()
     {
-        RestoreAllAmmo();
+        //RestoreFullAmmo();
+        RestoreAmmo(_initialAmmoPercentage);
     }
 
     [Button]
-    public void RestoreAllAmmo()
+    public void RestoreFullAmmo()
     {
         RestoreAmmo(999);
     }
@@ -33,6 +35,17 @@ public class AmmoHandler : MonoBehaviour
         }
 
         OnAmmoChanged?.Invoke();
+    }
+
+    public void RestoreOneAmmoModel(int _percentage)
+    {
+        var _weaponHandler = GetComponent<PlayerWeaponHandler>();
+        var _ammoTypes = _weaponHandler.GetAmmoTypes();
+        var _randomIndex = Random.Range(0, _ammoTypes.Count);
+        var _ammoSO = _ammoTypes[_randomIndex];
+        GetModel(_ammoSO).RestoreQuantity(_percentage);
+        OnAmmoChanged?.Invoke();
+        //Debug.Log($"{GetModel(_ammoSO).GetId()}", this);
     }
 
     public void DecreaseAmmo(ProjectileSO _projectileSO, WeaponSO _weaponSO)

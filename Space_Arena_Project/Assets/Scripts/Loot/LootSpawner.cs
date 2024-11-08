@@ -173,4 +173,21 @@ public class LootSpawner : MonoBehaviour
     {
         return _droppedWeapons.Count > 0 && _droppedWeapons.Contains(_value);
     }
+
+    [Title("// Debug")]
+    [SerializeField] CollectableBehaviour _collectablePrefab = null;
+    [SerializeField] Transform _collectableOrigin = null;
+
+    [Button]
+    private void SpawnCollectable()
+    {
+        var _collectableInstance = Instantiate(_collectablePrefab, _collectableOrigin.position, Quaternion.identity, _parentContainer);
+
+        var _2DPosition = (Vector2)_collectableOrigin.position;
+        var _randomPosition = Random.insideUnitCircle + _2DPosition;
+        var _direction = (_randomPosition - _2DPosition).normalized;
+        var _force = _direction * Random.Range(_minMaxForce.x, _minMaxForce.y);
+        var _rb = _collectableInstance.GetComponent<Rigidbody2D>();
+        _rb.AddForce(_force, ForceMode2D.Impulse);
+    }
 }

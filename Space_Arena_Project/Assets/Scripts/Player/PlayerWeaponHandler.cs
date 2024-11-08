@@ -212,6 +212,20 @@ public class PlayerWeaponHandler : MonoBehaviour
         _isWaitingSwapDelay = false;
     }
 
+    public List<AmmoSO> GetAmmoTypes()
+    {
+        var _list = new List<AmmoSO>();
+        var _count = _weaponsList.Count;
+
+        for (int i = 0; i < _count; i++)
+        {
+            var _ammoSO = _weaponsList[i].WeaponSO.ProjectileSO.AmmoSO;
+            _list.Add(_ammoSO);
+        }
+
+        return _list;
+    }
+
     //[Button]
     //private void SetWeaponReference()
     //{
