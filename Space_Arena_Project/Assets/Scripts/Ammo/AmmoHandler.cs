@@ -15,7 +15,6 @@ public class AmmoHandler : MonoBehaviour
 
     private void Awake()
     {
-        //RestoreFullAmmo();
         RestoreAmmo(_initialAmmoPercentage);
     }
 
@@ -45,7 +44,6 @@ public class AmmoHandler : MonoBehaviour
         var _ammoSO = _ammoTypes[_randomIndex];
         GetModel(_ammoSO).RestoreQuantity(_percentage);
         OnAmmoChanged?.Invoke();
-        //Debug.Log($"{GetModel(_ammoSO).GetId()}", this);
     }
 
     public void DecreaseAmmo(ProjectileSO _projectileSO, WeaponSO _weaponSO)
