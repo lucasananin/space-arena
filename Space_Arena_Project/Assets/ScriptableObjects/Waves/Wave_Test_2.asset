@@ -17,7 +17,7 @@ MonoBehaviour:
   _spawnTime: 0.4
   _waves:
   - _entities:
-    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
+    - _so: {fileID: 11400000, guid: 732d5d93c5288984884d72ba30534349, type: 2}
       _quantity: 1
     _loots:
     - {fileID: 11400000, guid: d4d5651bdc0e44744a9bb9717bb44550, type: 2}
