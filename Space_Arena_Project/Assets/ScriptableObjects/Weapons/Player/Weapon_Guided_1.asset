@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: 4294cf3d52b394c45a28b4b392f50645, type: 3}
   _weaponPrefab: {fileID: 5645198961146414910, guid: 02848841a7026db49bac1ce73524fb1a, type: 3}
   _id: guided_1
-  _displayName: Guided
+  _displayName: Guided Death
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 9db3c891a3009c44291b6bae7a42576f, type: 2}

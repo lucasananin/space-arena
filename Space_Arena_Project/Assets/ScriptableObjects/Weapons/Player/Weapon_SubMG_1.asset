@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: 2faa6d0d2b4f50f4a80bed8a1c1236ee, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: b08bfb25ec595334897f48cd68bedeef, type: 3}
   _id: sub_mg_1
-  _displayName: Sub-MG
+  _displayName: MAG
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}

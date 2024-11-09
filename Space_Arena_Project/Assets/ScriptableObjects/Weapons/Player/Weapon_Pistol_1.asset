@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: f80457273577c9a4d84f88bf3def4edf, type: 3}
   _weaponPrefab: {fileID: 5704818092466949252, guid: c61856f6800231948bf9daedc54fadde, type: 3}
   _id: pistol_1
-  _displayName: Pistol
+  _displayName: Pew-Pew
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}

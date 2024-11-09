@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: 7a837027b261f0c49a935b67e1d7d2a4, type: 3}
   _weaponPrefab: {fileID: 2751957287607790105, guid: 90cf852f366fdca4392e380ad1d8ca5a, type: 3}
   _id: shotgun_1
-  _displayName: Shotgun
+  _displayName: Ravager
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 9ec7e660031cbf142bf1d6f668208b57, type: 2}

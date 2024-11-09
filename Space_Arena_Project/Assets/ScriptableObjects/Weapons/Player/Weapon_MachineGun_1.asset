@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: f25f7b226609c8547b9e7f2cd2d86898, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: 2b97e7bca5fc4fd4bbfe4b95de0291af, type: 3}
   _id: machine_gun_1
-  _displayName: Purple-MG
+  _displayName: Perpetrator
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}

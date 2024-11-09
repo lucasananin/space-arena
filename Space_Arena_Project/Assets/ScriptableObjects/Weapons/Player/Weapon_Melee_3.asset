@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: 86f475c2255682646b2120d38baf1148, type: 3}
   _weaponPrefab: {fileID: 8534141531701759386, guid: 81b8b7b85ec002544b8f82c0b2c500cc, type: 3}
   _id: melee_3
-  _displayName: Club
+  _displayName: Dread
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 0550e4f298432344dbbe5bd3bce6b4e3, type: 2}

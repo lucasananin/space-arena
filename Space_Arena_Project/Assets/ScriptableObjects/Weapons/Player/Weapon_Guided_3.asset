@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: e5083f46d13b8a745a4e3c97f15d26a3, type: 3}
   _weaponPrefab: {fileID: 2797867902814346651, guid: ea5edf88176beeb4098699eb9a5dc65f, type: 3}
   _id: guided_3
-  _displayName: Guided Laucher
+  _displayName: Blue Barrage
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: fd35df3f7defe414fa0b33c90cf0cda6, type: 2}

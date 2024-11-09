@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: 96ecdfea152a3f947a8ecbaf167ec1c1, type: 3}
   _weaponPrefab: {fileID: 2751957287607790105, guid: 35170ab00f16d1d48a42e57cb87aea51, type: 3}
   _id: shotgun_3
-  _displayName: Charge Shotgun
+  _displayName: Comet Eraser
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: c76326c260a7e6a47a7fb5ce77d560a1, type: 2}

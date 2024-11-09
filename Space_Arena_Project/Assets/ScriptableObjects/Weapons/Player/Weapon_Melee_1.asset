@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: 6e95a81e078176b4ca7da96dee52568a, type: 3}
   _weaponPrefab: {fileID: 8534141531701759386, guid: 5cc1b6df160d50445bb1785f8803f2f9, type: 3}
   _id: melee_1
-  _displayName: Sword
+  _displayName: Slasher
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 0550e4f298432344dbbe5bd3bce6b4e3, type: 2}

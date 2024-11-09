@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: 0bd8cac91aec8ba45a516f2fa80d8114, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: 9e8e169bdd8833048b66fe438cf0e50d, type: 3}
   _id: machine_gun_2
-  _displayName: Soviet Babe
+  _displayName: ZT-91
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}

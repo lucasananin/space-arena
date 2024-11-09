@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: a6d14c6c5f9e1c14fa47c8f9002330a0, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: aa4d0fe08b87ba94faff65f0366cde68, type: 3}
   _id: gatling_gun_1
-  _displayName: Gatlling Gun
+  _displayName: Warmaker
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: ac16be7aa03c2054da5f31d9e12fac26, type: 2}

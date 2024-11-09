@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: ad65ebe6c66a63b4f949fa1837ef19f9, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: 66284afa900f5c3428c4c7a427bb8f8e, type: 3}
   _id: eletric_gun
-  _displayName: Eletric Gun
+  _displayName: Chaser
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 00f0920644093dc4490cb09f8885a2b4, type: 2}
@@ -44,7 +44,7 @@ MonoBehaviour:
     _blockPierceTags: {fileID: 11400000, guid: 36841df2218f7014caef6743430e2de4, type: 2}
     _canAutoAim: 1
     _autoAimDistance: 7
-    _autoAimAngle: 90
+    _autoAimAngle: 135
     _moveSpeedRange: {x: 0, y: 0}
     _scaleMultiplier: 1
     _destroyOnStop: 0

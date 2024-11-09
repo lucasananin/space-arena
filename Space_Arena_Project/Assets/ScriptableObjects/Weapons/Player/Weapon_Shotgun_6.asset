@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: a1a47ea58542c154e9a11213ce6097e1, type: 3}
   _weaponPrefab: {fileID: 5401725281893950585, guid: 23e706237e1d7ed42a08c55d9c510cfb, type: 3}
   _id: shotgun_6
-  _displayName: Laser-SG
+  _displayName: SS-50
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 314cdc2708c9eab4fa5bd81fc4782104, type: 2}

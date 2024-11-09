@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: ce72006b15bd0724284d6efd4ebd8ed7, type: 3}
   _weaponPrefab: {fileID: 3562192091433409978, guid: d97b617afac7f0544901c434005d342c, type: 3}
   _id: sub_mg_2
-  _displayName: Laser-SMG
+  _displayName: Zap-XIII
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 0de8b17f5472b2544bdd340dc4808b19, type: 2}

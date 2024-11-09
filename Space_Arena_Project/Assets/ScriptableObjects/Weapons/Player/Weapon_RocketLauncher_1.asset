@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: 7c45460a106e80c44b275298234cc5ac, type: 3}
   _weaponPrefab: {fileID: 8067246484439910053, guid: 79cdc3ba6fa4a8342b9aaa1d5340c4ba, type: 3}
   _id: rocket_laucher_1
-  _displayName: R-Launcher
+  _displayName: Boomer-16
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 008e992b91b8a4c4da24cf58b975da63, type: 2}

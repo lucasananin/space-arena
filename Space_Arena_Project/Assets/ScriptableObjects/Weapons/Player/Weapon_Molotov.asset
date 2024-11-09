@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: 71ac762c488b3cf4486e1bce64f3ca77, type: 3}
   _weaponPrefab: {fileID: 6280535233146275178, guid: 397b0c0af1c262e4aae381fbb206e82f, type: 3}
   _id: molotov_1
-  _displayName: Molotov
+  _displayName: HeatKill
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: 30}
   _projectileSO: {fileID: 11400000, guid: a3cab79fac1b1a24f860ffade39377bc, type: 2}

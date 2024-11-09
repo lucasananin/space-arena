@@ -16321,6 +16321,8 @@ MonoBehaviour:
   _weaponCollider: {fileID: 1878020144}
   _weapons:
   - {fileID: 11400000, guid: f56cf73d605c30c4c8ead4dff0644b58, type: 2}
+  - {fileID: 11400000, guid: 5fb5b14102a6e6348a24ddfd0eff20e7, type: 2}
+  - {fileID: 11400000, guid: a7251c2b1d29dcc4a81dfd505a112493, type: 2}
   - {fileID: 11400000, guid: 67ab5d4e71e797a42afd7a0f1059079e, type: 2}
   - {fileID: 11400000, guid: 8e6d532bee06d3742895a5864eeed65b, type: 2}
   - {fileID: 11400000, guid: f14c27747a8f8bb48aaeb135e617819c, type: 2}
@@ -121212,7 +121214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4023e2bd69e5b54d846e41ea468df1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _infiniteAmmo: 0
+  _infiniteAmmo: 1
   _initialAmmoPercentage: 50
   _models:
   - _so: {fileID: 11400000, guid: b3dc590e3e7accd459b765e535abb941, type: 2}

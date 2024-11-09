@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: a16297492b58083458595c5d4b10c0b9, type: 3}
   _weaponPrefab: {fileID: 4697567134373183936, guid: 18ef644ca67353d4aa755599163088a7, type: 3}
   _id: shotgun_5
-  _displayName: Auto-SG
+  _displayName: S1G1
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: 60767d6c6c81fc64a85741ac1aeb34fc, type: 2}

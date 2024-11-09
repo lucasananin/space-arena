@@ -15,7 +15,7 @@ MonoBehaviour:
   _iconSprite: {fileID: 21300000, guid: a6c484589a90c3a4d95f27124a04dc85, type: 3}
   _weaponPrefab: {fileID: 5704818092466949252, guid: 3f82d0fd8b2aa8f429e765ce405191a5, type: 3}
   _id: revolver_1
-  _displayName: Revolver
+  _displayName: Double Trouble
   _holsterPosition: {x: -0.25, y: 0.3, z: 0}
   _holsterEuler: {x: 0, y: 0, z: -60}
   _projectileSO: {fileID: 11400000, guid: cbc2f2ef0648fca488053811810e86d5, type: 2}
