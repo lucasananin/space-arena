@@ -1146,7 +1146,7 @@ MonoBehaviour:
   _audioCue: {fileID: 11400000, guid: c6fafb5e78da01445b396b9e70a5ebb9, type: 2}
   _playOnStart: 1
   _stopOnDisable: 1
-  _delay: 1
+  _delay: 0.1
   _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
   _audioConfiguration: {fileID: 11400000, guid: a08c5fc2e1b2d424cb3075d9100c4158, type: 2}
 --- !u!4 &175846025

@@ -91,7 +91,8 @@ public abstract class WeaponBehaviour : MonoBehaviour
         {
             var _position = CalculateProjectilePosition(_projectileSO);
             var _rotation = CalculateProjectileRotation(i);
-            var _projectile = Instantiate(_projectileSO.Prefab, _position, _rotation);
+            var _parent = _entitySource.transform;
+            var _projectile = Instantiate(_projectileSO.Prefab, _position, _rotation, _parent);
             var _shootModel = new ShootModel(_entitySource, this, _projectileSO/*, _isChargedShot*/);
             _projectile.Init(_shootModel);
         }
