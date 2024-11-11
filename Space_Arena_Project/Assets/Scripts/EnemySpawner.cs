@@ -65,17 +65,12 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator ChangeWaveGroup_routine()
     {
         OnStartWaveGroupChanged?.Invoke();
-        //yield return new WaitForSeconds(1f);
+
         yield return null;
 
-        //_groupIndex++;
-        //if (_groupIndex >= _waveGroups.Count)
-        //    _groupIndex = 0;
         _waveGroup = _waveGroups[_groupIndex];
-
         ResetWaveIndex();
         OnEndWaveGroupChanged?.Invoke(_waveGroup);
-        //OnEndWave?.Invoke(null);
         StartCoroutine(Spawn_routine());
     }
 
@@ -116,16 +111,6 @@ public class EnemySpawner : MonoBehaviour
         _waveIndex++;
         OnEndWave?.Invoke(_waveModel);
         CheckIfIsLastWaveGroup();
-
-        //if (_waveIndex >= _waveGroup.Waves.Length)
-        //{
-        //    OnEndFinalWave?.Invoke(_waveModel);
-        //    //OnEndWave?.Invoke(_waveModel);
-        //}
-        //else
-        //{
-        //    OnEndWave?.Invoke(_waveModel);
-        //}
     }
 
     private void CheckIfIsLastWaveGroup()
