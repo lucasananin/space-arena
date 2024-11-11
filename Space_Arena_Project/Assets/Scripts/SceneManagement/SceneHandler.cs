@@ -27,7 +27,7 @@ public class SceneHandler : MonoBehaviour
             }
         }
 
-        AsyncOperation _asyncLoad = SceneManager.LoadSceneAsync(_sceneToLoad);
+        AsyncOperation _asyncLoad = SceneManager.LoadSceneAsync(_sceneToLoad, LoadSceneMode.Additive);
 
         while (!_asyncLoad.isDone)
         {

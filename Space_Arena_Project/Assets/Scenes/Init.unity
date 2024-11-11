@@ -285,4 +285,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ff446b3f4a8a74a8323b655140ca43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: SampleScene
+  _sceneName: PersistentManagers
