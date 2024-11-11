@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Collectable_Ammo_2
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7651030474878422386, guid: 96cd4b3772216044c8658f3fc2d2c885, type: 3}
-  _minRestorePercentage: 32
-  _maxRestorePercentage: 48
+  _minRestorePercentage: 24
+  _maxRestorePercentage: 36
   _restoreType: 1
