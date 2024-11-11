@@ -12,6 +12,7 @@ public class SceneHandler : MonoBehaviour
     {
         //this._sceneToLoad = _sceneToLoad;
         //this._sceneToUnload = _sceneToUnload;
+        Time.timeScale = 1;
         StartCoroutine(Load_routine(_sceneToLoad, _sceneToUnload));
     }
 
@@ -19,7 +20,7 @@ public class SceneHandler : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(_sceneToUnload))
         {
-            AsyncOperation _asyncUnload = SceneManager.LoadSceneAsync(_sceneToUnload);
+            AsyncOperation _asyncUnload = SceneManager.UnloadSceneAsync(_sceneToUnload);
 
             while (!_asyncUnload.isDone)
             {
