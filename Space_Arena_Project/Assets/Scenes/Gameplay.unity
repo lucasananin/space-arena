@@ -8806,6 +8806,7 @@ GameObject:
   - component: {fileID: 368683958}
   - component: {fileID: 368683957}
   - component: {fileID: 368683956}
+  - component: {fileID: 368683959}
   m_Layer: 5
   m_Name: Button_Quit
   m_TagString: Untagged
@@ -8877,31 +8878,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 368683957}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 804770970}
-        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
-        m_MethodName: Quit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &368683957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8940,6 +8917,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368683954}
   m_CullTransparentMesh: 1
+--- !u!114 &368683959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368683954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc9bb8c903f7aa41a39f0b808c5ab3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 368683956}
 --- !u!1 &369046718
 GameObject:
   m_ObjectHideFlags: 0
@@ -9002,7 +8992,6 @@ GameObject:
   m_Component:
   - component: {fileID: 385075191}
   - component: {fileID: 385075192}
-  - component: {fileID: 385075193}
   m_Layer: 5
   m_Name: Panel_Pause
   m_TagString: Untagged
@@ -9044,18 +9033,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 970418756}
---- !u!114 &385075193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 385075190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc9bb8c903f7aa41a39f0b808c5ab3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &390925400
 GameObject:
   m_ObjectHideFlags: 0
@@ -16658,6 +16635,7 @@ GameObject:
   - component: {fileID: 627565522}
   - component: {fileID: 627565521}
   - component: {fileID: 627565520}
+  - component: {fileID: 627565523}
   m_Layer: 5
   m_Name: Button_Quit
   m_TagString: Untagged
@@ -16729,31 +16707,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 627565521}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 385075192}
-        m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 385075193}
-        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
-        m_MethodName: Quit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &627565521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16792,6 +16746,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627565518}
   m_CullTransparentMesh: 1
+--- !u!114 &627565523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627565518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc9bb8c903f7aa41a39f0b808c5ab3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 627565520}
 --- !u!1 &644382456
 GameObject:
   m_ObjectHideFlags: 0
@@ -25509,7 +25476,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 804770969}
-  - component: {fileID: 804770970}
   m_Layer: 5
   m_Name: Panel_Defeat
   m_TagString: Untagged
@@ -25538,18 +25504,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &804770970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 804770968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc9bb8c903f7aa41a39f0b808c5ab3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &805339119
 GameObject:
   m_ObjectHideFlags: 0
@@ -25727,6 +25681,7 @@ GameObject:
   - component: {fileID: 822632257}
   - component: {fileID: 822632256}
   - component: {fileID: 822632255}
+  - component: {fileID: 822632258}
   m_Layer: 5
   m_Name: Button_Quit
   m_TagString: Untagged
@@ -25798,31 +25753,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 822632256}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2024616981}
-        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
-        m_MethodName: Quit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &822632256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25861,6 +25792,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822632253}
   m_CullTransparentMesh: 1
+--- !u!114 &822632258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822632253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc9bb8c903f7aa41a39f0b808c5ab3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 822632255}
 --- !u!1 &828916766
 GameObject:
   m_ObjectHideFlags: 0
@@ -127482,7 +127426,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2024616980}
-  - component: {fileID: 2024616981}
   m_Layer: 5
   m_Name: Panel_Victory
   m_TagString: Untagged
@@ -127511,18 +127454,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2024616981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2024616979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc9bb8c903f7aa41a39f0b808c5ab3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2025928351
 GameObject:
   m_ObjectHideFlags: 0
