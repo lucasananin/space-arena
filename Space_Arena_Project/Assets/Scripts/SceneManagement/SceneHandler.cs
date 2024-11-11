@@ -40,6 +40,9 @@ public class SceneHandler : MonoBehaviour
             yield return null;
         }
 
+        var _scene = SceneManager.GetSceneByName(_sceneToLoad);
+        SceneManager.SetActiveScene(_scene);
+
         yield return new WaitForSeconds(_loadDelay);
 
         OnEndLoad?.Invoke();
