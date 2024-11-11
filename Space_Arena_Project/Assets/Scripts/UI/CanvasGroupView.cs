@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,7 @@ public class CanvasGroupView : MonoBehaviour
         InstantHide();
     }
 
+    [Button]
     public void Show()
     {
         if (_delay > 0)
@@ -45,6 +47,7 @@ public class CanvasGroupView : MonoBehaviour
         _canvasGroup.blocksRaycasts = _defaultBlockRaycasts;
     }
 
+    [Button]
     public void Hide()
     {
         if (_fadeDuration > 0)

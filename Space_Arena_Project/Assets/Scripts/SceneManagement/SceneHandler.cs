@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
+    [SerializeField] float _loadDelay = 1f;
+
     public static event Action OnStartLoad = null;
     public static event Action OnEndLoad = null;
 
@@ -18,6 +20,8 @@ public class SceneHandler : MonoBehaviour
     IEnumerator Load_routine(string _sceneToLoad, string _sceneToUnload)
     {
         OnStartLoad?.Invoke();
+
+        yield return new WaitForSeconds(_loadDelay);
 
         if (!string.IsNullOrEmpty(_sceneToUnload))
         {
@@ -35,6 +39,8 @@ public class SceneHandler : MonoBehaviour
         {
             yield return null;
         }
+
+        yield return new WaitForSeconds(_loadDelay);
 
         OnEndLoad?.Invoke();
     }
