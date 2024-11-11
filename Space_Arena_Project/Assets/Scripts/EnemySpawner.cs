@@ -68,9 +68,9 @@ public class EnemySpawner : MonoBehaviour
         //yield return new WaitForSeconds(1f);
         yield return null;
 
-        _groupIndex++;
-        if (_groupIndex >= _waveGroups.Count)
-            _groupIndex = 0;
+        //_groupIndex++;
+        //if (_groupIndex >= _waveGroups.Count)
+        //    _groupIndex = 0;
         _waveGroup = _waveGroups[_groupIndex];
 
         ResetWaveIndex();
@@ -114,16 +114,32 @@ public class EnemySpawner : MonoBehaviour
 
         _isSpawning = false;
         _waveIndex++;
+        OnEndWave?.Invoke(_waveModel);
+        CheckIfIsLastWaveGroup();
 
-        if (_waveIndex >= _waveGroup.Waves.Length)
-        {
-            OnEndFinalWave?.Invoke(_waveModel);
-            //OnEndWave?.Invoke(_waveModel);
-        }
-        else
-        {
-            OnEndWave?.Invoke(_waveModel);
-        }
+        //if (_waveIndex >= _waveGroup.Waves.Length)
+        //{
+        //    OnEndFinalWave?.Invoke(_waveModel);
+        //    //OnEndWave?.Invoke(_waveModel);
+        //}
+        //else
+        //{
+        //    OnEndWave?.Invoke(_waveModel);
+        //}
+    }
+
+    private void CheckIfIsLastWaveGroup()
+    {
+        bool _isLastWave = _waveIndex >= _waveGroup.Waves.Length;
+
+        if (!_isLastWave) return;
+
+        _groupIndex++;
+        bool _isLastGroup = _groupIndex >= _waveGroups.Count;
+
+        if (!_isLastGroup) return;
+
+        OnEndFinalWave?.Invoke(_waveModel);
     }
 
     private Vector3 GetRandomNodePosition()

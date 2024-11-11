@@ -26118,6 +26118,7 @@ MonoBehaviour:
   _container: {fileID: 1159678663}
   _waveGroups:
   - {fileID: 11400000, guid: 5cf1d8cc6dd25c9498080c13b249e055, type: 2}
+  - {fileID: 11400000, guid: 5cf1d8cc6dd25c9498080c13b249e055, type: 2}
   _player: {fileID: 0}
   _waveGroup: {fileID: 0}
   _waveModel:
@@ -104610,7 +104611,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
   m_Origin: {x: -40, y: -40, z: 0}
   m_Size: {x: 80, y: 80, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -121070,7 +121071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6dd40c596b8004984a3b34086dc615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isInvincible: 1
+  _isInvincible: 0
   _maxHealth: 8
   _deathDelay: 0
   _currentHealth: 0
@@ -121123,7 +121124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4023e2bd69e5b54d846e41ea468df1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _infiniteAmmo: 1
+  _infiniteAmmo: 0
   _initialAmmoPercentage: 50
   _models:
   - _so: {fileID: 11400000, guid: b3dc590e3e7accd459b765e535abb941, type: 2}

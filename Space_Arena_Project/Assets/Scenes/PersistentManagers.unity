@@ -659,7 +659,7 @@ MonoBehaviour:
   _musicVolumeEventChannel: {fileID: 11400000, guid: ac033eaf5f8c5154e8df7c10fe3755ad, type: 2}
   _masterVolumeEventChannel: {fileID: 11400000, guid: 13e4f5dfe966e1447ba01306e125c0c0, type: 2}
   audioMixer: {fileID: 24100000, guid: 548a7f001ca6d3d4cb67c8edf84f62a3, type: 2}
-  _masterVolume: 0.1
+  _masterVolume: 1
   _musicVolume: 0.2
   _sfxVolume: 1
 --- !u!4 &833723709

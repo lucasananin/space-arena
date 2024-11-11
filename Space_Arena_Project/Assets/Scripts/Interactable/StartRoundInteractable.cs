@@ -12,14 +12,14 @@ public class StartRoundInteractable : InteractableBehaviour
     private void OnEnable()
     {
         EnemySpawner.OnEndWave += Show;
-        EnemySpawner.OnEndWaveGroupChanged += Show;
+        //EnemySpawner.OnEndWaveGroupChanged += Show;
         EnemySpawner.OnEndFinalWave += Disable;
     }
 
     private void OnDisable()
     {
         EnemySpawner.OnEndWave -= Show;
-        EnemySpawner.OnEndWaveGroupChanged -= Show;
+        //EnemySpawner.OnEndWaveGroupChanged -= Show;
         EnemySpawner.OnEndFinalWave -= Disable;
     }
 
