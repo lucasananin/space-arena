@@ -6,17 +6,21 @@ public class LoadingPanel : MonoBehaviour
 {
     [SerializeField] CanvasGroupView _view = null;
 
-    //private void OnEnable()
-    //{
-    //    EnemySpawner.OnStartWaveGroupChanged += Show;
-    //    EnemySpawner.OnEndWaveGroupChanged += Hide;
-    //}
+    private void OnEnable()
+    {
+        SceneHandler.OnStartLoad += Show;
+        SceneHandler.OnEndLoad += Hide;
+        //EnemySpawner.OnStartWaveGroupChanged += Show;
+        //EnemySpawner.OnEndWaveGroupChanged += Hide;
+    }
 
-    //private void OnDisable()
-    //{
-    //    EnemySpawner.OnStartWaveGroupChanged -= Show;
-    //    EnemySpawner.OnEndWaveGroupChanged -= Hide;
-    //}
+    private void OnDisable()
+    {
+        SceneHandler.OnStartLoad -= Show;
+        SceneHandler.OnEndLoad -= Hide;
+        //EnemySpawner.OnStartWaveGroupChanged -= Show;
+        //EnemySpawner.OnEndWaveGroupChanged -= Hide;
+    }
 
     private void Show()
     {
@@ -24,6 +28,11 @@ public class LoadingPanel : MonoBehaviour
     }
 
     private void Hide(WaveSO _waveSo)
+    {
+        Hide();
+    }
+
+    private void Hide()
     {
         _view.Hide();
     }

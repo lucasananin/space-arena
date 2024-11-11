@@ -1146,8 +1146,8 @@ MonoBehaviour:
   _audioCue: {fileID: 11400000, guid: c6fafb5e78da01445b396b9e70a5ebb9, type: 2}
   _playOnStart: 1
   _stopOnDisable: 1
-  _delay: 0.1
-  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _delay: 0.5
+  _audioCueEventChannel: {fileID: 11400000, guid: 51854f522e1d88442a90b878b27ea839, type: 2}
   _audioConfiguration: {fileID: 11400000, guid: a08c5fc2e1b2d424cb3075d9100c4158, type: 2}
 --- !u!4 &175846025
 Transform:
@@ -14962,7 +14962,7 @@ Camera:
   field of view: 34
   orthographic: 1
   orthographic size: 8
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -44208,9 +44208,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 454.48596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1346828263
 MonoBehaviour:
@@ -104800,7 +104800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1483284114
 RectTransform:
   m_ObjectHideFlags: 0
