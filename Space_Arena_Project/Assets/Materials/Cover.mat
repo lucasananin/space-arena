@@ -10,7 +10,6 @@ Material:
   m_Name: Cover
   m_Shader: {fileID: 4800000, guid: 79ee6cefbc672a44e97359d4d14ea301, type: 3}
   m_ValidKeywords:
-  - CHROMABERR_ON
   - GLOWLIGHT_ON
   m_InvalidKeywords:
   - _GLOWAFFECTLIGHT_ON
