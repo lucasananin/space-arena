@@ -39,11 +39,33 @@ public class AmmoHandler : MonoBehaviour
     public void RestoreOneAmmoModel(int _percentage)
     {
         var _weaponHandler = GetComponent<PlayerWeaponHandler>();
+
         var _ammoTypes = _weaponHandler.GetAmmoTypes();
-        var _randomIndex = Random.Range(0, _ammoTypes.Count);
-        var _ammoSO = _ammoTypes[_randomIndex];
+        var _filteredList = FilterAmmoTypes(_ammoTypes);
+        var _randomIndex = Random.Range(0, _filteredList.Count);
+
+        var _ammoSO = _filteredList[_randomIndex];
         GetModel(_ammoSO).RestoreQuantity(_percentage);
         OnAmmoChanged?.Invoke();
+        //Debug.Log($"// {_ammoSO.Id} ammo restored.");
+    }
+
+    private List<AmmoSO> FilterAmmoTypes(List<AmmoSO> _list)
+    {
+        var _newList = new List<AmmoSO>(_list);
+        int _count = _newList.Count;
+
+        for (int i = _count - 1; i >= 0; i--)
+        {
+            var _so = _newList[i];
+
+            if (GetModel(_so).IsFull())
+            {
+                _newList.RemoveAt(i);
+            }
+        }
+
+        return _newList.Count > 0 ? _newList : _list;
     }
 
     public void DecreaseAmmo(ProjectileSO _projectileSO, WeaponSO _weaponSO)

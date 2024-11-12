@@ -47,6 +47,11 @@ public class AmmoModel
         return _quantity >= _value;
     }
 
+    public bool IsFull()
+    {
+        return _quantity >= _so.MaxQuantity;
+    }
+
     public string GetId()
     {
         return _so.Id;
