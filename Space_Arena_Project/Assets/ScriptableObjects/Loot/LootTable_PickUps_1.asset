@@ -39,3 +39,15 @@ MonoBehaviour:
     - _so: {fileID: 0}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 0}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 0}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 0}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
+    - _so: {fileID: 0}
+      _odd: 1
+      _minMaxQuantity: {x: 1, y: 1}
