@@ -84,7 +84,7 @@ public class AudioManager : MonoBehaviour
             //SetGroupVolume("MasterVolume", _masterVolume);
             //SetGroupVolume("MusicVolume", _musicVolume);
             //SetGroupVolume("SFXVolume", _sfxVolume);
-            SetAllGroupVolumes();
+            //SetAllGroupVolumes();
         }
     }
 
@@ -120,6 +120,13 @@ public class AudioManager : MonoBehaviour
         //bool volumeSet = audioMixer.SetFloat(parameterName, NormalizedToMixerValue(normalizedVolume));
         if (!volumeSet)
             Debug.LogError("The AudioMixer parameter was not found");
+
+        Debug.Log($"// {parameterName} changed to {_value}");
+    }
+
+    public float GetMasterVolumeNormalized()
+    {
+        return Mathf.InverseLerp(0.0001f, 1f, _masterVolume);
     }
 
     public float GetGroupVolume(string parameterName)
