@@ -12,6 +12,13 @@ public class InputHandler : MonoBehaviour
     public static event System.Action OnInteractDown = null;
     public static event System.Action OnPauseDown = null;
 
+    private void OnDestroy()
+    {
+        OnLeftMouseButtonDown = null;
+        OnLeftMouseButtonUp = null;
+        OnMouseScrollSwipe = null;
+    }
+
     private void Update()
     {
         CheckPauseInput();
