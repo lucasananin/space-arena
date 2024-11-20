@@ -1,2 +1,2 @@
 # space-arena
-Top-down 2D shooter.
+You can play the game here: https://lucasananin.itch.io/galactic-overstrike
