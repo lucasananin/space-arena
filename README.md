@@ -1,4 +1,5 @@
 # space-arena
-You can play the game here: https://lucasananin.itch.io/galactic-overstrike
+Visit the game page here: https://lucasananin.itch.io/galactic-overstrike
 
-https://youtu.be/N4wEwg8e3DY
+![](https://github.com/lucasananin/space-arena/blob/main/Media/GalacticOverstrike-Combat1-ezgif.com-optimize.gif)
+![](https://github.com/lucasananin/space-arena/blob/main/Media/GalacticOverstrike-Combat2-ezgif.com-optimize.gif)
