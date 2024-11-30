@@ -121,7 +121,7 @@ public class AudioManager : MonoBehaviour
         if (!volumeSet)
             Debug.LogError("The AudioMixer parameter was not found");
 
-        Debug.Log($"// {parameterName} changed to {_value}");
+        //Debug.Log($"// {parameterName} changed to {_value}");
     }
 
     public float GetMasterVolumeNormalized()

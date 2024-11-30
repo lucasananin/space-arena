@@ -33,7 +33,7 @@ public class WaveModel
     [Title("- WAVE -", null, TitleAlignments.Centered)]
     [SerializeField] EntityGroup[] _entities = null;
     [SerializeField] LootTableSO[] _loots = null;
-    [SerializeField, Range(1, 20)] int _maxActiveSpawns = 4;
+    [SerializeField, Range(1, 999)] int _maxActiveSpawns = 4;
     [SerializeField, ReadOnly] int _totalQuantity = 0;
 
     readonly List<float> _runtimeQuantities = new();
@@ -93,7 +93,7 @@ public class WaveModel
 public class EntityGroup
 {
     [SerializeField] AiEntitySO _so = null;
-    [SerializeField, Range(0, 20)] int _quantity = 1;
+    [SerializeField, Range(0, 999)] int _quantity = 1;
 
     public AiEntitySO SO { get => _so; set => _so = value; }
     public int Quantity { get => _quantity; set => _quantity = value; }

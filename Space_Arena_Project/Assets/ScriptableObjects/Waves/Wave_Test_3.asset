@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc977aa93978c74982ef301d2fe8217, type: 3}
+  m_Name: Wave_Test_3
+  m_EditorClassIdentifier: 
+  _environment: {fileID: 8506344680095507289, guid: 89ea2d48b87b55040b06342df2bcf1b5, type: 3}
+  _distanceRange: {x: 5, y: 15}
+  _spawnTime: 0.1
+  _waves:
+  - _entities:
+    - _so: {fileID: 11400000, guid: 65c70ea9ac858ae41bc01e67ca6878f1, type: 2}
+      _quantity: 200
+    - _so: {fileID: 11400000, guid: f93b4cc80a0138e49bcc38c18a58931f, type: 2}
+      _quantity: 200
+    _loots:
+    - {fileID: 11400000, guid: d4d5651bdc0e44744a9bb9717bb44550, type: 2}
+    - {fileID: 11400000, guid: 1de1469d6f475124483e3a891ca52a0b, type: 2}
+    _maxActiveSpawns: 999
+    _totalQuantity: 400
