@@ -8,6 +8,6 @@ public class PlayerFlipper : SideFlipper
     {
         Vector3 _worldMousePosition = Camera.main.ScreenToWorldPoint(InputHandler.GetMousePosition());
         bool _toTheRight = _worldMousePosition.x >= _target.position.x;
-        Flip(_toTheRight/*, 0*/);
+        Flip(_toTheRight);
     }
 }

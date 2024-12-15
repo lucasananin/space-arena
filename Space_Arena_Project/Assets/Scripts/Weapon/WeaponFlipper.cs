@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class WeaponFlipper : SideFlipper
 {
-    [SerializeField, ReadOnly] SideFlipper _parentFlipper = null;
+    //[SerializeField, ReadOnly] SideFlipper _parentFlipper = null;
 
-    private void Awake()
-    {
-        _parentFlipper = transform.parent.GetComponent<SideFlipper>();
-    }
+    //private void Awake()
+    //{
+    //    _parentFlipper = transform.parent.GetComponent<SideFlipper>();
+    //}
 
     public void UpdateFlip()
     {
-        //Flip(_parentFlipper.IsLookingRight(), _angle);
+        //Flip(_parentFlipper.IsLookingRight());
     }
 }
