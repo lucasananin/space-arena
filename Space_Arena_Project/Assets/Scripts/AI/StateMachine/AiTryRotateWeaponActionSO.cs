@@ -28,12 +28,12 @@ public class AiTryRotateWeaponAction : StateAction
 
     public override void OnStateEnter()
     {
-        _aiFlipper.onFlip += TryResetRotation;
+        _aiFlipper.OnFlip += TryResetRotation;
     }
 
     public override void OnStateExit()
     {
-        _aiFlipper.onFlip -= TryResetRotation;
+        _aiFlipper.OnFlip -= TryResetRotation;
     }
 
     public override void OnFixedUpdate()

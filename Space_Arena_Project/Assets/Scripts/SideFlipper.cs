@@ -8,10 +8,8 @@ public class SideFlipper : MonoBehaviour
     [SerializeField] protected Transform _target = null;
     [SerializeField] protected FlipDataSO _flipDataSo = null;
     [SerializeField] protected bool _canFlip = true;
-    //[SerializeField] protected bool _flipX = true;
-    //[SerializeField] protected bool _flipY = false;
 
-    public event System.Action onFlip = null;
+    public event System.Action OnFlip = null;
 
     public void FlipByCompareX(float _x1, float _x2)
     {
@@ -25,33 +23,30 @@ public class SideFlipper : MonoBehaviour
         }
     }
 
-    //public void Flip(bool _toTheRight)
-    //{
-    //    Flip(_toTheRight, _flipDataSo.FlipX, _flipDataSo.FlipY);
-    //}
-
-    public void Flip(bool _toTheRight/*, bool _flipX, bool _flipY*/)
+    public void Flip(bool _toTheRight)
     {
         if (!_canFlip) return;
 
         Vector3 _newScale = Vector3.one;
+        //Vector3 _newScale = Vector3.zero;
 
         if (_flipDataSo.FlipX)
+        {
             _newScale.x *= _toTheRight ? 1 : -1;
+            //_newScale.x = _toTheRight ? 0 : -180;
+        }
 
         if (_flipDataSo.FlipY)
+        {
             _newScale.y *= _toTheRight ? 1 : -1;
-
-        //if (_flipX)
-        //    _newScale.x *= _toTheRight ? 1 : -1;
-
-        //if (_flipY)
-        //    _newScale.y *= _toTheRight ? 1 : -1;
+            //_newScale.y = _toTheRight ? 0 : -180;
+        }
 
         if (_newScale != _target.localScale)
         {
             _target.localScale = _newScale;
-            onFlip?.Invoke();
+            //_target.eulerAngles = _newScale;
+            OnFlip?.Invoke();
         }
     }
 
@@ -64,7 +59,7 @@ public class SideFlipper : MonoBehaviour
         if (_newScale != _target.localScale)
         {
             _target.localScale = _newScale;
-            onFlip?.Invoke();
+            OnFlip?.Invoke();
         }
     }
 
@@ -76,5 +71,6 @@ public class SideFlipper : MonoBehaviour
     public bool IsLookingRight()
     {
         return _target.localScale.x >= 0;
+        //return _target.eulerAngles.y == 0;
     }
 }

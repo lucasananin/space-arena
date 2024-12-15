@@ -38,7 +38,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         //InputHandler.OnLeftMouseButtonDown += PullTrigger;
         //InputHandler.OnLeftMouseButtonUp += ReleaseTrigger;
         //InputHandler.OnMouseScrollSwipe += SwapThroughInput;
-        _entityFlipper.onFlip += RotateCurrentWeapon;
+        _entityFlipper.OnFlip += RotateCurrentWeapon;
 
         //InputHandler.onMouseScrollUp += SwapToNextWeapon;
         //InputHandler.onMouseScrollDown += SwapToPreviousWeapon;
@@ -49,7 +49,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         //InputHandler.OnLeftMouseButtonDown -= PullTrigger;
         //InputHandler.OnLeftMouseButtonUp -= ReleaseTrigger;
         //InputHandler.OnMouseScrollSwipe -= SwapThroughInput;
-        _entityFlipper.onFlip -= RotateCurrentWeapon;
+        _entityFlipper.OnFlip -= RotateCurrentWeapon;
 
         //InputHandler.onMouseScrollUp -= SwapToNextWeapon;
         //InputHandler.onMouseScrollDown -= SwapToPreviousWeapon;

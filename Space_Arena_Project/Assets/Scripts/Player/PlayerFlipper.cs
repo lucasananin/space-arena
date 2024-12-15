@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class PlayerFlipper : SideFlipper
 {
-    //private void Update()
-    //{
-    //    FlipToMouse();
-    //}
-
     public void FlipToMouse()
     {
         Vector3 _worldMousePosition = Camera.main.ScreenToWorldPoint(InputHandler.GetMousePosition());
