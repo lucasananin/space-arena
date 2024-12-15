@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 2658297561336904062}
-  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _flipDataSo: {fileID: 11400000, guid: 355e35a2c85451a4b8b70f2b8e839934, type: 2}
   _canFlip: 1
   _aiPath: {fileID: 2658297561336904048}
 --- !u!114 &2658297561336904053

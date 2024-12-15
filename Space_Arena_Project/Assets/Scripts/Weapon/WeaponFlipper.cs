@@ -14,6 +14,6 @@ public class WeaponFlipper : SideFlipper
 
     public void UpdateFlip()
     {
-        Flip(_parentFlipper.IsLookingRight());
+        //Flip(_parentFlipper.IsLookingRight(), _angle);
     }
 }

@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 8821744782161038676}
-  _flipDataSo: {fileID: 11400000, guid: e9d346c7524269c43bf09298d8bf7e03, type: 2}
+  _flipDataSo: {fileID: 11400000, guid: 355e35a2c85451a4b8b70f2b8e839934, type: 2}
   _canFlip: 1
   _aiPath: {fileID: 8821744782161038682}
 --- !u!114 &8821744782161038687
@@ -342,6 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootTableSO: {fileID: 11400000, guid: 0e757d27f5e145d4c88c89998974a9e2, type: 2}
+  _lootSpawner: {fileID: 0}
   _healthBehaviour: {fileID: 8821744782161038687}
 --- !u!114 &3730640152585472306
 MonoBehaviour:
