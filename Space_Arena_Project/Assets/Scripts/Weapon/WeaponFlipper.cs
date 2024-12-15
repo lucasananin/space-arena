@@ -12,8 +12,8 @@ public class WeaponFlipper : SideFlipper
     //    _parentFlipper = transform.parent.GetComponent<SideFlipper>();
     //}
 
-    public void UpdateFlip()
-    {
-        //Flip(_parentFlipper.IsLookingRight());
-    }
+    //public void UpdateFlip()
+    //{
+    //    Flip(_parentFlipper.IsLookingRight());
+    //}
 }

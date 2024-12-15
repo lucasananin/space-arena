@@ -47,23 +47,23 @@ public class SideFlipper : MonoBehaviour
         }
     }
 
-    public void ForceFlip(float _x, float _y)
-    {
-        Vector3 _newScale = Vector3.one;
-        _newScale.x *= _x;
-        _newScale.y *= _y;
+    //public void ForceFlip(float _x, float _y)
+    //{
+    //    Vector3 _newScale = Vector3.one;
+    //    _newScale.x *= _x;
+    //    _newScale.y *= _y;
 
-        if (_newScale != _target.localScale)
-        {
-            _target.localScale = _newScale;
-            OnFlip?.Invoke();
-        }
-    }
+    //    if (_newScale != _target.localScale)
+    //    {
+    //        _target.localScale = _newScale;
+    //        OnFlip?.Invoke();
+    //    }
+    //}
 
-    public void ResetFlip()
-    {
-        ForceFlip(1, 1);
-    }
+    //public void ResetFlip()
+    //{
+    //    ForceFlip(1, 1);
+    //}
 
     public bool IsLookingRight()
     {

@@ -17,7 +17,7 @@ public class AiWeaponModel
     [SerializeField, ReadOnly] float _timeUntilShoot = 0f;
     [SerializeField, ReadOnly] float _shootTimer = 0f;
     [SerializeField, ReadOnly] List<WeaponRotator> _rotators = new();
-    [SerializeField, ReadOnly] List<WeaponFlipper> _flippers = new();
+    //[SerializeField, ReadOnly] List<WeaponFlipper> _flippers = new();
 
     public bool IsShooting { get => _isShooting; set => _isShooting = value; }
     public bool CanShootWhileMoving { get => _canShootWhileMoving; private set => _canShootWhileMoving = value; }
@@ -55,7 +55,7 @@ public class AiWeaponModel
         for (int i = 0; i < _count; i++)
         {
             _rotators[i].LookAtPosition(_position);
-            _flippers[i].UpdateFlip();
+            //_flippers[i].UpdateFlip();
         }
     }
 
@@ -66,7 +66,7 @@ public class AiWeaponModel
         for (int i = 0; i < _count; i++)
         {
             _rotators[i].ResetRotation();
-            _flippers[i].ResetFlip();
+            //_flippers[i].ResetFlip();
         }
     }
 
@@ -100,16 +100,17 @@ public class AiWeaponModel
     public void SetReferences()
     {
         if (_rotators is null) return;
+        if (_weapons is null) return;
 
         _rotators.Clear();
-        _flippers.Clear();
+        //_flippers.Clear();
 
         int _count = _weapons.Count;
 
         for (int i = 0; i < _count; i++)
         {
             _rotators.Add(_weapons[i].GetComponent<WeaponRotator>());
-            _flippers.Add(_weapons[i].GetComponent<WeaponFlipper>());
+            //_flippers.Add(_weapons[i].GetComponent<WeaponFlipper>());
         }
     }
 }
