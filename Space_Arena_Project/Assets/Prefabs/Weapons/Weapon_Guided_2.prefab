@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5645198961146414898}
   - component: {fileID: 4216914223775342002}
-  - component: {fileID: 5645198961146414908}
   - component: {fileID: 5645198961146414899}
   - component: {fileID: 1176470449266367607}
   - component: {fileID: 4956964359924973594}
@@ -149,22 +148,6 @@ MonoBehaviour:
   _nextBurst: 0
   _currentShootCount: 0
   _isBursting: 0
---- !u!114 &5645198961146414908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5645198961146414897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 5645198961146414898}
-  _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 1
-  _parentFlipper: {fileID: 0}
 --- !u!114 &5645198961146414899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioCue: {fileID: 11400000, guid: af3763a665cc99e4197f939eca128e1f, type: 2}
   _playOnStart: 0
+  _stopOnDisable: 1
+  _delay: 1
   _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
   _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
   _weapon: {fileID: 4216914223775342002}

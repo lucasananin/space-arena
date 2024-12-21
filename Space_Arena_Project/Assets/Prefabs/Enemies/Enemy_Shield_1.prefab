@@ -292,7 +292,6 @@ GameObject:
   - component: {fileID: 2024151009}
   - component: {fileID: 2024151010}
   - component: {fileID: 2024151014}
-  - component: {fileID: 2024151013}
   - component: {fileID: 2024151012}
   - component: {fileID: 2024151015}
   - component: {fileID: 2024151011}
@@ -371,22 +370,6 @@ MonoBehaviour:
   _currentHeat: 0
   _overheatTimer: 0
   _isOverheated: 0
---- !u!114 &2024151013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2024151008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 2024151009}
-  _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 1
-  _parentFlipper: {fileID: 0}
 --- !u!114 &2024151012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,8 +1148,6 @@ MonoBehaviour:
     _shootTimer: 0
     _rotators:
     - {fileID: 5477917744341685113}
-    _flippers:
-    - {fileID: 5477917744341685110}
   - _weapons:
     - {fileID: 2024151014}
     _shootRateRange: {x: 0, y: 0}
@@ -1180,8 +1161,6 @@ MonoBehaviour:
     _shootTimer: 0
     _rotators:
     - {fileID: 2024151012}
-    _flippers:
-    - {fileID: 2024151013}
 --- !u!114 &2658297561336904052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2007,17 +1986,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb808b67afd45264aa38f541f3bc38d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5477917744341685110 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5704818092466949254, guid: 3f82d0fd8b2aa8f429e765ce405191a5, type: 3}
-  m_PrefabInstance: {fileID: 229381207412793328}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &5477917744341685112 stripped

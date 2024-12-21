@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8082373894748222931}
   - component: {fileID: 3184915145527717947}
-  - component: {fileID: 4713035225912496194}
   - component: {fileID: 155620168143894112}
   m_Layer: 0
   m_Name: Weapon_Burst_R
@@ -61,22 +60,6 @@ MonoBehaviour:
   _nextBurst: 0
   _currentShootCount: 0
   _isBursting: 0
---- !u!114 &4713035225912496194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1830753259758338565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 8082373894748222931}
-  _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 1
-  _parentFlipper: {fileID: 8821744782161038684}
 --- !u!114 &155620168143894112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +290,6 @@ MonoBehaviour:
     _timeUntilShoot: 0
     _shootTimer: 0
     _rotators: []
-    _flippers: []
   _wasEnabled: 0
 --- !u!1 &7453943792988930910
 GameObject:
@@ -384,15 +366,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3af5d340d6bdf20468d1ac18994f8983, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dba542e0e1416ba48a6dad33e1e57425, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 1.4628571, y: 1.4628571}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2254617257159101714
@@ -680,7 +662,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8220772539153272337}
   - component: {fileID: 8220772539153272341}
-  - component: {fileID: 8220772539153272339}
   - component: {fileID: 8220772539153272338}
   m_Layer: 0
   m_Name: Weapon_ShotGun_L
@@ -729,22 +710,6 @@ MonoBehaviour:
   _overheatTimer: 0
   _isOverheated: 0
   _hasShotCharge: 0
---- !u!114 &8220772539153272339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8220772539153272336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 8220772539153272337}
-  _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 1
-  _parentFlipper: {fileID: 0}
 --- !u!114 &8220772539153272338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,9 +1260,6 @@ MonoBehaviour:
     _rotators:
     - {fileID: 8821744782784512316}
     - {fileID: 8220772539153272338}
-    _flippers:
-    - {fileID: 8821744782784512317}
-    - {fileID: 8220772539153272339}
   - _weapons:
     - {fileID: 3184915145527717947}
     - {fileID: 1528382637035381284}
@@ -1313,9 +1275,6 @@ MonoBehaviour:
     _rotators:
     - {fileID: 155620168143894112}
     - {fileID: 6591426471646913347}
-    _flippers:
-    - {fileID: 4713035225912496194}
-    - {fileID: 6591426471646913356}
   - _weapons:
     - {fileID: 1750090607539028708}
     _shootRateRange: {x: 3, y: 4}
@@ -1329,8 +1288,6 @@ MonoBehaviour:
     _shootTimer: 0
     _rotators:
     - {fileID: 1750090607539028713}
-    _flippers:
-    - {fileID: 1750090607539028710}
 --- !u!114 &8821744782161038686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,7 +1410,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8821744782784512319}
   - component: {fileID: 2462942467864987516}
-  - component: {fileID: 8821744782784512317}
   - component: {fileID: 8821744782784512316}
   m_Layer: 0
   m_Name: Weapon_Burst_L
@@ -1504,22 +1460,6 @@ MonoBehaviour:
   _nextBurst: 0
   _currentShootCount: 0
   _isBursting: 0
---- !u!114 &8821744782784512317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8821744782784512318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 8821744782784512319}
-  _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 1
-  _parentFlipper: {fileID: 8821744782161038684}
 --- !u!114 &8821744782784512316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1906,17 +1846,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6591426471646913356 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5645198961146414908, guid: 02848841a7026db49bac1ce73524fb1a, type: 3}
-  m_PrefabInstance: {fileID: 1526357401825420400}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6591426471646913345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2006661318936584167
@@ -2385,17 +2314,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb808b67afd45264aa38f541f3bc38d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1750090607539028710 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8583216288661686993, guid: 190edf560d350634998f8afaffe517ee, type: 3}
-  m_PrefabInstance: {fileID: 8022080402373625911}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1750090607539028712 stripped

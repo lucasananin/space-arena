@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2658297560621282581}
   - component: {fileID: 2658297560621282577}
-  - component: {fileID: 2658297560621282583}
   - component: {fileID: 2658297560621282582}
   m_Layer: 0
   m_Name: Weapon
@@ -59,22 +58,6 @@ MonoBehaviour:
   _overheatTimer: 0
   _isOverheated: 0
   _hasShotCharge: 0
---- !u!114 &2658297560621282583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2658297560621282580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 2658297560621282581}
-  _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 1
-  _parentFlipper: {fileID: 2658297561336904054}
 --- !u!114 &2658297560621282582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,8 +341,6 @@ MonoBehaviour:
     _shootTimer: 0
     _rotators:
     - {fileID: 2553301606553507722}
-    _flippers:
-    - {fileID: 2553301606553507723}
 --- !u!114 &2658297561336904052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,17 +760,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2553301606553507723 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2751957287607790311, guid: 90cf852f366fdca4392e380ad1d8ca5a, type: 3}
-  m_PrefabInstance: {fileID: 387253333609856364}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1559391490307523209

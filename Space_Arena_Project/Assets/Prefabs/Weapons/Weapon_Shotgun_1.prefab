@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2751957287607790104}
   - component: {fileID: 2751957287607790105}
-  - component: {fileID: 2751957287607790311}
   - component: {fileID: 2751957287607790310}
   - component: {fileID: 2751957287607790308}
   - component: {fileID: -66830320206636449}
@@ -151,22 +150,6 @@ MonoBehaviour:
   _overheatTimer: 0
   _isOverheated: 0
   _hasShotCharge: 0
---- !u!114 &2751957287607790311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2751957287607790107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 2751957287607790104}
-  _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 1
-  _parentFlipper: {fileID: 0}
 --- !u!114 &2751957287607790310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,10 +262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daed80ba8e78c314b83925837e9207c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flipper: {fileID: 2751957287607790311}
   _renderer: {fileID: 2751957288736772854}
   _minRightAngle: 19
-  _minLeftAngle: 199
 --- !u!114 &-9081153933157279815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +278,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioCue: {fileID: 11400000, guid: 347818533747cc4409e9f145e1766c95, type: 2}
   _playOnStart: 0
+  _stopOnDisable: 1
+  _delay: 1
   _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
   _audioConfiguration: {fileID: 11400000, guid: 8d4217c8fabf9824490196f34baf326a, type: 2}
   _weapon: {fileID: 2751957287607790105}

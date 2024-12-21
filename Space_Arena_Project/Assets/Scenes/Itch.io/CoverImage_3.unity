@@ -122707,7 +122707,6 @@ MonoBehaviour:
   _currentWeapon: {fileID: 0}
   _lastWeapon: {fileID: 0}
   _weaponRotator: {fileID: 0}
-  _weaponFlipper: {fileID: 0}
   _currentWeaponIndex: 0
   _lastWeaponIndex: 0
   _isWaitingSwapDelay: 0
@@ -134686,7 +134685,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8067246483518715535}
   - component: {fileID: 8067246483518715534}
-  - component: {fileID: 8067246483518715532}
   - component: {fileID: 8067246483518715533}
   - component: {fileID: 8067246483518715530}
   - component: {fileID: 8926880580889555870}
@@ -134717,22 +134715,6 @@ MonoBehaviour:
   _defaultPosition: {x: 0, y: 0, z: 0}
   _recoilPosition: {x: 0, y: 0, z: 0}
   _timer: 0
---- !u!114 &8067246483518715532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8067246483518715520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 8067246483518715535}
-  _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 1
-  _parentFlipper: {fileID: 0}
 --- !u!114 &8067246483518715533
 MonoBehaviour:
   m_ObjectHideFlags: 0

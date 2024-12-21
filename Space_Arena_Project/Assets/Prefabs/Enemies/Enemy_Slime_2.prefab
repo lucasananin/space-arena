@@ -553,8 +553,6 @@ MonoBehaviour:
     _shootTimer: 0
     _rotators:
     - {fileID: 6972132583126419583}
-    _flippers:
-    - {fileID: 6972132583126419582}
   - _weapons:
     - {fileID: 619169843252229221}
     _shootRateRange: {x: 2, y: 3}
@@ -568,8 +566,6 @@ MonoBehaviour:
     _shootTimer: 0
     _rotators:
     - {fileID: 6923293982467354317}
-    _flippers:
-    - {fileID: 6923293982467354306}
 --- !u!114 &6972132582502089757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,7 +825,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6972132583126419580}
   - component: {fileID: 6972132583126419576}
-  - component: {fileID: 6972132583126419582}
   - component: {fileID: 6972132583126419583}
   - component: {fileID: 7336895790730355278}
   m_Layer: 0
@@ -879,22 +874,6 @@ MonoBehaviour:
   _overheatTimer: 0
   _isOverheated: 0
   _hasShotCharge: 0
---- !u!114 &6972132583126419582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6972132583126419581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 6972132583126419580}
-  _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 1
-  _parentFlipper: {fileID: 6972132582502089759}
 --- !u!114 &6972132583126419583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,17 +1173,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce895ca5e13f3b64a8933d2ba0466c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6923293982467354306 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5645198961146414908, guid: ea5edf88176beeb4098699eb9a5dc65f, type: 3}
-  m_PrefabInstance: {fileID: 3333716753751058942}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &6923293982467354316 stripped

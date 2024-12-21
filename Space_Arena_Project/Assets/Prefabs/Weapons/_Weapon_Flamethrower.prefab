@@ -4813,7 +4813,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -441497993
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -4971,17 +4971,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff3c2e0ba3cdb2b4eacac4b638285b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapon: {fileID: 1427115857888813632}
   _light2D: {fileID: 1427115857301366735}
-  _minIntensity: 3
-  _maxIntensity: 7
-  _minRadiusMultiplier: 0.9
-  _maxRadiusMultiplier: 1.1
+  _intensityRange: {x: 4, y: 4}
+  _radiusRange: {x: 1, y: 1}
   _duration: 0.06
+  _playOnStart: 0
   _timer: 0
   _initialIntensity: 0
   _defaultInnerRadius: 0
   _defaultOuterRadius: 0
+  _weapon: {fileID: 1427115857888813632}
 --- !u!1 &1427115857888813634
 GameObject:
   m_ObjectHideFlags: 0
@@ -4993,7 +4992,6 @@ GameObject:
   - component: {fileID: 1427115857888813635}
   - component: {fileID: 1427115857888813632}
   - component: {fileID: 1427115857888813639}
-  - component: {fileID: 1427115857888813638}
   - component: {fileID: 1427115857888813633}
   - component: {fileID: 5544519124586746078}
   m_Layer: 0
@@ -5061,22 +5059,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _canFollow: 0
---- !u!114 &1427115857888813638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427115857888813634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 1427115857888813635}
-  _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 1
-  _parentFlipper: {fileID: 0}
 --- !u!114 &1427115857888813633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5103,7 +5085,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponBehaviour: {fileID: 1427115857888813632}
-  _weaponFlipper: {fileID: 1427115857888813638}
   _particleSystem: {fileID: 8875035959882626062}
   _muzzle: {fileID: 1427115857053784709}
   _collisionPlane: {fileID: 8385445632694255479}
@@ -9976,7 +9957,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -441497993
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -10079,7 +10060,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 625828527
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.19999999, b: 0.19999999, a: 1}

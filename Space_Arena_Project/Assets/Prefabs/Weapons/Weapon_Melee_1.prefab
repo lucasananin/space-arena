@@ -242,7 +242,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8534141531701759387}
   - component: {fileID: 8534141531701759386}
-  - component: {fileID: 8534141531701759388}
   - component: {fileID: 8534141531701759389}
   - component: {fileID: 8534141531701759390}
   - component: {fileID: -2721646956382398946}
@@ -295,22 +294,6 @@ MonoBehaviour:
   _overheatTimer: 0
   _isOverheated: 0
   _hasShotCharge: 0
---- !u!114 &8534141531701759388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8534141531701759384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 8534141531701759387}
-  _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 1
-  _parentFlipper: {fileID: 0}
 --- !u!114 &8534141531701759389
 MonoBehaviour:
   m_ObjectHideFlags: 0

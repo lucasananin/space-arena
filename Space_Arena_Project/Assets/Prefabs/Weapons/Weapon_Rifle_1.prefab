@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 258936880920263140}
   - component: {fileID: 258936880920263144}
-  - component: {fileID: 258936880920263146}
   - component: {fileID: 258936880920263141}
   - component: {fileID: 258936880920263145}
   - component: {fileID: 6776396213989723331}
@@ -67,22 +66,6 @@ MonoBehaviour:
   _overheatTimer: 0
   _isOverheated: 0
   _hasShotCharge: 0
---- !u!114 &258936880920263146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258936880920263143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 258936880920263140}
-  _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 1
-  _parentFlipper: {fileID: 0}
 --- !u!114 &258936880920263141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,10 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daed80ba8e78c314b83925837e9207c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flipper: {fileID: 258936880920263146}
   _renderer: {fileID: 258936881630380305}
   _minRightAngle: 7
-  _minLeftAngle: 187
 --- !u!114 &5714928120698494439
 MonoBehaviour:
   m_ObjectHideFlags: 0

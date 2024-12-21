@@ -75,15 +75,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 633167ec1b0341045aa1d6fd9b1a7f2d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 972b8c32358056c45997c138b53dfa61, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 1.4628571, y: 1.4628571}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7674828250284832506
@@ -550,8 +550,6 @@ MonoBehaviour:
     _shootTimer: 0
     _rotators:
     - {fileID: 6972132583126419583}
-    _flippers:
-    - {fileID: 6972132583126419582}
 --- !u!114 &6972132582502089757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,7 +790,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6972132583126419580}
   - component: {fileID: 6972132583126419576}
-  - component: {fileID: 6972132583126419582}
   - component: {fileID: 6972132583126419583}
   m_Layer: 0
   m_Name: Weapon_Melee
@@ -841,22 +838,6 @@ MonoBehaviour:
   _overheatTimer: 0
   _isOverheated: 0
   _hasShotCharge: 0
---- !u!114 &6972132583126419582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6972132583126419581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6acdaa95a7201042b93ca0720518db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 6972132583126419580}
-  _flipDataSo: {fileID: 11400000, guid: 9ad450e3e2adecc4ebfd109b95b5fe2c, type: 2}
-  _canFlip: 1
-  _parentFlipper: {fileID: 6972132582502089759}
 --- !u!114 &6972132583126419583
 MonoBehaviour:
   m_ObjectHideFlags: 0
