@@ -12,9 +12,6 @@ public class WeaponRotator : MonoBehaviour
 
         var _mouseWorldPosition = Camera.main.ScreenToWorldPoint(InputHandler.GetMousePosition());
         LookAtPosition(_mouseWorldPosition);
-        //var _direction = transform.parent.InverseTransformPoint(_target);
-        //var _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
-        //transform.localRotation = Quaternion.Euler(0f, 0f, _angle);
     }
 
     public void LookAtPosition(Vector3 _position)
@@ -32,11 +29,6 @@ public class WeaponRotator : MonoBehaviour
         var _direction = transform.parent.InverseTransformPoint(_parentForwardPosition);
         var _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
         transform.localRotation = Quaternion.Euler(0f, 0f, _angle);
-        //LookAtPosition(_parentForwardPosition);
-
-        //var _direction = transform.parent.InverseTransformPoint(_target);
-        //var _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
-        //transform.localRotation = Quaternion.Euler(0f, 0f, _angle);
     }
 
     private bool CanRotate()

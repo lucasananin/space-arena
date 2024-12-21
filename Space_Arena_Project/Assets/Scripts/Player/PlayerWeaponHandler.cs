@@ -17,7 +17,6 @@ public class PlayerWeaponHandler : MonoBehaviour
     [SerializeField, ReadOnly] WeaponBehaviour _currentWeapon = null;
     [SerializeField, ReadOnly] WeaponBehaviour _lastWeapon = null;
     [SerializeField, ReadOnly] WeaponRotator _weaponRotator = null;
-    //[SerializeField, ReadOnly] WeaponFlipper _weaponFlipper = null;
     [SerializeField, ReadOnly] int _currentWeaponIndex = 0;
     [SerializeField, ReadOnly] int _lastWeaponIndex = 0;
     [SerializeField, ReadOnly] bool _isWaitingSwapDelay = false;
@@ -35,24 +34,12 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        //InputHandler.OnLeftMouseButtonDown += PullTrigger;
-        //InputHandler.OnLeftMouseButtonUp += ReleaseTrigger;
-        //InputHandler.OnMouseScrollSwipe += SwapThroughInput;
         _entityFlipper.OnFlip += RotateCurrentWeapon;
-
-        //InputHandler.onMouseScrollUp += SwapToNextWeapon;
-        //InputHandler.onMouseScrollDown += SwapToPreviousWeapon;
     }
 
     private void OnDisable()
     {
-        //InputHandler.OnLeftMouseButtonDown -= PullTrigger;
-        //InputHandler.OnLeftMouseButtonUp -= ReleaseTrigger;
-        //InputHandler.OnMouseScrollSwipe -= SwapThroughInput;
         _entityFlipper.OnFlip -= RotateCurrentWeapon;
-
-        //InputHandler.onMouseScrollUp -= SwapToNextWeapon;
-        //InputHandler.onMouseScrollDown -= SwapToPreviousWeapon;
     }
 
     private void FixedUpdate()
@@ -134,7 +121,6 @@ public class PlayerWeaponHandler : MonoBehaviour
         }
 
         _weaponRotator = _currentWeapon.GetComponent<WeaponRotator>();
-        //_weaponFlipper = _currentWeapon.GetComponent<WeaponFlipper>();
         RotateCurrentWeapon();
         UpdateHolster();
     }
@@ -149,7 +135,6 @@ public class PlayerWeaponHandler : MonoBehaviour
     public void RotateCurrentWeapon()
     {
         _weaponRotator?.LookAtMouse();
-        //_weaponFlipper?.UpdateFlip();
     }
 
     public void AddWeapon(WeaponSO _weaponSO, out WeaponSO _droppedWeaponSO)
@@ -225,10 +210,4 @@ public class PlayerWeaponHandler : MonoBehaviour
 
         return _list;
     }
-
-    //[Button]
-    //private void SetWeaponReference()
-    //{
-    //    _currentWeapon = GetComponentInChildren<WeaponBehaviour>();
-    //}
 }
