@@ -17,15 +17,13 @@ public class MovementSmokeVfx : MonoBehaviour
 
             _isPlaying = true;
             _ps.Play();
-            //Debug.Log($"play");
         }
-        else if (!_entity.IsMoving())
+        else
         {
             if (!_isPlaying) return;
 
             _isPlaying = false;
             _ps.Stop();
-            //Debug.Log($"stop");
         }
     }
 }
