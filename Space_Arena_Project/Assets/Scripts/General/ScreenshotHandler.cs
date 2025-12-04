@@ -19,10 +19,10 @@ namespace Utilities
         {
             TryCreateDirectory();
 
-            if (_takeTransparentScreenshot)
-            {
-                TakeTransparentScreenshot();
-            }
+            //if (_takeTransparentScreenshot)
+            //{
+            //    TakeTransparentScreenshot();
+            //}
         }
 
         private void Update()
@@ -34,7 +34,8 @@ namespace Utilities
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                TakeScreenshot();
+                //TakeScreenshot();
+                TakeTransparentScreenshot("MyTransparentScreenshot");
             }
         }
 
@@ -97,6 +98,39 @@ namespace Utilities
         private string GetFileName()
         {
             return string.Format("Assets/Screenshots/capture_{0}.png", DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss-fff"));
+        }
+
+        public Camera captureCamera; // Assign your capture camera here
+        public RenderTexture targetRenderTexture; // Assign your render texture here
+
+        public void TakeTransparentScreenshot(string fileName)
+        {
+            if (captureCamera == null || targetRenderTexture == null)
+            {
+                Debug.LogError("Capture camera or target render texture not assigned!");
+                return;
+            }
+
+            // Set the active render texture to our target
+            RenderTexture.active = targetRenderTexture;
+
+            // Render the camera view to the render texture
+            captureCamera.Render();
+
+            // Create a new Texture2D to read the pixels
+            Texture2D screenshot = new Texture2D(targetRenderTexture.width, targetRenderTexture.height, TextureFormat.ARGB32, false);
+            screenshot.ReadPixels(new Rect(0, 0, targetRenderTexture.width, targetRenderTexture.height), 0, 0);
+            screenshot.Apply();
+
+            // Encode to PNG and save
+            byte[] bytes = screenshot.EncodeToPNG();
+            string filePath = Path.Combine(Application.dataPath, fileName + ".png");
+            File.WriteAllBytes(filePath, bytes);
+
+            Debug.Log("Transparent screenshot saved to: " + filePath);
+
+            // Reset the active render texture
+            RenderTexture.active = null;
         }
     }
 }

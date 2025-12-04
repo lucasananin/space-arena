@@ -450,6 +450,8 @@ MonoBehaviour:
   _takeTransparentScreenshot: 0
   _changeTimeScale: 0
   _timeScale: 1
+  captureCamera: {fileID: 0}
+  targetRenderTexture: {fileID: 0}
 --- !u!4 &42837733
 Transform:
   m_ObjectHideFlags: 0
@@ -1957,6 +1959,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582263735485852469, guid: 33f23304d97b0294b9de46bd0bc482c9, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464798387902448412, guid: 33f23304d97b0294b9de46bd0bc482c9, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464798387902448412, guid: 33f23304d97b0294b9de46bd0bc482c9, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479107613430768130, guid: 33f23304d97b0294b9de46bd0bc482c9, type: 3}
+      propertyPath: stopAction
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5517883229447819336, guid: 33f23304d97b0294b9de46bd0bc482c9, type: 3}
@@ -27369,6 +27383,9 @@ MonoBehaviour:
   _isInvincible: 0
   _maxHealth: 10
   _deathDelay: 0
+  OnDead_Event:
+    m_PersistentCalls:
+      m_Calls: []
   _currentHealth: 0
   _isDying: 0
   _lastDamageModel:
@@ -46970,6 +46987,9 @@ MonoBehaviour:
   _isInvincible: 0
   _maxHealth: 10
   _deathDelay: 0
+  OnDead_Event:
+    m_PersistentCalls:
+      m_Calls: []
   _currentHealth: 0
   _isDying: 0
   _lastDamageModel:
@@ -125815,6 +125835,9 @@ MonoBehaviour:
   _isInvincible: 0
   _maxHealth: 8
   _deathDelay: 0
+  OnDead_Event:
+    m_PersistentCalls:
+      m_Calls: []
   _currentHealth: 0
   _isDying: 0
   _lastDamageModel:
@@ -132165,6 +132188,9 @@ MonoBehaviour:
   _isInvincible: 0
   _maxHealth: 10
   _deathDelay: 0
+  OnDead_Event:
+    m_PersistentCalls:
+      m_Calls: []
   _currentHealth: 0
   _isDying: 0
   _lastDamageModel:
@@ -137868,6 +137894,9 @@ MonoBehaviour:
   _isInvincible: 0
   _maxHealth: 8
   _deathDelay: 0
+  OnDead_Event:
+    m_PersistentCalls:
+      m_Calls: []
   _currentHealth: 0
   _isDying: 0
   _lastDamageModel:

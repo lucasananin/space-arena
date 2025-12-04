@@ -2,12 +2,14 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class HealthBehaviour : MonoBehaviour
 {
     [SerializeField] protected bool _isInvincible = false;
     [SerializeField] protected int _maxHealth = 100;
     [SerializeField] protected float _deathDelay = 0f;
+    [SerializeField] protected UnityEvent OnDead_Event = null;
     [SerializeField, ReadOnly] protected int _currentHealth = 0;
     [SerializeField, ReadOnly] protected bool _isDying = false;
     [SerializeField, ReadOnly] protected DamageModel _lastDamageModel = null;
@@ -83,6 +85,7 @@ public abstract class HealthBehaviour : MonoBehaviour
         _isDying = true;
         _currentHealth = 0;
         OnDead?.Invoke();
+        OnDead_Event?.Invoke();
     }
 
     protected virtual void OnDamageTaken_()
