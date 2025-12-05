@@ -20,8 +20,8 @@ MonoBehaviour:
   PanStereo: 0
   ReverbZoneMix: 1
   SpatialBlend: 0
-  RolloffMode: 0
-  MinDistance: 1
+  RolloffMode: 1
+  MinDistance: 0.3
   MaxDistance: 100
   Spread: 0
   DopplerLevel: 0
@@ -30,3 +30,6 @@ MonoBehaviour:
   BypassReverbZones: 1
   IgnoreListenerVolume: 0
   IgnoreListenerPause: 0
+  _time: 0
+  _usePitchRange: 0
+  _pitchRange: {x: 0, y: 0}

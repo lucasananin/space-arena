@@ -32,6 +32,8 @@ public class AudioManager : MonoBehaviour
     private SoundEmitterVault _soundEmitterVault;
     private SoundEmitter _musicSoundEmitter;
 
+    public float MusicVolume { get => _musicVolume; set => _musicVolume = value; }
+
     private void Awake()
     {
         //TODO: Get the initial volume levels from the settings
@@ -91,7 +93,7 @@ public class AudioManager : MonoBehaviour
     private void SetAllGroupVolumes()
     {
         SetGroupVolume("MasterVolume", _masterVolume);
-        SetGroupVolume("MusicVolume", _musicVolume);
+        SetGroupVolume("MusicVolume", MusicVolume);
         SetGroupVolume("SFXVolume", _sfxVolume);
     }
 
@@ -101,10 +103,10 @@ public class AudioManager : MonoBehaviour
         SetGroupVolume("MasterVolume", _masterVolume);
     }
 
-    void ChangeMusicVolume(float newVolume)
+    public void ChangeMusicVolume(float newVolume)
     {
-        _musicVolume = newVolume;
-        SetGroupVolume("MusicVolume", _musicVolume);
+        MusicVolume = newVolume;
+        SetGroupVolume("MusicVolume", MusicVolume);
     }
 
     void ChangeSFXVolume(float newVolume)

@@ -335,6 +335,9 @@ MonoBehaviour:
   _isInvincible: 0
   _maxHealth: 6
   _deathDelay: 1.8
+  OnDead_Event:
+    m_PersistentCalls:
+      m_Calls: []
   _currentHealth: 0
   _isDying: 0
   _lastDamageModel:
