@@ -166,6 +166,26 @@ public class EnemySpawner : MonoBehaviour
     {
         _waveIndex = 0;
     }
+
+    public int GetTotalWaveCount()
+    {
+        int _total = 0;
+        int _count_1 = _waveGroups.Count;
+
+        for (int i = 0; i < _count_1; i++)
+        {
+            int _count_2 = _waveGroups[i].Waves.Length;
+
+            for (int j = 0; j < _count_2; j++)
+            {
+                _total++;
+            }
+
+            _total++;
+        }
+
+        return _total;
+    }
 }
 
 [System.Serializable]

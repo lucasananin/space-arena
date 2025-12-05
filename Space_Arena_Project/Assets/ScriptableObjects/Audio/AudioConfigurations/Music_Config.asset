@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Music_Config
   m_EditorClassIdentifier: 
   OutputAudioMixerGroup: {fileID: -2919845427630868010, guid: 548a7f001ca6d3d4cb67c8edf84f62a3, type: 2}
-  _priorityLevel: 128
+  _priorityLevel: 0
   Mute: 0
-  Volume: 1
+  Volume: 0.6
   Pitch: 1
   PanStereo: 0
   ReverbZoneMix: 1
@@ -33,3 +33,5 @@ MonoBehaviour:
   _time: 0
   _usePitchRange: 0
   _pitchRange: {x: 0, y: 0}
+  _useFade: 1
+  _fadeDuration: 5
