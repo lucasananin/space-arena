@@ -36,9 +36,9 @@ public class SoundEmitter : MonoBehaviour
 
         if (settings.UseFade)
         {
-            var _target = _audioSource.volume;
             _audioSource.volume = 0;
-            _audioSource.DOFade(_target, settings.FadeDuration);
+            _audioSource.DOComplete();
+            _audioSource.DOFade(settings.Volume, settings.FadeDuration);
         }
 
         if (!hasToLoop)

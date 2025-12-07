@@ -34,4 +34,4 @@ MonoBehaviour:
   _usePitchRange: 0
   _pitchRange: {x: 0, y: 0}
   _useFade: 1
-  _fadeDuration: 5
+  _fadeDuration: 3
