@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CrowdRow : MonoBehaviour
@@ -6,26 +5,35 @@ public class CrowdRow : MonoBehaviour
     [SerializeField] Transform _a = null;
     [SerializeField] Transform _b = null;
     [SerializeField] Color _color = Color.white;
+    [SerializeField] bool _isHorizontal = true;
     [SerializeField] GameObject[] _prefabs = null;
-
-    [Header("// DEBUG")]
-    [SerializeField] List<GameObject> _spawns = null;
 
     private void Start()
     {
-        var _distance = Mathf.Abs(_a.position.x) + Mathf.Abs(_b.position.x);
+        var _distance = GetDistance();
         int _count = (int)_distance;
 
         for (int i = 0; i <= _count; i++)
         {
             var _prefab = _prefabs[Random.Range(0, _prefabs.Length)];
-            var _position = _a.position + Vector3.right * i;
+            var _position = _a.position + GetDirection() * i;
             var _instance = Instantiate(_prefab, _position, Quaternion.identity, transform);
 
-            var _renderer = _instance.GetComponent<SpriteRenderer>();
+            var _renderer = _instance.GetComponentInChildren<SpriteRenderer>();
             _renderer.color = _color;
-
-            _spawns.Add(_instance);
         }
+    }
+
+    private float GetDistance()
+    {
+        if (_isHorizontal)
+            return Mathf.Abs(_a.position.x) + Mathf.Abs(_b.position.x);
+        else
+            return Mathf.Abs(_a.position.y) + Mathf.Abs(_b.position.y);
+    }
+
+    private Vector3 GetDirection()
+    {
+        return _isHorizontal ? Vector3.right : Vector3.down;
     }
 }
