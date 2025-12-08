@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc977aa93978c74982ef301d2fe8217, type: 3}
+  m_Name: Wave_5_Boss
+  m_EditorClassIdentifier: 
+  _environment: {fileID: 8506344680095507289, guid: 89ea2d48b87b55040b06342df2bcf1b5, type: 3}
+  _distanceRange: {x: 6, y: 9}
+  _spawnTime: 2.2
+  _isBoss: 1
+  _waves:
+  - _entities:
+    - _so: {fileID: 11400000, guid: 299b6c5e8110a9f4ea3cb369e8af3174, type: 2}
+      _quantity: 1
+    _loots: []
+    _maxActiveSpawns: 6
+    _totalQuantity: 1

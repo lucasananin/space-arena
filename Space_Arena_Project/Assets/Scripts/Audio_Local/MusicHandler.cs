@@ -1,53 +1,54 @@
 using System.Collections;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class MusicHandler : MonoBehaviour
 {
-    [SerializeField] float _value = 0;
-    [SerializeField] float _recoveryRate = 1f;
-    [SerializeField, ReadOnly] AudioManager _manager = null;
-
-    private void Awake()
-    {
-        _manager = FindFirstObjectByType<AudioManager>();
-    }
+    [SerializeField] AudioCue _defaultMusic = null;
+    [SerializeField] AudioCue _bossMusic = null;
 
     private void OnEnable()
     {
-        EnemySpawner.OnEndWave += DecreaseVolume;
-        EnemySpawner.OnStartWave += IncreaseVolume;
+        EnemySpawner.OnEndWave += StopDefaultMusic;
+        EnemySpawner.OnEndWave += StopBossMusic;
+        EnemySpawner.OnStartWave += PlayBossMusic;
     }
 
     private void OnDisable()
     {
-        EnemySpawner.OnEndWave -= DecreaseVolume;
-        EnemySpawner.OnStartWave -= IncreaseVolume;
+        EnemySpawner.OnEndWave -= StopDefaultMusic;
+        EnemySpawner.OnEndWave -= StopBossMusic;
+        EnemySpawner.OnStartWave -= PlayBossMusic;
     }
 
-    private void DecreaseVolume(WaveModel model)
+    private void StopDefaultMusic(WaveModel _wave)
     {
-        StopAllCoroutines();
-        StartCoroutine(DecreaseRoutine(_value * 0.5f));
+        if (!_defaultMusic.gameObject.activeSelf) return;
+        StartCoroutine(StopDefaultMusic_Routine());
     }
 
-    private void IncreaseVolume(WaveModel obj)
+    private IEnumerator StopDefaultMusic_Routine()
     {
-        StopAllCoroutines();
-        StartCoroutine(DecreaseRoutine(_value));
-    }
+        yield return null;
 
-    private IEnumerator DecreaseRoutine(float _target)
-    {
-        float _t = 0f;
-
-        while (_t < 5f)
+        var _enemySpawner = FindFirstObjectByType<EnemySpawner>();
+        if (_enemySpawner.IsBossWaveGroup())
         {
-            var _v = Mathf.MoveTowards(_manager.MusicVolume, _target, _recoveryRate * Time.deltaTime);
-            _manager.ChangeMusicVolume(_v);
-
-            yield return null;
-            _t += Time.deltaTime;
+            _defaultMusic.gameObject.SetActive(false);
         }
+    }
+
+    private void PlayBossMusic(WaveModel _wave)
+    {
+        if (!_defaultMusic.gameObject.activeSelf)
+        {
+            //_bossMusic.PlayAudioCue();
+            _bossMusic.gameObject.SetActive(true);
+        }
+    }
+
+    private void StopBossMusic(WaveModel _wave)
+    {
+        if (_bossMusic.gameObject.activeSelf)
+            _bossMusic.gameObject.SetActive(false);
     }
 }

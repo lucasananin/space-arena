@@ -1,5 +1,4 @@
 using Sirenix.OdinInspector;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,12 +8,14 @@ public class WaveSO : ScriptableObject
     [SerializeField] GameObject _environment = null;
     [SerializeField] Vector2 _distanceRange = new(6f, 12f);
     [SerializeField, Range(0.1f, 9f)] float _spawnTime = 0.4f;
+    [SerializeField] bool _isBoss = false;
     [SerializeField] WaveModel[] _waves = null;
 
     public WaveModel[] Waves { get => _waves; private set => _waves = value; }
     public Vector2 DistanceRange { get => _distanceRange; private set => _distanceRange = value; }
     public float SpawnTime { get => _spawnTime; private set => _spawnTime = value; }
     public GameObject Environment { get => _environment; private set => _environment = value; }
+    public bool IsBoss { get => _isBoss; }
 
     private void OnValidate()
     {

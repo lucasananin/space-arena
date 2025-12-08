@@ -90,6 +90,8 @@ public class EnemySpawner : MonoBehaviour
 
         do
         {
+            yield return new WaitForSeconds(_waveGroup.SpawnTime);
+
             var _maxActiveSpawns = _useRandomizedWaves ? _randomizedWaves[0].MaxActiveSpawns : _waveModel.MaxActiveSpawns;
             while (_activeSpawnCount >= _maxActiveSpawns)
             {
@@ -101,8 +103,6 @@ public class EnemySpawner : MonoBehaviour
             AiEntity _prefab = _useRandomizedWaves ? _randomizedWaves[0].GetEntityPrefab() : _waveModel.GetEntityPrefab();
             Vector3 _position = GetRandomNodePosition();
             Instantiate(_prefab, _position, Quaternion.identity, _container);
-
-            yield return new WaitForSeconds(_waveGroup.SpawnTime);
 
         } while (_totalSpawnedCount < _totalSpawnQuantity);
 
@@ -185,11 +185,14 @@ public class EnemySpawner : MonoBehaviour
             {
                 _total++;
             }
-
-            _total++;
         }
 
         return _total;
+    }
+
+    public bool IsBossWaveGroup()
+    {
+        return _waveGroups[_groupIndex].IsBoss;
     }
 }
 
