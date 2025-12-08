@@ -3,6 +3,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField, ReadOnly] int _waveIndex = 0;
     [SerializeField, ReadOnly] bool _isSpawning = false;
     [SerializeField, ReadOnly] int _activeSpawnCount = 0;
+
+    [Header("// EVENTS")]
+    [SerializeField] UnityEvent OnWaveEnd_Event = null;
 
     private GridGraph _graph = null;
 
@@ -110,6 +114,7 @@ public class EnemySpawner : MonoBehaviour
         _isSpawning = false;
         _waveIndex++;
         OnEndWave?.Invoke(_waveModel);
+        OnWaveEnd_Event?.Invoke();
         CheckIfIsLastWaveGroup();
     }
 
