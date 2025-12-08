@@ -1963,6 +1963,7 @@ GameObject:
   - component: {fileID: 1085835761}
   - component: {fileID: 1085835760}
   - component: {fileID: 1085835759}
+  - component: {fileID: 1085835762}
   m_Layer: 5
   m_Name: Button_Settings
   m_TagString: Untagged
@@ -2084,6 +2085,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085835757}
   m_CullTransparentMesh: 1
+--- !u!114 &1085835762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085835757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dae886870560154293048730d88a975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 3a5038e06dd09bd4fa25b7ec50820f12, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 0
+  _delay: 0
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: a08c5fc2e1b2d424cb3075d9100c4158, type: 2}
+  _button: {fileID: 1085835759}
 --- !u!1 &1128689441
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,6 +2116,7 @@ GameObject:
   - component: {fileID: 1128689445}
   - component: {fileID: 1128689444}
   - component: {fileID: 1128689443}
+  - component: {fileID: 1128689446}
   m_Layer: 5
   m_Name: Button_Close
   m_TagString: Untagged
@@ -2217,6 +2238,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128689441}
   m_CullTransparentMesh: 1
+--- !u!114 &1128689446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128689441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dae886870560154293048730d88a975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 22556ed505ecde04c8f1bbb96c4b1c2d, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 0
+  _delay: 0
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: a08c5fc2e1b2d424cb3075d9100c4158, type: 2}
+  _button: {fileID: 1128689443}
 --- !u!1 &1133220644
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,6 +2478,7 @@ GameObject:
   - component: {fileID: 1406590168}
   - component: {fileID: 1406590167}
   - component: {fileID: 1406590166}
+  - component: {fileID: 1406590169}
   m_Layer: 5
   m_Name: Button_Close
   m_TagString: Untagged
@@ -2559,6 +2600,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406590163}
   m_CullTransparentMesh: 1
+--- !u!114 &1406590169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406590163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dae886870560154293048730d88a975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 22556ed505ecde04c8f1bbb96c4b1c2d, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 0
+  _delay: 0
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: a08c5fc2e1b2d424cb3075d9100c4158, type: 2}
+  _button: {fileID: 1406590166}
 --- !u!1 &1461858545
 GameObject:
   m_ObjectHideFlags: 0
@@ -3047,6 +3107,7 @@ GameObject:
   - component: {fileID: 1860055351}
   - component: {fileID: 1860055350}
   - component: {fileID: 1860055353}
+  - component: {fileID: 1860055354}
   m_Layer: 5
   m_Name: Button_Play
   m_TagString: Untagged
@@ -3172,6 +3233,25 @@ MonoBehaviour:
   _sceneToUnload: MainMenu
   _loadOnStart: 0
   _button: {fileID: 1860055350}
+--- !u!114 &1860055354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860055348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dae886870560154293048730d88a975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 14f6179141306f2488d490eb5f13d40e, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 0
+  _delay: 0
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: a08c5fc2e1b2d424cb3075d9100c4158, type: 2}
+  _button: {fileID: 1860055350}
 --- !u!1 &1930102120
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,6 +3264,7 @@ GameObject:
   - component: {fileID: 1930102124}
   - component: {fileID: 1930102123}
   - component: {fileID: 1930102122}
+  - component: {fileID: 1930102125}
   m_Layer: 5
   m_Name: Button_Credits
   m_TagString: Untagged
@@ -3305,6 +3386,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930102120}
   m_CullTransparentMesh: 1
+--- !u!114 &1930102125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930102120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dae886870560154293048730d88a975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: 3a5038e06dd09bd4fa25b7ec50820f12, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 0
+  _delay: 0
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: a08c5fc2e1b2d424cb3075d9100c4158, type: 2}
+  _button: {fileID: 1930102122}
 --- !u!1 &1977514430
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,6 +3614,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992990161}
   m_CullTransparentMesh: 1
+--- !u!1 &2001839578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001839579}
+  - component: {fileID: 2001839580}
+  m_Layer: 0
+  m_Name: SFX_Ambience
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2001839579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001839578}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2001839580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001839578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f92f965dbe44449b252b814ddc7137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioCue: {fileID: 11400000, guid: c6fafb5e78da01445b396b9e70a5ebb9, type: 2}
+  _playOnStart: 1
+  _stopOnDisable: 1
+  _delay: 0
+  _audioCueEventChannel: {fileID: 11400000, guid: c3c796b7c31ad3647a3fbae42e74764e, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 7dc92129d2e4ae84dabc197b593ba446, type: 2}
 --- !u!1 &2129459787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3744,3 +3894,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 366919129}
   - {fileID: 1461858548}
+  - {fileID: 2001839579}

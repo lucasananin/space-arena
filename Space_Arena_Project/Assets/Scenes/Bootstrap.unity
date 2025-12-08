@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 228396400}
   - component: {fileID: 228396399}
   - component: {fileID: 228396402}
+  - component: {fileID: 228396403}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -148,7 +149,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228396398}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &228396400
 Camera:
   m_ObjectHideFlags: 0
@@ -259,6 +260,49 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &228396403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228396398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c8b9e8f85ba4c40b8d84b8e8d9730a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: Gameplay
+  _onLoaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 228396399}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onUnloaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 228396399}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &235613487
 GameObject:
   m_ObjectHideFlags: 0

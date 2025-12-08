@@ -11,7 +11,7 @@ namespace Utilities
     {
         [Title("// General")]
         [SerializeField, Range(1, 9)] int _screenshotScale = 1;
-        [SerializeField] bool _takeTransparentScreenshot = false;
+        //[SerializeField] bool _takeTransparentScreenshot = false;
         [SerializeField] bool _changeTimeScale = false;
         [SerializeField, Range(0f, 1f)] float _timeScale = 1f;
 

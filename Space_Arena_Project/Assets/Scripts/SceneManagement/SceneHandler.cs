@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
@@ -10,6 +11,8 @@ public class SceneHandler : MonoBehaviour
 
     public static event Action OnStartLoad = null;
     public static event Action OnEndLoad = null;
+    public static event UnityAction<string> OnSceneLoaded = null;
+    public static event UnityAction<string> OnSceneUnloaded = null;
 
     public void LoadScene(string _sceneToLoad, string _sceneToUnload)
     {
@@ -31,6 +34,8 @@ public class SceneHandler : MonoBehaviour
             {
                 yield return null;
             }
+
+            OnSceneUnloaded?.Invoke(_sceneToUnload);
         }
 
         AsyncOperation _asyncLoad = SceneManager.LoadSceneAsync(_sceneToLoad, LoadSceneMode.Additive);
@@ -42,6 +47,7 @@ public class SceneHandler : MonoBehaviour
 
         var _scene = SceneManager.GetSceneByName(_sceneToLoad);
         SceneManager.SetActiveScene(_scene);
+        OnSceneLoaded?.Invoke(_sceneToLoad);
 
         yield return new WaitForSeconds(_loadDelay);
 
