@@ -22,6 +22,6 @@ MonoBehaviour:
       _quantity: 1
     _loots:
     - {fileID: 11400000, guid: d4d5651bdc0e44744a9bb9717bb44550, type: 2}
-    - {fileID: 11400000, guid: 1de1469d6f475124483e3a891ca52a0b, type: 2}
+    - {fileID: 11400000, guid: 134b7f2cfae04354587ad504e1601926, type: 2}
     _maxActiveSpawns: 20
     _totalQuantity: 1

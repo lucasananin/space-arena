@@ -23,9 +23,6 @@ MonoBehaviour:
     - _so: {fileID: 0}
       _odd: 1
       _minMaxQuantity: {x: 1, y: 1}
-    - _so: {fileID: 0}
-      _odd: 1
-      _minMaxQuantity: {x: 1, y: 1}
   - _models:
     - _so: {fileID: 11400000, guid: 027cdf8528683574a86b77b2158503e9, type: 2}
       _odd: 1
