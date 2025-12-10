@@ -15,56 +15,39 @@ MonoBehaviour:
   _environment: {fileID: 8506344680095507289, guid: 89ea2d48b87b55040b06342df2bcf1b5, type: 3}
   _distanceRange: {x: 6, y: 9}
   _spawnTime: 0.4
+  _isBoss: 0
   _waves:
   - _entities:
     - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
       _quantity: 6
     - _so: {fileID: 11400000, guid: 3e88b57291848b14da56c4653e715e2c, type: 2}
-      _quantity: 4
-    - _so: {fileID: 11400000, guid: 732d5d93c5288984884d72ba30534349, type: 2}
-      _quantity: 2
+      _quantity: 3
+    - _so: {fileID: 11400000, guid: f93b4cc80a0138e49bcc38c18a58931f, type: 2}
+      _quantity: 3
     _loots:
     - {fileID: 11400000, guid: f1d99ff7211567442a4e012cb840928b, type: 2}
     _maxActiveSpawns: 6
     _totalQuantity: 12
   - _entities:
-    - _so: {fileID: 11400000, guid: 5cb6b2abc3018174ba97dcc2df7fc902, type: 2}
-      _quantity: 2
     - _so: {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
-      _quantity: 4
-    - _so: {fileID: 11400000, guid: 65f89ac0930aec64dbcadf4e39ca6898, type: 2}
-      _quantity: 3
-    - _so: {fileID: 11400000, guid: c9a872c556f876748aca59a351afa0d5, type: 2}
-      _quantity: 3
-    - _so: {fileID: 11400000, guid: f93b4cc80a0138e49bcc38c18a58931f, type: 2}
-      _quantity: 2
+      _quantity: 8
     - _so: {fileID: 11400000, guid: 5ea292a48494e2249841f864c84dadb2, type: 2}
-      _quantity: 2
+      _quantity: 4
+    - _so: {fileID: 11400000, guid: 5cb6b2abc3018174ba97dcc2df7fc902, type: 2}
+      _quantity: 3
     _loots:
     - {fileID: 11400000, guid: f1d99ff7211567442a4e012cb840928b, type: 2}
     _maxActiveSpawns: 7
-    _totalQuantity: 16
+    _totalQuantity: 15
   - _entities:
-    - _so: {fileID: 11400000, guid: 732d5d93c5288984884d72ba30534349, type: 2}
-      _quantity: 2
-    - _so: {fileID: 11400000, guid: 5cb6b2abc3018174ba97dcc2df7fc902, type: 2}
-      _quantity: 2
-    - _so: {fileID: 11400000, guid: 00bb9873283b4484092f7457267eb291, type: 2}
-      _quantity: 3
-    - _so: {fileID: 11400000, guid: 65f89ac0930aec64dbcadf4e39ca6898, type: 2}
-      _quantity: 2
     - _so: {fileID: 11400000, guid: c9a872c556f876748aca59a351afa0d5, type: 2}
-      _quantity: 2
-    - _so: {fileID: 11400000, guid: f93b4cc80a0138e49bcc38c18a58931f, type: 2}
-      _quantity: 2
-    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
-      _quantity: 3
-    - _so: {fileID: 11400000, guid: 3e88b57291848b14da56c4653e715e2c, type: 2}
-      _quantity: 2
-    - _so: {fileID: 11400000, guid: 5ea292a48494e2249841f864c84dadb2, type: 2}
-      _quantity: 2
+      _quantity: 6
+    - _so: {fileID: 11400000, guid: 65f89ac0930aec64dbcadf4e39ca6898, type: 2}
+      _quantity: 8
+    - _so: {fileID: 11400000, guid: 732d5d93c5288984884d72ba30534349, type: 2}
+      _quantity: 4
     _loots:
     - {fileID: 11400000, guid: f1d99ff7211567442a4e012cb840928b, type: 2}
     - {fileID: 11400000, guid: 134b7f2cfae04354587ad504e1601926, type: 2}
     _maxActiveSpawns: 8
-    _totalQuantity: 20
+    _totalQuantity: 18

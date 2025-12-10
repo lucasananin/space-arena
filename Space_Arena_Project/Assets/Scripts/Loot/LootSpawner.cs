@@ -1,6 +1,5 @@
 //using Pathfinding;
 using Sirenix.OdinInspector;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +7,7 @@ public class LootSpawner : MonoBehaviour
 {
     [Title("// General")]
     [SerializeField] Transform _parentContainer = null;
+    [SerializeField] bool _useContainer = false;
 
     [Title("// Weapons")]
     [SerializeField] bool _spawnEachOnStart = false;
@@ -64,7 +64,7 @@ public class LootSpawner : MonoBehaviour
         //LootBehaviour _loot = Instantiate(_weaponLootPrefab, _randomPosition, Quaternion.identity, _parentContainer);
 
         var _position = GeneralMethods.GetRandomPointInBounds(_weaponCollider.bounds);
-        var _loot = Instantiate(_weaponLootPrefab, _position, Quaternion.identity, _parentContainer);
+        var _loot = Instantiate(_weaponLootPrefab, _position, Quaternion.identity, GetParent());
         var _randomWeaponIndex = Random.Range(0, _weapons.Length);
         var _so = _weapons[_randomWeaponIndex];
         _loot.Init(_so);
@@ -78,7 +78,7 @@ public class LootSpawner : MonoBehaviour
         for (int i = 0; i < _count; i++)
         {
             var _position = GeneralMethods.GetRandomPointInBounds(_weaponCollider.bounds);
-            var _loot = Instantiate(_weaponLootPrefab, _position, Quaternion.identity, _parentContainer);
+            var _loot = Instantiate(_weaponLootPrefab, _position, Quaternion.identity, GetParent());
             var _so = _weapons[i];
             _loot.Init(_so);
         }
@@ -94,7 +94,7 @@ public class LootSpawner : MonoBehaviour
         for (int i = 0; i < _count; i++)
         {
             var _position = GetChestPosition(_count, i);
-            var _chest = Instantiate(_chestPrefab, _position, Quaternion.identity, _parentContainer);
+            var _chest = Instantiate(_chestPrefab, _position, Quaternion.identity, GetParent());
             _chest.SetLoot(_wave.Loots[i]);
             _chestsSpawned.Add(_chest);
         }
@@ -141,7 +141,7 @@ public class LootSpawner : MonoBehaviour
             {
                 case CollectableSO:
                     var _collectableSO = _lootSpawnInfo.so as CollectableSO;
-                    var _collectableInstance = Instantiate(_collectableSO.Prefab, _lootSpawnInfo.spawnPosition, Quaternion.identity, _parentContainer);
+                    var _collectableInstance = Instantiate(_collectableSO.Prefab, _lootSpawnInfo.spawnPosition, Quaternion.identity, GetParent());
 
                     var _2DPosition = (Vector2)_lootSpawnInfo.spawnPosition;
                     var _randomPosition = Random.insideUnitCircle + _2DPosition;
@@ -153,7 +153,7 @@ public class LootSpawner : MonoBehaviour
                     break;
                 case WeaponSO:
                     var _weaponSO = _lootSpawnInfo.so as WeaponSO;
-                    var _weaponLootInstance = Instantiate(_weaponLootPrefab, _lootSpawnInfo.spawnPosition, Quaternion.identity, _parentContainer);
+                    var _weaponLootInstance = Instantiate(_weaponLootPrefab, _lootSpawnInfo.spawnPosition, Quaternion.identity, GetParent());
                     _weaponLootInstance.Init(_weaponSO);
 
                     if (!HasWeaponAlreadyBeenDropped(_weaponSO))
@@ -174,6 +174,11 @@ public class LootSpawner : MonoBehaviour
         return _droppedWeapons.Count > 0 && _droppedWeapons.Contains(_value);
     }
 
+    private Transform GetParent()
+    {
+        return _useContainer ? _parentContainer : null;
+    }
+
     [Title("// Debug")]
     [SerializeField] CollectableBehaviour _collectablePrefab = null;
     [SerializeField] Transform _collectableOrigin = null;
@@ -181,7 +186,7 @@ public class LootSpawner : MonoBehaviour
     [Button]
     private void SpawnCollectable()
     {
-        var _collectableInstance = Instantiate(_collectablePrefab, _collectableOrigin.position, Quaternion.identity, _parentContainer);
+        var _collectableInstance = Instantiate(_collectablePrefab, _collectableOrigin.position, Quaternion.identity, GetParent());
 
         var _2DPosition = (Vector2)_collectableOrigin.position;
         var _randomPosition = Random.insideUnitCircle + _2DPosition;

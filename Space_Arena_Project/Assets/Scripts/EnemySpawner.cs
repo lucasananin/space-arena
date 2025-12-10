@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] bool _useRandomizedWaves = false;
     [Space]
     [SerializeField] Transform _container = null;
+    [SerializeField] bool _useContainer = false;
     [SerializeField] List<WaveSO> _waveGroups = null;
     [Space]
     [SerializeField, ReadOnly] PlayerEntity _player = null;
@@ -102,7 +103,7 @@ public class EnemySpawner : MonoBehaviour
             _totalSpawnedCount++;
             AiEntity _prefab = _useRandomizedWaves ? _randomizedWaves[0].GetEntityPrefab() : _waveModel.GetEntityPrefab();
             Vector3 _position = GetRandomNodePosition();
-            Instantiate(_prefab, _position, Quaternion.identity, _container);
+            Instantiate(_prefab, _position, Quaternion.identity, _useContainer ? _container : null);
 
         } while (_totalSpawnedCount < _totalSpawnQuantity);
 

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Collectable_Health_2
   m_EditorClassIdentifier: 
   _prefab: {fileID: 4558754204574171359, guid: f33217fde5d907944a40524dce47487b, type: 3}
-  _restorePercentage: 36
+  _restorePercentage: 24

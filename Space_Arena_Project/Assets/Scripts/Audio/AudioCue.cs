@@ -44,7 +44,7 @@ public class AudioCue : MonoBehaviour
 			PlayAudioCue();
 	}
 
-	[ContextMenu("Fodase()")]
+	//[ContextMenu("Fodase()")]
 	public void PlayAudioCue()
 	{
 		controlKey = _audioCueEventChannel.RaisePlayEvent(_audioCue, _audioConfiguration, transform.position);
