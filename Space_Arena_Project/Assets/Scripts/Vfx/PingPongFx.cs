@@ -5,6 +5,7 @@ public class PingPongFx : MonoBehaviour
     [SerializeField] Transform _transform = null;
     [SerializeField] bool _useSin = true;
     [SerializeField] bool _randomizeStart = false;
+    //[SerializeField] bool _autoUpdate = true;
     [SerializeField, Range(0f, 9f)] float _speed = 1f;
     [SerializeField, Range(0f, 2f)] float _yMagnitude = 1f;
     [SerializeField, Range(0f, 2f)] float _xMagnitude = 1f;
@@ -25,6 +26,14 @@ public class PingPongFx : MonoBehaviour
     }
 
     private void Update()
+    {
+        //if (_autoUpdate)
+        //{
+        //}
+        UpdateEffect();
+    }
+
+    internal void UpdateEffect()
     {
         float _y = _useSin ? GetSin(_yMagnitude) : GetCos(_yMagnitude);
         float _x = _useSin ? GetSin(_xMagnitude) : GetCos(_xMagnitude);

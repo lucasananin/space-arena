@@ -15,18 +15,19 @@ MonoBehaviour:
   _environment: {fileID: 8506344680095507289, guid: 7faf6c26c7753964eb0470ddb4b150ae, type: 3}
   _distanceRange: {x: 6, y: 9}
   _spawnTime: 0.4
+  _isBoss: 0
   _waves:
   - _entities:
-    - _so: {fileID: 11400000, guid: 299b6c5e8110a9f4ea3cb369e8af3174, type: 2}
+    - _so: {fileID: 11400000, guid: 6793f22645183ee4eab2475adc38512a, type: 2}
       _quantity: 1
     - _so: {fileID: 11400000, guid: 3e88b57291848b14da56c4653e715e2c, type: 2}
-      _quantity: 0
-    - _so: {fileID: 11400000, guid: f93b4cc80a0138e49bcc38c18a58931f, type: 2}
-      _quantity: 0
+      _quantity: 1
+    - _so: {fileID: 11400000, guid: 5ea292a48494e2249841f864c84dadb2, type: 2}
+      _quantity: 1
     _loots:
     - {fileID: 11400000, guid: 1de1469d6f475124483e3a891ca52a0b, type: 2}
     _maxActiveSpawns: 6
-    _totalQuantity: 1
+    _totalQuantity: 3
   - _entities:
     - _so: {fileID: 11400000, guid: 65f89ac0930aec64dbcadf4e39ca6898, type: 2}
       _quantity: 4

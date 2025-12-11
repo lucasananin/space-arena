@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 9028939926445195951}
   - component: {fileID: 1338805204843526839}
   m_Layer: 6
-  m_Name: Sprite_
+  m_Name: Sprite_Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1247,6 +1247,8 @@ MonoBehaviour:
   _renderers:
   - {fileID: 3974821397676983876}
   - {fileID: 3974821396568531052}
+  - {fileID: 5477917744049941389}
+  - {fileID: 1338805204843526839}
   _health: {fileID: 2658297561336904053}
   _hitMaterial: {fileID: 2100000, guid: 7cc9f605a43fb2f4e90e8c3a56ee86b7, type: 2}
   _duration: 0.08
@@ -2034,6 +2036,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f82d0fd8b2aa8f429e765ce405191a5, type: 3}
+--- !u!212 &5477917744049941389 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5704818091080987773, guid: 3f82d0fd8b2aa8f429e765ce405191a5, type: 3}
+  m_PrefabInstance: {fileID: 229381207412793328}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5477917744341685108 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5704818092466949252, guid: 3f82d0fd8b2aa8f429e765ce405191a5, type: 3}
@@ -2354,6 +2361,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7427310108541956550, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018325033884058440, guid: f29bd26933db2fb45ad57f4779768be3, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

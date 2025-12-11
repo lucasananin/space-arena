@@ -1,18 +1,22 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CrowdHandler : MonoBehaviour
 {
-    [SerializeField] Collider2D _area = null;
-    [SerializeField] int _count = 100;
-    [SerializeField] GameObject[] _prefabs = null;
+    [SerializeField] List<PingPongFx> _crowd = null;
+    [SerializeField] int _count = 0;
 
-    private void Start()
+    private void Update()
     {
         for (int i = 0; i < _count; i++)
         {
-            var _prefab = _prefabs[Random.Range(0, _prefabs.Length)];
-            var _position = GeneralMethods.GetRandomPointInBounds(_area.bounds);
-            var _instance = Instantiate(_prefab, _position, Quaternion.identity, _area.transform);
+            _crowd[i].UpdateEffect();
         }
+    }
+
+    internal void AddPingPong(PingPongFx _pingPongFx)
+    {
+        _crowd.Add(_pingPongFx);
+        _count = _crowd.Count;
     }
 }

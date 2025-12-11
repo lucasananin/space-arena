@@ -8,6 +8,9 @@ public class CrowdRow : MonoBehaviour
     [SerializeField] bool _isHorizontal = true;
     [SerializeField] GameObject[] _prefabs = null;
 
+    //[Header("// DEBUG")]
+    //[SerializeField] CrowdHandler _handler = null;
+
     private void Start()
     {
         var _distance = GetDistance();
@@ -21,6 +24,8 @@ public class CrowdRow : MonoBehaviour
 
             var _renderer = _instance.GetComponentInChildren<SpriteRenderer>();
             _renderer.color = _color;
+
+            //_handler.AddPingPong(_instance.GetComponent<PingPongFx>());
         }
     }
 

@@ -330,6 +330,7 @@ MonoBehaviour:
   _renderers:
   - {fileID: 7881225114263241411}
   - {fileID: 7881225115305911531}
+  - {fileID: 9051635099244539892}
   _health: {fileID: 2658297561336904053}
   _hitMaterial: {fileID: 2100000, guid: 7cc9f605a43fb2f4e90e8c3a56ee86b7, type: 2}
   _duration: 0.08
@@ -414,6 +415,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2658297561336904062}
     m_Modifications:
+    - target: {fileID: 1160285848504907038, guid: 5cc1b6df160d50445bb1785f8803f2f9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8534141530301458178, guid: 5cc1b6df160d50445bb1785f8803f2f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
@@ -504,6 +509,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a35e3b2421d247ab634c34f1fbdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &9051635099244539892 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8534141530301458181, guid: 5cc1b6df160d50445bb1785f8803f2f9, type: 3}
+  m_PrefabInstance: {fileID: 860894153195342065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1334578775125593382
 PrefabInstance:
   m_ObjectHideFlags: 0

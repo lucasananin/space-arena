@@ -615,7 +615,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 589112669, guid: 5a17e4e7c0c827e44aacd5af8970b7c4, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -623,7 +623,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &3259895887505919149
@@ -5611,7 +5611,7 @@ MonoBehaviour:
   m_CategoryHash: 2.9092094e-34
   m_labelHash: 3.991422e-13
   m_SpriteKey: 1.7127354e-32
-  m_SpriteHash: 0
+  m_SpriteHash: 179428433
 --- !u!1001 &319356486757276954
 PrefabInstance:
   m_ObjectHideFlags: 0
