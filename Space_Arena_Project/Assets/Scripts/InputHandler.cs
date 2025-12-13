@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InputHandler : MonoBehaviour
 {
     public static event System.Action OnLeftMouseButtonDown = null;
     public static event System.Action OnLeftMouseButtonUp = null;
     public static event System.Action<float> OnMouseScrollSwipe = null;
+    public static event UnityAction OnWeaponChange = null;
     //public static event System.Action onMouseScrollUp = null;
     //public static event System.Action onMouseScrollDown = null;
     public static event System.Action OnInteractDown = null;
@@ -52,6 +52,11 @@ public class InputHandler : MonoBehaviour
             OnMouseScrollSwipe?.Invoke(_mouseScrollDelta.y);
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            OnWeaponChange?.Invoke();
+        }
+
         //if (_mouseScrollDelta.y > 0)
         //{
         //    onMouseScrollUp?.Invoke();
@@ -84,7 +89,7 @@ public class InputHandler : MonoBehaviour
 
         float _x = Input.GetAxisRaw("Horizontal");
         float _y = Input.GetAxisRaw("Vertical");
-        Vector2 _moveAxis = new Vector2(_x, _y);
+        Vector2 _moveAxis = new(_x, _y);
         return _moveAxis;
     }
 

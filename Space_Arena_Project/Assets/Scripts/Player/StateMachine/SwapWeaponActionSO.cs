@@ -21,11 +21,13 @@ public class SwapWeaponAction : StateAction
     public override void OnStateEnter()
     {
         InputHandler.OnMouseScrollSwipe += _weaponHandler.SwapThroughInput;
+        InputHandler.OnWeaponChange += () => _weaponHandler.SwapThroughInput(1);
     }
 
     public override void OnStateExit()
     {
         InputHandler.OnMouseScrollSwipe -= _weaponHandler.SwapThroughInput;
+        InputHandler.OnWeaponChange -= () => _weaponHandler.SwapThroughInput(1);
     }
 
     public override void OnFixedUpdate()
